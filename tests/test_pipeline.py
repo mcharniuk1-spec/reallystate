@@ -57,6 +57,8 @@ class PipelineTests(unittest.TestCase):
 
     def test_pipeline_processes_apartment_detail_page(self) -> None:
         source = self.registry.by_name("Homes.bg")
+        self.assertIsNotNone(source)
+        assert source is not None
         building = BuildingEntity(
             building_id="varna-center-1",
             name="Sea Residence",
@@ -86,13 +88,22 @@ class PipelineTests(unittest.TestCase):
         canonical = result.canonical_listing
         self.assertEqual(canonical.reference_id, "Homes.bg:42")
         self.assertEqual(canonical.city, "Varna")
-        self.assertAlmostEqual(canonical.price, 950.0)
-        self.assertAlmostEqual(canonical.price_per_sqm, 8.64)
+        price = canonical.price
+        price_per_sqm = canonical.price_per_sqm
+        self.assertIsNotNone(price)
+        self.assertIsNotNone(price_per_sqm)
+        assert price is not None and price_per_sqm is not None
+        self.assertAlmostEqual(price, 950.0)
+        self.assertAlmostEqual(price_per_sqm, 8.64)
         self.assertIn("+359 888 123 456", canonical.phones)
+        self.assertIsNotNone(result.building_match)
+        assert result.building_match is not None
         self.assertEqual(result.building_match.building_id, "varna-center-1")
 
     def test_dedupe_scorer_prefers_near_duplicate(self) -> None:
         source = self.registry.by_name("Homes.bg")
+        self.assertIsNotNone(source)
+        assert source is not None
         left = self.pipeline.process_listing_detail(
             source=source,
             url="https://example.com/listings/42",

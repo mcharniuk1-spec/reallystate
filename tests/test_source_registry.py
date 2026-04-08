@@ -30,6 +30,8 @@ class SourceRegistryTests(unittest.TestCase):
 
     def test_registry_exposes_agent_planning_fields(self) -> None:
         booking = self.registry.by_name("Booking.com")
+        self.assertIsNotNone(booking)
+        assert booking is not None
         self.assertEqual(booking.legal_mode, "official_partner_or_vendor_only")
         self.assertEqual(booking.mvp_phase, "reverse_publishing_and_str_intelligence")
         self.assertEqual(booking.primary_url, "https://www.booking.com/")

@@ -63,7 +63,7 @@ def run_chat_completion(
     """Return (assistant_text, provider_used)."""
     provider = os.getenv("CHAT_PROVIDER", "stub").strip().lower()
     key = os.getenv("OPENAI_API_KEY", "").strip()
-    mdl = model or os.getenv("OPENAI_CHAT_MODEL", "gpt-4o-mini")
+    mdl: str = (model or os.getenv("OPENAI_CHAT_MODEL") or "gpt-4o-mini").strip()
 
     if provider == "openai" and key:
         try:

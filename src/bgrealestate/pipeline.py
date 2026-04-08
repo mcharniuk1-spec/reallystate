@@ -327,7 +327,12 @@ class DeduplicationScorer:
         if left.area_sqm and right.area_sqm:
             delta = abs(left.area_sqm - right.area_sqm) / max(left.area_sqm, right.area_sqm)
             score += max(0.0, 0.1 - min(delta, 0.1))
-        if None not in (left.latitude, left.longitude, right.latitude, right.longitude):
+        if (
+            left.latitude is not None
+            and left.longitude is not None
+            and right.latitude is not None
+            and right.longitude is not None
+        ):
             distance = haversine_km(left.latitude, left.longitude, right.latitude, right.longitude)
             score += 0.1 if distance < 0.1 else 0.05 if distance < 0.5 else 0.0
         return round(min(score, 0.99), 4)

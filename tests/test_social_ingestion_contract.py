@@ -11,6 +11,7 @@ from __future__ import annotations
 import json
 import unittest
 from pathlib import Path
+from typing import ClassVar
 
 from bgrealestate.connectors.legal import LegalGateError, assert_live_http_allowed
 from bgrealestate.connectors.social_parser import extract_social_lead
@@ -33,6 +34,8 @@ SOCIAL_SOURCES = [
 class TestSocialLegalGates(unittest.TestCase):
     """All social/messenger sources must be blocked by assert_live_http_allowed."""
 
+    registry: ClassVar[SourceRegistry]
+
     @classmethod
     def setUpClass(cls) -> None:
         cls.registry = SourceRegistry.from_file(REGISTRY_PATH)
@@ -41,6 +44,7 @@ class TestSocialLegalGates(unittest.TestCase):
         for name in SOCIAL_SOURCES:
             entry = self.registry.by_name(name)
             self.assertIsNotNone(entry, f"missing from registry: {name}")
+            assert entry is not None
             with self.assertRaises(LegalGateError, msg=f"should block: {name}"):
                 assert_live_http_allowed(entry)
 
