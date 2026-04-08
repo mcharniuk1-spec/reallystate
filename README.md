@@ -1,4 +1,4 @@
-# Bulgaria Real Estate Ingestion Platform
+# reallystate (Bulgaria Real Estate Ingestion Platform)
 
 This workspace now contains a first working implementation of the source-first ingestion and reverse-publishing plan.
 
@@ -121,3 +121,7 @@ The current codebase is designed to be the execution backbone for the roadmap:
 - Add geocoding and cadastral connectors.
 - Add partner-specific publishing adapters.
 - Connect a live Linear workspace and import the prepared backlog CSV.
+
+---
+
+One-line summary: Real estate market ingestion + dedupe + operator tooling for rent and purchase, with a compliance-first publishing control plane.
