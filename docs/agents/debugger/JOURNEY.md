@@ -59,5 +59,11 @@
 - **Fix**: Removed dead imports; call `self._source_for_fetch()` for legal gate without assigning; dropped unused `String` from `db/models.py`.
 - **Verify**: `ruff check .` → All checks passed; `unittest discover` — 62 ok, 8 skipped.
 
+### 2026-04-08 (follow-up) — Mypy (`make typecheck`)
+
+- **Evidence**: `mypy src tests` reported 16 errors: `chat_service` model arg, `pipeline` haversine coords, optional registry rows in tests, `ClassVar` for social test registry, pipeline test `SourceRegistryEntry | None` / floats / `building_match`.
+- **Fix**: Coerce OpenAI model name to `str`; explicit `is not None` guard before `haversine_km`; `ClassVar[SourceRegistry]` + `assert entry is not None` in social tests; narrow types in `test_pipeline` / `test_source_registry`.
+- **Verify**: `mypy src tests` → Success; `ruff check .` + `unittest discover` unchanged green.
+
 ## Review comments (after each task)
 
