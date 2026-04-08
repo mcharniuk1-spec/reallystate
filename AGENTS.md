@@ -51,6 +51,18 @@ Execution rule:
 - When the operator gives `GO <agent>` or `GO all`, agents proceed through their current `TODO`/`IN_PROGRESS` slice and acceptance gate, then write JOURNEY updates and TASKS status updates in the same run.
 - If the environment requires elevated runtime approval (OS/sandbox prompt), that platform prompt still applies; otherwise no extra human confirmation is required inside that GO run.
 
+Continuation rule (non-stop execution):
+
+- Agents must not stop after one slice if another unblocked slice exists for the same agent in `docs/agents/TASKS.md`.
+- Continue sequentially: complete current slice -> update TASKS/JOURNEY -> start next unblocked slice.
+- Stop only when one of these is true:
+  1. Operator explicitly says `END`, or
+  2. No unblocked slice remains, or
+  3. A real blocker prevents progress.
+- When stopping because no unblocked slice remains, ask using this format:
+  - `Which <agent_name> task should I execute next?`
+  - Example: `Which backend_developer task should I execute next?`
+
 ## Activation Checklist (every run)
 
 On each activation, the lead agent must:
@@ -77,6 +89,19 @@ Agents should use project-local skills from `agent-skills/` first, including:
 - `web-frontend-nextjs`
 - `dashboard-visual-ops`
 - `web-performance-accessibility`
+- `investor-pitch-yc`
+- `presentation-pdf-reportlab`
+- `presentation-powerpoint-pptx`
+- `google-slides-handoff`
+- `project-progress-dashboard-web`
+- `context-engineering`
+- `prompt-engineering`
+- `multi-agent-patterns`
+- `test-generator`
+- `security-audit`
+- `vercel-nextjs-deploy`
+- `railway-deploy`
+- `ci-cd-pipeline`
 
 Model policy for planning:
 

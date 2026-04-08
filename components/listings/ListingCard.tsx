@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import type { Listing } from "@/lib/types/listing";
+import { PhotoCarousel } from "./PhotoCarousel";
 
 function intentLabel(intent: string): string {
   const map: Record<string, string> = {
@@ -31,15 +32,40 @@ function formatPrice(price: number | null, currency: string | null, intent: stri
   return `${sym}${fmt.format(price)}${suffix}`;
 }
 
+function pricePerSqm(price: number | null, area: number | null, currency: string | null): string | null {
+  if (price == null || area == null || area <= 0) return null;
+  const perSqm = Math.round(price / area);
+  const sym = currency === "EUR" ? "\u20AC" : currency === "BGN" ? "BGN " : "";
+  return `${sym}${new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(perSqm)}/m\u00B2`;
+}
+
 function relativeTime(iso: string | null): string {
   if (!iso) return "";
-  const diff = Date.now() - new Date(iso).getTime();
+  const diff = Math.max(0, Date.now() - new Date(iso).getTime());
   const mins = Math.floor(diff / 60000);
+  if (mins < 1) return "just now";
   if (mins < 60) return `${mins}m ago`;
   const hrs = Math.floor(mins / 60);
   if (hrs < 24) return `${hrs}h ago`;
   const days = Math.floor(hrs / 24);
   return `${days}d ago`;
+}
+
+function amenityIcon(amenity: string): string {
+  const icons: Record<string, string> = {
+    parking: "\u{1F17F}\uFE0F",
+    balcony: "\u{1F3D7}",
+    elevator: "\u{1F6D7}",
+    furnished: "\u{1FA91}",
+    sea_view: "\u{1F30A}",
+    mountain_view: "\u{26F0}\uFE0F",
+    pool: "\u{1F3CA}",
+    garden: "\u{1F333}",
+    garage: "\u{1F697}",
+    ac: "\u{2744}\uFE0F",
+    central_heating: "\u{1F525}",
+  };
+  return icons[amenity] ?? "";
 }
 
 export function ListingCard({
@@ -52,6 +78,7 @@ export function ListingCard({
   onHover?: (id: string | null) => void;
 }) {
   const l = listing;
+  const ppsqm = pricePerSqm(l.price, l.area_sqm, l.currency);
 
   return (
     <Link
@@ -62,17 +89,20 @@ export function ListingCard({
       onMouseEnter={() => onHover?.(l.reference_id)}
       onMouseLeave={() => onHover?.(null)}
     >
-      <div className="aspect-[16/10] rounded-xl bg-gradient-to-br from-paper to-line/40 border border-line/50 flex items-center justify-center overflow-hidden">
-        <span className="text-[11px] font-medium text-mist/60 uppercase tracking-wider">
-          {l.source_name}
-        </span>
-      </div>
+      <PhotoCarousel
+        images={l.image_urls}
+        alt={`${l.property_category} in ${l.city || "Bulgaria"}`}
+        sourceName={l.source_name}
+      />
 
       <div className="mt-3 flex items-start justify-between gap-2">
         <div className="min-w-0 flex-1">
           <p className={`font-display text-ink leading-tight ${compact ? "text-base" : "text-lg"}`}>
             {formatPrice(l.price, l.currency, l.listing_intent)}
           </p>
+          {ppsqm && (
+            <p className="text-[11px] text-mist">{ppsqm}</p>
+          )}
           <p className="mt-0.5 text-xs text-mist truncate">
             {[l.district, l.city].filter(Boolean).join(", ") || l.region || "Bulgaria"}
           </p>
@@ -86,24 +116,64 @@ export function ListingCard({
         </span>
       </div>
 
-      <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-mist">
+      {/* Facts row */}
+      <div className="mt-2 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs text-mist">
         {l.property_category && (
-          <span className="capitalize">{l.property_category}</span>
+          <span className="capitalize font-medium">{l.property_category}</span>
         )}
-        {l.area_sqm != null && <span>{l.area_sqm} m\u00B2</span>}
+        {l.property_category && (l.area_sqm != null || l.rooms != null) && (
+          <span className="text-line">·</span>
+        )}
+        {l.area_sqm != null && <span>{l.area_sqm} m²</span>}
         {l.rooms != null && (
           <span>
             {l.rooms} {l.rooms === 1 ? "room" : "rooms"}
           </span>
         )}
+        {l.floor != null && l.total_floors != null && (
+          <>
+            <span className="text-line">·</span>
+            <span>Floor {l.floor}/{l.total_floors}</span>
+          </>
+        )}
+        {l.year_built != null && (
+          <>
+            <span className="text-line">·</span>
+            <span>{l.year_built}</span>
+          </>
+        )}
       </div>
+
+      {/* Amenity chips (show up to 4) */}
+      {!compact && l.amenities && l.amenities.length > 0 && (
+        <div className="mt-2 flex flex-wrap gap-1">
+          {l.amenities.slice(0, 4).map((a) => (
+            <span
+              key={a}
+              className="inline-flex items-center gap-0.5 rounded-md bg-paper border border-line/60 px-1.5 py-0.5 text-[10px] text-mist"
+            >
+              <span className="text-[9px]">{amenityIcon(a)}</span>
+              <span className="capitalize">{a.replace(/_/g, " ")}</span>
+            </span>
+          ))}
+          {l.amenities.length > 4 && (
+            <span className="inline-flex items-center rounded-md bg-paper border border-line/60 px-1.5 py-0.5 text-[10px] text-mist">
+              +{l.amenities.length - 4}
+            </span>
+          )}
+        </div>
+      )}
 
       {!compact && l.description && (
         <p className="mt-2 text-xs text-mist line-clamp-2 leading-relaxed">{l.description}</p>
       )}
 
+      {/* Footer: source + freshness */}
       <div className="mt-2.5 flex items-center justify-between text-[10px] text-mist/70">
-        <span className="font-medium">{l.source_name}</span>
+        <span className="inline-flex items-center gap-1.5">
+          <span className="h-1.5 w-1.5 rounded-full bg-sea/40" />
+          <span className="font-medium">{l.source_name}</span>
+        </span>
         {l.last_seen && <span>{relativeTime(l.last_seen)}</span>}
       </div>
     </Link>

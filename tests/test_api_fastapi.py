@@ -95,3 +95,41 @@ class TestFastAPIApp(unittest.TestCase):
     def test_crm_write_requires_write_scope(self) -> None:
         r = self.client.post("/crm/threads/any/messages", json={"body_text": "hello"}, headers={"X-API-Key": "read-key"})
         self.assertEqual(r.status_code, 403)
+
+    def test_analytics_summary_returns_503_without_db(self) -> None:
+        from bgrealestate.api import deps as deps_mod
+
+        saved = os.environ.pop("DATABASE_URL", None)
+        try:
+            deps_mod._engine = None
+            r = self.client.get("/analytics/summary", headers={"X-API-Key": "read-key"})
+            self.assertEqual(r.status_code, 503)
+        finally:
+            if saved is not None:
+                os.environ["DATABASE_URL"] = saved
+            deps_mod._engine = None
+
+    def test_analytics_duplicates_requires_admin_scope(self) -> None:
+        r = self.client.get("/analytics/duplicates", headers={"X-API-Key": "read-key"})
+        self.assertEqual(r.status_code, 403)
+
+    def test_analytics_routes_require_auth(self) -> None:
+        self.assertEqual(self.client.get("/analytics/summary").status_code, 401)
+        self.assertEqual(self.client.get("/analytics/duplicates").status_code, 401)
+
+    def test_properties_returns_503_without_db(self) -> None:
+        from bgrealestate.api import deps as deps_mod
+
+        saved = os.environ.pop("DATABASE_URL", None)
+        try:
+            deps_mod._engine = None
+            r = self.client.get("/properties", headers={"X-API-Key": "read-key"})
+            self.assertEqual(r.status_code, 503)
+        finally:
+            if saved is not None:
+                os.environ["DATABASE_URL"] = saved
+            deps_mod._engine = None
+
+    def test_properties_routes_require_auth(self) -> None:
+        self.assertEqual(self.client.get("/properties").status_code, 401)
+        self.assertEqual(self.client.get("/properties/test-id").status_code, 401)

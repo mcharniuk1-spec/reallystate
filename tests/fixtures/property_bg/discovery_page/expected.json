@@ -1,0 +1,17 @@
+{
+  "entries": [
+    {
+      "url": "https://property.bg/listing/PBG-33001",
+      "external_id": "PBG-33001",
+      "preview_price": 38000.0,
+      "preview_intent": "sale"
+    },
+    {
+      "url": "https://property.bg/listing/PBG-33002",
+      "external_id": "PBG-33002",
+      "preview_price": 43000.0,
+      "preview_intent": "sale"
+    }
+  ],
+  "next_cursor": {"page": 2}
+}

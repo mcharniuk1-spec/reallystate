@@ -82,6 +82,10 @@ def _infer_listing_intent(seed: Dict[str, Any], text: str) -> ListingIntent:
         return ListingIntent.SALE
     if "наем" in low or "под наем" in low:
         return ListingIntent.LONG_TERM_RENT
+    # New-build project listings are typically sale intent even when explicit
+    # "for sale" phrases are missing from structured snippets.
+    if "new build" in low or "ново строителство" in low:
+        return ListingIntent.SALE
     return ListingIntent.MIXED
 
 

@@ -27,6 +27,15 @@ Use one command per activation:
 
 When `GO` is issued, each selected agent should run its current slice from `TASKS.md`, update JOURNEY, update TASKS status, and hand off for verification in the same execution window.
 
+Non-stop execution rule:
+
+- Do not end work after a single slice if another unblocked slice exists for the same agent.
+- Continue in sequence until blocked, no unblocked slice remains, or the operator says `END`.
+- After each slice: update `TASKS.md` status, append JOURNEY entry, then immediately pick the next unblocked slice for that same agent.
+- If there is no unblocked slice left, ask:
+  - `Which <agent_name> task should I execute next?`
+  - Example: `Which backend_developer task should I execute next?`
+
 ## Agents
 
 | Agent | Role | Primary area |
@@ -198,28 +207,40 @@ When Claude is the planner path, use Opus-level planning when available, then di
 - **Find tasks**: `docs/agents/TASKS.md` → section "Backend_developer"
 - **Log work**: `docs/agents/backend_developer/JOURNEY.md`
 - **Verified by**: debugger (golden path + API smoke), scraper_1 (API contracts)
+- **Skills**: `postgres-postgis-schema`, `backend-data-engineering`, `workflow-runtime`, `db-sync-and-seeding`, `railway-deploy`, `ci-cd-pipeline`, `test-generator`, `context-engineering`
 
 ### scraper_1
 - **Find tasks**: `docs/agents/TASKS.md` → section "Scraper_1"
 - **Log work**: `docs/agents/scraper_1/JOURNEY.md`
 - **Verified by**: debugger (fixtures + legal gates), backend_developer (DB persistence)
+- **Skills**: `scraper-connector-builder`, `parser-fixture-qa`, `real-estate-source-registry`, `runtime-compliance-evaluator`, `test-generator`, `context-engineering`
 
 ### scraper_t3
 - **Find tasks**: `docs/agents/TASKS.md` → section "Scraper_T3"
 - **Log work**: `docs/agents/scraper_t3/JOURNEY.md`
 - **Verified by**: debugger (partner/vendor contract enforcement + legal gates)
+- **Skills**: `scraper-connector-builder`, `parser-fixture-qa`, `real-estate-source-registry`, `runtime-compliance-evaluator`, `deep-research-workflow`, `context-engineering`
 
 ### scraper_sm
 - **Find tasks**: `docs/agents/TASKS.md` → section "Scraper_SM"
 - **Log work**: `docs/agents/scraper_sm/JOURNEY.md`
 - **Verified by**: debugger (consent checklist + redaction + fixture format)
+- **Skills**: `scraper-connector-builder`, `parser-fixture-qa`, `real-estate-source-registry`, `runtime-compliance-evaluator`, `deep-research-workflow`, `prompt-engineering`, `context-engineering`
 
 ### ux_ui_designer
 - **Find tasks**: `docs/agents/TASKS.md` → section "UX_UI_designer"
 - **Log work**: `docs/agents/ux_ui_designer/JOURNEY.md`
 - **Verified by**: debugger (API contract alignment + component spec completeness)
+- **Skills**: `web-frontend-nextjs`, `frontend-pages`, `dashboard-visual-ops`, `ux-dashboard-design`, `web-performance-accessibility`, `vercel-nextjs-deploy`, `visual-3d-map`, `context-engineering`
 
 ### debugger
 - **Find tasks**: `docs/agents/TASKS.md` → section "Debugger" + all `DONE_AWAITING_VERIFY` slices
 - **Log work**: `docs/agents/debugger/JOURNEY.md`
 - **Verified by**: lead agent (spot checks) or self-verify via `make validate` + `make golden-path`
+- **Skills**: `debugger-golden-path`, `qa-review-release`, `security-audit`, `test-generator`, `ci-cd-pipeline`, `context-engineering`
+
+### lead_agent
+- **Find tasks**: `docs/agents/TASKS.md` → section "Lead Agent"
+- **Log work**: orchestration session transcripts
+- **Verified by**: self (dashboard + export refresh)
+- **Skills**: `claude-opus-planner`, `software-architecture`, `subagent-driven-development`, `multi-agent-patterns`, `daily-orchestration`, `investor-pitch-yc`, `presentation-pdf-reportlab`, `presentation-powerpoint-pptx`, `google-slides-handoff`, `project-progress-dashboard-web`, `prompt-engineering`, `context-engineering`

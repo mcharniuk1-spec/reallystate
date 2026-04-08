@@ -1,0 +1,26 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-95m2-sofiya-zhk.-ovcha-kupel/as1678792",
+  "external_id": "d56518537930",
+  "title": "Тристаен, 95m² - Жк. Овча Купел, София - Апартамент за продажба - Артемис естейт ",
+  "description": "АРТЕМИС ЕСТАЙЕТ ви представя тристаен апартамент в кв.Овча купел - отлична локация и инвестиционен потенциал.Към имота се предлага гараж на цена от 35 000 евро....",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2026-04-08_2/118421058o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:24:38.039767+00:00",
+  "reference_id": "Homes.bg:d56518537930"
+}

@@ -101,6 +101,60 @@
 - **Status update**:
   - `SM-02` moved from `BLOCKED` to `DONE_AWAITING_VERIFY` in `docs/agents/TASKS.md`.
 
+### 2026-04-08 (follow-up) — SM-06 Tier-4 links + post/message DB package + PDF plan
+
+- **Action**: Added a full tier-4 operational package to sync social links to DB, prepare one-row-per-message social datasets, and generate a paragraph-based `Tier4plan.pdf`.
+- **Added**:
+  - `src/bgrealestate/social_tier4.py`
+    - collect tier-4 links from `data/source_registry.json`
+    - collect fixture-backed tier-4 posts/messages (Telegram + X)
+    - export JSON/CSV datasets (`tier4-social-links`, `tier4-social-posts`)
+  - `src/bgrealestate/social_seed.py`
+    - build fixture-backed CRM payloads
+    - seed `lead_thread`, `lead_message`, `raw_capture` rows into DB (`seed-social-fixtures`)
+  - `scripts/generate_tier4_plan.py`
+    - writes `docs/exports/Tier4plan.md` and `docs/exports/Tier4plan.pdf`
+  - CLI updates in `src/bgrealestate/cli.py`
+    - `sync-social-database`
+    - `export-tier4`
+    - `seed-social-fixtures`
+  - Makefile targets
+    - `sync-social-registry`, `export-tier4-data`, `seed-social-fixtures`, `tier4-plan`
+- **Commands / verification**:
+  - `PYTHONPATH=src python3 -m bgrealestate export-tier4 --out-dir docs/exports`
+  - `python3 scripts/generate_tier4_plan.py`
+  - `make test` (full suite)
+- **Status**: DONE_AWAITING_VERIFY
+- **Review comments**:
+  - All outputs remain fixture-first and legal-gated; no live social scraping was introduced.
+  - Facebook/Instagram/Threads/Viber/WhatsApp stay consent/manual or official-partner mode per policy.
+
+### 2026-04-08 (follow-up) — SM-05 social collection options decision matrix
+
+- **Action**: Completed cross-platform collection options analysis for all tier-4 sources with legality, reliability, cost-band, and rollout recommendation.
+- **Added**:
+  - `docs/agents/scraper_sm/social-collection-options.md`
+    - matrix for Telegram, X, Facebook, Instagram, Threads, Viber, WhatsApp
+    - pros/cons, cost profile bands, legal access path per platform
+    - operator recommendation: Telegram + X automated, Facebook/Instagram manual-consent, others deferred/partner-only
+- **Status**: DONE_AWAITING_VERIFY
+- **Review comments**:
+  - No connector/runtime changes introduced in this slice (doc-only by contract).
+  - Recommendations remain aligned with `source_registry` legal modes and SM-01 policy.
+
+### 2026-04-08 (follow-up) — SM-07 Facebook path decision (consent-gated defer)
+
+- **Action**: Executed SM-07 as a legal decision output and deferred autonomous Facebook scraping in MVP.
+- **Added**:
+  - `docs/agents/scraper_sm/facebook-public-groups-decision.md`
+    - explicit no-go for autonomous scrape
+    - approved manual/consent workflow
+    - revisit conditions (documented legal approval + fixture-first testability)
+- **Status**: DONE_AWAITING_VERIFY
+- **Review comments**:
+  - Decision matches hard guardrails: no private/login-gated social scraping.
+  - Keeps tier-4 automation focus on Telegram + X official paths.
+
 ### After Task 0
 - The contract correctly blocks all 7 social sources at the legal gate layer. Even Telegram, which is the only approved automated path, is blocked by `assert_live_http_allowed` because `source_family=social_public_channel` always triggers the family block. This is correct: the social connector will need a dedicated `assert_telegram_api_allowed` function that checks `legal_mode=official_api_allowed` but bypasses the family block.
 - Fixture JSON format is deliberately simple (flat envelope + extracted fields) to keep the parser testable offline. Production Telegram ingestion will wrap this in the standard `RawCapture` model.

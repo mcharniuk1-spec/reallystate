@@ -5,7 +5,7 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .routers import admin, chat, crawl_jobs, crm, listings, readiness, system
+from .routers import admin, analytics, chat, crawl_jobs, crm, listings, media, properties, readiness, system, user_auth, users
 
 
 def create_app() -> FastAPI:
@@ -27,7 +27,12 @@ def create_app() -> FastAPI:
     app.include_router(listings.router)
     app.include_router(crm.router)
     app.include_router(crawl_jobs.router)
+    app.include_router(properties.router)
+    app.include_router(analytics.router)
     app.include_router(admin.router)
+    app.include_router(user_auth.router)
+    app.include_router(users.router)
+    app.include_router(media.router)
     app.include_router(chat.router, prefix="/api/v1")
     app.include_router(readiness.router, prefix="/api/v1")
     return app

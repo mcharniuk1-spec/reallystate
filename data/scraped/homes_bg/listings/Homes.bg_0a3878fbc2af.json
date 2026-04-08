@@ -1,0 +1,26 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-65m2-sofiya-zhk.-suhata-reka/as1668616",
+  "external_id": "0a3878fbc2af",
+  "title": "Двустаен, 65m² - Жк. Сухата Река, София - Апартамент за продажба - АСГАРД ПРОПЪРТИС",
+  "description": "АСГАРД ПРОПЪРТИС продава непреходен, основно ремонтиран апартамент, разположен на 5-ти непоследен етаж в отлично поддържан блок. Жилището е с чиста площ 65,27 к...",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2026-01-27_1/117401826o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:24:54.543496+00:00",
+  "reference_id": "Homes.bg:0a3878fbc2af"
+}

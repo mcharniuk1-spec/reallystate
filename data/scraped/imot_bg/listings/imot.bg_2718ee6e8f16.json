@@ -1,0 +1,26 @@
+{
+  "source_name": "imot.bg",
+  "listing_url": "https://www.imot.bg/obiava-1b177365289952783-prodava-dvustaen-apartament-grad-sofiya-druzhba-1-ul-tirana",
+  "external_id": "2718ee6e8f16",
+  "title": "Imot.bg",
+  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "�����",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "//imotstatic4.focus.bg/imot/photosimotbg/1/783//big/1b177365289952783_x4.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:29:37.038391+00:00",
+  "reference_id": "imot.bg:2718ee6e8f16"
+}

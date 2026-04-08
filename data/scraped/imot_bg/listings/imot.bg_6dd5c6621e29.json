@@ -1,0 +1,26 @@
+{
+  "source_name": "imot.bg",
+  "listing_url": "https://www.imot.bg/obiava-1b177462309436925-prodava-dvustaen-apartament-grad-sofiya-malinova-dolina",
+  "external_id": "6dd5c6621e29",
+  "title": "Imot.bg",
+  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "�����",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "//imotstatic3.focus.bg/imot/photosimotbg/1/925//big/1b177462309436925_VM.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:25:14.634848+00:00",
+  "reference_id": "imot.bg:6dd5c6621e29"
+}

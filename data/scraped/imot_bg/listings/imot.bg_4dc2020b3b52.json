@@ -1,0 +1,26 @@
+{
+  "source_name": "imot.bg",
+  "listing_url": "https://www.imot.bg/obiava-1b177563605101482-prodava-dvustaen-apartament-grad-sofiya-gotse-delchev",
+  "external_id": "4dc2020b3b52",
+  "title": "Imot.bg",
+  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "�����",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "//imotstatic2.focus.bg/imot/photosimotbg/1/482//big/1b177563605101482_CK.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:29:17.406379+00:00",
+  "reference_id": "imot.bg:4dc2020b3b52"
+}

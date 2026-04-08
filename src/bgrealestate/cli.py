@@ -53,6 +53,46 @@ def main() -> int:
         action="store_true",
         help="Print counts only; do not connect to the database.",
     )
+    sync_social_parser = subparsers.add_parser(
+        "sync-social-database",
+        help="Upsert tier-4 social sources, legal rules, and all known social links into PostgreSQL.",
+    )
+    sync_social_parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Print counts only; do not connect to the database.",
+    )
+    export_tier4_parser = subparsers.add_parser(
+        "export-tier4",
+        help="Export tier-4 social links and per-message fixture dataset to JSON/CSV.",
+    )
+    export_tier4_parser.add_argument("--out-dir", type=Path, default=Path("docs/exports"))
+    seed_social_parser = subparsers.add_parser(
+        "seed-social-fixtures",
+        help="Insert fixture-backed tier-4 social threads/messages into PostgreSQL.",
+    )
+    seed_social_parser.add_argument("--account-id", default="acct_tier4_seed")
+    seed_social_parser.add_argument("--dry-run", action="store_true")
+
+    dl_img_parser = subparsers.add_parser(
+        "download-images",
+        help="Download images for listings already in DB (or from fixtures).",
+    )
+    dl_img_parser.add_argument("--reference-id", help="Download images for a specific listing reference_id.")
+    dl_img_parser.add_argument("--source-name", help="Download images for all listings from this source.")
+    dl_img_parser.add_argument("--limit", type=int, default=50, help="Max listings to process (default 50).")
+    dl_img_parser.add_argument("--dry-run", action="store_true", help="Show URLs without downloading.")
+
+    bcpea_parser = subparsers.add_parser(
+        "scrape-bcpea",
+        help="Scrape BCPEA property auction listings (public register, legal to crawl).",
+    )
+    bcpea_parser.add_argument("--pages", type=int, default=3, help="Max pages to scrape (default 3).")
+    bcpea_parser.add_argument("--perpage", type=int, default=36, help="Results per page (default 36).")
+    bcpea_parser.add_argument("--rate-limit", type=float, default=1.5, help="Seconds between requests (default 1.5).")
+    bcpea_parser.add_argument("--fetch-details", action="store_true", help="Also fetch individual detail pages.")
+    bcpea_parser.add_argument("--out-dir", type=Path, default=Path("output/bcpea"), help="Output directory for scraped data.")
+    bcpea_parser.add_argument("--dry-run", action="store_true", help="Print discovery results only, don't write files.")
 
     args = parser.parse_args()
     registry = SourceRegistry.from_file(args.registry)
@@ -110,8 +150,64 @@ def main() -> int:
         from .db.session import create_db_engine
 
         engine = create_db_engine()
-        result = ingest_listing_detail_html(engine=engine, source=source, url=url, html=html, discovered_at=now)
-        print(f"ingested: {result}")
+        ingest_result = ingest_listing_detail_html(
+            engine=engine, source=source, url=url, html=html,
+            discovered_at=now, download_images=not args.dry_run,
+        )
+        print(f"ingested: {ingest_result}")
+        return 0
+
+    if args.command == "download-images":
+        from .db.session import create_db_engine, session_scope
+        from .db.repositories import CanonicalListingRepository, ListingMediaRepository
+        from .db.ids import new_id
+        from .services.media import download_image
+
+        engine = create_db_engine()
+        with session_scope(engine) as session:
+            repo = CanonicalListingRepository(session)
+            listings = repo.list_recent(
+                limit=args.limit,
+                source_name=args.source_name,
+            )
+            if args.reference_id:
+                m = repo.get(args.reference_id)
+                listings = [m] if m else []
+
+            total_dl = 0
+            for listing in listings:
+                urls = list(listing.image_urls or [])
+                if not urls:
+                    continue
+                if args.dry_run:
+                    print(f"{listing.reference_id}: {len(urls)} images")
+                    for u in urls:
+                        print(f"  {u}")
+                    continue
+
+                media_repo = ListingMediaRepository(session)
+                for i, url in enumerate(urls):
+                    result = download_image(url, reference_id=listing.reference_id, ordering=i)
+                    media_id = new_id("lmed")
+                    media_repo.upsert_media(
+                        media_id=media_id,
+                        listing_reference_id=listing.reference_id,
+                        url=url,
+                        ordering=i,
+                        content_hash=result.content_hash if result.status == "downloaded" else None,
+                        storage_key=result.storage_key if result.status == "downloaded" else None,
+                        mime_type=result.mime_type if result.status == "downloaded" else None,
+                        width=result.width,
+                        height=result.height,
+                        file_size=result.file_size if result.status == "downloaded" else None,
+                        download_status=result.status,
+                    )
+                    status_icon = "ok" if result.status == "downloaded" else "FAIL"
+                    print(f"  [{status_icon}] {url}")
+                    total_dl += 1 if result.status == "downloaded" else 0
+
+            if not args.dry_run:
+                print(f"\nDownloaded {total_dl} images for {len(listings)} listings.")
         return 0
 
     if args.command == "export-matrices":
@@ -133,5 +229,126 @@ def main() -> int:
         print(f"synced: {stats}")
         return 0
 
+    if args.command == "sync-social-database":
+        from .social_tier4 import collect_tier4_links, tier4_sources
+
+        t4 = tier4_sources(registry)
+        links = collect_tier4_links(registry)
+        if args.dry_run:
+            print(f"would upsert {len(t4)} tier-4 social sources and {len(links)} social endpoints")
+            print("run alembic upgrade head (or make migrate) before writing if the database is new")
+            return 0
+        from .db.session import create_db_engine
+        from .db_sync import sync_social_sources_to_db
+
+        engine = create_db_engine()
+        stats = sync_social_sources_to_db(engine, registry)
+        print(f"synced: {stats}")
+        return 0
+
+    if args.command == "export-tier4":
+        from .social_tier4 import write_tier4_exports
+
+        stats = write_tier4_exports(registry, out_dir=args.out_dir)
+        print(f"exported tier-4 dataset: {stats}")
+        return 0
+
+    if args.command == "seed-social-fixtures":
+        from .social_seed import build_social_seed_payloads
+
+        payloads = build_social_seed_payloads(account_id=args.account_id)
+        if args.dry_run:
+            print(f"would seed {len(payloads)} tier-4 fixture messages for account_id={args.account_id}")
+            return 0
+        from .db.session import create_db_engine
+        from .social_seed import seed_social_fixtures_to_db
+
+        engine = create_db_engine()
+        stats = seed_social_fixtures_to_db(engine, account_id=args.account_id)
+        print(f"seeded: {stats}")
+        return 0
+
+    if args.command == "scrape-bcpea":
+        return _scrape_bcpea(args, registry)
+
     return 1
+
+
+def _scrape_bcpea(args: argparse.Namespace, registry: SourceRegistry) -> int:
+    import json as _json
+    import logging
+    from dataclasses import asdict
+    from datetime import datetime, timezone
+
+    from .connectors.tier3 import BcpeaAuctionConnector
+
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(levelname)s %(message)s")
+
+    connector = BcpeaAuctionConnector(
+        registry,
+        perpage=args.perpage,
+        rate_limit=args.rate_limit,
+    )
+
+    out_dir: Path = args.out_dir
+    if not args.dry_run:
+        out_dir.mkdir(parents=True, exist_ok=True)
+
+    all_items: list[dict] = []
+    detail_results: list[dict] = []
+    total_pages = min(args.pages, 200)
+
+    for page in range(1, total_pages + 1):
+        print(f"[BCPEA] Fetching discovery page {page}/{total_pages}...")
+        try:
+            discovery_page = connector.discover_page(page)
+        except Exception as e:
+            print(f"[BCPEA] Error on page {page}: {e}")
+            break
+
+        for discovery_item in discovery_page.listings:
+            all_items.append(asdict(discovery_item))
+
+        print(f"[BCPEA] Page {page}: {len(discovery_page.listings)} items (total so far: {len(all_items)})")
+
+        if discovery_page.next_page is None or page >= total_pages:
+            break
+
+    print(f"\n[BCPEA] Discovery complete: {len(all_items)} auction listings found")
+
+    if args.dry_run:
+        for item_dict in all_items[:5]:
+            print(_json.dumps(item_dict, indent=2, ensure_ascii=False))
+        if len(all_items) > 5:
+            print(f"... and {len(all_items) - 5} more")
+        return 0
+
+    discovery_path = out_dir / "discovery.json"
+    discovery_path.write_text(
+        _json.dumps(all_items, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    print(f"[BCPEA] Discovery saved to {discovery_path}")
+
+    if args.fetch_details:
+        now = datetime.now(tz=timezone.utc)
+        for i, item_dict in enumerate(all_items):
+            url = item_dict["url"]
+            print(f"[BCPEA] Fetching detail {i + 1}/{len(all_items)}: {url}")
+            try:
+                raw = connector.fetch_listing_detail(url=url, fetched_at=now)
+                parsed = connector.parse_detail_html(html=raw.body, url=url)
+                detail_results.append(parsed)
+            except Exception as e:
+                print(f"[BCPEA] Error fetching {url}: {e}")
+                continue
+
+        details_path = out_dir / "details.json"
+        details_path.write_text(
+            _json.dumps(detail_results, indent=2, ensure_ascii=False),
+            encoding="utf-8",
+        )
+        print(f"[BCPEA] {len(detail_results)} detail records saved to {details_path}")
+
+    return 0
 

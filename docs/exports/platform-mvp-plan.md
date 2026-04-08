@@ -325,8 +325,115 @@ The dashboard is the operating system for the project. It lets an operator creat
 
 The dashboard data is also exported as a static HTML dashboard (`docs/dashboard/index.html`), a JSON data file (`docs/exports/progress-dashboard.json`), and a product summary with all metrics. Generate with `make dashboard-doc`. The export pipeline reads from `data/source_registry.json`, `docs/agents/TASKS.md`, agent `JOURNEY.md` files, and `docs/project-status-roadmap.md`.
 
-## 13. Assumptions
+## 13. Business Model & Unit Economics
+
+Full analysis: `docs/business/unit-economics-market-analysis.md`
+Investor presentation: `output/pdf/investor-presentation-{date}.pdf` (generate: `python3 scripts/generate_investor_presentation.py`)
+
+### 13.1 Market sizing
+
+| Level | Annual revenue | Basis |
+|---|---|---|
+| TAM (Bulgaria nationwide) | €74.7M | Agency subs + listing fees + leads + STR analytics + AI tools + developer marketing |
+| SAM (Varna + Burgas coastal) | €22.6M | 28–35% coastal share of national activity |
+| SOM Year 1 (Varna MVP) | €0.7–1.1M | 3–5% of SAM with 50 agency subs |
+| SOM Year 3 (multi-city) | €4.5–6.8M | 20–30% coastal share |
+| SOM Year 5 (national leader) | €8.0–10.0M | 35–45% market share |
+
+### 13.2 Unit economics
+
+| Metric | Value |
+|---|---|
+| Gross margin | ~80% |
+| LTV (agency premium, 18 months) | €5,400 |
+| CAC (blended) | €120 |
+| LTV:CAC ratio | 45:1 |
+| Breakeven | Month 4–5 (50 agency subscriptions) |
+
+### 13.3 Product positioning
+
+Buyer-oriented marketplace. Owners post directly. Agents appear as "owner representative" (never "realtor"). Platform aggregates 30+ sources with AI-powered deduplication, 3D map (Varna MVP), and persistent AI chat assistant.
+
+Full product UX structure: `docs/business/product-ux-structure.md`
+3D map integration plan: `docs/business/varna-3d-osm-integration.md`
+
+## 14. 3D Map Integration (Varna MVP)
+
+Technology: MapLibre GL JS + deck.gl for 3D building extrusion. Data: OpenStreetMap Varna extract (GeoFabrik → osmium → tippecanoe → PMTiles). Buildings extruded to real height with property pins overlaid.
+
+| Component | Owner | Status |
+|---|---|---|
+| OSM data pipeline | backend_developer (BD-08) | TODO |
+| PostGIS building_entity | backend_developer | Schema exists |
+| MapLibre 3D layer | ux_ui_designer (UX-07) | TODO |
+| PMTiles serving | backend_developer | TODO |
+| Blosm marketing renders | ux_ui_designer (optional) | Deferred |
+
+Blosm (https://github.com/vvoovv/blosm) can generate static 3D renders of Varna for marketing. Not for runtime web rendering — MapLibre handles that.
+
+## 15. Assumptions
 
 PostgreSQL/PostGIS is the main operational database; S3/MinIO stores raw captures/photos/docs; Temporal is the durable automation layer; Cursor is the main builder; Codex and Claude are supporting agents; public UI starts only after ingestion, map data, CRM, compliance, and publishing controls are stable.
 
 Booking.com and Airbnb stay in scope for market intelligence and reverse publishing, but only through official/authorized/vendor routes. WhatsApp, Viber, private Facebook groups, and private Telegram groups are opt-in/consent-only. Threads is experimental public-profile monitoring only unless official read/search support is confirmed during implementation.
+
+## 16. Session Context Digest (2026-04-08)
+
+This section preserves the full execution context and decisions from the latest orchestration session so future runs do not lose intent.
+
+### 16.1 Strategic decisions locked in
+
+- Execution model is parallel across specialist lanes with dependency-gated promotion to `VERIFIED`.
+- Specialist roster is fixed at 6 agents: `backend_developer`, `scraper_1`, `scraper_t3`, `scraper_sm`, `ux_ui_designer`, `debugger` (+ lead agent).
+- Tier ownership is strict:
+  - tier-1/2: `scraper_1`
+  - tier-3 partner/vendor/official: `scraper_t3`
+  - tier-4 social overlays: `scraper_sm`
+- MVP map/search scope is constrained to **Varna city + Varna region** until stage-1 scrape quality gate passes (`DBG-05`).
+- Social and private channels remain consent-gated; no unsafe scraping or account automation.
+- Marketplace positioning is buyer-oriented: owners post directly; agency participation is framed as owner representation.
+
+### 16.2 Operating protocol decisions
+
+- `GO <agent>` and `GO all` are the activation controls.
+- Non-stop continuation rule is now mandatory: agents continue sequentially through unblocked slices until:
+  1. operator says `END`, or
+  2. no unblocked slice remains, or
+  3. a real blocker occurs.
+- If no unblocked slice remains, agents must ask exactly:
+  - `Which <agent_name> task should I execute next?`
+- Recurring activation duties are mandatory:
+  - read TASKS + all JOURNEY logs
+  - propagate cross-agent notes into explicit slices
+  - refresh dashboard/docs when state changes (`make dashboard-doc`)
+
+### 16.3 Delivered artifacts in this session
+
+- Business and strategy outputs:
+  - `docs/business/unit-economics-market-analysis.md`
+  - `docs/business/product-ux-structure.md`
+  - `docs/business/varna-3d-osm-integration.md`
+  - `output/pdf/investor-presentation-2026-04-08.pdf`
+- Backlog/task architecture updates:
+  - new lead and execution slices in `docs/agents/TASKS.md`
+  - expanded backend slices for unification, analytics, photo classification, deployment, and scraper runtime
+  - expanded UX slices for shop view, detail page, profile cabinet, and deployment
+- Dashboard reliability fix:
+  - `docs/dashboard/index.html` now supports embedded payload mode for `file://` opens
+  - generator injects JSON payload into dashboard HTML and keeps fetch fallback for hosted mode
+
+### 16.4 Current execution focus (critical path)
+
+1. verify all pending `DONE_AWAITING_VERIFY` slices (`DBG-06` batch)
+2. close stage-1 gate (`DBG-05`) and unblock Varna map/search/chat chain
+3. complete backend unification + filter APIs (`BD-11`, `BD-12`)
+4. complete frontend shop/detail/profile chain (`UX-08`, `UX-09`, `UX-10`)
+5. deploy backend/frontend (`BD-14`, `UX-11`) and run end-to-end smoke/security gates (`DBG-07`, `DBG-08`)
+
+### 16.5 Backlog source-of-truth links
+
+- execution backlog and dependencies: `docs/agents/TASKS.md`
+- operational guardrails and GO rules: `AGENTS.md`
+- coordination protocol: `docs/agents/README.md`
+- dashboard state: `docs/dashboard/index.html` + `docs/exports/progress-dashboard.json`
+- architecture export set: `docs/exports/project-architecture-execution-guide.*`

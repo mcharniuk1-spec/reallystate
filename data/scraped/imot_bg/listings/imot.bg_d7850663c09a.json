@@ -1,0 +1,26 @@
+{
+  "source_name": "imot.bg",
+  "listing_url": "https://www.imot.bg/obiava-1a177304944584186-prodava-ednostaen-apartament-grad-sofiya-studentski-grad",
+  "external_id": "d7850663c09a",
+  "title": "Imot.bg",
+  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "�����",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "//cdn3.focus.bg/imot/photosimotbg/1/186//big/1a177304944584186_bx.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:26:54.465610+00:00",
+  "reference_id": "imot.bg:d7850663c09a"
+}

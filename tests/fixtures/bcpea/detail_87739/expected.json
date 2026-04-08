@@ -1,0 +1,29 @@
+{
+  "source_name": "BCPEA property auctions",
+  "external_id": "87739",
+  "listing_url": "https://sales.bcpea.org/properties/87739",
+  "property_type": "Къща",
+  "listing_intent": "auction_sale",
+  "construction_type": "Тухла",
+  "amenities": ["Вода", "Електрозахранване", "Локално отопление"],
+  "area_sqm": 689.0,
+  "city": "с. Доброглед",
+  "court": "Варна",
+  "bailiff": "Петя Любомирова Иванова",
+  "bailiff_reg_number": "883",
+  "auction_start_date": "2026-04-14",
+  "auction_end_date": "2026-05-14",
+  "announcement_datetime": "2026-05-15T09:00",
+  "description_snippet": "Поземлен имот с идентификатор 21587.503.31",
+  "image_urls": [
+    "https://sales.bcpea.org/upload/87739/439075/photo1.jpg",
+    "https://sales.bcpea.org/upload/87739/439070/photo2.jpg",
+    "https://sales.bcpea.org/upload/87739/439071/photo3.jpg"
+  ],
+  "scanned_documents": [
+    "https://sales.bcpea.org/upload/87739/439069/notice.pdf"
+  ],
+  "bailiff_phone": "052 949272",
+  "bailiff_mobile": "0882441553",
+  "parser_version": "bcpea_live_v1"
+}

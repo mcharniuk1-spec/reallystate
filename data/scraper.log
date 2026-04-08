@@ -1,0 +1,659 @@
+2026-04-08 19:16:29,818 [INFO] live_scraper: === Starting scrape: Homes.bg (2 discovery seeds) ===
+2026-04-08 19:16:29,818 [INFO] live_scraper: [homes_bg] Discovery page 1: https://www.homes.bg/prodazhbi/vsichki-gradove/
+2026-04-08 19:16:30,010 [INFO] httpx: HTTP Request: GET https://www.homes.bg/prodazhbi/vsichki-gradove/ "HTTP/1.1 200 OK"
+2026-04-08 19:16:30,012 [INFO] live_scraper: [homes_bg] Page 1: found 0 listing URLs (0 new), total: 0
+2026-04-08 19:16:30,013 [INFO] live_scraper: [homes_bg] No new URLs on page 1, moving to next seed
+2026-04-08 19:16:30,013 [INFO] live_scraper: [homes_bg] Discovery page 1: https://www.homes.bg/naemi/vsichki-gradove/
+2026-04-08 19:16:30,063 [INFO] httpx: HTTP Request: GET https://www.homes.bg/naemi/vsichki-gradove/ "HTTP/1.1 200 OK"
+2026-04-08 19:16:30,064 [INFO] live_scraper: [homes_bg] Page 1: found 0 listing URLs (0 new), total: 0
+2026-04-08 19:16:30,064 [INFO] live_scraper: [homes_bg] No new URLs on page 1, moving to next seed
+2026-04-08 19:16:30,065 [INFO] live_scraper: [homes_bg] Discovery complete: 0 unique listing URLs from 2 pages
+2026-04-08 19:16:30,069 [INFO] live_scraper: [homes_bg] DONE in 0.3s — discovered: 0, fetched: 0, parsed: 0, failed: 0, photos: 0 found / 0 downloaded
+2026-04-08 19:24:13,042 [INFO] live_scraper: === Starting scrape: Homes.bg ===
+2026-04-08 19:24:13,252 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=1&lang=bg&offerType=1 "HTTP/1.1 200 OK"
+2026-04-08 19:24:13,253 [INFO] live_scraper: [homes_bg] API page 1 (sale): 20 items, total: 20
+2026-04-08 19:24:13,935 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=2&lang=bg&offerType=1 "HTTP/1.1 200 OK"
+2026-04-08 19:24:13,935 [INFO] live_scraper: [homes_bg] API page 2 (sale): 20 items, total: 20
+2026-04-08 19:24:14,634 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=3&lang=bg&offerType=1 "HTTP/1.1 200 OK"
+2026-04-08 19:24:14,636 [INFO] live_scraper: [homes_bg] API page 3 (sale): 20 items, total: 20
+2026-04-08 19:24:15,324 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=4&lang=bg&offerType=1 "HTTP/1.1 200 OK"
+2026-04-08 19:24:15,324 [INFO] live_scraper: [homes_bg] API page 4 (sale): 20 items, total: 20
+2026-04-08 19:24:16,010 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=5&lang=bg&offerType=1 "HTTP/1.1 200 OK"
+2026-04-08 19:24:16,011 [INFO] live_scraper: [homes_bg] API page 5 (sale): 20 items, total: 20
+2026-04-08 19:24:16,705 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=6&lang=bg&offerType=1 "HTTP/1.1 200 OK"
+2026-04-08 19:24:16,706 [INFO] live_scraper: [homes_bg] API page 6 (sale): 20 items, total: 20
+2026-04-08 19:24:17,394 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=7&lang=bg&offerType=1 "HTTP/1.1 200 OK"
+2026-04-08 19:24:17,397 [INFO] live_scraper: [homes_bg] API page 7 (sale): 20 items, total: 20
+2026-04-08 19:24:18,081 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=8&lang=bg&offerType=1 "HTTP/1.1 200 OK"
+2026-04-08 19:24:18,085 [INFO] live_scraper: [homes_bg] API page 8 (sale): 20 items, total: 20
+2026-04-08 19:24:18,782 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=9&lang=bg&offerType=1 "HTTP/1.1 200 OK"
+2026-04-08 19:24:18,783 [INFO] live_scraper: [homes_bg] API page 9 (sale): 20 items, total: 20
+2026-04-08 19:24:19,460 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=10&lang=bg&offerType=1 "HTTP/1.1 200 OK"
+2026-04-08 19:24:19,461 [INFO] live_scraper: [homes_bg] API page 10 (sale): 20 items, total: 20
+2026-04-08 19:24:20,144 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=1&lang=bg&offerType=2 "HTTP/1.1 200 OK"
+2026-04-08 19:24:20,145 [INFO] live_scraper: [homes_bg] API page 1 (rent): 20 items, total: 20
+2026-04-08 19:24:20,829 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=2&lang=bg&offerType=2 "HTTP/1.1 200 OK"
+2026-04-08 19:24:20,830 [INFO] live_scraper: [homes_bg] API page 2 (rent): 20 items, total: 20
+2026-04-08 19:24:21,518 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=3&lang=bg&offerType=2 "HTTP/1.1 200 OK"
+2026-04-08 19:24:21,520 [INFO] live_scraper: [homes_bg] API page 3 (rent): 20 items, total: 20
+2026-04-08 19:24:22,202 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=4&lang=bg&offerType=2 "HTTP/1.1 200 OK"
+2026-04-08 19:24:22,204 [INFO] live_scraper: [homes_bg] API page 4 (rent): 20 items, total: 20
+2026-04-08 19:24:22,893 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=5&lang=bg&offerType=2 "HTTP/1.1 200 OK"
+2026-04-08 19:24:22,896 [INFO] live_scraper: [homes_bg] API page 5 (rent): 20 items, total: 20
+2026-04-08 19:24:23,577 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=6&lang=bg&offerType=2 "HTTP/1.1 200 OK"
+2026-04-08 19:24:23,579 [INFO] live_scraper: [homes_bg] API page 6 (rent): 20 items, total: 20
+2026-04-08 19:24:24,261 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=7&lang=bg&offerType=2 "HTTP/1.1 200 OK"
+2026-04-08 19:24:24,262 [INFO] live_scraper: [homes_bg] API page 7 (rent): 20 items, total: 20
+2026-04-08 19:24:24,945 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=8&lang=bg&offerType=2 "HTTP/1.1 200 OK"
+2026-04-08 19:24:24,947 [INFO] live_scraper: [homes_bg] API page 8 (rent): 20 items, total: 20
+2026-04-08 19:24:25,624 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=9&lang=bg&offerType=2 "HTTP/1.1 200 OK"
+2026-04-08 19:24:25,626 [INFO] live_scraper: [homes_bg] API page 9 (rent): 20 items, total: 20
+2026-04-08 19:24:26,308 [INFO] httpx: HTTP Request: GET https://www.homes.bg/api/offers?currPage=10&lang=bg&offerType=2 "HTTP/1.1 200 OK"
+2026-04-08 19:24:26,310 [INFO] live_scraper: [homes_bg] API page 10 (rent): 20 items, total: 20
+2026-04-08 19:24:26,915 [INFO] live_scraper: [homes_bg] Discovery: 20 unique URLs from 20 API pages
+2026-04-08 19:24:28,193 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-105m2-sofiya-kv.-boyana/as1678824 "HTTP/1.1 200 OK"
+2026-04-08 19:24:28,409 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2026-04-08_2/118423579o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:29,799 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-98m2-sofiya-kv.-boyana/as1678823 "HTTP/1.1 200 OK"
+2026-04-08 19:24:29,856 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2026-04-08_2/118423557o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:31,184 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-112m2-sofiya-centyr/as1678822 "HTTP/1.1 200 OK"
+2026-04-08 19:24:31,249 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2026-04-08_2/118423544o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:32,551 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/ednostaen-53m2-sofiya-kv.-manastirski-livadi/as1674198 "HTTP/1.1 200 OK"
+2026-04-08 19:24:32,606 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2026-03-06_2/117981438o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:33,916 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-74m2-sofiya-centyr/as1678807 "HTTP/1.1 200 OK"
+2026-04-08 19:24:33,981 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2026-04-08_2/118421154o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:35,280 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-120m2-sofiya-zhk.-ovcha-kupel/as1678805 "HTTP/1.1 200 OK"
+2026-04-08 19:24:35,346 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2026-04-08_2/118421139o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:36,663 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-78m2-sofiya-zhk.-ovcha-kupel/as1678794 "HTTP/1.1 200 OK"
+2026-04-08 19:24:36,744 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2026-04-08_2/118421066o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:38,036 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-95m2-sofiya-zhk.-ovcha-kupel/as1678792 "HTTP/1.1 200 OK"
+2026-04-08 19:24:38,105 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2026-04-08_2/118421058o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:39,405 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-97m2-sofiya-zhk.-levski-v/as1616627 "HTTP/1.1 200 OK"
+2026-04-08 19:24:39,517 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2025-03-12_2/113328382o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:40,829 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-93m2-sofiya-zhk.-nadezhda-2/as1592983 "HTTP/1.1 200 OK"
+2026-04-08 19:24:40,911 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2024-10-14_2/111623703o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:42,238 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-131m2-sofiya-zhk.-nadezhda-4/as1592986 "HTTP/1.1 200 OK"
+2026-04-08 19:24:42,318 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2026-03-26_2/118251707o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:43,620 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-94m2-sofiya-zhk.-nadezhda-4/as1476996 "HTTP/1.1 200 OK"
+2026-04-08 19:24:43,688 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2026-03-26_2/118251712o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:44,984 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-104m2-sofiya-zhk.-nadezhda-4/as1592985 "HTTP/1.1 200 OK"
+2026-04-08 19:24:45,048 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2026-03-26_2/118251695o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:46,351 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/ednostaen-44m2-sofiya-zhk.-ovcha-kupel-1/as1651882 "HTTP/1.1 200 OK"
+2026-04-08 19:24:46,419 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2025-10-02_2/115884201o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:47,731 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-68m2-sofiya-zhk.-mladost-4/as1678775 "HTTP/1.1 200 OK"
+2026-04-08 19:24:47,797 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2026-04-08_1/118420649o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:49,105 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-72m2-sofiya-zhk.-ovcha-kupel/as1654912 "HTTP/1.1 200 OK"
+2026-04-08 19:24:49,168 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2025-10-16_1/116075881o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:50,464 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-90m2-sofiya-zhk.-ovcha-kupel-1/as1673903 "HTTP/1.1 200 OK"
+2026-04-08 19:24:50,526 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2026-03-04_2/117951678o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:51,809 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-79m2-sofiya-kv.-orlandovci/as1670331 "HTTP/1.1 200 OK"
+2026-04-08 19:24:51,882 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2026-02-03_2/117521867o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:53,184 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/chetiristaen-165m2-sofiya-zhk.-iztok/as1247316 "HTTP/1.1 200 OK"
+2026-04-08 19:24:53,256 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2022-05-13_2/83611761o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:54,536 [INFO] httpx: HTTP Request: GET https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-65m2-sofiya-zhk.-suhata-reka/as1668616 "HTTP/1.1 200 OK"
+2026-04-08 19:24:54,603 [INFO] httpx: HTTP Request: GET https://g1.homes.bg/2026-01-27_1/117401826o.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:24:54,614 [INFO] live_scraper: [homes_bg] DONE in 41.6s — discovered=20 fetched=20 parsed=20 photos=20/20
+2026-04-08 19:24:54,624 [INFO] live_scraper: === Starting scrape: imot.bg ===
+2026-04-08 19:24:55,015 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiavi/prodazhbi/grad-sofiya "HTTP/1.1 200 OK"
+2026-04-08 19:24:55,023 [INFO] live_scraper: [imot_bg] grad-sofiya p1: 257 URLs (43 new), total: 43
+2026-04-08 19:24:56,506 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiavi/prodazhbi/grad-sofiya/p-2 "HTTP/1.1 200 OK"
+2026-04-08 19:24:56,510 [INFO] live_scraper: [imot_bg] grad-sofiya p2: 251 URLs (43 new), total: 86
+2026-04-08 19:24:58,022 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiavi/prodazhbi/grad-sofiya/p-3 "HTTP/1.1 200 OK"
+2026-04-08 19:24:58,035 [INFO] live_scraper: [imot_bg] grad-sofiya p3: 259 URLs (42 new), total: 128
+2026-04-08 19:24:59,546 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiavi/prodazhbi/grad-sofiya/p-4 "HTTP/1.1 200 OK"
+2026-04-08 19:24:59,555 [INFO] live_scraper: [imot_bg] grad-sofiya p4: 267 URLs (42 new), total: 170
+2026-04-08 19:25:01,047 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiavi/prodazhbi/grad-sofiya/p-5 "HTTP/1.1 200 OK"
+2026-04-08 19:25:01,048 [INFO] live_scraper: [imot_bg] grad-sofiya p5: 258 URLs (42 new), total: 212
+2026-04-08 19:25:02,530 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiavi/prodazhbi/grad-sofiya/p-6 "HTTP/1.1 200 OK"
+2026-04-08 19:25:02,538 [INFO] live_scraper: [imot_bg] grad-sofiya p6: 253 URLs (42 new), total: 254
+2026-04-08 19:25:03,739 [INFO] live_scraper: [imot_bg] Discovery: 254 unique URLs
+2026-04-08 19:25:05,497 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-8287-zhilishten-kompleks-grad-sofiya-vitosha-ul-georgi-raychev "HTTP/1.1 200 OK"
+2026-04-08 19:25:05,511 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosnb/287//big/8287_BB.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:06,789 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-7252-zhilishtna-sgrada-grad-sofiya-druzhba-2-ul-obikolna "HTTP/1.1 200 OK"
+2026-04-08 19:25:06,808 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosnb/252//big/7252_eQ.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:08,086 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-8658-zhilishten-kompleks-grad-sofiya-vitosha "HTTP/1.1 200 OK"
+2026-04-08 19:25:08,101 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosnb/658//big/8658_9j.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:09,690 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177417006418044-prodava-ednostaen-apartament-grad-sofiya-mladost-1a "HTTP/1.1 200 OK"
+2026-04-08 19:25:09,714 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/044//big/1a177417006418044_Oo.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:11,644 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177563243027522-prodava-dvustaen-apartament-grad-sofiya-vitosha "HTTP/1.1 200 OK"
+2026-04-08 19:25:11,663 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/522//big/1b177563243027522_9u.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:13,251 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177364954991185-prodava-dvustaen-apartament-grad-sofiya-druzhba-2-bul-prof-tsvetan-lazarov "HTTP/1.1 200 OK"
+2026-04-08 19:25:13,276 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/185//big/1b177364954991185_pd.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:14,604 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177462309436925-prodava-dvustaen-apartament-grad-sofiya-malinova-dolina "HTTP/1.1 200 OK"
+2026-04-08 19:25:14,641 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/925//big/1b177462309436925_VM.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:16,213 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177305403653743-prodava-dvustaen-apartament-grad-sofiya-obelya-2 "HTTP/1.1 200 OK"
+2026-04-08 19:25:16,250 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/743//big/1b177305403653743_Oo.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:17,607 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177306582828527-prodava-dvustaen-apartament-grad-sofiya-oborishte "HTTP/1.1 200 OK"
+2026-04-08 19:25:17,638 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/527//big/1b177306582828527_9M.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:18,976 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177557740458975-prodava-dvustaen-apartament-grad-sofiya-suhata-reka "HTTP/1.1 200 OK"
+2026-04-08 19:25:19,000 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/975//big/1b177557740458975_ti.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:20,343 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177314538329445-prodava-dvustaen-apartament-grad-sofiya-tsentar-bul-vasil-levski "HTTP/1.1 200 OK"
+2026-04-08 19:25:20,396 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/445//big/1b177314538329445_2u.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:21,739 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1c173755680246762-prodava-tristaen-apartament-grad-sofiya-dragalevtsi "HTTP/1.1 200 OK"
+2026-04-08 19:25:21,775 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/762//big/1c173755680246762_9a.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:23,117 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1c177027547160167-prodava-tristaen-apartament-grad-sofiya-reduta "HTTP/1.1 200 OK"
+2026-04-08 19:25:23,143 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/167//big/1g177027547160167_MG.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:24,467 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1j177555161711089-prodava-kashta-grad-sofiya-gr-bankya "HTTP/1.1 200 OK"
+2026-04-08 19:25:24,494 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/089//big/1j177555161711089_Tp.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:25,872 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1j177511035751871-prodava-kashta-grad-sofiya-tsentar-bul-al-stamboliyski "HTTP/1.1 200 OK"
+2026-04-08 19:25:25,898 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/871//big/1j177511035751871_V7.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:27,221 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1j170012598853578-prodava-kashta-grad-sofiya-tsentar-bul-al-stamboliyski "HTTP/1.1 200 OK"
+2026-04-08 19:25:27,260 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/578//big/1j170012598853578_IP.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:28,577 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177531834210867-prodava-ednostaen-apartament-grad-sofiya-borovo "HTTP/1.1 200 OK"
+2026-04-08 19:25:28,599 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/867//big/1a177531834210867_GW.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:30,017 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177460461377803-prodava-ednostaen-apartament-grad-sofiya-boyana "HTTP/1.1 200 OK"
+2026-04-08 19:25:30,034 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/803//big/1a177460461377803_BU.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:31,389 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a176959443896121-prodava-ednostaen-apartament-grad-sofiya-boyana "HTTP/1.1 200 OK"
+2026-04-08 19:25:31,425 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/121//big/1a176959443896121_z7.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:32,778 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177454467307400-prodava-ednostaen-apartament-grad-sofiya-vitosha "HTTP/1.1 200 OK"
+2026-04-08 19:25:32,820 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/400//big/1a177454467307400_IP.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:34,134 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a174792279079592-prodava-ednostaen-apartament-grad-sofiya-vitosha "HTTP/1.1 200 OK"
+2026-04-08 19:25:34,181 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/592//big/1a174792279079592_7o.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:35,524 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a176275649444746-prodava-ednostaen-apartament-grad-sofiya-vrabnitsa-2 "HTTP/1.1 200 OK"
+2026-04-08 19:25:35,557 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/746//big/1a176275649444746_E7.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:36,914 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177029349932135-prodava-ednostaen-apartament-grad-sofiya-gorna-banya "HTTP/1.1 200 OK"
+2026-04-08 19:25:36,951 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/135//big/1a177029349932135_97.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:38,306 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a175629954701433-prodava-ednostaen-apartament-grad-sofiya-gorublyane-ul-tsaritsa "HTTP/1.1 200 OK"
+2026-04-08 19:25:38,347 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/433//big/1a175629954701433_Yq.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:39,667 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177375244022786-prodava-ednostaen-apartament-grad-sofiya-dragalevtsi "HTTP/1.1 200 OK"
+2026-04-08 19:25:39,697 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/786//big/1a177375244022786_NE.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:39,698 [INFO] live_scraper: [imot_bg] Progress: 25/25
+2026-04-08 19:25:41,050 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177515752619290-prodava-ednostaen-apartament-grad-sofiya-druzhba-1-ul-kap-dim-spisarevski "HTTP/1.1 200 OK"
+2026-04-08 19:25:41,068 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/290//big/1a177515752619290_ef.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:42,389 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177365270522294-prodava-ednostaen-apartament-grad-sofiya-druzhba-1-ul-tirana "HTTP/1.1 200 OK"
+2026-04-08 19:25:42,406 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/294//big/1a177365270522294_of.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:43,715 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177486512074839-prodava-ednostaen-apartament-grad-sofiya-druzhba-2-ul-obikolna "HTTP/1.1 200 OK"
+2026-04-08 19:25:43,742 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/839//big/1a177486512074839_IO.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:45,060 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177518609149393-prodava-ednostaen-apartament-grad-sofiya-zona-b-19 "HTTP/1.1 200 OK"
+2026-04-08 19:25:45,082 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/393//big/1a177518609149393_ml.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:46,458 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177003254401011-prodava-ednostaen-apartament-grad-sofiya-krasno-selo "HTTP/1.1 200 OK"
+2026-04-08 19:25:46,494 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/011//big/1a177003254401011_4P.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:47,830 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a176518239153492-prodava-ednostaen-apartament-grad-sofiya-krastova-vada-bul-cherni-vrah "HTTP/1.1 200 OK"
+2026-04-08 19:25:47,886 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/492//big/1a176518239153492_Eq.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:49,223 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a173797913746924-prodava-ednostaen-apartament-grad-sofiya-levski "HTTP/1.1 200 OK"
+2026-04-08 19:25:49,246 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/924//big/1a173797913746924_qh.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:50,585 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a175335910662394-prodava-ednostaen-apartament-grad-sofiya-levski-g "HTTP/1.1 200 OK"
+2026-04-08 19:25:50,619 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/394//big/1a175335910662394_dN.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:51,975 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a176916093559927-prodava-ednostaen-apartament-grad-sofiya-levski-g "HTTP/1.1 200 OK"
+2026-04-08 19:25:52,003 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/927//big/1a176916093559927_ik.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:53,363 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a176294551327342-prodava-ednostaen-apartament-grad-sofiya-lozenets "HTTP/1.1 200 OK"
+2026-04-08 19:25:53,400 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/342//big/1a176294551327342_mQ.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:54,762 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a176543947373785-prodava-ednostaen-apartament-grad-sofiya-lyulin-3 "HTTP/1.1 200 OK"
+2026-04-08 19:25:54,780 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/785//big/1a176543947373785_RC.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:56,107 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177487606945518-prodava-ednostaen-apartament-grad-sofiya-lyulin-5 "HTTP/1.1 200 OK"
+2026-04-08 19:25:56,142 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/518//big/1a177487606945518_CL.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:57,466 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177565328983398-prodava-ednostaen-apartament-grad-sofiya-lyulin-6 "HTTP/1.1 200 OK"
+2026-04-08 19:25:57,504 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/398//big/1a177565328983398_7I.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:25:58,851 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177565349174450-prodava-ednostaen-apartament-grad-sofiya-lyulin-6-ul-619 "HTTP/1.1 200 OK"
+2026-04-08 19:25:58,875 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/450//big/1a177565349174450_oH.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:00,202 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177339709231024-prodava-ednostaen-apartament-grad-sofiya-malinova-dolina "HTTP/1.1 200 OK"
+2026-04-08 19:26:00,238 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/024//big/1a177339709231024_gY.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:01,565 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a176943274090032-prodava-ednostaen-apartament-grad-sofiya-malinova-dolina "HTTP/1.1 200 OK"
+2026-04-08 19:26:01,600 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/032//big/1a176943274090032_U4.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:02,977 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a175276168726293-prodava-ednostaen-apartament-grad-sofiya-malinova-dolina "HTTP/1.1 200 OK"
+2026-04-08 19:26:03,013 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/293//big/1a175276168726293_DH.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:04,348 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177555902704177-prodava-ednostaen-apartament-grad-sofiya-malinova-dolina "HTTP/1.1 200 OK"
+2026-04-08 19:26:04,374 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/177//big/1a177555902704177_RD.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:05,650 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-8280-zhilishtna-sgrada-grad-sofiya-s-pancharevo "HTTP/1.1 200 OK"
+2026-04-08 19:26:05,664 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosnb/280//big/8280_pc.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:06,949 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-8309-zhilishtna-sgrada-grad-sofiya-mladost-3 "HTTP/1.1 200 OK"
+2026-04-08 19:26:06,964 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosnb/309//big/8309_Np.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:08,248 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-7236-zhilishtna-sgrada-grad-sofiya-poduyane "HTTP/1.1 200 OK"
+2026-04-08 19:26:08,262 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosnb/236//big/7236_k6.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:09,598 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177091288153403-prodava-ednostaen-apartament-grad-sofiya-malinova-dolina "HTTP/1.1 200 OK"
+2026-04-08 19:26:09,627 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/403//big/1a177091288153403_bc.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:10,959 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a176968534171725-prodava-ednostaen-apartament-grad-sofiya-manastirski-livadi "HTTP/1.1 200 OK"
+2026-04-08 19:26:10,996 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/725//big/1a176968534171725_dg.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:12,347 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177392842857515-prodava-ednostaen-apartament-grad-sofiya-manastirski-livadi-bul-balgariya "HTTP/1.1 200 OK"
+2026-04-08 19:26:12,382 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/515//big/1a177392842857515_Rn.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:13,708 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177003423592199-prodava-ednostaen-apartament-grad-sofiya-mladost-3 "HTTP/1.1 200 OK"
+2026-04-08 19:26:13,732 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/199//big/1a177003423592199_CG.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:13,733 [INFO] live_scraper: [imot_bg] Progress: 50/50
+2026-04-08 19:26:15,071 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177563755045005-prodava-ednostaen-apartament-grad-sofiya-mladost-3 "HTTP/1.1 200 OK"
+2026-04-08 19:26:15,101 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/005//big/1a177563755045005_bb.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:16,484 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a176838920776916-prodava-ednostaen-apartament-grad-sofiya-mladost-4 "HTTP/1.1 200 OK"
+2026-04-08 19:26:16,531 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/916//big/1a176838920776916_3W.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:17,855 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177384237611273-prodava-ednostaen-apartament-grad-sofiya-musagenitsa "HTTP/1.1 200 OK"
+2026-04-08 19:26:17,886 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/273//big/1a177384237611273_qY.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:19,211 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177029020361148-prodava-ednostaen-apartament-grad-sofiya-nadezhda-1 "HTTP/1.1 200 OK"
+2026-04-08 19:26:19,248 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/148//big/1a177029020361148_ts.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:20,619 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177038303737432-prodava-ednostaen-apartament-grad-sofiya-nadezhda-1-ul-vera-ignatieva "HTTP/1.1 200 OK"
+2026-04-08 19:26:20,655 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/432//big/1a177038303737432_Pb.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:21,982 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a176978300922505-prodava-ednostaen-apartament-grad-sofiya-nadezhda-2 "HTTP/1.1 200 OK"
+2026-04-08 19:26:22,006 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/505//big/1a176978300922505_T1.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:23,572 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177133451308929-prodava-ednostaen-apartament-grad-sofiya-nadezhda-2-ul-dobri-chintulov "HTTP/1.1 200 OK"
+2026-04-08 19:26:23,598 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/929//big/1a177133451308929_Ef.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:24,938 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177486792002415-prodava-ednostaen-apartament-grad-sofiya-nadezhda-3 "HTTP/1.1 200 OK"
+2026-04-08 19:26:24,979 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/415//big/1a177486792002415_ra.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:26,558 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177495141251942-prodava-ednostaen-apartament-grad-sofiya-nadezhda-3 "HTTP/1.1 200 OK"
+2026-04-08 19:26:26,590 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/942//big/1a177495141251942_HR.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:28,174 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177270433712230-prodava-ednostaen-apartament-grad-sofiya-obelya-2 "HTTP/1.1 200 OK"
+2026-04-08 19:26:28,209 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/230//big/1a177270433712230_OG.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:29,536 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177451320987867-prodava-ednostaen-apartament-grad-sofiya-ovcha-kupel "HTTP/1.1 200 OK"
+2026-04-08 19:26:29,563 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/867//big/1a177451320987867_Xx.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:30,901 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a176544001384047-prodava-ednostaen-apartament-grad-sofiya-ovcha-kupel "HTTP/1.1 200 OK"
+2026-04-08 19:26:30,941 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/047//big/1a176544001384047_YC.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:32,276 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177243358011300-prodava-ednostaen-apartament-grad-sofiya-ovcha-kupel "HTTP/1.1 200 OK"
+2026-04-08 19:26:32,312 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/300//big/1a177243358011300_7z.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:33,676 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177512260870896-prodava-ednostaen-apartament-grad-sofiya-ovcha-kupel-1 "HTTP/1.1 200 OK"
+2026-04-08 19:26:33,710 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/896//big/1a177512260870896_tZ.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:35,079 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a130892326438323-prodava-ednostaen-apartament-grad-sofiya-ovcha-kupel-1 "HTTP/1.1 200 OK"
+2026-04-08 19:26:35,104 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/323//big/1a130892326438323_HD.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:36,436 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177444560009548-prodava-ednostaen-apartament-grad-sofiya-ovcha-kupel-1 "HTTP/1.1 200 OK"
+2026-04-08 19:26:36,474 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/548//big/1a177444560009548_13.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:37,804 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177314805991623-prodava-ednostaen-apartament-grad-sofiya-ovcha-kupel-2 "HTTP/1.1 200 OK"
+2026-04-08 19:26:37,828 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/623//big/1a177314805991623_7.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:39,187 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177401140569235-prodava-ednostaen-apartament-grad-sofiya-ovcha-kupel-2 "HTTP/1.1 200 OK"
+2026-04-08 19:26:39,207 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/235//big/1a177401140569235_gR.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:40,570 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177377336814032-prodava-ednostaen-apartament-grad-sofiya-reduta-ul-georgi-minchev "HTTP/1.1 200 OK"
+2026-04-08 19:26:40,593 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/032//big/1a177377336814032_QK.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:41,943 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a175336326785289-prodava-ednostaen-apartament-grad-sofiya-simeonovo "HTTP/1.1 200 OK"
+2026-04-08 19:26:41,978 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/289//big/1a175336326785289_wc.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:43,311 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177159223385341-prodava-ednostaen-apartament-grad-sofiya-slatina "HTTP/1.1 200 OK"
+2026-04-08 19:26:43,348 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/341//big/1a177159223385341_kh.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:44,690 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177400181695764-prodava-ednostaen-apartament-grad-sofiya-studentski-grad "HTTP/1.1 200 OK"
+2026-04-08 19:26:44,734 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/764//big/1a177400181695764_3z.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:46,062 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a176407640389210-prodava-ednostaen-apartament-grad-sofiya-studentski-grad "HTTP/1.1 200 OK"
+2026-04-08 19:26:46,098 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/210//big/1a176407640389210_MA.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:47,426 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177520264319676-prodava-ednostaen-apartament-grad-sofiya-studentski-grad "HTTP/1.1 200 OK"
+2026-04-08 19:26:47,452 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/676//big/1a177520264319676_kR.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:48,800 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177462639089611-prodava-ednostaen-apartament-grad-sofiya-studentski-grad "HTTP/1.1 200 OK"
+2026-04-08 19:26:48,958 [INFO] httpx: HTTP Request: GET https://www.imot.bg/images/picturess/nophoto_660x495.svg "HTTP/1.1 200 OK"
+2026-04-08 19:26:48,981 [INFO] live_scraper: [imot_bg] Progress: 75/75
+2026-04-08 19:26:50,344 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177453666277861-prodava-ednostaen-apartament-grad-sofiya-studentski-grad "HTTP/1.1 200 OK"
+2026-04-08 19:26:50,369 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/861//big/1a177453666277861_Gn.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:51,685 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177546204772400-prodava-ednostaen-apartament-grad-sofiya-studentski-grad "HTTP/1.1 200 OK"
+2026-04-08 19:26:51,711 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/400//big/1a177546204772400_KL.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:53,050 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177374046315730-prodava-ednostaen-apartament-grad-sofiya-studentski-grad "HTTP/1.1 200 OK"
+2026-04-08 19:26:53,087 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/730//big/1a177374046315730_ce.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:54,438 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177304944584186-prodava-ednostaen-apartament-grad-sofiya-studentski-grad "HTTP/1.1 200 OK"
+2026-04-08 19:26:54,472 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/186//big/1a177304944584186_bx.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:55,811 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177340855912059-prodava-ednostaen-apartament-grad-sofiya-suhata-reka "HTTP/1.1 200 OK"
+2026-04-08 19:26:55,839 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/059//big/1a177340855912059_ZC.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:57,206 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177512293229434-prodava-ednostaen-apartament-grad-sofiya-tsentar "HTTP/1.1 200 OK"
+2026-04-08 19:26:57,243 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/434//big/1a177512293229434_gN.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:26:58,608 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177427749753494-prodava-ednostaen-apartament-grad-sofiya-tsentar "HTTP/1.1 200 OK"
+2026-04-08 19:26:58,664 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/494//big/1a177427749753494_BT.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:00,000 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177185377876869-prodava-ednostaen-apartament-grad-sofiya-tsentar "HTTP/1.1 200 OK"
+2026-04-08 19:27:00,034 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/869//big/1a177185377876869_QR.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:01,364 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177185411084785-prodava-ednostaen-apartament-grad-sofiya-tsentar "HTTP/1.1 200 OK"
+2026-04-08 19:27:01,389 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/785//big/1a177185411084785_Kc.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:02,749 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177494650753920-prodava-ednostaen-apartament-grad-sofiya-tsentar "HTTP/1.1 200 OK"
+2026-04-08 19:27:02,785 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/920//big/1a177494650753920_Al.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:04,115 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177343335263184-prodava-ednostaen-apartament-grad-sofiya-tsentar "HTTP/1.1 200 OK"
+2026-04-08 19:27:04,150 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/184//big/1a177343335263184_NA.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:05,431 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-6601-zhilishten-kompleks-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:05,452 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosnb/601//big/6601_Co.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:06,734 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-8044-zhilishtna-sgrada-grad-sofiya-dragalevtsi "HTTP/1.1 200 OK"
+2026-04-08 19:27:06,745 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosnb/044//big/8044_7d.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:08,072 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1a177323325443743-prodava-ednostaen-apartament-grad-sofiya-tsentar-ul-graf-ignatiev "HTTP/1.1 200 OK"
+2026-04-08 19:27:08,114 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/743//big/1a177323325443743_AV.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:09,441 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b160820411504161-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:09,475 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/161//big/1b160820411504161_Zn.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:10,797 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176917718949726-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:10,822 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/726//big/1b176917718949726_SI.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:12,168 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b175493158852259-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:12,198 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/259//big/1b175493158852259_g1.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:13,537 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176917770697538-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:13,593 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/538//big/1b176917770697538_sS.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:14,969 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176917750338763-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:15,001 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/763//big/1b176917750338763_HX.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:16,324 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176917792368501-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:16,348 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/501//big/1b176917792368501_8i.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:17,669 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176917809936745-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:17,694 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/745//big/1b176917809936745_ZH.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:19,082 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177373492893463-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:19,108 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/463//big/1b177373492893463_SY.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:20,486 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177373465518894-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:20,523 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/894//big/1b177373465518894_lP.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:21,911 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177306600769023-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:21,935 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/023//big/1b177306600769023_8m.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:23,293 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177228992707437-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:23,320 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/437//big/1b177228992707437_Oc.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:23,321 [INFO] live_scraper: [imot_bg] Progress: 100/100
+2026-04-08 19:27:24,649 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176071830140777-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:24,684 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/777//big/1b176071830140777_zU.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:26,259 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b175188804481802-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:26,293 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/802//big/1b175188804481802_K0.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:27,628 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177201780570090-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:27,685 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/090//big/1b177201780570090_hS.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:29,305 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177554866070373-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:29,329 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/373//big/1b177554866070373_dX.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:30,700 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b175863907694963-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:30,725 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/963//big/1b175863907694963_QZ.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:32,337 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177557396616579-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:32,374 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/579//1b177557396616579_1m.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:33,728 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176168710357863-prodava-dvustaen-apartament-grad-sofiya-banishora "HTTP/1.1 200 OK"
+2026-04-08 19:27:33,764 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/863//big/1b176168710357863_PN.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:35,093 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177028733767783-prodava-dvustaen-apartament-grad-sofiya-belite-brezi "HTTP/1.1 200 OK"
+2026-04-08 19:27:35,133 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/783//big/1b177028733767783_FM.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:36,470 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176961603110288-prodava-dvustaen-apartament-grad-sofiya-belite-brezi "HTTP/1.1 200 OK"
+2026-04-08 19:27:36,501 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/288//big/1b176961603110288_SA.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:37,854 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177496229252567-prodava-dvustaen-apartament-grad-sofiya-borovo-bul-balgariya "HTTP/1.1 200 OK"
+2026-04-08 19:27:37,891 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/567//big/1b177496229252567_he.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:39,235 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177435651240481-prodava-dvustaen-apartament-grad-sofiya-borovo-ul-todor-kableshkov "HTTP/1.1 200 OK"
+2026-04-08 19:27:39,271 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/481//big/1b177435651240481_f1.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:40,600 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177409066980210-prodava-dvustaen-apartament-grad-sofiya-borovo "HTTP/1.1 200 OK"
+2026-04-08 19:27:40,638 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/210//big/1b177409066980210_2E.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:41,974 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177082430826977-prodava-dvustaen-apartament-grad-sofiya-borovo-ul-gen-stefan-toshev "HTTP/1.1 200 OK"
+2026-04-08 19:27:42,015 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/977//big/1b177082430826977_t4.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:43,373 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176942840632117-prodava-dvustaen-apartament-grad-sofiya-borovo "HTTP/1.1 200 OK"
+2026-04-08 19:27:43,408 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/117//big/1b176942840632117_8Y.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:44,754 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176035568722366-prodava-dvustaen-apartament-grad-sofiya-borovo "HTTP/1.1 200 OK"
+2026-04-08 19:27:44,794 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/366//big/1b176035568722366_L.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:46,165 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176883229131160-prodava-dvustaen-apartament-grad-sofiya-borovo "HTTP/1.1 200 OK"
+2026-04-08 19:27:46,186 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/160//big/1b176883229131160_yf.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:47,541 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b173298452157059-prodava-dvustaen-apartament-grad-sofiya-boyana "HTTP/1.1 200 OK"
+2026-04-08 19:27:47,565 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/059//big/1b173298452157059_BQ.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:48,931 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177270595141442-prodava-dvustaen-apartament-grad-sofiya-boyana "HTTP/1.1 200 OK"
+2026-04-08 19:27:48,968 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/442//big/1b177270595141442_vj.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:50,304 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177495829315076-prodava-dvustaen-apartament-grad-sofiya-boyana "HTTP/1.1 200 OK"
+2026-04-08 19:27:50,335 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/076//big/1b177495829315076_Mc.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:51,651 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177106320927495-prodava-dvustaen-apartament-grad-sofiya-boyana "HTTP/1.1 200 OK"
+2026-04-08 19:27:51,680 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/495//big/1b177106320927495_1t.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:53,042 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177124419171530-prodava-dvustaen-apartament-grad-sofiya-boyana "HTTP/1.1 200 OK"
+2026-04-08 19:27:53,075 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/530//big/1b177124419171530_Km.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:54,442 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177500972929977-prodava-dvustaen-apartament-grad-sofiya-boyana "HTTP/1.1 200 OK"
+2026-04-08 19:27:54,494 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/977//big/1b177500972929977_OK.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:55,828 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177106320293820-prodava-dvustaen-apartament-grad-sofiya-boyana "HTTP/1.1 200 OK"
+2026-04-08 19:27:55,868 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/820//big/1b177106320293820_3W.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:57,459 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176294722105923-prodava-dvustaen-apartament-grad-sofiya-boyana-ul-kumata "HTTP/1.1 200 OK"
+2026-04-08 19:27:57,482 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/923//big/1b176294722105923_zT.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:58,836 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177554916115987-prodava-dvustaen-apartament-grad-sofiya-boyana "HTTP/1.1 200 OK"
+2026-04-08 19:27:58,863 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/987//big/1b177554916115987_b3.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:27:58,863 [INFO] live_scraper: [imot_bg] Progress: 125/125
+2026-04-08 19:28:00,214 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177392931468166-prodava-dvustaen-apartament-grad-sofiya-boyana "HTTP/1.1 200 OK"
+2026-04-08 19:28:00,248 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/166//big/1b177392931468166_ep.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:01,629 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176856920982070-prodava-dvustaen-apartament-grad-sofiya-boyana "HTTP/1.1 200 OK"
+2026-04-08 19:28:01,671 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/070//big/1b176856920982070_uA.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:03,002 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176243655661286-prodava-dvustaen-apartament-grad-sofiya-boyana "HTTP/1.1 200 OK"
+2026-04-08 19:28:03,032 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/286//big/1b176243655661286_WW.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:04,319 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-8612-zhilishtna-sgrada-grad-sofiya-obelya-1 "HTTP/1.1 200 OK"
+2026-04-08 19:28:04,331 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosnb/612//big/8612_23.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:05,624 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-7898-zhilishtna-sgrada-grad-sofiya-manastirski-livadi "HTTP/1.1 200 OK"
+2026-04-08 19:28:05,640 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosnb/898//big/7898_dh.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:06,987 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177184082515478-prodava-dvustaen-apartament-grad-sofiya-boyana "HTTP/1.1 200 OK"
+2026-04-08 19:28:07,017 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/478//big/1b177184082515478_PY.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:08,342 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177374019989711-prodava-dvustaen-apartament-grad-sofiya-bakston "HTTP/1.1 200 OK"
+2026-04-08 19:28:08,366 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/711//big/1b177374019989711_IJ.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:09,688 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177522057949459-prodava-dvustaen-apartament-grad-sofiya-bakston "HTTP/1.1 200 OK"
+2026-04-08 19:28:09,724 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/459//1b177522057949459_vb.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:11,057 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177558850063474-prodava-dvustaen-apartament-grad-sofiya-bakston "HTTP/1.1 200 OK"
+2026-04-08 19:28:11,115 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/474//big/1b177558850063474_o7.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:12,489 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177425995571495-prodava-dvustaen-apartament-grad-sofiya-v-z-simeonovo-dragalevtsi "HTTP/1.1 200 OK"
+2026-04-08 19:28:12,520 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/495//big/1b177425995571495_Dm.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:13,887 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177434750136761-prodava-dvustaen-apartament-grad-sofiya-v-z-simeonovo-dragalevtsi "HTTP/1.1 200 OK"
+2026-04-08 19:28:13,911 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/761//big/1b177434750136761_dV.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:15,244 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b174946402863904-prodava-dvustaen-apartament-grad-sofiya-vitosha "HTTP/1.1 200 OK"
+2026-04-08 19:28:15,280 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/904//big/1b174946402863904_ge.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:16,633 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177323278938688-prodava-dvustaen-apartament-grad-sofiya-vitosha "HTTP/1.1 200 OK"
+2026-04-08 19:28:16,662 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/688//big/1b177323278938688_Lj.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:17,976 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177564081640969-prodava-dvustaen-apartament-grad-sofiya-vitosha-ul-georgi-raychev "HTTP/1.1 200 OK"
+2026-04-08 19:28:18,010 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/969//big/1b177564081640969_3c.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:19,366 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177554854498684-prodava-dvustaen-apartament-grad-sofiya-vitosha "HTTP/1.1 200 OK"
+2026-04-08 19:28:19,392 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/684//big/1b177554854498684_z2.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:20,717 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176960652267530-prodava-dvustaen-apartament-grad-sofiya-vitosha "HTTP/1.1 200 OK"
+2026-04-08 19:28:20,747 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/530//big/1b176960652267530_5B.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:22,109 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177432216538378-prodava-dvustaen-apartament-grad-sofiya-vitosha "HTTP/1.1 200 OK"
+2026-04-08 19:28:22,146 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/378//big/1b177432216538378_OD.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:23,506 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177367216209435-prodava-dvustaen-apartament-grad-sofiya-vitosha-bul-simeonovsko-shose "HTTP/1.1 200 OK"
+2026-04-08 19:28:23,558 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/435//big/1b177367216209435_pR.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:24,879 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177367267050378-prodava-dvustaen-apartament-grad-sofiya-vitosha-bul-simeonovsko-shose "HTTP/1.1 200 OK"
+2026-04-08 19:28:24,897 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/378//big/1b177367267050378_qu.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:26,230 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177547011588518-prodava-dvustaen-apartament-grad-sofiya-vitosha "HTTP/1.1 200 OK"
+2026-04-08 19:28:26,266 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/518//big/1b177547011588518_FP.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:27,601 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176830555196852-prodava-dvustaen-apartament-grad-sofiya-vitosha "HTTP/1.1 200 OK"
+2026-04-08 19:28:27,630 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/852//big/1b176830555196852_l.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:28,994 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177461689350068-prodava-dvustaen-apartament-grad-sofiya-vitosha-ul-georgi-raychev "HTTP/1.1 200 OK"
+2026-04-08 19:28:29,018 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/068//big/1b177461689350068_ZZ.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:30,348 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177125446896283-prodava-dvustaen-apartament-grad-sofiya-vitosha "HTTP/1.1 200 OK"
+2026-04-08 19:28:30,372 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/283//big/1b177125446896283_Jc.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:31,699 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176596478627498-prodava-dvustaen-apartament-grad-sofiya-vitosha "HTTP/1.1 200 OK"
+2026-04-08 19:28:31,734 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/498//big/1b176596478627498_iY.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:33,066 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177071495001643-prodava-dvustaen-apartament-grad-sofiya-vitosha "HTTP/1.1 200 OK"
+2026-04-08 19:28:33,096 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/643//big/1b177071495001643_bg.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:33,097 [INFO] live_scraper: [imot_bg] Progress: 150/150
+2026-04-08 19:28:34,479 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176822789868739-prodava-dvustaen-apartament-grad-sofiya-vitosha "HTTP/1.1 200 OK"
+2026-04-08 19:28:34,512 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/739//big/1b176822789868739_rl.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:35,857 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177520340526290-prodava-dvustaen-apartament-grad-sofiya-vitosha-ul-yordan-stubel "HTTP/1.1 200 OK"
+2026-04-08 19:28:35,887 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/290//big/1b177520340526290_Qs.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:37,249 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177563966480604-prodava-dvustaen-apartament-grad-sofiya-vitosha-ul-georgi-raychev "HTTP/1.1 200 OK"
+2026-04-08 19:28:37,302 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/604//big/1b177563966480604_Wr.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:38,649 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176847122020645-prodava-dvustaen-apartament-grad-sofiya-vitosha "HTTP/1.1 200 OK"
+2026-04-08 19:28:38,686 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/645//big/1b176847122020645_p6.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:40,019 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176848326244763-prodava-dvustaen-apartament-grad-sofiya-vitosha-ul-georgi-raychev "HTTP/1.1 200 OK"
+2026-04-08 19:28:40,045 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/763//big/1b176848326244763_5k.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:41,419 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b169741653851225-prodava-dvustaen-apartament-grad-sofiya-vitosha-k-s-perlata "HTTP/1.1 200 OK"
+2026-04-08 19:28:41,441 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/225//big/1b169741653851225_GX.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:42,808 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b169741303077122-prodava-dvustaen-apartament-grad-sofiya-vitosha-k-s-perlata "HTTP/1.1 200 OK"
+2026-04-08 19:28:42,841 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/122//big/1b169741303077122_z3.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:44,168 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176848068257516-prodava-dvustaen-apartament-grad-sofiya-vitosha-ul-georgi-raychev "HTTP/1.1 200 OK"
+2026-04-08 19:28:44,207 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/516//big/1b176848068257516_T.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:45,551 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176830618456018-prodava-dvustaen-apartament-grad-sofiya-vitosha-ul-prof-hr-vakarelski "HTTP/1.1 200 OK"
+2026-04-08 19:28:45,574 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/018//big/1b176830618456018_RG.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:46,978 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176535492247362-prodava-dvustaen-apartament-grad-sofiya-vrabnitsa-1 "HTTP/1.1 200 OK"
+2026-04-08 19:28:47,009 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/362//big/1b176535492247362_6P.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:48,334 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177548163776909-prodava-dvustaen-apartament-grad-sofiya-vrabnitsa-1 "HTTP/1.1 200 OK"
+2026-04-08 19:28:48,370 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/909//big/1b177548163776909_VN.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:49,692 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177374164257680-prodava-dvustaen-apartament-grad-sofiya-vrabnitsa-1 "HTTP/1.1 200 OK"
+2026-04-08 19:28:49,715 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/680//big/1b177374164257680_On.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:51,044 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176226875539078-prodava-dvustaen-apartament-grad-sofiya-vrabnitsa-2-bul-lomsko-shose "HTTP/1.1 200 OK"
+2026-04-08 19:28:51,084 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/078//big/1b176226875539078_k.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:52,430 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177555326890017-prodava-dvustaen-apartament-grad-sofiya-vrabnitsa-2 "HTTP/1.1 200 OK"
+2026-04-08 19:28:52,454 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/017//big/1b177555326890017_rJ.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:53,803 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177220801786206-prodava-dvustaen-apartament-grad-sofiya-vrabnitsa-2 "HTTP/1.1 200 OK"
+2026-04-08 19:28:53,848 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/206//big/1b177220801786206_eg.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:55,172 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176581910490984-prodava-dvustaen-apartament-grad-sofiya-vrabnitsa-2-bul-lomsko-shose "HTTP/1.1 200 OK"
+2026-04-08 19:28:55,210 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/984//big/1b176581910490984_el.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:56,561 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177244561584280-prodava-dvustaen-apartament-grad-sofiya-vrabnitsa-2 "HTTP/1.1 200 OK"
+2026-04-08 19:28:56,584 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/280//big/1b177244561584280_lp.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:57,959 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b175698748642938-prodava-dvustaen-apartament-grad-sofiya-vrabnitsa-2-bul-lomsko-shose "HTTP/1.1 200 OK"
+2026-04-08 19:28:57,987 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/938//big/1b175698748642938_nD.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:28:59,330 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177366488404052-prodava-dvustaen-apartament-grad-sofiya-vrabnitsa-2-ul-trichko-velev "HTTP/1.1 200 OK"
+2026-04-08 19:28:59,357 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/052//big/1b177366488404052_tm.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:00,676 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176917651722414-prodava-dvustaen-apartament-grad-sofiya-geo-milev "HTTP/1.1 200 OK"
+2026-04-08 19:29:00,711 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/414//big/1b176917651722414_Kq.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:02,003 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-8414-zhilishten-kompleks-grad-sofiya-manastirski-livadi-bul-balgariya "HTTP/1.1 200 OK"
+2026-04-08 19:29:02,016 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosnb/414//big/8414_8h.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:03,294 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-7234-zhilishtna-sgrada-grad-sofiya-tsentar "HTTP/1.1 200 OK"
+2026-04-08 19:29:03,312 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosnb/234//big/7234_97.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:04,900 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177161084537010-prodava-dvustaen-apartament-grad-sofiya-geo-milev "HTTP/1.1 200 OK"
+2026-04-08 19:29:04,934 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/010//big/1b177161084537010_dR.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:06,243 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177209868817337-prodava-dvustaen-apartament-grad-sofiya-geo-milev-ul-geo-milev "HTTP/1.1 200 OK"
+2026-04-08 19:29:06,297 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/337//big/1b177209868817337_6q.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:07,630 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177306681242311-prodava-dvustaen-apartament-grad-sofiya-geo-milev-ul-kosta-lulchev "HTTP/1.1 200 OK"
+2026-04-08 19:29:07,654 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/311//big/1b177306681242311_Nx.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:07,654 [INFO] live_scraper: [imot_bg] Progress: 175/175
+2026-04-08 19:29:09,004 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b175672882312648-prodava-dvustaen-apartament-grad-sofiya-geo-milev "HTTP/1.1 200 OK"
+2026-04-08 19:29:09,028 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/648//big/1b175672882312648_PN.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:10,384 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177546009628097-prodava-dvustaen-apartament-grad-sofiya-gorna-banya "HTTP/1.1 200 OK"
+2026-04-08 19:29:10,422 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/097//big/1b177546009628097_iM.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:11,813 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b175629991399544-prodava-dvustaen-apartament-grad-sofiya-gorublyane-ul-tsaritsa "HTTP/1.1 200 OK"
+2026-04-08 19:29:11,850 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/544//big/1b175629991399544_7p.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:13,180 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b175457927975847-prodava-dvustaen-apartament-grad-sofiya-gorublyane "HTTP/1.1 200 OK"
+2026-04-08 19:29:13,204 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/847//big/1b175457927975847_Ve.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:14,604 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b175630044435505-prodava-dvustaen-apartament-grad-sofiya-gorublyane-ul-tsaritsa "HTTP/1.1 200 OK"
+2026-04-08 19:29:14,628 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/505//big/1b175630044435505_aF.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:16,004 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177314555470140-prodava-dvustaen-apartament-grad-sofiya-gotse-delchev "HTTP/1.1 200 OK"
+2026-04-08 19:29:16,028 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/140//big/1b177314555470140_zs.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:17,378 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177563605101482-prodava-dvustaen-apartament-grad-sofiya-gotse-delchev "HTTP/1.1 200 OK"
+2026-04-08 19:29:17,413 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/482//big/1b177563605101482_CK.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:18,756 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177390832839334-prodava-dvustaen-apartament-grad-sofiya-gotse-delchev "HTTP/1.1 200 OK"
+2026-04-08 19:29:18,778 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/334//big/1b177390832839334_sJ.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:20,108 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177442298534290-prodava-dvustaen-apartament-grad-sofiya-gotse-delchev-ul-rikkardo-vakkarini "HTTP/1.1 200 OK"
+2026-04-08 19:29:20,171 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/290//big/1b177442298534290_Or.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:21,520 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177337260148406-prodava-dvustaen-apartament-grad-sofiya-dianabad "HTTP/1.1 200 OK"
+2026-04-08 19:29:21,540 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/406//big/1b177337260148406_x6.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:22,884 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177252941844689-prodava-dvustaen-apartament-grad-sofiya-dianabad-ul-buenos-ayres "HTTP/1.1 200 OK"
+2026-04-08 19:29:22,910 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/689//big/1b177252941844689_5u.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:24,285 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177490011909410-prodava-dvustaen-apartament-grad-sofiya-dianabad-ul-buenos-ayres "HTTP/1.1 200 OK"
+2026-04-08 19:29:24,303 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/410//big/1b177490011909410_w.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:25,670 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176830640087516-prodava-dvustaen-apartament-grad-sofiya-dianabad "HTTP/1.1 200 OK"
+2026-04-08 19:29:25,691 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/516//big/1b176830640087516_Fx.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:27,071 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176823189081554-prodava-dvustaen-apartament-grad-sofiya-dianabad "HTTP/1.1 200 OK"
+2026-04-08 19:29:27,096 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/554//big/1b176823189081554_Oz.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:28,450 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177495933652825-prodava-dvustaen-apartament-grad-sofiya-doktorski-pametnik "HTTP/1.1 200 OK"
+2026-04-08 19:29:28,473 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/825//big/1b177495933652825_Si.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:29,845 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176821088500371-prodava-dvustaen-apartament-grad-sofiya-doktorski-pametnik "HTTP/1.1 200 OK"
+2026-04-08 19:29:29,865 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/371//big/1b176821088500371_aE.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:31,454 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177421202741730-prodava-dvustaen-apartament-grad-sofiya-dragalevtsi-ul-okolovrasten-pat "HTTP/1.1 200 OK"
+2026-04-08 19:29:31,489 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/730//big/1b177421202741730_iA.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:32,816 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b174134741149832-prodava-dvustaen-apartament-grad-sofiya-dragalevtsi "HTTP/1.1 200 OK"
+2026-04-08 19:29:32,841 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/832//big/1b174134741149832_Vq.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:34,208 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176976895657024-prodava-dvustaen-apartament-grad-sofiya-dragalevtsi "HTTP/1.1 200 OK"
+2026-04-08 19:29:34,256 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/024//big/1b176976895657024_kW.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:35,632 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b173131920245975-prodava-dvustaen-apartament-grad-sofiya-dragalevtsi "HTTP/1.1 200 OK"
+2026-04-08 19:29:35,653 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/975//big/1b173131920245975_eW.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:37,021 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177365289952783-prodava-dvustaen-apartament-grad-sofiya-druzhba-1-ul-tirana "HTTP/1.1 200 OK"
+2026-04-08 19:29:37,043 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/783//big/1b177365289952783_x4.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:38,396 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177462074016692-prodava-dvustaen-apartament-grad-sofiya-druzhba-1 "HTTP/1.1 200 OK"
+2026-04-08 19:29:38,433 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/692//big/1b177462074016692_6G.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:39,773 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177133609118864-prodava-dvustaen-apartament-grad-sofiya-druzhba-1 "HTTP/1.1 200 OK"
+2026-04-08 19:29:39,793 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/864//big/1b177133609118864_6D.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:41,140 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176060282963933-prodava-dvustaen-apartament-grad-sofiya-druzhba-1 "HTTP/1.1 200 OK"
+2026-04-08 19:29:41,161 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/933//big/1b176060282963933_Pf.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:42,493 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177133967926126-prodava-dvustaen-apartament-grad-sofiya-druzhba-1 "HTTP/1.1 200 OK"
+2026-04-08 19:29:42,519 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/126//big/1b177133967926126_VI.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:42,519 [INFO] live_scraper: [imot_bg] Progress: 200/200
+2026-04-08 19:29:43,833 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177556307647011-prodava-dvustaen-apartament-grad-sofiya-druzhba-1 "HTTP/1.1 200 OK"
+2026-04-08 19:29:43,868 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/011//big/1b177556307647011_Cv.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:45,196 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177382930878430-prodava-dvustaen-apartament-grad-sofiya-druzhba-1 "HTTP/1.1 200 OK"
+2026-04-08 19:29:45,225 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/430//big/1b177382930878430_Eo.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:46,568 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177133789292194-prodava-dvustaen-apartament-grad-sofiya-druzhba-1 "HTTP/1.1 200 OK"
+2026-04-08 19:29:46,607 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/194//big/1b177133789292194_5m.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:47,920 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177374059230353-prodava-dvustaen-apartament-grad-sofiya-druzhba-1 "HTTP/1.1 200 OK"
+2026-04-08 19:29:47,957 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/353//big/1b177374059230353_1x.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:49,315 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177530467489021-prodava-dvustaen-apartament-grad-sofiya-druzhba-1 "HTTP/1.1 200 OK"
+2026-04-08 19:29:49,343 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/021//big/1b177530467489021_lU.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:50,672 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b175769862694870-prodava-dvustaen-apartament-grad-sofiya-druzhba-1 "HTTP/1.1 200 OK"
+2026-04-08 19:29:50,695 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/870//big/1b175769862694870_er.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:52,043 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176441822758472-prodava-dvustaen-apartament-grad-sofiya-druzhba-2 "HTTP/1.1 200 OK"
+2026-04-08 19:29:52,080 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/472//big/1b176441822758472_HC.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:53,424 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b175921718252232-prodava-dvustaen-apartament-grad-sofiya-druzhba-2 "HTTP/1.1 200 OK"
+2026-04-08 19:29:53,441 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/232//big/1b175921718252232_sE.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:55,042 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177460322398860-prodava-dvustaen-apartament-grad-sofiya-druzhba-2-ul-dimitar-peshev "HTTP/1.1 200 OK"
+2026-04-08 19:29:55,063 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/860//big/1b177460322398860_CX.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:56,649 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177548024381851-prodava-dvustaen-apartament-grad-sofiya-druzhba-2 "HTTP/1.1 200 OK"
+2026-04-08 19:29:56,671 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/851//big/1b177548024381851_4f.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:58,008 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177271943079320-prodava-dvustaen-apartament-grad-sofiya-druzhba-2 "HTTP/1.1 200 OK"
+2026-04-08 19:29:58,027 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/320//big/1b177271943079320_GR.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:29:59,382 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177512296918706-prodava-dvustaen-apartament-grad-sofiya-druzhba-2-ul-obikolna "HTTP/1.1 200 OK"
+2026-04-08 19:29:59,407 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/706//big/1b177512296918706_KU.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:00,686 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-8239-zhilishten-kompleks-grad-sofiya-vitosha-ul-georgi-raychev "HTTP/1.1 200 OK"
+2026-04-08 19:30:00,698 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosnb/239//big/8239_o3.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:02,011 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-7351-zhilishtna-sgrada-grad-sofiya-zona-b-5-ul-odrin "HTTP/1.1 200 OK"
+2026-04-08 19:30:02,018 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosnb/351//big/7351_pP.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:03,384 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177450856920421-prodava-dvustaen-apartament-grad-sofiya-druzhba-2 "HTTP/1.1 200 OK"
+2026-04-08 19:30:03,423 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/421//big/1b177450856920421_8g.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:04,921 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177495300809303-prodava-dvustaen-apartament-grad-sofiya-druzhba-2 "HTTP/1.1 200 OK"
+2026-04-08 19:30:04,955 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/303//big/1b177495300809303_Ji.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:06,305 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177520461808906-prodava-dvustaen-apartament-grad-sofiya-druzhba-2 "HTTP/1.1 200 OK"
+2026-04-08 19:30:06,329 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/906//big/1b177520461808906_XH.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:07,649 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177435185230496-prodava-dvustaen-apartament-grad-sofiya-druzhba-2-ul-obikolna "HTTP/1.1 200 OK"
+2026-04-08 19:30:07,673 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/496//big/1b177435185230496_1c.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:09,047 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177340470354325-prodava-dvustaen-apartament-grad-sofiya-druzhba-2 "HTTP/1.1 200 OK"
+2026-04-08 19:30:09,080 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/325//big/1b177340470354325_qd.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:10,406 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177005381768671-prodava-dvustaen-apartament-grad-sofiya-druzhba-2 "HTTP/1.1 200 OK"
+2026-04-08 19:30:10,428 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/671//big/1b177005381768671_kG.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:12,118 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177522146508158-prodava-dvustaen-apartament-grad-sofiya-druzhba-2-ul-obikolna "HTTP/1.1 200 OK"
+2026-04-08 19:30:12,139 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/158//big/1b177522146508158_A2.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:13,518 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b161123643909064-prodava-dvustaen-apartament-grad-sofiya-druzhba-2-ul-obikolna "HTTP/1.1 200 OK"
+2026-04-08 19:30:13,537 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/064//big/1b161123643909064_4o.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:14,876 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177547588046918-prodava-dvustaen-apartament-grad-sofiya-darvenitsa-bul-andrey-lyapchev "HTTP/1.1 200 OK"
+2026-04-08 19:30:14,895 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/918//big/1b177547588046918_FV.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:16,241 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b175206041787720-prodava-dvustaen-apartament-grad-sofiya-darvenitsa-bul-andrey-lyapchev "HTTP/1.1 200 OK"
+2026-04-08 19:30:16,262 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/720//big/1b175206041787720_ta.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:17,620 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b174540298803371-prodava-dvustaen-apartament-grad-sofiya-darvenitsa-bul-andrey-lyapchev "HTTP/1.1 200 OK"
+2026-04-08 19:30:17,658 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/371//big/1b174540298803371_lH.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:17,658 [INFO] live_scraper: [imot_bg] Progress: 225/225
+2026-04-08 19:30:19,003 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176285109180861-prodava-dvustaen-apartament-grad-sofiya-darvenitsa "HTTP/1.1 200 OK"
+2026-04-08 19:30:19,037 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/861//big/1b176285109180861_hL.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:20,402 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177492362408761-prodava-dvustaen-apartament-grad-sofiya-darvenitsa "HTTP/1.1 200 OK"
+2026-04-08 19:30:20,431 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/761//big/1b177492362408761_qf.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:21,800 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177487471401582-prodava-dvustaen-apartament-grad-sofiya-darvenitsa "HTTP/1.1 200 OK"
+2026-04-08 19:30:21,820 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/582//big/1b177487471401582_I2.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:23,205 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176122005140196-prodava-dvustaen-apartament-grad-sofiya-darvenitsa "HTTP/1.1 200 OK"
+2026-04-08 19:30:23,225 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/196//big/1b176122005140196_ZQ.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:24,637 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b175881440011661-prodava-dvustaen-apartament-grad-sofiya-zapaden-park-bul-al-stamboliyski "HTTP/1.1 200 OK"
+2026-04-08 19:30:24,673 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/661//big/1b175881440011661_tk.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:26,000 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177454729383933-prodava-dvustaen-apartament-grad-sofiya-zapaden-park "HTTP/1.1 200 OK"
+2026-04-08 19:30:26,023 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/933//big/1b177454729383933_h9.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:27,598 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177547276094845-prodava-dvustaen-apartament-grad-sofiya-zaharna-fabrika-ul-kukush "HTTP/1.1 200 OK"
+2026-04-08 19:30:27,616 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/845//big/1b177547276094845_yA.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:29,240 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176071055909648-prodava-dvustaen-apartament-grad-sofiya-zona-b-19-ul-dimitar-petkov "HTTP/1.1 200 OK"
+2026-04-08 19:30:29,263 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/648//big/1b176071055909648_4B.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:30,606 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177548017863392-prodava-dvustaen-apartament-grad-sofiya-zona-b-19 "HTTP/1.1 200 OK"
+2026-04-08 19:30:30,656 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/392//big/1b177548017863392_Oq.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:32,024 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177271142354902-prodava-dvustaen-apartament-grad-sofiya-zona-b-19 "HTTP/1.1 200 OK"
+2026-04-08 19:30:32,049 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/902//big/1b177271142354902_cM.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:33,464 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176425246979443-prodava-dvustaen-apartament-grad-sofiya-zona-b-19-ul-dimitar-petkov "HTTP/1.1 200 OK"
+2026-04-08 19:30:33,501 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/443//big/1b176425246979443_Lw.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:34,854 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176961220682962-prodava-dvustaen-apartament-grad-sofiya-zona-b-5 "HTTP/1.1 200 OK"
+2026-04-08 19:30:34,880 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/962//big/1b176961220682962_4x.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:36,211 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176856615306323-prodava-dvustaen-apartament-grad-sofiya-zona-b-5 "HTTP/1.1 200 OK"
+2026-04-08 19:30:36,249 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/323//big/1b176856615306323_Nx.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:37,605 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176909463699703-prodava-dvustaen-apartament-grad-sofiya-zona-b-5 "HTTP/1.1 200 OK"
+2026-04-08 19:30:37,630 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/703//big/1b176909463699703_fp.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:39,013 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177210117680892-prodava-dvustaen-apartament-grad-sofiya-zona-b-5 "HTTP/1.1 200 OK"
+2026-04-08 19:30:39,035 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/892//big/1b177210117680892_pW.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:40,393 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176961232831432-prodava-dvustaen-apartament-grad-sofiya-zona-b-5 "HTTP/1.1 200 OK"
+2026-04-08 19:30:40,429 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/432//big/1b176961232831432_eC.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:41,818 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b175879263339007-prodava-dvustaen-apartament-grad-sofiya-zona-b-5 "HTTP/1.1 200 OK"
+2026-04-08 19:30:41,846 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/007//big/1b175879263339007_Gp.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:43,202 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176961239635939-prodava-dvustaen-apartament-grad-sofiya-zona-b-5 "HTTP/1.1 200 OK"
+2026-04-08 19:30:43,239 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/939//big/1b176961239635939_dM.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:44,590 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b175334280873317-prodava-dvustaen-apartament-grad-sofiya-zona-b-5 "HTTP/1.1 200 OK"
+2026-04-08 19:30:44,634 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic2.focus.bg/imot/photosimotbg/1/317//big/1b175334280873317_hd.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:45,992 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177392507269463-prodava-dvustaen-apartament-grad-sofiya-zona-b-5 "HTTP/1.1 200 OK"
+2026-04-08 19:30:46,012 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic3.focus.bg/imot/photosimotbg/1/463//big/1b177392507269463_XG.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:47,374 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177512342001623-prodava-dvustaen-apartament-grad-sofiya-zona-b-5-bul-al-stamboliyski "HTTP/1.1 200 OK"
+2026-04-08 19:30:47,411 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/623//big/1b177512342001623_Vw.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:48,736 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177511862119446-prodava-dvustaen-apartament-grad-sofiya-zona-b-5-3 "HTTP/1.1 200 OK"
+2026-04-08 19:30:48,763 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/446//big/1b177511862119446_4w.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:50,080 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b177556226361352-prodava-dvustaen-apartament-grad-sofiya-ivan-vazov "HTTP/1.1 200 OK"
+2026-04-08 19:30:50,098 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic4.focus.bg/imot/photosimotbg/1/352//big/1b177556226361352_Kr.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:51,465 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b176915718194679-prodava-dvustaen-apartament-grad-sofiya-iztok "HTTP/1.1 200 OK"
+2026-04-08 19:30:51,498 [WARNING] bgrealestate.services.media: Image download failed for //imotstatic1.focus.bg/imot/photosimotbg/1/679//big/1b176915718194679_GT.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:52,816 [INFO] httpx: HTTP Request: GET https://www.imot.bg/obiava-1b175430318827806-prodava-dvustaen-apartament-grad-sofiya-iztok "HTTP/1.1 200 OK"
+2026-04-08 19:30:52,840 [WARNING] bgrealestate.services.media: Image download failed for //cdn3.focus.bg/imot/photosimotbg/1/806//big/1b175430318827806_n5.jpg: Request URL is missing an 'http://' or 'https://' protocol.
+2026-04-08 19:30:52,841 [INFO] live_scraper: [imot_bg] DONE in 358.2s — discovered=254 fetched=250 parsed=250 photos=250/1
+2026-04-08 19:32:05,276 [INFO] live_scraper: === Starting scrape: alo.bg ===
+2026-04-08 19:32:05,390 [INFO] httpx: HTTP Request: GET https://www.alo.bg/obiavi/imoti-prodajbi/ "HTTP/1.1 200 OK"
+2026-04-08 19:32:05,426 [INFO] live_scraper: [alo_bg]  p1: 0 new URLs, total: 0
+2026-04-08 19:32:05,485 [INFO] httpx: HTTP Request: GET https://www.alo.bg/obiavi/imoti-naemi/ "HTTP/1.1 200 OK"
+2026-04-08 19:32:05,491 [INFO] live_scraper: [alo_bg]  p1: 0 new URLs, total: 0
+2026-04-08 19:32:05,492 [INFO] live_scraper: [alo_bg] Discovery: 0 URLs from 2 pages
+2026-04-08 19:32:05,493 [INFO] live_scraper: [alo_bg] DONE in 0.3s — discovered=0 fetched=0 parsed=0 photos=0/0
+2026-04-08 19:32:05,500 [INFO] live_scraper: === Starting scrape: Address.bg ===
+2026-04-08 19:32:07,409 [INFO] httpx: HTTP Request: GET https://address.bg/sale "HTTP/1.1 200 OK"
+2026-04-08 19:32:07,432 [INFO] live_scraper: [address_bg] sale p1: 0 new URLs, total: 0
+2026-04-08 19:32:08,290 [INFO] httpx: HTTP Request: GET https://address.bg/rent "HTTP/1.1 200 OK"
+2026-04-08 19:32:08,323 [INFO] live_scraper: [address_bg] rent p1: 0 new URLs, total: 0
+2026-04-08 19:32:08,323 [INFO] live_scraper: [address_bg] Discovery: 0 URLs from 2 pages
+2026-04-08 19:32:08,324 [INFO] live_scraper: [address_bg] DONE in 2.8s — discovered=0 fetched=0 parsed=0 photos=0/0
+2026-04-08 19:32:08,332 [INFO] live_scraper: === Starting scrape: BulgarianProperties ===
+2026-04-08 19:32:08,643 [INFO] httpx: HTTP Request: GET https://www.bulgarianproperties.com/bulgaria/properties_for_sale.html "HTTP/1.1 200 OK"
+2026-04-08 19:32:08,771 [INFO] live_scraper: [bulgarianproperties] properties_for_sale.html p1: 0 new URLs, total: 0
+2026-04-08 19:32:08,956 [INFO] httpx: HTTP Request: GET https://www.bulgarianproperties.com/bulgaria/properties_for_rent.html "HTTP/1.1 200 OK"
+2026-04-08 19:32:09,087 [INFO] live_scraper: [bulgarianproperties] properties_for_rent.html p1: 0 new URLs, total: 0
+2026-04-08 19:32:09,256 [INFO] httpx: HTTP Request: GET https://www.bulgarianproperties.com/bulgaria/land_for_sale.html "HTTP/1.1 200 OK"
+2026-04-08 19:32:09,373 [INFO] live_scraper: [bulgarianproperties] land_for_sale.html p1: 1 new URLs, total: 1
+2026-04-08 19:32:10,765 [INFO] httpx: HTTP Request: GET https://www.bulgarianproperties.com/bulgaria/land_for_sale.html?page=2 "HTTP/1.1 200 OK"
+2026-04-08 19:32:10,887 [INFO] live_scraper: [bulgarianproperties] land_for_sale.html p2: 0 new URLs, total: 1
+2026-04-08 19:32:10,887 [INFO] live_scraper: [bulgarianproperties] Discovery: 1 URLs from 4 pages
+2026-04-08 19:32:12,293 [INFO] httpx: HTTP Request: GET https://www.bulgarianproperties.com/Apartments_(various_types)_in_Bulgaria/AD77779BG_Apartments_(various_types)_for_sale_in_Sofia.html "HTTP/1.1 200 OK"
+2026-04-08 19:32:12,776 [INFO] httpx: HTTP Request: GET https://static.bulgarianproperties.com/property-images/big/77779_144.jpg "HTTP/1.1 200 OK"
+2026-04-08 19:32:12,930 [INFO] live_scraper: [bulgarianproperties] DONE in 4.6s — discovered=1 fetched=1 parsed=1 photos=1/1
+2026-04-08 19:32:12,938 [INFO] live_scraper: === Starting scrape: SUPRIMMO ===
+2026-04-08 19:32:13,424 [INFO] httpx: HTTP Request: GET https://www.suprimmo.bg/bulgaria/property-sale/ "HTTP/1.1 404 Not Found"
+2026-04-08 19:32:13,612 [WARNING] live_scraper: HTTP 404 for https://www.suprimmo.bg/bulgaria/property-sale/
+2026-04-08 19:32:13,963 [INFO] httpx: HTTP Request: GET https://www.suprimmo.bg/bulgaria/property-rent/ "HTTP/1.1 404 Not Found"
+2026-04-08 19:32:14,138 [WARNING] live_scraper: HTTP 404 for https://www.suprimmo.bg/bulgaria/property-rent/
+2026-04-08 19:32:14,138 [INFO] live_scraper: [suprimmo] Discovery: 0 URLs from 0 pages
+2026-04-08 19:32:14,139 [INFO] live_scraper: [suprimmo] DONE in 1.2s — discovered=0 fetched=0 parsed=0 photos=0/0
+2026-04-08 19:32:14,146 [INFO] live_scraper: === Starting scrape: LUXIMMO ===
+2026-04-08 19:32:15,054 [INFO] httpx: HTTP Request: GET https://www.luximmo.bg/bulgaria/property-sale/ "HTTP/1.1 404 Not Found"
+2026-04-08 19:32:15,274 [WARNING] live_scraper: HTTP 404 for https://www.luximmo.bg/bulgaria/property-sale/
+2026-04-08 19:32:16,110 [INFO] httpx: HTTP Request: GET https://www.luximmo.bg/bulgaria/property-rent/ "HTTP/1.1 404 Not Found"
+2026-04-08 19:32:16,249 [WARNING] live_scraper: HTTP 404 for https://www.luximmo.bg/bulgaria/property-rent/
+2026-04-08 19:32:16,249 [INFO] live_scraper: [luximmo] Discovery: 0 URLs from 0 pages
+2026-04-08 19:32:16,250 [INFO] live_scraper: [luximmo] DONE in 2.1s — discovered=0 fetched=0 parsed=0 photos=0/0

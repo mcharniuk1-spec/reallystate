@@ -1,0 +1,26 @@
+{
+  "source_name": "imot.bg",
+  "listing_url": "https://www.imot.bg/obiava-1a177185411084785-prodava-ednostaen-apartament-grad-sofiya-tsentar",
+  "external_id": "c4d176603e6f",
+  "title": "Imot.bg",
+  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "�����",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "//imotstatic4.focus.bg/imot/photosimotbg/1/785//big/1a177185411084785_Kc.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:27:01.385167+00:00",
+  "reference_id": "imot.bg:c4d176603e6f"
+}

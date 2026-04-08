@@ -1,7 +1,8 @@
-.PHONY: doctor install dev-up dev-down dev-logs db-init migrate test test-docker golden-path lint typecheck validate docs-refresh run-api run-worker run-scheduler run-frontend export-docs source-report status-report linear-export architecture-doc dashboard-doc connector-fixtures list-sources list-skills ingest-fixture ingest-fixture-dry sync-registry export-source-stats
+.PHONY: doctor install dev-up dev-down dev-logs db-init migrate test test-docker golden-path lint typecheck validate docs-refresh run-api run-worker run-scheduler run-frontend export-docs source-report status-report linear-export architecture-doc dashboard-doc connector-fixtures list-sources list-skills ingest-fixture ingest-fixture-dry sync-registry sync-social-registry export-tier4-data seed-social-fixtures export-source-stats tier4-plan scraping-inventory download-images scrape-bcpea
 
 # Prefer 3.13/3.12 when unset so install/lint match pyproject.toml requires-python >=3.12
-PYTHON ?= $(shell command -v python3.13 2>/dev/null || command -v python3.12 2>/dev/null || command -v python3)
+PYENV_PYTHON := $(shell ls "$$HOME"/.pyenv/versions/3.13*/bin/python3.13 "$$HOME"/.pyenv/versions/3.12*/bin/python3.12 2>/dev/null | sed -n '1p')
+PYTHON ?= $(or $(PYENV_PYTHON),$(shell command -v python3.13 2>/dev/null || command -v python3.12 2>/dev/null || command -v python3))
 PYTHONPATH ?= src
 SOURCE ?= homes_bg
 
@@ -62,6 +63,8 @@ docs-refresh: export-docs
 	@echo "docs refreshed (exports regenerated)"
 
 run-api:
+	@$(PYTHON) -c "import sys; sys.exit(0 if sys.version_info >= (3, 12) else 1)" || \
+		{ echo >&2 "run-api requires Python 3.12+. Current: $$($(PYTHON) -V). Install python3.12+ (e.g. brew install python@3.12) and run: make run-api PYTHON=python3.12"; exit 1; }
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate.dev_api
 
 run-worker:
@@ -73,6 +76,20 @@ run-scheduler:
 run-frontend:
 	@command -v npm >/dev/null 2>&1 || { echo "npm is required for the Next.js UI. Install Node.js or use: make run-frontend-static"; exit 1; }
 	npm install && npm run dev
+
+run-frontend-build:
+	@command -v npm >/dev/null 2>&1 || { echo "npm is required"; exit 1; }
+	npm install && npm run build
+
+run-frontend-prod:
+	@command -v npm >/dev/null 2>&1 || { echo "npm is required"; exit 1; }
+	npm run build && npm start
+
+frontend-typecheck:
+	npx tsc --noEmit
+
+frontend-lint:
+	npx next lint
 
 run-frontend-static:
 	$(PYTHON) -m http.server 3000 --directory web
@@ -100,6 +117,9 @@ architecture-doc:
 dashboard-doc:
 	$(PYTHON) scripts/generate_progress_dashboard.py
 
+investor-deck:
+	$(PYTHON) scripts/generate_investor_presentation.py
+
 connector-fixtures:
 	@mkdir -p tests/fixtures/$(SOURCE)
 	@echo "Created tests/fixtures/$(SOURCE). Add offline HTML/JSON fixtures and expected outputs before implementing the connector."
@@ -119,5 +139,29 @@ ingest-fixture-dry:
 sync-registry:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate sync-database
 
+sync-social-registry:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate sync-social-database
+
+export-tier4-data:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate export-tier4 --out-dir docs/exports
+
+seed-social-fixtures:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate seed-social-fixtures --account-id acct_tier4_seed
+
 export-source-stats:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) scripts/export_source_stats_xlsx.py
+
+tier4-plan:
+	$(PYTHON) scripts/generate_tier4_plan.py
+
+scrape-bcpea:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate scrape-bcpea --pages 5 --perpage 36 --fetch-details --out-dir output/bcpea
+
+scrape-bcpea-dry:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate scrape-bcpea --pages 2 --perpage 12 --dry-run
+
+scraping-inventory:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) scripts/generate_scraping_inventory.py
+
+download-images:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate download-images $(EXTRA_ARGS)

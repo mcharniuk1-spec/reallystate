@@ -1,0 +1,26 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-112m2-sofiya-centyr/as1678822",
+  "external_id": "a45aea2578a0",
+  "title": "Тристаен, 112m² -  Център, София - Апартамент за продажба - ЕКС НВД",
+  "description": "Компания `ЕКС` представя на Вашето внимание тристаен апартамент в Центъра на град София.МЕСТОПОЛОЖЕНИЕ: Намира се в блзиост до метростанция, множество магазини ...",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2026-04-08_2/118423544o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:24:31.192978+00:00",
+  "reference_id": "Homes.bg:a45aea2578a0"
+}

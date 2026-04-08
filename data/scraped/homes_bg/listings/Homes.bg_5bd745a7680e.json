@@ -1,0 +1,26 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/ednostaen-53m2-sofiya-kv.-manastirski-livadi/as1674198",
+  "external_id": "5bd745a7680e",
+  "title": "Едностаен, 53m² - Кв. Манастирски Ливади, София - Апартамент за продажба - АЛДЕС НЕДВИЖИМИ ИМОТИ",
+  "description": "МОДЕРНО, ФУНКЦИОНАЛНО СТУДИО В АВАНГАРДНА, КРАСИВА тухлена сграда с Акт 16 от 2024 година, на етаж 4 от 11, с 2 асансьора, в квартал Манастирски ливади-Изток. Т...",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2026-03-06_2/117981438o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:24:32.554880+00:00",
+  "reference_id": "Homes.bg:5bd745a7680e"
+}

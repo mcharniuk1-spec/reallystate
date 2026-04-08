@@ -1,0 +1,21 @@
+{
+  "data": [
+    {
+      "id": 987654321,
+      "url": "/ad/dvustaen-apartament-varna-CID42-ID987654321.html",
+      "title": "Двустаен апартамент, Варна",
+      "description": "Продава се апартамент.",
+      "params": [{"key": "price", "value": {"value": 78000}}]
+    },
+    {
+      "id": 987654322,
+      "url": "/ad/tristaen-apartament-varna-CID42-ID987654322.html",
+      "title": "Тристаен апартамент, Варна",
+      "description": "Продава се апартамент.",
+      "params": [{"key": "price", "value": {"value": 96000}}]
+    }
+  ],
+  "links": {
+    "next": {"href": "https://www.olx.bg/api/v1/offers?page=2"}
+  }
+}

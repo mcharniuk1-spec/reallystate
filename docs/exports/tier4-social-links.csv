@@ -1,0 +1,22 @@
+source_name,tier,source_family,access_mode,legal_mode,risk_mode,freshness_target,url,url_kind,requires_consent
+Facebook public groups/pages,4,social_public_channel,manual_consent_only,consent_or_manual_only,high,daily,https://www.facebook.com/groups/438018083766467/,primary,True
+Instagram public profiles,4,social_public_channel,manual_consent_only,consent_or_manual_only,high,daily,https://www.instagram.com/bulgarianproperties.bg/,primary,True
+Instagram public profiles,4,social_public_channel,manual_consent_only,consent_or_manual_only,high,daily,https://www.instagram.com/bulgarianpropertiesagency/,related,True
+Instagram public profiles,4,social_public_channel,manual_consent_only,consent_or_manual_only,high,daily,https://www.instagram.com/suprimmo.bg/,related,True
+Instagram public profiles,4,social_public_channel,manual_consent_only,consent_or_manual_only,high,daily,https://www.instagram.com/suprimmo.varna/,related,True
+Instagram public profiles,4,social_public_channel,manual_consent_only,consent_or_manual_only,high,daily,https://www.instagram.com/suprimmo.burgas/,related,True
+Instagram public profiles,4,social_public_channel,manual_consent_only,consent_or_manual_only,high,daily,https://www.instagram.com/luximmo.bg/,related,True
+Instagram public profiles,4,social_public_channel,manual_consent_only,consent_or_manual_only,high,daily,https://www.instagram.com/luximmo.burgas/,related,True
+Instagram public profiles,4,social_public_channel,manual_consent_only,consent_or_manual_only,high,daily,https://www.instagram.com/rentica.bg/,related,True
+Telegram public channels,4,social_public_channel,official_api,official_api_allowed,medium,hourly,https://t.me/rentvarna,primary,False
+Telegram public channels,4,social_public_channel,official_api,official_api_allowed,medium,hourly,https://t.me/varnarents,related,False
+Telegram public channels,4,social_public_channel,official_api,official_api_allowed,medium,hourly,https://t.me/real_estate_bg,related,False
+Telegram public channels,4,social_public_channel,official_api,official_api_allowed,medium,hourly,https://t.me/ads_in_bulgaria,related,False
+Telegram public channels,4,social_public_channel,official_api,official_api_allowed,medium,hourly,https://t.me/bgvarna_en,related,False
+Telegram public channels,4,social_public_channel,official_api,official_api_allowed,medium,hourly,https://t.me/kvartirivarna,related,False
+Viber opt-in communities,4,private_messenger,manual_consent_only,consent_or_manual_only,high,consent_driven,https://invite.viber.com/?g2=AQA%2BxCYrr7Jy1VEh6Ic98YLAlDXOmJicE8MDwi%2F0NU%2FsFss%2FWRC%2B0lL9ufcuh96f,primary,True
+Viber opt-in communities,4,private_messenger,manual_consent_only,consent_or_manual_only,high,consent_driven,https://invite.viber.com/?g2=AQAskgj%2FMFVozlMMEjg%2BuNw%2FEqgzSfOC5b8ZiLELo85k4haoyw9L%2B8j8wGKeBc0t,related,True
+Viber opt-in communities,4,private_messenger,manual_consent_only,consent_or_manual_only,high,consent_driven,https://invite.viber.com/?g2=AQBsW%2FKtZgB8VFEa8o8E52s45eL4D9wCwntSBjZysufmDhq3fLznCnlBiYx6vHYN&lang=en,related,True
+Viber opt-in communities,4,private_messenger,manual_consent_only,consent_or_manual_only,high,consent_driven,https://invite.viber.com/?g2=AQBqiGrgkj4dFFS6JHR01wsv8ntsQAaiglrdOkkM4MlwzwqoJZ%2FQ49cp0nvXLpUr&lang=bg,related,True
+WhatsApp opt-in groups,4,private_messenger,manual_consent_only,official_partner_or_vendor_only,prohibited_without_contract,consent_driven,https://chat.whatsapp.com/HB3Kt48meI08eIaYSuJ1Go?mode=gi_t,primary,True
+X public search/accounts,4,social_public_channel,official_api,official_api_allowed,low,daily,https://x.com/super_imoti,primary,False

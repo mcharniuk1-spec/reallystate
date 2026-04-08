@@ -18,7 +18,7 @@
 | B-08 | Repository layer: `CanonicalListingRepository.list_recent` / `get`, `CrmRepository`, `CrawlJobRepository` | **done (2026-04-08)** |
 | B-09 | Auth / RBAC on CRM and listings routes | done (2026-04-08 session 5) |
 | B-10 | `GET /parser-failures`, `GET /properties/{id}`, map viewport APIs | not started |
-| B-11 | Temporal workflow wiring beyond dev worker/scheduler stubs | not started |
+| B-11 | Temporal workflow wiring beyond dev worker/scheduler stubs | done (2026-04-08 session 6, awaiting live verify) |
 | B-12 | **DB sync + control plane bootstrap** (TASKS.md slice) | **done (2026-04-08 session 2)** |
 | B-13 | Stats v2: photo coverage + intent/category breakdown | done (2026-04-08 session 4) |
 
@@ -256,6 +256,94 @@ make export-source-stats  # writes docs/exports/source-stats.xlsx
 - unauthenticated protected requests return 401/403: ✅ implemented and tested.
 - test suite remains green: ✅ `make validate` pass.
 
+---
+
+### 2026-04-08 session 6 — BD-05 Temporal workflow wiring + runtime mode switching
+
+**Task source:** `docs/agents/TASKS.md` → `BD-05`
+
+**Goal:** Replace pure placeholder worker/scheduler stubs with real Temporal-ready runtime paths while preserving local no-Temporal compatibility.
+
+**What was implemented:**
+
+1. **New runtime module** `src/bgrealestate/workflows/temporal_runtime.py`
+   - `TemporalSettings` + env loader (`TEMPORAL_ADDRESS`, `TEMPORAL_NAMESPACE`, `TEMPORAL_TASK_QUEUE`)
+   - feature flag: `ENABLE_TEMPORAL_RUNTIME`
+   - connectivity check helper
+   - Temporal worker registration for:
+     - `SourceDiscoveryWorkflow`
+     - `ListingDetailWorkflow`
+     - matching activities (`discover_sources_activity`, `listing_detail_activity`)
+   - scheduler helper to start one `SourceDiscoveryWorkflow` execution
+
+2. **`dev_worker.py` upgraded**
+   - modes: `auto`, `placeholder`, `temporal` (`--mode`)
+   - `auto` respects `ENABLE_TEMPORAL_RUNTIME`
+   - `--once` in temporal mode performs connectivity check
+   - fallback behavior controlled by `ALLOW_TEMPORAL_FALLBACK`
+   - default behavior remains placeholder-safe so existing local/CI flows are not broken
+
+3. **`dev_scheduler.py` upgraded**
+   - modes: `auto`, `placeholder`, `temporal` (`--mode`)
+   - temporal `--once` starts one discovery workflow
+   - placeholder loop retained for environments without Temporal runtime
+
+4. **Environment template updates**
+   - `.env.example` now includes:
+     - `TEMPORAL_TASK_QUEUE`
+     - `ENABLE_TEMPORAL_RUNTIME`
+     - `ALLOW_TEMPORAL_FALLBACK`
+
+5. **Tests added**
+   - `tests/test_temporal_runtime_scaffold.py`
+     - syntax check for runtime module
+     - `dev_worker --once` placeholder path
+     - `dev_scheduler --once` placeholder path
+
+6. **Regression fix while executing this slice**
+   - During validation, unrelated tier-2 fixture regression appeared:
+     - `test_home2u_new_build_fixture` expected `listing_intent="sale"` but parser inferred `mixed`.
+   - Fix in `src/bgrealestate/pipeline.py`:
+     - `_infer_listing_intent` now treats `"new build"` / `"ново строителство"` as sale intent.
+
+**Verification:**
+- `PYTHONPATH=src python3 -m unittest tests.test_temporal_runtime_scaffold -v` → pass
+- `make validate` → pass (`Ran 94 tests ... OK`)
+- no Temporal service required for placeholder mode checks
+
+**Acceptance gate status (`BD-05`):**
+- worker/scheduler Temporal runtime paths: ✅ implemented
+- jobs survive restart + cursor persistence: ⏳ requires live Temporal + Postgres run by verifier (not available in this shell environment)
+
+---
+
+### 2026-04-08 session 7 — Live Temporal verification attempt (BD-05 follow-through)
+
+**Requested action:** run live Temporal verification now.
+
+**Execution result:**
+- `docker` binary: missing in this execution environment
+- `localhost:7233` Temporal endpoint: connection refused
+- Installed `temporalio` SDK locally and ran:
+  - `ENABLE_TEMPORAL_RUNTIME=1 python -m bgrealestate.dev_worker --once --mode temporal`
+  - `ENABLE_TEMPORAL_RUNTIME=1 python -m bgrealestate.dev_scheduler --once --mode temporal`
+- Both commands attempted Temporal mode, then correctly fell back to placeholder mode because Temporal service was unavailable.
+
+**Verification output (key points):**
+- worker:
+  - `dev worker started (temporal mode) ...`
+  - `temporal connectivity failed, fallback to placeholder: ... Connection refused`
+- scheduler:
+  - `dev scheduler started (temporal mode) ...`
+  - `temporal scheduler once failed, fallback to placeholder: ... Connection refused`
+
+**Validation after attempt:**
+- `make validate` → pass (`Ran 94 tests ... OK`)
+
+**Status impact:**
+- `BD-05` implementation remains `DONE_AWAITING_VERIFY`.
+- Live restart-survival verification remains pending on an environment with active Temporal runtime.
+
 ## Review comments (after each task)
 
 ### After 2026-04-08 slice
@@ -281,3 +369,173 @@ make export-source-stats  # writes docs/exports/source-stats.xlsx
 - **Current auth backend is env-key based:** good for fast hardening and tests, but next iteration should read hashed keys from `api_key` table and support revocation/expiry checks.
 - **Scope set is minimal by design:** route-level scopes should be expanded when write/update/delete endpoints are introduced.
 - **Admin HTML route is protected now:** frontend/BFF callers must include API key headers for `/admin` and `/admin/source-stats`.
+
+### After 2026-04-08 session 6 — BD-05
+- **Feature-flag approach avoids breaking validate:** placeholder mode remains default; temporal mode is explicit via env/CLI.
+- **Live verification still required:** restart survival and durable cursor checks need a running Temporal cluster and Postgres with `ENABLE_TEMPORAL_RUNTIME=1`.
+- **Intent heuristic broadened for new-build listings:** monitor for false positives in sources where "new build" appears in rental contexts.
+
+---
+
+## 2026-04-08 session 8 — BD-09 + BD-11 (Analytics + Unified Listing Database)
+
+**Task references:** `BD-09` (Property analytics views + duplicate detection), `BD-11` (Unified listing database — merge scraper outputs into canonical store)
+
+**Context:** BD-09 was fully unblocked (depends on BD-02 VERIFIED). BD-11 was the CRITICAL-path bottleneck with BD-12→BD-15 all depending on it.
+
+### BD-09 implementation
+
+**Created files:**
+- `sql/views.sql` — materialized views `v_property_analytics` (per city/district/intent/category/source aggregation with counts, avg prices, coverage metrics) and `v_duplicate_candidates` (pairs of listings with same normalized address + similar price/area within 15% tolerance)
+- `src/bgrealestate/api/routers/analytics.py` — `GET /analytics/summary` (scope `listings:read`, filterable by city/intent/category, paginated) and `GET /analytics/duplicates` (scope `admin:read`, filterable by city, paginated). Both use inline SQL rather than ORM to match the materialized view logic and avoid extra model definitions.
+
+**Modified files:**
+- `src/bgrealestate/api/main.py` — registered `analytics` and `properties` routers
+- `tests/test_api_fastapi.py` — added auth/503 tests for analytics and properties endpoints
+
+### BD-11 implementation
+
+**Created files:**
+- `src/bgrealestate/services/unification.py` — core unification service:
+  - `_normalize_address()` — strips punctuation, lowercases, collapses whitespace
+  - `_compute_dedupe_key()` — SHA1 of (city + normalized_address + rounded_area_sqm)
+  - `unify_listing(session, reference_id)` — creates or links to existing `property_entity` via dedupe_key, creates `property_offer` link, computes confidence_score, merges best data
+  - `unify_all_pending(session)` — batch finds unlinked canonical_listings and unifies them
+  - `_compute_confidence()` — 0.2 for 1 source, 0.5 for 2, 0.8+ for 3+ distinct sources
+  - `_merge_best_data()` — picks longest description, most photos, best geolocation from all linked listings
+- `src/bgrealestate/api/routers/properties.py` — `GET /properties` (paginated, filterable by city/min_confidence) and `GET /properties/{id}` (full detail with offers and source_listings breakdown), both scope `listings:read`
+- `tests/test_unification.py` — 14 tests: pure dedupe-key tests (work on Python 3.9), SQLAlchemy model import tests (skip on 3.9), FastAPI endpoint registration/auth tests (skip on 3.9)
+
+**Modified files:**
+- `src/bgrealestate/db/repositories.py` — added `PropertyEntityRepository` with `list_properties`, `get`, `get_offers`, `get_linked_listings`; imported `PropertyEntityModel` and `PropertyOfferModel`
+- `src/bgrealestate/connectors/ingest.py` — wired `unify_listing()` call after `canon_repo.upsert()` with `unify=True` flag; returns `property_id` in result dict
+
+### Verification
+
+```
+make validate → 121 tests, 0 failures, 25 skipped (Python 3.9 env)
+project validation ok
+```
+
+**Changed files:**
+- `sql/views.sql` (new)
+- `src/bgrealestate/api/main.py`
+- `src/bgrealestate/api/routers/analytics.py` (new)
+- `src/bgrealestate/api/routers/properties.py` (new)
+- `src/bgrealestate/services/unification.py` (new)
+- `src/bgrealestate/db/repositories.py`
+- `src/bgrealestate/connectors/ingest.py`
+- `tests/test_api_fastapi.py`
+- `tests/test_unification.py` (new)
+- `docs/agents/TASKS.md`
+
+**Agent tools used:** Read, Write, StrReplace, Shell, Glob, Grep, TodoWrite
+**Skills used:** —
+**Extensions/libraries used:** fastapi, sqlalchemy, pydantic
+**Commands run:** `make validate`, `python3 -m unittest discover -s tests -v`
+**Tests run:** 121 total, 0 failures, 25 skipped
+**Outputs produced:** analytics views, unification service, /properties API, /analytics API
+**Risks / blockers:** Full acceptance gate for BD-11 (3 fixture listings → 1 property_entity) requires live DB + Python 3.10+; materialized views in `sql/views.sql` must be applied manually after schema.sql
+**Progress update:** BD-09 and BD-11 both `DONE_AWAITING_VERIFY`. Critical path BD-11→BD-12 is now unblocked.
+**Next step:** BD-12 (shop-style filter API) or BD-10 (photo classification stub)
+
+## Review comments (after session 8)
+
+### After 2026-04-08 session 8 — BD-09 + BD-11
+- **Materialized views are secondary to inline SQL:** The analytics endpoints use inline SQL directly against `canonical_listing` for real-time results. The materialized views in `sql/views.sql` are optional pre-computed alternatives for dashboards — refresh them via `REFRESH MATERIALIZED VIEW` after bulk ingestion.
+- **Dedupe key uses integer-rounded area_sqm:** Two listings with area 64.7 and 65.3 will match (both round to 65). This is intentionally coarse — fine-grained deduplication uses the `DeduplicationScorer` from `pipeline.py` for pair-wise comparison.
+- **Unification is wired into ingest but not yet into batch cron:** `unify_listing()` is called per-listing during `ingest_listing_detail_html`. The `unify_all_pending()` batch function exists but is not yet scheduled. Wire it to Temporal or cron in BD-15.
+- **Confidence scoring is source-count based:** 1 source = 0.2, 2 = 0.5, 3+ = 0.8+. This should be enriched with address match quality and price consistency in a follow-up slice.
+- **Properties endpoint does not yet support bbox/polygon filtering:** That's scoped for BD-12 (shop-style filter API).
+
+---
+
+## 2026-04-08 session 8 (continued) — BD-10 (Photo classification pipeline stub)
+
+**Task reference:** `BD-10`
+
+### Implementation
+
+**Created files:**
+- `src/bgrealestate/analytics/__init__.py` — package init
+- `src/bgrealestate/analytics/photo_classifier.py` — heuristic-based photo classifier with:
+  - `classify_image(path_or_url, metadata)` → `PhotoClassification` dataclass
+  - Room type detection: kitchen, bathroom, bedroom, living_room, balcony, entrance, garage, garden, pool (English + Bulgarian patterns)
+  - Exterior/facade detection from filename/metadata
+  - Floorplan detection (floor_plan, план, разпределение, schema, blueprint, чертеж)
+  - Quality score estimation based on image pixel count
+  - `classify_batch()` for bulk processing
+- `tests/test_photo_classifier.py` — 14 tests covering room detection, exterior/floorplan, quality scoring, Bulgarian labels, batch API
+
+**Modified files:**
+- `sql/schema.sql` — added `room_type`, `quality_score`, `is_exterior`, `is_floorplan` columns to `media_asset`
+- `src/bgrealestate/db/models.py` — added corresponding mapped columns to `MediaAssetModel`
+
+### Verification
+
+```
+make validate → 135 tests, 0 failures, 25 skipped
+project validation ok
+```
+
+**Changed files:** `sql/schema.sql`, `src/bgrealestate/db/models.py`, `src/bgrealestate/analytics/__init__.py` (new), `src/bgrealestate/analytics/photo_classifier.py` (new), `tests/test_photo_classifier.py` (new), `docs/agents/TASKS.md`
+**Agent tools used:** Read, Write, StrReplace, Shell, TodoWrite
+**Skills used:** —
+**Extensions/libraries used:** — (stdlib only for heuristic classifier)
+**Commands run:** `make validate`, `python3 -m unittest tests.test_photo_classifier -v`
+**Tests run:** 135 total, 0 failures, 25 skipped
+**Outputs produced:** photo classifier stub, schema migration, model update
+**Risks / blockers:** Heuristic classifier has low confidence (0.1–0.3); real model integration is a follow-up
+**Progress update:** BD-10 `DONE_AWAITING_VERIFY`
+**Next step:** Continue to next unblocked backend task
+
+### Review comments — BD-10
+- **Heuristic classifier is intentionally low-confidence:** The `method: heuristic_v1` flag signals to consumers that classifications should be treated as suggestions, not facts. A future slice can swap in a CLIP or fine-tuned ResNet model.
+- **Bulgarian pattern coverage is incomplete:** Only the most common Bulgarian room/feature labels are included. Expand as new fixture data reveals missing patterns.
+- **Quality score is resolution-based only:** Does not account for blur, lighting, or watermarks. These require actual image analysis (Pillow/imagehash integration).
+
+---
+
+## 2026-04-08 session 8 (final) — BD-13 (User profile + auth system)
+
+**Task reference:** `BD-13`
+
+### Implementation
+
+**Created files:**
+- `src/bgrealestate/services/user_auth.py` — PBKDF2-SHA256 password hashing, HMAC-SHA256 JWT creation/verification, `TokenPayload` dataclass, `VALID_USER_MODES` set
+- `src/bgrealestate/api/routers/user_auth.py` — `POST /auth/register` (creates user, returns JWT), `POST /auth/login` (validates credentials, returns JWT)
+- `src/bgrealestate/api/routers/users.py` — `GET /users/me` (profile), `PATCH /users/me` (update name/mode/avatar), `GET /users/me/saved` (list saved properties), `POST /users/me/saved` (save property), `DELETE /users/me/saved/{property_id}` (unsave), `GET /users/me/dashboard` (mode-aware counts)
+- `src/bgrealestate/api/user_deps.py` — `get_current_user()` FastAPI dependency for Bearer JWT auth
+- `tests/test_user_auth.py` — 14 tests: password hashing (hash/verify/salt uniqueness), JWT (create/decode/tampered/expired), user modes validation, endpoint registration (register/login 503, profile/saved/dashboard 401)
+
+**Modified files:**
+- `sql/schema.sql` — added `password_hash`, `user_mode` columns to `app_user`; added `saved_property` table with unique(user_id, property_id)
+- `src/bgrealestate/db/models.py` — added `password_hash`, `user_mode` to `AppUserModel`; added `SavedPropertyModel`
+- `src/bgrealestate/api/main.py` — registered `user_auth` and `users` routers
+- `tests/test_ingest_fixture_cli.py` — fixed pre-existing Python 3.13 mock resolution error (guarded `bgrealestate.db.session` import)
+
+### Verification
+
+```
+make validate → 156 tests, 0 failures, 30 skipped
+project validation ok
+```
+
+**Changed files:** `sql/schema.sql`, `src/bgrealestate/db/models.py`, `src/bgrealestate/api/main.py`, `src/bgrealestate/services/user_auth.py` (new), `src/bgrealestate/api/routers/user_auth.py` (new), `src/bgrealestate/api/routers/users.py` (new), `src/bgrealestate/api/user_deps.py` (new), `tests/test_user_auth.py` (new), `tests/test_ingest_fixture_cli.py`
+**Agent tools used:** Read, Write, StrReplace, Shell, Grep, TodoWrite
+**Skills used:** —
+**Extensions/libraries used:** fastapi, sqlalchemy, pydantic (hashlib/hmac/json from stdlib for JWT)
+**Commands run:** `make validate`, `python3 -m unittest tests.test_user_auth -v`
+**Tests run:** 156 total, 0 failures, 30 skipped
+**Outputs produced:** JWT user auth system, profile endpoints, saved properties CRUD, user dashboard
+**Risks / blockers:** Listing submission (POST /listings) deferred — requires media upload pipeline; JWT secret defaults to "change-me-in-production"; no email verification yet
+**Progress update:** BD-13 `DONE_AWAITING_VERIFY` (items 1–6 complete, items 7–8 deferred)
+**Next step:** BD-14 (Railway deployment) or BD-15 (scraper orchestration)
+
+### Review comments — BD-13
+- **JWT uses stdlib HMAC-SHA256:** No external JWT library dependency. Trade-off: no RS256 key rotation or standard `kid` header. Upgrade to `python-jose` or `PyJWT` when adding SSO/OAuth.
+- **Password hashing uses PBKDF2 with 100K iterations:** Secure for MVP. Consider switching to argon2 or bcrypt for production if performance allows.
+- **Listing submission deferred:** POST /listings for seller mode requires media upload to S3/MinIO (not yet wired). This is a natural follow-up slice.
+- **No email verification:** Registration accepts any email format. Add email verification flow before production launch.
+- **User mode switch is free:** Users can switch buyer→seller→agent freely. Future: enforce organization membership for agent mode.

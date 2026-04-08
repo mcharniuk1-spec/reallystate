@@ -1,0 +1,26 @@
+{
+  "source_name": "imot.bg",
+  "listing_url": "https://www.imot.bg/obiava-1a177487606945518-prodava-ednostaen-apartament-grad-sofiya-lyulin-5",
+  "external_id": "d64b4f08f4bd",
+  "title": "Imot.bg",
+  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "�����",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "//imotstatic3.focus.bg/imot/photosimotbg/1/518//big/1a177487606945518_CL.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:25:56.136356+00:00",
+  "reference_id": "imot.bg:d64b4f08f4bd"
+}

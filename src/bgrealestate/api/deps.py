@@ -13,6 +13,10 @@ from ..db.session import create_db_engine, create_session_factory
 _engine: Engine | None = None
 
 
+def has_database() -> bool:
+    return bool(os.getenv("DATABASE_URL"))
+
+
 def get_engine() -> Engine:
     """Shared engine for request-scoped sessions (lazy init)."""
     global _engine
@@ -26,6 +30,30 @@ def get_engine() -> Engine:
 
 def get_db(engine: Annotated[Engine, Depends(get_engine)]) -> Generator[Session, None, None]:
     factory = create_session_factory(engine)
+    session = factory()
+    try:
+        yield session
+        session.commit()
+    except HTTPException:
+        session.rollback()
+        raise
+    except Exception:
+        session.rollback()
+        raise
+    finally:
+        session.close()
+
+
+def get_db_optional() -> Generator[Session | None, None, None]:
+    """Return a DB session if DATABASE_URL is set, otherwise yield None."""
+    url = os.getenv("DATABASE_URL")
+    if not url:
+        yield None
+        return
+    global _engine
+    if _engine is None:
+        _engine = create_db_engine(url)
+    factory = create_session_factory(_engine)
     session = factory()
     try:
         yield session

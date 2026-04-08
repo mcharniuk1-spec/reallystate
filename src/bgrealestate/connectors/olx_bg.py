@@ -5,6 +5,7 @@ import re
 from datetime import datetime, timezone
 from hashlib import sha1
 from typing import Any
+from urllib.parse import urljoin
 
 from ..enums import ListingIntent, PropertyCategory
 from ..models import CanonicalListing, ParsedListing, RawCapture, SourceRegistryEntry
@@ -14,6 +15,7 @@ from .protocol import Connector, DiscoveryResult
 
 PHONE_RE = re.compile(r"\+?\d[\d\s\-()]{6,}\d")
 PARSER_VERSION = "olx_api_v1"
+OLX_BASE = "https://www.olx.bg"
 
 
 def _extract_param(params: list[dict], key: str) -> Any:
@@ -200,6 +202,50 @@ def parse_olx_api_response(
     return parsed, canonical
 
 
+def parse_olx_discovery_json(payload: dict[str, Any]) -> tuple[list[dict[str, Any]], dict[str, Any] | None]:
+    entries: list[dict[str, Any]] = []
+    rows = payload.get("data") or payload.get("items") or []
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        url = row.get("url")
+        if isinstance(url, str):
+            full_url = url if url.startswith("http") else urljoin(OLX_BASE, url)
+        else:
+            rid = row.get("id")
+            full_url = f"{OLX_BASE}/ad/{rid}" if rid else ""
+        if not full_url:
+            continue
+        ext_id = str(row.get("id") or sha1(full_url.encode("utf-8")).hexdigest()[:12])
+        preview_price = None
+        params = row.get("params") or []
+        if isinstance(params, list):
+            price_param = _extract_param(params, "price")
+            if isinstance(price_param, dict) and isinstance(price_param.get("value"), (int, float)):
+                preview_price = float(price_param["value"])
+        title = str(row.get("title") or "")
+        desc = str(row.get("description") or "")
+        preview_intent = _infer_intent_from_category(title, desc).value
+        entries.append(
+            {
+                "url": full_url,
+                "external_id": ext_id,
+                "preview_price": preview_price,
+                "preview_intent": preview_intent,
+            }
+        )
+
+    next_cursor: dict[str, Any] | None = None
+    links = payload.get("links") or {}
+    next_link = links.get("next") if isinstance(links, dict) else None
+    if isinstance(next_link, dict):
+        href = str(next_link.get("href") or "")
+        page_match = re.search(r"[?&]page=(\d+)", href)
+        if page_match:
+            next_cursor = {"page": int(page_match.group(1))}
+    return entries, next_cursor
+
+
 class OlxBgConnector(Connector):
     source_name = "OLX.bg"
 
@@ -215,7 +261,14 @@ class OlxBgConnector(Connector):
         return source
 
     def discover_listing_urls(self, *, cursor: dict[str, Any] | None = None) -> DiscoveryResult:
-        return DiscoveryResult(urls=[], next_cursor=cursor, discovered_at=datetime.now(tz=timezone.utc))
+        if self._client is None:
+            return DiscoveryResult(urls=[], next_cursor=cursor, discovered_at=datetime.now(tz=timezone.utc))
+        self._entry()
+        page = (cursor or {}).get("page", 1)
+        resp = self._client.get(f"{OLX_BASE}/api/v1/offers?page={page}")
+        payload = json.loads(resp.text)
+        entries, next_cursor = parse_olx_discovery_json(payload)
+        return DiscoveryResult(urls=[e["url"] for e in entries], next_cursor=next_cursor, discovered_at=datetime.now(tz=timezone.utc))
 
     def fetch_listing_detail(self, *, url: str, fetched_at: datetime) -> RawCapture:
         source = self._entry()

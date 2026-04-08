@@ -1,0 +1,26 @@
+{
+  "source_name": "imot.bg",
+  "listing_url": "https://www.imot.bg/obiava-1a177340855912059-prodava-ednostaen-apartament-grad-sofiya-suhata-reka",
+  "external_id": "2b43a88ccfbb",
+  "title": "Imot.bg",
+  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "�����",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "//imotstatic3.focus.bg/imot/photosimotbg/1/059//big/1a177340855912059_ZC.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:26:55.834928+00:00",
+  "reference_id": "imot.bg:2b43a88ccfbb"
+}

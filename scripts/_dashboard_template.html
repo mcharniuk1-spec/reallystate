@@ -115,6 +115,61 @@
     .backlog-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #f0f1f4; }
     .backlog-id { font-weight: 700; color: var(--accent); min-width: 24px; }
     .backlog-name { flex: 1; }
+
+    /* Process stage pills */
+    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; margin-bottom: 16px; }
+    .process-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 12px; }
+    .process-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-weight: 700; }
+    .process-comment { color: var(--muted); font-size: 12px; margin: 6px 0; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+    .pill { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .2px; }
+    .pill-done { background: var(--green-light); color: var(--green); }
+    .pill-current { background: var(--amber-light); color: #b8860b; }
+    .pill-next { background: var(--blue-light); color: var(--accent); }
+    .pill-blocked { background: var(--red-light); color: var(--red); }
+    .subtask-list { margin: 0; padding-left: 16px; font-size: 12px; }
+    .subtask-list li { margin: 2px 0; }
+    .subtask-done { color: var(--green); }
+    .subtask-current { color: #b8860b; }
+    .subtask-next { color: var(--accent); }
+    .subtask-blocked { color: var(--red); }
+    .all-tasks-wrap { max-height: 620px; overflow: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+
+    /* Scraping quality bars */
+    .quality-bar { display: inline-block; width: 50px; height: 10px; background: #eee; border-radius: 3px; vertical-align: middle; margin-right: 4px; }
+    .quality-bar-fill { height: 100%; border-radius: 3px; }
+    .qb-good { background: var(--green); }
+    .qb-ok { background: var(--amber); }
+    .qb-poor { background: var(--red); }
+    .qb-none { background: #ddd; }
+    .tier-group { margin-bottom: 24px; }
+    .tier-group-header { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: var(--radius); font-weight: 700; font-size: 14px; margin-bottom: 8px; }
+    .tier-1-bg { background: var(--green-light); color: var(--green); }
+    .tier-2-bg { background: var(--blue-light); color: var(--accent); }
+    .tier-3-bg { background: var(--amber-light); color: #b8860b; }
+    .tier-4-bg { background: var(--purple-light); color: var(--purple); }
+    .scrape-table-wrap { max-height: 500px; overflow: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+    .scrape-table-wrap table { margin: 0; }
+    .scrape-table-wrap th { position: sticky; top: 0; z-index: 1; }
+
+    /* Skills chips */
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-chip { display: inline-block; background: var(--blue-light); color: var(--accent); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+
+    /* Agent detail panel */
+    .agent-detail-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.45); z-index: 100; display: none; }
+    .agent-detail-overlay.visible { display: flex; align-items: flex-start; justify-content: center; padding-top: 40px; overflow: auto; }
+    .agent-detail-panel { background: var(--card); border-radius: var(--radius); box-shadow: 0 8px 32px rgba(0,0,0,.18); max-width: 960px; width: 95%; max-height: 90vh; overflow: auto; padding: 24px; position: relative; }
+    .agent-detail-close { position: absolute; top: 12px; right: 16px; cursor: pointer; font-size: 22px; color: var(--muted); background: none; border: none; }
+    .agent-detail-close:hover { color: var(--text); }
+    .agent-detail-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .agent-detail-header .agent-avatar { width: 48px; height: 48px; font-size: 18px; }
+    .detail-section { margin-bottom: 20px; }
+    .detail-section h3 { margin: 0 0 8px; font-size: 15px; }
+    .step-card { background: #f7f8fa; border: 1px solid var(--border); border-radius: 6px; padding: 12px; margin-bottom: 10px; }
+    .step-card .step-title { font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+    .step-card .step-body { font-size: 12px; color: var(--muted); line-height: 1.6; }
+    .step-card .step-meta { font-size: 11px; color: var(--accent); margin-top: 4px; }
   </style>
 </head>
 <body>
@@ -134,10 +189,17 @@
       <div id="roadmap-bar"></div>
     </div>
 
+    <div class="card">
+      <h2>Global Stages & Subtasks</h2>
+      <div id="global-stages"></div>
+    </div>
+
     <!-- Tabs -->
     <div class="tabs" id="tabs">
       <div class="tab active" data-tab="kanban">Kanban Board</div>
+      <div class="tab" data-tab="alltasks">All Tasks</div>
       <div class="tab" data-tab="agents">Agent History</div>
+      <div class="tab" data-tab="scraping">Scraping Inventory</div>
       <div class="tab" data-tab="sources">Source Matrix</div>
       <div class="tab" data-tab="backlog">Dashboard Backlog</div>
       <div class="tab" data-tab="skills">Skills</div>
@@ -149,6 +211,12 @@
     <!-- Tab: Agent History -->
     <div class="tab-panel" id="panel-agents"></div>
 
+    <!-- Tab: All Tasks -->
+    <div class="tab-panel" id="panel-alltasks"></div>
+
+    <!-- Tab: Scraping Inventory -->
+    <div class="tab-panel" id="panel-scraping"></div>
+
     <!-- Tab: Source Matrix -->
     <div class="tab-panel" id="panel-sources"></div>
 
@@ -159,6 +227,14 @@
     <div class="tab-panel" id="panel-skills"></div>
   </div>
 
+  <div class="agent-detail-overlay" id="agent-detail-overlay">
+    <div class="agent-detail-panel" id="agent-detail-panel">
+      <button class="agent-detail-close" id="agent-detail-close">&times;</button>
+      <div id="agent-detail-content"></div>
+    </div>
+  </div>
+
+    <script id="dashboard-data" type="application/json">__DASHBOARD_DATA__</script>
   <script>
     const AGENT_COLORS = {
       debugger: '#de350b',
@@ -167,6 +243,7 @@
       scraper_1: '#00875a',
       scraper_t3: '#ff991f',
       scraper_sm: '#00b8d9',
+      lead_agent: '#172b4d',
     };
     const AGENT_INITIALS = {
       debugger: 'DB',
@@ -175,13 +252,14 @@
       scraper_1: 'S1',
       scraper_t3: 'T3',
       scraper_sm: 'SM',
+      lead_agent: 'LD',
     };
 
     function statusBadge(status) {
       const map = {
         'VERIFIED': 'badge-green', 'COMPLETE': 'badge-green', 'complete': 'badge-green',
-        'IN_PROGRESS': 'badge-blue', 'IN PROGRESS': 'badge-blue',
-        'TODO': 'badge-gray', 'NEXT': 'badge-amber',
+        'IN_PROGRESS': 'badge-amber', 'IN PROGRESS': 'badge-amber', 'DONE_AWAITING_VERIFY': 'badge-amber',
+        'TODO': 'badge-blue', 'NEXT': 'badge-blue',
         'BLOCKED': 'badge-red', 'NOT STARTED': 'badge-gray',
         'PARTIAL': 'badge-amber', 'SHELL ONLY': 'badge-purple', 'GATED': 'badge-red',
       };
@@ -202,13 +280,42 @@
       return 'stage-pending';
     }
 
+    async function loadDashboardData() {
+      // Primary mode: embedded JSON payload (works with file:// and static hosting).
+      const embedded = document.getElementById('dashboard-data');
+      if (embedded && embedded.textContent && embedded.textContent.trim() && embedded.textContent.trim() !== '__DASHBOARD_DATA_SENTINEL__') {
+        try {
+          return JSON.parse(embedded.textContent);
+        } catch (e) {
+          console.warn('Embedded dashboard JSON parse failed, falling back to fetch', e);
+        }
+      }
+
+      // Fallback mode: fetch adjacent exports JSON (works on http(s) hosting).
+      const candidates = [
+        '../exports/progress-dashboard.json',
+        './progress-dashboard.json',
+        '/docs/exports/progress-dashboard.json',
+      ];
+      for (const path of candidates) {
+        try {
+          const res = await fetch(path, { cache: 'no-store' });
+          if (res.ok) {
+            return await res.json();
+          }
+        } catch (_) {
+          // Try next candidate.
+        }
+      }
+      throw new Error('Dashboard data unavailable');
+    }
+
     async function main() {
       let data;
       try {
-        const res = await fetch('../exports/progress-dashboard.json');
-        data = await res.json();
+        data = await loadDashboardData();
       } catch (e) {
-        document.querySelector('.container').innerHTML = '<div class="card"><p>Could not load dashboard data. Run <code>make dashboard-doc</code> to generate.</p></div>';
+        document.querySelector('.container').innerHTML = '<div class="card"><p>Could not load dashboard data. Regenerate with <code>make dashboard-doc</code>. If opening via <code>file://</code>, use the generated embedded build.</p></div>';
         return;
       }
 
@@ -249,6 +356,9 @@
       const pct = rm.total ? Math.round((rm.done / rm.total) * 100) : 0;
       document.getElementById('roadmap-bar').innerHTML = `<div style="margin-top:10px;font-size:12px;color:var(--muted)">Overall: ${rm.done}/${rm.total} steps (${pct}%)</div><div class="progress-bar-wrap"><div class="progress-bar-fill fill-blue" style="width:${pct}%"></div></div>`;
 
+      // Global process stages with colored pills + subtasks
+      renderGlobalStages(data.processes || []);
+
       // Tabs
       document.querySelectorAll('.tab').forEach(tab => {
         tab.addEventListener('click', () => {
@@ -260,10 +370,16 @@
       });
 
       // KANBAN — all agents combined
-      renderKanban(agents);
+      renderKanban(agents, data.processes || []);
 
       // Agent History
       renderAgentHistory(agents);
+
+      // All Tasks
+      renderAllTasks(data.all_tasks || []);
+
+      // Scraping Inventory
+      renderScrapingInventory(src);
 
       // Source Matrix
       renderSourceMatrix(src);
@@ -275,7 +391,7 @@
       renderSkills(data.skills || []);
     }
 
-    function renderKanban(agents) {
+    function renderKanban(agents, processes) {
       const panel = document.getElementById('panel-kanban');
       const cols = { VERIFIED: [], IN_PROGRESS: [], TODO: [], BLOCKED: [] };
 
@@ -288,13 +404,22 @@
       }
 
       const colDefs = [
-        { key: 'TODO', label: 'To Do', color: '#666' },
-        { key: 'IN_PROGRESS', label: 'In Progress', color: 'var(--accent)' },
         { key: 'VERIFIED', label: 'Verified / Done', color: 'var(--green)' },
+        { key: 'IN_PROGRESS', label: 'Current', color: 'var(--amber)' },
+        { key: 'TODO', label: 'Next', color: 'var(--accent)' },
         { key: 'BLOCKED', label: 'Blocked', color: 'var(--red)' },
       ];
 
-      let html = '<div class="kanban-board">';
+      let html = '';
+      if (processes && processes.length) {
+        html += '<div class="card"><h2>Process Progress (% by lane)</h2><div class="kpi-strip">';
+        for (const p of processes) {
+          html += `<div class="kpi"><div class="label">${esc(p.label)}</div><div class="value">${p.progress_percent}%</div><div class="sub">${esc(p.comment || '')}</div><div class="progress-bar-wrap"><div class="progress-bar-fill fill-blue" style="width:${p.progress_percent || 0}%"></div></div></div>`;
+        }
+        html += '</div></div>';
+      }
+
+      html += '<div class="kanban-board">';
       for (const col of colDefs) {
         const items = cols[col.key] || [];
         html += `<div class="kanban-col"><div class="kanban-col-header" style="color:${col.color}">${col.label} <span class="count">${items.length}</span></div>`;
@@ -334,40 +459,304 @@
       panel.innerHTML = html;
     }
 
+    function renderGlobalStages(processes) {
+      const container = document.getElementById('global-stages');
+      if (!processes.length) {
+        container.innerHTML = '<div style="color:var(--muted);font-size:13px;">No process data parsed yet.</div>';
+        return;
+      }
+      let html = '<div class="process-grid">';
+      for (const p of processes) {
+        const pct = p.progress_percent || 0;
+        const done = p.done_tasks || [];
+        const current = p.current_tasks || [];
+        const next = p.next_tasks || [];
+        const blocked = p.blocked_tasks || [];
+        html += `<div class="process-card">
+          <div class="process-title">
+            <span>${esc(p.label)}</span>
+            <span>${pct}%</span>
+          </div>
+          <div class="progress-bar-wrap"><div class="progress-bar-fill fill-blue" style="width:${pct}%"></div></div>
+          <div class="process-comment">${esc(p.comment || '')}</div>
+          <div class="pill-row">
+            <span class="pill pill-done">Done ${p.done_count ?? done.length}</span>
+            <span class="pill pill-current">Current ${p.current_count ?? current.length}</span>
+            <span class="pill pill-next">Next ${p.next_count ?? next.length}</span>
+            ${blocked.length ? `<span class="pill pill-blocked">Blocked ${p.blocked_count ?? blocked.length}</span>` : ''}
+          </div>
+          <ul class="subtask-list">
+            ${done.slice(0, 4).map(t => `<li class="subtask-done">[DONE] ${esc(t.id)}: ${esc(t.title)}</li>`).join('')}
+            ${current.slice(0, 4).map(t => `<li class="subtask-current">[CURRENT] ${esc(t.id)}: ${esc(t.title)}</li>`).join('')}
+            ${next.slice(0, 4).map(t => `<li class="subtask-next">[NEXT] ${esc(t.id)}: ${esc(t.title)}</li>`).join('')}
+            ${blocked.slice(0, 2).map(t => `<li class="subtask-blocked">[BLOCKED] ${esc(t.id)}: ${esc(t.title)}</li>`).join('')}
+          </ul>
+        </div>`;
+      }
+      html += '</div>';
+      container.innerHTML = html;
+    }
+
+    let _allAgents = [];
+
     function renderAgentHistory(agents) {
+      _allAgents = agents;
       const panel = document.getElementById('panel-agents');
       let html = '';
       for (const agent of agents) {
         const color = AGENT_COLORS[agent.key] || '#999';
-        html += `<div class="agent-section"><div class="agent-header"><div class="agent-avatar" style="background:${color}">${AGENT_INITIALS[agent.key]}</div><div><strong>${esc(agent.display_name)}</strong><div class="agent-stats"><span>${agent.counts.verified} verified</span><span>${agent.counts.todo} todo</span><span>${agent.counts.journal_entries} completed work items</span></div></div></div>`;
+        const c = agent.counts || {};
+        html += `<div class="agent-section card">`;
+        html += `<div class="agent-header"><div class="agent-avatar" style="background:${color}">${AGENT_INITIALS[agent.key]}</div><div style="flex:1"><strong>${esc(agent.display_name)}</strong><div style="font-size:12px;color:var(--muted);margin-top:2px">${esc(agent.description || '')}</div><div class="agent-stats"><span>${c.verified || 0} verified</span><span>${c.in_progress || 0} current</span><span>${c.todo || 0} todo</span><span>${c.journal_entries || 0} log entries</span></div></div><button onclick="openAgentDetail('${agent.key}')" style="background:var(--accent);color:#fff;border:none;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px;font-weight:600;">View Details</button></div>`;
 
-        if (agent.completed_work && agent.completed_work.length > 0) {
-          html += '<div class="timeline">';
-          for (const task of agent.completed_work) {
+        // Efficiency bar
+        const eff = c.efficiency_pct || 0;
+        html += `<div style="margin:8px 0 4px 50px;font-size:12px;color:var(--muted)">Efficiency: ${eff}% (${c.verified || 0} done + ${c.in_progress || 0} current of ${c.total || 0} total)</div>`;
+        html += `<div class="progress-bar-wrap" style="margin-left:50px;margin-bottom:12px"><div class="progress-bar-fill fill-blue" style="width:${eff}%"></div></div>`;
+
+        // Skills
+        const skills = agent.skills || [];
+        if (skills.length) {
+          html += '<div style="margin-left:50px;margin-bottom:10px"><div class="skills-grid">';
+          for (const sk of skills) { html += `<span class="skill-chip">${esc(sk)}</span>`; }
+          html += '</div></div>';
+        }
+
+        // Timeline summary (last 5)
+        const work = (agent.completed_work || []).slice(-5);
+        if (work.length > 0) {
+          html += '<div class="timeline" style="margin-left:50px">';
+          for (const task of work) {
             html += `<div class="timeline-item"><div class="tl-title">${esc(task.title)}</div>`;
-            if (task.summary) {
-              html += `<div class="tl-summary">${esc(task.summary)}</div>`;
-            }
+            if (task.summary) html += `<div class="tl-summary">${esc(task.summary)}</div>`;
             html += '</div>';
           }
+          if (agent.completed_work.length > 5) html += `<div style="font-size:12px;color:var(--muted);padding:4px 0">+ ${agent.completed_work.length - 5} more entries (click View Details)</div>`;
           html += '</div>';
         } else {
-          html += '<div style="color:var(--muted);font-size:13px;margin-left:48px;">No completed work entries yet.</div>';
+          html += '<div style="color:var(--muted);font-size:13px;margin-left:50px;">No completed work entries yet.</div>';
         }
 
-        // Next steps from tasks
+        // Next steps
         const t = agent.tasks || {};
-        const nextItems = [...(t.in_progress || []), ...(t.todo || [])];
+        const nextItems = [...(t.in_progress || []).slice(0, 3), ...(t.todo || []).slice(0, 3)];
         if (nextItems.length > 0) {
-          html += '<h3 style="margin-left:48px;">Upcoming Tasks</h3><div style="margin-left:48px;">';
+          html += '<h3 style="margin-left:50px;margin-top:10px">Next Up</h3><div style="margin-left:50px;">';
           for (const task of nextItems) {
-            html += `<div style="padding:4px 0;font-size:13px">${statusBadge(task.status)} <strong>${esc(task.id)}</strong>: ${esc(task.title)}</div>`;
+            html += `<div style="padding:3px 0;font-size:13px">${statusBadge(task.status)} <strong>${esc(task.id)}</strong>: ${esc(task.title)}</div>`;
           }
           html += '</div>';
         }
-
         html += '</div>';
       }
+      panel.innerHTML = html;
+
+      // Wire overlay close
+      document.getElementById('agent-detail-close').addEventListener('click', () => {
+        document.getElementById('agent-detail-overlay').classList.remove('visible');
+      });
+      document.getElementById('agent-detail-overlay').addEventListener('click', (e) => {
+        if (e.target === e.currentTarget) e.currentTarget.classList.remove('visible');
+      });
+    }
+
+    function openAgentDetail(agentKey) {
+      const agent = _allAgents.find(a => a.key === agentKey);
+      if (!agent) return;
+      const color = AGENT_COLORS[agentKey] || '#999';
+      const c = agent.counts || {};
+      const overlay = document.getElementById('agent-detail-overlay');
+      const content = document.getElementById('agent-detail-content');
+
+      let html = '';
+      // Header
+      html += `<div class="agent-detail-header"><div class="agent-avatar" style="background:${color}">${AGENT_INITIALS[agentKey]}</div><div><h2 style="margin:0">${esc(agent.display_name)}</h2><div style="font-size:13px;color:var(--muted);margin-top:4px">${esc(agent.description || '')}</div></div></div>`;
+
+      // KPI strip
+      html += '<div class="kpi-strip" style="margin-bottom:16px">';
+      html += `<div class="kpi"><div class="label">Efficiency</div><div class="value">${c.efficiency_pct || 0}%</div><div class="progress-bar-wrap"><div class="progress-bar-fill fill-blue" style="width:${c.efficiency_pct || 0}%"></div></div></div>`;
+      html += `<div class="kpi"><div class="label">Verified</div><div class="value">${c.verified || 0}</div></div>`;
+      html += `<div class="kpi"><div class="label">Current</div><div class="value">${c.in_progress || 0}</div></div>`;
+      html += `<div class="kpi"><div class="label">TODO</div><div class="value">${c.todo || 0}</div></div>`;
+      html += `<div class="kpi"><div class="label">Blocked</div><div class="value">${c.blocked || 0}</div></div>`;
+      html += `<div class="kpi"><div class="label">Log Entries</div><div class="value">${c.journal_entries || 0}</div></div>`;
+      html += '</div>';
+
+      // Skills section
+      const skills = agent.skills || [];
+      if (skills.length) {
+        html += '<div class="detail-section"><h3>Assigned Skills</h3><div class="skills-grid">';
+        for (const sk of skills) { html += `<span class="skill-chip">${esc(sk)}</span>`; }
+        html += '</div></div>';
+      }
+
+      // Step-by-step execution log
+      const work = agent.completed_work || [];
+      if (work.length) {
+        html += `<div class="detail-section"><h3>Execution Log (${work.length} entries)</h3>`;
+        for (let i = 0; i < work.length; i++) {
+          const w = work[i];
+          html += '<div class="step-card">';
+          html += `<div class="step-title">Step ${i + 1}: ${esc(w.title)}</div>`;
+          if (w.summary) html += `<div class="step-body"><strong>Goal:</strong> ${esc(w.summary)}</div>`;
+          if (w.action) html += `<div class="step-body"><strong>Action:</strong> ${esc(w.action)}</div>`;
+          if (w.changed_files) html += `<div class="step-meta">Files: ${esc(w.changed_files)}</div>`;
+          if (w.commands) html += `<div class="step-meta">Commands: ${esc(w.commands)}</div>`;
+          if (w.status) html += `<div class="step-meta">Result: ${esc(w.status)}</div>`;
+          if (w.review) html += `<div class="step-meta">Review: ${esc(w.review)}</div>`;
+          html += '</div>';
+        }
+        html += '</div>';
+      }
+
+      // Task backlog
+      const t = agent.tasks || {};
+      const allTasks = [...(t.verified || []), ...(t.in_progress || []), ...(t.todo || []), ...(t.blocked || [])];
+      if (allTasks.length) {
+        html += '<div class="detail-section"><h3>Full Task Backlog</h3>';
+        html += '<table><thead><tr><th>Status</th><th>ID</th><th>Title</th></tr></thead><tbody>';
+        for (const task of allTasks) {
+          html += `<tr><td>${statusBadge(task.status)}</td><td><strong>${esc(task.id)}</strong></td><td>${esc(task.title)}</td></tr>`;
+        }
+        html += '</tbody></table></div>';
+      }
+
+      // Source-specific detail for scraper agents
+      if (agentKey.startsWith('scraper')) {
+        const src = DATA.sources || {};
+        const sources = src.sources || [];
+        const tierMap = { scraper_1: [1, 2], scraper_t3: [3], scraper_sm: [4] };
+        const myTiers = tierMap[agentKey] || [];
+        const mySources = sources.filter(s => myTiers.includes(s.tier));
+        if (mySources.length) {
+          html += '<div class="detail-section"><h3>Source Inventory (' + mySources.length + ' sources)</h3>';
+          html += '<table><thead><tr><th>Source</th><th>Legal Mode</th><th>Items</th><th>Photos</th><th>Geo</th><th>Phone</th><th>Area</th></tr></thead><tbody>';
+          for (const s of mySources) {
+            const sc = s.scrape || {};
+            const q = sc.quality || {};
+            html += '<tr>';
+            html += '<td><strong>' + esc(s.name) + '</strong></td>';
+            html += '<td style="font-size:12px">' + esc(s.legal_mode || '') + '</td>';
+            html += '<td style="text-align:center;font-weight:700">' + (sc.items || '—') + '</td>';
+            html += '<td>' + qualityBar(q.photos_pct) + '</td>';
+            html += '<td>' + qualityBar(q.geo_pct) + '</td>';
+            html += '<td>' + qualityBar(q.phone_pct) + '</td>';
+            html += '<td>' + qualityBar(q.area_pct) + '</td>';
+            html += '</tr>';
+          }
+          html += '</tbody></table></div>';
+        }
+      }
+
+      // Page-specific detail for ux_ui_designer
+      if (agentKey === 'ux_ui_designer') {
+        const pages = ['/listings', '/properties/[id]', '/map', '/chat', '/settings', '/admin'];
+        html += '<div class="detail-section"><h3>Frontend Pages</h3>';
+        html += '<table><thead><tr><th>Page</th><th>Status</th></tr></thead><tbody>';
+        for (const p of pages) {
+          html += '<tr><td><strong>' + esc(p) + '</strong></td><td>' + statusBadge('TODO') + '</td></tr>';
+        }
+        html += '</tbody></table></div>';
+      }
+
+      content.innerHTML = html;
+      overlay.classList.add('visible');
+    }
+
+    function renderAllTasks(allTasks) {
+      const panel = document.getElementById('panel-alltasks');
+      if (!allTasks.length) {
+        panel.innerHTML = '<div class="card"><p style="margin:0;color:var(--muted)">No tasks parsed from TASKS.md.</p></div>';
+        return;
+      }
+      let html = '<div class="card"><h2>All Project Tasks</h2><p style="font-size:13px;color:var(--muted)">Complete backlog parsed from TASKS.md, grouped by live status and owner.</p>';
+      html += '<div class="all-tasks-wrap"><table><thead><tr><th>Status</th><th>Task ID</th><th>Owner</th><th>Title</th><th>Details</th></tr></thead><tbody>';
+      for (const t of allTasks) {
+        html += `<tr><td>${statusBadge(t.status)}</td><td><strong>${esc(t.id)}</strong></td><td>${esc(t.owner)}</td><td>${esc(t.title)}</td><td style="font-size:12px;color:var(--muted)">${esc(t.details || '')}</td></tr>`;
+      }
+      html += '</tbody></table></div></div>';
+      panel.innerHTML = html;
+    }
+
+    function qualityBar(pct) {
+      if (pct === undefined || pct === null) return '<span style="color:var(--muted);font-size:11px">—</span>';
+      const cls = pct >= 80 ? 'qb-good' : pct >= 40 ? 'qb-ok' : pct > 0 ? 'qb-poor' : 'qb-none';
+      return `<div class="quality-bar"><div class="quality-bar-fill ${cls}" style="width:${pct}%"></div></div><span style="font-size:11px">${pct}%</span>`;
+    }
+
+    function renderScrapingInventory(src) {
+      const panel = document.getElementById('panel-scraping');
+      const sources = (src.sources || []).slice().sort((a, b) => (a.tier || 9) - (b.tier || 9));
+      if (!sources.length) {
+        panel.innerHTML = '<div class="card"><p style="margin:0;color:var(--muted)">No source registry loaded.</p></div>';
+        return;
+      }
+
+      const tierGroups = {};
+      for (const s of sources) {
+        const t = s.tier || '?';
+        if (!tierGroups[t]) tierGroups[t] = [];
+        tierGroups[t].push(s);
+      }
+
+      const tierMeta = {
+        '1': { label: 'Tier 1 — Core Portals & Agencies', cls: 'tier-1-bg' },
+        '2': { label: 'Tier 2 — Secondary & Expansion', cls: 'tier-2-bg' },
+        '3': { label: 'Tier 3 — Vendor / Partner / Official', cls: 'tier-3-bg' },
+        '4': { label: 'Tier 4 — Social Overlays', cls: 'tier-4-bg' },
+      };
+
+      let totalScraped = 0;
+      let totalWithData = 0;
+      for (const s of sources) {
+        const items = s.scrape?.items || 0;
+        totalScraped += items;
+        if (items > 0) totalWithData++;
+      }
+
+      let html = '<div class="card"><h2>Scraping Inventory by Tier</h2>';
+      html += `<p style="font-size:13px;color:var(--muted);margin-bottom:12px"><strong>${totalScraped}</strong> fixture items across <strong>${totalWithData}</strong> sources with data (of ${sources.length} total registered)</p>`;
+
+      for (const tier of ['1', '2', '3', '4']) {
+        const group = tierGroups[tier];
+        if (!group) continue;
+        const meta = tierMeta[tier] || { label: `Tier ${tier}`, cls: '' };
+        const tierItems = group.reduce((s, g) => s + (g.scrape?.items || 0), 0);
+        const tierWithData = group.filter(g => (g.scrape?.items || 0) > 0).length;
+
+        html += `<div class="tier-group">`;
+        html += `<div class="tier-group-header ${meta.cls}">${meta.label} <span style="font-weight:400;font-size:12px;margin-left:auto">${tierItems} items from ${tierWithData}/${group.length} sources</span></div>`;
+        html += '<div class="scrape-table-wrap"><table><thead><tr>';
+        html += '<th>Source</th><th>Family</th><th>Items</th><th>Fixtures</th>';
+        html += '<th>Price</th><th>Photos</th><th>Avg Photos</th><th>Geo</th><th>Phone</th><th>Area</th><th>Rooms</th><th>Address</th><th>Category</th><th>Types</th>';
+        html += '</tr></thead><tbody>';
+
+        for (const s of group) {
+          const sc = s.scrape || {};
+          const q = sc.quality || {};
+          const items = sc.items || 0;
+          const rowColor = items > 0 ? '' : 'style="opacity:0.5"';
+          html += `<tr ${rowColor}>`;
+          html += `<td><strong>${esc(s.name)}</strong></td>`;
+          html += `<td style="font-size:12px">${esc(s.source_family || '')}</td>`;
+          html += `<td style="font-weight:700;text-align:center">${items || '—'}</td>`;
+          html += `<td style="text-align:center">${s.fixture_cases || '—'}</td>`;
+          html += `<td>${qualityBar(q.price_pct)}</td>`;
+          html += `<td>${qualityBar(q.photos_pct)}</td>`;
+          html += `<td style="text-align:center;font-size:12px">${q.avg_photos || '—'}</td>`;
+          html += `<td>${qualityBar(q.geo_pct)}</td>`;
+          html += `<td>${qualityBar(q.phone_pct)}</td>`;
+          html += `<td>${qualityBar(q.area_pct)}</td>`;
+          html += `<td>${qualityBar(q.rooms_pct)}</td>`;
+          html += `<td>${qualityBar(q.address_pct)}</td>`;
+          html += `<td>${qualityBar(q.category_pct)}</td>`;
+          html += `<td style="font-size:11px">${(q.listing_types || s.listing_types || []).join(', ')}</td>`;
+          html += '</tr>';
+        }
+        html += '</tbody></table></div></div>';
+      }
+
+      html += '</div>';
       panel.innerHTML = html;
     }
 

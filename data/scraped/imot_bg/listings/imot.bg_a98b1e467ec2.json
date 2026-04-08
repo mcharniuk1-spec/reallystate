@@ -1,0 +1,26 @@
+{
+  "source_name": "imot.bg",
+  "listing_url": "https://www.imot.bg/obiava-1b177367267050378-prodava-dvustaen-apartament-grad-sofiya-vitosha-bul-simeonovsko-shose",
+  "external_id": "a98b1e467ec2",
+  "title": "Imot.bg",
+  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "�����",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "//imotstatic4.focus.bg/imot/photosimotbg/1/378//big/1b177367267050378_qu.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:28:24.892549+00:00",
+  "reference_id": "imot.bg:a98b1e467ec2"
+}

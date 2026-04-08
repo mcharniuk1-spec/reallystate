@@ -1,0 +1,54 @@
+{
+  "total_results": 1224,
+  "listings": [
+    {
+      "external_id": "87739",
+      "url": "https://sales.bcpea.org/properties/87739",
+      "property_type": "Къща",
+      "area_sqm": 689.0,
+      "price": 156532.0,
+      "currency": "EUR",
+      "city": "с. Доброглед",
+      "court": "Варна",
+      "bailiff": "Петя Любомирова Иванова",
+      "auction_start_date": "14.04.2026",
+      "auction_end_date": "14.05.2026",
+      "announcement_date": "15.05.2026 09:00",
+      "has_image": true
+    },
+    {
+      "external_id": "87738",
+      "url": "https://sales.bcpea.org/properties/87738",
+      "property_type": "Земеделска земя",
+      "area_sqm": 1000.0,
+      "price": 4400.0,
+      "currency": "EUR",
+      "city": "с. Бегово",
+      "address": "с. Бегово, местност Малък Исак",
+      "court": "Пловдив",
+      "bailiff": "Стефан Димитров Горчев",
+      "auction_start_date": "26.04.2026",
+      "auction_end_date": "26.05.2026",
+      "announcement_date": "27.05.2026 11:00",
+      "has_image": false
+    },
+    {
+      "external_id": "87731",
+      "url": "https://sales.bcpea.org/properties/87731",
+      "property_type": "Тристаен апартамент",
+      "area_sqm": 86.0,
+      "price": 81980.0,
+      "currency": "EUR",
+      "city": "гр. Добрич",
+      "address": "ж.к. \"Строител\" №1, вход \"Д\", етаж 2",
+      "court": "Добрич",
+      "bailiff": "Диляна Георгиева Илиева-Костадинова",
+      "auction_start_date": "14.04.2026",
+      "auction_end_date": "14.05.2026",
+      "announcement_date": "15.05.2026 10:30",
+      "has_image": false
+    }
+  ],
+  "next_page": 2,
+  "last_page": 102
+}

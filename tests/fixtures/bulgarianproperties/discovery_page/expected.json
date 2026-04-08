@@ -1,0 +1,17 @@
+{
+  "entries": [
+    {
+      "url": "https://www.bulgarianproperties.bg/property/BP-44501",
+      "external_id": "BP-44501",
+      "preview_price": 110000.0,
+      "preview_intent": "sale"
+    },
+    {
+      "url": "https://www.bulgarianproperties.bg/property/BP-44502",
+      "external_id": "BP-44502",
+      "preview_price": 99000.0,
+      "preview_intent": "sale"
+    }
+  ],
+  "next_cursor": {"page": 2}
+}

@@ -1,0 +1,17 @@
+{
+  "entries": [
+    {
+      "url": "https://suprimmo.bg/property/SP-66001",
+      "external_id": "SP-66001",
+      "preview_price": 89000.0,
+      "preview_intent": "sale"
+    },
+    {
+      "url": "https://suprimmo.bg/property/SP-66002",
+      "external_id": "SP-66002",
+      "preview_price": 101000.0,
+      "preview_intent": "sale"
+    }
+  ],
+  "next_cursor": {"page": 2}
+}

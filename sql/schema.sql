@@ -336,7 +336,11 @@ create table if not exists media_asset (
     height integer,
     bytes bigint,
     download_status text not null default 'pending',
-    created_at timestamptz not null default now()
+    created_at timestamptz not null default now(),
+    room_type text,
+    quality_score double precision,
+    is_exterior boolean,
+    is_floorplan boolean
 );
 
 create table if not exists property_media (
@@ -439,7 +443,13 @@ create table if not exists listing_media (
     url text not null,
     content_hash text,
     caption text,
-    ordering integer not null default 0
+    ordering integer not null default 0,
+    storage_key text,
+    mime_type text,
+    width integer,
+    height integer,
+    file_size bigint,
+    download_status text not null default 'pending'
 );
 
 create table if not exists listing_event (
@@ -510,9 +520,21 @@ create table if not exists app_user (
     email text not null unique,
     display_name text not null,
     avatar_url text,
+    password_hash text,
+    user_mode text not null default 'buyer',
     status text not null default 'active',
     created_at timestamptz not null default now(),
     last_login_at timestamptz
+);
+
+create table if not exists saved_property (
+    saved_id text primary key,
+    user_id text not null references app_user(user_id),
+    property_id text not null references property_entity(property_id),
+    listing_reference_id text references canonical_listing(reference_id),
+    notes text,
+    created_at timestamptz not null default now(),
+    unique(user_id, property_id)
 );
 
 create table if not exists organization_account (

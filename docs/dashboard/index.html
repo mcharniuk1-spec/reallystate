@@ -115,6 +115,61 @@
     .backlog-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #f0f1f4; }
     .backlog-id { font-weight: 700; color: var(--accent); min-width: 24px; }
     .backlog-name { flex: 1; }
+
+    /* Process stage pills */
+    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px; margin-bottom: 16px; }
+    .process-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 12px; }
+    .process-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-weight: 700; }
+    .process-comment { color: var(--muted); font-size: 12px; margin: 6px 0; }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+    .pill { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .2px; }
+    .pill-done { background: var(--green-light); color: var(--green); }
+    .pill-current { background: var(--amber-light); color: #b8860b; }
+    .pill-next { background: var(--blue-light); color: var(--accent); }
+    .pill-blocked { background: var(--red-light); color: var(--red); }
+    .subtask-list { margin: 0; padding-left: 16px; font-size: 12px; }
+    .subtask-list li { margin: 2px 0; }
+    .subtask-done { color: var(--green); }
+    .subtask-current { color: #b8860b; }
+    .subtask-next { color: var(--accent); }
+    .subtask-blocked { color: var(--red); }
+    .all-tasks-wrap { max-height: 620px; overflow: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+
+    /* Scraping quality bars */
+    .quality-bar { display: inline-block; width: 50px; height: 10px; background: #eee; border-radius: 3px; vertical-align: middle; margin-right: 4px; }
+    .quality-bar-fill { height: 100%; border-radius: 3px; }
+    .qb-good { background: var(--green); }
+    .qb-ok { background: var(--amber); }
+    .qb-poor { background: var(--red); }
+    .qb-none { background: #ddd; }
+    .tier-group { margin-bottom: 24px; }
+    .tier-group-header { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: var(--radius); font-weight: 700; font-size: 14px; margin-bottom: 8px; }
+    .tier-1-bg { background: var(--green-light); color: var(--green); }
+    .tier-2-bg { background: var(--blue-light); color: var(--accent); }
+    .tier-3-bg { background: var(--amber-light); color: #b8860b; }
+    .tier-4-bg { background: var(--purple-light); color: var(--purple); }
+    .scrape-table-wrap { max-height: 500px; overflow: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+    .scrape-table-wrap table { margin: 0; }
+    .scrape-table-wrap th { position: sticky; top: 0; z-index: 1; }
+
+    /* Skills chips */
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-chip { display: inline-block; background: var(--blue-light); color: var(--accent); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+
+    /* Agent detail panel */
+    .agent-detail-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.45); z-index: 100; display: none; }
+    .agent-detail-overlay.visible { display: flex; align-items: flex-start; justify-content: center; padding-top: 40px; overflow: auto; }
+    .agent-detail-panel { background: var(--card); border-radius: var(--radius); box-shadow: 0 8px 32px rgba(0,0,0,.18); max-width: 960px; width: 95%; max-height: 90vh; overflow: auto; padding: 24px; position: relative; }
+    .agent-detail-close { position: absolute; top: 12px; right: 16px; cursor: pointer; font-size: 22px; color: var(--muted); background: none; border: none; }
+    .agent-detail-close:hover { color: var(--text); }
+    .agent-detail-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .agent-detail-header .agent-avatar { width: 48px; height: 48px; font-size: 18px; }
+    .detail-section { margin-bottom: 20px; }
+    .detail-section h3 { margin: 0 0 8px; font-size: 15px; }
+    .step-card { background: #f7f8fa; border: 1px solid var(--border); border-radius: 6px; padding: 12px; margin-bottom: 10px; }
+    .step-card .step-title { font-weight: 700; font-size: 13px; margin-bottom: 4px; }
+    .step-card .step-body { font-size: 12px; color: var(--muted); line-height: 1.6; }
+    .step-card .step-meta { font-size: 11px; color: var(--accent); margin-top: 4px; }
   </style>
 </head>
 <body>
@@ -134,10 +189,17 @@
       <div id="roadmap-bar"></div>
     </div>
 
+    <div class="card">
+      <h2>Global Stages & Subtasks</h2>
+      <div id="global-stages"></div>
+    </div>
+
     <!-- Tabs -->
     <div class="tabs" id="tabs">
       <div class="tab active" data-tab="kanban">Kanban Board</div>
+      <div class="tab" data-tab="alltasks">All Tasks</div>
       <div class="tab" data-tab="agents">Agent History</div>
+      <div class="tab" data-tab="scraping">Scraping Inventory</div>
       <div class="tab" data-tab="sources">Source Matrix</div>
       <div class="tab" data-tab="backlog">Dashboard Backlog</div>
       <div class="tab" data-tab="skills">Skills</div>
@@ -149,6 +211,12 @@
     <!-- Tab: Agent History -->
     <div class="tab-panel" id="panel-agents"></div>
 
+    <!-- Tab: All Tasks -->
+    <div class="tab-panel" id="panel-alltasks"></div>
+
+    <!-- Tab: Scraping Inventory -->
+    <div class="tab-panel" id="panel-scraping"></div>
+
     <!-- Tab: Source Matrix -->
     <div class="tab-panel" id="panel-sources"></div>
 
@@ -159,6 +227,3637 @@
     <div class="tab-panel" id="panel-skills"></div>
   </div>
 
+  <div class="agent-detail-overlay" id="agent-detail-overlay">
+    <div class="agent-detail-panel" id="agent-detail-panel">
+      <button class="agent-detail-close" id="agent-detail-close">&times;</button>
+      <div id="agent-detail-content"></div>
+    </div>
+  </div>
+
+    <script id="dashboard-data" type="application/json">{
+  "generated_at": "2026-04-08T16:33:12.991271+00:00",
+  "roadmap": {
+    "done": 46,
+    "total": 128,
+    "remaining": 82
+  },
+  "skills": [
+    "backend-data-engineering",
+    "ci-cd-pipeline",
+    "claude-opus-planner",
+    "context-engineering",
+    "crm-chat-inbox",
+    "daily-orchestration",
+    "dashboard-visual-ops",
+    "db-sync-and-seeding",
+    "debugger-golden-path",
+    "dedupe-entity-resolution",
+    "deep-research-workflow",
+    "docs-export",
+    "frontend-pages",
+    "fullstack-coding",
+    "geo-map-3d",
+    "google-slides-handoff",
+    "investor-pitch-yc",
+    "multi-agent-patterns",
+    "parser-fixture-qa",
+    "postgres-analysis",
+    "postgres-postgis-schema",
+    "presentation-pdf-reportlab",
+    "presentation-powerpoint-pptx",
+    "project-progress-dashboard-web",
+    "prompt-engineering",
+    "publishing-compliance",
+    "qa-review-release",
+    "railway-deploy",
+    "real-estate-source-registry",
+    "runtime-compliance-evaluator",
+    "scraper-connector-builder",
+    "security-audit",
+    "skill-discovery",
+    "software-architecture",
+    "subagent-driven-development",
+    "test-generator",
+    "ux-dashboard-design",
+    "vercel-nextjs-deploy",
+    "visual-3d-map",
+    "web-frontend-nextjs",
+    "web-performance-accessibility",
+    "wordpress-development",
+    "workflow-runtime"
+  ],
+  "agents": [
+    {
+      "key": "debugger",
+      "display_name": "Debugger",
+      "description": "Cross-agent verification, golden path, fixture regression, integration smoke tests, CI pipeline.",
+      "skills": [
+        "debugger-golden-path",
+        "qa-review-release",
+        "security-audit",
+        "test-generator",
+        "ci-cd-pipeline",
+        "context-engineering"
+      ],
+      "journal": "docs/agents/debugger/JOURNEY.md",
+      "completed_work": [
+        {
+          "title": "2026-04-08 — Debugger slice: golden path check",
+          "summary": "",
+          "action": "",
+          "changed_files": "scripts/golden_path_check.py, tests/test_golden_path_check.py, agent-skills/debugger-golden-path/SKILL.md, Makefile, docs/agents/TASKS.md, docs/agent-skills-index.md, docs/agents/debugger/JOURNEY.md",
+          "commands": "PYTHONPATH=src python3 -m unittest tests.test_golden_path_check -v, PYTHONPATH=src python3 -m unittest discover -s tests -v, PYTHONPATH=src python3 scripts/golden_path_check.py",
+          "status": "",
+          "review": "Confusing:, Improve next time: optional CI job that runs, export_source_stats_xlsx.py"
+        },
+        {
+          "title": "2026-04-08 (follow-up) — Golden path DATABASE_URL hygiene",
+          "summary": "",
+          "action": "",
+          "changed_files": "`scripts/golden_path_check.py` treats whitespace-only `DATABASE_URL` as unset; passes trimmed URL to alembic/export children.",
+          "commands": "`tests/test_golden_path_check.py` — `test_skips_when_database_url_is_whitespace_only`.",
+          "status": "",
+          "review": "Empty `.env` lines like `DATABASE_URL=` already skip; `DATABASE_URL=   ` no longer attempts SQLAlchemy with a blank URL."
+        },
+        {
+          "title": "2026-04-08 (follow-up) — Homes.bg discovery pagination regex",
+          "summary": "",
+          "action": "`test_homes_bg_discovery.TestHomesBgDiscovery.test_discovery_page_with_pagination` failed with `next_cursor None != {'page': 2}`. Fix: `parse_discovery_html` scans `<a ...>` open tags, finds `next-page` in `class`, then reads `page` from `href` (attribute-order agnostic).",
+          "changed_files": "",
+          "commands": "`PYTHONPATH=src python3 -m unittest discover -s tests -v` — 49 ok, 6 skipped.",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "2026-04-08 (follow-up) — SourceStatRow import without SQLAlchemy",
+          "summary": "",
+          "action": "`test_control_plane.TestSourceStatsModel.test_source_stat_row_has_registry_fields` → `ModuleNotFoundError: No module named 'sqlalchemy'` when importing `bgrealestate.stats.source_stats`. Fix: Lazy-import `sqlalchemy.text` inside `fetch_source_stats`; `Engine` only under `TYPE_CHECKING`. Removed `@unittest.skipUnless` on `TestSourceStatsModel`.",
+          "changed_files": "",
+          "commands": "`PYTHONPATH=src python3 -m unittest discover -s tests -v` — 56 ok, 8 skipped.",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "2026-04-08 (follow-up) — Ruff CI failures",
+          "summary": "",
+          "action": "`python -m ruff check .` (CI parity) reported 6 issues: F401 unused imports (`Iterable`, `LegalGateError`, `dataclass`, `String`, `Path`), F841 unused `source` in `HomesBgConnector.discover_listing_urls`. Fix: Removed dead imports; call `self._source_for_fetch()` for legal gate without assigning; dropped unused `String` from `db/models.py`.",
+          "changed_files": "",
+          "commands": "`ruff check .` → All checks passed; `unittest discover` — 62 ok, 8 skipped.",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "2026-04-08 (follow-up) — Mypy (`make typecheck`)",
+          "summary": "",
+          "action": "`mypy src tests` reported 16 errors: `chat_service` model arg, `pipeline` haversine coords, optional registry rows in tests, `ClassVar` for social test registry, pipeline test `SourceRegistryEntry | None` / floats / `building_match`. Fix: Coerce OpenAI model name to `str`; explicit `is not None` guard before `haversine_km`; `ClassVar[SourceRegistry]` + `assert entry is not None` in social tests; narrow types in `test_pipeline` / `test_source_registry`.",
+          "changed_files": "",
+          "commands": "`mypy src tests` → Success; `ruff check .` + `unittest discover` unchanged green.",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "2026-04-08 (follow-up) — CI parity for Mypy",
+          "summary": "",
+          "action": "Added `python -m mypy src tests` to `.github/workflows/ci.yml` after Ruff (matches `make typecheck`).",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "2026-04-08 (follow-up) — Cross-agent safety audit (DBG-03)",
+          "summary": "",
+          "action": "legal gate enforcement across connector fetch paths, live-network usage in tests, fixture secrets/PII redaction baseline, media binary storage policy (Postgres vs object storage), make test, rg \"assert_live_http_allowed|LegalGateError|legal_mode|source_legal_rule\" src, rg \"def fetch_listing_detail\\\\(|assert_live_http_allowed\\\\(\" src/bgrealestate/connectors, rg \"httpx|requests|urllib|socket|aiohttp|playwright\" tests, rg \"(AKIA[0-9A-Z]{16}|BEGIN PRIVATE KEY|api[_-]?key|token|password|secret|Bearer",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "2026-04-08 (follow-up) — DBG-02 + DBG-03 + DBG-04 completion pass",
+          "summary": "",
+          "action": "DBG-02, DBG-03, DBG-04",
+          "changed_files": ".github/workflows/ci.yml, docs/agents/TASKS.md, docs/agents/debugger/JOURNEY.md, scripts/generate_architecture_guide.py, scripts/generate_product_summary_report.py",
+          "commands": "make lint, make typecheck, make test, make validate, make golden-path, make dashboard-doc, rg \"httpx|requests|urllib|socket|aiohttp|urlopen|Client\\\\(\" tests, rg \"AKIA|AIza|secret|password|BEGIN (RSA|OPENSSH|PRIVATE)|Bearer\\\\s+[A-Za-z0-9\\\\-_\\\\.]+\" tests/fixtures, rg \"bytea|blob|binary|large object|lo_\" sql/schema.sql, rg \"assert_live_http_allowed\\\\(\" src/bgrealestate/connectors, make lint, make typecheck, make test, make validate, make golden-path, audit scans: PASS (no new blockers)",
+          "status": "",
+          "review": "CI now enforces the same Make targets used locally; keep Makefile target semantics stable., Golden-path DB execution is now delegated to CI service containers; local skip behavior remains useful for dev laptops., Report-generation scripts are part of the lint surface and should stay clean because"
+        },
+        {
+          "title": "2026-04-08 — VERIFY: BD-03 / T3-01 / SM-01 (agent: backend_developer / scraper_t3 / scraper_sm)",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "BD-03, T3-01, SM-01, Safety checks found no live-network unit tests, no secret-pattern matches in fixtures, and no media-binary schema storage., BD-03, T3-01, SM-01",
+          "status": "PASS",
+          "review": "Keep policy docs and fixture templates in lockstep with, For future verifier runs, keep one explicit command mapping per acceptance gate to reduce ambiguity."
+        },
+        {
+          "title": "2026-04-08 (follow-up) — Gate regression fix (auth + tier2 typecheck)",
+          "summary": "",
+          "action": "make lint, After that, Fix:",
+          "changed_files": "",
+          "commands": "make lint, make typecheck, make test, make validate, make golden-path, make dashboard-doc",
+          "status": "",
+          "review": "New slices can increase static-analysis surface quickly; rerunning full make gates is required before marking verifier tasks complete., Connector factory returns a broad protocol; tests that call source-specific parse methods should cast/narrow explicitly for mypy."
+        }
+      ],
+      "tasks": {
+        "verified": [
+          {
+            "id": "DBG-01",
+            "title": "Golden path check",
+            "status": "VERIFIED",
+            "details": "VERIFIED"
+          },
+          {
+            "id": "DBG-02",
+            "title": "Verify all DONE_AWAITING_VERIFY slices",
+            "status": "VERIFIED",
+            "details": "VERIFIED` (2026-04-08 run; UX-01 verified)"
+          },
+          {
+            "id": "DBG-03",
+            "title": "Cross-agent safety audit",
+            "status": "VERIFIED",
+            "details": "VERIFIED` (2026-04-08)"
+          },
+          {
+            "id": "DBG-04",
+            "title": "CI pipeline verification",
+            "status": "VERIFIED",
+            "details": "VERIFIED` (2026-04-08)"
+          }
+        ],
+        "in_progress": [],
+        "todo": [
+          {
+            "id": "DBG-05",
+            "title": "Verify stage-1 scraping is perfect before Varna 3D map MVP",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "DBG-06",
+            "title": "Verify all pending DONE_AWAITING_VERIFY slices (batch 2)",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "DBG-07",
+            "title": "End-to-end website smoke test",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "DBG-08",
+            "title": "Security audit — auth, injection, XSS, CORS",
+            "status": "TODO",
+            "details": "TODO"
+          }
+        ],
+        "blocked": []
+      },
+      "counts": {
+        "verified": 4,
+        "in_progress": 0,
+        "todo": 4,
+        "blocked": 0,
+        "total": 8,
+        "journal_entries": 11,
+        "efficiency_pct": 50
+      }
+    },
+    {
+      "key": "backend_developer",
+      "display_name": "Backend Developer",
+      "description": "DB schema, migrations, API routes, persistence, orchestration, data pipelines.",
+      "skills": [
+        "postgres-postgis-schema",
+        "backend-data-engineering",
+        "workflow-runtime",
+        "db-sync-and-seeding",
+        "railway-deploy",
+        "ci-cd-pipeline",
+        "test-generator",
+        "context-engineering"
+      ],
+      "journal": "docs/agents/backend_developer/JOURNEY.md",
+      "completed_work": [
+        {
+          "title": "2026-04-08 — Listings, CRM, crawl APIs + DB dependencies",
+          "summary": "** Close the gap between `PLAN.md` §7 route list and the running FastAPI service so the Next.js `/api/backend/*` proxy and future UI can consume real data from PostgreSQL.",
+          "action": "",
+          "changed_files": "src/bgrealestate/api/deps.py, src/bgrealestate/api/main.py, src/bgrealestate/api/routers/listings.py, src/bgrealestate/api/routers/crm.py, src/bgrealestate/api/routers/crawl_jobs.py, src/bgrealestate/db/repositories.py, tests/test_api_fastapi.py",
+          "commands": "PYTHONPATH=src python3 -m unittest discover -s tests -v, With, curl -s http://127.0.0.1:8000/listings?limit=10, curl -s http://127.0.0.1:8000/crm/threads, curl -s http://127.0.0.1:8000/crawl-jobs, Via Next proxy:",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "2026-04-08 session 2 — DB sync + control plane bootstrap (TASKS.md slice)",
+          "summary": "** Make `sync_marketplace_sources_to_db` verifiable end-to-end: sync the registry into Postgres (source_registry + source_legal_rule + source_endpoint), verify via `GET /api/v1/ready` and `GET /admin/source-stats`, export `docs/exports/source-stats.xlsx`.",
+          "action": "After, The, Returns 503 consistently when, Removed unused, make sync-registry, make export-source-stats, TestDbSyncImport, TestExportScriptSyntax, TestSourceStatsModel, TestReadinessEndpoint",
+          "changed_files": "src/bgrealestate/stats/source_stats.py, src/bgrealestate/api/routers/admin.py, scripts/export_source_stats_xlsx.py, Makefile, tests/test_control_plane.py",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "2026-04-08 session 3 — Backend run-first operational execution",
+          "summary": "DB control plane synced (, Admin stats endpoints stable (, XLSX export generated (, API listings/CRM/crawl routes return valid JSON (or clean 503 without DB), make validate, make validate, Result included, make sync-registry, local shell uses Python 3.9, project runtime is Python 3.12+ (, PYTHONPATH=src python3 -m bgrealestate sync-database --dry-run, reports **37 marketplace sources** would be upserted., Installed runtime deps needed for local checks (, python3 -m bgrealestate.dev_api, Therefor",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "2026-04-08 session 4 — BD-03 Stats v2 (coverage breakdown)",
+          "summary": "** Extend stats with photo coverage + intent/category breakdown, update `/admin` dashboard, and include the new fields in XLSX export., New metrics:, with_photos, intents:, categories:, SQL now computes these from, API JSON includes all new metrics., /admin, Added all new coverage/breakdown columns to header and rows., Bootstrap-no-db mode now populates these fields with explicit zeros., Updated, BD-03",
+          "action": "",
+          "changed_files": "",
+          "commands": "PYTHONPATH=src python3 -m unittest tests.test_control_plane -v, make export-source-stats, make validate, /admin, XLSX includes new columns: ✅ exporter updated and executed.",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "2026-04-08 session 5 — BD-04 Auth / RBAC on protected API routes",
+          "summary": "** Add API-key based auth + scope checks and protect CRM/admin/listings/crawl endpoints with 401/403 behavior., require_scope(scope), Accepts API key from, Key sources:, API_KEYS_JSON, optional fallback keys:, READONLY_API_KEY, ADMIN_API_KEY, Error semantics:, missing key →, unknown key →, missing scope →, src/bgrealestate/api/routers/listings.py, GET /listings, src/bgrealestate/api/routers/crm.py, GET /crm/threads, POST /crm/threads/{thread_id}/messages, src/bgrealestate/api/routers/crawl_jobs.",
+          "action": "",
+          "changed_files": "",
+          "commands": "PYTHONPATH=src python3 -m unittest tests.test_api_fastapi tests.test_control_plane -v, make validate, unauthenticated protected requests return 401/403: ✅ implemented and tested., test suite remains green: ✅",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "2026-04-08 session 6 — BD-05 Temporal workflow wiring + runtime mode switching",
+          "summary": "** Replace pure placeholder worker/scheduler stubs with real Temporal-ready runtime paths while preserving local no-Temporal compatibility., TemporalSettings, feature flag:, connectivity check helper, Temporal worker registration for:, SourceDiscoveryWorkflow, ListingDetailWorkflow, matching activities (, scheduler helper to start one, modes:, auto, --once, fallback behavior controlled by, default behavior remains placeholder-safe so existing local/CI flows are not broken, modes:, temporal, plac",
+          "action": "",
+          "changed_files": "",
+          "commands": "PYTHONPATH=src python3 -m unittest tests.test_temporal_runtime_scaffold -v, make validate, no Temporal service required for placeholder mode checks, worker/scheduler Temporal runtime paths: ✅ implemented, jobs survive restart + cursor persistence: ⏳ requires live Temporal + Postgres run by verifier (not available in this shell environment)",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "2026-04-08 session 7 — Live Temporal verification attempt (BD-05 follow-through)",
+          "summary": "",
+          "action": "** route-level scopes should be expanded when write/update/delete endpoints are introduced.",
+          "changed_files": "",
+          "commands": "worker:, dev worker started (temporal mode) ..., temporal connectivity failed, fallback to placeholder: ... Connection refused, scheduler:, dev scheduler started (temporal mode) ..., temporal scheduler once failed, fallback to placeholder: ... Connection refused, make validate, BD-05, Live restart-survival verification remains pending on an environment with active Temporal runtime.",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "BD-09 implementation",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "BD-11 implementation",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Verification",
+          "summary": "",
+          "action": "",
+          "changed_files": "sql/views.sql, src/bgrealestate/api/main.py, src/bgrealestate/api/routers/analytics.py, src/bgrealestate/api/routers/properties.py, src/bgrealestate/services/unification.py, src/bgrealestate/db/repositories.py, src/bgrealestate/connectors/ingest.py, tests/test_api_fastapi.py, tests/test_unification.py, docs/agents/TASKS.md",
+          "commands": "** `make validate`, `python3 -m unittest discover -s tests -v`",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Implementation",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Verification",
+          "summary": "",
+          "action": "",
+          "changed_files": "** `sql/schema.sql`, `src/bgrealestate/db/models.py`, `src/bgrealestate/analytics/__init__.py` (new), `src/bgrealestate/analytics/photo_classifier.py` (new), `tests/test_photo_classifier.py` (new), `docs/agents/TASKS.md`",
+          "commands": "** `make validate`, `python3 -m unittest tests.test_photo_classifier -v`",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Review comments — BD-10",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Implementation",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Verification",
+          "summary": "",
+          "action": "",
+          "changed_files": "** `sql/schema.sql`, `src/bgrealestate/db/models.py`, `src/bgrealestate/api/main.py`, `src/bgrealestate/services/user_auth.py` (new), `src/bgrealestate/api/routers/user_auth.py` (new), `src/bgrealestate/api/routers/users.py` (new), `src/bgrealestate/api/user_deps.py` (new), `tests/test_user_auth.py` (new), `tests/test_ingest_fixture_cli.py`",
+          "commands": "** `make validate`, `python3 -m unittest tests.test_user_auth -v`",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Review comments — BD-13",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        }
+      ],
+      "tasks": {
+        "verified": [
+          {
+            "id": "BD-01",
+            "title": "DB sync + control plane bootstrap",
+            "status": "VERIFIED",
+            "details": "VERIFIED` — hardened 2026-04-08 session 2 (stats query registry-aware, admin dashboard extended, tests added)"
+          },
+          {
+            "id": "BD-02",
+            "title": "Listings, CRM, Crawl APIs + DB dependencies",
+            "status": "VERIFIED",
+            "details": "VERIFIED"
+          },
+          {
+            "id": "BD-03",
+            "title": "Stats v2 (coverage breakdown)",
+            "status": "VERIFIED",
+            "details": "VERIFIED` (2026-04-08; debugger acceptance gate pass)"
+          }
+        ],
+        "in_progress": [
+          {
+            "id": "BD-04",
+            "title": "Auth / RBAC on CRM and listings routes",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+          },
+          {
+            "id": "BD-05",
+            "title": "Temporal workflow wiring",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-08: Temporal worker/scheduler runtime scaffold implemented)"
+          },
+          {
+            "id": "BD-09",
+            "title": "Property analytics views + duplicate detection",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-08: SQL views + API endpoints implemented)"
+          },
+          {
+            "id": "BD-10",
+            "title": "Photo classification pipeline stub",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-08: classifier stub + model columns + 14 tests)"
+          },
+          {
+            "id": "BD-11",
+            "title": "Unified listing database — merge scraper outputs into canonical store",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-08: unification service + /properties endpoints + pipeline wiring implemented)"
+          },
+          {
+            "id": "BD-13",
+            "title": "User profile + auth system (buyer/renter/seller modes)",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-08: registration, login, profile, saved properties, dashboard implemented)"
+          }
+        ],
+        "todo": [
+          {
+            "id": "BD-06",
+            "title": "Varna-only MVP map/search + chat context APIs",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "BD-07",
+            "title": "AI chat API bridge for property-aware search assistant",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "BD-08",
+            "title": "Varna OSM 3D building data pipeline",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "BD-12",
+            "title": "Shop-style filter API for property feed",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "BD-14",
+            "title": "Railway deployment — backend + DB + scraper worker",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "BD-15",
+            "title": "Scraper orchestration — continuous crawl loop",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "BD-16",
+            "title": "WebSocket/SSE for real-time listing updates",
+            "status": "TODO",
+            "details": "TODO"
+          }
+        ],
+        "blocked": []
+      },
+      "counts": {
+        "verified": 3,
+        "in_progress": 6,
+        "todo": 7,
+        "blocked": 0,
+        "total": 16,
+        "journal_entries": 16,
+        "efficiency_pct": 38
+      }
+    },
+    {
+      "key": "ux_ui_designer",
+      "display_name": "UX/UI Designer",
+      "description": "Next.js frontend, map UI, listings feed, property detail, AI chat panel, admin dashboard.",
+      "skills": [
+        "web-frontend-nextjs",
+        "frontend-pages",
+        "dashboard-visual-ops",
+        "ux-dashboard-design",
+        "web-performance-accessibility",
+        "vercel-nextjs-deploy",
+        "visual-3d-map",
+        "context-engineering"
+      ],
+      "journal": "docs/agents/ux_ui_designer/JOURNEY.md",
+      "completed_work": [
+        {
+          "title": "Task 1 — Next.js App Router shell + design system bootstrap",
+          "summary": "",
+          "action": "",
+          "changed_files": "package.json, app/layout.tsx, app/(main)/page.tsx, app/api/backend/[...path]/route.ts, components/shell/AppShell.tsx, lib/config.ts, web/index.html, Makefile, .env.example, docs/project-status-roadmap.md",
+          "commands": "TypeScript passes (linter clean per `ReadLints`). npm build not validated here (no Node in environment — must be run on local machine).",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Task 2 — Operator dashboard UI plan",
+          "summary": "",
+          "action": "",
+          "changed_files": "docs/agents/ux_ui_designer/operator-dashboard-spec.md, docs/agents/ux_ui_designer/JOURNEY.md",
+          "commands": "none (spec-only deliverable), run-frontend, The, The, Phase B (Source health table + Crawl jobs table) can start as soon as, The, A Storybook or component-viewer setup would accelerate shared component validation without needing the full Next.js dev server. Consider adding it in Phase B.",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Task 3 — UX-01 formal task completion (task-queue protocol)",
+          "summary": "",
+          "action": "",
+          "changed_files": "docs/agents/ux_ui_designer/admin-ui-spec.md, docs/agents/TASKS.md, docs/agents/ux_ui_designer/JOURNEY.md",
+          "commands": "none, Keep, Next implementation slice should remain blocked until debugger verifies API contract alignment per UX-01 acceptance gate.",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Task 4 — UX-02: Beta main page (map + listings + category picker)",
+          "summary": "",
+          "action": "",
+          "changed_files": "lib/types/listing.ts, lib/mock/listings.ts, components/listings/CategoryPicker.tsx, components/listings/ListingCard.tsx, components/listings/ListingFeed.tsx, components/map/MapCanvas.tsx, components/map/FullScreenMap.tsx, app/(main)/page.tsx, app/(main)/listings/page.tsx, app/(main)/map/page.tsx, docs/agents/TASKS.md, docs/agents/ux_ui_designer/JOURNEY.md",
+          "commands": "none (no Node available in sandbox), Mock data covers 12 listings across 8 Bulgarian locations. When live API is wired (, The map uses OSM raster tiles — lightweight and no API key needed. Switch to a vector tile source (e.g., MapTiler or self-hosted) when the tile budget is known., Category/intent filters run client-side over the full array. Once live API exists, push filters as query params (, Photo placeholders show source name only. Wire, The",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Task 5 — UX-03: Wire listings feed to live `/listings` API + property detail page",
+          "summary": "",
+          "action": "",
+          "changed_files": "lib/hooks/useListings.ts, components/listings/ListingFeed.tsx, app/(main)/properties/[id]/page.tsx, API call:, Fallback: on fetch error (API unreachable), switches to full, Infinite scroll: sentinel, Property detail: server component fetches directly from Python API base URL (server-side, no CORS); falls back to mock by, Intent/category/search filters still run client-side over fetched pages (backend doesn't expose filter params yet; will push to query params when backend adds them), docs/agents",
+          "commands": "`npm install`, `npx tsc --noEmit`, `npm run build`, `npm run dev`",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "1. 3D Building Map",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "2. Persistent Chat Bar",
+          "summary": "",
+          "action": "",
+          "changed_files": "components/map/MapCanvas.tsx, components/chat/ChatBar.tsx, app/layout.tsx, components/listings/ListingFeed.tsx",
+          "commands": "`npx tsc --noEmit`",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Summary of all work completed by ux_ui_designer agent",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Further tasks for ux_ui_designer agent",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Immediate unblocked improvements (no backend needed)",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Changes made",
+          "summary": "",
+          "action": "",
+          "changed_files": "app/globals.css, components/listings/ListingSkeleton.tsx, app/(main)/loading.tsx, app/(main)/properties/[id]/loading.tsx, app/(main)/admin/page.tsx, app/(main)/settings/page.tsx, app/(main)/chat/page.tsx, Makefile",
+          "commands": "`npx tsc --noEmit`",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Complete platform status after Task 10",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Further tasks for ux_ui_designer agent",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        }
+      ],
+      "tasks": {
+        "verified": [
+          {
+            "id": "UX-01",
+            "title": "Operator dashboard UI plan",
+            "status": "VERIFIED",
+            "details": "VERIFIED` (2026-04-08; debugger contract check)"
+          }
+        ],
+        "in_progress": [
+          {
+            "id": "UX-02",
+            "title": "Beta main page — map + listings + category picker",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+          },
+          {
+            "id": "UX-03",
+            "title": "Wire listings feed to live `/listings` API",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+          },
+          {
+            "id": "UX-06",
+            "title": "Product UX structure spec (LUN-style buyer marketplace)",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+          }
+        ],
+        "todo": [
+          {
+            "id": "UX-04",
+            "title": "Varna-only LUN-style map + listings experience",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "UX-05",
+            "title": "AI chat panel with property/map-aware context",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "UX-07",
+            "title": "3D map integration with building layer (MapLibre)",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "UX-08",
+            "title": "Shop view — full property feed with advanced filters (like LUN.ua)",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "UX-09",
+            "title": "Property detail page — LUN.ua style (like lun.ua item page)",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "UX-10",
+            "title": "User profile cabinet — buyer/renter/seller mode switching",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "UX-11",
+            "title": "Vercel deployment — frontend",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "UX-12",
+            "title": "Admin dashboard — live operator panel",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "UX-13",
+            "title": "Design system — colors, typography, spacing tokens",
+            "status": "TODO",
+            "details": "TODO"
+          }
+        ],
+        "blocked": []
+      },
+      "counts": {
+        "verified": 1,
+        "in_progress": 3,
+        "todo": 9,
+        "blocked": 0,
+        "total": 13,
+        "journal_entries": 13,
+        "efficiency_pct": 19
+      }
+    },
+    {
+      "key": "scraper_1",
+      "display_name": "Scraper 1 (Marketplaces)",
+      "description": "Tier-1/2 portal, classifieds, and agency connectors. HTTP-first, Playwright fallback.",
+      "skills": [
+        "scraper-connector-builder",
+        "parser-fixture-qa",
+        "real-estate-source-registry",
+        "runtime-compliance-evaluator",
+        "test-generator",
+        "context-engineering"
+      ],
+      "journal": "docs/agents/scraper_1/JOURNEY.md",
+      "completed_work": [
+        {
+          "title": "Goal",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Task 0: Planning and scaffold review",
+          "summary": "",
+          "action": "Read all existing code (pipeline, models, fixtures, connector protocol, homes_bg). Mapped the 10 tier-1 sources and their access/legal characteristics. Wrote this plan.",
+          "changed_files": "",
+          "commands": "",
+          "status": "DONE",
+          "review": ""
+        },
+        {
+          "title": "Task 1: OLX.bg connector + API JSON fixtures",
+          "summary": "",
+          "action": "Created `src/bgrealestate/connectors/olx_bg.py` with `OlxBgConnector` class and `parse_olx_api_response()` function. OLX uses official API (JSON), not HTML. Built a dedicated parser that handles OLX-specific param structure (`params[].key/value`), location hierarchy (`city/district/region`), photo array, and category-based property type inference. Handles error responses (403 blocked) as empty canonical listings.",
+          "changed_files": "tests/fixtures/olx_bg/basic_listing/raw.json, tests/fixtures/olx_bg/missing_price/raw.json, tests/fixtures/olx_bg/blocked_page/raw.json",
+          "commands": "",
+          "status": "DONE",
+          "review": ""
+        },
+        {
+          "title": "Task 2: alo.bg connector + HTML fixtures",
+          "summary": "",
+          "action": "Uses `HtmlPortalConnector` scaffold + `GenericHtmlListingParser`. Fixtures contain JSON-LD `RealEstateListing` mimicking alo.bg structure with coastal property data.",
+          "changed_files": "tests/fixtures/alo_bg/basic_listing/, tests/fixtures/alo_bg/blocked_page/",
+          "commands": "",
+          "status": "DONE",
+          "review": ""
+        },
+        {
+          "title": "Task 3: imot.bg connector + HTML fixtures",
+          "summary": "",
+          "action": "Uses `HtmlPortalConnector`. Fixtures mimic imot.bg's `Product` JSON-LD type with Sofia/Лозенец apartment data.",
+          "changed_files": "tests/fixtures/imot_bg/basic_listing/, tests/fixtures/imot_bg/blocked_page/",
+          "commands": "",
+          "status": "DONE",
+          "review": ""
+        },
+        {
+          "title": "Task 4: BulgarianProperties connector + HTML fixtures",
+          "summary": "",
+          "action": "Uses `HtmlPortalConnector`. English-language fixtures for foreign-buyer segment. JSON-LD `RealEstateListing` with Sveti Vlas coastal property.",
+          "changed_files": "tests/fixtures/bulgarianproperties/basic_listing/, tests/fixtures/bulgarianproperties/blocked_page/",
+          "commands": "",
+          "status": "DONE",
+          "review": ""
+        },
+        {
+          "title": "Task 5: Address.bg connector + HTML fixtures",
+          "summary": "",
+          "action": "Uses `HtmlPortalConnector`. Realto Group agency. Bulgarian-language fixtures with Пловдив property data.",
+          "changed_files": "tests/fixtures/address_bg/basic_listing/, tests/fixtures/address_bg/blocked_page/",
+          "commands": "",
+          "status": "DONE",
+          "review": ""
+        },
+        {
+          "title": "Task 6: SUPRIMMO connector + HTML fixtures",
+          "summary": "",
+          "action": "Uses `HtmlPortalConnector`. Stoyanov Enterprises group. Fixtures with Бургас/Сарафово coastal property.",
+          "changed_files": "tests/fixtures/suprimmo/basic_listing/, tests/fixtures/suprimmo/blocked_page/",
+          "commands": "",
+          "status": "DONE",
+          "review": ""
+        },
+        {
+          "title": "Task 7: LUXIMMO connector + HTML fixtures",
+          "summary": "",
+          "action": "Uses `HtmlPortalConnector`. Luxury coastal segment. English-language fixture with Varna penthouse.",
+          "changed_files": "tests/fixtures/luximmo/basic_listing/, tests/fixtures/luximmo/blocked_page/",
+          "commands": "",
+          "status": "DONE",
+          "review": ""
+        },
+        {
+          "title": "Task 8: property.bg connector + HTML fixtures",
+          "summary": "",
+          "action": "Uses `HtmlPortalConnector`. SUPRIMMO group, foreign-buyer portal. English fixtures with Bansko ski-resort studio.",
+          "changed_files": "tests/fixtures/property_bg/basic_listing/, tests/fixtures/property_bg/blocked_page/",
+          "commands": "",
+          "status": "DONE",
+          "review": ""
+        },
+        {
+          "title": "Task 9: imoti.net stub connector + fixtures (legal-gated)",
+          "summary": "",
+          "action": "Uses `HtmlPortalConnector` for fixture parsing. Source has `legal_mode=legal_review_required` → live HTTP is blocked by `assert_live_http_allowed()`. Fixture parsing works because `parse_and_normalize_from_html()` no longer calls the live-HTTP gate (only `fetch_listing_detail()` does).",
+          "changed_files": "tests/fixtures/imoti_net/basic_listing/, tests/fixtures/imoti_net/blocked_page/",
+          "commands": "",
+          "status": "DONE",
+          "review": ""
+        },
+        {
+          "title": "Task 10: Parser improvements + factory registration + final validation",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "DONE",
+          "review": ""
+        },
+        {
+          "title": "Task 11: Homes.bg discovery (fixture-first)",
+          "summary": "",
+          "action": "Implemented `parse_discovery_html()` in `src/bgrealestate/connectors/homes_bg.py`. Extracts listing URLs from search result pages via `href=\"/listing/...\"` regex, and pagination cursor from the \"next-page\" link. Handles attribute ordering (href before/after class). Refactored `_source()` / `_source_for_fetch()` split for consistency with `HtmlPortalConnector` pattern.",
+          "changed_files": "tests/fixtures/homes_bg/discovery_page/, tests/fixtures/homes_bg/discovery_last_page/, tests/fixtures/homes_bg/discovery_empty/",
+          "commands": "`make test` → 62 tests, 54 pass, 8 skipped, 0 failures.",
+          "status": "DONE",
+          "review": ""
+        },
+        {
+          "title": "Task 12: Live-safe ingestion runner CLI",
+          "summary": "",
+          "action": "Added `ingest-fixture` subcommand to `src/bgrealestate/cli.py`. Takes a source name and fixture directory, parses the fixture offline (no network), and either prints the canonical listing (`--dry-run`) or inserts into DB via `ingest_listing_detail_html()`.",
+          "changed_files": "",
+          "commands": "`PYTHONPATH=src python3 -m bgrealestate ingest-fixture Homes.bg tests/fixtures/homes_bg/basic_listing --dry-run` → prints full canonical listing JSON.",
+          "status": "DONE",
+          "review": ""
+        },
+        {
+          "title": "Test results summary",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Files changed",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "Task 13: S1-11 live-safe ingestion runner acceptance + test hardening",
+          "summary": "",
+          "action": "Kept the existing `ingest-fixture` CLI command and added dedicated tests in `tests/test_ingest_fixture_cli.py`., test_ingest_fixture_dry_run_homes, test_ingest_fixture_non_dry_run_calls_ingest, make golden-path, Full suite:",
+          "changed_files": "",
+          "commands": "",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": ""
+        },
+        {
+          "title": "Task 14: S1-12 tier-2 connector stubs (fixture-only)",
+          "summary": "",
+          "action": "Implemented dedicated tier-2 stub connectors and fixture parsing coverage for high-value sources., Added, BazarBgConnector, DomazaConnector, YavlenaConnector, Home2UConnector, Updated, Added fixture sets:, tests/fixtures/bazar_bg/basic_listing/{raw.html,expected.json}, tests/fixtures/domaza/basic_listing/{raw.html,expected.json}, tests/fixtures/yavlena/basic_listing/{raw.html,expected.json}, tests/fixtures/home2u/basic_listing/{raw.html,expected.json}, Added, 4 fixture parse tests, factory type ",
+          "changed_files": "",
+          "commands": "PYTHONPATH=src python3 -m unittest tests.test_tier2_stub_fixture_parsing -v, make test",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": ""
+        },
+        {
+          "title": "Task 15: S1-13 stage-1 product-type completion check (tier 1-2)",
+          "summary": "",
+          "action": "Implemented fixture + assertion coverage for stage-1 MVP product types (`sale`, `long_term_rent`, `short_term_rent`, `land`, `new_build`)., Added stage-1 coverage module:, Collects tier-1/2 fixture cases from, Computes product-type coverage map, Renders markdown matrix report, Added report generator script:, Output:, Added coverage assertion test:, Fails if any required product type is missing from tier-1/2 fixture inventory., Expanded tier-2 fixtures to guarantee complete product-type coverage:",
+          "changed_files": "",
+          "commands": "PYTHONPATH=src python3 -m unittest tests.test_tier2_stub_fixture_parsing tests.test_stage1_product_type_coverage -v, PYTHONPATH=src python3 scripts/generate_stage1_product_type_coverage.py, make test",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": ""
+        },
+        {
+          "title": "Task 16: S1-14 discovery pagination for all tier-1 sources",
+          "summary": "",
+          "action": "Implemented and validated fixture-first discovery parsers across tier-1., src/bgrealestate/connectors/scaffold.py, Added, Wired, src/bgrealestate/connectors/olx_bg.py, Added, Wired, Added discovery fixtures (, tests/fixtures/alo_bg/discovery_page/*, tests/fixtures/imot_bg/discovery_page/*, tests/fixtures/bulgarianproperties/discovery_page/*, tests/fixtures/address_bg/discovery_page/*, tests/fixtures/suprimmo/discovery_page/*, tests/fixtures/luximmo/discovery_page/*, tests/fixtures/property_bg/di",
+          "changed_files": "",
+          "commands": "PYTHONPATH=src python3 -m unittest tests.test_tier1_discovery_parsing -v, make test",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": ""
+        },
+        {
+          "title": "Task 17: Scraping inventory — XLSX + MD + PDF exports",
+          "summary": "",
+          "action": "Built a comprehensive scraping inventory report covering all 44 sources in `source_registry.json`., Created, Reads, Scans, Generates three outputs:, \"Scraping Inventory\" sheet: 24-column table with source name, tier, family, URL, access/legal/risk modes, categories to scrape, estimated total listings on website, fixture listing count, discovery fixture count, discovery URLs found, blocked fixtures, photos scraped, description/geo/address/area/rooms/price presence, intents covered, property types",
+          "changed_files": "",
+          "commands": "PYTHONPATH=src python3 scripts/generate_scraping_inventory.py, All three output files confirmed present in",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": ""
+        },
+        {
+          "title": "Task 18: Image scraping pipeline — download, store, serve, and display",
+          "summary": "",
+          "action": "Built a complete image pipeline across 4 layers:, Added, Extended, download_image(), download_listing_images(), proxy_external_image(), get_image_path(), Supports JPEG, PNG, WebP, GIF, AVIF, SVG. 20 MB size limit., GET /media/proxy?url=<encoded>, GET /media/{media_id}, GET /listings/{reference_id}/images, Updated, Added, Next.js image proxy route at, Falls back from backend proxy to direct fetch if backend is unavailable., proxyImageUrl(), PhotoCarousel, Added graceful error handling with fallba",
+          "changed_files": "",
+          "commands": "PYTHONPATH=src python3 -m unittest tests.test_media_pipeline -v, make test, 0 linter errors across all changed files",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": ""
+        }
+      ],
+      "tasks": {
+        "verified": [
+          {
+            "id": "S1-01",
+            "title": "Homes.bg connector + fixtures",
+            "status": "VERIFIED",
+            "details": "VERIFIED"
+          },
+          {
+            "id": "S1-02",
+            "title": "OLX.bg API connector + JSON fixtures",
+            "status": "VERIFIED",
+            "details": "VERIFIED"
+          },
+          {
+            "id": "S1-10",
+            "title": "imoti.net stub (legal-gated)",
+            "status": "VERIFIED",
+            "details": "VERIFIED"
+          }
+        ],
+        "in_progress": [
+          {
+            "id": "S1-11",
+            "title": "Live-safe ingestion runner (small)",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-08; CLI + tests added, golden-path command executed in skip-mode without DATABASE_URL)"
+          },
+          {
+            "id": "S1-12",
+            "title": "Tier-2 connector stubs (fixture-only)",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-08; Bazar.bg/Domaza/Yavlena/Home2U stubs + fixtures + tests)"
+          },
+          {
+            "id": "S1-13",
+            "title": "Stage-1 scraping completion check (all product types)",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-08; coverage matrix + assertions added)"
+          },
+          {
+            "id": "S1-14",
+            "title": "Discovery pagination for ALL tier-1 sources",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-08; discovery parsers + fixtures + tests added for all tier-1 sources)"
+          }
+        ],
+        "todo": [
+          {
+            "id": "S1-15",
+            "title": "Live HTTP integration for tier-1 connectors",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "S1-16",
+            "title": "Remaining tier-2 connectors (full set)",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "S1-17",
+            "title": "Playwright connectors for headless-required sources",
+            "status": "TODO",
+            "details": "TODO"
+          }
+        ],
+        "blocked": []
+      },
+      "counts": {
+        "verified": 3,
+        "in_progress": 4,
+        "todo": 3,
+        "blocked": 0,
+        "total": 10,
+        "journal_entries": 22,
+        "efficiency_pct": 50
+      }
+    },
+    {
+      "key": "scraper_t3",
+      "display_name": "Scraper T3 (Vendor/Partner)",
+      "description": "Tier-3 vendor feeds, licensed data, official registers. No unauthorized scraping.",
+      "skills": [
+        "scraper-connector-builder",
+        "parser-fixture-qa",
+        "real-estate-source-registry",
+        "runtime-compliance-evaluator",
+        "deep-research-workflow",
+        "context-engineering"
+      ],
+      "journal": "docs/agents/scraper_t3/JOURNEY.md",
+      "completed_work": [
+        {
+          "title": "2026-04-08 — T3-01: Tier-3 ingestion policy and integration contracts",
+          "summary": "",
+          "action": "Authored Tier-3 policy with per-source legal/access/risk routes and integration contracts; created fixture template packs for partner feed, licensed data, official register, and public auction parsing.",
+          "changed_files": "docs/agents/scraper_t3/tier3-ingestion-policy.md, tests/fixtures/tier3_templates/README.md, tests/fixtures/tier3_templates/partner_feed/raw.json, tests/fixtures/tier3_templates/partner_feed/expected.json, tests/fixtures/tier3_templates/partner_feed/seed.json, tests/fixtures/tier3_templates/licensed_data/raw.json, tests/fixtures/tier3_templates/licensed_data/expected.json, tests/fixtures/tier3_templates/official_register/raw.json, tests/fixtures/tier3_templates/official_register/expected.json, te",
+          "commands": "none",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": "Next slices (T3-02..T3-05) should consume `tier3_templates` as baseline fixture contracts and enforce `PartnerContractRequired`/`OperatorConsentRequired` before live network calls."
+        },
+        {
+          "title": "2026-04-08 — T3-02: AirDNA / Airbtics licensed data importer (fixture-first)",
+          "summary": "",
+          "action": "Implemented licensed STR metrics parser connector (`LicensedStrDataConnector`) with fixture-backed tests for AirDNA and Airbtics.",
+          "changed_files": "src/bgrealestate/connectors/tier3.py, tests/test_tier3_licensed_fixture_parsing.py, docs/agents/TASKS.md",
+          "commands": "PYTHONPATH=src python3 -m unittest tests.test_tier3_licensed_fixture_parsing -v, make test",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": "`metrics_to_dict` output stays intentionally table-ready so backend can persist into dedicated STR analytics storage in a follow-up slice."
+        },
+        {
+          "title": "2026-04-08 — T3-03: BCPEA property auctions connector (fixture-first)",
+          "summary": "",
+          "action": "Implemented `BcpeaAuctionConnector` with fixture parser extracting starting price, area, address, court, bailiff, and auction dates.",
+          "changed_files": "src/bgrealestate/connectors/tier3.py, src/bgrealestate/connectors/factory.py, src/bgrealestate/connectors/__init__.py, tests/test_tier3_bcpea_fixture_parsing.py, docs/agents/TASKS.md",
+          "commands": "PYTHONPATH=src python3 -m unittest tests.test_tier3_bcpea_fixture_parsing -v, make test",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": "live HTTP path remains legal-gated through `assert_live_http_allowed`; parser remains fixture-first."
+        },
+        {
+          "title": "2026-04-08 — T3-04: Partner feed stub connectors (Airbnb/Booking.com/Vrbo)",
+          "summary": "",
+          "action": "Implemented `PartnerFeedStubConnector` stubs with fixture parsing and hard live-call block via `PartnerContractRequired`.",
+          "changed_files": "src/bgrealestate/connectors/tier3.py, src/bgrealestate/connectors/factory.py, src/bgrealestate/connectors/__init__.py, tests/test_tier3_partner_stubs.py, docs/agents/TASKS.md",
+          "commands": "PYTHONPATH=src python3 -m unittest tests.test_tier3_partner_stubs -v, make test",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": "live integration stays intentionally blocked until contract-backed feed clients are added."
+        },
+        {
+          "title": "2026-04-08 — T3-05: Official register query wrappers (Property Register / KAIS Cadastre)",
+          "summary": "",
+          "action": "Implemented `OfficialRegisterWrapper` with consent-gated live query path and fixture-backed parser for redacted official responses.",
+          "changed_files": "src/bgrealestate/connectors/tier3.py, src/bgrealestate/connectors/__init__.py, tests/test_tier3_official_register_wrappers.py, docs/agents/TASKS.md",
+          "commands": "PYTHONPATH=src python3 -m unittest tests.test_tier3_official_register_wrappers -v, make test",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": "query wrapper enforces manual/consent workflow and blocks autonomous official-service querying."
+        },
+        {
+          "title": "2026-04-08 — T3-06: Varna-focused enrichment handoff (post stage-1 gate)",
+          "summary": "",
+          "action": "Reviewed next slice dependencies before starting implementation.",
+          "changed_files": "docs/agents/TASKS.md",
+          "commands": "none",
+          "status": "BLOCKED (`DBG-05` is `TODO`; `T3-02` and `T3-05` not yet `VERIFIED`)",
+          "review": "Slice cannot start until dependency statuses are advanced by verifier. Resume with `docs/agents/scraper_t3/varna-enrichment-handoff.md` immediately after verifier clears gates."
+        },
+        {
+          "title": "2026-04-08 — CONST-02: Cross-agent note propagation (scraper_t3 blockers)",
+          "summary": "",
+          "action": "Propagated Tier-3 blocker mapping into task queue so verifier execution is explicit for unblock path.",
+          "changed_files": "docs/agents/TASKS.md",
+          "commands": "none",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": "`scraper_t3` has no unblocked implementation slice until debugger completes `DBG-06` and `DBG-05`."
+        },
+        {
+          "title": "2026-04-08 — T3-07: BCPEA live scraper (public auctions — legal to crawl)",
+          "summary": "",
+          "action": "Built full live scraper for BCPEA property auction register (sales.bcpea.org). Fetched real HTML to understand actual site structure (server-rendered, not SPA). Implemented discovery pagination, detail page parsing, rate limiting, CLI command, Makefile targets, and realistic fixture-backed tests. Successfully scraped 180 real auction listings with full detail (property type, area, price EUR/BGN, court, bailiff, dates, photos, descriptions, scanned PDF documents, bailiff phone/mobile).",
+          "changed_files": "src/bgrealestate/connectors/tier3.py, src/bgrealestate/connectors/__init__.py, src/bgrealestate/cli.py, Makefile, tests/test_bcpea_live_scraper.py, tests/fixtures/bcpea/discovery_page1/raw.html, tests/fixtures/bcpea/discovery_page1/expected.json, tests/fixtures/bcpea/detail_87739/raw.html, tests/fixtures/bcpea/detail_87739/expected.json, docs/agents/TASKS.md",
+          "commands": "`make scrape-bcpea` (5 pages x 36 per page = 180 listings discovered + 180 detail pages fetched)",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": "BCPEA is `public_crawl_with_review` legal mode — live crawl passes `assert_live_http_allowed`. Rate limit default 1.5s between requests. Prices parsed in both EUR and BGN (лв). Property types extracted from `item__wrapper` header on detail pages. Legacy T3-03 template parser preserved for backward compat. Next: integrate into scraper orchestration loop (BD-15) and unification pipeline."
+        }
+      ],
+      "tasks": {
+        "verified": [
+          {
+            "id": "T3-01",
+            "title": "Tier-3 ingestion policy and integration contracts",
+            "status": "VERIFIED",
+            "details": "VERIFIED` (2026-04-08; debugger policy + fixture contract review)"
+          },
+          {
+            "id": "T3-06",
+            "title": "Varna-focused enrichment handoff (post stage-1 gate)",
+            "status": "VERIFIED",
+            "details": "BLOCKED` (2026-04-08: dependency gates not yet verified)"
+          }
+        ],
+        "in_progress": [
+          {
+            "id": "T3-02",
+            "title": "AirDNA / Airbtics licensed data importer (fixture-first)",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY"
+          },
+          {
+            "id": "T3-03",
+            "title": "BCPEA property auctions connector (fixture-first)",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY"
+          },
+          {
+            "id": "T3-04",
+            "title": "Partner feed stub connectors (Airbnb/Booking.com/Vrbo)",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY"
+          },
+          {
+            "id": "T3-05",
+            "title": "Official register query wrappers (Property Register / KAIS Cadastre)",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY"
+          },
+          {
+            "id": "T3-07",
+            "title": "BCPEA live scraper (public auctions are legal to crawl)",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY"
+          }
+        ],
+        "todo": [
+          {
+            "id": "T3-08",
+            "title": "STR analytics API integration (AirDNA/Airbtics — when licensed)",
+            "status": "TODO",
+            "details": "TODO"
+          }
+        ],
+        "blocked": []
+      },
+      "counts": {
+        "verified": 2,
+        "in_progress": 5,
+        "todo": 1,
+        "blocked": 0,
+        "total": 8,
+        "journal_entries": 8,
+        "efficiency_pct": 56
+      }
+    },
+    {
+      "key": "scraper_sm",
+      "display_name": "Scraper SM (Social)",
+      "description": "Tier-4 social overlays: Telegram, X, Facebook, Instagram. Consent-gated.",
+      "skills": [
+        "scraper-connector-builder",
+        "parser-fixture-qa",
+        "real-estate-source-registry",
+        "runtime-compliance-evaluator",
+        "deep-research-workflow",
+        "prompt-engineering",
+        "context-engineering"
+      ],
+      "journal": "docs/agents/scraper_sm/JOURNEY.md",
+      "completed_work": [
+        {
+          "title": "Task 0: Social ingestion contract (policy + fixtures + consent checklist)",
+          "summary": "",
+          "action": "Produced the social ingestion contract as specified in `docs/agents/TASKS.md`.",
+          "changed_files": "Source inventory table (all 7 tier-4 sources with legal mode + allowed path), Hard rules: no private scraping, no login-gated access, no mass accounts, Only Telegram public channels approved for automated ingestion in MVP, X/Twitter deferred to post-MVP, tests/fixtures/telegram_public/rent_listing/, tests/fixtures/telegram_public/sale_listing/, tests/fixtures/telegram_public/noise_message/, Bulgarian keyword extraction for intent, property type, city, district, price, Noise classification",
+          "commands": "`make test` → 62 tests, 54 pass, 8 skipped, 0 failures.",
+          "status": "DONE",
+          "review": ""
+        },
+        {
+          "title": "2026-04-08 (follow-up) — SM-01 deliverable alignment",
+          "summary": "",
+          "action": "Aligned SM-01 outputs to exact task contract in `docs/agents/TASKS.md`.",
+          "changed_files": "docs/agents/scraper_sm/social-ingestion-policy.md, tests/fixtures/social/README.md, tests/fixtures/social/telegram_public_message.template.json, tests/fixtures/social/x_public_message.template.json, tests/fixtures/social/manual_consent_message.template.json, Existing detailed contract remains at, Existing executable fixtures/tests remain in",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "2026-04-08 (follow-up) — SM-02 Telegram public channel connector (fixture-first)",
+          "summary": "",
+          "action": "Implemented Telegram social connector mapper that transforms redacted public-channel payloads into CRM-ready `lead_thread` + `lead_message` dictionaries and a `RawCapture` envelope.",
+          "changed_files": "src/bgrealestate/connectors/telegram_public.py, TelegramPublicConnector.map_message_to_crm(...), strict source/consent/redaction checks, deterministic IDs for idempotent mapping, extracted lead metadata via, tests/test_telegram_public_connector.py, rent/sale/noise fixture mapping tests, non-redacted fixture rejection test",
+          "commands": "PYTHONPATH=src python3 -m unittest tests.test_telegram_public_connector -v, make test",
+          "status": "BLOCKED (external)",
+          "review": "Connector remains offline fixture-first and does not perform live Telegram network calls., Once tier-3 tests are green, rerun"
+        },
+        {
+          "title": "2026-04-08 (follow-up) — SM-03 X public monitor connector (fixture-first)",
+          "summary": "",
+          "action": "Implemented X public connector mapper for official-API public profile payloads, fixture-first and offline.",
+          "changed_files": "src/bgrealestate/connectors/x_public.py, XPublicConnector.map_post_to_lead(...), strict source/consent/redaction checks (, deterministic thread/message IDs, extracted lead metadata via, tests/test_x_public_connector.py, sale/noise mapping tests, redaction enforcement + no raw phone checks, tests/fixtures/x_public/sale_post/{raw.json,expected.json}, tests/fixtures/x_public/noise_post/{raw.json,expected.json}",
+          "commands": "PYTHONPATH=src python3 -m unittest tests.test_x_public_connector -v, PYTHONPATH=src python3 -m unittest tests.test_social_ingestion_contract tests.test_telegram_public_connector tests.test_x_public_connector -v",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": "X connector mirrors Telegram mapper contract so debugger/backend can verify CRM round-trip consistently., No live API calls were added; all behavior validated via fixtures."
+        },
+        {
+          "title": "2026-04-08 (follow-up) — SM-02 blocker cleared",
+          "summary": "",
+          "action": "Re-ran full acceptance gate after repository-wide test fixes landed.",
+          "changed_files": "",
+          "commands": "make test, SM-02",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "2026-04-08 (follow-up) — SM-06 Tier-4 links + post/message DB package + PDF plan",
+          "summary": "",
+          "action": "Added a full tier-4 operational package to sync social links to DB, prepare one-row-per-message social datasets, and generate a paragraph-based `Tier4plan.pdf`.",
+          "changed_files": "src/bgrealestate/social_tier4.py, collect tier-4 links from, collect fixture-backed tier-4 posts/messages (Telegram + X), export JSON/CSV datasets (, src/bgrealestate/social_seed.py, build fixture-backed CRM payloads, seed, scripts/generate_tier4_plan.py, writes, CLI updates in, sync-social-database, export-tier4, seed-social-fixtures, Makefile targets, sync-social-registry",
+          "commands": "PYTHONPATH=src python3 -m bgrealestate export-tier4 --out-dir docs/exports, python3 scripts/generate_tier4_plan.py, make test",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": "All outputs remain fixture-first and legal-gated; no live social scraping was introduced., Facebook/Instagram/Threads/Viber/WhatsApp stay consent/manual or official-partner mode per policy."
+        },
+        {
+          "title": "2026-04-08 (follow-up) — SM-05 social collection options decision matrix",
+          "summary": "",
+          "action": "Completed cross-platform collection options analysis for all tier-4 sources with legality, reliability, cost-band, and rollout recommendation.",
+          "changed_files": "docs/agents/scraper_sm/social-collection-options.md, matrix for Telegram, X, Facebook, Instagram, Threads, Viber, WhatsApp, pros/cons, cost profile bands, legal access path per platform, operator recommendation: Telegram + X automated, Facebook/Instagram manual-consent, others deferred/partner-only",
+          "commands": "",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": "No connector/runtime changes introduced in this slice (doc-only by contract)., Recommendations remain aligned with"
+        },
+        {
+          "title": "2026-04-08 (follow-up) — SM-07 Facebook path decision (consent-gated defer)",
+          "summary": "",
+          "action": "Executed SM-07 as a legal decision output and deferred autonomous Facebook scraping in MVP.",
+          "changed_files": "docs/agents/scraper_sm/facebook-public-groups-decision.md, explicit no-go for autonomous scrape, approved manual/consent workflow, revisit conditions (documented legal approval + fixture-first testability)",
+          "commands": "",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": "Decision matches hard guardrails: no private/login-gated social scraping., Keeps tier-4 automation focus on Telegram + X official paths., The contract correctly blocks all 7 social sources at the legal gate layer. Even Telegram, which is the only approved automated path, is blocked by, Fixture JSON format is deliberately simple (flat envelope + extracted fields) to keep the parser testable offline. Production Telegram ingestion will wrap this in the standard, The regex NLP parser handles the mos"
+        },
+        {
+          "title": "Files changed",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        }
+      ],
+      "tasks": {
+        "verified": [
+          {
+            "id": "SM-01",
+            "title": "Social ingestion contract (policy + fixtures)",
+            "status": "VERIFIED",
+            "details": "VERIFIED` (2026-04-08; debugger consent + fixture review)"
+          }
+        ],
+        "in_progress": [
+          {
+            "id": "SM-02",
+            "title": "Telegram public channel connector (fixture-first)",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-08: acceptance gate passed)"
+          },
+          {
+            "id": "SM-03",
+            "title": "X (Twitter) public monitor connector (fixture-first)",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-08: acceptance gate passed)"
+          },
+          {
+            "id": "SM-05",
+            "title": "Social collection options research (decision matrix)",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+          },
+          {
+            "id": "SM-07",
+            "title": "Facebook public group scraper (consent-gated)",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-08: implementation deferred by legal decision)"
+          }
+        ],
+        "todo": [
+          {
+            "id": "SM-04",
+            "title": "Social lead-to-property mapping for AI chat context",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "SM-06",
+            "title": "Telegram live connector (Telegram Bot API or MTProto)",
+            "status": "TODO",
+            "details": "TODO"
+          }
+        ],
+        "blocked": []
+      },
+      "counts": {
+        "verified": 1,
+        "in_progress": 4,
+        "todo": 2,
+        "blocked": 0,
+        "total": 7,
+        "journal_entries": 9,
+        "efficiency_pct": 43
+      }
+    },
+    {
+      "key": "lead_agent",
+      "display_name": "Lead Agent",
+      "description": "Orchestration, planning, business strategy, investor materials, dashboard ops.",
+      "skills": [
+        "claude-opus-planner",
+        "software-architecture",
+        "subagent-driven-development",
+        "multi-agent-patterns",
+        "daily-orchestration",
+        "investor-pitch-yc",
+        "presentation-pdf-reportlab",
+        "project-progress-dashboard-web",
+        "prompt-engineering",
+        "context-engineering"
+      ],
+      "journal": "",
+      "completed_work": [],
+      "tasks": {
+        "verified": [
+          {
+            "id": "LEAD-01",
+            "title": "Unit economics, TAM/SAM/SOM, market analysis",
+            "status": "VERIFIED",
+            "details": "VERIFIED` (2026-04-08; created and generated)"
+          },
+          {
+            "id": "LEAD-02",
+            "title": "Investor presentation PDF with charts",
+            "status": "VERIFIED",
+            "details": "VERIFIED` (2026-04-08; generated with matplotlib + reportlab)"
+          },
+          {
+            "id": "LEAD-03",
+            "title": "Product UX structure plan (LUN-style)",
+            "status": "VERIFIED",
+            "details": "VERIFIED` (2026-04-08; spec complete)"
+          },
+          {
+            "id": "LEAD-04",
+            "title": "Varna 3D OSM building integration plan",
+            "status": "VERIFIED",
+            "details": "VERIFIED` (2026-04-08; plan complete)"
+          }
+        ],
+        "in_progress": [],
+        "todo": [
+          {
+            "id": "LEAD-05",
+            "title": "Dashboard monitoring + architecture refresh (recurring)",
+            "status": "TODO",
+            "details": "TODO` (recurring)"
+          },
+          {
+            "id": "LEAD-06",
+            "title": "GitLab CI/CD pipeline setup",
+            "status": "TODO",
+            "details": "TODO"
+          }
+        ],
+        "blocked": []
+      },
+      "counts": {
+        "verified": 4,
+        "in_progress": 0,
+        "todo": 2,
+        "blocked": 0,
+        "total": 6,
+        "journal_entries": 0,
+        "efficiency_pct": 67
+      }
+    }
+  ],
+  "processes": [
+    {
+      "key": "backend_developer",
+      "label": "Backend/API/Data",
+      "total": 16,
+      "done_count": 3,
+      "current_count": 6,
+      "next_count": 7,
+      "blocked_count": 0,
+      "progress_percent": 38,
+      "done_tasks": [
+        {
+          "id": "BD-01",
+          "title": "DB sync + control plane bootstrap",
+          "status": "VERIFIED",
+          "details": "VERIFIED` — hardened 2026-04-08 session 2 (stats query registry-aware, admin dashboard extended, tests added)"
+        },
+        {
+          "id": "BD-02",
+          "title": "Listings, CRM, Crawl APIs + DB dependencies",
+          "status": "VERIFIED",
+          "details": "VERIFIED"
+        },
+        {
+          "id": "BD-03",
+          "title": "Stats v2 (coverage breakdown)",
+          "status": "VERIFIED",
+          "details": "VERIFIED` (2026-04-08; debugger acceptance gate pass)"
+        }
+      ],
+      "current_tasks": [
+        {
+          "id": "BD-04",
+          "title": "Auth / RBAC on CRM and listings routes",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+        },
+        {
+          "id": "BD-05",
+          "title": "Temporal workflow wiring",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-08: Temporal worker/scheduler runtime scaffold implemented)"
+        },
+        {
+          "id": "BD-09",
+          "title": "Property analytics views + duplicate detection",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-08: SQL views + API endpoints implemented)"
+        },
+        {
+          "id": "BD-10",
+          "title": "Photo classification pipeline stub",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-08: classifier stub + model columns + 14 tests)"
+        },
+        {
+          "id": "BD-11",
+          "title": "Unified listing database — merge scraper outputs into canonical store",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-08: unification service + /properties endpoints + pipeline wiring implemented)"
+        },
+        {
+          "id": "BD-13",
+          "title": "User profile + auth system (buyer/renter/seller modes)",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-08: registration, login, profile, saved properties, dashboard implemented)"
+        }
+      ],
+      "next_tasks": [
+        {
+          "id": "BD-06",
+          "title": "Varna-only MVP map/search + chat context APIs",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "BD-07",
+          "title": "AI chat API bridge for property-aware search assistant",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "BD-08",
+          "title": "Varna OSM 3D building data pipeline",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "BD-12",
+          "title": "Shop-style filter API for property feed",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "BD-14",
+          "title": "Railway deployment — backend + DB + scraper worker",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "BD-15",
+          "title": "Scraper orchestration — continuous crawl loop",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "BD-16",
+          "title": "WebSocket/SSE for real-time listing updates",
+          "status": "TODO",
+          "details": "TODO"
+        }
+      ],
+      "blocked_tasks": [],
+      "comment": "3 done, 6 current, 7 next"
+    },
+    {
+      "key": "scraper_1",
+      "label": "Tier-1/2 Scraping",
+      "total": 10,
+      "done_count": 3,
+      "current_count": 4,
+      "next_count": 3,
+      "blocked_count": 0,
+      "progress_percent": 50,
+      "done_tasks": [
+        {
+          "id": "S1-01",
+          "title": "Homes.bg connector + fixtures",
+          "status": "VERIFIED",
+          "details": "VERIFIED"
+        },
+        {
+          "id": "S1-02",
+          "title": "OLX.bg API connector + JSON fixtures",
+          "status": "VERIFIED",
+          "details": "VERIFIED"
+        },
+        {
+          "id": "S1-10",
+          "title": "imoti.net stub (legal-gated)",
+          "status": "VERIFIED",
+          "details": "VERIFIED"
+        }
+      ],
+      "current_tasks": [
+        {
+          "id": "S1-11",
+          "title": "Live-safe ingestion runner (small)",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-08; CLI + tests added, golden-path command executed in skip-mode without DATABASE_URL)"
+        },
+        {
+          "id": "S1-12",
+          "title": "Tier-2 connector stubs (fixture-only)",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-08; Bazar.bg/Domaza/Yavlena/Home2U stubs + fixtures + tests)"
+        },
+        {
+          "id": "S1-13",
+          "title": "Stage-1 scraping completion check (all product types)",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-08; coverage matrix + assertions added)"
+        },
+        {
+          "id": "S1-14",
+          "title": "Discovery pagination for ALL tier-1 sources",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-08; discovery parsers + fixtures + tests added for all tier-1 sources)"
+        }
+      ],
+      "next_tasks": [
+        {
+          "id": "S1-15",
+          "title": "Live HTTP integration for tier-1 connectors",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "S1-16",
+          "title": "Remaining tier-2 connectors (full set)",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "S1-17",
+          "title": "Playwright connectors for headless-required sources",
+          "status": "TODO",
+          "details": "TODO"
+        }
+      ],
+      "blocked_tasks": [],
+      "comment": "3 done, 4 current, 3 next"
+    },
+    {
+      "key": "scraper_t3",
+      "label": "Tier-3 Partner/Vendor",
+      "total": 8,
+      "done_count": 2,
+      "current_count": 5,
+      "next_count": 1,
+      "blocked_count": 0,
+      "progress_percent": 56,
+      "done_tasks": [
+        {
+          "id": "T3-01",
+          "title": "Tier-3 ingestion policy and integration contracts",
+          "status": "VERIFIED",
+          "details": "VERIFIED` (2026-04-08; debugger policy + fixture contract review)"
+        },
+        {
+          "id": "T3-06",
+          "title": "Varna-focused enrichment handoff (post stage-1 gate)",
+          "status": "VERIFIED",
+          "details": "BLOCKED` (2026-04-08: dependency gates not yet verified)"
+        }
+      ],
+      "current_tasks": [
+        {
+          "id": "T3-02",
+          "title": "AirDNA / Airbtics licensed data importer (fixture-first)",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY"
+        },
+        {
+          "id": "T3-03",
+          "title": "BCPEA property auctions connector (fixture-first)",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY"
+        },
+        {
+          "id": "T3-04",
+          "title": "Partner feed stub connectors (Airbnb/Booking.com/Vrbo)",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY"
+        },
+        {
+          "id": "T3-05",
+          "title": "Official register query wrappers (Property Register / KAIS Cadastre)",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY"
+        },
+        {
+          "id": "T3-07",
+          "title": "BCPEA live scraper (public auctions are legal to crawl)",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY"
+        }
+      ],
+      "next_tasks": [
+        {
+          "id": "T3-08",
+          "title": "STR analytics API integration (AirDNA/Airbtics — when licensed)",
+          "status": "TODO",
+          "details": "TODO"
+        }
+      ],
+      "blocked_tasks": [],
+      "comment": "2 done, 5 current, 1 next"
+    },
+    {
+      "key": "scraper_sm",
+      "label": "Tier-4 Social Overlays",
+      "total": 7,
+      "done_count": 1,
+      "current_count": 4,
+      "next_count": 2,
+      "blocked_count": 0,
+      "progress_percent": 43,
+      "done_tasks": [
+        {
+          "id": "SM-01",
+          "title": "Social ingestion contract (policy + fixtures)",
+          "status": "VERIFIED",
+          "details": "VERIFIED` (2026-04-08; debugger consent + fixture review)"
+        }
+      ],
+      "current_tasks": [
+        {
+          "id": "SM-02",
+          "title": "Telegram public channel connector (fixture-first)",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-08: acceptance gate passed)"
+        },
+        {
+          "id": "SM-03",
+          "title": "X (Twitter) public monitor connector (fixture-first)",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-08: acceptance gate passed)"
+        },
+        {
+          "id": "SM-05",
+          "title": "Social collection options research (decision matrix)",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+        },
+        {
+          "id": "SM-07",
+          "title": "Facebook public group scraper (consent-gated)",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-08: implementation deferred by legal decision)"
+        }
+      ],
+      "next_tasks": [
+        {
+          "id": "SM-04",
+          "title": "Social lead-to-property mapping for AI chat context",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "SM-06",
+          "title": "Telegram live connector (Telegram Bot API or MTProto)",
+          "status": "TODO",
+          "details": "TODO"
+        }
+      ],
+      "blocked_tasks": [],
+      "comment": "1 done, 4 current, 2 next"
+    },
+    {
+      "key": "ux_ui_designer",
+      "label": "Frontend/Product UX",
+      "total": 13,
+      "done_count": 1,
+      "current_count": 3,
+      "next_count": 9,
+      "blocked_count": 0,
+      "progress_percent": 19,
+      "done_tasks": [
+        {
+          "id": "UX-01",
+          "title": "Operator dashboard UI plan",
+          "status": "VERIFIED",
+          "details": "VERIFIED` (2026-04-08; debugger contract check)"
+        }
+      ],
+      "current_tasks": [
+        {
+          "id": "UX-02",
+          "title": "Beta main page — map + listings + category picker",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+        },
+        {
+          "id": "UX-03",
+          "title": "Wire listings feed to live `/listings` API",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+        },
+        {
+          "id": "UX-06",
+          "title": "Product UX structure spec (LUN-style buyer marketplace)",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+        }
+      ],
+      "next_tasks": [
+        {
+          "id": "UX-04",
+          "title": "Varna-only LUN-style map + listings experience",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "UX-05",
+          "title": "AI chat panel with property/map-aware context",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "UX-07",
+          "title": "3D map integration with building layer (MapLibre)",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "UX-08",
+          "title": "Shop view — full property feed with advanced filters (like LUN.ua)",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "UX-09",
+          "title": "Property detail page — LUN.ua style (like lun.ua item page)",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "UX-10",
+          "title": "User profile cabinet — buyer/renter/seller mode switching",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "UX-11",
+          "title": "Vercel deployment — frontend",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "UX-12",
+          "title": "Admin dashboard — live operator panel",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "UX-13",
+          "title": "Design system — colors, typography, spacing tokens",
+          "status": "TODO",
+          "details": "TODO"
+        }
+      ],
+      "blocked_tasks": [],
+      "comment": "1 done, 3 current, 9 next"
+    },
+    {
+      "key": "debugger",
+      "label": "Verification/Safety",
+      "total": 8,
+      "done_count": 4,
+      "current_count": 0,
+      "next_count": 4,
+      "blocked_count": 0,
+      "progress_percent": 50,
+      "done_tasks": [
+        {
+          "id": "DBG-01",
+          "title": "Golden path check",
+          "status": "VERIFIED",
+          "details": "VERIFIED"
+        },
+        {
+          "id": "DBG-02",
+          "title": "Verify all DONE_AWAITING_VERIFY slices",
+          "status": "VERIFIED",
+          "details": "VERIFIED` (2026-04-08 run; UX-01 verified)"
+        },
+        {
+          "id": "DBG-03",
+          "title": "Cross-agent safety audit",
+          "status": "VERIFIED",
+          "details": "VERIFIED` (2026-04-08)"
+        },
+        {
+          "id": "DBG-04",
+          "title": "CI pipeline verification",
+          "status": "VERIFIED",
+          "details": "VERIFIED` (2026-04-08)"
+        }
+      ],
+      "current_tasks": [],
+      "next_tasks": [
+        {
+          "id": "DBG-05",
+          "title": "Verify stage-1 scraping is perfect before Varna 3D map MVP",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "DBG-06",
+          "title": "Verify all pending DONE_AWAITING_VERIFY slices (batch 2)",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "DBG-07",
+          "title": "End-to-end website smoke test",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "DBG-08",
+          "title": "Security audit — auth, injection, XSS, CORS",
+          "status": "TODO",
+          "details": "TODO"
+        }
+      ],
+      "blocked_tasks": [],
+      "comment": "4 done, 0 current, 4 next"
+    },
+    {
+      "key": "lead_agent",
+      "label": "Lead/Orchestration",
+      "total": 6,
+      "done_count": 4,
+      "current_count": 0,
+      "next_count": 2,
+      "blocked_count": 0,
+      "progress_percent": 67,
+      "done_tasks": [
+        {
+          "id": "LEAD-01",
+          "title": "Unit economics, TAM/SAM/SOM, market analysis",
+          "status": "VERIFIED",
+          "details": "VERIFIED` (2026-04-08; created and generated)"
+        },
+        {
+          "id": "LEAD-02",
+          "title": "Investor presentation PDF with charts",
+          "status": "VERIFIED",
+          "details": "VERIFIED` (2026-04-08; generated with matplotlib + reportlab)"
+        },
+        {
+          "id": "LEAD-03",
+          "title": "Product UX structure plan (LUN-style)",
+          "status": "VERIFIED",
+          "details": "VERIFIED` (2026-04-08; spec complete)"
+        },
+        {
+          "id": "LEAD-04",
+          "title": "Varna 3D OSM building integration plan",
+          "status": "VERIFIED",
+          "details": "VERIFIED` (2026-04-08; plan complete)"
+        }
+      ],
+      "current_tasks": [],
+      "next_tasks": [
+        {
+          "id": "LEAD-05",
+          "title": "Dashboard monitoring + architecture refresh (recurring)",
+          "status": "TODO",
+          "details": "TODO` (recurring)"
+        },
+        {
+          "id": "LEAD-06",
+          "title": "GitLab CI/CD pipeline setup",
+          "status": "TODO",
+          "details": "TODO"
+        }
+      ],
+      "blocked_tasks": [],
+      "comment": "4 done, 0 current, 2 next"
+    }
+  ],
+  "all_tasks": [
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-04",
+      "title": "Auth / RBAC on CRM and listings routes",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-05",
+      "title": "Temporal workflow wiring",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-08: Temporal worker/scheduler runtime scaffold implemented)"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-09",
+      "title": "Property analytics views + duplicate detection",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-08: SQL views + API endpoints implemented)"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-10",
+      "title": "Photo classification pipeline stub",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-08: classifier stub + model columns + 14 tests)"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-11",
+      "title": "Unified listing database — merge scraper outputs into canonical store",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-08: unification service + /properties endpoints + pipeline wiring implemented)"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-13",
+      "title": "User profile + auth system (buyer/renter/seller modes)",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-08: registration, login, profile, saved properties, dashboard implemented)"
+    },
+    {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-11",
+      "title": "Live-safe ingestion runner (small)",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-08; CLI + tests added, golden-path command executed in skip-mode without DATABASE_URL)"
+    },
+    {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-12",
+      "title": "Tier-2 connector stubs (fixture-only)",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-08; Bazar.bg/Domaza/Yavlena/Home2U stubs + fixtures + tests)"
+    },
+    {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-13",
+      "title": "Stage-1 scraping completion check (all product types)",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-08; coverage matrix + assertions added)"
+    },
+    {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-14",
+      "title": "Discovery pagination for ALL tier-1 sources",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-08; discovery parsers + fixtures + tests added for all tier-1 sources)"
+    },
+    {
+      "owner_key": "scraper_sm",
+      "owner": "Scraper SM",
+      "id": "SM-02",
+      "title": "Telegram public channel connector (fixture-first)",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-08: acceptance gate passed)"
+    },
+    {
+      "owner_key": "scraper_sm",
+      "owner": "Scraper SM",
+      "id": "SM-03",
+      "title": "X (Twitter) public monitor connector (fixture-first)",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-08: acceptance gate passed)"
+    },
+    {
+      "owner_key": "scraper_sm",
+      "owner": "Scraper SM",
+      "id": "SM-05",
+      "title": "Social collection options research (decision matrix)",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+    },
+    {
+      "owner_key": "scraper_sm",
+      "owner": "Scraper SM",
+      "id": "SM-07",
+      "title": "Facebook public group scraper (consent-gated)",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-08: implementation deferred by legal decision)"
+    },
+    {
+      "owner_key": "scraper_t3",
+      "owner": "Scraper T3",
+      "id": "T3-02",
+      "title": "AirDNA / Airbtics licensed data importer (fixture-first)",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY"
+    },
+    {
+      "owner_key": "scraper_t3",
+      "owner": "Scraper T3",
+      "id": "T3-03",
+      "title": "BCPEA property auctions connector (fixture-first)",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY"
+    },
+    {
+      "owner_key": "scraper_t3",
+      "owner": "Scraper T3",
+      "id": "T3-04",
+      "title": "Partner feed stub connectors (Airbnb/Booking.com/Vrbo)",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY"
+    },
+    {
+      "owner_key": "scraper_t3",
+      "owner": "Scraper T3",
+      "id": "T3-05",
+      "title": "Official register query wrappers (Property Register / KAIS Cadastre)",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY"
+    },
+    {
+      "owner_key": "scraper_t3",
+      "owner": "Scraper T3",
+      "id": "T3-07",
+      "title": "BCPEA live scraper (public auctions are legal to crawl)",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-02",
+      "title": "Beta main page — map + listings + category picker",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-03",
+      "title": "Wire listings feed to live `/listings` API",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-06",
+      "title": "Product UX structure spec (LUN-style buyer marketplace)",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-06",
+      "title": "Varna-only MVP map/search + chat context APIs",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-07",
+      "title": "AI chat API bridge for property-aware search assistant",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-08",
+      "title": "Varna OSM 3D building data pipeline",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-12",
+      "title": "Shop-style filter API for property feed",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-14",
+      "title": "Railway deployment — backend + DB + scraper worker",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-15",
+      "title": "Scraper orchestration — continuous crawl loop",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-16",
+      "title": "WebSocket/SSE for real-time listing updates",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-05",
+      "title": "Verify stage-1 scraping is perfect before Varna 3D map MVP",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-06",
+      "title": "Verify all pending DONE_AWAITING_VERIFY slices (batch 2)",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-07",
+      "title": "End-to-end website smoke test",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-08",
+      "title": "Security audit — auth, injection, XSS, CORS",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "lead_agent",
+      "owner": "Lead Agent",
+      "id": "LEAD-05",
+      "title": "Dashboard monitoring + architecture refresh (recurring)",
+      "status": "TODO",
+      "details": "TODO` (recurring)"
+    },
+    {
+      "owner_key": "lead_agent",
+      "owner": "Lead Agent",
+      "id": "LEAD-06",
+      "title": "GitLab CI/CD pipeline setup",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-15",
+      "title": "Live HTTP integration for tier-1 connectors",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-16",
+      "title": "Remaining tier-2 connectors (full set)",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-17",
+      "title": "Playwright connectors for headless-required sources",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "scraper_sm",
+      "owner": "Scraper SM",
+      "id": "SM-04",
+      "title": "Social lead-to-property mapping for AI chat context",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "scraper_sm",
+      "owner": "Scraper SM",
+      "id": "SM-06",
+      "title": "Telegram live connector (Telegram Bot API or MTProto)",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "scraper_t3",
+      "owner": "Scraper T3",
+      "id": "T3-08",
+      "title": "STR analytics API integration (AirDNA/Airbtics — when licensed)",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-04",
+      "title": "Varna-only LUN-style map + listings experience",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-05",
+      "title": "AI chat panel with property/map-aware context",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-07",
+      "title": "3D map integration with building layer (MapLibre)",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-08",
+      "title": "Shop view — full property feed with advanced filters (like LUN.ua)",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-09",
+      "title": "Property detail page — LUN.ua style (like lun.ua item page)",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-10",
+      "title": "User profile cabinet — buyer/renter/seller mode switching",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-11",
+      "title": "Vercel deployment — frontend",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-12",
+      "title": "Admin dashboard — live operator panel",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-13",
+      "title": "Design system — colors, typography, spacing tokens",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-01",
+      "title": "DB sync + control plane bootstrap",
+      "status": "VERIFIED",
+      "details": "VERIFIED` — hardened 2026-04-08 session 2 (stats query registry-aware, admin dashboard extended, tests added)"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-02",
+      "title": "Listings, CRM, Crawl APIs + DB dependencies",
+      "status": "VERIFIED",
+      "details": "VERIFIED"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-03",
+      "title": "Stats v2 (coverage breakdown)",
+      "status": "VERIFIED",
+      "details": "VERIFIED` (2026-04-08; debugger acceptance gate pass)"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-01",
+      "title": "Golden path check",
+      "status": "VERIFIED",
+      "details": "VERIFIED"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-02",
+      "title": "Verify all DONE_AWAITING_VERIFY slices",
+      "status": "VERIFIED",
+      "details": "VERIFIED` (2026-04-08 run; UX-01 verified)"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-03",
+      "title": "Cross-agent safety audit",
+      "status": "VERIFIED",
+      "details": "VERIFIED` (2026-04-08)"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-04",
+      "title": "CI pipeline verification",
+      "status": "VERIFIED",
+      "details": "VERIFIED` (2026-04-08)"
+    },
+    {
+      "owner_key": "lead_agent",
+      "owner": "Lead Agent",
+      "id": "LEAD-01",
+      "title": "Unit economics, TAM/SAM/SOM, market analysis",
+      "status": "VERIFIED",
+      "details": "VERIFIED` (2026-04-08; created and generated)"
+    },
+    {
+      "owner_key": "lead_agent",
+      "owner": "Lead Agent",
+      "id": "LEAD-02",
+      "title": "Investor presentation PDF with charts",
+      "status": "VERIFIED",
+      "details": "VERIFIED` (2026-04-08; generated with matplotlib + reportlab)"
+    },
+    {
+      "owner_key": "lead_agent",
+      "owner": "Lead Agent",
+      "id": "LEAD-03",
+      "title": "Product UX structure plan (LUN-style)",
+      "status": "VERIFIED",
+      "details": "VERIFIED` (2026-04-08; spec complete)"
+    },
+    {
+      "owner_key": "lead_agent",
+      "owner": "Lead Agent",
+      "id": "LEAD-04",
+      "title": "Varna 3D OSM building integration plan",
+      "status": "VERIFIED",
+      "details": "VERIFIED` (2026-04-08; plan complete)"
+    },
+    {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-01",
+      "title": "Homes.bg connector + fixtures",
+      "status": "VERIFIED",
+      "details": "VERIFIED"
+    },
+    {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-02",
+      "title": "OLX.bg API connector + JSON fixtures",
+      "status": "VERIFIED",
+      "details": "VERIFIED"
+    },
+    {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-10",
+      "title": "imoti.net stub (legal-gated)",
+      "status": "VERIFIED",
+      "details": "VERIFIED"
+    },
+    {
+      "owner_key": "scraper_sm",
+      "owner": "Scraper SM",
+      "id": "SM-01",
+      "title": "Social ingestion contract (policy + fixtures)",
+      "status": "VERIFIED",
+      "details": "VERIFIED` (2026-04-08; debugger consent + fixture review)"
+    },
+    {
+      "owner_key": "scraper_t3",
+      "owner": "Scraper T3",
+      "id": "T3-01",
+      "title": "Tier-3 ingestion policy and integration contracts",
+      "status": "VERIFIED",
+      "details": "VERIFIED` (2026-04-08; debugger policy + fixture contract review)"
+    },
+    {
+      "owner_key": "scraper_t3",
+      "owner": "Scraper T3",
+      "id": "T3-06",
+      "title": "Varna-focused enrichment handoff (post stage-1 gate)",
+      "status": "VERIFIED",
+      "details": "BLOCKED` (2026-04-08: dependency gates not yet verified)"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-01",
+      "title": "Operator dashboard UI plan",
+      "status": "VERIFIED",
+      "details": "VERIFIED` (2026-04-08; debugger contract check)"
+    }
+  ],
+  "sources": {
+    "total": 44,
+    "tiers": {
+      "1": 10,
+      "2": 17,
+      "3": 10,
+      "4": 7
+    },
+    "access_modes": {
+      "html": 21,
+      "headless": 5,
+      "official_api": 3,
+      "partner_feed": 6,
+      "licensed_data": 2,
+      "manual_consent_only": 7
+    },
+    "legal_modes": {
+      "public_crawl_with_review": 24,
+      "legal_review_required": 2,
+      "official_api_allowed": 3,
+      "licensing_required": 1,
+      "official_partner_or_vendor_only": 8,
+      "consent_or_manual_only": 6
+    },
+    "with_fixtures": 17,
+    "sources": [
+      {
+        "name": "Address.bg",
+        "tier": 1,
+        "source_family": "agency",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 3,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land",
+          "new_build"
+        ],
+        "scrape": {
+          "items": 3,
+          "fixture_dirs": 3,
+          "quality": {
+            "price_pct": 33,
+            "photos_pct": 33,
+            "avg_photos": 1.0,
+            "geo_pct": 33,
+            "phone_pct": 33,
+            "area_pct": 33,
+            "rooms_pct": 0,
+            "address_pct": 33,
+            "description_pct": 0,
+            "category_pct": 33,
+            "listing_types": [
+              "mixed",
+              "sale"
+            ]
+          }
+        }
+      },
+      {
+        "name": "alo.bg",
+        "tier": 1,
+        "source_family": "classifieds",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 3,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "short_term_rent",
+          "land",
+          "new_build"
+        ],
+        "scrape": {
+          "items": 3,
+          "fixture_dirs": 3,
+          "quality": {
+            "price_pct": 33,
+            "photos_pct": 33,
+            "avg_photos": 1.0,
+            "geo_pct": 33,
+            "phone_pct": 33,
+            "area_pct": 33,
+            "rooms_pct": 0,
+            "address_pct": 33,
+            "description_pct": 0,
+            "category_pct": 33,
+            "listing_types": [
+              "mixed",
+              "sale"
+            ]
+          }
+        }
+      },
+      {
+        "name": "BulgarianProperties",
+        "tier": 1,
+        "source_family": "agency",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 3,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land",
+          "new_build"
+        ],
+        "scrape": {
+          "items": 3,
+          "fixture_dirs": 3,
+          "quality": {
+            "price_pct": 33,
+            "photos_pct": 33,
+            "avg_photos": 1.0,
+            "geo_pct": 33,
+            "phone_pct": 33,
+            "area_pct": 33,
+            "rooms_pct": 0,
+            "address_pct": 33,
+            "description_pct": 0,
+            "category_pct": 33,
+            "listing_types": [
+              "mixed",
+              "sale"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Homes.bg",
+        "tier": 1,
+        "source_family": "portal",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 8,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land"
+        ],
+        "scrape": {
+          "items": 8,
+          "fixture_dirs": 8,
+          "quality": {
+            "price_pct": 25,
+            "photos_pct": 38,
+            "avg_photos": 1.0,
+            "geo_pct": 12,
+            "phone_pct": 38,
+            "area_pct": 0,
+            "rooms_pct": 0,
+            "address_pct": 38,
+            "description_pct": 0,
+            "category_pct": 38,
+            "listing_types": [
+              "mixed"
+            ]
+          }
+        }
+      },
+      {
+        "name": "imot.bg",
+        "tier": 1,
+        "source_family": "portal",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 3,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land",
+          "new_build"
+        ],
+        "scrape": {
+          "items": 3,
+          "fixture_dirs": 3,
+          "quality": {
+            "price_pct": 33,
+            "photos_pct": 33,
+            "avg_photos": 1.0,
+            "geo_pct": 33,
+            "phone_pct": 33,
+            "area_pct": 33,
+            "rooms_pct": 0,
+            "address_pct": 33,
+            "description_pct": 0,
+            "category_pct": 33,
+            "listing_types": [
+              "mixed",
+              "sale"
+            ]
+          }
+        }
+      },
+      {
+        "name": "imoti.net",
+        "tier": 1,
+        "source_family": "portal",
+        "access_mode": "headless",
+        "legal_mode": "legal_review_required",
+        "risk_mode": "high",
+        "publish_capable": true,
+        "fixture_cases": 2,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land",
+          "new_build"
+        ],
+        "scrape": {
+          "items": 2,
+          "fixture_dirs": 2,
+          "quality": {
+            "price_pct": 50,
+            "photos_pct": 50,
+            "avg_photos": 1.0,
+            "geo_pct": 50,
+            "phone_pct": 50,
+            "area_pct": 50,
+            "rooms_pct": 0,
+            "address_pct": 50,
+            "description_pct": 0,
+            "category_pct": 50,
+            "listing_types": [
+              "mixed"
+            ]
+          }
+        }
+      },
+      {
+        "name": "LUXIMMO",
+        "tier": 1,
+        "source_family": "agency",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 3,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land",
+          "new_build"
+        ],
+        "scrape": {
+          "items": 3,
+          "fixture_dirs": 3,
+          "quality": {
+            "price_pct": 33,
+            "photos_pct": 33,
+            "avg_photos": 1.0,
+            "geo_pct": 33,
+            "phone_pct": 33,
+            "area_pct": 33,
+            "rooms_pct": 0,
+            "address_pct": 33,
+            "description_pct": 0,
+            "category_pct": 33,
+            "listing_types": [
+              "mixed",
+              "sale"
+            ]
+          }
+        }
+      },
+      {
+        "name": "OLX.bg",
+        "tier": 1,
+        "source_family": "classifieds",
+        "access_mode": "official_api",
+        "legal_mode": "official_api_allowed",
+        "risk_mode": "low",
+        "publish_capable": true,
+        "fixture_cases": 6,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land",
+          "new_build"
+        ],
+        "scrape": {
+          "items": 6,
+          "fixture_dirs": 6,
+          "quality": {
+            "price_pct": 17,
+            "photos_pct": 17,
+            "avg_photos": 2.0,
+            "geo_pct": 33,
+            "phone_pct": 17,
+            "area_pct": 33,
+            "rooms_pct": 17,
+            "address_pct": 0,
+            "description_pct": 0,
+            "category_pct": 33,
+            "listing_types": [
+              "mixed",
+              "sale"
+            ]
+          }
+        }
+      },
+      {
+        "name": "property.bg",
+        "tier": 1,
+        "source_family": "portal",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 3,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land",
+          "new_build"
+        ],
+        "scrape": {
+          "items": 3,
+          "fixture_dirs": 3,
+          "quality": {
+            "price_pct": 33,
+            "photos_pct": 33,
+            "avg_photos": 1.0,
+            "geo_pct": 33,
+            "phone_pct": 33,
+            "area_pct": 33,
+            "rooms_pct": 0,
+            "address_pct": 33,
+            "description_pct": 0,
+            "category_pct": 33,
+            "listing_types": [
+              "mixed",
+              "sale"
+            ]
+          }
+        }
+      },
+      {
+        "name": "SUPRIMMO",
+        "tier": 1,
+        "source_family": "agency",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 3,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land",
+          "new_build"
+        ],
+        "scrape": {
+          "items": 3,
+          "fixture_dirs": 3,
+          "quality": {
+            "price_pct": 33,
+            "photos_pct": 33,
+            "avg_photos": 1.0,
+            "geo_pct": 33,
+            "phone_pct": 33,
+            "area_pct": 33,
+            "rooms_pct": 0,
+            "address_pct": 33,
+            "description_pct": 0,
+            "category_pct": 33,
+            "listing_types": [
+              "mixed",
+              "sale"
+            ]
+          }
+        }
+      },
+      {
+        "name": "ApartmentsBulgaria.com",
+        "tier": 2,
+        "source_family": "ota",
+        "access_mode": "headless",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "short_term_rent"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Bazar.bg",
+        "tier": 2,
+        "source_family": "classifieds",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 2,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land"
+        ],
+        "scrape": {
+          "items": 2,
+          "fixture_dirs": 2,
+          "quality": {
+            "price_pct": 100,
+            "photos_pct": 100,
+            "avg_photos": 1.0,
+            "geo_pct": 100,
+            "phone_pct": 100,
+            "area_pct": 100,
+            "rooms_pct": 0,
+            "address_pct": 100,
+            "description_pct": 0,
+            "category_pct": 100,
+            "listing_types": [
+              "sale"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Domaza",
+        "tier": 2,
+        "source_family": "portal",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 2,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "short_term_rent",
+          "land",
+          "new_build"
+        ],
+        "scrape": {
+          "items": 2,
+          "fixture_dirs": 2,
+          "quality": {
+            "price_pct": 100,
+            "photos_pct": 100,
+            "avg_photos": 1.0,
+            "geo_pct": 100,
+            "phone_pct": 100,
+            "area_pct": 100,
+            "rooms_pct": 0,
+            "address_pct": 100,
+            "description_pct": 0,
+            "category_pct": 100,
+            "listing_types": [
+              "sale",
+              "short_term_rent"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Holding Group Real Estate",
+        "tier": 2,
+        "source_family": "agency",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land",
+          "new_build"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Home2U",
+        "tier": 2,
+        "source_family": "agency",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 2,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land",
+          "new_build"
+        ],
+        "scrape": {
+          "items": 2,
+          "fixture_dirs": 2,
+          "quality": {
+            "price_pct": 100,
+            "photos_pct": 100,
+            "avg_photos": 1.0,
+            "geo_pct": 100,
+            "phone_pct": 100,
+            "area_pct": 100,
+            "rooms_pct": 0,
+            "address_pct": 100,
+            "description_pct": 0,
+            "category_pct": 100,
+            "listing_types": [
+              "sale"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Imoteka.bg",
+        "tier": 2,
+        "source_family": "agency",
+        "access_mode": "headless",
+        "legal_mode": "legal_review_required",
+        "risk_mode": "high",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land",
+          "new_build"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Imoti.info",
+        "tier": 2,
+        "source_family": "classifieds",
+        "access_mode": "partner_feed",
+        "legal_mode": "licensing_required",
+        "risk_mode": "high",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land",
+          "new_build"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Indomio.bg",
+        "tier": 2,
+        "source_family": "portal",
+        "access_mode": "headless",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Lions Group",
+        "tier": 2,
+        "source_family": "agency",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land",
+          "new_build"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Pochivka.bg",
+        "tier": 2,
+        "source_family": "ota",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "short_term_rent"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "realestates.bg",
+        "tier": 2,
+        "source_family": "classifieds",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Realistimo",
+        "tier": 2,
+        "source_family": "portal",
+        "access_mode": "headless",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "land",
+          "new_build"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Rentica.bg",
+        "tier": 2,
+        "source_family": "agency",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "long_term_rent"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Svobodni-kvartiri.com",
+        "tier": 2,
+        "source_family": "portal",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "long_term_rent",
+          "short_term_rent"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Unique Estates",
+        "tier": 2,
+        "source_family": "agency",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "sale",
+          "long_term_rent",
+          "new_build"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Vila.bg",
+        "tier": 2,
+        "source_family": "ota",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "short_term_rent"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Yavlena",
+        "tier": 2,
+        "source_family": "agency",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 2,
+        "listing_types": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scrape": {
+          "items": 2,
+          "fixture_dirs": 2,
+          "quality": {
+            "price_pct": 100,
+            "photos_pct": 100,
+            "avg_photos": 1.0,
+            "geo_pct": 100,
+            "phone_pct": 100,
+            "area_pct": 100,
+            "rooms_pct": 0,
+            "address_pct": 100,
+            "description_pct": 0,
+            "category_pct": 100,
+            "listing_types": [
+              "long_term_rent",
+              "sale"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Airbnb",
+        "tier": 3,
+        "source_family": "ota",
+        "access_mode": "partner_feed",
+        "legal_mode": "official_partner_or_vendor_only",
+        "risk_mode": "prohibited_without_contract",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "short_term_rent"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Airbtics",
+        "tier": 3,
+        "source_family": "analytics_vendor",
+        "access_mode": "licensed_data",
+        "legal_mode": "official_partner_or_vendor_only",
+        "risk_mode": "low",
+        "publish_capable": false,
+        "fixture_cases": 0,
+        "listing_types": [
+          "short_term_rent_metrics"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "AirDNA",
+        "tier": 3,
+        "source_family": "analytics_vendor",
+        "access_mode": "licensed_data",
+        "legal_mode": "official_partner_or_vendor_only",
+        "risk_mode": "low",
+        "publish_capable": false,
+        "fixture_cases": 0,
+        "listing_types": [
+          "short_term_rent_metrics"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "BCPEA property auctions",
+        "tier": 3,
+        "source_family": "official_register",
+        "access_mode": "html",
+        "legal_mode": "public_crawl_with_review",
+        "risk_mode": "medium",
+        "publish_capable": false,
+        "fixture_cases": 2,
+        "listing_types": [
+          "auction_sale"
+        ],
+        "scrape": {
+          "items": 2,
+          "fixture_dirs": 2,
+          "quality": {
+            "price_pct": 0,
+            "photos_pct": 50,
+            "avg_photos": 3.0,
+            "geo_pct": 0,
+            "phone_pct": 0,
+            "area_pct": 50,
+            "rooms_pct": 0,
+            "address_pct": 0,
+            "description_pct": 0,
+            "category_pct": 0,
+            "listing_types": [
+              "auction_sale"
+            ]
+          }
+        }
+      },
+      {
+        "name": "Booking.com",
+        "tier": 3,
+        "source_family": "ota",
+        "access_mode": "partner_feed",
+        "legal_mode": "official_partner_or_vendor_only",
+        "risk_mode": "prohibited_without_contract",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "short_term_rent"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Flat Manager",
+        "tier": 3,
+        "source_family": "ota",
+        "access_mode": "partner_feed",
+        "legal_mode": "official_partner_or_vendor_only",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "short_term_rent",
+          "property_management"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "KAIS Cadastre",
+        "tier": 3,
+        "source_family": "official_register",
+        "access_mode": "manual_consent_only",
+        "legal_mode": "consent_or_manual_only",
+        "risk_mode": "high",
+        "publish_capable": false,
+        "fixture_cases": 0,
+        "listing_types": [
+          "building_geometry",
+          "parcel_validation"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Menada Bulgaria",
+        "tier": 3,
+        "source_family": "ota",
+        "access_mode": "partner_feed",
+        "legal_mode": "official_partner_or_vendor_only",
+        "risk_mode": "medium",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "short_term_rent",
+          "property_management"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Property Register",
+        "tier": 3,
+        "source_family": "official_register",
+        "access_mode": "manual_consent_only",
+        "legal_mode": "consent_or_manual_only",
+        "risk_mode": "high",
+        "publish_capable": false,
+        "fixture_cases": 0,
+        "listing_types": [
+          "ownership_verification"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Vrbo",
+        "tier": 3,
+        "source_family": "ota",
+        "access_mode": "partner_feed",
+        "legal_mode": "official_partner_or_vendor_only",
+        "risk_mode": "high",
+        "publish_capable": true,
+        "fixture_cases": 0,
+        "listing_types": [
+          "short_term_rent"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Facebook public groups/pages",
+        "tier": 4,
+        "source_family": "social_public_channel",
+        "access_mode": "manual_consent_only",
+        "legal_mode": "consent_or_manual_only",
+        "risk_mode": "high",
+        "publish_capable": false,
+        "fixture_cases": 0,
+        "listing_types": [
+          "leads",
+          "long_term_rent"
+        ],
+        "scrape": {
+          "items": 0,
+          "fixture_dirs": 0,
+          "quality": {}
+        }
+      },
+      {
+        "name": "Instagram public profiles",
+        "tier": 4,
+        "source_family": "social_public_channel",
+        "access_mode": "manual_consent_only",
+        "legal_mode": "consent_or_manual_only",
+        "risk_mode": "high",
+        "publish_capable": false,
+        "fixture_cases": 0,
+        "listing_types": [
+          "leads",
+          "branding"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Telegram public channels",
+        "tier": 4,
+        "source_family": "social_public_channel",
+        "access_mode": "official_api",
+        "legal_mode": "official_api_allowed",
+        "risk_mode": "medium",
+        "publish_capable": false,
+        "fixture_cases": 3,
+        "listing_types": [
+          "leads",
+          "sale",
+          "long_term_rent"
+        ],
+        "scrape": {
+          "items": 3,
+          "fixture_dirs": 3,
+          "quality": {
+            "price_pct": 67,
+            "photos_pct": 0,
+            "avg_photos": 0,
+            "geo_pct": 0,
+            "phone_pct": 0,
+            "area_pct": 0,
+            "rooms_pct": 0,
+            "address_pct": 0,
+            "description_pct": 0,
+            "category_pct": 0,
+            "listing_types": []
+          }
+        }
+      },
+      {
+        "name": "Threads public profiles",
+        "tier": 4,
+        "source_family": "social_public_channel",
+        "access_mode": "manual_consent_only",
+        "legal_mode": "consent_or_manual_only",
+        "risk_mode": "high",
+        "publish_capable": false,
+        "fixture_cases": 0,
+        "listing_types": [
+          "leads",
+          "branding",
+          "links"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "Viber opt-in communities",
+        "tier": 4,
+        "source_family": "private_messenger",
+        "access_mode": "manual_consent_only",
+        "legal_mode": "consent_or_manual_only",
+        "risk_mode": "high",
+        "publish_capable": false,
+        "fixture_cases": 0,
+        "listing_types": [
+          "leads",
+          "sale",
+          "long_term_rent"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "WhatsApp opt-in groups",
+        "tier": 4,
+        "source_family": "private_messenger",
+        "access_mode": "manual_consent_only",
+        "legal_mode": "official_partner_or_vendor_only",
+        "risk_mode": "prohibited_without_contract",
+        "publish_capable": false,
+        "fixture_cases": 0,
+        "listing_types": [
+          "leads",
+          "sale",
+          "long_term_rent"
+        ],
+        "scrape": {}
+      },
+      {
+        "name": "X public search/accounts",
+        "tier": 4,
+        "source_family": "social_public_channel",
+        "access_mode": "official_api",
+        "legal_mode": "official_api_allowed",
+        "risk_mode": "low",
+        "publish_capable": false,
+        "fixture_cases": 2,
+        "listing_types": [
+          "news",
+          "links",
+          "leads"
+        ],
+        "scrape": {
+          "items": 2,
+          "fixture_dirs": 2,
+          "quality": {
+            "price_pct": 50,
+            "photos_pct": 0,
+            "avg_photos": 0,
+            "geo_pct": 0,
+            "phone_pct": 0,
+            "area_pct": 0,
+            "rooms_pct": 0,
+            "address_pct": 0,
+            "description_pct": 0,
+            "category_pct": 0,
+            "listing_types": []
+          }
+        }
+      }
+    ]
+  },
+  "progress_path": [
+    {
+      "stage": "1",
+      "name": "Foundations and Source Registry",
+      "status": "COMPLETE"
+    },
+    {
+      "stage": "2",
+      "name": "Database and Persistence",
+      "status": "IN PROGRESS"
+    },
+    {
+      "stage": "3",
+      "name": "Runtime and Compliance Gates",
+      "status": "NEXT"
+    },
+    {
+      "stage": "4",
+      "name": "Tier-1 Connectors",
+      "status": "PARTIAL"
+    },
+    {
+      "stage": "5",
+      "name": "Tier-2, STR, and Social Overlays",
+      "status": "NOT STARTED"
+    },
+    {
+      "stage": "6",
+      "name": "Media, Dedupe, Entity Graph",
+      "status": "NOT STARTED"
+    },
+    {
+      "stage": "7",
+      "name": "Geospatial and 3D Map",
+      "status": "NOT STARTED"
+    },
+    {
+      "stage": "8",
+      "name": "Backend APIs",
+      "status": "PARTIAL"
+    },
+    {
+      "stage": "9",
+      "name": "Frontend MVP",
+      "status": "SHELL ONLY"
+    },
+    {
+      "stage": "10",
+      "name": "Reverse Publishing",
+      "status": "GATED"
+    }
+  ],
+  "dashboard_backlog": [
+    {
+      "id": "A",
+      "name": "Project creation wizard",
+      "status": "Not started"
+    },
+    {
+      "id": "B",
+      "name": "Live health strip + KPI row",
+      "status": "Backend partial"
+    },
+    {
+      "id": "C",
+      "name": "Source health table with filters/badges",
+      "status": "Spec ready"
+    },
+    {
+      "id": "D",
+      "name": "Crawl jobs table + retry drawer",
+      "status": "Backend ready"
+    },
+    {
+      "id": "E",
+      "name": "Parser/dedupe/geocode/compliance panels",
+      "status": "Backend pending"
+    },
+    {
+      "id": "F",
+      "name": "Map preview inside dashboard",
+      "status": "Not started"
+    },
+    {
+      "id": "G",
+      "name": "CRM inbox summary widgets",
+      "status": "Backend partial"
+    }
+  ]
+}</script>
   <script>
     const AGENT_COLORS = {
       debugger: '#de350b',
@@ -167,6 +3866,7 @@
       scraper_1: '#00875a',
       scraper_t3: '#ff991f',
       scraper_sm: '#00b8d9',
+      lead_agent: '#172b4d',
     };
     const AGENT_INITIALS = {
       debugger: 'DB',
@@ -175,13 +3875,14 @@
       scraper_1: 'S1',
       scraper_t3: 'T3',
       scraper_sm: 'SM',
+      lead_agent: 'LD',
     };
 
     function statusBadge(status) {
       const map = {
         'VERIFIED': 'badge-green', 'COMPLETE': 'badge-green', 'complete': 'badge-green',
-        'IN_PROGRESS': 'badge-blue', 'IN PROGRESS': 'badge-blue',
-        'TODO': 'badge-gray', 'NEXT': 'badge-amber',
+        'IN_PROGRESS': 'badge-amber', 'IN PROGRESS': 'badge-amber', 'DONE_AWAITING_VERIFY': 'badge-amber',
+        'TODO': 'badge-blue', 'NEXT': 'badge-blue',
         'BLOCKED': 'badge-red', 'NOT STARTED': 'badge-gray',
         'PARTIAL': 'badge-amber', 'SHELL ONLY': 'badge-purple', 'GATED': 'badge-red',
       };
@@ -202,13 +3903,42 @@
       return 'stage-pending';
     }
 
+    async function loadDashboardData() {
+      // Primary mode: embedded JSON payload (works with file:// and static hosting).
+      const embedded = document.getElementById('dashboard-data');
+      if (embedded && embedded.textContent && embedded.textContent.trim() && embedded.textContent.trim() !== '__DASHBOARD_DATA_SENTINEL__') {
+        try {
+          return JSON.parse(embedded.textContent);
+        } catch (e) {
+          console.warn('Embedded dashboard JSON parse failed, falling back to fetch', e);
+        }
+      }
+
+      // Fallback mode: fetch adjacent exports JSON (works on http(s) hosting).
+      const candidates = [
+        '../exports/progress-dashboard.json',
+        './progress-dashboard.json',
+        '/docs/exports/progress-dashboard.json',
+      ];
+      for (const path of candidates) {
+        try {
+          const res = await fetch(path, { cache: 'no-store' });
+          if (res.ok) {
+            return await res.json();
+          }
+        } catch (_) {
+          // Try next candidate.
+        }
+      }
+      throw new Error('Dashboard data unavailable');
+    }
+
     async function main() {
       let data;
       try {
-        const res = await fetch('../exports/progress-dashboard.json');
-        data = await res.json();
+        data = await loadDashboardData();
       } catch (e) {
-        document.querySelector('.container').innerHTML = '<div class="card"><p>Could not load dashboard data. Run <code>make dashboard-doc</code> to generate.</p></div>';
+        document.querySelector('.container').innerHTML = '<div class="card"><p>Could not load dashboard data. Regenerate with <code>make dashboard-doc</code>. If opening via <code>file://</code>, use the generated embedded build.</p></div>';
         return;
       }
 
@@ -249,6 +3979,9 @@
       const pct = rm.total ? Math.round((rm.done / rm.total) * 100) : 0;
       document.getElementById('roadmap-bar').innerHTML = `<div style="margin-top:10px;font-size:12px;color:var(--muted)">Overall: ${rm.done}/${rm.total} steps (${pct}%)</div><div class="progress-bar-wrap"><div class="progress-bar-fill fill-blue" style="width:${pct}%"></div></div>`;
 
+      // Global process stages with colored pills + subtasks
+      renderGlobalStages(data.processes || []);
+
       // Tabs
       document.querySelectorAll('.tab').forEach(tab => {
         tab.addEventListener('click', () => {
@@ -260,10 +3993,16 @@
       });
 
       // KANBAN — all agents combined
-      renderKanban(agents);
+      renderKanban(agents, data.processes || []);
 
       // Agent History
       renderAgentHistory(agents);
+
+      // All Tasks
+      renderAllTasks(data.all_tasks || []);
+
+      // Scraping Inventory
+      renderScrapingInventory(src);
 
       // Source Matrix
       renderSourceMatrix(src);
@@ -275,7 +4014,7 @@
       renderSkills(data.skills || []);
     }
 
-    function renderKanban(agents) {
+    function renderKanban(agents, processes) {
       const panel = document.getElementById('panel-kanban');
       const cols = { VERIFIED: [], IN_PROGRESS: [], TODO: [], BLOCKED: [] };
 
@@ -288,13 +4027,22 @@
       }
 
       const colDefs = [
-        { key: 'TODO', label: 'To Do', color: '#666' },
-        { key: 'IN_PROGRESS', label: 'In Progress', color: 'var(--accent)' },
         { key: 'VERIFIED', label: 'Verified / Done', color: 'var(--green)' },
+        { key: 'IN_PROGRESS', label: 'Current', color: 'var(--amber)' },
+        { key: 'TODO', label: 'Next', color: 'var(--accent)' },
         { key: 'BLOCKED', label: 'Blocked', color: 'var(--red)' },
       ];
 
-      let html = '<div class="kanban-board">';
+      let html = '';
+      if (processes && processes.length) {
+        html += '<div class="card"><h2>Process Progress (% by lane)</h2><div class="kpi-strip">';
+        for (const p of processes) {
+          html += `<div class="kpi"><div class="label">${esc(p.label)}</div><div class="value">${p.progress_percent}%</div><div class="sub">${esc(p.comment || '')}</div><div class="progress-bar-wrap"><div class="progress-bar-fill fill-blue" style="width:${p.progress_percent || 0}%"></div></div></div>`;
+        }
+        html += '</div></div>';
+      }
+
+      html += '<div class="kanban-board">';
       for (const col of colDefs) {
         const items = cols[col.key] || [];
         html += `<div class="kanban-col"><div class="kanban-col-header" style="color:${col.color}">${col.label} <span class="count">${items.length}</span></div>`;
@@ -334,40 +4082,304 @@
       panel.innerHTML = html;
     }
 
+    function renderGlobalStages(processes) {
+      const container = document.getElementById('global-stages');
+      if (!processes.length) {
+        container.innerHTML = '<div style="color:var(--muted);font-size:13px;">No process data parsed yet.</div>';
+        return;
+      }
+      let html = '<div class="process-grid">';
+      for (const p of processes) {
+        const pct = p.progress_percent || 0;
+        const done = p.done_tasks || [];
+        const current = p.current_tasks || [];
+        const next = p.next_tasks || [];
+        const blocked = p.blocked_tasks || [];
+        html += `<div class="process-card">
+          <div class="process-title">
+            <span>${esc(p.label)}</span>
+            <span>${pct}%</span>
+          </div>
+          <div class="progress-bar-wrap"><div class="progress-bar-fill fill-blue" style="width:${pct}%"></div></div>
+          <div class="process-comment">${esc(p.comment || '')}</div>
+          <div class="pill-row">
+            <span class="pill pill-done">Done ${p.done_count ?? done.length}</span>
+            <span class="pill pill-current">Current ${p.current_count ?? current.length}</span>
+            <span class="pill pill-next">Next ${p.next_count ?? next.length}</span>
+            ${blocked.length ? `<span class="pill pill-blocked">Blocked ${p.blocked_count ?? blocked.length}</span>` : ''}
+          </div>
+          <ul class="subtask-list">
+            ${done.slice(0, 4).map(t => `<li class="subtask-done">[DONE] ${esc(t.id)}: ${esc(t.title)}</li>`).join('')}
+            ${current.slice(0, 4).map(t => `<li class="subtask-current">[CURRENT] ${esc(t.id)}: ${esc(t.title)}</li>`).join('')}
+            ${next.slice(0, 4).map(t => `<li class="subtask-next">[NEXT] ${esc(t.id)}: ${esc(t.title)}</li>`).join('')}
+            ${blocked.slice(0, 2).map(t => `<li class="subtask-blocked">[BLOCKED] ${esc(t.id)}: ${esc(t.title)}</li>`).join('')}
+          </ul>
+        </div>`;
+      }
+      html += '</div>';
+      container.innerHTML = html;
+    }
+
+    let _allAgents = [];
+
     function renderAgentHistory(agents) {
+      _allAgents = agents;
       const panel = document.getElementById('panel-agents');
       let html = '';
       for (const agent of agents) {
         const color = AGENT_COLORS[agent.key] || '#999';
-        html += `<div class="agent-section"><div class="agent-header"><div class="agent-avatar" style="background:${color}">${AGENT_INITIALS[agent.key]}</div><div><strong>${esc(agent.display_name)}</strong><div class="agent-stats"><span>${agent.counts.verified} verified</span><span>${agent.counts.todo} todo</span><span>${agent.counts.journal_entries} completed work items</span></div></div></div>`;
+        const c = agent.counts || {};
+        html += `<div class="agent-section card">`;
+        html += `<div class="agent-header"><div class="agent-avatar" style="background:${color}">${AGENT_INITIALS[agent.key]}</div><div style="flex:1"><strong>${esc(agent.display_name)}</strong><div style="font-size:12px;color:var(--muted);margin-top:2px">${esc(agent.description || '')}</div><div class="agent-stats"><span>${c.verified || 0} verified</span><span>${c.in_progress || 0} current</span><span>${c.todo || 0} todo</span><span>${c.journal_entries || 0} log entries</span></div></div><button onclick="openAgentDetail('${agent.key}')" style="background:var(--accent);color:#fff;border:none;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px;font-weight:600;">View Details</button></div>`;
 
-        if (agent.completed_work && agent.completed_work.length > 0) {
-          html += '<div class="timeline">';
-          for (const task of agent.completed_work) {
+        // Efficiency bar
+        const eff = c.efficiency_pct || 0;
+        html += `<div style="margin:8px 0 4px 50px;font-size:12px;color:var(--muted)">Efficiency: ${eff}% (${c.verified || 0} done + ${c.in_progress || 0} current of ${c.total || 0} total)</div>`;
+        html += `<div class="progress-bar-wrap" style="margin-left:50px;margin-bottom:12px"><div class="progress-bar-fill fill-blue" style="width:${eff}%"></div></div>`;
+
+        // Skills
+        const skills = agent.skills || [];
+        if (skills.length) {
+          html += '<div style="margin-left:50px;margin-bottom:10px"><div class="skills-grid">';
+          for (const sk of skills) { html += `<span class="skill-chip">${esc(sk)}</span>`; }
+          html += '</div></div>';
+        }
+
+        // Timeline summary (last 5)
+        const work = (agent.completed_work || []).slice(-5);
+        if (work.length > 0) {
+          html += '<div class="timeline" style="margin-left:50px">';
+          for (const task of work) {
             html += `<div class="timeline-item"><div class="tl-title">${esc(task.title)}</div>`;
-            if (task.summary) {
-              html += `<div class="tl-summary">${esc(task.summary)}</div>`;
-            }
+            if (task.summary) html += `<div class="tl-summary">${esc(task.summary)}</div>`;
             html += '</div>';
           }
+          if (agent.completed_work.length > 5) html += `<div style="font-size:12px;color:var(--muted);padding:4px 0">+ ${agent.completed_work.length - 5} more entries (click View Details)</div>`;
           html += '</div>';
         } else {
-          html += '<div style="color:var(--muted);font-size:13px;margin-left:48px;">No completed work entries yet.</div>';
+          html += '<div style="color:var(--muted);font-size:13px;margin-left:50px;">No completed work entries yet.</div>';
         }
 
-        // Next steps from tasks
+        // Next steps
         const t = agent.tasks || {};
-        const nextItems = [...(t.in_progress || []), ...(t.todo || [])];
+        const nextItems = [...(t.in_progress || []).slice(0, 3), ...(t.todo || []).slice(0, 3)];
         if (nextItems.length > 0) {
-          html += '<h3 style="margin-left:48px;">Upcoming Tasks</h3><div style="margin-left:48px;">';
+          html += '<h3 style="margin-left:50px;margin-top:10px">Next Up</h3><div style="margin-left:50px;">';
           for (const task of nextItems) {
-            html += `<div style="padding:4px 0;font-size:13px">${statusBadge(task.status)} <strong>${esc(task.id)}</strong>: ${esc(task.title)}</div>`;
+            html += `<div style="padding:3px 0;font-size:13px">${statusBadge(task.status)} <strong>${esc(task.id)}</strong>: ${esc(task.title)}</div>`;
           }
           html += '</div>';
         }
-
         html += '</div>';
       }
+      panel.innerHTML = html;
+
+      // Wire overlay close
+      document.getElementById('agent-detail-close').addEventListener('click', () => {
+        document.getElementById('agent-detail-overlay').classList.remove('visible');
+      });
+      document.getElementById('agent-detail-overlay').addEventListener('click', (e) => {
+        if (e.target === e.currentTarget) e.currentTarget.classList.remove('visible');
+      });
+    }
+
+    function openAgentDetail(agentKey) {
+      const agent = _allAgents.find(a => a.key === agentKey);
+      if (!agent) return;
+      const color = AGENT_COLORS[agentKey] || '#999';
+      const c = agent.counts || {};
+      const overlay = document.getElementById('agent-detail-overlay');
+      const content = document.getElementById('agent-detail-content');
+
+      let html = '';
+      // Header
+      html += `<div class="agent-detail-header"><div class="agent-avatar" style="background:${color}">${AGENT_INITIALS[agentKey]}</div><div><h2 style="margin:0">${esc(agent.display_name)}</h2><div style="font-size:13px;color:var(--muted);margin-top:4px">${esc(agent.description || '')}</div></div></div>`;
+
+      // KPI strip
+      html += '<div class="kpi-strip" style="margin-bottom:16px">';
+      html += `<div class="kpi"><div class="label">Efficiency</div><div class="value">${c.efficiency_pct || 0}%</div><div class="progress-bar-wrap"><div class="progress-bar-fill fill-blue" style="width:${c.efficiency_pct || 0}%"></div></div></div>`;
+      html += `<div class="kpi"><div class="label">Verified</div><div class="value">${c.verified || 0}</div></div>`;
+      html += `<div class="kpi"><div class="label">Current</div><div class="value">${c.in_progress || 0}</div></div>`;
+      html += `<div class="kpi"><div class="label">TODO</div><div class="value">${c.todo || 0}</div></div>`;
+      html += `<div class="kpi"><div class="label">Blocked</div><div class="value">${c.blocked || 0}</div></div>`;
+      html += `<div class="kpi"><div class="label">Log Entries</div><div class="value">${c.journal_entries || 0}</div></div>`;
+      html += '</div>';
+
+      // Skills section
+      const skills = agent.skills || [];
+      if (skills.length) {
+        html += '<div class="detail-section"><h3>Assigned Skills</h3><div class="skills-grid">';
+        for (const sk of skills) { html += `<span class="skill-chip">${esc(sk)}</span>`; }
+        html += '</div></div>';
+      }
+
+      // Step-by-step execution log
+      const work = agent.completed_work || [];
+      if (work.length) {
+        html += `<div class="detail-section"><h3>Execution Log (${work.length} entries)</h3>`;
+        for (let i = 0; i < work.length; i++) {
+          const w = work[i];
+          html += '<div class="step-card">';
+          html += `<div class="step-title">Step ${i + 1}: ${esc(w.title)}</div>`;
+          if (w.summary) html += `<div class="step-body"><strong>Goal:</strong> ${esc(w.summary)}</div>`;
+          if (w.action) html += `<div class="step-body"><strong>Action:</strong> ${esc(w.action)}</div>`;
+          if (w.changed_files) html += `<div class="step-meta">Files: ${esc(w.changed_files)}</div>`;
+          if (w.commands) html += `<div class="step-meta">Commands: ${esc(w.commands)}</div>`;
+          if (w.status) html += `<div class="step-meta">Result: ${esc(w.status)}</div>`;
+          if (w.review) html += `<div class="step-meta">Review: ${esc(w.review)}</div>`;
+          html += '</div>';
+        }
+        html += '</div>';
+      }
+
+      // Task backlog
+      const t = agent.tasks || {};
+      const allTasks = [...(t.verified || []), ...(t.in_progress || []), ...(t.todo || []), ...(t.blocked || [])];
+      if (allTasks.length) {
+        html += '<div class="detail-section"><h3>Full Task Backlog</h3>';
+        html += '<table><thead><tr><th>Status</th><th>ID</th><th>Title</th></tr></thead><tbody>';
+        for (const task of allTasks) {
+          html += `<tr><td>${statusBadge(task.status)}</td><td><strong>${esc(task.id)}</strong></td><td>${esc(task.title)}</td></tr>`;
+        }
+        html += '</tbody></table></div>';
+      }
+
+      // Source-specific detail for scraper agents
+      if (agentKey.startsWith('scraper')) {
+        const src = DATA.sources || {};
+        const sources = src.sources || [];
+        const tierMap = { scraper_1: [1, 2], scraper_t3: [3], scraper_sm: [4] };
+        const myTiers = tierMap[agentKey] || [];
+        const mySources = sources.filter(s => myTiers.includes(s.tier));
+        if (mySources.length) {
+          html += '<div class="detail-section"><h3>Source Inventory (' + mySources.length + ' sources)</h3>';
+          html += '<table><thead><tr><th>Source</th><th>Legal Mode</th><th>Items</th><th>Photos</th><th>Geo</th><th>Phone</th><th>Area</th></tr></thead><tbody>';
+          for (const s of mySources) {
+            const sc = s.scrape || {};
+            const q = sc.quality || {};
+            html += '<tr>';
+            html += '<td><strong>' + esc(s.name) + '</strong></td>';
+            html += '<td style="font-size:12px">' + esc(s.legal_mode || '') + '</td>';
+            html += '<td style="text-align:center;font-weight:700">' + (sc.items || '—') + '</td>';
+            html += '<td>' + qualityBar(q.photos_pct) + '</td>';
+            html += '<td>' + qualityBar(q.geo_pct) + '</td>';
+            html += '<td>' + qualityBar(q.phone_pct) + '</td>';
+            html += '<td>' + qualityBar(q.area_pct) + '</td>';
+            html += '</tr>';
+          }
+          html += '</tbody></table></div>';
+        }
+      }
+
+      // Page-specific detail for ux_ui_designer
+      if (agentKey === 'ux_ui_designer') {
+        const pages = ['/listings', '/properties/[id]', '/map', '/chat', '/settings', '/admin'];
+        html += '<div class="detail-section"><h3>Frontend Pages</h3>';
+        html += '<table><thead><tr><th>Page</th><th>Status</th></tr></thead><tbody>';
+        for (const p of pages) {
+          html += '<tr><td><strong>' + esc(p) + '</strong></td><td>' + statusBadge('TODO') + '</td></tr>';
+        }
+        html += '</tbody></table></div>';
+      }
+
+      content.innerHTML = html;
+      overlay.classList.add('visible');
+    }
+
+    function renderAllTasks(allTasks) {
+      const panel = document.getElementById('panel-alltasks');
+      if (!allTasks.length) {
+        panel.innerHTML = '<div class="card"><p style="margin:0;color:var(--muted)">No tasks parsed from TASKS.md.</p></div>';
+        return;
+      }
+      let html = '<div class="card"><h2>All Project Tasks</h2><p style="font-size:13px;color:var(--muted)">Complete backlog parsed from TASKS.md, grouped by live status and owner.</p>';
+      html += '<div class="all-tasks-wrap"><table><thead><tr><th>Status</th><th>Task ID</th><th>Owner</th><th>Title</th><th>Details</th></tr></thead><tbody>';
+      for (const t of allTasks) {
+        html += `<tr><td>${statusBadge(t.status)}</td><td><strong>${esc(t.id)}</strong></td><td>${esc(t.owner)}</td><td>${esc(t.title)}</td><td style="font-size:12px;color:var(--muted)">${esc(t.details || '')}</td></tr>`;
+      }
+      html += '</tbody></table></div></div>';
+      panel.innerHTML = html;
+    }
+
+    function qualityBar(pct) {
+      if (pct === undefined || pct === null) return '<span style="color:var(--muted);font-size:11px">—</span>';
+      const cls = pct >= 80 ? 'qb-good' : pct >= 40 ? 'qb-ok' : pct > 0 ? 'qb-poor' : 'qb-none';
+      return `<div class="quality-bar"><div class="quality-bar-fill ${cls}" style="width:${pct}%"></div></div><span style="font-size:11px">${pct}%</span>`;
+    }
+
+    function renderScrapingInventory(src) {
+      const panel = document.getElementById('panel-scraping');
+      const sources = (src.sources || []).slice().sort((a, b) => (a.tier || 9) - (b.tier || 9));
+      if (!sources.length) {
+        panel.innerHTML = '<div class="card"><p style="margin:0;color:var(--muted)">No source registry loaded.</p></div>';
+        return;
+      }
+
+      const tierGroups = {};
+      for (const s of sources) {
+        const t = s.tier || '?';
+        if (!tierGroups[t]) tierGroups[t] = [];
+        tierGroups[t].push(s);
+      }
+
+      const tierMeta = {
+        '1': { label: 'Tier 1 — Core Portals & Agencies', cls: 'tier-1-bg' },
+        '2': { label: 'Tier 2 — Secondary & Expansion', cls: 'tier-2-bg' },
+        '3': { label: 'Tier 3 — Vendor / Partner / Official', cls: 'tier-3-bg' },
+        '4': { label: 'Tier 4 — Social Overlays', cls: 'tier-4-bg' },
+      };
+
+      let totalScraped = 0;
+      let totalWithData = 0;
+      for (const s of sources) {
+        const items = s.scrape?.items || 0;
+        totalScraped += items;
+        if (items > 0) totalWithData++;
+      }
+
+      let html = '<div class="card"><h2>Scraping Inventory by Tier</h2>';
+      html += `<p style="font-size:13px;color:var(--muted);margin-bottom:12px"><strong>${totalScraped}</strong> fixture items across <strong>${totalWithData}</strong> sources with data (of ${sources.length} total registered)</p>`;
+
+      for (const tier of ['1', '2', '3', '4']) {
+        const group = tierGroups[tier];
+        if (!group) continue;
+        const meta = tierMeta[tier] || { label: `Tier ${tier}`, cls: '' };
+        const tierItems = group.reduce((s, g) => s + (g.scrape?.items || 0), 0);
+        const tierWithData = group.filter(g => (g.scrape?.items || 0) > 0).length;
+
+        html += `<div class="tier-group">`;
+        html += `<div class="tier-group-header ${meta.cls}">${meta.label} <span style="font-weight:400;font-size:12px;margin-left:auto">${tierItems} items from ${tierWithData}/${group.length} sources</span></div>`;
+        html += '<div class="scrape-table-wrap"><table><thead><tr>';
+        html += '<th>Source</th><th>Family</th><th>Items</th><th>Fixtures</th>';
+        html += '<th>Price</th><th>Photos</th><th>Avg Photos</th><th>Geo</th><th>Phone</th><th>Area</th><th>Rooms</th><th>Address</th><th>Category</th><th>Types</th>';
+        html += '</tr></thead><tbody>';
+
+        for (const s of group) {
+          const sc = s.scrape || {};
+          const q = sc.quality || {};
+          const items = sc.items || 0;
+          const rowColor = items > 0 ? '' : 'style="opacity:0.5"';
+          html += `<tr ${rowColor}>`;
+          html += `<td><strong>${esc(s.name)}</strong></td>`;
+          html += `<td style="font-size:12px">${esc(s.source_family || '')}</td>`;
+          html += `<td style="font-weight:700;text-align:center">${items || '—'}</td>`;
+          html += `<td style="text-align:center">${s.fixture_cases || '—'}</td>`;
+          html += `<td>${qualityBar(q.price_pct)}</td>`;
+          html += `<td>${qualityBar(q.photos_pct)}</td>`;
+          html += `<td style="text-align:center;font-size:12px">${q.avg_photos || '—'}</td>`;
+          html += `<td>${qualityBar(q.geo_pct)}</td>`;
+          html += `<td>${qualityBar(q.phone_pct)}</td>`;
+          html += `<td>${qualityBar(q.area_pct)}</td>`;
+          html += `<td>${qualityBar(q.rooms_pct)}</td>`;
+          html += `<td>${qualityBar(q.address_pct)}</td>`;
+          html += `<td>${qualityBar(q.category_pct)}</td>`;
+          html += `<td style="font-size:11px">${(q.listing_types || s.listing_types || []).join(', ')}</td>`;
+          html += '</tr>';
+        }
+        html += '</tbody></table></div></div>';
+      }
+
+      html += '</div>';
       panel.innerHTML = html;
     }
 

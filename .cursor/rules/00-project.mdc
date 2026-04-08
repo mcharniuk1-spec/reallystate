@@ -31,6 +31,8 @@ Agent coordination:
 - Find your task in `docs/agents/TASKS.md`; log work in `docs/agents/<agent>/JOURNEY.md`.
 - No slice is complete until the verifier runs its acceptance gate and sets status to `VERIFIED`.
 - If blocked, record the blocker in TASKS.md and your JOURNEY.md.
+- Do not stop at one slice if another unblocked slice exists for the same agent; continue sequentially until blocked, no unblocked slice remains, or the operator says `END`.
+- If no unblocked slice remains, ask using this exact format: `Which <agent_name> task should I execute next?`
 
 Delivery tracking:
 

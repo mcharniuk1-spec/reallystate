@@ -1,0 +1,28 @@
+{
+  "source_key": "imot_bg",
+  "source_name": "imot.bg",
+  "discovery_pages_fetched": 6,
+  "listing_urls_discovered": 254,
+  "listing_pages_fetched": 250,
+  "listing_pages_parsed": 250,
+  "listing_pages_failed": 0,
+  "photos_found": 250,
+  "photos_downloaded": 1,
+  "photos_failed": 249,
+  "with_price": 0,
+  "with_geo": 0,
+  "with_address": 250,
+  "with_area": 0,
+  "with_rooms": 0,
+  "with_description": 250,
+  "intents": {
+    "sale": 250
+  },
+  "categories": {
+    "unknown": 250
+  },
+  "errors": [],
+  "start_time": "2026-04-08T16:24:54.615769+00:00",
+  "end_time": "2026-04-08T16:30:52.841147+00:00",
+  "duration_seconds": 358.2
+}

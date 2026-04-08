@@ -1,0 +1,26 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-68m2-sofiya-zhk.-mladost-4/as1678775",
+  "external_id": "95a56b885688",
+  "title": "Двустаен, 68m² - Жк. Младост 4, София - Апартамент за продажба - Титан Пропъртис ",
+  "description": "Открийте мястото, където ще се чувствате у дома от първия момент.Титан Пропъртис офис - Бул.България с радост предлага на Вашето внимание двустаен апартамент за...",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2026-04-08_1/118420649o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:24:47.739955+00:00",
+  "reference_id": "Homes.bg:95a56b885688"
+}

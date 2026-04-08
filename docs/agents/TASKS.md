@@ -12,6 +12,52 @@ Single source of truth for **what to do next** per specialist agent.
 
 **Statuses**: `TODO` → `IN_PROGRESS` → `DONE_AWAITING_VERIFY` → `VERIFIED` / `BLOCKED`
 
+**Goal**: Working website at `https://bgrealestate.vercel.app` (frontend) + `https://bgrealestate-api.up.railway.app` (backend) with live scrapers, unified database, map, shop view, user profiles, and admin dashboard.
+
+**Hosting stack**: Railway (PostgreSQL+PostGIS, Python backend, scraper workers) + Vercel (Next.js frontend) + GitLab CI/CD.
+
+## Session backlog context digest (2026-04-08)
+
+This digest captures the full operator intent and execution context from the latest orchestration chat so no agent loses strategic direction between activations.
+
+### A) Locked scope and product intent
+
+- Build a LUN-style, buyer-oriented marketplace with map + feed + AI chat.
+- Owners are the primary posters; agency participants are represented as owner representatives.
+- MVP geospatial scope remains Varna city + Varna region only until stage-1 quality gate passes.
+- Scraping/output must feed a continuously updated database with canonical unification and exports.
+
+### B) Agent governance and runtime behavior
+
+- Parallel lanes are required; dependencies are enforced at slice level.
+- Tier ownership is strict:
+  - `scraper_1`: tier-1/2
+  - `scraper_t3`: tier-3
+  - `scraper_sm`: tier-4
+- No slice is complete before verifier promotion to `VERIFIED`.
+- Non-stop continuation is mandatory for every agent:
+  - continue to next unblocked slice after each completion
+  - stop only on `END`, no unblocked slices, or real blocker
+  - when idle, ask: `Which <agent_name> task should I execute next?`
+
+### C) Session deliverables already completed
+
+- Business/model outputs completed:
+  - `docs/business/unit-economics-market-analysis.md`
+  - `docs/business/product-ux-structure.md`
+  - `docs/business/varna-3d-osm-integration.md`
+  - `output/pdf/investor-presentation-2026-04-08.pdf`
+- Backlog enriched with new backend/frontend/scraper/debugger/lead slices for deployment-ready execution.
+- Dashboard reliability issue fixed (embedded payload support for local `file://` opens) and dashboard regenerated.
+
+### D) Immediate execution priorities to preserve
+
+1. `DBG-06` batch verification of all pending `DONE_AWAITING_VERIFY` slices.
+2. `DBG-05` stage-1 quality gate closure.
+3. Backend critical chain: `BD-11` -> `BD-12` -> `BD-13` -> `BD-14` -> `BD-15`.
+4. Frontend critical chain: `UX-13` -> `UX-08` -> `UX-09` -> `UX-10` -> `UX-11`.
+5. Final launch gates: `DBG-07` smoke test and `DBG-08` security audit.
+
 ---
 
 ## Constant recurring slices (all agents)
@@ -36,7 +82,11 @@ Single source of truth for **what to do next** per specialist agent.
 
 ---
 
-## Backend_developer (data engineer)
+## ═══════════════════════════════════════════════════════
+## BACKEND_DEVELOPER (data engineer + infrastructure)
+## ═══════════════════════════════════════════════════════
+
+**Mission**: Create the full backend (DB, APIs, scraper orchestration, auth, user profiles, deployment) that powers the website. Every endpoint must work end-to-end from database to frontend.
 
 ### BD-01: DB sync + control plane bootstrap
 - **Status**: `VERIFIED` — hardened 2026-04-08 session 2 (stats query registry-aware, admin dashboard extended, tests added)
@@ -77,13 +127,14 @@ Single source of truth for **what to do next** per specialist agent.
 - **Depends on**: BD-02
 
 ### BD-05: Temporal workflow wiring
-- **Status**: `TODO`
+- **Status**: `DONE_AWAITING_VERIFY` (2026-04-08: Temporal worker/scheduler runtime scaffold implemented)
 - **Read first**: `src/bgrealestate/dev_worker.py`, `src/bgrealestate/dev_scheduler.py`, `agent-skills/workflow-runtime/SKILL.md`
 - **Do**: replace dev stubs with real Temporal worker + scheduler; implement `SourceDiscoveryWorkflow` and `ListingDetailWorkflow`
 - **Acceptance gate**: jobs survive worker restart; cursors persist; `make test` passes
 - **Output**: Temporal workflows, workers, scheduler config
 - **Verifier**: debugger (idempotency + restart survival)
 - **Depends on**: BD-01, BD-02
+- **Verifier note**: run live check with Temporal service (`ENABLE_TEMPORAL_RUNTIME=1`) to confirm restart survival and persistent cursor behavior.
 
 ### BD-06: Varna-only MVP map/search + chat context APIs
 - **Status**: `TODO`
@@ -103,9 +154,151 @@ Single source of truth for **what to do next** per specialist agent.
 - **Verifier**: debugger + ux_ui_designer
 - **Depends on**: BD-06
 
+### BD-08: Varna OSM 3D building data pipeline
+- **Status**: `TODO`
+- **Read first**: `docs/business/varna-3d-osm-integration.md`, `sql/schema.sql` (building_entity)
+- **Do**: download GeoFabrik Bulgaria extract, clip to Varna bbox, extract buildings with height/levels, import into PostGIS `building_entity`, generate PMTiles for MapLibre 3D extrusion
+- **Acceptance gate**: `scripts/import_osm_buildings_varna.py` runs on fixture/sample data; PostGIS query returns building footprints; PMTiles file generated
+- **Output**: `scripts/import_osm_buildings_varna.py`, `data/tiles/varna-buildings.pmtiles`, migration for building_entity enrichment, tests
+- **Verifier**: debugger + ux_ui_designer
+- **Depends on**: BD-01
+
+### BD-09: Property analytics views + duplicate detection
+- **Status**: `DONE_AWAITING_VERIFY` (2026-04-08: SQL views + API endpoints implemented)
+- **Read first**: `sql/schema.sql`, `src/bgrealestate/db/repositories.py`
+- **Do**: create SQL views `v_property_analytics` (aggregation by type/district/price/source) and `v_duplicate_candidates` (same address + similar price + similar area); create endpoint `GET /analytics/summary`
+- **Acceptance gate**: views return expected shapes on seeded data; API endpoint works; `make test` passes
+- **Output**: `sql/views.sql`, `src/bgrealestate/api/routers/analytics.py`, tests in `test_api_fastapi.py` + `test_unification.py`
+- **Resolution**: created materialized views in `sql/views.sql`; `GET /analytics/summary` (scope `listings:read`) and `GET /analytics/duplicates` (scope `admin:read`) with inline SQL queries; auth-gated; 503 without DB; tests pass on `make validate`.
+- **Verifier**: debugger
+- **Depends on**: BD-02
+
+### BD-10: Photo classification pipeline stub
+- **Status**: `DONE_AWAITING_VERIFY` (2026-04-08: classifier stub + model columns + 14 tests)
+- **Read first**: `sql/schema.sql` (media_asset), `src/bgrealestate/models.py`
+- **Do**: add columns to `media_asset` (room_type, quality_score, is_exterior, is_floorplan); create stub classifier `src/bgrealestate/analytics/photo_classifier.py` that accepts an image path and returns classification dict; fixture-backed tests
+- **Acceptance gate**: migration applies; classifier stub returns expected dict on test image; `make test` passes
+- **Output**: `src/bgrealestate/analytics/photo_classifier.py`, updated `sql/schema.sql` + `db/models.py`, `tests/test_photo_classifier.py` (14 tests)
+- **Resolution**: Added 4 columns to `media_asset` (room_type, quality_score, is_exterior, is_floorplan). Heuristic classifier detects room types (kitchen, bathroom, bedroom, living_room, balcony, entrance, garage, garden, pool), exterior/facade images, and floorplans from filename/URL + metadata captions. Supports Bulgarian labels. Quality score estimates based on image dimensions. Batch API included. All 14 tests pass.
+- **Verifier**: debugger
+- **Depends on**: BD-01
+
+### BD-11: Unified listing database — merge scraper outputs into canonical store
+- **Status**: `DONE_AWAITING_VERIFY` (2026-04-08: unification service + /properties endpoints + pipeline wiring implemented)
+- **Priority**: **CRITICAL** — this is the core data pipeline that feeds the entire website
+- **Read first**: `src/bgrealestate/connectors/ingest.py`, `src/bgrealestate/pipeline.py`, `sql/schema.sql` (source_listing → parsed_listing → canonical_listing → property_entity), `src/bgrealestate/db/models.py`
+- **Do**:
+  1. Create `src/bgrealestate/services/unification.py` — takes raw scraper output from any tier-1/2/3 connector and writes into `source_listing` → `parsed_listing` → `canonical_listing` pipeline
+  2. Implement deduplication: match by address + similar price + similar area within same city/district → link to single `property_entity`
+  3. Create `property_entity` records that aggregate all source listings for the same physical property
+  4. Merge best data: take highest-quality photos, most complete description, latest price from all sources
+  5. Compute `confidence_score` per property based on number of cross-source matches
+  6. Create `GET /properties` endpoint (distinct from `/listings`) that returns deduplicated property entities with all source listings attached
+  7. Create `GET /properties/{id}` endpoint with full property detail including source breakdown
+  8. Wire scraper outputs to unification service via Temporal workflow or cron job
+- **Acceptance gate**: given 3 fixture listings for the same apartment from different sources, unification produces 1 `property_entity` with 3 linked `canonical_listing` records; `/properties` endpoint returns deduplicated list; `make test` passes
+- **Output**: `src/bgrealestate/services/unification.py`, `src/bgrealestate/api/routers/properties.py`, `PropertyEntityRepository` in `repositories.py`, `tests/test_unification.py`, updated `connectors/ingest.py`
+- **Resolution**: Created unification service with dedupe-key matching (city+normalized_address+area_sqm bucket), property_entity creation, property_offer linkage, confidence scoring (0.2/0.5/0.8+ based on distinct source count), best-data merge (longest description, most photos). Wired into `ingest_listing_detail_html` via `unify=True` flag. `GET /properties` and `GET /properties/{id}` endpoints (scope `listings:read`) with full source breakdown. Tests pass on `make validate` (121 tests, 25 skipped for Python 3.9). Full live acceptance gate (3 listings → 1 property_entity) requires DB + Python 3.10+.
+- **Verifier**: debugger + scraper_1
+- **Depends on**: BD-01, BD-02, S1-13
+
+### BD-12: Shop-style filter API for property feed
+- **Status**: `TODO`
+- **Priority**: **CRITICAL** — this powers the main listing/shop view
+- **Read first**: `docs/business/product-ux-structure.md` (§3.1 Homepage), `src/bgrealestate/api/routers/listings.py`, UX-08
+- **Do**:
+  1. Extend `GET /properties` with full filter parameters: `intent` (buy/rent/str/auction), `category` (apartment/house/villa/studio/land/commercial), `price_min`, `price_max`, `area_min`, `area_max`, `rooms_min`, `rooms_max`, `city`, `district`, `bbox` (map viewport), `sort_by` (price_asc, price_desc, newest, area), `page`, `limit`
+  2. Add `GET /properties/facets` — returns available filter options with counts (how many apartments, how many houses, price range, etc.)
+  3. Add PostGIS spatial query: filter by map bounding box (`bbox=lat1,lon1,lat2,lon2`) and polygon draw (`polygon=...`)
+  4. Add `GET /properties/map-clusters` — return clustered pins for low zoom levels, individual pins for high zoom
+  5. Ensure all filters compose correctly (AND logic)
+  6. Add sort + pagination with cursor-based pagination for infinite scroll
+- **Acceptance gate**: API returns correct filtered results with seeded data; facets reflect filter state; bbox query works; cluster endpoint returns GeoJSON; `make test` passes
+- **Output**: updated API routes, PostGIS queries, facet aggregation, tests
+- **Verifier**: debugger + ux_ui_designer
+- **Depends on**: BD-11, BD-06
+
+### BD-13: User profile + auth system (buyer/renter/seller modes)
+- **Status**: `DONE_AWAITING_VERIFY` (2026-04-08: registration, login, profile, saved properties, dashboard implemented)
+- **Priority**: **HIGH** — users need accounts to save properties, post listings, and switch modes
+- **Read first**: `sql/schema.sql` (app_user, organization_account), `docs/business/product-ux-structure.md` (§3.7 Post Listing), `src/bgrealestate/api/auth.py`
+- **Do**:
+  1. Implement user registration: `POST /auth/register` (email + password + name)
+  2. Implement login: `POST /auth/login` → returns JWT token
+  3. Implement user profile: `GET /users/me`, `PATCH /users/me`
+  4. Add `user_mode` field to `app_user`: enum `buyer` | `renter` | `seller` | `agent` — user can switch freely
+  5. Mode-specific features:
+     - **Buyer/Renter mode**: saved properties (`POST /users/me/saved`), saved searches, alert preferences, contact history
+     - **Seller mode**: my listings (`GET /users/me/listings`), post new listing (`POST /listings`), edit listing, deactivate listing
+     - **Agent mode**: managed properties (on behalf of owner), lead inbox from CRM
+  6. `GET /users/me/dashboard` — returns mode-appropriate dashboard data (saved count, listing count, leads count)
+  7. Photo upload for listings: `POST /media/upload` → S3/MinIO → returns media_asset reference
+  8. Listing submission: `POST /listings` with validation (requires photos, price, location, category)
+- **Acceptance gate**: registration + login flow works end-to-end; mode switch updates user record; saved properties persist; listing submission creates `canonical_listing` + `property_entity`; `make test` passes
+- **Output**: `src/bgrealestate/services/user_auth.py`, `src/bgrealestate/api/routers/user_auth.py`, `src/bgrealestate/api/routers/users.py`, `src/bgrealestate/api/user_deps.py`, `tests/test_user_auth.py`
+- **Resolution**: Implemented items 1–6: registration with PBKDF2 password hashing, JWT login, user profile with mode switching, saved properties CRUD, mode-appropriate dashboard. Listing submission (items 7–8) deferred to follow-up slice as it requires media upload pipeline (S3/MinIO). 14 tests pass (pure auth + endpoint registration).
+- **Verifier**: debugger + ux_ui_designer
+- **Depends on**: BD-04, BD-11
+
+### BD-14: Railway deployment — backend + DB + scraper worker
+- **Status**: `TODO`
+- **Priority**: **CRITICAL** — nothing works publicly without deployment
+- **Read first**: `Dockerfile`, `docker-compose.yml`, `Makefile`, `pyproject.toml`
+- **Do**:
+  1. Create `railway.toml` configuration for 3 services:
+     - **api**: FastAPI backend (`make run-api`), port 8000, `DATABASE_URL` from Railway PostgreSQL plugin
+     - **worker**: Temporal/cron scraper worker (`make run-worker`), connects to same DB
+     - **scheduler**: Cron scheduler for periodic scrapes (`make run-scheduler`)
+  2. Add Railway PostgreSQL plugin with PostGIS extension
+  3. Add Railway Redis plugin
+  4. Create `scripts/railway_deploy.sh` — automates initial deploy: migrate → sync-registry → seed initial data
+  5. Set environment variables: `DATABASE_URL`, `REDIS_URL`, `API_KEYS_JSON`, `OPENAI_API_KEY`, `CORS_ORIGINS`
+  6. Configure health check at `GET /api/v1/ready`
+  7. Set up auto-deploy from `main` branch via Railway GitHub/GitLab integration
+  8. Document deployment in `docs/deployment.md`
+- **Acceptance gate**: `https://bgrealestate-api.up.railway.app/api/v1/ready` returns 200; `/admin/source-stats` returns JSON; listings endpoint works from Vercel frontend
+- **Output**: `railway.toml`, deploy scripts, deployment docs, environment setup guide
+- **Verifier**: debugger
+- **Depends on**: BD-01, BD-04
+
+### BD-15: Scraper orchestration — continuous crawl loop
+- **Status**: `TODO`
+- **Priority**: **CRITICAL** — the database must be populated with real data
+- **Read first**: `src/bgrealestate/connectors/factory.py`, `src/bgrealestate/connectors/ingest.py`, `src/bgrealestate/dev_scheduler.py`, BD-05 output
+- **Do**:
+  1. Implement production scraper loop in `src/bgrealestate/services/scraper_runner.py`:
+     - On startup: load all tier-1 sources from `source_registry`
+     - For each source: discover listing URLs → fetch detail → parse → unify → store
+     - Respect `freshness_target` per source (10min for OLX/Homes, hourly for agencies)
+     - Implement crawl cursor persistence (resume from last position)
+     - Rate limiting per source (configurable, default 1 req/sec)
+     - Error handling: log failures to `crawl_attempt` table, skip and continue
+     - Metrics: update `crawl_job` records with success/fail counts
+  2. Wire to Temporal workflows OR implement as asyncio cron (simpler for MVP)
+  3. Create `make run-scraper` command
+  4. Add health endpoint: `GET /api/v1/scraper-status` — returns last crawl time per source, queue depth, error rate
+- **Acceptance gate**: scraper runs continuously on Railway; new listings appear in database within freshness_target; `/scraper-status` shows healthy state; no live-network dependency in test suite (tests use fixtures)
+- **Output**: `src/bgrealestate/services/scraper_runner.py`, updated Makefile, health endpoint, Railway worker config
+- **Verifier**: debugger + scraper_1
+- **Depends on**: BD-05, BD-11, BD-14
+
+### BD-16: WebSocket/SSE for real-time listing updates
+- **Status**: `TODO`
+- **Priority**: MEDIUM — nice-to-have for live feed updates
+- **Read first**: `src/bgrealestate/api/main.py`, BD-15 output
+- **Do**: add Server-Sent Events endpoint `GET /listings/stream` that pushes new listings as they're ingested; frontend can subscribe for live feed updates
+- **Acceptance gate**: SSE endpoint sends events when new listings are inserted; frontend receives and displays them; `make test` passes
+- **Output**: SSE endpoint, event publisher in unification service, tests
+- **Verifier**: debugger
+- **Depends on**: BD-15, BD-12
+
 ---
 
-## Scraper_1 (marketplace websites)
+## ═══════════════════════════════════════════════════════
+## SCRAPER_1 (tier-1 and tier-2 marketplace connectors)
+## ═══════════════════════════════════════════════════════
+
+**Mission**: Get a full, constantly-updating database of ALL properties from tier-1 and tier-2 Bulgarian real estate portals. Every connector must work end-to-end: discover URLs → fetch pages → parse to canonical format → feed into unification pipeline.
 
 ### S1-01: Homes.bg connector + fixtures
 - **Status**: `VERIFIED`
@@ -166,122 +359,92 @@ Single source of truth for **what to do next** per specialist agent.
 - **Verifier**: debugger + backend_developer
 - **Depends on**: S1-12
 
----
-
-## Debugger
-
-### DBG-01: Golden path check
-- **Status**: `VERIFIED`
-- **Read first**: `scripts/golden_path_check.py`, `agent-skills/debugger-golden-path/SKILL.md`
-- **Do**: `make golden-path` — migrate → sync → fixture ingest → stats → XLSX
-- **Acceptance gate**: `make validate` passes; with DB, golden path ends OK
-- **Output**: `scripts/golden_path_check.py`, skill, tests
-- **Verifier**: self (via `make validate`)
-- **Depends on**: —
-
-### DBG-02: Verify all DONE_AWAITING_VERIFY slices
-- **Status**: `VERIFIED` (2026-04-08 run; UX-01 verified)
-- **Read first**: this file (scan for `DONE_AWAITING_VERIFY` status)
-- **Do**: for each awaiting slice, run its acceptance gate commands; record PASS/FAIL in own JOURNEY.md; update TASKS.md status
-- **Acceptance gate**: every verified slice has a matching JOURNEY.md entry
-- **Output**: verification entries in JOURNEY.md + status updates here
-- **Verifier**: lead agent (spot checks)
-- **Depends on**: —
-
-### DBG-03: Cross-agent safety audit
-- **Status**: `VERIFIED` (2026-04-08)
-- **Read first**: `.cursor/BUGBOT.md`, `data/source_registry.json`, all `tests/test_*.py`
-- **Do**: check all connectors for legal gate enforcement; check all tests for live network calls; check fixtures for secrets/PII; check media storage for Postgres binaries
-- **Acceptance gate**: zero violations found, or violations documented as blockers on the responsible agent
-- **Output**: audit entry in JOURNEY.md; blockers filed in TASKS.md if needed
-- **Verifier**: lead agent
-- **Depends on**: S1-01 through S1-10 (need connectors to audit)
-
-### DBG-04: CI pipeline verification
-- **Status**: `VERIFIED` (2026-04-08)
-- **Read first**: `.gitlab-ci.yml` (when created), `Makefile`, `Dockerfile`
-- **Do**: verify CI runs `make test`, `make lint`, `make validate`, `make golden-path` (with DB service container)
-- **Acceptance gate**: pipeline green on fixture-only tests; golden-path job passes with service containers
-- **Output**: verification entry in JOURNEY.md
-- **Verifier**: self
-- **Depends on**: BD-05 (needs real worker/scheduler before full CI is meaningful)
-
-### DBG-05: Verify stage-1 scraping is perfect before Varna 3D map MVP
-- **Status**: `TODO`
-- **Read first**: `docs/exports/stage1-product-type-coverage.md` (from S1-13), `scripts/golden_path_check.py`, `/admin/source-stats`
-- **Do**: verify stage-1 scrape quality and product-type completeness; block map/search scope expansion until coverage and ingestion quality pass
-- **Acceptance gate**: verifier note confirms all required product types are covered and golden path passes
-- **Output**: verification entry in `docs/agents/debugger/JOURNEY.md` + status update in TASKS
-- **Verifier**: lead agent
-- **Depends on**: S1-13, BD-01
-
----
-
-## UX_UI_designer (frontend)
-
-### UX-01: Operator dashboard UI plan
-- **Status**: `VERIFIED` (2026-04-08; debugger contract check)
-- **Read first**: `PLAN.md` §8 (`/admin` row), `src/bgrealestate/api/routers/`, BD-02 API outputs
-- **Do**: define `/admin` UX layout and data model (source list, filters, coverage bars, error queues)
-- **Acceptance gate**: markdown spec + component breakdown reviewed by debugger for API contract alignment
-- **Output**: `docs/agents/ux_ui_designer/admin-ui-spec.md`
-- **Verifier**: debugger (API contract alignment)
-- **Depends on**: BD-02 (needs API routes to design against)
-
-### UX-02: Beta main page — map + listings + category picker
-- **Status**: `DONE_AWAITING_VERIFY` (2026-04-08)
-- **Read first**: `PLAN.md` §8 (`/listings` + `/map` rows), `src/bgrealestate/api/routers/listings.py`
-- **Do**: Build split-view main page with MapLibre map (left) + scrollable listing feed (right) + intent toggle (Buy/Rent/Short-term/Auction) + category picker (Apartment/House/Studio/Villa/...) + search + source badges. Uses 12 mock listings matching `canonical_listing` API schema. Map pins highlight on card hover and vice-versa.
-- **Acceptance gate**: page loads with mock/seeded data; category/intent filters work; map renders with pins; responsive mobile stacking
-- **Output**: `app/(main)/page.tsx`, `components/listings/ListingFeed.tsx`, `components/listings/ListingCard.tsx`, `components/listings/CategoryPicker.tsx`, `components/map/MapCanvas.tsx`, `components/map/FullScreenMap.tsx`, `lib/types/listing.ts`, `lib/mock/listings.ts`
+### S1-14: Discovery pagination for ALL tier-1 sources
+- **Status**: `DONE_AWAITING_VERIFY` (2026-04-08; discovery parsers + fixtures + tests added for all tier-1 sources)
+- **Priority**: **CRITICAL** — scrapers can't run without discovery
+- **Read first**: `src/bgrealestate/connectors/homes_bg.py` (has `parse_discovery_html`), all other tier-1 connectors in `src/bgrealestate/connectors/`
+- **Do**:
+  1. Implement `parse_discovery_html()` / `parse_discovery_json()` for every tier-1 source that doesn't already have it:
+     - OLX.bg: paginate API search results (page parameter in API URL)
+     - alo.bg: HTML pagination with next-page link
+     - imot.bg: HTML pagination
+     - BulgarianProperties: HTML pagination
+     - Address.bg: HTML pagination
+     - SUPRIMMO: HTML pagination
+     - LUXIMMO: HTML pagination
+     - property.bg: HTML pagination
+  2. Each discovery parser returns list of `{url, external_id, preview_price, preview_intent}` per page
+  3. Add discovery fixtures: `tests/fixtures/<source>/discovery_page/raw.html` + `expected.json` for each source
+  4. Test: discovery returns correct count, handles last page, handles empty results
+- **Acceptance gate**: every tier-1 source has working discovery; `make test` passes; fixtures exist for each
+- **Output**: updated connector files, discovery fixtures, tests
 - **Verifier**: debugger
-- **Depends on**: UX-01
+- **Depends on**: S1-01 through S1-10
 
-### UX-03: Wire listings feed to live `/listings` API
-- **Status**: `DONE_AWAITING_VERIFY` (2026-04-08)
-- **Read first**: `src/bgrealestate/api/routers/listings.py`, `lib/server/fetch-backend.ts`
-- **Do**: Replace mock data with TanStack Query fetch from `/api/backend/listings`; add infinite scroll pagination; remove mock module when live data is seeded
-- **Acceptance gate**: page fetches from FastAPI; pagination works; fallback to mock if API unreachable
-- **Output**: updated `ListingFeed.tsx`, new `lib/hooks/useListings.ts`
-- **Verifier**: debugger
-- **Depends on**: UX-02, BD-02, BD-03
-
-### UX-04: Varna-only LUN-style map + listings experience
+### S1-15: Live HTTP integration for tier-1 connectors
 - **Status**: `TODO`
-- **Read first**: `PLAN.md` §8, `docs/agents/ux_ui_designer/operator-dashboard-spec.md`, LUN-style reference notes
-- **Do**: shape homepage UX to LUN-like split flow (map + feed + filters), scoped to Varna city/region for MVP
-- **Acceptance gate**: prototype shows Varna-only boundaries, map filters, listing cards, and synchronized selection
-- **Output**: UX spec/update doc + component task breakdown
-- **Verifier**: debugger + backend_developer
-- **Depends on**: UX-03, BD-06, DBG-05
+- **Priority**: **CRITICAL** — must actually hit real websites to populate database
+- **Read first**: `src/bgrealestate/connectors/scaffold.py`, `src/bgrealestate/connectors/legal.py`, `src/bgrealestate/connectors/protocol.py`
+- **Do**:
+  1. Implement `httpx`-based live fetch in `HtmlPortalConnector.fetch_url()` with:
+     - User-Agent rotation (realistic browser UAs)
+     - Rate limiting (configurable per source, default 1 req/2sec)
+     - Retry with exponential backoff (3 retries)
+     - Proxy support (optional, configured via env var `HTTP_PROXY`)
+     - Response caching in `raw_capture` table (raw HTML stored in S3/local, metadata in DB)
+     - Legal gate check before every request (`assert_live_http_allowed`)
+  2. Implement live discovery + detail fetch flow:
+     - `discover_listing_urls(source, page)` → returns URL list from live site
+     - `fetch_listing_detail(url)` → returns raw HTML → parse → canonical listing
+  3. Integration test (separate from unit tests): `tests/test_live_integration.py` — skipped by default, runs only with `ENABLE_LIVE_TESTS=1`
+  4. **Tests must remain fixture-only by default** — live tests are opt-in only
+- **Acceptance gate**: `make test` still passes (no live network); with `ENABLE_LIVE_TESTS=1`, fetches 1 page from each tier-1 source and parses successfully; legal gates block restricted sources
+- **Output**: updated connector base class, live fetch implementation, integration tests
+- **Verifier**: debugger (legal gate enforcement) + backend_developer (DB storage)
+- **Depends on**: S1-14, BD-01
 
-### UX-05: AI chat panel with property/map-aware context
+### S1-16: Remaining tier-2 connectors (full set)
 - **Status**: `TODO`
-- **Read first**: `app/(main)/page.tsx`, chat API contracts, `PLAN.md` chat sections
-- **Do**: define and implement persistent chat panel connected to AI chat API, always aware of selected property and active map filters
-- **Acceptance gate**: chat can reference current property card + filtered map state and propose next search/refinement actions
-- **Output**: frontend chat-panel implementation plan and integration tasks
+- **Priority**: HIGH — more sources = more complete database
+- **Read first**: `data/source_registry.json` (all tier-2 sources), `src/bgrealestate/connectors/tier2_stubs.py`
+- **Do**: Implement fixture-backed connectors for remaining tier-2 sources:
+  - Imoti.info, realestates.bg, Indomio.bg, Realistimo
+  - Holding Group, Rentica, Svobodni-kvartiri
+  - Pochivka (vacation focus), Vila (rural/villa focus)
+  - ApartmentsBulgaria (English-market)
+  - Unique Estates, Lions Group, Imoteka
+  - Each: discovery + detail parsing + 2 fixtures (basic + edge case)
+- **Acceptance gate**: `make test` passes; each source has working parser + fixtures; legal gates enforced where applicable
+- **Output**: expanded tier-2 connectors, fixtures, tests
 - **Verifier**: debugger
-- **Depends on**: UX-04, BD-06
+- **Depends on**: S1-12, S1-14
+
+### S1-17: Playwright connectors for headless-required sources
+- **Status**: `TODO`
+- **Priority**: MEDIUM — some sites require JS rendering
+- **Read first**: `data/source_registry.json` (sources with `access_mode: "headless"`), `agent-skills/scraper-connector-builder/SKILL.md`
+- **Do**: For sources that require browser rendering (imoti.net after legal review, any tier-2 with heavy JS):
+  1. Create `src/bgrealestate/connectors/playwright_base.py` — base class using Playwright for JS-rendered pages
+  2. Implement headless connector for specific sources
+  3. Fixture capture: use Playwright to save rendered HTML as fixture files
+  4. Test with saved fixtures (no live browser in CI)
+- **Acceptance gate**: headless connector parses rendered HTML fixtures correctly; Playwright only runs in live mode; `make test` passes without Playwright installed
+- **Output**: Playwright base connector, source-specific implementations, fixtures, tests
+- **Verifier**: debugger
+- **Depends on**: S1-15
 
 ---
 
-## Scraper_T3 (vendor/partner/official routes)
+## ═══════════════════════════════════════════════════════
+## SCRAPER_T3 (tier-3: vendor/partner/official routes)
+## ═══════════════════════════════════════════════════════
+
+**Mission**: Get data from licensed vendors (AirDNA/Airbtics for STR analytics), official registers (KAIS/Property Register), and partner feeds (Airbnb/Booking when contracts exist). All tier-3 sources are gated by contracts/licenses — implement the importers so they work the moment a contract is signed.
 
 ### T3-01: Tier-3 ingestion policy and integration contracts
 - **Status**: `VERIFIED` (2026-04-08; debugger policy + fixture contract review)
-- **Read first**: `data/source_registry.json` (tier-3 sources), `AGENTS.md` (guardrails), `deep-research-report.md` (per-source legal/extraction notes)
-- **Do**: define what's allowed per source and the integration pattern for each:
-  - Airbnb: partner feed only (`legal_mode=official_partner_or_vendor_only`, `risk=prohibited_without_contract`)
-  - Booking.com: partner feed only (`legal_mode=official_partner_or_vendor_only`, `risk=prohibited_without_contract`)
-  - Vrbo: partner feed only (`legal_mode=official_partner_or_vendor_only`, `risk=high`)
-  - Flat Manager: partner feed (`legal_mode=official_partner_or_vendor_only`, `risk=medium`)
-  - Menada Bulgaria: partner feed (`legal_mode=official_partner_or_vendor_only`, `risk=medium`)
-  - AirDNA: licensed data subscription (`legal_mode=official_partner_or_vendor_only`, `risk=low`)
-  - Airbtics: licensed data API (`legal_mode=official_partner_or_vendor_only`, `risk=low`)
-  - BCPEA property auctions: public crawl with review (`legal_mode=public_crawl_with_review`, `risk=medium`)
-  - Property Register: manual/consent only (`legal_mode=consent_or_manual_only`, `risk=high`)
-  - KAIS Cadastre: manual/consent only (`legal_mode=consent_or_manual_only`, `risk=high`)
+- **Read first**: `data/source_registry.json` (tier-3 sources), `AGENTS.md` (guardrails), `deep-research-report.md`
+- **Do**: define what's allowed per source and the integration pattern for each
 - **Acceptance gate**: policy doc reviewed by debugger; integration pattern defined per source; fixture format defined
 - **Output**: `docs/agents/scraper_t3/tier3-ingestion-policy.md`, fixture templates under `tests/fixtures/`
 - **Verifier**: debugger (legal gates + Bugbot priority)
@@ -332,53 +495,562 @@ Single source of truth for **what to do next** per specialist agent.
 - **Verifier**: debugger + backend_developer
 - **Depends on**: DBG-05, T3-02, T3-05
 - **Blocker**: `DBG-05` remains `TODO`, and `T3-02`/`T3-05` are still `DONE_AWAITING_VERIFY` (not `VERIFIED`), so slice cannot start under dependency rules.
-- **Alternative while blocked**: keep Tier-3 outputs stable and wait for debugger verification pass; resume immediately after dependency statuses move to `VERIFIED`.
+- **Mapped follow-up slices**: `DBG-06` (verify T3-02/T3-03/T3-04/T3-05) and `DBG-05` (stage-1 quality gate).
+
+### T3-07: BCPEA live scraper (public auctions are legal to crawl)
+- **Status**: `DONE_AWAITING_VERIFY`
+- **Priority**: HIGH — BCPEA is public data and can be crawled immediately
+- **Read first**: T3-03 output, `src/bgrealestate/connectors/tier3.py`
+- **Do**: implement live HTTP fetch for BCPEA auction listings (public_crawl_with_review legal mode); discovery pagination + detail parsing + storage; respect rate limits
+- **Acceptance gate**: live scraper fetches real auction listings; stores in DB; `make test` still passes (fixture-only)
+- **Output**: live BCPEA connector (`src/bgrealestate/connectors/tier3.py`), CLI command (`scrape-bcpea`), Makefile targets, realistic fixtures, 7 new tests (156 total pass)
+- **Verifier**: debugger
+- **Depends on**: T3-03, BD-15
+- **Completion notes (2026-04-08)**: Parsed real BCPEA HTML structure from sales.bcpea.org; discovery pagination (`?perpage=36&p=N`), detail parsing (property type, area, price, court, bailiff, dates, photos, descriptions, scanned documents), rate limiting (1.5s default). Successfully scraped 180 real auction listings with full detail. CLI: `make scrape-bcpea`.
+
+### T3-08: STR analytics API integration (AirDNA/Airbtics — when licensed)
+- **Status**: `TODO`
+- **Priority**: MEDIUM — requires license subscription first
+- **Read first**: T3-02 output, vendor API documentation
+- **Do**: implement actual API client for AirDNA and/or Airbtics; pull Varna STR metrics (occupancy, revenue, ADR by property type/area); store in dedicated analytics table; expose via `GET /analytics/str-metrics`
+- **Acceptance gate**: with valid API key, fetches real STR data; without key, returns mock/fixture data; `make test` passes
+- **Output**: API client, analytics table migration, API endpoint, tests
+- **Verifier**: debugger + backend_developer
+- **Depends on**: T3-02, BD-14
 
 ---
 
-## Scraper_SM (social overlays)
+## ═══════════════════════════════════════════════════════
+## SCRAPER_SM (tier-4: social media overlays)
+## ═══════════════════════════════════════════════════════
+
+**Mission**: Extract real estate leads from social media channels (Telegram, X, Facebook groups) as intelligence overlays. All data feeds into CRM as leads, not as primary listings. Consent-gated, redaction-enforced.
 
 ### SM-01: Social ingestion contract (policy + fixtures)
 - **Status**: `VERIFIED` (2026-04-08; debugger consent + fixture review)
 - **Read first**: `data/source_registry.json` (tier-4 sources), `AGENTS.md` (guardrails), `sql/schema.sql` (CRM tables)
-- **Do**: define what's allowed per platform:
-  - Telegram public channels: official API ingestion (`legal_mode=official_api_allowed`)
-  - X public accounts: official API (`legal_mode=official_api_allowed`)
-  - Facebook/Instagram/Threads: manual/consent only (`legal_mode=consent_or_manual_only`)
-  - Viber/WhatsApp: explicit opt-in only (`legal_mode=consent_or_manual_only` / `official_partner_or_vendor_only`)
+- **Do**: define what's allowed per platform
 - **Acceptance gate**: policy doc reviewed by debugger; consent checklist complete; fixture format defined
-- **Output**: `docs/agents/scraper_sm/social-ingestion-policy.md`, fixture templates under `tests/fixtures/social/`, plus detailed contract at `docs/agents/scraper_sm/social_ingestion_contract.md`
+- **Output**: `docs/agents/scraper_sm/social-ingestion-policy.md`, fixture templates, detailed contract
 - **Verifier**: debugger (consent checklist + Bugbot priority: legal gates)
 - **Depends on**: —
 
 ### SM-02: Telegram public channel connector (fixture-first)
 - **Status**: `DONE_AWAITING_VERIFY` (2026-04-08: acceptance gate passed)
-- **Read first**: SM-01 policy, `src/bgrealestate/connectors/protocol.py`, CRM tables in `sql/schema.sql`
-- **Do**: connector that maps Telegram channel messages → `lead_message` + `lead_thread`; NLP entity extraction for phone/price/area/intent; fixture-backed tests
-- **Acceptance gate**: `make test` passes; fixtures contain redacted posts; no live Telegram calls in tests
-- **Output**: `src/bgrealestate/connectors/telegram_public.py`, `tests/test_telegram_public_connector.py` (4 passing tests), NLP extraction via `connectors/social_parser.py`
-- **Verifier**: debugger + backend_developer (CRM table round-trip)
+- **Read first**: SM-01 policy, `src/bgrealestate/connectors/protocol.py`, CRM tables
+- **Do**: connector that maps Telegram channel messages → `lead_message` + `lead_thread`; NLP extraction
+- **Acceptance gate**: `make test` passes; fixtures contain redacted posts; no live Telegram calls
+- **Output**: `src/bgrealestate/connectors/telegram_public.py`, tests, NLP extraction
+- **Verifier**: debugger + backend_developer
 - **Depends on**: SM-01, BD-01
-- **Verification evidence**: `make test` → 86 tests OK (11 skipped)
 
 ### SM-03: X (Twitter) public monitor connector (fixture-first)
 - **Status**: `DONE_AWAITING_VERIFY` (2026-04-08: acceptance gate passed)
 - **Read first**: SM-01 policy, `data/source_registry.json` (X entry)
 - **Do**: connector for X API JSON → lead extraction; fixture-backed
-- **Acceptance gate**: `make test` passes; no live API calls in tests
-- **Output**: `src/bgrealestate/connectors/x_public.py`, `tests/test_x_public_connector.py`, fixtures under `tests/fixtures/x_public/`
+- **Acceptance gate**: `make test` passes; no live API calls
+- **Output**: `src/bgrealestate/connectors/x_public.py`, tests, fixtures
 - **Verifier**: debugger
 - **Depends on**: SM-01
-- **Verification evidence**: `make test` → 86 tests OK (11 skipped)
 
 ### SM-04: Social lead-to-property mapping for AI chat context
 - **Status**: `TODO`
 - **Read first**: SM-01 policy, `src/bgrealestate/connectors/social_parser.py`, chat/API contracts
 - **Do**: provide social lead mapping format so chat can show related properties and map-filter suggestions from social signals
-- **Acceptance gate**: fixture-backed mapping examples pass tests; no live social calls in tests
+- **Acceptance gate**: fixture-backed mapping examples pass tests; no live social calls
 - **Output**: mapping schema + fixtures + parser update tasks
 - **Verifier**: debugger + ux_ui_designer
 - **Depends on**: SM-02, UX-05
+
+### SM-05: Social collection options research (decision matrix)
+- **Status**: `DONE_AWAITING_VERIFY` (2026-04-08)
+- **Read first**: `docs/agents/scraper_sm/social-ingestion-policy.md`, `data/source_registry.json` (tier-4)
+- **Do**: research reliable options for Telegram/X/Facebook/Instagram/Viber/WhatsApp collection; document pros/cons/pricing/legality per platform; present decision matrix for operator
+- **Acceptance gate**: decision matrix doc exists with all platforms covered; no code written
+- **Output**: `docs/agents/scraper_sm/social-collection-options.md`
+- **Verifier**: lead agent
+- **Depends on**: SM-01
+- **Verification evidence**: decision matrix added with all 7 tier-4 channels, cost bands, legality path, and rollout recommendation.
+
+### SM-06: Telegram live connector (Telegram Bot API or MTProto)
+- **Status**: `TODO`
+- **Priority**: HIGH — Telegram is the most active social channel for BG real estate
+- **Read first**: SM-02 output, SM-05 decision matrix, `src/bgrealestate/connectors/telegram_public.py`
+- **Do**:
+  1. Implement live Telegram public channel monitoring using official Bot API (or Telethon for MTProto if approved)
+  2. Subscribe to 5-10 known Bulgarian real estate Telegram channels (public only)
+  3. Parse new messages → extract real estate leads → store as `lead_thread` + `lead_message`
+  4. NLP extraction: intent (sell/rent/buy), property type, price, area, city, phone (redacted)
+  5. Run as background worker alongside scraper runner
+  6. **No private channels, no private messages, no user DMs**
+- **Acceptance gate**: live connector receives messages from public channels; leads appear in CRM; `make test` still passes (fixture-only)
+- **Output**: live Telegram connector, channel list config, worker integration, tests
+- **Verifier**: debugger (consent + legal gate) + backend_developer
+- **Depends on**: SM-02, SM-05, BD-14
+
+### SM-07: Facebook public group scraper (consent-gated)
+- **Status**: `DONE_AWAITING_VERIFY` (2026-04-08: implementation deferred by legal decision)
+- **Priority**: MEDIUM — Facebook groups are very active but heavily restricted
+- **Read first**: SM-01 policy, SM-05 decision matrix
+- **Do**: research and implement if legal: monitor public Facebook real estate groups via Graph API (official) or RSS; only public posts; consent-gated; redaction enforced
+- **Acceptance gate**: if implemented, fixture-backed tests pass; no private data accessed; legal review documented
+- **Output**: decision doc `docs/agents/scraper_sm/facebook-public-groups-decision.md` (manual/consent path, autonomous scrape deferred)
+- **Verifier**: debugger (legal gate)
+- **Depends on**: SM-05
+
+---
+
+## ═══════════════════════════════════════════════════════
+## UX_UI_DESIGNER (frontend)
+## ═══════════════════════════════════════════════════════
+
+**Mission**: Build the complete LUN.ua-style buyer-oriented property marketplace frontend. Map-driven, mobile-responsive, with property shop view, user profiles, and AI chat. Reference: `docs/business/product-ux-structure.md`.
+
+### UX-01: Operator dashboard UI plan
+- **Status**: `VERIFIED` (2026-04-08; debugger contract check)
+- **Read first**: `PLAN.md` §8, `src/bgrealestate/api/routers/`, BD-02 API outputs
+- **Do**: define `/admin` UX layout and data model
+- **Acceptance gate**: markdown spec + component breakdown reviewed by debugger
+- **Output**: `docs/agents/ux_ui_designer/admin-ui-spec.md`
+- **Verifier**: debugger
+- **Depends on**: BD-02
+
+### UX-02: Beta main page — map + listings + category picker
+- **Status**: `DONE_AWAITING_VERIFY` (2026-04-08)
+- **Read first**: `PLAN.md` §8, `src/bgrealestate/api/routers/listings.py`
+- **Do**: Build split-view main page with MapLibre map (left) + scrollable listing feed (right) + intent toggle + category picker + search + source badges
+- **Acceptance gate**: page loads with mock/seeded data; category/intent filters work; map renders with pins; responsive mobile stacking
+- **Output**: `app/(main)/page.tsx`, `components/listings/*`, `components/map/*`, `lib/types/listing.ts`, `lib/mock/listings.ts`
+- **Verifier**: debugger
+- **Depends on**: UX-01
+
+### UX-03: Wire listings feed to live `/listings` API
+- **Status**: `DONE_AWAITING_VERIFY` (2026-04-08)
+- **Read first**: `src/bgrealestate/api/routers/listings.py`, `lib/server/fetch-backend.ts`
+- **Do**: Replace mock data with TanStack Query fetch; add infinite scroll; fallback to mock if API unreachable
+- **Acceptance gate**: page fetches from FastAPI; pagination works; fallback to mock if API unreachable
+- **Output**: updated `ListingFeed.tsx`, new `lib/hooks/useListings.ts`
+- **Verifier**: debugger
+- **Depends on**: UX-02, BD-02, BD-03
+
+### UX-04: Varna-only LUN-style map + listings experience
+- **Status**: `TODO`
+- **Read first**: `PLAN.md` §8, `docs/agents/ux_ui_designer/operator-dashboard-spec.md`, LUN-style reference notes
+- **Do**: shape homepage UX to LUN-like split flow (map + feed + filters), scoped to Varna city/region for MVP
+- **Acceptance gate**: prototype shows Varna-only boundaries, map filters, listing cards, and synchronized selection
+- **Output**: UX spec/update doc + component task breakdown
+- **Verifier**: debugger + backend_developer
+- **Depends on**: UX-03, BD-06, DBG-05
+
+### UX-05: AI chat panel with property/map-aware context
+- **Status**: `TODO`
+- **Read first**: `app/(main)/page.tsx`, chat API contracts, `PLAN.md` chat sections
+- **Do**: define and implement persistent chat panel connected to AI chat API, always aware of selected property and active map filters
+- **Acceptance gate**: chat can reference current property card + filtered map state
+- **Output**: frontend chat-panel implementation
+- **Verifier**: debugger
+- **Depends on**: UX-04, BD-07
+
+### UX-06: Product UX structure spec (LUN-style buyer marketplace)
+- **Status**: `DONE_AWAITING_VERIFY` (2026-04-08)
+- **Read first**: `docs/business/product-ux-structure.md`, `docs/business/unit-economics-market-analysis.md`
+- **Do**: review and refine the product UX structure spec; create wireframe descriptions for each page; define component tree + mobile responsive strategy
+- **Acceptance gate**: refined spec exists with component breakdown for all pages
+- **Output**: `docs/agents/ux_ui_designer/product-ux-structure-refined.md`
+- **Verifier**: debugger + lead agent
+- **Depends on**: UX-01
+
+### UX-07: 3D map integration with building layer (MapLibre)
+- **Status**: `TODO`
+- **Read first**: `docs/business/varna-3d-osm-integration.md`, `components/map/MapCanvas.tsx`
+- **Do**: implement MapLibre 3D building extrusion layer using PMTiles from BD-08; building click shows listing drawer; 2D/3D toggle
+- **Acceptance gate**: 3D buildings render in Varna viewport; building click opens drawer; 2D fallback works
+- **Output**: updated MapCanvas component + BuildingLayer + BuildingSummaryDrawer
+- **Verifier**: debugger + backend_developer
+- **Depends on**: UX-04, BD-08
+
+### UX-08: Shop view — full property feed with advanced filters (like LUN.ua)
+- **Status**: `TODO`
+- **Priority**: **CRITICAL** — this is the main user-facing page
+- **Read first**: `docs/business/product-ux-structure.md` (§3.1, §3.2), `components/listings/ListingFeed.tsx`, `components/listings/ListingCard.tsx`, BD-12 API spec
+- **Do**:
+  1. **Filter sidebar/panel** (collapsible on mobile):
+     - Intent toggle: Buy / Rent / Short-term / Auction / Land
+     - Category chips: Apartment / House / Villa / Studio / Penthouse / Office / Shop / Land / Garage
+     - Price range slider (min–max, €)
+     - Area range slider (min–max, m²)
+     - Rooms dropdown (1, 2, 3, 4, 5+)
+     - Floor range (min–max)
+     - Year built (min–max)
+     - Construction type checkboxes (brick, panel, EPK, monolith)
+     - Amenities checkboxes (parking, balcony, elevator, furnished, sea view)
+     - Source filter (show only from: imot.bg, Homes.bg, etc.)
+     - Sort: Newest / Price ↑ / Price ↓ / Area ↑
+  2. **Listing cards** (per `docs/business/product-ux-structure.md` §3.2):
+     - Photo carousel (swipeable, 3–5 photos)
+     - Price + price/m² prominently
+     - Location (city, district)
+     - Key facts: rooms, area, floor/total_floors, year
+     - Source badges (which portals list this property)
+     - Freshness indicator (updated X hours ago)
+     - Save/favorite button (requires login)
+     - "Owner representative" label (never "agent")
+  3. **Infinite scroll** with cursor-based pagination from BD-12
+  4. **Map synchronization**: hover card → highlight pin; click pin → scroll to card; drag map → filter feed to visible area; draw polygon → filter to custom area
+  5. **Empty state**: "No properties match your filters" with suggestions
+  6. **Loading skeleton**: shimmer cards while fetching
+  7. All filters send API params to `GET /properties` (from BD-12)
+- **Acceptance gate**: filters work with live API; map sync works; infinite scroll loads next page; mobile responsive; all filter combinations compose correctly
+- **Output**: updated ListingFeed, FilterPanel, ListingCard, map sync hooks
+- **Verifier**: debugger + backend_developer
+- **Depends on**: UX-04, BD-12
+
+### UX-09: Property detail page — LUN.ua style (like lun.ua item page)
+- **Status**: `TODO`
+- **Priority**: **CRITICAL** — each property needs a rich detail page
+- **Read first**: `docs/business/product-ux-structure.md` (§3.3), `app/(main)/properties/[id]/page.tsx`, BD-11 API
+- **Do**: Rebuild `/properties/[id]` to match LUN.ua detail page spec:
+  1. **Photo gallery**: fullscreen capable, swipeable, zoom, lightbox, photo count badge
+  2. **Price box**: price, price/m², price history chart (if available), currency toggle (EUR/BGN)
+  3. **Facts grid**: type, rooms, area, floor/total_floors, year, construction type, Act 16 status, amenities
+  4. **Description**: expandable, with machine translation toggle (BG ↔ EN)
+  5. **Contact panel**: owner/representative name, phone (click-to-call), message button, agency logo if applicable
+  6. **Mini map**: property location + nearby properties (3–5 pins)
+  7. **Source links panel**: "Listed on: imot.bg, Homes.bg, alo.bg" with links and dates
+  8. **Similar properties**: 3–6 cards based on same district + similar price/area
+  9. **AI chat context**: "Ask about this property" → opens chat with property pre-loaded
+  10. **Breadcrumb**: Home > Varna > Chaika > 2-bed apartment
+  11. **Share button**: copy link, share to social
+  12. **Save/favorite button** (requires login)
+- **Acceptance gate**: detail page renders with all sections from live API; photo gallery works; contact info displayed; similar properties shown; mobile responsive
+- **Output**: rebuilt `properties/[id]/page.tsx`, PhotoGallery, PriceBox, FactsGrid, ContactPanel, SimilarProperties components
+- **Verifier**: debugger
+- **Depends on**: UX-08, BD-11
+
+### UX-10: User profile cabinet — buyer/renter/seller mode switching
+- **Status**: `TODO`
+- **Priority**: **HIGH** — all users need account management
+- **Read first**: `docs/business/product-ux-structure.md` (§3.7), BD-13 auth API
+- **Do**:
+  1. **Header mode switcher**: visible toggle in top navigation — "I'm Buying" / "I'm Renting" / "I'm Selling"
+     - Switching mode changes: navigation items, dashboard data, available actions
+     - Mode persists in user profile (not just frontend state)
+  2. **Registration page** `/auth/register`: email, password, name, preferred mode
+  3. **Login page** `/auth/login`: email + password → JWT stored in httpOnly cookie
+  4. **Settings page** `/settings`:
+     - Profile: name, email, phone, avatar, preferred language (BG/EN)
+     - Mode preferences: default mode, notification channels
+     - Saved searches: list of saved filter combinations with alert toggles
+     - Alert preferences: email/push/SMS frequency
+  5. **Buyer/Renter dashboard** (when mode = buyer or renter):
+     - Saved properties (grid of favorited listings)
+     - Recent searches
+     - Price alerts ("Property X dropped by 5%")
+     - Recommended properties (based on saved search criteria)
+  6. **Seller dashboard** (when mode = seller):
+     - My listings (with status: active/pending/expired)
+     - View count per listing
+     - Inquiries/leads received
+     - "Post new listing" CTA → `/post` wizard
+  7. **Post listing wizard** `/post` (seller mode only):
+     - Step 1: Property type + intent (sell/rent)
+     - Step 2: Location (address input + pin on map)
+     - Step 3: Details (area, rooms, floor, year, amenities — checkboxes)
+     - Step 4: Photos (upload 5–20, drag to reorder, crop)
+     - Step 5: Price + description (with Bulgarian/English toggle)
+     - Step 6: Contact method (phone, chat, email)
+     - Step 7: Review + submit
+  8. **Auth guard**: protect `/settings`, `/post`, save actions — redirect to login if unauthenticated
+- **Acceptance gate**: registration + login works; mode switcher changes navigation; saved properties persist; listing wizard submits to API; mobile responsive
+- **Output**: auth pages, settings page, dashboard views, post wizard, mode switcher component
+- **Verifier**: debugger + backend_developer (API integration)
+- **Depends on**: UX-08, BD-13
+
+### UX-11: Vercel deployment — frontend
+- **Status**: `TODO`
+- **Priority**: **CRITICAL** — the frontend must be publicly accessible
+- **Read first**: `next.config.ts`, `package.json`, `lib/config.ts`, BD-14 Railway output
+- **Do**:
+  1. Configure Vercel project for Next.js 15 deployment
+  2. Set environment variables: `NEXT_PUBLIC_API_URL` pointing to Railway backend (`https://bgrealestate-api.up.railway.app`)
+  3. Configure custom domain (optional) or use default `*.vercel.app`
+  4. Set up auto-deploy from `main` branch
+  5. Configure headers: CORS, security headers, caching for static assets
+  6. Verify API proxy route `app/api/backend/[...path]/route.ts` works with Railway backend
+  7. Add `vercel.json` if custom config needed
+  8. Test: all pages render, API calls work, map loads, images load
+- **Acceptance gate**: `https://bgrealestate.vercel.app` loads homepage with map + listings; property detail pages work; API proxy reaches Railway backend
+- **Output**: `vercel.json` (if needed), deployment docs, environment variable list
+- **Verifier**: debugger
+- **Depends on**: UX-08, BD-14
+
+### UX-12: Admin dashboard — live operator panel
+- **Status**: `TODO`
+- **Priority**: HIGH — operators need to monitor scraper health and data quality
+- **Read first**: `docs/agents/ux_ui_designer/admin-ui-spec.md`, `docs/agents/ux_ui_designer/operator-dashboard-spec.md`, `src/bgrealestate/api/routers/admin.py`
+- **Do**: Build full admin dashboard at `/admin`:
+  1. **Source health table**: all sources with status (active/error/stale), last crawl time, listing count, error rate
+  2. **Crawl jobs table**: recent jobs with status, duration, records processed
+  3. **Parser failure queue**: failed parses with raw HTML preview + error message + retry button
+  4. **Duplicate review queue**: suspected duplicates with side-by-side comparison + merge/dismiss actions
+  5. **System metrics**: total listings, total properties, active sources, daily ingestion rate chart
+  6. **User management**: list users, roles, API keys
+  7. Auth: admin-only access (requires `admin:read` scope)
+- **Acceptance gate**: dashboard shows real data from admin API; tables paginate; charts render; admin auth enforced
+- **Output**: admin page components, admin hooks, admin types
+- **Verifier**: debugger + backend_developer
+- **Depends on**: UX-11, BD-03
+
+### UX-13: Design system — colors, typography, spacing tokens
+- **Status**: `TODO`
+- **Priority**: HIGH — consistent visual identity across all pages
+- **Read first**: `docs/business/product-ux-structure.md` (§6 Design System Tokens), `tailwind.config.ts`, `app/globals.css`
+- **Do**:
+  1. Implement design tokens from product-ux-structure.md §6 in Tailwind config:
+     - Colors: primary (#4361ee), accent (#e94560), success (#16c79a), warning (#f9c74f), dark (#1a1a2e), light (#f5f5f5)
+     - Typography: Inter/system-ui for body, JetBrains Mono for prices/IDs
+     - Spacing: 4px grid
+     - Border radius: card (12px), button (8px)
+     - Shadows: card elevation
+  2. Create reusable component primitives: Button, Badge, Card, Input, Select, Slider, Modal, Drawer, Toast
+  3. Apply design system to all existing components
+  4. Dark mode support (optional, low priority)
+- **Acceptance gate**: all pages use consistent tokens; no hardcoded colors/fonts; components match design spec
+- **Output**: updated `tailwind.config.ts`, `app/globals.css`, `components/ui/*` primitives
+- **Verifier**: debugger
+- **Depends on**: UX-02
+
+---
+
+## ═══════════════════════════════════════════════════════
+## DEBUGGER (cross-agent verification + safety)
+## ═══════════════════════════════════════════════════════
+
+**Mission**: Verify every slice before it's marked complete. Run acceptance gates, check legal compliance, audit security, ensure tests pass. The quality gatekeeper for the entire project.
+
+### DBG-01: Golden path check
+- **Status**: `VERIFIED`
+- **Read first**: `scripts/golden_path_check.py`, `agent-skills/debugger-golden-path/SKILL.md`
+- **Do**: `make golden-path` — migrate → sync → fixture ingest → stats → XLSX
+- **Acceptance gate**: `make validate` passes; with DB, golden path ends OK
+- **Output**: `scripts/golden_path_check.py`, skill, tests
+- **Verifier**: self (via `make validate`)
+- **Depends on**: —
+
+### DBG-02: Verify all DONE_AWAITING_VERIFY slices
+- **Status**: `VERIFIED` (2026-04-08 run; UX-01 verified)
+- **Read first**: this file (scan for `DONE_AWAITING_VERIFY` status)
+- **Do**: for each awaiting slice, run its acceptance gate commands; record PASS/FAIL
+- **Acceptance gate**: every verified slice has a matching JOURNEY.md entry
+- **Output**: verification entries in JOURNEY.md + status updates here
+- **Verifier**: lead agent (spot checks)
+- **Depends on**: —
+
+### DBG-03: Cross-agent safety audit
+- **Status**: `VERIFIED` (2026-04-08)
+- **Read first**: `.cursor/BUGBOT.md`, `data/source_registry.json`, all `tests/test_*.py`
+- **Do**: check all connectors for legal gate enforcement; check tests for live network; check fixtures for secrets/PII; check media storage
+- **Acceptance gate**: zero violations found, or violations documented as blockers
+- **Output**: audit entry in JOURNEY.md
+- **Verifier**: lead agent
+- **Depends on**: S1-01 through S1-10
+
+### DBG-04: CI pipeline verification
+- **Status**: `VERIFIED` (2026-04-08)
+- **Read first**: `.gitlab-ci.yml`, `Makefile`, `Dockerfile`
+- **Do**: verify CI runs `make test`, `make lint`, `make validate`, `make golden-path`
+- **Acceptance gate**: pipeline green on fixture-only tests
+- **Output**: verification entry in JOURNEY.md
+- **Verifier**: self
+- **Depends on**: BD-05
+
+### DBG-05: Verify stage-1 scraping is perfect before Varna 3D map MVP
+- **Status**: `TODO`
+- **Read first**: `docs/exports/stage1-product-type-coverage.md`, `scripts/golden_path_check.py`, `/admin/source-stats`
+- **Do**: verify stage-1 scrape quality and product-type completeness
+- **Acceptance gate**: all required product types covered and golden path passes
+- **Output**: verification entry in `docs/agents/debugger/JOURNEY.md`
+- **Verifier**: lead agent
+- **Depends on**: S1-13, BD-01
+
+### DBG-06: Verify all pending DONE_AWAITING_VERIFY slices (batch 2)
+- **Status**: `TODO`
+- **Priority**: **CRITICAL** — 10+ slices are awaiting verification, blocking downstream work
+- **Read first**: this file — scan all `DONE_AWAITING_VERIFY` slices
+- **Do**: systematically verify each pending slice:
+  1. BD-04 (Auth/RBAC): test 401/403 responses, API key scope enforcement
+  2. BD-05 (Temporal): verify worker/scheduler stubs, test restart behavior
+  3. S1-11 (Ingestion runner): run fixture ingest, check DB round-trip
+  4. S1-12 (Tier-2 stubs): verify all 4 tier-2 connectors parse correctly
+  5. S1-13 (Stage-1 coverage): verify coverage matrix is complete
+  6. T3-02 (AirDNA/Airbtics): verify STR metrics parsing
+  7. T3-03 (BCPEA): verify auction parsing
+  8. T3-04 (Partner stubs): verify `PartnerContractRequired` enforcement
+  9. T3-05 (Official registers): verify consent enforcement
+  10. SM-02 (Telegram): verify lead extraction + redaction
+  11. SM-03 (X): verify lead extraction + redaction
+  12. UX-02 (Beta main page): verify map + listings + filters render
+  13. UX-03 (Live API wiring): verify TanStack Query fetch + fallback
+  - For each: run `make test`, run specific acceptance gate, record PASS/FAIL
+- **Acceptance gate**: all slices either promoted to `VERIFIED` or documented as `BLOCKED` with specific failure reason
+- **Output**: batch verification report in `docs/agents/debugger/JOURNEY.md`, updated statuses in TASKS.md
+- **Verifier**: lead agent
+- **Depends on**: —
+
+### DBG-07: End-to-end website smoke test
+- **Status**: `TODO`
+- **Priority**: **CRITICAL** — must verify the full stack works before launch
+- **Read first**: BD-14, UX-11 outputs, all API endpoints
+- **Do**: after Railway + Vercel deployment, run full smoke test:
+  1. `GET /api/v1/ready` returns 200 (Railway)
+  2. Homepage loads with map + listings (Vercel)
+  3. Click a listing → property detail page loads
+  4. Apply filters → feed updates
+  5. Map pan → feed updates to visible area
+  6. Register new user → login → save a property → verify saved
+  7. Switch to seller mode → post a listing (if implemented)
+  8. Admin dashboard loads with real data
+  9. Scraper status shows recent crawl times
+  10. Mobile responsive check (viewport resize)
+- **Acceptance gate**: all 10 smoke tests pass; screenshot evidence in JOURNEY.md
+- **Output**: smoke test checklist + results in `docs/agents/debugger/JOURNEY.md`
+- **Verifier**: lead agent
+- **Depends on**: BD-14, UX-11
+
+### DBG-08: Security audit — auth, injection, XSS, CORS
+- **Status**: `TODO`
+- **Priority**: HIGH — public website must be secure
+- **Read first**: all API routes, auth middleware, frontend forms
+- **Do**:
+  1. SQL injection audit: verify all queries use parameterized statements
+  2. XSS audit: verify all user content is escaped in frontend
+  3. Auth audit: verify JWT validation, session handling, password hashing
+  4. CORS audit: verify only allowed origins can access API
+  5. Rate limiting: verify API has rate limiting on auth endpoints
+  6. Secrets audit: no API keys, passwords, or tokens in code or fixtures
+  7. HTTPS: verify all traffic is encrypted
+- **Acceptance gate**: zero critical vulnerabilities; medium issues documented with fix plan
+- **Output**: security audit report in `docs/agents/debugger/JOURNEY.md`
+- **Verifier**: lead agent
+- **Depends on**: BD-14, BD-13
+
+---
+
+## ═══════════════════════════════════════════════════════
+## LEAD AGENT — Business, Strategy & Monitoring
+## ═══════════════════════════════════════════════════════
+
+**Mission**: Keep the project on track. Monitor dashboards, update architecture docs, resolve blockers, and ensure all agents are making progress toward the working website goal.
+
+### LEAD-01: Unit economics, TAM/SAM/SOM, market analysis
+- **Status**: `VERIFIED` (2026-04-08; created and generated)
+- **Output**: `docs/business/unit-economics-market-analysis.md`
+- **Verifier**: lead agent (self)
+- **Depends on**: —
+
+### LEAD-02: Investor presentation PDF with charts
+- **Status**: `VERIFIED` (2026-04-08; generated with matplotlib + reportlab)
+- **Output**: `output/pdf/investor-presentation-2026-04-08.pdf` (12 slides, 411 KB)
+- **Generator**: `scripts/generate_investor_presentation.py`
+- **Verifier**: lead agent (self)
+- **Depends on**: LEAD-01
+
+### LEAD-03: Product UX structure plan (LUN-style)
+- **Status**: `VERIFIED` (2026-04-08; spec complete)
+- **Output**: `docs/business/product-ux-structure.md`
+- **Verifier**: lead agent (self)
+- **Depends on**: —
+
+### LEAD-04: Varna 3D OSM building integration plan
+- **Status**: `VERIFIED` (2026-04-08; plan complete)
+- **Output**: `docs/business/varna-3d-osm-integration.md`
+- **Verifier**: lead agent (self)
+- **Depends on**: —
+
+### LEAD-05: Dashboard monitoring + architecture refresh (recurring)
+- **Status**: `TODO` (recurring)
+- **Priority**: HIGH — lead agent's primary ongoing responsibility
+- **Read first**: `docs/exports/progress-dashboard.json`, all JOURNEY.md files, this file
+- **Do**: On each activation:
+  1. Read all JOURNEY.md files — identify progress since last check
+  2. Update `docs/exports/progress-dashboard.json` with current slice statuses
+  3. Run `make dashboard-doc` to regenerate dashboard HTML
+  4. Identify blocked agents and propose unblock actions
+  5. Update dependency graph if new slices were added
+  6. Verify agent slices are being completed in priority order (CRITICAL first)
+  7. Report: % complete toward working website, estimated remaining slices, top blockers
+- **Acceptance gate**: dashboard is current; no agent has been stuck on same slice for >2 activations without blocker documented
+- **Output**: updated dashboard, blocker notes, progress report
+- **Verifier**: self
+- **Depends on**: —
+
+### LEAD-06: GitLab CI/CD pipeline setup
+- **Status**: `TODO`
+- **Priority**: HIGH — automated testing and deployment
+- **Read first**: `Makefile`, `Dockerfile`, `pyproject.toml`, `package.json`
+- **Do**:
+  1. Create `.gitlab-ci.yml` with stages: lint → test → build → deploy
+  2. Lint stage: `make lint` + `make typecheck`
+  3. Test stage: `make test` + `make golden-path` (with PostgreSQL service container)
+  4. Build stage: Docker build for backend + Next.js build for frontend
+  5. Deploy stage: trigger Railway deploy (backend) + Vercel deploy (frontend) on `main` branch
+  6. Add branch protection: require CI pass before merge
+- **Acceptance gate**: CI pipeline runs on every push; all stages green; auto-deploy works
+- **Output**: `.gitlab-ci.yml`, CI documentation
+- **Verifier**: debugger
+- **Depends on**: BD-14, UX-11
+
+---
+
+## ═══════════════════════════════════════════════════════
+## PRIORITY EXECUTION ORDER (Critical Path to Working Website)
+## ═══════════════════════════════════════════════════════
+
+The critical path to a working website, in order:
+
+```
+Phase A — Unblock (debugger first):
+  DBG-06  →  Verify all pending slices (unblocks everything downstream)
+  DBG-05  →  Verify stage-1 scraping quality
+
+Phase B — Backend core (backend_developer):
+  BD-11   →  Unified listing database (merge scraper outputs)
+  BD-12   →  Shop-style filter API
+  BD-13   →  User profile + auth system
+  BD-14   →  Railway deployment
+
+Phase C — Scrapers go live (scraper_1 + scraper_t3):
+  S1-14   →  Discovery pagination for all tier-1
+  S1-15   →  Live HTTP integration
+  BD-15   →  Scraper orchestration loop
+  T3-07   →  BCPEA live scraper
+
+Phase D — Frontend (ux_ui_designer):
+  UX-13   →  Design system tokens
+  UX-08   →  Shop view with filters
+  UX-09   →  Property detail page (LUN-style)
+  UX-10   →  User profile cabinet + mode switching
+  UX-11   →  Vercel deployment
+
+Phase E — Polish (all agents):
+  UX-04   →  Varna-only LUN experience
+  UX-07   →  3D map with buildings
+  BD-08   →  Varna OSM 3D data
+  UX-05   →  AI chat panel
+  BD-07   →  Chat API bridge
+  UX-12   →  Admin dashboard
+  DBG-07  →  End-to-end smoke test
+  DBG-08  →  Security audit
+
+Phase F — Growth:
+  S1-16   →  Remaining tier-2 connectors
+  S1-17   →  Playwright connectors
+  SM-06   →  Telegram live connector
+  T3-08   →  STR analytics API
+  BD-16   →  Real-time updates (SSE)
+  BD-09   →  Analytics views
+  BD-10   →  Photo classification
+```
 
 ---
 
@@ -388,35 +1060,60 @@ Single source of truth for **what to do next** per specialist agent.
 BD-01 ──► BD-02 ──► BD-03
   │         │         │
   │         │         ▼
-  │         │       UX-02
+  │         │       UX-02 ──► UX-03
   │         │
-  │         ├──► BD-04
-  │         ├──► BD-05
-  │         └──► UX-01
+  │         ├──► BD-04 ──► BD-13 (user auth)
+  │         ├──► BD-05 ──► BD-15 (scraper loop)
+  │         ├──► BD-08 (Varna OSM buildings)
+  │         ├──► BD-09 (property analytics)
+  │         ├──► BD-10 (photo classification)
+  │         ├──► BD-11 (unified DB) ──► BD-12 (shop filter API)
+  │         │                          ──► UX-08 (shop view)
+  │         │                          ──► UX-09 (detail page)
+  │         └���─► UX-01
   │
   ├──► S1-11 (needs DB for ingest)
   ├──► T3-02 (needs DB for STR data)
   ├──► T3-05 (needs DB for register data)
-  └──► SM-02 (needs CRM tables)
+  ├──► SM-02 (needs CRM tables)
+  └──► BD-14 (Railway deploy) ──► UX-11 (Vercel deploy)
+                                ──► BD-15 (scraper on Railway)
+                                ──► DBG-07 (E2E smoke test)
 
-S1-01..S1-10 ──► S1-12 (tier-2 stubs follow tier-1 pattern)
-               ──► S1-13 (product-type completion check)
-               ──► DBG-03 (need connectors to audit)
+S1-01..S1-10 ──► S1-14 (discovery pagination)
+               ──► S1-15 (live HTTP) ──► BD-15 (scraper loop)
+               ──► S1-12 (tier-2 stubs)
+               ──► S1-13 (product-type check)
+               ──► S1-16 (remaining tier-2)
+               ──► DBG-03 (audit)
 
-S1-13 ──► DBG-05 (stage-1 scrape quality verification)
-       ──► BD-06 (Varna-only API scope gate)
-       ──► UX-04 (Varna map/feed UX gate)
+S1-13 ──► DBG-05 (stage-1 quality gate)
+       ──► BD-06 (Varna-only APIs)
+       ──► UX-04 (Varna map/feed)
 
-T3-01 ──► T3-02 (licensed data)
-      ──► T3-03 (BCPEA auctions)
-      ──► T3-04 (partner feed stubs)
-      ──► T3-05 (official registers)
-      ──► T3-06 (Varna enrichment handoff)
+BD-06 ──► BD-07 (chat API) ──► UX-05 (chat panel)
+      ──► BD-12 (shop filter API)
+      └──► UX-04 ──► UX-07 (3D map)
+                  └──► UX-05
+
+BD-11 ──► BD-12 ──► UX-08 (shop view)
+BD-13 ──► UX-10 (user profiles)
+BD-14 ──► UX-11 ──► DBG-07
+
+T3-01 ──► T3-02..T3-05 ──► T3-06 (Varna enrichment)
+      ──► T3-07 (BCPEA live)
+      ──► T3-08 (STR analytics)
 
 SM-01 ──► SM-02 ──► SM-03
-                 └──► SM-04 (social lead-to-property chat context)
+      ──► SM-05 ──► SM-06 (Telegram live)
+      ──► SM-07 (Facebook)
+                 └──► SM-04 (social-to-property mapping)
 
-BD-06 ──► BD-07 ──► UX-05
-      └──► UX-04 ──► UX-05
-DBG-05 ──► BD-06 / UX-04 / T3-06
+UX-13 (design system) ──► UX-08 (shop view)
+                       ──► UX-09 (detail page)
+                       ──► UX-10 (user profiles)
+                       ──► UX-12 (admin dashboard)
+
+LEAD-05 (monitoring) ──► ongoing, no dependencies
+LEAD-06 (CI/CD) ──► BD-14, UX-11
 ```

@@ -16,6 +16,9 @@ from .models import (
     CrawlJobModel,
     LeadMessageModel,
     LeadThreadModel,
+    ListingMediaModel,
+    PropertyEntityModel,
+    PropertyOfferModel,
     RawCaptureModel,
     SourceEndpointModel,
     SourceLegalRuleModel,
@@ -383,4 +386,123 @@ class CanonicalListingRepository:
 
     def get(self, reference_id: str) -> CanonicalListingModel | None:
         return self.session.get(CanonicalListingModel, reference_id)
+
+
+class PropertyEntityRepository:
+    def __init__(self, session: Session) -> None:
+        self.session = session
+
+    def list_properties(
+        self,
+        *,
+        limit: int = 50,
+        offset: int = 0,
+        city: str | None = None,
+        min_confidence: float | None = None,
+    ) -> list[PropertyEntityModel]:
+        stmt = select(PropertyEntityModel)
+        if city:
+            stmt = stmt.where(PropertyEntityModel.canonical_city == city)
+        if min_confidence is not None:
+            stmt = stmt.where(PropertyEntityModel.confidence_score >= min_confidence)
+        stmt = (
+            stmt.order_by(
+                PropertyEntityModel.confidence_score.desc().nulls_last(),
+            )
+            .limit(min(limit, 200))
+            .offset(offset)
+        )
+        return list(self.session.scalars(stmt).all())
+
+    def get(self, property_id: str) -> PropertyEntityModel | None:
+        return self.session.get(PropertyEntityModel, property_id)
+
+    def get_offers(self, property_id: str) -> list[PropertyOfferModel]:
+        stmt = (
+            select(PropertyOfferModel)
+            .where(PropertyOfferModel.property_id == property_id)
+            .order_by(PropertyOfferModel.last_changed_at.desc())
+        )
+        return list(self.session.scalars(stmt).all())
+
+    def get_linked_listings(self, property_id: str) -> list[CanonicalListingModel]:
+        stmt = (
+            select(CanonicalListingModel)
+            .join(
+                PropertyOfferModel,
+                PropertyOfferModel.listing_reference_id == CanonicalListingModel.reference_id,
+            )
+            .where(PropertyOfferModel.property_id == property_id)
+            .order_by(CanonicalListingModel.last_seen.desc())
+        )
+        return list(self.session.scalars(stmt).all())
+
+
+class ListingMediaRepository:
+    def __init__(self, session: Session) -> None:
+        self.session = session
+
+    def upsert_media(
+        self,
+        *,
+        media_id: str,
+        listing_reference_id: str,
+        url: str,
+        ordering: int = 0,
+        content_hash: str | None = None,
+        storage_key: str | None = None,
+        mime_type: str | None = None,
+        width: int | None = None,
+        height: int | None = None,
+        file_size: int | None = None,
+        download_status: str = "pending",
+    ) -> str:
+        stmt = (
+            insert(ListingMediaModel)
+            .values(
+                media_id=media_id,
+                listing_reference_id=listing_reference_id,
+                url=url,
+                ordering=ordering,
+                content_hash=content_hash,
+                storage_key=storage_key,
+                mime_type=mime_type,
+                width=width,
+                height=height,
+                file_size=file_size,
+                download_status=download_status,
+            )
+            .on_conflict_do_update(
+                index_elements=[ListingMediaModel.media_id],
+                set_={
+                    "url": url,
+                    "ordering": ordering,
+                    "content_hash": content_hash,
+                    "storage_key": storage_key,
+                    "mime_type": mime_type,
+                    "width": width,
+                    "height": height,
+                    "file_size": file_size,
+                    "download_status": download_status,
+                },
+            )
+        )
+        self.session.execute(stmt)
+        return media_id
+
+    def list_for_listing(self, reference_id: str) -> list[ListingMediaModel]:
+        stmt = (
+            select(ListingMediaModel)
+            .where(ListingMediaModel.listing_reference_id == reference_id)
+            .order_by(ListingMediaModel.ordering.asc())
+        )
+        return list(self.session.scalars(stmt).all())
+
+    def get(self, media_id: str) -> ListingMediaModel | None:
+        return self.session.get(ListingMediaModel, media_id)
+
+    def count_for_listing(self, reference_id: str) -> int:
+        from sqlalchemy import func
+        stmt = select(func.count()).where(ListingMediaModel.listing_reference_id == reference_id)
+        return self.session.scalar(stmt) or 0
 

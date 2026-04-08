@@ -268,3 +268,99 @@ Modified files:
   - `PYTHONPATH=src python3 scripts/generate_stage1_product_type_coverage.py` → wrote `docs/exports/stage1-product-type-coverage.md` (32 fixture cases)
   - `make test` → 94 tests, 83 passed, 11 skipped, 0 failures
 - **Status**: DONE_AWAITING_VERIFY
+
+### Task 16: S1-14 discovery pagination for all tier-1 sources
+- **Started**: 2026-04-08
+- **Action**: Implemented and validated fixture-first discovery parsers across tier-1.
+  - `src/bgrealestate/connectors/scaffold.py`
+    - Added `parse_discovery_html(source_name, html, base_url)` returning preview entries:
+      `{url, external_id, preview_price, preview_intent}` + `next_cursor`.
+    - Wired `HtmlPortalConnector.discover_listing_urls()` to use the parser in live mode.
+  - `src/bgrealestate/connectors/olx_bg.py`
+    - Added `parse_olx_discovery_json(payload)` with pagination cursor extraction from `links.next.href`.
+    - Wired `OlxBgConnector.discover_listing_urls()` to use the JSON parser in live mode.
+  - Added discovery fixtures (`raw` + `expected`) for all tier-1 sources listed in S1-14:
+    - `tests/fixtures/alo_bg/discovery_page/*`
+    - `tests/fixtures/imot_bg/discovery_page/*`
+    - `tests/fixtures/bulgarianproperties/discovery_page/*`
+    - `tests/fixtures/address_bg/discovery_page/*`
+    - `tests/fixtures/suprimmo/discovery_page/*`
+    - `tests/fixtures/luximmo/discovery_page/*`
+    - `tests/fixtures/property_bg/discovery_page/*`
+    - `tests/fixtures/olx_bg/discovery_page/*`, `discovery_last_page/*`, `discovery_empty/*`
+  - Added tests:
+    - `tests/test_tier1_discovery_parsing.py`
+      - Verifies discovery page parsing for all tier-1 HTML sources above.
+      - Verifies last-page/empty handling for HTML parser.
+      - Verifies discovery page/last/empty behavior for OLX JSON parser.
+- **Verification**:
+  - `PYTHONPATH=src python3 -m unittest tests.test_tier1_discovery_parsing -v` → 5 passed
+  - `make test` → 102 tests, 91 passed, 11 skipped, 0 failures
+- **Status**: DONE_AWAITING_VERIFY
+
+### Task 17: Scraping inventory — XLSX + MD + PDF exports
+- **Started**: 2026-04-08
+- **Action**: Built a comprehensive scraping inventory report covering all 44 sources in `source_registry.json`.
+  - Created `scripts/generate_scraping_inventory.py`:
+    - Reads `data/source_registry.json` for all source metadata.
+    - Scans `tests/fixtures/` to count listing fixtures, discovery fixtures, blocked fixtures, photos, geo, price, area, rooms, intents, and property types per source.
+    - Generates three outputs:
+      1. **XLSX** (`docs/exports/scraping-inventory.xlsx`): Two-sheet workbook.
+         - "Scraping Inventory" sheet: 24-column table with source name, tier, family, URL, access/legal/risk modes, categories to scrape, estimated total listings on website, fixture listing count, discovery fixture count, discovery URLs found, blocked fixtures, photos scraped, description/geo/address/area/rooms/price presence, intents covered, property types seen, connector status, and notes. Color-coded by tier, with auto-filter and frozen headers.
+         - "Summary" sheet: Aggregate metrics (total sources, tier breakdown, total fixtures, photos, geo, etc.).
+      2. **MD** (`docs/exports/scraping-inventory-summary.md`): Full per-source report with clickable links, metadata, categories, and fixture statistics tables. Grouped by tier with legend.
+      3. **PDF** (`docs/exports/scraping-inventory-summary.pdf`): Landscape A4 report with summary table + per-tier tables showing source, URL (clickable), categories, estimates, and fixture stats. Color-coded rows by tier.
+  - Per-source categories documented:
+    - **Tier-1** (10 sources): Sale, Long-term Rent, Short-term Rent, Land, New Build
+    - **Tier-2** (17 sources): Same plus STR specialists (Pochivka, Vila, ApartmentsBulgaria) and rental-only (Rentica, Svobodni-kvartiri)
+    - **Tier-3** (10 sources): Partner feeds, licensed analytics, auctions, official registers, property management
+    - **Tier-4** (7 sources): Social/messenger lead intelligence only
+  - Estimated total listings across scrapable portals (tier 1-2): ~550,000+
+  - Current fixture coverage: 31 listing fixtures, 14 discovery fixtures, 26 photos across 17 source directories
+- **Verification**:
+  - `PYTHONPATH=src python3 scripts/generate_scraping_inventory.py` executed successfully
+  - All three output files confirmed present in `docs/exports/`
+- **Status**: DONE_AWAITING_VERIFY
+
+### Task 18: Image scraping pipeline — download, store, serve, and display
+- **Started**: 2026-04-08
+- **Problem**: Images were not viewable. Connectors only stored external URL strings in `canonical_listing.image_urls` JSONB column. No download pipeline, no image serving endpoint, and the frontend used placeholder SVGs. External URLs fail due to hotlink protection and CORS when loaded directly in the browser.
+- **Action**: Built a complete image pipeline across 4 layers:
+  1. **ORM + Schema** (`src/bgrealestate/db/models.py`, `sql/schema.sql`):
+     - Added `ListingMediaModel` mapping the `listing_media` table.
+     - Extended `listing_media` schema with `storage_key`, `mime_type`, `width`, `height`, `file_size`, `download_status` columns.
+  2. **Download service** (`src/bgrealestate/services/media.py`):
+     - `download_image()`: fetches a single image via httpx, validates content type, stores to `data/media/<reference_id>/<ordering>_<hash8>.<ext>`, extracts dimensions via Pillow, returns `DownloadResult` with storage_key, hash, size, status.
+     - `download_listing_images()`: batch downloader for all images of a listing.
+     - `proxy_external_image()`: live proxy for images not yet downloaded.
+     - `get_image_path()`: resolves storage_key to local file path.
+     - Supports JPEG, PNG, WebP, GIF, AVIF, SVG. 20 MB size limit.
+  3. **API layer** (`src/bgrealestate/api/routers/media.py`):
+     - `GET /media/proxy?url=<encoded>`: proxies external image URLs server-side (bypasses hotlink protection).
+     - `GET /media/{media_id}`: serves locally-stored images by media_id, falls back to proxy.
+     - `GET /listings/{reference_id}/images`: returns all images for a listing with serve_url.
+     - Updated `_serialize_listing()` in listings router to wrap all external URLs in `/media/proxy?url=...` so the frontend loads images through our server.
+     - Added `original_image_urls` field to listing response for reference.
+  4. **Frontend** (`app/api/images/route.ts`, `lib/utils/image-url.ts`, `components/listings/PhotoCarousel.tsx`):
+     - Next.js image proxy route at `/api/images?url=<encoded>` or `?media_id=<id>`.
+     - Falls back from backend proxy to direct fetch if backend is unavailable.
+     - `proxyImageUrl()` utility wraps external URLs through the proxy.
+     - `PhotoCarousel` and `PhotoGallery` now route all images through proxy.
+     - Added graceful error handling with fallback placeholder on image load failure.
+  5. **Ingestion wiring** (`src/bgrealestate/connectors/ingest.py`):
+     - `_sync_listing_media()`: creates `listing_media` rows for each image URL on ingest.
+     - When `download_images=True`, also downloads and stores images during ingestion.
+     - `ingest_listing_detail_html()` now accepts `download_images` parameter.
+  6. **CLI** (`src/bgrealestate/cli.py`):
+     - `download-images` subcommand: batch-downloads images for listings already in DB.
+     - `--reference-id`, `--source-name`, `--limit`, `--dry-run` options.
+     - `ingest-fixture` now passes `download_images` when not in dry-run mode.
+  7. **Repository** (`src/bgrealestate/db/repositories.py`):
+     - `ListingMediaRepository`: upsert_media, list_for_listing, get, count_for_listing.
+  8. **Tests** (`tests/test_media_pipeline.py`):
+     - 14 tests covering: download success/failure/empty/unsupported, batch download, path resolution, extension guessing, ORM model columns, URL proxying, listing serialization, frontend file existence.
+- **Verification**:
+  - `PYTHONPATH=src python3 -m unittest tests.test_media_pipeline -v` -> 14 passed
+  - `make test` -> 170 tests, 167 passed, 1 skipped, 3 pre-existing failures (properties seed data fallback)
+  - 0 linter errors across all changed files
+- **Status**: DONE_AWAITING_VERIFY

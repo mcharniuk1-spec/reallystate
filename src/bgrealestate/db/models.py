@@ -226,6 +226,27 @@ class MediaAssetModel(Base):
     bytes: Mapped[int | None] = mapped_column(BigInteger)
     download_status: Mapped[str] = mapped_column(Text, nullable=False, default="pending")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    room_type: Mapped[str | None] = mapped_column(Text)
+    quality_score: Mapped[float | None] = mapped_column(Float)
+    is_exterior: Mapped[bool | None] = mapped_column(Boolean)
+    is_floorplan: Mapped[bool | None] = mapped_column(Boolean)
+
+
+class ListingMediaModel(Base):
+    __tablename__ = "listing_media"
+
+    media_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    listing_reference_id: Mapped[str] = mapped_column(ForeignKey("canonical_listing.reference_id"), nullable=False)
+    url: Mapped[str] = mapped_column(Text, nullable=False)
+    content_hash: Mapped[str | None] = mapped_column(Text)
+    caption: Mapped[str | None] = mapped_column(Text)
+    ordering: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    storage_key: Mapped[str | None] = mapped_column(Text)
+    mime_type: Mapped[str | None] = mapped_column(Text)
+    width: Mapped[int | None] = mapped_column(Integer)
+    height: Mapped[int | None] = mapped_column(Integer)
+    file_size: Mapped[int | None] = mapped_column(BigInteger)
+    download_status: Mapped[str] = mapped_column(Text, nullable=False, default="pending")
 
 
 class BuildingEntityModel(Base):
@@ -253,9 +274,23 @@ class AppUserModel(Base):
     email: Mapped[str] = mapped_column(Text, nullable=False, unique=True)
     display_name: Mapped[str] = mapped_column(Text, nullable=False)
     avatar_url: Mapped[str | None] = mapped_column(Text)
+    password_hash: Mapped[str | None] = mapped_column(Text)
+    user_mode: Mapped[str] = mapped_column(Text, nullable=False, default="buyer")
     status: Mapped[str] = mapped_column(Text, nullable=False, default="active")
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
     last_login_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+
+
+class SavedPropertyModel(Base):
+    __tablename__ = "saved_property"
+    __table_args__ = (UniqueConstraint("user_id", "property_id"),)
+
+    saved_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    user_id: Mapped[str] = mapped_column(ForeignKey("app_user.user_id"), nullable=False)
+    property_id: Mapped[str] = mapped_column(ForeignKey("property_entity.property_id"), nullable=False)
+    listing_reference_id: Mapped[str | None] = mapped_column(ForeignKey("canonical_listing.reference_id"))
+    notes: Mapped[str | None] = mapped_column(Text)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
 
 
 class OrganizationAccountModel(Base):

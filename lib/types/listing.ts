@@ -12,6 +12,21 @@ export type PropertyCategory =
   | "penthouse"
   | "other";
 
+export type ConstructionType = "brick" | "panel" | "epk" | "monolith" | "wood" | "other";
+
+export type Amenity =
+  | "parking"
+  | "balcony"
+  | "elevator"
+  | "furnished"
+  | "sea_view"
+  | "mountain_view"
+  | "pool"
+  | "garden"
+  | "garage"
+  | "ac"
+  | "central_heating";
+
 export type Listing = {
   reference_id: string;
   source_name: string;
@@ -29,6 +44,11 @@ export type Listing = {
   longitude: number | null;
   area_sqm: number | null;
   rooms: number | null;
+  floor: number | null;
+  total_floors: number | null;
+  year_built: number | null;
+  construction_type: ConstructionType | null;
+  amenities: Amenity[];
   price: number | null;
   currency: string | null;
   description: string | null;
@@ -64,3 +84,35 @@ export const INTENTS: { value: ListingIntent; label: string }[] = [
   { value: "short_term_rental", label: "Short-term" },
   { value: "auction", label: "Auction" },
 ];
+
+export const AMENITIES: { value: Amenity; label: string }[] = [
+  { value: "parking", label: "Parking" },
+  { value: "balcony", label: "Balcony" },
+  { value: "elevator", label: "Elevator" },
+  { value: "furnished", label: "Furnished" },
+  { value: "sea_view", label: "Sea view" },
+  { value: "mountain_view", label: "Mountain view" },
+  { value: "pool", label: "Pool" },
+  { value: "garden", label: "Garden" },
+  { value: "garage", label: "Garage" },
+  { value: "ac", label: "A/C" },
+  { value: "central_heating", label: "Central heating" },
+];
+
+export const CONSTRUCTION_TYPES: { value: ConstructionType; label: string }[] = [
+  { value: "brick", label: "Brick" },
+  { value: "panel", label: "Panel" },
+  { value: "epk", label: "EPK" },
+  { value: "monolith", label: "Monolith" },
+  { value: "wood", label: "Wood" },
+];
+
+export const SORT_OPTIONS = [
+  { value: "newest", label: "Newest first" },
+  { value: "price_asc", label: "Price: low to high" },
+  { value: "price_desc", label: "Price: high to low" },
+  { value: "area_asc", label: "Area: small to large" },
+  { value: "area_desc", label: "Area: large to small" },
+] as const;
+
+export type SortOption = (typeof SORT_OPTIONS)[number]["value"];

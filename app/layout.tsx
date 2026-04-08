@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Newsreader, Outfit } from "next/font/google";
 
 import { Providers } from "./providers";
+import { ChatBar } from "@/components/chat/ChatBar";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -18,17 +19,20 @@ const newsreader = Newsreader({
 
 export const metadata: Metadata = {
   title: {
-    default: "Bulgaria Real Estate",
-    template: "%s · Bulgaria Real Estate",
+    default: "BGEstate — Every property in Bulgaria",
+    template: "%s · BGEstate",
   },
-  description: "Source-first listings, map, CRM, and publishing control for the Bulgarian market.",
+  description: "Every property. One search. 3D map. AI-powered Bulgarian real estate marketplace.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${outfit.variable} ${newsreader.variable}`}>
-      <body className="font-sans">
-        <Providers>{children}</Providers>
+      <body className="font-sans pb-[52px]">
+        <Providers>
+          {children}
+          <ChatBar />
+        </Providers>
       </body>
     </html>
   );

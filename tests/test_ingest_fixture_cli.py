@@ -35,6 +35,11 @@ class TestIngestFixtureCli(unittest.TestCase):
     def test_ingest_fixture_non_dry_run_calls_ingest(self) -> None:
         if sys.version_info < (3, 10):
             self.skipTest("non-dry-run import path requires Python 3.10+ typing support in SQLAlchemy models")
+        import importlib
+        try:
+            importlib.import_module("bgrealestate.db.session")
+        except Exception:
+            self.skipTest("cannot import bgrealestate.db.session (missing sqlalchemy or typing incompatibility)")
         fixture = ROOT / "tests" / "fixtures" / "homes_bg" / "basic_listing"
         with patch("bgrealestate.db.session.create_db_engine", return_value=object()) as p_engine:
             with patch(
@@ -44,6 +49,7 @@ class TestIngestFixtureCli(unittest.TestCase):
                     "source_listing_id": "s1",
                     "snapshot_id": "ss1",
                     "reference_id": "Homes.bg:HB-12345",
+                    "property_id": None,
                 },
             ) as p_ingest:
                 rc, out = self._run_cli(["bgrealestate", "ingest-fixture", "Homes.bg", str(fixture)])

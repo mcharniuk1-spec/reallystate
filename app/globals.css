@@ -4,6 +4,30 @@
 
 :root {
   color-scheme: light;
+  --color-ink: 15 20 25;
+  --color-mist: 100 116 139;
+  --color-paper: 246 243 237;
+  --color-panel: 255 252 247;
+  --color-line: 229 223 211;
+  --color-sea: 11 107 87;
+  --color-sea-bright: 13 138 114;
+  --color-sand: 201 169 98;
+  --color-warn: 180 83 9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --color-ink: 237 237 237;
+    --color-mist: 148 163 184;
+    --color-paper: 17 20 24;
+    --color-panel: 24 28 33;
+    --color-line: 45 50 58;
+    --color-sea: 16 185 129;
+    --color-sea-bright: 52 211 153;
+    --color-sand: 217 189 120;
+    --color-warn: 245 158 11;
+  }
 }
 
 body {
@@ -13,5 +37,11 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer components {
+  .skeleton {
+    @apply animate-pulse rounded-xl bg-line/40;
   }
 }

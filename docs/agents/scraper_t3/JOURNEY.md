@@ -101,3 +101,33 @@
 - **Tests run**: none
 - **Status**: BLOCKED (`DBG-05` is `TODO`; `T3-02` and `T3-05` not yet `VERIFIED`)
 - **Review comments**: Slice cannot start until dependency statuses are advanced by verifier. Resume with `docs/agents/scraper_t3/varna-enrichment-handoff.md` immediately after verifier clears gates.
+
+### 2026-04-08 — CONST-02: Cross-agent note propagation (scraper_t3 blockers)
+
+- **Action**: Propagated Tier-3 blocker mapping into task queue so verifier execution is explicit for unblock path.
+- **Changed files**:
+  - `docs/agents/TASKS.md` (added mapped follow-up slices to T3-06)
+- **Commands run**: none
+- **Tests run**: none
+- **Status**: DONE_AWAITING_VERIFY
+- **Review comments**: `scraper_t3` has no unblocked implementation slice until debugger completes `DBG-06` and `DBG-05`.
+
+### 2026-04-08 — T3-07: BCPEA live scraper (public auctions — legal to crawl)
+
+- **Action**: Built full live scraper for BCPEA property auction register (sales.bcpea.org). Fetched real HTML to understand actual site structure (server-rendered, not SPA). Implemented discovery pagination, detail page parsing, rate limiting, CLI command, Makefile targets, and realistic fixture-backed tests. Successfully scraped 180 real auction listings with full detail (property type, area, price EUR/BGN, court, bailiff, dates, photos, descriptions, scanned PDF documents, bailiff phone/mobile).
+- **Changed files**:
+  - `src/bgrealestate/connectors/tier3.py` (added `BcpeaDiscoveryItem`, `BcpeaDiscoveryPage`, `parse_bcpea_discovery_html`, `parse_bcpea_detail_html`, rewrote `BcpeaAuctionConnector` with live fetch, discovery pagination, rate limiting, detail parsing; kept legacy `parse_auction_html` for T3-03 backward compat)
+  - `src/bgrealestate/connectors/__init__.py` (exported new types and functions)
+  - `src/bgrealestate/cli.py` (added `scrape-bcpea` command with `--pages`, `--perpage`, `--rate-limit`, `--fetch-details`, `--out-dir`, `--dry-run`)
+  - `Makefile` (added `scrape-bcpea` and `scrape-bcpea-dry` targets)
+  - `tests/test_bcpea_live_scraper.py` (new: 7 fixture-backed tests for discovery parsing, detail parsing, backward compat)
+  - `tests/fixtures/bcpea/discovery_page1/raw.html` (new: realistic discovery page fixture from real site structure)
+  - `tests/fixtures/bcpea/discovery_page1/expected.json` (new: expected parse output)
+  - `tests/fixtures/bcpea/detail_87739/raw.html` (new: realistic detail page fixture from real site structure)
+  - `tests/fixtures/bcpea/detail_87739/expected.json` (new: expected parse output)
+  - `docs/agents/TASKS.md` (status update)
+- **Commands run**: `make scrape-bcpea` (5 pages x 36 per page = 180 listings discovered + 180 detail pages fetched)
+- **Tests run**: 156 total (7 new), 0 failures, 1 skipped
+- **Outputs produced**: `output/bcpea/discovery.json` (180 items), `output/bcpea/details.json` (180 detail records)
+- **Status**: DONE_AWAITING_VERIFY
+- **Review comments**: BCPEA is `public_crawl_with_review` legal mode — live crawl passes `assert_live_http_allowed`. Rate limit default 1.5s between requests. Prices parsed in both EUR and BGN (лв). Property types extracted from `item__wrapper` header on detail pages. Legacy T3-03 template parser preserved for backward compat. Next: integrate into scraper orchestration loop (BD-15) and unification pipeline.

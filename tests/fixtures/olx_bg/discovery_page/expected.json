@@ -1,0 +1,17 @@
+{
+  "entries": [
+    {
+      "url": "https://www.olx.bg/ad/dvustaen-apartament-varna-CID42-ID987654321.html",
+      "external_id": "987654321",
+      "preview_price": 78000.0,
+      "preview_intent": "sale"
+    },
+    {
+      "url": "https://www.olx.bg/ad/tristaen-apartament-varna-CID42-ID987654322.html",
+      "external_id": "987654322",
+      "preview_price": 96000.0,
+      "preview_intent": "sale"
+    }
+  ],
+  "next_cursor": {"page": 2}
+}

@@ -6,6 +6,10 @@ type Ctx = { params: Promise<{ path?: string[] }> };
 
 const TIMEOUT_MS = 60_000;
 
+function getInternalApiKey(): string | undefined {
+  return process.env.BACKEND_API_KEY || process.env.READONLY_API_KEY;
+}
+
 async function proxy(req: Request, ctx: Ctx) {
   const { path: segments } = await ctx.params;
   const tail = (segments ?? []).join("/");
@@ -15,6 +19,18 @@ async function proxy(req: Request, ctx: Ctx) {
   const headers = new Headers();
   const ct = req.headers.get("content-type");
   if (ct) headers.set("content-type", ct);
+
+  const clientKey = req.headers.get("x-api-key");
+  const authHeader = req.headers.get("authorization");
+  if (clientKey) {
+    headers.set("X-API-Key", clientKey);
+  } else if (authHeader) {
+    headers.set("Authorization", authHeader);
+  } else {
+    const internalKey = getInternalApiKey();
+    if (internalKey) headers.set("X-API-Key", internalKey);
+  }
+
   const init: RequestInit = {
     method,
     headers,

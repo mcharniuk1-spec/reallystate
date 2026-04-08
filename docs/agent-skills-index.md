@@ -34,5 +34,18 @@ Canonical skill files live under `agent-skills/<skill-name>/SKILL.md`.
 | `web-frontend-nextjs` | Next.js/React UI execution and API-contract-first component flow |
 | `dashboard-visual-ops` | KPI/kanban/operator dashboard visual design and drill-down behavior |
 | `web-performance-accessibility` | Frontend performance and accessibility quality checks |
+| `investor-pitch-yc` | Y Combinator style investor narrative and slide flow |
+| `presentation-pdf-reportlab` | Polished PDF slide deck generation with layout QA |
+| `presentation-powerpoint-pptx` | Microsoft PowerPoint deck generation using python-pptx |
+| `google-slides-handoff` | Google Slides import readiness and collaboration handoff |
+| `project-progress-dashboard-web` | Full-flow project progress dashboard enhancement |
+| `context-engineering` | Context window management and progressive disclosure for agent prompts |
+| `prompt-engineering` | Systematic prompt design with Anthropic best practices |
+| `multi-agent-patterns` | Supervisor, peer, and hierarchical multi-agent coordination patterns |
+| `test-generator` | Fixture-first test generation for connectors, APIs, and pipelines |
+| `security-audit` | Security audit checklist: legal gates, secrets, injection, compliance |
+| `vercel-nextjs-deploy` | Vercel deployment for Next.js frontend applications |
+| `railway-deploy` | Railway deployment for Python backend with PostgreSQL and workers |
+| `ci-cd-pipeline` | CI/CD pipeline design with lint, typecheck, test, and deploy stages |
 
 Every agent should state the skills used in its closeout.

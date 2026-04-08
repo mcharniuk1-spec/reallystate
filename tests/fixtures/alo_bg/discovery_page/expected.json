@@ -1,0 +1,17 @@
+{
+  "entries": [
+    {
+      "url": "https://www.alo.bg/ad/ALO-300100",
+      "external_id": "ALO-300100",
+      "preview_price": 95000.0,
+      "preview_intent": "sale"
+    },
+    {
+      "url": "https://www.alo.bg/ad/ALO-300101",
+      "external_id": "ALO-300101",
+      "preview_price": 88000.0,
+      "preview_intent": "sale"
+    }
+  ],
+  "next_cursor": {"page": 2}
+}

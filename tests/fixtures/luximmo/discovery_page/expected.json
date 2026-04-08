@@ -1,0 +1,17 @@
+{
+  "entries": [
+    {
+      "url": "https://luximmo.bg/property/LX-88001",
+      "external_id": "LX-88001",
+      "preview_price": 320000.0,
+      "preview_intent": "sale"
+    },
+    {
+      "url": "https://luximmo.bg/property/LX-88002",
+      "external_id": "LX-88002",
+      "preview_price": 285000.0,
+      "preview_intent": "sale"
+    }
+  ],
+  "next_cursor": {"page": 2}
+}

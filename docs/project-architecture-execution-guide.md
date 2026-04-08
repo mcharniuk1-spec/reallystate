@@ -615,15 +615,72 @@ The correct next execution priority remains:
 4. finish `Homes.bg` discovery and DB-backed ingestion
 5. only then broaden connector coverage
 
-## 13. Summary
+## 13. Business Model & Market Analysis
 
-The platform is intended to become a continuously running market-ingestion and property-grouping system.
+Full unit economics and market analysis: `docs/business/unit-economics-market-analysis.md`
+Investor presentation with charts: `output/pdf/investor-presentation-{date}.pdf`
+
+### 13.1 TAM / SAM / SOM
+
+| Level | Annual Revenue | Basis |
+|---|---|---|
+| TAM (Bulgaria) | €74.7M | Agency subs + listing fees + leads + STR + AI + developer marketing |
+| SAM (coastal) | €22.6M | 28–35% coastal share |
+| SOM Year 1 | €0.7–1.1M | Varna MVP, 50 agency subs |
+| SOM Year 3 | €4.5–6.8M | Multi-city, 20–30% share |
+
+### 13.2 Platform positioning
+
+Buyer-oriented marketplace. Owners post directly. Agents are "owner representatives". 30+ sources aggregated with AI dedupe, 3D map (Varna MVP), and persistent AI chat.
+
+Key differentiator: No existing Bulgarian portal aggregates across sources. Our platform is the first unified search with 95%+ supply coverage.
+
+### 13.3 Go-to-market phases
+
+| Phase | Timeline | Scope | Target |
+|---|---|---|---|
+| MVP | Months 1–4 | Varna, 10 tier-1 sources, 3D map, AI chat | 5K MAU, 50 agencies |
+| Coastal | Months 5–8 | Burgas + resorts, 25+ sources, STR analytics | 15K MAU, 200 agencies |
+| National | Months 9–14 | Sofia/Plovdiv/Bansko, CRM, publishing | 50K MAU, 500 agencies |
+| International | Months 15–24 | EU buyer funnel, multi-lang, cross-border tools | 100K MAU, leader |
+
+## 14. 3D Map Integration (Varna MVP)
+
+Full integration plan: `docs/business/varna-3d-osm-integration.md`
+
+Technology: MapLibre GL JS + deck.gl 3D building extrusion. Data: OpenStreetMap (GeoFabrik extract → osmium → tippecanoe → PMTiles).
+
+| Component | Owner | Status |
+|---|---|---|
+| OSM data pipeline | backend_developer (BD-08) | TODO |
+| PostGIS building_entity | backend_developer | Schema exists |
+| MapLibre 3D layer | ux_ui_designer (UX-07) | TODO |
+| PMTiles static serving | backend_developer | TODO |
+| Blosm marketing renders | ux_ui_designer (optional) | Deferred |
+
+Blosm (https://github.com/vvoovv/blosm) generates beautiful offline 3D renders for marketing. MapLibre handles runtime web rendering.
+
+## 15. Product UX Structure
+
+Full spec: `docs/business/product-ux-structure.md`
+
+Core pages: `/` (map+feed split), `/properties/[id]`, `/map` (fullscreen 3D), `/chat` (AI assistant), `/new-builds`, `/analytics`, `/post` (owner submission), `/admin`.
+
+Reference model: LUN.ua (Ukraine aggregator) adapted for Bulgaria with AI chat, 3D buildings, owner-first posting.
+
+## 16. Summary
+
+The platform is intended to become a continuously running market-ingestion and property-grouping system with a buyer-oriented marketplace frontend.
 
 The critical operational ideas are:
 
-1. scrape continuously
+1. scrape continuously from 30+ sources
 2. keep every found source listing link
 3. preserve snapshots and raw captures
 4. normalize into canonical listing records
 5. group duplicate apartment variations into one property entity
 6. build product views on top of the grouped property graph
+7. render 3D map with OSM buildings for Varna city
+8. provide AI chat assistant aware of property context and map state
+9. enable owner-first posting with agent-as-representative model
+10. capture revenue through agency subs, premium listings, leads, STR analytics

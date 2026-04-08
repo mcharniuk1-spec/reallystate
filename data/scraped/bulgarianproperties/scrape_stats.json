@@ -1,0 +1,28 @@
+{
+  "source_key": "bulgarianproperties",
+  "source_name": "BulgarianProperties",
+  "discovery_pages_fetched": 4,
+  "listing_urls_discovered": 1,
+  "listing_pages_fetched": 1,
+  "listing_pages_parsed": 1,
+  "listing_pages_failed": 0,
+  "photos_found": 1,
+  "photos_downloaded": 1,
+  "photos_failed": 0,
+  "with_price": 0,
+  "with_geo": 0,
+  "with_address": 0,
+  "with_area": 0,
+  "with_rooms": 0,
+  "with_description": 1,
+  "intents": {
+    "sale": 1
+  },
+  "categories": {
+    "unknown": 1
+  },
+  "errors": [],
+  "start_time": "2026-04-08T16:32:08.325338+00:00",
+  "end_time": "2026-04-08T16:32:12.929843+00:00",
+  "duration_seconds": 4.6
+}

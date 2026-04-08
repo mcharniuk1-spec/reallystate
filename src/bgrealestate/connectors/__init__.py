@@ -10,11 +10,15 @@ from .scaffold import HtmlPortalConnector
 from .social_parser import extract_social_lead
 from .tier3 import (
     BcpeaAuctionConnector,
+    BcpeaDiscoveryItem,
+    BcpeaDiscoveryPage,
     LicensedStrDataConnector,
     OfficialRegisterWrapper,
     OperatorConsentRequired,
     PartnerContractRequired,
     PartnerFeedStubConnector,
+    parse_bcpea_detail_html,
+    parse_bcpea_discovery_html,
 )
 
 __all__ = [
@@ -33,4 +37,8 @@ __all__ = [
     "OfficialRegisterWrapper",
     "OperatorConsentRequired",
     "BcpeaAuctionConnector",
+    "BcpeaDiscoveryItem",
+    "BcpeaDiscoveryPage",
+    "parse_bcpea_discovery_html",
+    "parse_bcpea_detail_html",
 ]

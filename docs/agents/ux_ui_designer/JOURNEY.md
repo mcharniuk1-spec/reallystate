@@ -181,3 +181,299 @@
 - The property detail page uses `<img>` for `image_urls[0]`; swap to Next.js `<Image>` with width/height once media pipeline stores known dimensions.
 - "Create lead" button on detail page stays disabled until CRM API (`POST /crm/threads`) exists (BD-04 dependency).
 - UX-04 (Varna-scoped LUN-style experience) is next but blocked on DBG-05 + BD-06 — no work to start until those gate.
+
+---
+
+## Task 6 — UX-06: Product UX structure spec (LUN-style buyer marketplace)
+
+**Date**: 2026-04-08  
+**Slice**: `UX-06` in `docs/agents/TASKS.md`  
+**What**: Reviewed and refined the product UX structure spec. Created page-by-page wireframe descriptions for all 10+ routes (homepage, property detail, full-screen map, AI chat, new builds, analytics, post listing, auth, settings, admin). Defined the complete component tree with 70+ components, marking each as BUILT, SHELL, or mapping to a specific UX slice. Documented mobile responsive strategy per breakpoint (desktop/tablet/mobile) with specific patterns (FAB toggle, bottom sheet chat, pull-to-refresh, swipe). Preserved existing design system tokens from codebase (`tailwind.config.ts`) and proposed additions. Mapped full implementation dependency graph across all UX slices.
+
+**Changed files**:
+- `docs/agents/ux_ui_designer/product-ux-structure-refined.md` (new — refined spec, 8 sections)
+- `docs/agents/TASKS.md` (updated UX-06 status to `DONE_AWAITING_VERIFY`)
+
+**Acceptance gate check**:
+- [x] Refined spec exists → `docs/agents/ux_ui_designer/product-ux-structure-refined.md`
+- [x] Component breakdown for all pages → Section 5 with 70+ components, each tagged with slice ID
+- [x] Wireframe descriptions for each page → Section 4 with 10 page wireframes
+- [x] Mobile responsive strategy → Section 6 with breakpoints + patterns table
+
+**Design decisions**:
+- Kept existing Tailwind tokens (ink/mist/paper/sea/sand/warn) rather than switching to the brand-blue/red tokens proposed in the original product UX doc, since the code already uses the warm palette
+- Component tree maps every unbuilt component to exactly one UX slice, so no future confusion about which slice builds what
+- Dependency graph shows UX-04 through UX-11 are all blocked on backend slices — this spec is the last unblocked UX task
+
+**Commands run**: none  
+**Tests run**: none (spec-only deliverable)  
+**Extensions/libraries used**: none
+
+### After Task 6
+
+All remaining UX slices are blocked:
+- UX-04 (Varna LUN-style): blocked on BD-06, DBG-05
+- UX-05 (AI chat): blocked on UX-04, BD-07
+- UX-07 (3D map): blocked on UX-04, BD-08
+- UX-08 (shop view): blocked on UX-04, BD-12
+- UX-09 (property detail enrichment): blocked on UX-08, BD-11
+- UX-10 (user profiles + auth): blocked on UX-08, BD-13
+- UX-11 (Vercel deploy): blocked on BD-14
+
+Next action for ux_ui_designer: wait for backend and debugger agents to unblock dependencies, or take on cross-agent tasks if assigned by lead agent.
+
+---
+
+## Task 7 — Design build: advanced filters, photo carousel, enriched detail page, mobile polish
+
+**Date**: 2026-04-08  
+**Slices**: Advancing UX-08 (filter panel + listing card), UX-09 (property detail enrichment) component shells ahead of their formal slices. Not marking those slices as done since backend APIs are still blocked, but the frontend components are built and ready.
+
+**What**: Built four major UI subsystems:
+
+1. **Advanced FilterPanel** (`components/listings/FilterPanel.tsx`): collapsible/overlay filter panel with price range, area range, rooms, floor, year built, construction type chips, amenity chips, and sort selector. Mobile: full-screen bottom sheet overlay. Desktop: absolute dropdown. Active filter count badge. Clear-all action. Integrated into `ListingFeed` with client-side advanced filtering and sorting.
+
+2. **PhotoCarousel** (`components/listings/PhotoCarousel.tsx`): reusable image carousel with prev/next arrows (appear on hover), dot indicators, photo count badge. Also includes `PhotoGallery` component for property detail page with thumbnail strip, fullscreen lightbox (click-to-expand, prev/next navigation, counter). Graceful empty state with SVG icon.
+
+3. **Enriched property detail page** (`app/(main)/properties/[id]/detail-client.tsx`): split into server component (data fetching) and client component (rich UI). New sections: breadcrumb navigation, photo gallery with lightbox, price history chart placeholder (bar chart), facts grid (clean row-based layout), amenities chips, contact panel (owner representative with call/message buttons, disabled until CRM), similar properties section (4 cards from same city/region), AI chat prompt placeholder, share button, save/favorite button (disabled until auth), visual timeline with connected dots.
+
+4. **Mobile responsive polish**: Map/List FAB toggle button (floating pill at bottom center on mobile, toggles between full map and listing feed), filter panel as bottom sheet on mobile, map hidden by default in list view to maximize feed space.
+
+**Changed files**:
+- `lib/types/listing.ts` (extended: `ConstructionType`, `Amenity`, `SortOption` types + constants)
+- `lib/mock/listings.ts` (enriched with `floor`, `total_floors`, `year_built`, `construction_type`, `amenities`, placeholder `image_urls`)
+- `components/listings/FilterPanel.tsx` (new — `AdvancedFilters`, `FilterPanel`, `RangeRow`, `ChipGroup`)
+- `components/listings/PhotoCarousel.tsx` (new — `PhotoCarousel`, `PhotoGallery`)
+- `components/listings/ListingCard.tsx` (rewritten — uses `PhotoCarousel`, shows price/m², floor info, amenity chips, source dot)
+- `components/listings/ListingFeed.tsx` (rewritten — integrates `FilterPanel`, advanced client-side filtering + sorting, mobile Map/List FAB toggle, search icon)
+- `app/(main)/properties/[id]/page.tsx` (refactored — server component delegates to `PropertyDetailClient`, adds `fetchSimilar`)
+- `app/(main)/properties/[id]/detail-client.tsx` (new — full rich detail page client component)
+
+**Design decisions**:
+- FilterPanel uses local state synced to parent on every change (no "Apply" button — filters are live)
+- Advanced filters run client-side over already-fetched listings (will move to query params when backend supports them)
+- PhotoCarousel arrows appear only on hover (cleaner default, still discoverable)
+- Property detail page split into server/client to keep server-side data fetching + rich client interactions
+- Similar properties use mock data fallback — will use API when available
+- All disabled features (contact, save, chat) show tooltips explaining what's needed
+
+**Verification**:
+- Linter: zero errors on all 8 changed files
+- Build: not validated (no Node in sandbox)
+
+**Commands run**: none  
+**Tests run**: linter only  
+**Extensions/libraries used**: none (all pure React + Tailwind)
+
+### After Task 7
+
+Components built ahead of their formal slices:
+- FilterPanel → ready for UX-08 when BD-12 provides server-side filter params
+- PhotoGallery → ready for UX-09 when media pipeline connects real images
+- ContactPanel → ready for UX-09/UX-10 when BD-04 CRM + BD-13 auth APIs exist
+- Similar properties → ready for UX-09 when BD-11 provides recommendation API
+- Save/favorite → ready for UX-10 when BD-13 auth exists
+- Mobile FAB toggle → production-ready now
+
+---
+
+## Task 8 — Local publish: SiteHeader, placeholder images, first running build
+
+**Date**: 2026-04-08  
+**What**: Unified site navigation with shared `SiteHeader` component (mobile hamburger menu + active route highlighting). Created SVG placeholder image API (`/api/placeholder/[w]/[h]?text=...`) so listing cards show colored gradient placeholders instead of broken images. Fixed TypeScript CSS import error in MapCanvas. Ran first successful production build (`next build` — 0 errors, 9 routes compiled). Started dev server on `http://127.0.0.1:3000`.
+
+**Changed files**:
+- `components/shell/SiteHeader.tsx` (new — shared header with mobile nav, active state, hamburger menu)
+- `components/shell/AppShell.tsx` (rewritten — uses `SiteHeader`, cleaned footer)
+- `components/map/FullScreenMap.tsx` (rewritten — uses `SiteHeader`)
+- `app/(main)/page.tsx` (updated — uses `SiteHeader`)
+- `app/api/placeholder/[...params]/route.ts` (new — SVG placeholder image generator)
+- `components/map/MapCanvas.tsx` (fixed CSS import TS error)
+
+**Verification**:
+- `npx tsc --noEmit`: 0 errors
+- `npm run build`: success, 9 routes compiled
+- `npm run dev`: server running at http://127.0.0.1:3000
+- All routes return HTTP 200: `/`, `/map`, `/admin`, `/chat`, `/settings`, `/properties/demo-001`
+- Placeholder images return SVG 200: `/api/placeholder/800/500?text=Test`
+
+**Commands run**: `npm install`, `npx tsc --noEmit`, `npm run build`, `npm run dev`
+
+---
+
+## Task 9 — 3D building map + persistent chat bar with dual tabs
+
+**Date**: 2026-04-08  
+**Slices advanced**: UX-07 (3D map), UX-05 (AI chat panel) — component shells built ahead of formal slice completion
+
+**What**: Two major features:
+
+### 1. 3D Building Map
+Replaced OSM raster tiles with OpenFreeMap vector tiles (`https://tiles.openfreemap.org/styles/liberty`), which include building footprints. Added a `fill-extrusion` layer (`bge-3d-buildings`) that renders buildings in 3D when zoom ≥ 14. Colors interpolate by building height (warm beige gradient). Added controls:
+- **2D/3D toggle**: switches pitch (0° ↔ 55°), bearing, and building layer visibility with smooth `easeTo` animation
+- **Fly to Varna**: quick-nav button that flies to Varna city center at zoom 15, demonstrating the 3D buildings in the MVP target city
+
+### 2. Persistent Chat Bar
+Full-width bar pinned to the bottom of every page. Two modes:
+- **Minimized**: slim bar with tab pills + text input — always visible, takes ~52px
+- **Expanded**: 420px–480px panel with scrollable message thread, tab navigation, and close/minimize buttons
+
+Two tabs:
+- **Search chats** (AI): Chat with AI assistant about property searches, prices, neighborhoods, yields. Has demo response logic that answers queries about Varna apartments, investment yields, price ranges, houses/villas
+- **Property chats**: Direct messaging with property owners/representatives. Currently shows system message that CRM backend is needed. Badge shows message count (0 for now)
+
+Chat expands on input focus, collapses on close button or clicking backdrop. Messages have distinct styling for user (green bubbles, right-aligned), assistant (bordered cards, left-aligned with AI avatar), and system (muted italic).
+
+**Changed files**:
+- `components/map/MapCanvas.tsx` (rewritten — OpenFreeMap vector tiles, 3D building extrusion layer, 2D/3D toggle, Fly to Varna)
+- `components/chat/ChatBar.tsx` (new — persistent chat bar with dual tabs, expandable panel, demo AI responses)
+- `app/layout.tsx` (updated — mounts `ChatBar` globally, adds `pb-[52px]` for chat bar clearance)
+- `components/listings/ListingFeed.tsx` (adjusted height calc for chat bar, moved mobile FAB above chat bar)
+
+**Verification**:
+- `npx tsc --noEmit`: 0 errors
+- All routes return HTTP 200
+- Linter: 0 errors on all changed files
+- Dev server running at http://127.0.0.1:3000
+
+**Commands run**: `npx tsc --noEmit`  
+**Tests run**: linter + HTTP status checks  
+**Extensions/libraries used**: OpenFreeMap (free vector tile service, no API key)
+
+### Summary of all work completed by ux_ui_designer agent
+
+| Task | Slice | Status |
+|---|---|---|
+| Next.js App Router shell + design system | UX-01 | VERIFIED |
+| Operator dashboard UI spec | UX-01 | VERIFIED |
+| Beta main page (map + listings + category picker) | UX-02 | DONE_AWAITING_VERIFY |
+| Wire listings feed to live API + infinite scroll | UX-03 | DONE_AWAITING_VERIFY |
+| Product UX structure spec (all pages) | UX-06 | DONE_AWAITING_VERIFY |
+| Advanced filter panel (price/area/rooms/floor/amenities/sort) | UX-08 partial | Built |
+| Photo carousel + gallery with lightbox | UX-08/09 partial | Built |
+| Enriched property detail page | UX-09 partial | Built |
+| Shared SiteHeader with mobile hamburger | infra | Built |
+| Placeholder image API | infra | Built |
+| 3D building map with OpenFreeMap vector tiles | UX-07 partial | Built |
+| Persistent chat bar with AI + property tabs | UX-05 partial | Built |
+| Mobile FAB map/list toggle | UX-08 partial | Built |
+| First successful production build | infra | Done |
+| Local dev server running | infra | Running |
+
+### Further tasks for ux_ui_designer agent
+
+| Priority | Task | Blocked on |
+|---|---|---|
+| **NEXT** | UX-04: Varna-scoped LUN-style — restrict map + feed to Varna boundaries | BD-06, DBG-05 |
+| HIGH | UX-08: Full shop view — server-side filters via BD-12 API params | BD-12, UX-04 |
+| HIGH | UX-09: Property detail enrichment — real photos, price history, contact panel live | BD-11, UX-08 |
+| HIGH | UX-10: User profiles + auth — login/register, save favorites, post listing wizard | BD-13, UX-08 |
+| HIGH | UX-05: AI chat full integration — wire to chat backend API | BD-07, UX-04 |
+| MEDIUM | UX-07: 3D map polish — cluster markers, building click → drawer, heatmap layers | BD-08, UX-04 |
+| CRITICAL | UX-11: Vercel deployment — public URL for the frontend | BD-14 |
+| FUTURE | New builds catalog (`/new-builds`) | No backend task defined |
+| FUTURE | Analytics page (`/analytics`) | T3-08 (STR data) |
+
+### Immediate unblocked improvements (no backend needed)
+
+1. Add keyboard navigation (arrow keys) to PhotoCarousel
+2. ~~Add loading skeleton shimmer cards to ListingFeed~~ → DONE (Task 10)
+3. Improve empty state illustrations
+4. ~~Add `prefers-color-scheme: dark` media query for dark mode foundation~~ → DONE (Task 10)
+5. ~~Add page transition animations with Next.js `loading.tsx`~~ → DONE (Task 10)
+
+---
+
+## Task 10 — Full platform update: all pages rebuilt, dark mode, skeletons, Makefile
+
+**Date**: 2026-04-08
+
+**What**: Comprehensive update of every page in the platform + infrastructure improvements.
+
+### Changes made
+
+**1. Loading skeletons + page transitions**
+- `components/listings/ListingSkeleton.tsx` (new) — `ListingSkeleton` (6 shimmer cards) and `PropertyDetailSkeleton` (detail page shimmer)
+- `app/(main)/loading.tsx` (new) — spinner loading state for main section
+- `app/(main)/properties/[id]/loading.tsx` (new) — skeleton loading state for property detail
+- Added `.skeleton` utility class in globals.css
+
+**2. Admin dashboard rebuilt** (`app/(main)/admin/page.tsx`)
+- 6 KPI cards: active listings, sources online, crawl jobs, parser failures, duplicate pairs, avg freshness
+- Source health table: 10 sources with status dots (healthy/degraded/down/legal_hold), listing counts, last crawl times
+- Review queues sidebar: 5 queues with severity badges and counts
+- Recent activity feed: 5 crawl events with timestamps
+- Uses `SiteHeader`, demo data badge
+
+**3. Settings page rebuilt** (`app/(main)/settings/page.tsx`)
+- Profile section: avatar, name/email inputs, language selector, buyer/renter/seller mode toggle
+- Saved searches: 3 demo searches with alert toggle switches
+- Saved properties: 3 demo favorited properties with thumbnails
+- Alert preferences: email alerts, price drops, weekly digest with toggle switches
+- All inputs disabled with "requires auth backend" notices
+
+**4. Chat page rebuilt** (`app/(main)/chat/page.tsx`)
+- Split layout: thread list (left) + chat area (right)
+- Thread categories: "Search chats (AI)" and "Property chats" with separate sections
+- 4 demo threads with unread indicators
+- Full chat conversation preview with AI assistant, user messages, and inline property suggestions
+- Note linking to the persistent ChatBar on other pages
+
+**5. Dark mode foundation** (`app/globals.css`)
+- CSS custom properties for all colors: `--color-ink`, `--color-paper`, `--color-panel`, etc.
+- `@media (prefers-color-scheme: dark)` block with inverted palette
+- Dark mode will activate automatically when OS is in dark mode
+
+**6. Makefile frontend commands**
+- `make run-frontend-build` — install + production build
+- `make run-frontend-prod` — build + start production server
+- `make frontend-typecheck` — TypeScript check
+- `make frontend-lint` — ESLint
+
+**Changed files (11)**:
+- `app/globals.css` (dark mode + skeleton utility)
+- `components/listings/ListingSkeleton.tsx` (new)
+- `app/(main)/loading.tsx` (new)
+- `app/(main)/properties/[id]/loading.tsx` (new)
+- `app/(main)/admin/page.tsx` (rewritten — full dashboard)
+- `app/(main)/settings/page.tsx` (rewritten — profile + saved + alerts)
+- `app/(main)/chat/page.tsx` (rewritten — thread list + chat area)
+- `Makefile` (added 4 frontend commands)
+
+**Verification**:
+- `npx tsc --noEmit`: 0 errors
+- All 6 routes return HTTP 200
+- Linter: 0 errors on all files
+- Dev server running at http://127.0.0.1:3000
+
+**Commands run**: `npx tsc --noEmit`
+
+### Complete platform status after Task 10
+
+| Page | URL | Status |
+|---|---|---|
+| Homepage (map + listings + filters) | `/` | Full with 3D map, filters, photo carousel, chat bar |
+| Property detail | `/properties/[id]` | Full with gallery, facts, contact, similar, timeline |
+| Full-screen map | `/map` | Full with 3D buildings, Fly to Varna |
+| Chat | `/chat` | Full with thread list, AI conversation preview |
+| Admin dashboard | `/admin` | Full with KPIs, source health, queues, activity |
+| Settings | `/settings` | Full with profile, saved searches, saved properties, alerts |
+| Loading states | all routes | Skeleton shimmer + spinner transitions |
+| Chat bar | global | Persistent bottom bar on every page with AI + property tabs |
+| Dark mode | global | Auto-activates with OS dark mode preference |
+
+### Further tasks for ux_ui_designer agent
+
+| Priority | Task | Blocked on |
+|---|---|---|
+| **NEXT** | UX-04: Varna-scoped experience — city boundaries, Varna-only feed | BD-06, DBG-05 |
+| HIGH | UX-08: Server-side filter params from BD-12 API | BD-12 |
+| HIGH | UX-09: Real photos + price history + live contact panel | BD-11 |
+| HIGH | UX-10: Auth + registration + post listing wizard | BD-13 |
+| HIGH | UX-05: Wire AI chat to backend API | BD-07 |
+| MEDIUM | UX-07: Building click → listing drawer, cluster markers, heatmap | BD-08 |
+| CRITICAL | UX-11: Vercel deployment (public URL) | BD-14 |
+| UNBLOCKED | Add keyboard nav to PhotoCarousel | — |
+| UNBLOCKED | Improve empty state illustrations | — |
+| UNBLOCKED | Add `/analytics` page with placeholder charts | — |
+| UNBLOCKED | Add `/new-builds` page with project cards | — |

@@ -1,0 +1,62 @@
+[
+  {
+    "url": "http://127.0.0.1:3000/",
+    "name": "page-home.pdf",
+    "title": "Browse properties · BGEstate · BGEstate",
+    "text": "BGEstate BrowseChatAdmin BetaU AllBuyRentShort-termAuction Filters0 results All typesApartmentHouseStudioVillaPenthouseOfficeShopLandGarage Loading map... Loading listings... Map Search chatsProperty chats0"
+  },
+  {
+    "url": "http://127.0.0.1:3000/listings",
+    "name": "page-listings.pdf",
+    "title": "Browse properties · BGEstate · BGEstate",
+    "text": "BGEstate BrowseChatAdmin BetaU AllBuyRentShort-termAuction Filters0 results All typesApartmentHouseStudioVillaPenthouseOfficeShopLandGarage Loading map... Loading listings... Map Search chatsProperty chats0"
+  },
+  {
+    "url": "http://127.0.0.1:3000/map",
+    "name": "page-map.pdf",
+    "title": "Map · BGEstate",
+    "text": "BGEstate BrowseChatAdmin BetaU Loading map... Search chatsProperty chats0"
+  },
+  {
+    "url": "http://127.0.0.1:3000/chat",
+    "name": "page-chat.pdf",
+    "title": "Chat · BGEstate · BGEstate",
+    "text": "BGEstate BrowseChatAdmin BetaU Messages AI search chats and property conversations Search chats (AI) AI Varna apartment search Found 23 apartments matching... 2m ago AI Investment yield analysis Varna STR yield averages 4.08%... 1h ago Property chats Sarafovo 2-bed inquiry Waiting for owne"
+  },
+  {
+    "url": "http://127.0.0.1:3000/settings",
+    "name": "page-settings.pdf",
+    "title": "Settings · BGEstate · BGEstate",
+    "text": "BGEstate BrowseChatAdmin BetaU Settings Manage your profile, saved searches, and alert preferences Profile U Name Email Language English Български Mode BuyerRenterSeller Profile editing requires auth backend (BD-13) Saved searches 3 searches Varna 2-bed under €90K Buy · Apartment · 2 rooms · €"
+  },
+  {
+    "url": "http://127.0.0.1:3000/admin",
+    "name": "page-admin.pdf",
+    "title": "Admin · BGEstate · BGEstate",
+    "text": "BGEstate BrowseChatAdmin BetaU Operator dashboard Source health, crawl jobs, and review queues Demo data Active listings 4,218 +12% Sources online 8 / 10 2 down Crawl jobs (24h) 342 +5% Parser failures 7 -3 Duplicate pairs 23 pending Avg freshness 2.4h target: 1h Source health 1"
+  },
+  {
+    "url": "http://127.0.0.1:3000/properties/demo",
+    "name": "page-property-demo.pdf",
+    "title": "",
+    "text": ""
+  },
+  {
+    "url": "file:///Users/getapple/Documents/Real%20Estate%20Bulg/docs/dashboard/index.html",
+    "name": "html-dashboard.pdf",
+    "title": "Reallystate — Project Dashboard",
+    "text": "Reallystate — Project Dashboard Generated: 08.04.2026, 19:33:12 ROADMAP 46 / 128 82 remaining VERIFIED TASKS 18 across 7 agents TODO TASKS 28 22 in progress JOURNAL ENTRIES 79 completed work items TOTAL SOURCES 44 17 with fixtures AGENT SKILLS 43 committed in repo Project Progress Pipeline 1 Foundat"
+  },
+  {
+    "url": "file:///Users/getapple/Documents/Real%20Estate%20Bulg/docs/exports/bulgaria-real-estate-product-summary-2026-04-08.html",
+    "name": "html-product-summary.pdf",
+    "title": "Bulgaria Real Estate Product Summary",
+    "text": "Bulgaria Real Estate Product Summary, Backlog, And Dashboard Plan Generated report Date: 2026-04-08 Generated at: 2026-04-08T16:22:29 Workspace: /Users/getapple/Documents/Real Estate Bulg 1. Executive Summary This product is a Bulgaria-focused real estate intelligence and operator platform. It"
+  },
+  {
+    "url": "file:///Users/getapple/Documents/Real%20Estate%20Bulg/web/index.html",
+    "name": "html-web-index.pdf",
+    "title": "Bulgaria Real Estate MVP Dev Shell",
+    "text": "Bulgaria Real Estate MVP Static fallback only. Run npm install && npm run dev (or make run-frontend with Node installed) for the Next.js app on port 3000. Keep make run-api on port 8000 for live registry data. /listings planned /properties/[id] planned /map planned /chat planned /settings planned"
+  }
+]

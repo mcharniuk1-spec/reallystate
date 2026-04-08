@@ -1,0 +1,26 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-79m2-sofiya-kv.-orlandovci/as1670331",
+  "external_id": "1afbb3920c74",
+  "title": "Тристаен, 79m² - Кв. Орландовци, София - Апартамент за продажба - АСГАРД ПРОПЪРТИС",
+  "description": "АСГАРД ПРОПЪРТИС продава основно ремонтиран етаж от къща в най-хубавата част на кв.Орландовци. Имотът е със застроена площ 79 кв.м. (която не включва 10 кв.м. п...",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2026-02-03_2/117521867o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:24:51.822334+00:00",
+  "reference_id": "Homes.bg:1afbb3920c74"
+}

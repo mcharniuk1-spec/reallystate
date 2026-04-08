@@ -1,0 +1,17 @@
+{
+  "entries": [
+    {
+      "url": "https://address.bg/listing/ADR-77001",
+      "external_id": "ADR-77001",
+      "preview_price": 135000.0,
+      "preview_intent": "sale"
+    },
+    {
+      "url": "https://address.bg/listing/ADR-77002",
+      "external_id": "ADR-77002",
+      "preview_price": 143000.0,
+      "preview_intent": "sale"
+    }
+  ],
+  "next_cursor": {"page": 2}
+}

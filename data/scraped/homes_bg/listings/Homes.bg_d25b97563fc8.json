@@ -1,0 +1,26 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/chetiristaen-165m2-sofiya-zhk.-iztok/as1247316",
+  "external_id": "d25b97563fc8",
+  "title": "Четиристаен, 165m² - Жк. Изток, София - Апартамент за продажба - АСГАРД ПРОПЪРТИС",
+  "description": "АСГАРД ПРОПЪРТИС продава панорамен, луксозно завършен апартамент в модерна сграда с разрешение за ползване от 2017 г. Жилището е с чиста площ 137 кв.м. и се със...",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2022-05-13_2/83611761o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:24:53.191690+00:00",
+  "reference_id": "Homes.bg:d25b97563fc8"
+}

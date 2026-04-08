@@ -46,7 +46,7 @@ def _registry_path(path: str | None) -> Path:
 async def temporal_connectivity_check() -> dict[str, str]:
     _, _, Client, _ = _import_temporal()
     s = load_temporal_settings()
-    client = await Client.connect(s.address, namespace=s.namespace)
+    _ = await Client.connect(s.address, namespace=s.namespace)
     return {"address": s.address, "namespace": s.namespace, "task_queue": s.task_queue, "status": "connected"}
 
 

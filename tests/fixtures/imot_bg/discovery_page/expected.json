@@ -1,0 +1,17 @@
+{
+  "entries": [
+    {
+      "url": "https://www.imot.bg/pcgi/imot.cgi?act=5&adv=IB-550010",
+      "external_id": "IB-550010",
+      "preview_price": 185000.0,
+      "preview_intent": "sale"
+    },
+    {
+      "url": "https://www.imot.bg/pcgi/imot.cgi?act=5&adv=IB-550011",
+      "external_id": "IB-550011",
+      "preview_price": 165000.0,
+      "preview_intent": "sale"
+    }
+  ],
+  "next_cursor": {"page": 2}
+}
