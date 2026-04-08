@@ -9,13 +9,16 @@ Read `AGENTS.md`, `PLAN.md`, `deep-research-report.md`, `data/source_registry.js
 Read `docs/linear-integration.md` when the task involves backlog planning, issue mapping, or delivery tracking.
 
 Keep the implementation incremental:
+
 - Extend the existing `src/bgrealestate` scaffold instead of replacing it.
 - Work one phase, connector, or frontend page at a time.
 - Keep migrations, models, tests, and docs together for each slice.
 - Update progress in the plan or execution report after completed work.
 - If a Linear issue key is present, keep progress notes aligned with that issue.
+- Treat `agent-skills/**` as first-class, version-controlled artifacts: if you create or change a skill, it must be written to `agent-skills/<name>/SKILL.md` and included alongside the change it supports.
 
 Safety gates:
+
 - No live-network dependency in tests.
 - No high-risk connector without `source_legal_rule` or equivalent enforcement.
 - No private messaging/social scraping without explicit consent.
@@ -23,10 +26,12 @@ Safety gates:
 - Store raw captures and media in object storage; keep only metadata and storage keys in PostgreSQL.
 
 Delivery tracking:
+
 - Prefer one roadmap issue slice per branch/PR/task.
 - If Linear tools are unavailable, use `docs/exports/linear-import-roadmap.csv` as the fallback backlog map.
 
 Required closeout format:
+
 ```text
 Changed files:
 Agent tools used:

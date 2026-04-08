@@ -1,11 +1,11 @@
-.PHONY: install dev-up dev-down dev-logs db-init migrate test lint typecheck validate run-api run-worker run-scheduler run-frontend export-docs source-report status-report linear-export connector-fixtures list-sources
+.PHONY: install dev-up dev-down dev-logs db-init migrate test lint typecheck validate run-api run-worker run-scheduler run-frontend export-docs source-report status-report linear-export architecture-doc connector-fixtures list-sources
 
 PYTHON ?= python3
 PYTHONPATH ?= src
 SOURCE ?= homes_bg
 
 install:
-	$(PYTHON) -m pip install -e . || true
+	$(PYTHON) -m pip install -e ".[dev]"
 
 dev-up:
 	docker compose up -d postgres redis minio temporal temporal-ui
@@ -49,9 +49,13 @@ run-scheduler:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate.dev_scheduler
 
 run-frontend:
+	@command -v npm >/dev/null 2>&1 || { echo "npm is required for the Next.js UI. Install Node.js or use: make run-frontend-static"; exit 1; }
+	npm install && npm run dev
+
+run-frontend-static:
 	$(PYTHON) -m http.server 3000 --directory web
 
-export-docs: export-matrices source-report status-report
+export-docs: export-matrices source-report status-report architecture-doc
 	@mkdir -p docs/exports
 	@cp PLAN.md docs/exports/platform-mvp-plan.md
 	@echo "Markdown exported to docs/exports/platform-mvp-plan.md. DOCX/PDF export requires Pandoc, Mermaid CLI, and LibreOffice in a later phase."
@@ -67,6 +71,9 @@ status-report:
 
 linear-export:
 	$(PYTHON) scripts/generate_linear_import.py
+
+architecture-doc:
+	$(PYTHON) scripts/generate_architecture_guide.py
 
 connector-fixtures:
 	@mkdir -p tests/fixtures/$(SOURCE)

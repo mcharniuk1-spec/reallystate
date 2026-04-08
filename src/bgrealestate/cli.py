@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from .connectors.factory import marketplace_sources
 from .exporters import export_matrices
 from .source_registry import SourceRegistry
 
@@ -20,6 +21,16 @@ def main() -> int:
     export_parser = subparsers.add_parser("export-matrices", help="Export source and legal matrices.")
     export_parser.add_argument("--out-dir", type=Path, default=Path("artifacts"))
 
+    sync_parser = subparsers.add_parser(
+        "sync-database",
+        help="Upsert marketplace sources (excluding social/messenger), legal rules, and primary URLs into PostgreSQL.",
+    )
+    sync_parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Print counts only; do not connect to the database.",
+    )
+
     args = parser.parse_args()
     registry = SourceRegistry.from_file(args.registry)
 
@@ -31,6 +42,20 @@ def main() -> int:
     if args.command == "export-matrices":
         export_matrices(registry.all(), args.out_dir)
         print(f"exported matrices to {args.out_dir}")
+        return 0
+
+    if args.command == "sync-database":
+        market = marketplace_sources(registry)
+        if args.dry_run:
+            print(f"would upsert {len(market)} marketplace sources (tier 1–3 + registers/OTAs; social/messenger skipped)")
+            print("run alembic upgrade head (or make migrate) before writing if the database is new")
+            return 0
+        from .db.session import create_db_engine
+        from .db_sync import sync_marketplace_sources_to_db
+
+        engine = create_db_engine()
+        stats = sync_marketplace_sources_to_db(engine, registry)
+        print(f"synced: {stats}")
         return 0
 
     return 1

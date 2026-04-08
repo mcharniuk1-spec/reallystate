@@ -44,11 +44,13 @@ The current repo can load and classify sources, run a generic parser pipeline te
 - Offline `Homes.bg` fixture corpus under `tests/fixtures/homes_bg/`.
 - Fixture-backed `Homes.bg` detail parsing tests for normal, missing-field, blocked-page, and removed-listing cases.
 - Generic ingestion helper that persists raw capture, source listing, snapshot, and canonical listing records together.
+- Marketplace connector factory for all non-social registry sources (37 portals/classifieds/agencies/OTAs/registers): shared `HtmlPortalConnector`, legal-rule derivation, optional `sync-database` CLI to upsert `source_registry` planning fields, `source_legal_rule`, and `source_endpoint` rows.
+- Alembic revision `20260408_0002` plus `sql/schema.sql` updates for `primary_url`, `related_urls`, `languages`, and `listing_types` on `source_registry`.
 - Unit tests for current scaffold.
 
 ## What Does Not Work Yet
 
-- No real tier-1 live connector for `Homes.bg`, `OLX.bg`, `alo.bg`, `imot.bg`, or other portals.
+- No real tier-1 live connector for `OLX.bg`, `alo.bg`, `imot.bg`, or other portals beyond the shared HTML scaffold (Homes.bg remains the only fixture-tuned parser).
 - No PostgreSQL/PostGIS migration runtime yet.
 - No Temporal workers or scheduler yet.
 - No Redis rate-limit state yet.
@@ -60,7 +62,7 @@ The current repo can load and classify sources, run a generic parser pipeline te
 - No Next.js frontend yet.
 - The current `run-api`, `run-worker`, `run-scheduler`, and `run-frontend` targets are development placeholders, not production services.
 - Stage 2 database work is partially implemented: SQLAlchemy model coverage and some repositories now exist, but tenant/account boundaries, broader repository coverage, and real migration execution against PostgreSQL are still pending.
-- Source registry persistence is still lossy: the DB schema/repository layer does not yet store all registry planning fields such as `primary_url`, `related_urls`, `languages`, and `listing_types`.
+- Source registry persistence now stores `primary_url`, `related_urls`, `languages`, and `listing_types` when `sync-database` is run against PostgreSQL.
 - Docker is not available in the current local shell, so Compose services have not been started or validated here.
 - `Homes.bg` discovery is still a placeholder and there is no live crawl execution path validated against a running database.
 - No `/listings`, `/properties/[id]`, `/map`, `/chat`, `/settings`, or `/admin` pages yet.

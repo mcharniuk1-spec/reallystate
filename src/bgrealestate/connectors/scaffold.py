@@ -1,0 +1,90 @@
+from __future__ import annotations
+
+import hashlib
+from datetime import datetime, timezone
+from typing import Any
+
+from ..models import RawCapture
+from ..pipeline import GenericHtmlListingParser, StandardIngestionPipeline
+from ..source_registry import SourceRegistry
+from .legal import LegalGateError, assert_live_http_allowed
+from .protocol import Connector, DiscoveryResult
+
+
+def _utc_now() -> datetime:
+    return datetime.now(tz=timezone.utc)
+
+
+class HtmlPortalConnector(Connector):
+    """Generic HTML portal/classifieds/agency connector with registry-backed legal gates.
+
+    Per-source HTML parsers are added incrementally; discovery remains a placeholder until
+    fixtures exist for each site.
+    """
+
+    def __init__(self, source_name: str, registry: SourceRegistry, *, client: Any | None = None) -> None:
+        self.source_name = source_name
+        self._registry = registry
+        self._client = client
+
+    def _entry(self):
+        source = self._registry.by_name(self.source_name)
+        if not source:
+            raise RuntimeError(f"source not found in registry: {self.source_name}")
+        assert_live_http_allowed(source)
+        return source
+
+    def discover_listing_urls(self, *, cursor: dict[str, Any] | None = None) -> DiscoveryResult:
+        return DiscoveryResult(urls=[], next_cursor=cursor, discovered_at=_utc_now())
+
+    def fetch_listing_detail(self, *, url: str, fetched_at: datetime) -> RawCapture:
+        source = self._entry()
+        if self._client is None:
+            import httpx  # type: ignore
+
+            self._client = httpx.Client(
+                timeout=30.0,
+                follow_redirects=True,
+                headers={"User-Agent": "bgrealestate-mvp/0.1"},
+            )
+        resp = self._client.get(url)
+        content_type = resp.headers.get("content-type", "text/html")
+        return RawCapture(
+            source_name=source.source_name,
+            url=url,
+            content_type=content_type,
+            body=resp.text,
+            fetched_at=fetched_at,
+            parser_version=GenericHtmlListingParser.parser_version,
+            metadata={"http_status": resp.status_code, "headers": dict(resp.headers)},
+        )
+
+    @staticmethod
+    def sha256_body(text: str) -> str:
+        return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+    def parse_and_normalize_from_html(
+        self,
+        *,
+        url: str,
+        html: str,
+        discovered_at: datetime,
+        seed: dict[str, Any] | None = None,
+    ) -> dict[str, Any]:
+        source = self._entry()
+        pipeline = StandardIngestionPipeline(parser=GenericHtmlListingParser())
+        result = pipeline.process_listing_detail(
+            source=source,
+            url=url,
+            html=html,
+            captured_at=discovered_at,
+            summary_fields=seed or {},
+        )
+        return {
+            "raw_capture": result.raw_capture,
+            "parsed_listing": result.parsed_listing,
+            "canonical_listing": result.canonical_listing,
+        }
+
+
+__all__ = ["HtmlPortalConnector", "LegalGateError"]

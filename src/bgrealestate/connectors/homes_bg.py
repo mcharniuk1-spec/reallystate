@@ -7,11 +7,8 @@ from typing import Any
 from ..models import RawCapture
 from ..pipeline import GenericHtmlListingParser, StandardIngestionPipeline
 from ..source_registry import SourceRegistry
+from .legal import LegalGateError, assert_live_http_allowed
 from .protocol import Connector, DiscoveryResult
-
-
-class LegalGateError(RuntimeError):
-    pass
 
 
 def _utc_now() -> datetime:
@@ -29,9 +26,7 @@ class HomesBgConnector(Connector):
         source = self._registry.by_name(self.source_name)
         if not source:
             raise RuntimeError(f"source not found in registry: {self.source_name}")
-        # Fail-closed: only allow sources explicitly in crawl-review mode in this MVP slice.
-        if source.legal_mode not in {"public_crawl_with_review", "official_api_allowed", "public_or_contract_review"}:
-            raise LegalGateError(f"live fetch blocked by legal_mode={source.legal_mode} for {source.source_name}")
+        assert_live_http_allowed(source)
         return source
 
     def discover_listing_urls(self, *, cursor: dict[str, Any] | None = None) -> DiscoveryResult:

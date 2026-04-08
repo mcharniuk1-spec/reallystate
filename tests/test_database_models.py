@@ -15,6 +15,7 @@ class DatabaseModelTests(unittest.TestCase):
         model_text = (ROOT / "src" / "bgrealestate" / "db" / "models.py").read_text(encoding="utf-8")
         for class_name in [
             "SourceRegistryModel",
+            "SourceEndpointModel",
             "SourceLegalRuleModel",
             "CrawlJobModel",
             "RawCaptureModel",

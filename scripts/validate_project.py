@@ -25,6 +25,15 @@ def check_zip(path: Path) -> None:
     print(f"office package ok: {path}")
 
 
+def check_pdf(path: Path) -> None:
+    if not path.exists():
+        raise FileNotFoundError(path)
+    header = path.read_bytes()[:8]
+    if not header.startswith(b"%PDF-"):
+        raise RuntimeError(f"invalid pdf header: {path}")
+    print(f"pdf ok: {path}")
+
+
 def main() -> int:
     checks = [
         lambda: check_json(ROOT / "data/source_registry.json"),
@@ -34,6 +43,7 @@ def main() -> int:
         lambda: check_zip(ROOT / "docs/exports/bulgaria-real-estate-source-links.xlsx"),
         lambda: check_zip(ROOT / "docs/exports/bulgaria-real-estate-source-report.docx"),
         lambda: check_zip(ROOT / "docs/exports/project-status-roadmap.docx"),
+        lambda: check_pdf(ROOT / "docs/exports/project-architecture-execution-guide.pdf"),
         lambda: subprocess.run(
             [sys.executable, "-m", "bgrealestate.dev_worker", "--once"],
             cwd=ROOT,

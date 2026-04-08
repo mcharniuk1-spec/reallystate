@@ -8,11 +8,13 @@ from sqlalchemy import select, update
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.orm import Session
 
+from ..connectors.legal import DerivedLegalRule
 from ..models import CanonicalListing, RawCapture, SourceRegistryEntry
 from .ids import new_id
 from .models import (
     CanonicalListingModel,
     RawCaptureModel,
+    SourceEndpointModel,
     SourceLegalRuleModel,
     SourceListingModel,
     SourceListingSnapshotModel,
@@ -41,6 +43,10 @@ class SourceRegistryRepository:
                 mvp_phase=entry.mvp_phase,
                 best_extraction_method=entry.best_extraction_method or None,
                 notes=entry.notes or None,
+                primary_url=(entry.primary_url or None) or None,
+                related_urls=list(entry.related_urls or []),
+                languages=list(entry.languages or []),
+                listing_types=list(entry.listing_types or []),
             )
             .on_conflict_do_update(
                 index_elements=[SourceRegistryModel.source_name],
@@ -57,6 +63,80 @@ class SourceRegistryRepository:
                     "mvp_phase": entry.mvp_phase,
                     "best_extraction_method": entry.best_extraction_method or None,
                     "notes": entry.notes or None,
+                    "primary_url": (entry.primary_url or None) or None,
+                    "related_urls": list(entry.related_urls or []),
+                    "languages": list(entry.languages or []),
+                    "listing_types": list(entry.listing_types or []),
+                },
+            )
+        )
+        self.session.execute(stmt)
+
+    def upsert_legal_rule(self, rule: DerivedLegalRule, *, source_name: str) -> None:
+        stmt = (
+            insert(SourceLegalRuleModel)
+            .values(
+                rule_id=rule.rule_id,
+                source_name=source_name,
+                allowed_for_ingestion=rule.allowed_for_ingestion,
+                allowed_for_publishing=rule.allowed_for_publishing,
+                requires_contract=rule.requires_contract,
+                requires_consent=rule.requires_consent,
+                blocks_live_scrape=rule.blocks_live_scrape,
+                reason=rule.reason,
+            )
+            .on_conflict_do_update(
+                index_elements=[SourceLegalRuleModel.rule_id],
+                set_={
+                    "source_name": source_name,
+                    "allowed_for_ingestion": rule.allowed_for_ingestion,
+                    "allowed_for_publishing": rule.allowed_for_publishing,
+                    "requires_contract": rule.requires_contract,
+                    "requires_consent": rule.requires_consent,
+                    "blocks_live_scrape": rule.blocks_live_scrape,
+                    "reason": rule.reason,
+                },
+            )
+        )
+        self.session.execute(stmt)
+
+    def upsert_endpoint(
+        self,
+        *,
+        endpoint_id: str,
+        source_name: str,
+        endpoint_kind: str,
+        base_url: str,
+        params_template: dict[str, object],
+        method: str,
+        requires_headless: bool,
+        requires_auth: bool,
+        rate_limit_policy: dict[str, object],
+    ) -> None:
+        stmt = (
+            insert(SourceEndpointModel)
+            .values(
+                endpoint_id=endpoint_id,
+                source_name=source_name,
+                endpoint_kind=endpoint_kind,
+                base_url=base_url,
+                params_template=params_template,
+                method=method,
+                requires_headless=requires_headless,
+                requires_auth=requires_auth,
+                rate_limit_policy=rate_limit_policy,
+            )
+            .on_conflict_do_update(
+                index_elements=[SourceEndpointModel.endpoint_id],
+                set_={
+                    "source_name": source_name,
+                    "endpoint_kind": endpoint_kind,
+                    "base_url": base_url,
+                    "params_template": params_template,
+                    "method": method,
+                    "requires_headless": requires_headless,
+                    "requires_auth": requires_auth,
+                    "rate_limit_policy": rate_limit_policy,
                 },
             )
         )

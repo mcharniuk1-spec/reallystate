@@ -40,6 +40,24 @@ class SourceRegistryModel(Base):
     mvp_phase: Mapped[str] = mapped_column(Text, nullable=False, default="source_first_ingestion")
     best_extraction_method: Mapped[str | None] = mapped_column(Text)
     notes: Mapped[str | None] = mapped_column(Text)
+    primary_url: Mapped[str | None] = mapped_column(Text)
+    related_urls: Mapped[list[str]] = mapped_column(JSONB, nullable=False, default=list)
+    languages: Mapped[list[str]] = mapped_column(JSONB, nullable=False, default=list)
+    listing_types: Mapped[list[str]] = mapped_column(JSONB, nullable=False, default=list)
+
+
+class SourceEndpointModel(Base):
+    __tablename__ = "source_endpoint"
+
+    endpoint_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    source_name: Mapped[str] = mapped_column(ForeignKey("source_registry.source_name"), nullable=False)
+    endpoint_kind: Mapped[str] = mapped_column(Text, nullable=False)
+    base_url: Mapped[str] = mapped_column(Text, nullable=False)
+    params_template: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+    method: Mapped[str] = mapped_column(Text, nullable=False, default="GET")
+    requires_headless: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    requires_auth: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    rate_limit_policy: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
 
 
 class SourceLegalRuleModel(Base):

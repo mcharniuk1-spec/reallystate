@@ -17,7 +17,11 @@ create table if not exists source_registry (
     legal_mode text not null default 'public_or_contract_review',
     mvp_phase text not null default 'source_first_ingestion',
     best_extraction_method text,
-    notes text
+    notes text,
+    primary_url text,
+    related_urls jsonb not null default '[]'::jsonb,
+    languages jsonb not null default '[]'::jsonb,
+    listing_types jsonb not null default '[]'::jsonb
 );
 
 create table if not exists source_endpoint (

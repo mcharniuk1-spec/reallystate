@@ -32,7 +32,7 @@ The current repo can load and classify sources, run a generic parser pipeline te
 - Python 3.12 project pin via `.python-version` and Dockerfile.
 - Docker Compose scaffold for PostgreSQL/PostGIS, Redis, MinIO, Temporal, and Temporal UI.
 - Backend dependency metadata in `pyproject.toml`.
-- Frontend dependency metadata in `package.json`.
+- Frontend dependency metadata in `package.json` plus a runnable Next.js App Router shell (Tailwind, TanStack Query, home + MVP routes) that reads the Python dev API (`/health`, `/sources`) when `make run-api` is up.
 - Development setup guide in `docs/development-setup.md`.
 - Lightweight development run targets for API, worker, scheduler, and frontend shell.
 - Local `make validate` command for JSON, Office package, and unit-test validation.
@@ -44,11 +44,13 @@ The current repo can load and classify sources, run a generic parser pipeline te
 - Offline `Homes.bg` fixture corpus under `tests/fixtures/homes_bg/`.
 - Fixture-backed `Homes.bg` detail parsing tests for normal, missing-field, blocked-page, and removed-listing cases.
 - Generic ingestion helper that persists raw capture, source listing, snapshot, and canonical listing records together.
+- Marketplace connector factory for all non-social registry sources (37 portals/classifieds/agencies/OTAs/registers): shared `HtmlPortalConnector`, legal-rule derivation, optional `sync-database` CLI to upsert `source_registry` planning fields, `source_legal_rule`, and `source_endpoint` rows.
+- Alembic revision `20260408_0002` plus `sql/schema.sql` updates for `primary_url`, `related_urls`, `languages`, and `listing_types` on `source_registry`.
 - Unit tests for current scaffold.
 
 ## What Does Not Work Yet
 
-- No real tier-1 live connector for `Homes.bg`, `OLX.bg`, `alo.bg`, `imot.bg`, or other portals.
+- No real tier-1 live connector for `OLX.bg`, `alo.bg`, `imot.bg`, or other portals beyond the shared HTML scaffold (Homes.bg remains the only fixture-tuned parser).
 - No PostgreSQL/PostGIS migration runtime yet.
 - No Temporal workers or scheduler yet.
 - No Redis rate-limit state yet.
@@ -57,13 +59,13 @@ The current repo can load and classify sources, run a generic parser pipeline te
 - No production dedupe/entity graph persistence yet.
 - No geocoder/cadastre/building-footprint integration yet.
 - No FastAPI API server yet.
-- No Next.js frontend yet.
-- The current `run-api`, `run-worker`, `run-scheduler`, and `run-frontend` targets are development placeholders, not production services.
+- Next.js App Router UI shell exists at the repo root (`app/`, `npm run dev`); listings feed and map/chat/settings/admin are placeholders until FastAPI and CRM/map APIs land.
+- The current `run-api`, `run-worker`, `run-scheduler`, and `run-frontend` targets are development placeholders, not production services (`run-frontend` now starts Next.js when Node/npm is available).
 - Stage 2 database work is partially implemented: SQLAlchemy model coverage and some repositories now exist, but tenant/account boundaries, broader repository coverage, and real migration execution against PostgreSQL are still pending.
-- Source registry persistence is still lossy: the DB schema/repository layer does not yet store all registry planning fields such as `primary_url`, `related_urls`, `languages`, and `listing_types`.
+- Source registry persistence now stores `primary_url`, `related_urls`, `languages`, and `listing_types` when `sync-database` is run against PostgreSQL.
 - Docker is not available in the current local shell, so Compose services have not been started or validated here.
 - `Homes.bg` discovery is still a placeholder and there is no live crawl execution path validated against a running database.
-- No `/listings`, `/properties/[id]`, `/map`, `/chat`, `/settings`, or `/admin` pages yet.
+- `/listings`, `/properties/[id]`, `/map`, `/chat`, `/settings`, and `/admin` routes exist as designed shells; canonical listing search, map layers, and CRM are not wired to real APIs yet.
 - No real CRM messaging integration yet.
 - No real reverse publishing adapters yet.
 - No production deployment, monitoring, or security hardening yet.
@@ -198,8 +200,8 @@ The current repo can load and classify sources, run a generic parser pipeline te
 
 ### Stage 9: Frontend MVP
 
-- [ ] 97. Create Next.js frontend app under `web/`.
-- [ ] 98. Implement shared typed API client.
+- [x] 97. Create Next.js frontend app (App Router at repo root next to `package.json`; static `web/index.html` remains a fallback via `make run-frontend-static`).
+- [~] 98. Implement shared typed API client (server fetch helpers, `/api/backend/*` proxy, TanStack Query for live health pill; expand when FastAPI is live).
 - [ ] 99. Implement `/listings` infinite scrolling page with filters, sorting, source badges, and create-lead action.
 - [ ] 100. Implement `/properties/[id]` detail page with gallery, source links, facts, price history, map mini-panel, and lead action.
 - [ ] 101. Implement `/map` with MapLibre GL JS, deck.gl, 2D/3D toggle, clusters, pins, building drawer, and confidence badges.

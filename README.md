@@ -22,7 +22,10 @@ It includes:
 - `docs/`: agent automation notes, diagram source, and exported plan artifacts
 - `docs/project-status-roadmap.md`: current stage, what works, what is missing, and 30+ point execution checklist
 - `docs/linear-integration.md`: Linear workflow, issue structure, branch/PR conventions, and import guidance
+- `docs/project-architecture-execution-guide.md`: full architecture, setup, continuous scraping model, and stage explanation
+- `docs/skills-used.md`: repo-local skills, agent guidance files, and session-level skills used
 - `docs/exports/linear-import-roadmap.csv`: import-ready CSV for creating the initial Linear backlog
+- `docs/exports/project-architecture-execution-guide.pdf`: PDF handoff document for architecture and execution
 - `data/source_registry.json`: seeded registry of sources and routing strategy
 - `sql/schema.sql`: relational schema for ingestion and publishing
 - `src/bgrealestate/`: Python package
@@ -84,6 +87,12 @@ Generate the Linear backlog CSV export:
 
 ```bash
 make linear-export
+```
+
+Generate the architecture guide markdown and PDF:
+
+```bash
+make architecture-doc
 ```
 
 Run tests:
