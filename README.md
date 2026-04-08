@@ -21,6 +21,8 @@ It includes:
 - `agent-skills/`: reusable project skill files for focused agent execution
 - `docs/`: agent automation notes, diagram source, and exported plan artifacts
 - `docs/project-status-roadmap.md`: current stage, what works, what is missing, and 30+ point execution checklist
+- `docs/linear-integration.md`: Linear workflow, issue structure, branch/PR conventions, and import guidance
+- `docs/exports/linear-import-roadmap.csv`: import-ready CSV for creating the initial Linear backlog
 - `data/source_registry.json`: seeded registry of sources and routing strategy
 - `sql/schema.sql`: relational schema for ingestion and publishing
 - `src/bgrealestate/`: Python package
@@ -78,6 +80,12 @@ Generate the project status roadmap DOCX/Markdown export:
 make status-report
 ```
 
+Generate the Linear backlog CSV export:
+
+```bash
+make linear-export
+```
+
 Run tests:
 
 ```bash
@@ -103,3 +111,4 @@ The current codebase is designed to be the execution backbone for the roadmap:
 - Add HTML/XHR fixtures from real source pages.
 - Add geocoding and cadastral connectors.
 - Add partner-specific publishing adapters.
+- Connect a live Linear workspace and import the prepared backlog CSV.

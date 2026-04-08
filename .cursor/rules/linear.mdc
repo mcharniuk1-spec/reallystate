@@ -1,0 +1,26 @@
+---
+description: Linear workflow conventions for project planning and delivery tracking
+globs:
+  - "docs/**"
+  - "AGENTS.md"
+  - "README.md"
+alwaysApply: false
+---
+
+# Linear Workflow Rules
+
+Use this rule when a task involves Linear, issue tracking, roadmap slicing, or delivery reporting.
+
+1. Prefer a one-issue-at-a-time implementation style.
+2. Map each work slice to one of the prepared backlog groups in `docs/linear-integration.md`.
+3. If the active session has live Linear tools, read/update the Linear issue before and after major code changes.
+4. If live Linear tools are unavailable, update local docs instead:
+   - `docs/project-status-roadmap.md`
+   - `docs/reports/*.md`
+   - `docs/exports/linear-import-roadmap.csv`
+5. Branch naming convention when issue keys are known:
+   - `reallystate/<ISSUE-KEY>-short-slug`
+   - `codex/<ISSUE-KEY>-short-slug`
+6. Commit message convention when issue keys are known:
+   - `<ISSUE-KEY>: short summary`
+7. Do not mark work complete in Linear or the local roadmap unless tests or verification for that slice actually passed.

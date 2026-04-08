@@ -42,7 +42,28 @@ Use Claude Code for long-context synthesis:
 - review whether every research source appears in the registry
 - produce DOCX/PDF-ready documentation drafts
 
-## 5. Required Agent Closeout
+## 5. Linear Workflow
+
+1. If Linear tools are connected in the active agent session, use them to read or update issue status before and after meaningful implementation slices.
+2. If Linear tools are not connected, use:
+   - `docs/linear-integration.md`
+   - `docs/exports/linear-import-roadmap.csv`
+3. Keep implementation slices mapped to one roadmap area at a time:
+   - Foundation
+   - Database and persistence
+   - Runtime and compliance
+   - Tier-1 connectors
+   - Media/dedupe
+   - Geo/map
+   - Backend APIs
+   - Frontend MVP
+   - Publishing
+   - QA and launch
+4. When a Linear issue key exists, include it in:
+   - branch names when practical
+   - commit messages
+   - closeout notes
+## 6. Required Agent Closeout
 
 ```text
 Changed files:

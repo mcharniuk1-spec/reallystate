@@ -1,4 +1,4 @@
-.PHONY: install dev-up dev-down dev-logs db-init migrate test lint typecheck validate run-api run-worker run-scheduler run-frontend export-docs source-report status-report connector-fixtures list-sources
+.PHONY: install dev-up dev-down dev-logs db-init migrate test lint typecheck validate run-api run-worker run-scheduler run-frontend export-docs source-report status-report linear-export connector-fixtures list-sources
 
 PYTHON ?= python3
 PYTHONPATH ?= src
@@ -64,6 +64,9 @@ source-report:
 
 status-report:
 	$(PYTHON) scripts/generate_status_doc.py
+
+linear-export:
+	$(PYTHON) scripts/generate_linear_import.py
 
 connector-fixtures:
 	@mkdir -p tests/fixtures/$(SOURCE)

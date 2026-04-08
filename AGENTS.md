@@ -15,6 +15,8 @@ This repository is the foundation for a Bulgaria real estate ingestion, map, CRM
 - Do not automate mass account creation, KYC bypass, CAPTCHA bypass, or private-account access.
 - Do not add live-network dependencies to tests; crawler tests must use fixtures.
 - Do not start public UI work until ingestion, CRM, compliance, and operator review foundations exist.
+- If a Linear issue key is present in the task or branch context, keep implementation and status notes aligned with that issue.
+- If Linear tools are unavailable in the session, use `docs/linear-integration.md` and `docs/exports/linear-import-roadmap.csv` as the fallback project-management source.
 
 ## Files To Read First
 - `PLAN.md`
@@ -23,6 +25,7 @@ This repository is the foundation for a Bulgaria real estate ingestion, map, CRM
 - `data/source_registry.json`
 - `sql/schema.sql`
 - `README.md`
+- `docs/linear-integration.md`
 - `src/bgrealestate/*`
 - `tests/*`
 
