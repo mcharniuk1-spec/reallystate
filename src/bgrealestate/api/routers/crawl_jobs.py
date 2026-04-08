@@ -7,6 +7,7 @@ from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
 
 from ...db.repositories import CrawlJobRepository
+from ..auth import AuthPrincipal, require_scope
 from ..deps import get_db
 
 router = APIRouter(tags=["crawl"])
@@ -36,6 +37,7 @@ def _job_row(j: Any) -> dict[str, Any]:
 
 @router.get("/crawl-jobs")
 def list_crawl_jobs(
+    _principal: Annotated[AuthPrincipal, Depends(require_scope("crawl:read"))],
     session: Annotated[Session, Depends(get_db)],
     limit: int = Query(50, ge=1, le=500),
     offset: int = Query(0, ge=0),

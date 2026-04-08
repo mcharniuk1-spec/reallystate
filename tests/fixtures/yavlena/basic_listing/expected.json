@@ -1,0 +1,26 @@
+{
+  "address_text": "ж.к. Младост 1, бл. 23",
+  "area_sqm": 64.0,
+  "city": "София",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "YV-11001",
+  "image_urls": [
+    "https://yavlena.com/media/YV-11001-1.jpg"
+  ],
+  "latitude": 42.651,
+  "listing_intent": "sale",
+  "listing_url": "https://www.yavlena.com/property/YV-11001",
+  "longitude": 23.377,
+  "owner_group": "Yavlena",
+  "parser_version": "v1",
+  "phones": [
+    "+359 2 800 1100"
+  ],
+  "price": 142000.0,
+  "property_category": "apartment",
+  "reference_id": "Yavlena:YV-11001",
+  "region": "София",
+  "rooms": null,
+  "source_name": "Yavlena"
+}

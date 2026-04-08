@@ -1,0 +1,14 @@
+{
+  "provider": "official_register",
+  "source_name": "Property Register",
+  "operator_approval_id": "APPROVAL-TEMPLATE-001",
+  "query": {
+    "parcel_or_property_id": "SYNTHETIC-ID-001",
+    "query_window": "2026-04-08T09:00:00Z/2026-04-08T09:15:00Z"
+  },
+  "response": {
+    "status": "ok",
+    "owner_status": "redacted_sample",
+    "encumbrance_flag": false
+  }
+}

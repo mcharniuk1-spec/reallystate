@@ -1,0 +1,7 @@
+{
+  "source_name": "Airbnb",
+  "authorization_artifact_type": "partner_contract",
+  "authorization_artifact_id": "CONTRACT-TEMPLATE-001",
+  "allow_live_calls": false,
+  "expected_block_exception": "PartnerContractRequired"
+}

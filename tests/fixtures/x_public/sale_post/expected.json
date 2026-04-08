@@ -1,0 +1,9 @@
+{
+  "intent": "sale",
+  "property_type": "apartment",
+  "city": "Варна",
+  "district": null,
+  "price": 120000,
+  "currency": "EUR",
+  "is_noise": false
+}

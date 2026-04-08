@@ -1,0 +1,18 @@
+{
+  "source_name": "Airbnb",
+  "external_id": "PARTNER-UNIT-123",
+  "reference_id": "Airbnb:PARTNER-UNIT-123",
+  "listing_intent": "short_term_rent",
+  "property_category": "apartment",
+  "city": "Burgas",
+  "price": 120.0,
+  "currency": "EUR",
+  "latitude": 42.5048,
+  "longitude": 27.4626,
+  "listing_url": "https://partner.example/listings/PARTNER-UNIT-123",
+  "image_urls": [
+    "https://cdn.example.com/unit-123-1.jpg",
+    "https://cdn.example.com/unit-123-2.jpg"
+  ],
+  "parser_version": "tier3_partner_template_v1"
+}

@@ -1,4 +1,4 @@
-.PHONY: doctor install dev-up dev-down dev-logs db-init migrate test test-docker golden-path lint typecheck validate docs-refresh run-api run-worker run-scheduler run-frontend export-docs source-report status-report linear-export architecture-doc connector-fixtures list-sources ingest-fixture ingest-fixture-dry sync-registry export-source-stats sync-registry export-source-stats
+.PHONY: doctor install dev-up dev-down dev-logs db-init migrate test test-docker golden-path lint typecheck validate docs-refresh run-api run-worker run-scheduler run-frontend export-docs source-report status-report linear-export architecture-doc dashboard-doc connector-fixtures list-sources list-skills ingest-fixture ingest-fixture-dry sync-registry export-source-stats
 
 # Prefer 3.13/3.12 when unset so install/lint match pyproject.toml requires-python >=3.12
 PYTHON ?= $(shell command -v python3.13 2>/dev/null || command -v python3.12 2>/dev/null || command -v python3)
@@ -77,7 +77,7 @@ run-frontend:
 run-frontend-static:
 	$(PYTHON) -m http.server 3000 --directory web
 
-export-docs: export-matrices source-report status-report architecture-doc
+export-docs: export-matrices source-report status-report architecture-doc dashboard-doc
 	@mkdir -p docs/exports
 	@cp PLAN.md docs/exports/platform-mvp-plan.md
 	@echo "Markdown exported to docs/exports/platform-mvp-plan.md. DOCX/PDF export requires Pandoc, Mermaid CLI, and LibreOffice in a later phase."
@@ -97,12 +97,18 @@ linear-export:
 architecture-doc:
 	$(PYTHON) scripts/generate_architecture_guide.py
 
+dashboard-doc:
+	$(PYTHON) scripts/generate_progress_dashboard.py
+
 connector-fixtures:
 	@mkdir -p tests/fixtures/$(SOURCE)
 	@echo "Created tests/fixtures/$(SOURCE). Add offline HTML/JSON fixtures and expected outputs before implementing the connector."
 
 list-sources:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate list-sources
+
+list-skills:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate list-skills
 
 ingest-fixture:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate ingest-fixture $(SOURCE_NAME) $(FIXTURE_DIR) $(EXTRA_ARGS)

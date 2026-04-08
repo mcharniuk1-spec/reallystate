@@ -17,12 +17,44 @@ jobs:
           cache-dependency-path: pyproject.toml
       - name: Install package
         run: python -m pip install -e ".[dev]"
-      - name: Ruff
-        run: python -m ruff check .
-      - name: Tests
+      - name: Lint (make lint)
+        run: make lint
+      - name: Typecheck (make typecheck)
+        run: make typecheck
+      - name: Test (make test)
+        run: make test
+      - name: Validate (make validate)
+        run: make validate
+
+  golden-path:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgis/postgis:17-3.5
         env:
-          PYTHONPATH: src
-        run: python -m unittest discover -s tests -v
+          POSTGRES_USER: bgrealestate
+          POSTGRES_PASSWORD: bgrealestate
+          POSTGRES_DB: bgrealestate
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U bgrealestate -d bgrealestate"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install package
+        run: python -m pip install -e ".[dev]"
+      - name: Golden path (make golden-path)
+        env:
+          DATABASE_URL: postgresql+psycopg://bgrealestate:bgrealestate@localhost:5432/bgrealestate
+        run: make golden-path
 
   node:
     runs-on: ubuntu-latest

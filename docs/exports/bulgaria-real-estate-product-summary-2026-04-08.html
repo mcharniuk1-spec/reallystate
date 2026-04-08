@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bulgaria Real Estate Product Summary</title>
+<style>
+  @page { size: letter; margin: 0.6in; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 11px; line-height: 1.5; color: #1a1a2e; max-width: 960px; margin: 0 auto; padding: 20px; }
+  h1 { font-size: 22px; font-weight: 700; color: #0052cc; margin: 24px 0 8px; border-bottom: 2px solid #0052cc; padding-bottom: 6px; }
+  h2 { font-size: 16px; font-weight: 700; color: #172b4d; margin: 20px 0 6px; }
+  h3 { font-size: 13px; font-weight: 600; color: #344563; margin: 14px 0 4px; }
+  h4 { font-size: 12px; font-weight: 600; color: #5e6c84; margin: 10px 0 4px; }
+  p { margin: 4px 0 8px; }
+  ul, ol { margin: 4px 0 8px; padding-left: 22px; }
+  li { margin: 2px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px; font-size: 10px; page-break-inside: auto; }
+  thead { display: table-header-group; }
+  tr { page-break-inside: avoid; }
+  th, td { border: 1px solid #c1c7d0; padding: 5px 7px; text-align: left; vertical-align: top; }
+  th { background: #f4f5f7; font-weight: 600; font-size: 10px; color: #344563; text-transform: uppercase; letter-spacing: 0.3px; }
+  tr:nth-child(even) { background: #fafbfc; }
+  code { background: #f0f1f4; padding: 1px 4px; border-radius: 3px; font-size: 10px; }
+  .title-block { text-align: center; margin-bottom: 24px; padding: 20px 0; border-bottom: 3px solid #0052cc; }
+  .title-block h1 { font-size: 26px; border: none; margin-bottom: 4px; }
+  .title-block .subtitle { color: #5e6c84; font-size: 12px; }
+  .milestone-path { font-family: monospace; font-size: 11px; line-height: 1.4; background: #f7f8fa; padding: 12px; border-radius: 6px; border: 1px solid #dfe1e6; }
+</style>
+</head>
+<body>
+
+<div class="title-block"><h1>Bulgaria Real Estate Product Summary, Backlog, And Dashboard Plan</h1><div class="subtitle">Generated report</div></div>
+<p>Date: 2026-04-08</p>
+<p>Generated at: 2026-04-08T16:22:29</p>
+<p>Workspace: <code>/Users/getapple/Documents/Real Estate Bulg</code></p>
+<h2>1. Executive Summary</h2>
+<p>This product is a Bulgaria-focused real estate intelligence and operator platform. It ingests listings and lead signals from Bulgarian portals, agencies, public social channels, official/vendor datasets, and partner routes; normalizes them into one canonical database; powers listing search, a 2D/3D map, CRM chat workflows, and operator review; and only allows reverse publishing through compliant official, partner, vendor, or assisted-manual paths.</p>
+<p>Today the product is best described as an operator-first MVP foundation with strong source coverage, working fixture-backed scraper slices, a PostgreSQL/PostGIS-ready schema, API scaffolding, and a Next.js shell for <code>/listings</code>, <code>/properties/[id]</code>, <code>/map</code>, <code>/chat</code>, <code>/settings</code>, and <code>/admin</code>.</p>
+<h2>2. Global Idea</h2>
+<p>The global idea is to build one operator-grade real estate system for Bulgaria that can watch the fragmented market, turn many raw sources into one trusted property database, visualize inventory spatially on a 2D/3D map, coordinate leads in chat/CRM, and later publish back only through compliant channels.</p>
+<p>In practice that means:</p>
+<ol>
+<li>The market layer watches portals, agencies, social overlays, official registers, and vendor feeds.</li>
+<li>The data layer turns messy source records into canonical Bulgaria property intelligence.</li>
+<li>The operations layer gives the team one dashboard to start projects, review source health, inspect crawl failures, route leads, and control publishing.</li>
+<li>The experience layer exposes `/listings`, `/properties/[id]`, `/map`, `/chat`, `/settings`, and `/admin` as the main operating surfaces.</li>
+</ol>
+<h2>3. What The Product Does</h2>
+<ol>
+<li>Tracks the Bulgarian real estate market across portals, agencies, STR/vendor sources, official registers, and social overlays.</li>
+<li>Stores all incoming listing evidence as raw capture plus normalized canonical listing records.</li>
+<li>Prepares a national property database for Bulgaria using PostgreSQL/PostGIS, property entities, offers, CRM data, and publishing records.</li>
+<li>Supports an operator map experience with 3D buildings where geometry exists and 2D fallback pins where it does not.</li>
+<li>Supports CRM chat and lead handling so agents/operators can organize conversations, notes, and linked properties.</li>
+<li>Enforces legal mode, access mode, and risk mode before scraper or publisher behavior is allowed.</li>
+<li>Creates the control plane for future compliant reverse publishing to approved channels only.</li>
+</ol>
+<h2>4. Product Services</h2>
+<table>
+<thead><tr>
+<th>Service</th>
+<th>What it does now</th>
+<th>Direction</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Source registry and compliance</td>
+<td>Stores 44 sources with tier, legal mode, risk mode, access mode, extraction strategy, languages, and listing types.</td>
+<td>Control plane for all future connectors and publishing routes.</td>
+</tr>
+<tr>
+<td>Scraper and connector layer</td>
+<td>Tier-1 fixture-backed connectors exist for the main marketplace/agency sites; social contract exists for Telegram-style overlays.</td>
+<td>Move from fixture-first to DB-backed, live-safe runs.</td>
+</tr>
+<tr>
+<td>Canonical Bulgaria database</td>
+<td>SQL blueprint defines 59 tables and 13 indexes for sources, crawl jobs, raw captures, canonical listings, property graph, CRM, users, geo, and publishing.</td>
+<td>PostgreSQL/PostGIS source of truth.</td>
+</tr>
+<tr>
+<td>Listings and search APIs</td>
+<td>FastAPI routes exist for listings, crawl jobs, CRM, readiness, chat, admin stats, and system endpoints.</td>
+<td>Wire all pages to real database-backed search and detail APIs.</td>
+</tr>
+<tr>
+<td>2D/3D map layer</td>
+<td>Frontend shell exists; map page is reserved for MapLibre GL and deck.gl with building summaries and viewport queries.</td>
+<td>Enable 3D when geometry confidence is strong; fall back to 2D pins otherwise.</td>
+</tr>
+<tr>
+<td>CRM chat</td>
+<td>Chat page shell and CRM endpoints are in place for thread/message flow.</td>
+<td>Expand to assignment, reminders, linked properties, and operator replies.</td>
+</tr>
+<tr>
+<td>Admin operations</td>
+<td>Admin source stats and dashboard spec exist.</td>
+<td>Add parser failures, compliance review, dedupe review, and publish queue panels.</td>
+</tr>
+<tr>
+<td>Reverse publishing</td>
+<td>Control-plane logic exists, but live outbound publishing remains gated.</td>
+<td>Official, authorized, partner, vendor, or assisted-manual only.</td>
+</tr>
+</tbody></table>
+<h2>5. How The Product Works</h2>
+<ol>
+<li>A source is selected from the registry.</li>
+<li>The runtime checks `legal_mode`, `risk_mode`, `access_mode`, and whether the path is allowed.</li>
+<li>A connector gathers data through HTML, API, headless, partner-feed, licensed-data, or consent/manual routes.</li>
+<li>Raw evidence is captured and normalized into canonical listing records.</li>
+<li>Canonical listings feed the Bulgaria property database, dedupe graph, CRM, and search surfaces.</li>
+<li>Search and detail pages expose the listings to operators and later to public-facing UI.</li>
+<li>The map surface groups results spatially and will render 3D building context when geometry is available.</li>
+<li>CRM chat links people, messages, properties, and follow-up actions.</li>
+<li>Publishing stays blocked unless the channel is explicitly compliant.</li>
+</ol>
+<h2>6. Master Backlog</h2>
+<p>This backlog section is intentionally focused on the global idea and the next buildable slices, so it can work as a project-wide execution plan.</p>
+<table>
+<thead><tr>
+<th>Backlog lane</th>
+<th>What must happen</th>
+<th>Current status</th>
+<th>Primary owner</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Foundations</td>
+<td>Keep registry, legal rules, skills, plans, and coordination docs current.</td>
+<td>Complete and active.</td>
+<td>lead agent + all agents</td>
+</tr>
+<tr>
+<td>Persistence</td>
+<td>Finish Postgres/PostGIS runtime, migrations, repository coverage, and DB-backed health checks.</td>
+<td>In progress.</td>
+<td>backend_developer</td>
+</tr>
+<tr>
+<td>Runtime compliance</td>
+<td>Enforce live scraping and publishing gates from registry rules at runtime.</td>
+<td>Next.</td>
+<td>backend_developer + debugger</td>
+</tr>
+<tr>
+<td>Tier-1 connectors</td>
+<td>Move from fixture-backed coverage to DB-backed, live-safe ingest for tier-1 sources.</td>
+<td>Partial.</td>
+<td>scraper_1</td>
+</tr>
+<tr>
+<td>Tier-2 and overlays</td>
+<td>Add stubs and then safe sources for tier-2, Telegram overlays, and approved vendor/register routes.</td>
+<td>Not started.</td>
+<td>scraper_1 + scraper_sm</td>
+</tr>
+<tr>
+<td>Dedupe and entity graph</td>
+<td>Build duplicate detection, property entities, offers, and review queues.</td>
+<td>Not started.</td>
+<td>backend_developer</td>
+</tr>
+<tr>
+<td>Geo and 3D map</td>
+<td>Add geocoder, building matching, viewport APIs, and 2D/3D rendering support.</td>
+<td>Not started.</td>
+<td>backend_developer + ux_ui_designer</td>
+</tr>
+<tr>
+<td>Backend APIs</td>
+<td>Complete listings, properties, map, CRM, admin, settings, auth, and publishing APIs.</td>
+<td>Partial.</td>
+<td>backend_developer</td>
+</tr>
+<tr>
+<td>Frontend MVP</td>
+<td>Replace route shells with working listings, map, chat, settings, and admin experiences.</td>
+<td>Shell only.</td>
+<td>ux_ui_designer</td>
+</tr>
+<tr>
+<td>Publishing</td>
+<td>Add dry-run and then compliant live publishing adapters only for approved routes.</td>
+<td>Gated.</td>
+<td>backend_developer + debugger</td>
+</tr>
+</tbody></table>
+<p>Priority order for the next execution wave:</p>
+<ol>
+<li>Finish Python 3.12-aligned persistence/runtime validation.</li>
+<li>Make tier-1 fixture-backed ingestion write verified rows into the database.</li>
+<li>Expand `/admin` into the central operator control panel.</li>
+<li>Turn `/listings`, `/chat`, and `/map` from shells into operator-usable workflows.</li>
+</ol>
+<h2>7. By The Numbers</h2>
+<table>
+<thead><tr>
+<th>Metric</th>
+<th>Current value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Total registry sources</td>
+<td>44</td>
+</tr>
+<tr>
+<td>Marketplace/official/vendor sources in tiers 1-3</td>
+<td>37</td>
+</tr>
+<tr>
+<td>Tier-1 sources</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Tier-2 sources</td>
+<td>17</td>
+</tr>
+<tr>
+<td>Tier-3 sources</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Tier-4 sources</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Publish-capable sources</td>
+<td>32</td>
+</tr>
+<tr>
+<td>Non-publish-capable sources</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Access modes in use</td>
+<td>headless: 5, html: 21, licensed_data: 2, manual_consent_only: 7, official_api: 3, partner_feed: 6</td>
+</tr>
+<tr>
+<td>Legal modes in use</td>
+<td>consent_or_manual_only: 6, legal_review_required: 2, licensing_required: 1, official_api_allowed: 3, official_partner_or_vendor_only: 8, public_crawl_with_review: 24</td>
+</tr>
+<tr>
+<td>Source fixture directories</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Fixture cases with expected outputs</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Tier-1 fixture coverage</td>
+<td>10/10</td>
+</tr>
+<tr>
+<td>Agent skills committed in repo</td>
+<td>21</td>
+</tr>
+<tr>
+<td>SQL tables in blueprint</td>
+<td>59</td>
+</tr>
+<tr>
+<td>SQL indexes in blueprint</td>
+<td>13</td>
+</tr>
+<tr>
+<td>Declared API routes</td>
+<td>14</td>
+</tr>
+<tr>
+<td>Roadmap completion</td>
+<td>46/128</td>
+</tr>
+<tr>
+<td>Roadmap remaining</td>
+<td>82</td>
+</tr>
+</tbody></table>
+<h2>8. Scraper Status</h2>
+<table>
+<thead><tr>
+<th>Scraper metric</th>
+<th>Current reading</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Tier-1 connector coverage</td>
+<td>10/10 tier-1 sources have fixture-backed parsing or legal-gated fixture stubs.</td>
+</tr>
+<tr>
+<td>Social overlay coverage</td>
+<td>Telegram public channel fixture contract exists; live social ingestion remains gated.</td>
+</tr>
+<tr>
+<td>Live crawl telemetry</td>
+<td>No live scrape telemetry available in repo evidence.</td>
+</tr>
+<tr>
+<td>DB-ingested listing telemetry</td>
+<td>No live database counts available because `DATABASE_URL` is not set in this shell.</td>
+</tr>
+<tr>
+<td>Test command result</td>
+<td>`Ran 62 tests in 0.082s` / `OK (skipped=8)`</td>
+</tr>
+<tr>
+<td>Test runtime</td>
+<td>Python 3.9.6</td>
+</tr>
+<tr>
+<td>Test exit code</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<p>Interpretation:</p>
+<ul>
+<li>The scraper architecture is well-covered in fixtures, but not yet validated as a live production crawler in this local environment.</li>
+<li>The main blocker visible in this run is environment drift: the local shell is using Python 3.9 while the repo targets Python 3.12, so backend/runtime validation is still lower confidence than a true Python 3.12 run.</li>
+</ul>
+<h2>9. Product Surfaces</h2>
+<table>
+<thead><tr>
+<th>Surface</th>
+<th>Current meaning</th>
+<th>Current state</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>`/listings`</td>
+<td>Searchable listings feed for Bulgaria.</td>
+<td>Shell exists; still wired to source/demo data rather than real listing search.</td>
+</tr>
+<tr>
+<td>`/properties/[id]`</td>
+<td>Canonical property detail page.</td>
+<td>Route shell exists.</td>
+</tr>
+<tr>
+<td>`/map`</td>
+<td>2D/3D market map using MapLibre + deck.gl.</td>
+<td>Shell exists; waiting for `/map/viewport` and building APIs.</td>
+</tr>
+<tr>
+<td>`/chat`</td>
+<td>CRM inbox with threads, messages, and linked properties.</td>
+<td>Shell exists; CRM APIs partially scaffolded.</td>
+</tr>
+<tr>
+<td>`/settings`</td>
+<td>Team, keys, channel accounts, crawler/publishing settings.</td>
+<td>Shell exists.</td>
+</tr>
+<tr>
+<td>`/admin`</td>
+<td>Operator dashboard for source health and review queues.</td>
+<td>Stats route exists; detailed multi-panel spec exists.</td>
+</tr>
+</tbody></table>
+<h2>10. Detailed Dashboard Instruction</h2>
+<p>This section is written as a practical instruction set for the project dashboard and the project-creation dashboard. It is based on the current admin spec, roadmap, schema, and source registry.</p>
+<h3>Dashboard purpose</h3>
+<p>The dashboard should be the operating system for the project. It should let an operator create a new market-monitoring project, choose compliant source packs, see scraper and database readiness, watch milestone progress, and then move directly into source health, map, CRM, and publishing review.</p>
+<h3>Dashboard layout</h3>
+<ol>
+<li>Top health strip: Postgres, Redis, API, worker, scheduler, and object storage state.</li>
+<li>KPI row: enabled sources, live-safe sources, canonical listings, crawl failures, parser failures, duplicate-review count, CRM open threads.</li>
+<li>Left navigation: Project setup, Sources, Crawl jobs, Parser failures, Dedupe review, Geocode review, CRM, Publish queue, Settings.</li>
+<li>Main work area: switchable tables, map panels, drawers, and project forms.</li>
+<li>Right context drawer: raw metadata, legal notes, source config, audit trail, and retry actions.</li>
+</ol>
+<h3>Project creation flow</h3>
+<ol>
+<li>Define project identity: project name, team owner, country/city/resort focus, and property intents to track.</li>
+<li>Pick source packs: tier-1 portals, agencies, vendor feeds, official registers, and any approved social overlays.</li>
+<li>Review compliance: every selected source must show legal mode, access mode, risk mode, and whether publishing is allowed.</li>
+<li>Configure cadence: choose hourly vs ten-minute runs, priority, and which sources remain fixture-only vs live-safe.</li>
+<li>Set data rules: dedupe sensitivity, geocode confidence threshold, required listing fields, and photo expectations.</li>
+<li>Set CRM routing: default owner, inbox rules, note templates, reminder defaults, and linked listing behavior.</li>
+<li>Set milestone targets: current phase, acceptance gate, verifier, and next required slice.</li>
+<li>Save and launch only when environment, migration, and source-gate checks are green.</li>
+</ol>
+<h3>Dashboard blocks</h3>
+<table>
+<thead><tr>
+<th>Dashboard block</th>
+<th>What it should contain</th>
+<th>Why it matters</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Project identity</td>
+<td>Project name, city/resort focus, team owner, deal type focus (sale, rent, STR, land, new-build).</td>
+<td>Defines scope for the whole workspace.</td>
+</tr>
+<tr>
+<td>Source pack picker</td>
+<td>Tier-1, tier-2, vendor, register, and social overlay toggles with legal-mode badges.</td>
+<td>Lets operators choose only compliant source bundles.</td>
+</tr>
+<tr>
+<td>Geography and map preview</td>
+<td>Bulgaria map with Varna, Burgas, Sofia, Bansko, Plovdiv, and resort filters; 2D/3D coverage preview.</td>
+<td>Makes project coverage visible before scraping starts.</td>
+</tr>
+<tr>
+<td>Scraper plan</td>
+<td>Cadence, priority, endpoint type, expected freshness, fixture availability, and risk mode.</td>
+<td>Turns strategy into an execution plan.</td>
+</tr>
+<tr>
+<td>Database readiness</td>
+<td>Migration status, source sync status, object storage status, and queue health.</td>
+<td>Prevents launching work into a broken stack.</td>
+</tr>
+<tr>
+<td>CRM setup</td>
+<td>Team inbox owner, lead routing rules, reminder templates, assignment defaults.</td>
+<td>Makes chat and follow-up usable on day one.</td>
+</tr>
+<tr>
+<td>Compliance gate</td>
+<td>Legal mode summary, partner requirements, consent/manual requirements, publish restrictions.</td>
+<td>Stops unsafe scraping or publishing early.</td>
+</tr>
+<tr>
+<td>KPI board</td>
+<td>Sources enabled, listings expected, listings ingested, crawl failures, parser failures, duplicates awaiting review.</td>
+<td>Gives the operator an instant health read.</td>
+</tr>
+<tr>
+<td>Milestone tracker</td>
+<td>Stage path, current milestone, verification owner, blocker list, next gate.</td>
+<td>Keeps the project moving in a visible, Duolingo-like sequence.</td>
+</tr>
+</tbody></table>
+<h3>Dashboard acceptance criteria</h3>
+<ol>
+<li>A new project cannot be activated if any selected source violates legal mode or requires a missing partner route.</li>
+<li>A new project cannot be activated if migrations are missing or the registry is not synced.</li>
+<li>KPI cards must match the same underlying stats that power `/admin/source-stats` and future crawl failure queues.</li>
+<li>Every top-level number must open a drill-down table or drawer.</li>
+<li>The milestone tracker must show who owns the next slice and which gate must pass next.</li>
+</ol>
+<h2>11. Dashboard Delivery Backlog</h2>
+<table>
+<thead><tr>
+<th>Dashboard backlog item</th>
+<th>What to build</th>
+<th>Status</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Dashboard A</td>
+<td>Project creation wizard with identity, source pack, compliance, cadence, CRM, and milestone steps.</td>
+<td>Not started.</td>
+</tr>
+<tr>
+<td>Dashboard B</td>
+<td>Live health strip and KPI row from readiness plus source stats.</td>
+<td>Partially ready in backend.</td>
+</tr>
+<tr>
+<td>Dashboard C</td>
+<td>Source health table with filters, tier badges, legal badges, and drill-down.</td>
+<td>Spec ready, implementation pending.</td>
+</tr>
+<tr>
+<td>Dashboard D</td>
+<td>Crawl jobs table with retry and metadata drawer.</td>
+<td>Backend route ready, frontend pending.</td>
+</tr>
+<tr>
+<td>Dashboard E</td>
+<td>Parser failure, dedupe review, geocode review, compliance review, and publish queue panels.</td>
+<td>Backend pending.</td>
+</tr>
+<tr>
+<td>Dashboard F</td>
+<td>Map preview inside dashboard for project geography and 3D readiness.</td>
+<td>Not started.</td>
+</tr>
+<tr>
+<td>Dashboard G</td>
+<td>CRM inbox summary widgets and assignment/status shortcuts.</td>
+<td>Partial backend, frontend pending.</td>
+</tr>
+</tbody></table>
+<h2>12. Project Progress Path</h2>
+<p>[1] Foundations and Source Registry      COMPLETE</p>
+<p>    |</p>
+<p>    v</p>
+<p>[2] Database and Persistence            IN PROGRESS</p>
+<p>    |</p>
+<p>    v</p>
+<p>[3] Runtime and Compliance Gates        NEXT</p>
+<p>    |</p>
+<p>    v</p>
+<p>[4] Tier-1 Connectors                   PARTIAL</p>
+<p>    |</p>
+<p>    v</p>
+<p>[5] Tier-2, STR, and Social Overlays    NOT STARTED</p>
+<p>    |</p>
+<p>    v</p>
+<p>[6] Media, Dedupe, Entity Graph         NOT STARTED</p>
+<p>    |</p>
+<p>    v</p>
+<p>[7] Geospatial and 3D Map               NOT STARTED</p>
+<p>    |</p>
+<p>    v</p>
+<p>[8] Backend APIs                        PARTIAL</p>
+<p>    |</p>
+<p>    v</p>
+<p>[9] Frontend MVP                        SHELL ONLY</p>
+<p>    |</p>
+<p>    v</p>
+<p>[10] Reverse Publishing                 GATED</p>
+<p>Overall roadmap completion: 46/128 steps (35%).</p>
+<h2>13. Agent Updates</h2>
+<h3>backend_developer</h3>
+<table>
+<thead><tr>
+<th>Metric</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Verified slices</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Open TODO slices</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Blocked slices</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Latest journal heading</td>
+<td>After 2026-04-08 session 2 — control plane bootstrap</td>
+</tr>
+<tr>
+<td>Latest note</td>
+<td>- **Blocker:** Docker was unavailable in this session's sandbox, so the Python 3.12 full-dep Docker test (`make test-docker`) was not run. CI (GitHub Actions) covers this.</td>
+</tr>
+<tr>
+<td>Next slice</td>
+<td>BD-03: Stats v2 (coverage breakdown)</td>
+</tr>
+</tbody></table>
+<h3>scraper_1</h3>
+<table>
+<thead><tr>
+<th>Metric</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Verified slices</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Open TODO slices</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Blocked slices</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Latest journal heading</td>
+<td>After Tasks 11–12</td>
+</tr>
+<tr>
+<td>Latest note</td>
+<td>- The `ingest-fixture` CLI is the foundation for offline testing of the full parse→persist pipeline without DB access (via `--dry-run`), and will be critical for the Debugger golden-path check.</td>
+</tr>
+<tr>
+<td>Next slice</td>
+<td>S1-11: Live-safe ingestion runner (small)</td>
+</tr>
+</tbody></table>
+<h3>scraper_sm</h3>
+<table>
+<thead><tr>
+<th>Metric</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Verified slices</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Open TODO slices</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Blocked slices</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Latest journal heading</td>
+<td>After Task 0</td>
+</tr>
+<tr>
+<td>Latest note</td>
+<td>- Noise detection is binary (has real-estate signal or not). A confidence score would be better for production.</td>
+</tr>
+<tr>
+<td>Next slice</td>
+<td>SM-01: Social ingestion contract (policy + fixtures)</td>
+</tr>
+</tbody></table>
+<h3>ux_ui_designer</h3>
+<table>
+<thead><tr>
+<th>Metric</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Verified slices</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Open TODO slices</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Blocked slices</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Latest journal heading</td>
+<td>Task 2 — Operator dashboard UI plan</td>
+</tr>
+<tr>
+<td>Latest note</td>
+<td>- A Storybook or component-viewer setup would accelerate shared component validation without needing the full Next.js dev server. Consider adding it in Phase B.</td>
+</tr>
+<tr>
+<td>Next slice</td>
+<td>UX-01: Operator dashboard UI plan</td>
+</tr>
+</tbody></table>
+<h3>debugger</h3>
+<table>
+<thead><tr>
+<th>Metric</th>
+<th>Value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Verified slices</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Open TODO slices</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Blocked slices</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Latest journal heading</td>
+<td>2026-04-08 (follow-up) — CI parity for Mypy</td>
+</tr>
+<tr>
+<td>Latest note</td>
+<td>- **Why**: Local `make typecheck` was green while CI only ran Ruff + tests; type regressions could merge unnoticed.</td>
+</tr>
+<tr>
+<td>Next slice</td>
+<td>DBG-02: Verify all DONE_AWAITING_VERIFY slices</td>
+</tr>
+</tbody></table>
+<h2>14. Source-By-Source Website Numbers</h2>
+<p>Columns: source number, website/source name, tier, access mode, legal mode, risk, count of listing types, count of languages, count of tracked URLs, count of fixture cases, implementation status.</p>
+<table>
+<thead><tr>
+<th>#</th>
+<th>Source</th>
+<th>Tier</th>
+<th>Access</th>
+<th>Legal</th>
+<th>Risk</th>
+<th>Types</th>
+<th>Langs</th>
+<th>URLs</th>
+<th>Fixtures</th>
+<th>Status</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Address.bg</td>
+<td>1</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>fixture-backed</td>
+</tr>
+<tr>
+<td>2</td>
+<td>alo.bg</td>
+<td>1</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>5</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>fixture-backed</td>
+</tr>
+<tr>
+<td>3</td>
+<td>BulgarianProperties</td>
+<td>1</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>fixture-backed</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Homes.bg</td>
+<td>1</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>8</td>
+<td>fixture-backed</td>
+</tr>
+<tr>
+<td>5</td>
+<td>imot.bg</td>
+<td>1</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+<td>fixture-backed</td>
+</tr>
+<tr>
+<td>6</td>
+<td>imoti.net</td>
+<td>1</td>
+<td>headless</td>
+<td>legal_review_required</td>
+<td>high</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>fixture-only legal-gated</td>
+</tr>
+<tr>
+<td>7</td>
+<td>LUXIMMO</td>
+<td>1</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>fixture-backed</td>
+</tr>
+<tr>
+<td>8</td>
+<td>OLX.bg</td>
+<td>1</td>
+<td>official_api</td>
+<td>official_api_allowed</td>
+<td>low</td>
+<td>4</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>fixture-backed</td>
+</tr>
+<tr>
+<td>9</td>
+<td>property.bg</td>
+<td>1</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>fixture-backed</td>
+</tr>
+<tr>
+<td>10</td>
+<td>SUPRIMMO</td>
+<td>1</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>fixture-backed</td>
+</tr>
+<tr>
+<td>11</td>
+<td>ApartmentsBulgaria.com</td>
+<td>2</td>
+<td>headless</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>registry-ready, connector pending</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Bazar.bg</td>
+<td>2</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>registry-ready, connector pending</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Domaza</td>
+<td>2</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>5</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>registry-ready, connector pending</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Holding Group Real Estate</td>
+<td>2</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>registry-ready, connector pending</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Home2U</td>
+<td>2</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>4</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td>registry-ready, connector pending</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Imoteka.bg</td>
+<td>2</td>
+<td>headless</td>
+<td>legal_review_required</td>
+<td>high</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>blocked pending legal review</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Imoti.info</td>
+<td>2</td>
+<td>partner_feed</td>
+<td>licensing_required</td>
+<td>high</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>partner/vendor route</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Indomio.bg</td>
+<td>2</td>
+<td>headless</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>registry-ready, connector pending</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Lions Group</td>
+<td>2</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>registry-ready, connector pending</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Pochivka.bg</td>
+<td>2</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>registry-ready, connector pending</td>
+</tr>
+<tr>
+<td>21</td>
+<td>realestates.bg</td>
+<td>2</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>registry-ready, connector pending</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Realistimo</td>
+<td>2</td>
+<td>headless</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>registry-ready, connector pending</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Rentica.bg</td>
+<td>2</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>registry-ready, connector pending</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Svobodni-kvartiri.com</td>
+<td>2</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>registry-ready, connector pending</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Unique Estates</td>
+<td>2</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>registry-ready, connector pending</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Vila.bg</td>
+<td>2</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>registry-ready, connector pending</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Yavlena</td>
+<td>2</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>registry-ready, connector pending</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Airbnb</td>
+<td>3</td>
+<td>partner_feed</td>
+<td>official_partner_or_vendor_only</td>
+<td>prohibited_without_contract</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>partner/vendor route</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Airbtics</td>
+<td>3</td>
+<td>licensed_data</td>
+<td>official_partner_or_vendor_only</td>
+<td>low</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>partner/vendor route</td>
+</tr>
+<tr>
+<td>30</td>
+<td>AirDNA</td>
+<td>3</td>
+<td>licensed_data</td>
+<td>official_partner_or_vendor_only</td>
+<td>low</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>partner/vendor route</td>
+</tr>
+<tr>
+<td>31</td>
+<td>BCPEA property auctions</td>
+<td>3</td>
+<td>html</td>
+<td>public_crawl_with_review</td>
+<td>medium</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>registry-ready, connector pending</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Booking.com</td>
+<td>3</td>
+<td>partner_feed</td>
+<td>official_partner_or_vendor_only</td>
+<td>prohibited_without_contract</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>partner/vendor route</td>
+</tr>
+<tr>
+<td>33</td>
+<td>Flat Manager</td>
+<td>3</td>
+<td>partner_feed</td>
+<td>official_partner_or_vendor_only</td>
+<td>medium</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>partner/vendor route</td>
+</tr>
+<tr>
+<td>34</td>
+<td>KAIS Cadastre</td>
+<td>3</td>
+<td>manual_consent_only</td>
+<td>consent_or_manual_only</td>
+<td>high</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>manual or consent-only</td>
+</tr>
+<tr>
+<td>35</td>
+<td>Menada Bulgaria</td>
+<td>3</td>
+<td>partner_feed</td>
+<td>official_partner_or_vendor_only</td>
+<td>medium</td>
+<td>2</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td>partner/vendor route</td>
+</tr>
+<tr>
+<td>36</td>
+<td>Property Register</td>
+<td>3</td>
+<td>manual_consent_only</td>
+<td>consent_or_manual_only</td>
+<td>high</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>manual or consent-only</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Vrbo</td>
+<td>3</td>
+<td>partner_feed</td>
+<td>official_partner_or_vendor_only</td>
+<td>high</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>partner/vendor route</td>
+</tr>
+<tr>
+<td>38</td>
+<td>Facebook public groups/pages</td>
+<td>4</td>
+<td>manual_consent_only</td>
+<td>consent_or_manual_only</td>
+<td>high</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>manual or consent-only</td>
+</tr>
+<tr>
+<td>39</td>
+<td>Instagram public profiles</td>
+<td>4</td>
+<td>manual_consent_only</td>
+<td>consent_or_manual_only</td>
+<td>high</td>
+<td>2</td>
+<td>2</td>
+<td>8</td>
+<td>0</td>
+<td>manual or consent-only</td>
+</tr>
+<tr>
+<td>40</td>
+<td>Telegram public channels</td>
+<td>4</td>
+<td>official_api</td>
+<td>official_api_allowed</td>
+<td>medium</td>
+<td>3</td>
+<td>3</td>
+<td>6</td>
+<td>0</td>
+<td>policy-approved, connector pending</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Threads public profiles</td>
+<td>4</td>
+<td>manual_consent_only</td>
+<td>consent_or_manual_only</td>
+<td>high</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>manual or consent-only</td>
+</tr>
+<tr>
+<td>42</td>
+<td>Viber opt-in communities</td>
+<td>4</td>
+<td>manual_consent_only</td>
+<td>consent_or_manual_only</td>
+<td>high</td>
+<td>3</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>manual or consent-only</td>
+</tr>
+<tr>
+<td>43</td>
+<td>WhatsApp opt-in groups</td>
+<td>4</td>
+<td>manual_consent_only</td>
+<td>official_partner_or_vendor_only</td>
+<td>prohibited_without_contract</td>
+<td>3</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>partner/vendor route</td>
+</tr>
+<tr>
+<td>44</td>
+<td>X public search/accounts</td>
+<td>4</td>
+<td>official_api</td>
+<td>official_api_allowed</td>
+<td>low</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>policy-approved, connector pending</td>
+</tr>
+</tbody></table>
+<h2>15. Key Risks And Gaps</h2>
+<ol>
+<li>Live database and live scraping telemetry are still missing in this local shell, so the numbers above are coverage numbers, not production crawl-output numbers.</li>
+<li>The local runtime is misaligned with repo targets: `python3 --version` returned Python 3.9.6, while the repo targets Python 3.12, so full backend/runtime confidence still depends on a Python 3.12 environment.</li>
+<li>The 3D map, CRM, and public listing experience are scaffolded but not yet fully backed by live APIs and data.</li>
+<li>Reverse publishing remains intentionally gated by compliance requirements, which is correct but means outbound integrations are still ahead of us.</li>
+</ol>
+<h2>16. Bottom Line</h2>
+<p>The product already has the shape of a serious Bulgaria real estate platform: source registry, compliance control plane, fixture-backed scrapers, a canonical Bulgaria database design, 3D map intent, chat/CRM intent, and operator workflows. The next value jump is not more new UI, but completing the live persistence and runtime path so the existing shells can run on real Bulgarian listing data.</p>
+</body></html>

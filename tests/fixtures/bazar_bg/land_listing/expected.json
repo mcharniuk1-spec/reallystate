@@ -1,0 +1,26 @@
+{
+  "address_text": "м-т Пчелина",
+  "area_sqm": 600.0,
+  "city": "Варна",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "BZ-21002",
+  "image_urls": [
+    "https://img.bazar.bg/listings/BZ-21002-1.jpg"
+  ],
+  "latitude": 43.219,
+  "listing_intent": "sale",
+  "listing_url": "https://bazar.bg/obiava/BZ-21002",
+  "longitude": 27.932,
+  "owner_group": "Rezon Media",
+  "parser_version": "v1",
+  "phones": [
+    "+359 88 500 1002"
+  ],
+  "price": 75000.0,
+  "property_category": "land",
+  "reference_id": "Bazar.bg:BZ-21002",
+  "region": "Варна",
+  "rooms": null,
+  "source_name": "Bazar.bg"
+}

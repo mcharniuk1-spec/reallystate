@@ -95,6 +95,18 @@ Generate the architecture guide markdown and PDF:
 make architecture-doc
 ```
 
+Generate/update the progress dashboard artifacts:
+
+```bash
+make dashboard-doc
+```
+
+List reusable project skills:
+
+```bash
+make list-skills
+```
+
 Run tests:
 
 ```bash

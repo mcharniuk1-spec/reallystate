@@ -7,6 +7,8 @@ from .homes_bg import HomesBgConnector
 from .olx_bg import OlxBgConnector
 from .protocol import Connector
 from .scaffold import HtmlPortalConnector
+from .tier3 import BcpeaAuctionConnector, PartnerFeedStubConnector
+from .tier2_stubs import BazarBgConnector, DomazaConnector, Home2UConnector, YavlenaConnector
 
 if TYPE_CHECKING:
     from ..models import SourceRegistryEntry
@@ -40,4 +42,16 @@ def build_connector(source_name: str, registry: SourceRegistry, *, client: objec
         return HomesBgConnector(registry, client=client)
     if source_name == "OLX.bg":
         return OlxBgConnector(registry, client=client)
+    if source_name == "Bazar.bg":
+        return BazarBgConnector(registry, client=client)
+    if source_name == "Domaza":
+        return DomazaConnector(registry, client=client)
+    if source_name == "Yavlena":
+        return YavlenaConnector(registry, client=client)
+    if source_name == "Home2U":
+        return Home2UConnector(registry, client=client)
+    if source_name == "BCPEA property auctions":
+        return BcpeaAuctionConnector(registry, client=client)
+    if source_name in {"Airbnb", "Booking.com", "Vrbo"}:
+        return PartnerFeedStubConnector(source_name, registry, client=client)
     return HtmlPortalConnector(source_name, registry, client=client)

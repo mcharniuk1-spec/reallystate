@@ -1,0 +1,23 @@
+{
+  "provider": "partner_feed",
+  "source_name": "Airbnb",
+  "contract_id": "CONTRACT-TEMPLATE-001",
+  "listing": {
+    "external_id": "PARTNER-UNIT-123",
+    "url": "https://partner.example/listings/PARTNER-UNIT-123",
+    "title": "Synthetic seaside apartment",
+    "city": "Burgas",
+    "nightly_price": {
+      "amount": 120.0,
+      "currency": "EUR"
+    },
+    "coordinates": {
+      "lat": 42.5048,
+      "lon": 27.4626
+    },
+    "images": [
+      "https://cdn.example.com/unit-123-1.jpg",
+      "https://cdn.example.com/unit-123-2.jpg"
+    ]
+  }
+}

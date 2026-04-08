@@ -7,6 +7,7 @@ from fastapi.responses import HTMLResponse
 from sqlalchemy.engine import Engine
 
 from ...stats.source_stats import SourceStatRow, fetch_source_stats
+from ..auth import AuthPrincipal, require_scope
 from ..deps import get_engine
 
 
@@ -21,13 +22,26 @@ def _stat_to_dict(r: SourceStatRow) -> dict[str, Any]:
         "canonical_listings": r.canonical_listings,
         "raw_captures": r.raw_captures,
         "with_description": r.with_description,
+        "with_photos": r.with_photos,
+        "photo_coverage_pct": r.photo_coverage_pct,
+        "intent_sale": r.intent_sale,
+        "intent_rent": r.intent_rent,
+        "intent_str": r.intent_str,
+        "intent_auction": r.intent_auction,
+        "category_apartment": r.category_apartment,
+        "category_house": r.category_house,
+        "category_land": r.category_land,
+        "category_commercial": r.category_commercial,
         "has_legal_rule": r.has_legal_rule,
         "has_endpoint": r.has_endpoint,
     }
 
 
 @router.get("/admin/source-stats")
-def source_stats(engine: Annotated[Engine, Depends(get_engine)]) -> dict[str, Any]:
+def source_stats(
+    _principal: Annotated[AuthPrincipal, Depends(require_scope("admin:read"))],
+    engine: Annotated[Engine, Depends(get_engine)],
+) -> dict[str, Any]:
     rows = fetch_source_stats(engine)
     return {
         "ok": True,
@@ -37,7 +51,7 @@ def source_stats(engine: Annotated[Engine, Depends(get_engine)]) -> dict[str, An
 
 
 @router.get("/admin", response_class=HTMLResponse)
-def admin_home() -> HTMLResponse:
+def admin_home(_principal: Annotated[AuthPrincipal, Depends(require_scope("admin:read"))]) -> HTMLResponse:
     # Minimal internal operator page (not public UI).
     body = """<!doctype html>
 <html>
@@ -50,6 +64,10 @@ def admin_home() -> HTMLResponse:
       th, td { border: 1px solid #ddd; padding: 8px; }
       th { background: #f7f7f7; text-align: left; }
       code { background: #f2f2f2; padding: 2px 4px; border-radius: 4px; }
+      .bar-wrap { display: flex; align-items: center; gap: 8px; min-width: 180px; }
+      .bar-bg { flex: 1; height: 10px; background: #efefef; border-radius: 999px; overflow: hidden; }
+      .bar-fill { height: 100%; background: #4f46e5; border-radius: 999px; }
+      .small { font-size: 12px; color: #666; white-space: nowrap; }
     </style>
   </head>
   <body>
@@ -65,6 +83,9 @@ def admin_home() -> HTMLResponse:
           <th>Canonical listings</th>
           <th>Raw captures</th>
           <th>With description</th>
+          <th>Photo coverage</th>
+          <th>Intent breakdown</th>
+          <th>Category breakdown</th>
           <th>Legal rule</th>
           <th>Endpoint</th>
         </tr>
@@ -86,12 +107,18 @@ def admin_home() -> HTMLResponse:
           tbody.innerHTML = '';
           for (const r of data.rows) {
             const tr = document.createElement('tr');
+            const photoPct = Math.max(0, Math.min(100, Number(r.photo_coverage_pct || 0)));
+            const intentTxt = 'sale=' + r.intent_sale + ', rent=' + r.intent_rent + ', str=' + r.intent_str + ', auction=' + r.intent_auction;
+            const catTxt = 'apt=' + r.category_apartment + ', house=' + r.category_house + ', land=' + r.category_land + ', comm=' + r.category_commercial;
             tr.innerHTML = '<td>' + r.source_name + '</td>' +
               '<td>' + (r.tier ?? '') + '</td>' +
               '<td>' + (r.legal_mode ?? '') + '</td>' +
               '<td>' + r.canonical_listings + '</td>' +
               '<td>' + r.raw_captures + '</td>' +
               '<td>' + r.with_description + '</td>' +
+              '<td><div class=\"bar-wrap\"><div class=\"bar-bg\"><div class=\"bar-fill\" style=\"width:' + photoPct + '%\"></div></div><span class=\"small\">' + photoPct.toFixed(2) + '% (' + r.with_photos + ')</span></div></td>' +
+              '<td class=\"small\">' + intentTxt + '</td>' +
+              '<td class=\"small\">' + catTxt + '</td>' +
               '<td>' + (r.has_legal_rule ? 'Y' : 'N') + '</td>' +
               '<td>' + (r.has_endpoint ? 'Y' : 'N') + '</td>';
             tbody.appendChild(tr);

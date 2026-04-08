@@ -42,7 +42,7 @@ def markdown_to_body(markdown: str) -> str:
     return "".join(body)
 
 
-def write_docx(path: Path, markdown: str) -> None:
+def _write_docx_fallback(path: Path, markdown: str) -> None:
     body = markdown_to_body(markdown)
     document_xml = f'''<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
@@ -67,12 +67,44 @@ def write_docx(path: Path, markdown: str) -> None:
         zf.writestr("docProps/app.xml", '''<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties"><Application>Codex</Application></Properties>''')
 
 
+def _write_docx(path: Path, markdown: str) -> str:
+    try:
+        from docx import Document  # type: ignore
+    except Exception:
+        _write_docx_fallback(path, markdown)
+        return "fallback"
+
+    doc = Document()
+    doc.add_heading("Bulgaria Real Estate Platform Project Status Roadmap", level=0)
+    for raw_line in markdown.splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("```"):
+            continue
+        if line.startswith("# "):
+            # Title already added above
+            continue
+        if line.startswith("## "):
+            doc.add_heading(line[3:], level=1)
+        elif line.startswith("### "):
+            doc.add_heading(line[4:], level=2)
+        elif line.startswith("- [x] "):
+            doc.add_paragraph("DONE - " + line[6:], style="List Bullet")
+        elif line.startswith("- [ ] "):
+            doc.add_paragraph("TODO - " + line[6:], style="List Bullet")
+        elif line.startswith("- "):
+            doc.add_paragraph(line[2:], style="List Bullet")
+        else:
+            doc.add_paragraph(line)
+    doc.save(path)
+    return "python-docx"
+
+
 def main() -> None:
     EXPORT_DIR.mkdir(parents=True, exist_ok=True)
     markdown = SOURCE.read_text(encoding="utf-8")
     (EXPORT_DIR / "project-status-roadmap.md").write_text(markdown, encoding="utf-8")
-    write_docx(EXPORT_DIR / "project-status-roadmap.docx", markdown)
-    print("generated project status roadmap exports")
+    mode = _write_docx(EXPORT_DIR / "project-status-roadmap.docx", markdown)
+    print(f"generated project status roadmap exports (docx mode: {mode})")
 
 
 if __name__ == "__main__":

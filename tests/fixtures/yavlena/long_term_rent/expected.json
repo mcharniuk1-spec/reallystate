@@ -1,0 +1,26 @@
+{
+  "address_text": "ж.к. Младост 2, бл. 51",
+  "area_sqm": 68.0,
+  "city": "София",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "YV-11002",
+  "image_urls": [
+    "https://yavlena.com/media/YV-11002-1.jpg"
+  ],
+  "latitude": 42.652,
+  "listing_intent": "long_term_rent",
+  "listing_url": "https://www.yavlena.com/property/YV-11002",
+  "longitude": 23.379,
+  "owner_group": "Yavlena",
+  "parser_version": "v1",
+  "phones": [
+    "+359 2 800 1101"
+  ],
+  "price": 650.0,
+  "property_category": "apartment",
+  "reference_id": "Yavlena:YV-11002",
+  "region": "София",
+  "rooms": null,
+  "source_name": "Yavlena"
+}

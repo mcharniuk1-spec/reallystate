@@ -1,0 +1,13 @@
+{
+  "source_name": "AirDNA",
+  "dataset_type": "short_term_rent_metrics",
+  "market": "Burgas",
+  "period": "2026-03",
+  "metrics": {
+    "occupancy_rate": 0.71,
+    "adr_eur": 84.5,
+    "revpar_eur": 59.99,
+    "active_listings": 412
+  },
+  "parser_version": "tier3_licensed_template_v1"
+}

@@ -1,0 +1,15 @@
+{
+  "source_name": "BCPEA property auctions",
+  "external_id": "BCPEA-TEMPLATE-001",
+  "listing_intent": "auction_sale",
+  "price": 98000.0,
+  "currency": "EUR",
+  "area_sqm": 74.0,
+  "city": "Burgas",
+  "district": "Zornitsa",
+  "court": "Burgas District Court",
+  "bailiff": "Synthetic Bailiff",
+  "auction_start_date": "2026-04-20",
+  "auction_end_date": "2026-05-20",
+  "parser_version": "tier3_public_auction_template_v1"
+}

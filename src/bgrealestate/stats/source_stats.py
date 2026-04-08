@@ -15,6 +15,16 @@ class SourceStatRow:
     canonical_listings: int
     raw_captures: int
     with_description: int
+    with_photos: int
+    photo_coverage_pct: float
+    intent_sale: int
+    intent_rent: int
+    intent_str: int
+    intent_auction: int
+    category_apartment: int
+    category_house: int
+    category_land: int
+    category_commercial: int
     has_legal_rule: bool
     has_endpoint: bool
 
@@ -37,7 +47,26 @@ def fetch_source_stats(engine: Engine) -> list[SourceStatRow]:
           select
             source_name,
             count(*)::int as canonical_listings,
-            sum(case when description is not null and length(trim(description)) > 0 then 1 else 0 end)::int as with_description
+            sum(case when description is not null and length(trim(description)) > 0 then 1 else 0 end)::int as with_description,
+            sum(
+              case when image_urls is not null and jsonb_typeof(image_urls) = 'array' and jsonb_array_length(image_urls) > 0
+                then 1
+                else 0
+              end
+            )::int as with_photos,
+            sum(case when lower(coalesce(listing_intent, '')) = 'sale' then 1 else 0 end)::int as intent_sale,
+            sum(case when lower(coalesce(listing_intent, '')) = 'rent' then 1 else 0 end)::int as intent_rent,
+            sum(case when lower(coalesce(listing_intent, '')) in ('str', 'short_term_rent') then 1 else 0 end)::int as intent_str,
+            sum(case when lower(coalesce(listing_intent, '')) = 'auction' then 1 else 0 end)::int as intent_auction,
+            sum(case when lower(coalesce(property_category, '')) = 'apartment' then 1 else 0 end)::int as category_apartment,
+            sum(case when lower(coalesce(property_category, '')) = 'house' then 1 else 0 end)::int as category_house,
+            sum(case when lower(coalesce(property_category, '')) = 'land' then 1 else 0 end)::int as category_land,
+            sum(
+              case when lower(coalesce(property_category, '')) in ('commercial', 'office', 'retail', 'warehouse', 'industrial')
+                then 1
+                else 0
+              end
+            )::int as category_commercial
           from canonical_listing
           group by source_name
         ),
@@ -63,6 +92,19 @@ def fetch_source_stats(engine: Engine) -> list[SourceStatRow]:
           coalesce(canon.canonical_listings, 0) as canonical_listings,
           coalesce(raw.raw_captures, 0) as raw_captures,
           coalesce(canon.with_description, 0) as with_description,
+          coalesce(canon.with_photos, 0) as with_photos,
+          case
+            when coalesce(canon.canonical_listings, 0) = 0 then 0
+            else round((coalesce(canon.with_photos, 0)::numeric / canon.canonical_listings::numeric) * 100, 2)
+          end as photo_coverage_pct,
+          coalesce(canon.intent_sale, 0) as intent_sale,
+          coalesce(canon.intent_rent, 0) as intent_rent,
+          coalesce(canon.intent_str, 0) as intent_str,
+          coalesce(canon.intent_auction, 0) as intent_auction,
+          coalesce(canon.category_apartment, 0) as category_apartment,
+          coalesce(canon.category_house, 0) as category_house,
+          coalesce(canon.category_land, 0) as category_land,
+          coalesce(canon.category_commercial, 0) as category_commercial,
           coalesce(legal.has_rule, false) as has_legal_rule,
           coalesce(ep.has_ep, false) as has_endpoint
         from source_registry sr
@@ -85,6 +127,16 @@ def fetch_source_stats(engine: Engine) -> list[SourceStatRow]:
                 canonical_listings=int(r["canonical_listings"]),
                 raw_captures=int(r["raw_captures"]),
                 with_description=int(r["with_description"]),
+                with_photos=int(r["with_photos"]),
+                photo_coverage_pct=float(r["photo_coverage_pct"]),
+                intent_sale=int(r["intent_sale"]),
+                intent_rent=int(r["intent_rent"]),
+                intent_str=int(r["intent_str"]),
+                intent_auction=int(r["intent_auction"]),
+                category_apartment=int(r["category_apartment"]),
+                category_house=int(r["category_house"]),
+                category_land=int(r["category_land"]),
+                category_commercial=int(r["category_commercial"]),
                 has_legal_rule=bool(r["has_legal_rule"]),
                 has_endpoint=bool(r["has_endpoint"]),
             )

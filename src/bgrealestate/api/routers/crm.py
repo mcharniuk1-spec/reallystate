@@ -8,6 +8,7 @@ from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
 from ...db.repositories import CrmRepository
+from ..auth import AuthPrincipal, require_scope
 from ..deps import get_db
 
 router = APIRouter(prefix="/crm", tags=["crm"])
@@ -59,6 +60,7 @@ class AppendMessageBody(BaseModel):
 
 @router.get("/threads")
 def list_threads(
+    _principal: Annotated[AuthPrincipal, Depends(require_scope("crm:read"))],
     session: Annotated[Session, Depends(get_db)],
     limit: int = Query(50, ge=1, le=200),
     offset: int = Query(0, ge=0),
@@ -70,7 +72,11 @@ def list_threads(
 
 
 @router.get("/threads/{thread_id}/messages")
-def list_messages(thread_id: str, session: Annotated[Session, Depends(get_db)]) -> dict[str, Any]:
+def list_messages(
+    thread_id: str,
+    _principal: Annotated[AuthPrincipal, Depends(require_scope("crm:read"))],
+    session: Annotated[Session, Depends(get_db)],
+) -> dict[str, Any]:
     repo = CrmRepository(session)
     if repo.get_thread(thread_id) is None:
         raise HTTPException(status_code=404, detail="thread_not_found")
@@ -82,6 +88,7 @@ def list_messages(thread_id: str, session: Annotated[Session, Depends(get_db)]) 
 def append_message(
     thread_id: str,
     body: AppendMessageBody,
+    _principal: Annotated[AuthPrincipal, Depends(require_scope("crm:write"))],
     session: Annotated[Session, Depends(get_db)],
 ) -> dict[str, Any]:
     repo = CrmRepository(session)

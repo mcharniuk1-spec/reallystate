@@ -1,0 +1,13 @@
+{
+  "provider": "licensed_data",
+  "source_name": "AirDNA",
+  "subscription_id": "SUB-TEMPLATE-001",
+  "market": "Burgas",
+  "period": "2026-03",
+  "metrics": {
+    "occupancy_rate": 0.71,
+    "adr_eur": 84.5,
+    "revpar_eur": 59.99,
+    "active_listings": 412
+  }
+}

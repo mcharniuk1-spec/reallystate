@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import ast
 import os
+import sys
 import unittest
 from pathlib import Path
 
@@ -62,6 +63,16 @@ class TestSourceStatsModel(unittest.TestCase):
             canonical_listings=0,
             raw_captures=0,
             with_description=0,
+            with_photos=0,
+            photo_coverage_pct=0.0,
+            intent_sale=0,
+            intent_rent=0,
+            intent_str=0,
+            intent_auction=0,
+            category_apartment=0,
+            category_house=0,
+            category_land=0,
+            category_commercial=0,
             has_legal_rule=True,
             has_endpoint=True,
         )
@@ -79,15 +90,17 @@ class TestReadinessEndpoint(unittest.TestCase):
     """GET /api/v1/ready with no DATABASE_URL / REDIS_URL returns 200 + ok."""
 
     def setUp(self) -> None:
-        if TestClient is None:
-            self.skipTest("fastapi not installed")
+        if TestClient is None or sys.version_info < (3, 10):
+            self.skipTest("fastapi runtime checks require fastapi installed on Python 3.10+")
         from bgrealestate.api import deps as deps_mod
         from bgrealestate.api.main import create_app
 
         self._saved = {
             "DATABASE_URL": os.environ.pop("DATABASE_URL", None),
             "REDIS_URL": os.environ.pop("REDIS_URL", None),
+            "API_KEYS_JSON": os.environ.pop("API_KEYS_JSON", None),
         }
+        os.environ["API_KEYS_JSON"] = '{"admin-key":["admin:read"]}'
         deps_mod._engine = None
         self.client = TestClient(create_app())
 
@@ -110,5 +123,5 @@ class TestReadinessEndpoint(unittest.TestCase):
         self.assertIsNone(pg["ok"])
 
     def test_admin_source_stats_returns_503_without_db(self) -> None:
-        r = self.client.get("/admin/source-stats")
+        r = self.client.get("/admin/source-stats", headers={"X-API-Key": "admin-key"})
         self.assertEqual(r.status_code, 503)

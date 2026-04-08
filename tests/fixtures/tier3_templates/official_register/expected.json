@@ -1,0 +1,9 @@
+{
+  "source_name": "Property Register",
+  "verification_type": "ownership_verification",
+  "reference_id": "Property Register:SYNTHETIC-ID-001",
+  "query_status": "ok",
+  "encumbrance_flag": false,
+  "consent_mode": "operator_approved",
+  "parser_version": "tier3_official_register_template_v1"
+}

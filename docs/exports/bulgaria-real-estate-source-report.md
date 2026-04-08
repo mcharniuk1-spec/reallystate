@@ -1,6 +1,6 @@
 # Bulgaria Real Estate Source Links And Debug Report
 
-Generated: 2026-04-08T11:04:29.803089+00:00
+Generated: 2026-04-08T14:33:00.858630+00:00
 
 ## Executive Summary
 

@@ -40,15 +40,16 @@ The platform should become a single operational system that:
 6. exposes a list view, property detail view, 3D map view, CRM chat/inbox, settings, and admin tools
 7. later publishes approved inventory back to supported channels through official or authorized routes
 
-## 2.1 Execution model (5 specialist agents)
+## 2.1 Execution model (6 specialist agents)
 
-In addition to the lead agent, the project runs 5 specialist agents:
+In addition to the lead agent, the project runs 6 specialist agents:
 
 1. **debugger**: reproduce failures, tighten tests, reduce flakiness
 2. **backend_developer (data engineer)**: persistence, ingestion orchestration, APIs, reporting outputs
 3. **ux_ui_designer (frontend)**: operator/admin UI surfaces first (public UI after ingestion foundations)
 4. **scraper_1**: marketplace connectors (tier‑1 portals/agencies/classifieds), fixture-first
-5. **scraper_sm**: social overlays only (official API or consent/manual only)
+5. **scraper_t3**: tier-3 partner/vendor/official-route connectors (contract/licensing-first)
+6. **scraper_sm**: social overlays only (official API or consent/manual only)
 
 Each specialist appends work notes and post-execution review comments to:
 
@@ -56,7 +57,39 @@ Each specialist appends work notes and post-execution review comments to:
 - `docs/agents/backend_developer/JOURNEY.md`
 - `docs/agents/ux_ui_designer/JOURNEY.md`
 - `docs/agents/scraper_1/JOURNEY.md`
+- `docs/agents/scraper_t3/JOURNEY.md`
 - `docs/agents/scraper_sm/JOURNEY.md`
+
+## 2.2 Parallel execution architecture
+
+The architecture is intentionally parallel. Work is split into lanes that run concurrently with dependency gates:
+
+```mermaid
+flowchart LR
+    A["backend_developer lane"] --> V["debugger verification lane"]
+    B["scraper_1 lane (tier-1/2)"] --> V
+    C["scraper_t3 lane (tier-3 partner/vendor/official)"] --> V
+    D["scraper_sm lane (tier-4 social overlays)"] --> V
+    E["ux_ui_designer lane"] --> V
+```
+
+Parallel rules:
+
+1. One active slice per agent, many agents active at once.
+2. Dependency edges are enforced at slice level (`TASKS.md`), not at whole-document phase level.
+3. `debugger` continuously verifies gates and controls promotion to `VERIFIED`.
+4. Dashboard artifacts are refreshed when task/journey/docs change.
+
+Lane ownership:
+
+| Lane | Owner | Scope |
+|---|---|---|
+| Persistence/API/runtime | `backend_developer` | DB, migrations, repositories, APIs, worker orchestration |
+| Tier-1/2 connectors | `scraper_1` | portals/classifieds/agencies, fixture-first parsing, live-safe promotion |
+| Tier-3 connectors | `scraper_t3` | partner feeds, licensed datasets, official-service wrappers |
+| Tier-4 overlays | `scraper_sm` | social lead overlays, consent/redaction/legal contracts |
+| Operator/UI | `ux_ui_designer` | `/admin`-first UX, then `/listings`/`/map`/`/chat`/`/settings` |
+| Verification/safety | `debugger` | acceptance gates, CI parity, cross-lane safety audits |
 
 ## 3. Continuous Scraping And Update Model
 
@@ -180,6 +213,15 @@ These are lead-intelligence overlays and must remain compliance-gated:
 - Threads public profiles where workable
 - Viber opt-in communities
 - WhatsApp Business or opt-in groups
+
+## 4.5 MVP geo scope gate (map/search)
+
+For MVP, interactive map/search scope is restricted to:
+
+- Varna city
+- Varna region
+
+Expansion outside Varna is blocked until stage-1 scraping is verified as complete across required product types (`sale`, `long_term_rent`, `short_term_rent`, `land`, `new_build`) and ingestion quality gates pass.
 
 ## 5. Core Architecture
 
@@ -424,6 +466,15 @@ Every ingestion slice must produce two operator-friendly outputs:
 Current implemented export:
 
 - `scripts/export_source_stats_xlsx.py` → `docs/exports/source-stats.xlsx`
+- `scripts/generate_progress_dashboard.py` → `docs/exports/progress-dashboard.json` + `docs/dashboard/index.html`
+
+## 8.8 Skill discovery and reuse
+
+Agents should discover reusable project skills before coding:
+
+1. run `make list-skills` (or `python -m bgrealestate list-skills`)
+2. choose relevant skills from `agent-skills/**`
+3. if missing, add a new skill and update `docs/agent-skills-index.md`
 
 ## 9. Stage-By-Stage Execution
 

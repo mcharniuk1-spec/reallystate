@@ -1,0 +1,26 @@
+{
+  "address_text": "ул. Мир 15",
+  "area_sqm": 92.0,
+  "city": "Варна",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "H2U-88002",
+  "image_urls": [
+    "https://home2u.bg/images/H2U-88002-1.jpg"
+  ],
+  "latitude": 43.225,
+  "listing_intent": "sale",
+  "listing_url": "https://home2u.bg/property/H2U-88002",
+  "longitude": 27.93,
+  "owner_group": "Home2U",
+  "parser_version": "v1",
+  "phones": [
+    "+359 88 711 2201"
+  ],
+  "price": 118000.0,
+  "property_category": "project",
+  "reference_id": "Home2U:H2U-88002",
+  "region": "Варна",
+  "rooms": null,
+  "source_name": "Home2U"
+}

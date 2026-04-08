@@ -65,5 +65,118 @@
 - **Fix**: Coerce OpenAI model name to `str`; explicit `is not None` guard before `haversine_km`; `ClassVar[SourceRegistry]` + `assert entry is not None` in social tests; narrow types in `test_pipeline` / `test_source_registry`.
 - **Verify**: `mypy src tests` → Success; `ruff check .` + `unittest discover` unchanged green.
 
+### 2026-04-08 (follow-up) — CI parity for Mypy
+
+- **Do**: Added `python -m mypy src tests` to `.github/workflows/ci.yml` after Ruff (matches `make typecheck`).
+- **Why**: Local `make typecheck` was green while CI only ran Ruff + tests; type regressions could merge unnoticed.
+
+### 2026-04-08 (follow-up) — Cross-agent safety audit (DBG-03)
+
+- **Scope checked**:
+  - legal gate enforcement across connector fetch paths
+  - live-network usage in tests
+  - fixture secrets/PII redaction baseline
+  - media binary storage policy (Postgres vs object storage)
+- **Evidence / commands**:
+  - `make test`
+  - `rg "assert_live_http_allowed|LegalGateError|legal_mode|source_legal_rule" src`
+  - `rg "def fetch_listing_detail\\(|assert_live_http_allowed\\(" src/bgrealestate/connectors`
+  - `rg "httpx|requests|urllib|socket|aiohttp|playwright" tests`
+  - `rg "(AKIA[0-9A-Z]{16}|BEGIN PRIVATE KEY|api[_-]?key|token|password|secret|Bearer\\s+[A-Za-z0-9\\-\\._~\\+\\/]+=*)" tests/fixtures -i`
+  - `rg "bytea|LargeBinary|BLOB|blob|storage_key|media_asset|raw_file" sql/schema.sql`
+- **Findings**:
+  1. **PASS**: marketplace connectors enforce legal gate on live fetch (`homes_bg`, `olx_bg`, `scaffold` all call `assert_live_http_allowed` before HTTP).
+  2. **PASS**: tests show no direct live network client usage (`httpx/requests/aiohttp/playwright`) in `tests/`.
+  3. **PASS**: social fixture redaction tests exist and pass (`test_social_ingestion_contract` redaction checks).
+  4. **PASS**: schema stores media via storage keys/metadata (`media_asset`, `raw_file`, `storage_key` fields), not binary blobs.
+  5. **BLOCKER FILED**: `make test` currently fails on `tests/test_control_plane.py::test_source_stat_row_has_registry_fields` because `SourceStatRow` now requires additional stats fields (`with_photos`, `photo_coverage_pct`, intent/category counters). Task board updated: `BD-03` marked `BLOCKED` pending test/schema alignment.
+- **Outcome**: DBG-03 completed with one documented blocker routed to backend_developer.
+
+### 2026-04-08 (follow-up) — DBG-02 + DBG-03 + DBG-04 completion pass
+
+- **Action**:
+  - `DBG-02`: scanned `TASKS.md` for `DONE_AWAITING_VERIFY`; verified `UX-01` against current API payload shape and marked it `VERIFIED`.
+  - `DBG-03`: reran safety audit gates (legal fetch gates, no live-network unit tests, fixture secret scan, media-storage policy).
+  - `DBG-04`: updated CI workflow to run `make lint`, `make typecheck`, `make test`, `make validate`, and a dedicated PostGIS-backed `make golden-path` job.
+- **Changed files**:
+  - `.github/workflows/ci.yml`
+  - `docs/agents/TASKS.md`
+  - `docs/agents/debugger/JOURNEY.md`
+  - `scripts/generate_architecture_guide.py`
+  - `scripts/generate_product_summary_report.py`
+- **Gate commands run**:
+  - `make lint`
+  - `make typecheck`
+  - `make test`
+  - `make validate`
+  - `make golden-path`
+  - `make dashboard-doc`
+  - `rg "httpx|requests|urllib|socket|aiohttp|urlopen|Client\\(" tests`
+  - `rg "AKIA|AIza|secret|password|BEGIN (RSA|OPENSSH|PRIVATE)|Bearer\\s+[A-Za-z0-9\\-_\\.]+" tests/fixtures`
+  - `rg "bytea|blob|binary|large object|lo_" sql/schema.sql`
+  - `rg "assert_live_http_allowed\\(" src/bgrealestate/connectors`
+- **Results**:
+  - `make lint`: PASS
+  - `make typecheck`: PASS (`59` files checked)
+  - `make test`: PASS (`64` tests, `9` skipped)
+  - `make validate`: PASS (`project validation ok`)
+  - `make golden-path`: PASS (skip mode without DB is expected; CI job now covers DB-backed path)
+  - audit scans: PASS (no new blockers)
+- **Status**:
+  - `DBG-02`: VERIFIED
+  - `DBG-03`: VERIFIED
+  - `DBG-04`: VERIFIED
+  - `UX-01`: VERIFIED
+- **Review comments**:
+  - CI now enforces the same Make targets used locally; keep Makefile target semantics stable.
+  - Golden-path DB execution is now delegated to CI service containers; local skip behavior remains useful for dev laptops.
+  - Report-generation scripts are part of the lint surface and should stay clean because `make validate` regenerates docs every run.
+
+### 2026-04-08 — VERIFY: BD-03 / T3-01 / SM-01 (agent: backend_developer / scraper_t3 / scraper_sm)
+
+- **Gate commands run**:
+  - `make lint`
+  - `make typecheck`
+  - `make test`
+  - `make validate`
+  - `make golden-path`
+  - `make dashboard-doc`
+  - `rg "assert_live_http_allowed\\(" src/bgrealestate/connectors`
+  - `rg "httpx|requests|urllib|socket|aiohttp|urlopen|Client\\(" tests`
+  - `rg "AKIA|AIza|secret|password|BEGIN (RSA|OPENSSH|PRIVATE)|Bearer\\s+[A-Za-z0-9\\-_\\.]+" tests/fixtures`
+  - `rg "bytea|blob|binary|large object|lo_" sql/schema.sql`
+- **Result**: PASS
+- **Verification details**:
+  - `BD-03`: `/admin/source-stats` includes coverage/intent/category fields and the admin page renders coverage bars; XLSX export includes the new stats columns.
+  - `T3-01`: `docs/agents/scraper_t3/tier3-ingestion-policy.md` defines source-by-source legal/access integration patterns and fixture templates; policy contract complete.
+  - `SM-01`: `docs/agents/scraper_sm/social-ingestion-policy.md` + `social_ingestion_contract.md` include consent checklist and redaction rules; social fixture templates exist under `tests/fixtures/social/`.
+  - Safety checks found no live-network unit tests, no secret-pattern matches in fixtures, and no media-binary schema storage.
+- **Task status updates**:
+  - `BD-03` → `VERIFIED`
+  - `T3-01` → `VERIFIED`
+  - `SM-01` → `VERIFIED`
+- **Review comments**:
+  - Keep policy docs and fixture templates in lockstep with `data/source_registry.json` when legal modes change.
+  - For future verifier runs, keep one explicit command mapping per acceptance gate to reduce ambiguity.
+
+### 2026-04-08 (follow-up) — Gate regression fix (auth + tier2 typecheck)
+
+- **Evidence**:
+  - `make lint` failed with `src/bgrealestate/api/auth.py: F401 fastapi.Depends imported but unused`.
+  - After that, `make typecheck` failed with 7 mypy errors in `tests/test_tier2_stub_fixture_parsing.py` (`registry` class attribute typing and `Connector` protocol method typing for `parse_and_normalize_from_html`).
+- **Fix**:
+  - Removed unused `Depends` import in `src/bgrealestate/api/auth.py`.
+  - Added typed class attribute `registry: ClassVar[SourceRegistry]` and safe narrowing/casting in `tests/test_tier2_stub_fixture_parsing.py`.
+- **Verification**:
+  - `make lint` → PASS
+  - `make typecheck` → PASS (`Success: no issues found in 69 source files`)
+  - `make test` → PASS (`82` tests, `11` skipped)
+  - `make validate` → PASS
+  - `make golden-path` → PASS (expected SKIP without `DATABASE_URL`)
+  - `make dashboard-doc` → PASS
+- **Review comments**:
+  - New slices can increase static-analysis surface quickly; rerunning full make gates is required before marking verifier tasks complete.
+  - Connector factory returns a broad protocol; tests that call source-specific parse methods should cast/narrow explicitly for mypy.
+
 ## Review comments (after each task)
 

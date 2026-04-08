@@ -1,0 +1,20 @@
+{
+  "source_name": "Telegram public channels",
+  "channel_id": "channel_handle_here",
+  "message_id": 1001,
+  "posted_at": "2026-04-08T10:00:00+03:00",
+  "raw_text": "Offering apartment in Varna, district [REDACTED], 450 EUR. Phone: [REDACTED].",
+  "media_urls": [],
+  "extracted": {
+    "intent": "long_term_rent",
+    "property_type": "apartment",
+    "city": "Варна",
+    "district": "Чайка",
+    "price": 450,
+    "currency": "EUR",
+    "phones": [],
+    "is_noise": false
+  },
+  "redaction_applied": true,
+  "consent_status": "public_channel_broadcast"
+}

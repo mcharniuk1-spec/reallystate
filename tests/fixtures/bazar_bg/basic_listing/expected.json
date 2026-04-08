@@ -1,0 +1,26 @@
+{
+  "address_text": "бул. Васил Левски 101",
+  "area_sqm": 78.0,
+  "city": "Варна",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "BZ-21001",
+  "image_urls": [
+    "https://img.bazar.bg/listings/BZ-21001-1.jpg"
+  ],
+  "latitude": 43.226,
+  "listing_intent": "sale",
+  "listing_url": "https://bazar.bg/obiava/BZ-21001",
+  "longitude": 27.921,
+  "owner_group": "Rezon Media",
+  "parser_version": "v1",
+  "phones": [
+    "+359 88 500 1001"
+  ],
+  "price": 99000.0,
+  "property_category": "apartment",
+  "reference_id": "Bazar.bg:BZ-21001",
+  "region": "Варна",
+  "rooms": null,
+  "source_name": "Bazar.bg"
+}

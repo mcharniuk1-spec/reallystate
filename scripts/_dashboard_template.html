@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reallystate — Project Dashboard</title>
+  <style>
+    :root {
+      --bg: #f4f5f7; --card: #fff; --border: #dfe1e6; --text: #172b4d;
+      --muted: #5e6c84; --accent: #0052cc; --green: #00875a; --amber: #ff991f;
+      --red: #de350b; --purple: #6554c0; --teal: #00b8d9; --blue-light: #deebff;
+      --green-light: #e3fcef; --amber-light: #fffae6; --red-light: #ffebe6;
+      --purple-light: #eae6ff; --radius: 8px; --shadow: 0 1px 3px rgba(0,0,0,.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.5; }
+
+    .topbar { background: #0052cc; color: #fff; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .topbar h1 { margin: 0; font-size: 18px; font-weight: 700; letter-spacing: -.3px; }
+    .topbar .meta { font-size: 12px; opacity: .85; }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+
+    /* KPI strip */
+    .kpi-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .kpi { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow); }
+    .kpi .label { font-size: 11px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); margin-bottom: 4px; }
+    .kpi .value { font-size: 24px; font-weight: 700; }
+    .kpi .sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+    /* Progress bar */
+    .progress-bar-wrap { background: #dfe1e6; border-radius: 4px; height: 8px; overflow: hidden; margin-top: 6px; }
+    .progress-bar-fill { height: 100%; border-radius: 4px; transition: width .3s ease; }
+    .fill-green { background: var(--green); }
+    .fill-amber { background: var(--amber); }
+    .fill-blue { background: var(--accent); }
+
+    /* Tabs */
+    .tabs { display: flex; gap: 0; border-bottom: 2px solid var(--border); margin-bottom: 20px; }
+    .tab { padding: 10px 20px; cursor: pointer; font-weight: 600; font-size: 13px; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all .15s; }
+    .tab:hover { color: var(--text); }
+    .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* Section headers */
+    h2 { font-size: 16px; font-weight: 700; margin: 0 0 14px; }
+    h3 { font-size: 14px; font-weight: 600; margin: 16px 0 8px; color: var(--text); }
+
+    /* Cards */
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); margin-bottom: 16px; }
+
+    /* Kanban */
+    .kanban-board { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; }
+    @media (max-width: 1000px) { .kanban-board { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .kanban-board { grid-template-columns: 1fr; } }
+    .kanban-col { background: #f0f1f4; border-radius: var(--radius); padding: 10px; min-height: 120px; }
+    .kanban-col-header { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; padding: 4px 6px 8px; display: flex; align-items: center; gap: 6px; }
+    .kanban-col-header .count { background: var(--border); border-radius: 10px; padding: 1px 7px; font-size: 11px; font-weight: 600; }
+    .kanban-card { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; box-shadow: 0 1px 2px rgba(0,0,0,.06); font-size: 13px; }
+    .kanban-card .task-id { font-weight: 700; color: var(--accent); font-size: 12px; }
+    .kanban-card .task-title { margin-top: 2px; }
+    .kanban-card .task-detail { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+    /* Status badges */
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .3px; }
+    .badge-green { background: var(--green-light); color: var(--green); }
+    .badge-amber { background: var(--amber-light); color: #b8860b; }
+    .badge-red { background: var(--red-light); color: var(--red); }
+    .badge-purple { background: var(--purple-light); color: var(--purple); }
+    .badge-blue { background: var(--blue-light); color: var(--accent); }
+    .badge-gray { background: #f0f0f0; color: #666; }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { border: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+    th { background: #f7f8fa; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .3px; color: var(--muted); position: sticky; top: 0; }
+    tr:nth-child(even) { background: #fafbfc; }
+    tr:hover { background: #f0f4ff; }
+
+    /* Agent history cards */
+    .agent-section { margin-bottom: 28px; }
+    .agent-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+    .agent-avatar { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: #fff; }
+    .agent-stats { display: flex; gap: 16px; font-size: 12px; color: var(--muted); }
+
+    .timeline { border-left: 2px solid var(--border); margin-left: 18px; padding-left: 18px; }
+    .timeline-item { position: relative; padding-bottom: 12px; }
+    .timeline-item::before { content: ''; position: absolute; left: -23px; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: var(--green); border: 2px solid var(--card); }
+    .timeline-item .tl-title { font-weight: 600; font-size: 13px; }
+    .timeline-item .tl-summary { font-size: 12px; color: var(--muted); }
+
+    /* Source matrix */
+    .source-table-wrap { max-height: 500px; overflow: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+    .source-table-wrap table { margin: 0; }
+    .source-table-wrap th { position: sticky; top: 0; z-index: 1; }
+
+    /* Roadmap pipeline */
+    .pipeline { display: flex; gap: 0; margin-bottom: 24px; flex-wrap: wrap; }
+    .pipeline-stage { flex: 1; min-width: 100px; padding: 10px 8px; text-align: center; font-size: 11px; font-weight: 600; border: 1px solid var(--border); position: relative; }
+    .pipeline-stage:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+    .pipeline-stage:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+    .pipeline-stage .stage-num { font-size: 16px; font-weight: 700; display: block; }
+    .pipeline-stage .stage-name { font-size: 10px; font-weight: 400; color: var(--muted); display: block; margin-top: 2px; }
+    .stage-complete { background: var(--green-light); border-color: var(--green); }
+    .stage-progress { background: var(--blue-light); border-color: var(--accent); }
+    .stage-partial { background: var(--amber-light); border-color: var(--amber); }
+    .stage-pending { background: #f7f8fa; }
+
+    /* Skills grid */
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-chip { background: var(--purple-light); color: var(--purple); padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 500; }
+
+    /* Dashboard backlog */
+    .backlog-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid #f0f1f4; }
+    .backlog-id { font-weight: 700; color: var(--accent); min-width: 24px; }
+    .backlog-name { flex: 1; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <h1>Reallystate — Project Dashboard</h1>
+    <div class="meta" id="gen-time"></div>
+  </div>
+
+  <div class="container">
+    <!-- KPI Strip -->
+    <div class="kpi-strip" id="kpi-strip"></div>
+
+    <!-- Roadmap Pipeline -->
+    <div class="card">
+      <h2>Project Progress Pipeline</h2>
+      <div class="pipeline" id="pipeline"></div>
+      <div id="roadmap-bar"></div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs" id="tabs">
+      <div class="tab active" data-tab="kanban">Kanban Board</div>
+      <div class="tab" data-tab="agents">Agent History</div>
+      <div class="tab" data-tab="sources">Source Matrix</div>
+      <div class="tab" data-tab="backlog">Dashboard Backlog</div>
+      <div class="tab" data-tab="skills">Skills</div>
+    </div>
+
+    <!-- Tab: Kanban -->
+    <div class="tab-panel active" id="panel-kanban"></div>
+
+    <!-- Tab: Agent History -->
+    <div class="tab-panel" id="panel-agents"></div>
+
+    <!-- Tab: Source Matrix -->
+    <div class="tab-panel" id="panel-sources"></div>
+
+    <!-- Tab: Dashboard Backlog -->
+    <div class="tab-panel" id="panel-backlog"></div>
+
+    <!-- Tab: Skills -->
+    <div class="tab-panel" id="panel-skills"></div>
+  </div>
+
+  <script>
+    const AGENT_COLORS = {
+      debugger: '#de350b',
+      backend_developer: '#0052cc',
+      ux_ui_designer: '#6554c0',
+      scraper_1: '#00875a',
+      scraper_t3: '#ff991f',
+      scraper_sm: '#00b8d9',
+    };
+    const AGENT_INITIALS = {
+      debugger: 'DB',
+      backend_developer: 'BE',
+      ux_ui_designer: 'UX',
+      scraper_1: 'S1',
+      scraper_t3: 'T3',
+      scraper_sm: 'SM',
+    };
+
+    function statusBadge(status) {
+      const map = {
+        'VERIFIED': 'badge-green', 'COMPLETE': 'badge-green', 'complete': 'badge-green',
+        'IN_PROGRESS': 'badge-blue', 'IN PROGRESS': 'badge-blue',
+        'TODO': 'badge-gray', 'NEXT': 'badge-amber',
+        'BLOCKED': 'badge-red', 'NOT STARTED': 'badge-gray',
+        'PARTIAL': 'badge-amber', 'SHELL ONLY': 'badge-purple', 'GATED': 'badge-red',
+      };
+      const cls = map[status] || 'badge-gray';
+      return `<span class="badge ${cls}">${esc(status)}</span>`;
+    }
+
+    function esc(s) {
+      const d = document.createElement('div');
+      d.textContent = s || '';
+      return d.innerHTML;
+    }
+
+    function stageClass(status) {
+      if (status === 'COMPLETE') return 'stage-complete';
+      if (status === 'IN PROGRESS') return 'stage-progress';
+      if (status === 'PARTIAL' || status === 'NEXT') return 'stage-partial';
+      return 'stage-pending';
+    }
+
+    async function main() {
+      let data;
+      try {
+        const res = await fetch('../exports/progress-dashboard.json');
+        data = await res.json();
+      } catch (e) {
+        document.querySelector('.container').innerHTML = '<div class="card"><p>Could not load dashboard data. Run <code>make dashboard-doc</code> to generate.</p></div>';
+        return;
+      }
+
+      document.getElementById('gen-time').textContent = 'Generated: ' + new Date(data.generated_at).toLocaleString();
+
+      // KPI strip
+      const agents = data.agents || [];
+      const totalVerified = agents.reduce((s, a) => s + (a.counts?.verified || 0), 0);
+      const totalTodo = agents.reduce((s, a) => s + (a.counts?.todo || 0), 0);
+      const totalInProgress = agents.reduce((s, a) => s + (a.counts?.in_progress || 0), 0);
+      const totalJournal = agents.reduce((s, a) => s + (a.counts?.journal_entries || 0), 0);
+      const rm = data.roadmap || {};
+      const src = data.sources || {};
+
+      const kpis = [
+        { label: 'Roadmap', value: `${rm.done || 0} / ${rm.total || 0}`, sub: `${rm.remaining || 0} remaining`, pct: rm.total ? Math.round((rm.done / rm.total) * 100) : 0, fill: 'fill-blue' },
+        { label: 'Verified Tasks', value: totalVerified, sub: `across ${agents.length} agents`, pct: 0, fill: '' },
+        { label: 'TODO Tasks', value: totalTodo, sub: totalInProgress + ' in progress', pct: 0, fill: '' },
+        { label: 'Journal Entries', value: totalJournal, sub: 'completed work items', pct: 0, fill: '' },
+        { label: 'Total Sources', value: src.total || 0, sub: (src.with_fixtures || 0) + ' with fixtures', pct: src.total ? Math.round(((src.with_fixtures || 0) / src.total) * 100) : 0, fill: 'fill-green' },
+        { label: 'Agent Skills', value: (data.skills || []).length, sub: 'committed in repo', pct: 0, fill: '' },
+      ];
+
+      const kpiEl = document.getElementById('kpi-strip');
+      for (const k of kpis) {
+        let bar = '';
+        if (k.pct > 0) {
+          bar = `<div class="progress-bar-wrap"><div class="progress-bar-fill ${k.fill}" style="width:${k.pct}%"></div></div>`;
+        }
+        kpiEl.innerHTML += `<div class="kpi"><div class="label">${k.label}</div><div class="value">${k.value}</div><div class="sub">${k.sub}</div>${bar}</div>`;
+      }
+
+      // Pipeline
+      const pipeline = document.getElementById('pipeline');
+      for (const s of (data.progress_path || [])) {
+        pipeline.innerHTML += `<div class="pipeline-stage ${stageClass(s.status)}"><span class="stage-num">${s.stage}</span><span class="stage-name">${esc(s.name)}</span>${statusBadge(s.status)}</div>`;
+      }
+      const pct = rm.total ? Math.round((rm.done / rm.total) * 100) : 0;
+      document.getElementById('roadmap-bar').innerHTML = `<div style="margin-top:10px;font-size:12px;color:var(--muted)">Overall: ${rm.done}/${rm.total} steps (${pct}%)</div><div class="progress-bar-wrap"><div class="progress-bar-fill fill-blue" style="width:${pct}%"></div></div>`;
+
+      // Tabs
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+          tab.classList.add('active');
+          document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+        });
+      });
+
+      // KANBAN — all agents combined
+      renderKanban(agents);
+
+      // Agent History
+      renderAgentHistory(agents);
+
+      // Source Matrix
+      renderSourceMatrix(src);
+
+      // Dashboard Backlog
+      renderBacklog(data.dashboard_backlog || []);
+
+      // Skills
+      renderSkills(data.skills || []);
+    }
+
+    function renderKanban(agents) {
+      const panel = document.getElementById('panel-kanban');
+      const cols = { VERIFIED: [], IN_PROGRESS: [], TODO: [], BLOCKED: [] };
+
+      for (const agent of agents) {
+        const t = agent.tasks || {};
+        for (const task of (t.verified || [])) { cols.VERIFIED.push({ ...task, agent: agent.key }); }
+        for (const task of (t.in_progress || [])) { cols.IN_PROGRESS.push({ ...task, agent: agent.key }); }
+        for (const task of (t.todo || [])) { cols.TODO.push({ ...task, agent: agent.key }); }
+        for (const task of (t.blocked || [])) { cols.BLOCKED.push({ ...task, agent: agent.key }); }
+      }
+
+      const colDefs = [
+        { key: 'TODO', label: 'To Do', color: '#666' },
+        { key: 'IN_PROGRESS', label: 'In Progress', color: 'var(--accent)' },
+        { key: 'VERIFIED', label: 'Verified / Done', color: 'var(--green)' },
+        { key: 'BLOCKED', label: 'Blocked', color: 'var(--red)' },
+      ];
+
+      let html = '<div class="kanban-board">';
+      for (const col of colDefs) {
+        const items = cols[col.key] || [];
+        html += `<div class="kanban-col"><div class="kanban-col-header" style="color:${col.color}">${col.label} <span class="count">${items.length}</span></div>`;
+        for (const item of items) {
+          const agentColor = AGENT_COLORS[item.agent] || '#999';
+          html += `<div class="kanban-card"><div class="task-id">${esc(item.id)}</div><div class="task-title">${esc(item.title)}</div><div class="task-detail"><span class="badge" style="background:${agentColor}22;color:${agentColor}">${AGENT_INITIALS[item.agent] || item.agent}</span></div></div>`;
+        }
+        if (items.length === 0) {
+          html += '<div style="text-align:center;color:var(--muted);font-size:12px;padding:20px 0;">No items</div>';
+        }
+        html += '</div>';
+      }
+      html += '</div>';
+
+      // Per-agent kanban boards
+      html += '<h2>Per-Agent Next Steps</h2>';
+      for (const agent of agents) {
+        const t = agent.tasks || {};
+        const nextTodo = (t.todo || [])[0];
+        const inProg = t.in_progress || [];
+        const color = AGENT_COLORS[agent.key] || '#999';
+
+        html += `<div class="card"><div class="agent-header"><div class="agent-avatar" style="background:${color}">${AGENT_INITIALS[agent.key]}</div><div><strong>${esc(agent.display_name)}</strong><div class="agent-stats"><span>${agent.counts.verified} verified</span><span>${agent.counts.todo} todo</span><span>${agent.counts.journal_entries} journal entries</span></div></div></div>`;
+
+        if (inProg.length) {
+          html += '<h3 style="margin-top:8px">Currently Working On</h3>';
+          for (const t of inProg) {
+            html += `<div style="padding:6px 0;font-size:13px"><strong>${esc(t.id)}</strong>: ${esc(t.title)}</div>`;
+          }
+        }
+        if (nextTodo) {
+          html += `<h3 style="margin-top:8px">Next Up</h3><div style="padding:6px 0;font-size:13px"><strong>${esc(nextTodo.id)}</strong>: ${esc(nextTodo.title)}</div>`;
+        }
+        html += '</div>';
+      }
+
+      panel.innerHTML = html;
+    }
+
+    function renderAgentHistory(agents) {
+      const panel = document.getElementById('panel-agents');
+      let html = '';
+      for (const agent of agents) {
+        const color = AGENT_COLORS[agent.key] || '#999';
+        html += `<div class="agent-section"><div class="agent-header"><div class="agent-avatar" style="background:${color}">${AGENT_INITIALS[agent.key]}</div><div><strong>${esc(agent.display_name)}</strong><div class="agent-stats"><span>${agent.counts.verified} verified</span><span>${agent.counts.todo} todo</span><span>${agent.counts.journal_entries} completed work items</span></div></div></div>`;
+
+        if (agent.completed_work && agent.completed_work.length > 0) {
+          html += '<div class="timeline">';
+          for (const task of agent.completed_work) {
+            html += `<div class="timeline-item"><div class="tl-title">${esc(task.title)}</div>`;
+            if (task.summary) {
+              html += `<div class="tl-summary">${esc(task.summary)}</div>`;
+            }
+            html += '</div>';
+          }
+          html += '</div>';
+        } else {
+          html += '<div style="color:var(--muted);font-size:13px;margin-left:48px;">No completed work entries yet.</div>';
+        }
+
+        // Next steps from tasks
+        const t = agent.tasks || {};
+        const nextItems = [...(t.in_progress || []), ...(t.todo || [])];
+        if (nextItems.length > 0) {
+          html += '<h3 style="margin-left:48px;">Upcoming Tasks</h3><div style="margin-left:48px;">';
+          for (const task of nextItems) {
+            html += `<div style="padding:4px 0;font-size:13px">${statusBadge(task.status)} <strong>${esc(task.id)}</strong>: ${esc(task.title)}</div>`;
+          }
+          html += '</div>';
+        }
+
+        html += '</div>';
+      }
+      panel.innerHTML = html;
+    }
+
+    function renderSourceMatrix(src) {
+      const panel = document.getElementById('panel-sources');
+
+      // Summary cards
+      let html = '<div class="kpi-strip" style="margin-bottom:16px">';
+      const tiers = src.tiers || {};
+      for (const [t, c] of Object.entries(tiers).sort()) {
+        html += `<div class="kpi"><div class="label">Tier ${t}</div><div class="value">${c}</div></div>`;
+      }
+      html += `<div class="kpi"><div class="label">With Fixtures</div><div class="value">${src.with_fixtures || 0}</div></div>`;
+      html += '</div>';
+
+      // Source table
+      html += '<div class="source-table-wrap"><table><thead><tr><th>#</th><th>Source</th><th>Tier</th><th>Access</th><th>Legal Mode</th><th>Risk</th><th>Publish</th><th>Fixtures</th></tr></thead><tbody>';
+      const sources = src.sources || [];
+      for (let i = 0; i < sources.length; i++) {
+        const s = sources[i];
+        const tierBadge = s.tier <= 1 ? 'badge-green' : s.tier <= 2 ? 'badge-blue' : s.tier <= 3 ? 'badge-amber' : 'badge-purple';
+        const fixBadge = s.fixture_cases > 0 ? 'badge-green' : 'badge-gray';
+        html += `<tr><td>${i + 1}</td><td><strong>${esc(s.name)}</strong></td><td><span class="badge ${tierBadge}">T${s.tier}</span></td><td>${esc(s.access_mode)}</td><td style="font-size:11px">${esc(s.legal_mode)}</td><td>${esc(s.risk_mode)}</td><td>${s.publish_capable ? '<span class="badge badge-green">Yes</span>' : '<span class="badge badge-gray">No</span>'}</td><td><span class="badge ${fixBadge}">${s.fixture_cases}</span></td></tr>`;
+      }
+      html += '</tbody></table></div>';
+      panel.innerHTML = html;
+    }
+
+    function renderBacklog(items) {
+      const panel = document.getElementById('panel-backlog');
+      let html = '<div class="card"><h2>Dashboard Delivery Backlog</h2><p style="font-size:13px;color:var(--muted)">These items define the operator dashboard build sequence.</p>';
+      for (const item of items) {
+        const badge = item.status.includes('Not started') ? 'badge-gray' : item.status.includes('ready') ? 'badge-amber' : 'badge-blue';
+        html += `<div class="backlog-item"><span class="backlog-id">${esc(item.id)}</span><span class="backlog-name"><strong>${esc(item.name)}</strong></span><span class="badge ${badge}">${esc(item.status)}</span></div>`;
+      }
+      html += '</div>';
+
+      html += '<div class="card"><h2>Dashboard Layout Spec</h2>';
+      html += '<table><thead><tr><th>Zone</th><th>Content</th><th>Data Source</th></tr></thead><tbody>';
+      const layout = [
+        ['Top health strip', 'Postgres, Redis, API, worker, scheduler, object storage', '/api/v1/ready'],
+        ['KPI row', 'Sources enabled, live-safe, canonical listings, crawl failures, parser failures, dedupe count, CRM threads', '/admin/source-stats + future endpoints'],
+        ['Left navigation', 'Project setup, Sources, Crawl jobs, Parser failures, Dedupe review, Geocode review, CRM, Publish queue, Settings', 'UI navigation'],
+        ['Main work area', 'Switchable tables, map panels, drawers, project forms', 'Per-panel endpoints'],
+        ['Right context drawer', 'Raw metadata, legal notes, source config, audit trail, retry actions', 'Detail endpoints'],
+      ];
+      for (const [zone, content, source] of layout) {
+        html += `<tr><td><strong>${esc(zone)}</strong></td><td>${esc(content)}</td><td><code>${esc(source)}</code></td></tr>`;
+      }
+      html += '</tbody></table></div>';
+
+      html += '<div class="card"><h2>Dashboard Acceptance Criteria</h2><ol style="font-size:13px;margin:0;padding-left:20px;">';
+      const criteria = [
+        'New project cannot activate if any source violates legal mode or requires missing partner route.',
+        'New project cannot activate if migrations missing or registry not synced.',
+        'KPI cards must match same stats powering /admin/source-stats.',
+        'Every top-level number must open a drill-down table or drawer.',
+        'Milestone tracker must show who owns next slice and which gate must pass.',
+      ];
+      for (const c of criteria) {
+        html += `<li style="padding:4px 0">${esc(c)}</li>`;
+      }
+      html += '</ol></div>';
+
+      panel.innerHTML = html;
+    }
+
+    function renderSkills(skills) {
+      const panel = document.getElementById('panel-skills');
+      let html = '<div class="card"><h2>Agent Skills (' + skills.length + ')</h2><p style="font-size:13px;color:var(--muted);margin-bottom:12px">Version-controlled skills stored under <code>agent-skills/&lt;name&gt;/SKILL.md</code></p><div class="skills-grid">';
+      for (const s of skills) {
+        html += `<span class="skill-chip">${esc(s)}</span>`;
+      }
+      html += '</div></div>';
+      panel.innerHTML = html;
+    }
+
+    main();
+  </script>
+</body>
+</html>

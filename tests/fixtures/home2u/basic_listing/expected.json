@@ -1,0 +1,26 @@
+{
+  "address_text": "кв. Бриз, ул. Д-р Любен Лазаров 4",
+  "area_sqm": 160.0,
+  "city": "Варна",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "H2U-88001",
+  "image_urls": [
+    "https://home2u.bg/images/H2U-88001-1.jpg"
+  ],
+  "latitude": 43.231,
+  "listing_intent": "sale",
+  "listing_url": "https://home2u.bg/property/H2U-88001",
+  "longitude": 27.945,
+  "owner_group": "Home2U",
+  "parser_version": "v1",
+  "phones": [
+    "+359 88 711 2200"
+  ],
+  "price": 260000.0,
+  "property_category": "house",
+  "reference_id": "Home2U:H2U-88001",
+  "region": "Варна",
+  "rooms": null,
+  "source_name": "Home2U"
+}

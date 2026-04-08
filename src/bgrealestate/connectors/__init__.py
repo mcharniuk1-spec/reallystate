@@ -8,6 +8,14 @@ from .factory import build_connector, is_marketplace_source, marketplace_sources
 from .legal import DerivedLegalRule, LegalGateError, assert_live_http_allowed, derive_default_legal_rule
 from .scaffold import HtmlPortalConnector
 from .social_parser import extract_social_lead
+from .tier3 import (
+    BcpeaAuctionConnector,
+    LicensedStrDataConnector,
+    OfficialRegisterWrapper,
+    OperatorConsentRequired,
+    PartnerContractRequired,
+    PartnerFeedStubConnector,
+)
 
 __all__ = [
     "HtmlPortalConnector",
@@ -19,4 +27,10 @@ __all__ = [
     "extract_social_lead",
     "is_marketplace_source",
     "marketplace_sources",
+    "PartnerFeedStubConnector",
+    "PartnerContractRequired",
+    "LicensedStrDataConnector",
+    "OfficialRegisterWrapper",
+    "OperatorConsentRequired",
+    "BcpeaAuctionConnector",
 ]

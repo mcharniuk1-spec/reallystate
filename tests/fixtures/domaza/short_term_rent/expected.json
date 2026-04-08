@@ -1,0 +1,26 @@
+{
+  "address_text": "Sea Avenue 8",
+  "area_sqm": 39.0,
+  "city": "Nessebar",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "DM-31002",
+  "image_urls": [
+    "https://domaza.bg/images/DM-31002-1.jpg"
+  ],
+  "latitude": 42.658,
+  "listing_intent": "short_term_rent",
+  "listing_url": "https://www.domaza.bg/property/DM-31002",
+  "longitude": 27.736,
+  "owner_group": "Domaza",
+  "parser_version": "v1",
+  "phones": [
+    "+359 56 700 124"
+  ],
+  "price": 75.0,
+  "property_category": "apartment",
+  "reference_id": "Domaza:DM-31002",
+  "region": "Burgas",
+  "rooms": null,
+  "source_name": "Domaza"
+}

@@ -1,0 +1,7 @@
+{
+  "source_name": "Property Register",
+  "authorization_artifact_type": "operator_approval",
+  "authorization_artifact_id": "APPROVAL-TEMPLATE-001",
+  "allow_live_calls": false,
+  "expected_block_exception": "OperatorConsentRequired"
+}

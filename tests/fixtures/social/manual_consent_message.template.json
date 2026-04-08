@@ -1,0 +1,21 @@
+{
+  "source_name": "Facebook public groups/pages",
+  "channel_id": "group_or_page_reference",
+  "message_id": "manual-0001",
+  "posted_at": "2026-04-08T10:00:00+03:00",
+  "raw_text": "Manual operator note from consented source. Contact details redacted: [REDACTED].",
+  "media_urls": [],
+  "extracted": {
+    "intent": null,
+    "property_type": null,
+    "city": null,
+    "district": null,
+    "price": null,
+    "currency": null,
+    "phones": [],
+    "is_noise": true
+  },
+  "redaction_applied": true,
+  "consent_status": "manual_operator_entry",
+  "consent_proof_ref": "consent-doc-id-or-ticket"
+}

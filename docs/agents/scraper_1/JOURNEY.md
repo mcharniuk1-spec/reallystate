@@ -211,3 +211,60 @@ Modified files:
   tests/fixtures/homes_bg/missing_price/expected.json — property_category: house
   tests/fixtures/luximmo/basic_listing/expected.json — property_category: apartment
 ```
+
+### Task 13: S1-11 live-safe ingestion runner acceptance + test hardening
+- **Started**: 2026-04-08
+- **Action**: Kept the existing `ingest-fixture` CLI command and added dedicated tests in `tests/test_ingest_fixture_cli.py`.
+  - `test_ingest_fixture_dry_run_homes` validates offline fixture parsing + JSON output.
+  - `test_ingest_fixture_non_dry_run_calls_ingest` validates non-dry-run wiring (engine + ingest call), guarded to skip on Python `<3.10` due local SQLAlchemy typing limitations.
+- **Acceptance checks run**:
+  - `make golden-path` executed and returned `SKIP` (exit 0) because `DATABASE_URL` is unset in this environment.
+  - Full suite: `make test` passed.
+- **Result**: S1-11 implementation and tests are in place; DB round-trip acceptance remains for verifier environment with Postgres + Python 3.12.
+- **Status**: DONE_AWAITING_VERIFY
+
+### Task 14: S1-12 tier-2 connector stubs (fixture-only)
+- **Started**: 2026-04-08
+- **Action**: Implemented dedicated tier-2 stub connectors and fixture parsing coverage for high-value sources.
+  - Added `src/bgrealestate/connectors/tier2_stubs.py` with:
+    - `BazarBgConnector`
+    - `DomazaConnector`
+    - `YavlenaConnector`
+    - `Home2UConnector`
+  - Updated `src/bgrealestate/connectors/factory.py` to route those source names to dedicated stub connectors.
+  - Added fixture sets:
+    - `tests/fixtures/bazar_bg/basic_listing/{raw.html,expected.json}`
+    - `tests/fixtures/domaza/basic_listing/{raw.html,expected.json}`
+    - `tests/fixtures/yavlena/basic_listing/{raw.html,expected.json}`
+    - `tests/fixtures/home2u/basic_listing/{raw.html,expected.json}`
+  - Added `tests/test_tier2_stub_fixture_parsing.py`:
+    - 4 fixture parse tests
+    - factory type checks for the 4 new stub connectors
+    - legal-gate test ensuring `Imoti.info` (licensing_required) blocks live fetch via `LegalGateError`
+- **Verification**:
+  - `PYTHONPATH=src python3 -m unittest tests.test_tier2_stub_fixture_parsing -v` → 6 passed
+  - `make test` → 80 tests, 71 passed, 9 skipped, 0 failures
+- **Status**: DONE_AWAITING_VERIFY
+
+### Task 15: S1-13 stage-1 product-type completion check (tier 1-2)
+- **Started**: 2026-04-08
+- **Action**: Implemented fixture + assertion coverage for stage-1 MVP product types (`sale`, `long_term_rent`, `short_term_rent`, `land`, `new_build`).
+  - Added stage-1 coverage module: `src/bgrealestate/connectors/stage1_coverage.py`
+    - Collects tier-1/2 fixture cases from `tests/fixtures/*/*/expected.json`
+    - Computes product-type coverage map
+    - Renders markdown matrix report
+  - Added report generator script: `scripts/generate_stage1_product_type_coverage.py`
+    - Output: `docs/exports/stage1-product-type-coverage.md`
+  - Added coverage assertion test: `tests/test_stage1_product_type_coverage.py`
+    - Fails if any required product type is missing from tier-1/2 fixture inventory.
+  - Expanded tier-2 fixtures to guarantee complete product-type coverage:
+    - `tests/fixtures/bazar_bg/land_listing/{raw.html,expected.json}` → `land`
+    - `tests/fixtures/yavlena/long_term_rent/{raw.html,expected.json}` → `long_term_rent`
+    - `tests/fixtures/domaza/short_term_rent/{raw.html,expected.json,seed.json}` → `short_term_rent`
+    - `tests/fixtures/home2u/new_build/{raw.html,expected.json,seed.json}` → `new_build` proxy via `property_category=project`
+  - Updated `tests/test_tier2_stub_fixture_parsing.py` to parse and assert all new fixture cases.
+- **Verification**:
+  - `PYTHONPATH=src python3 -m unittest tests.test_tier2_stub_fixture_parsing tests.test_stage1_product_type_coverage -v` → 11 passed
+  - `PYTHONPATH=src python3 scripts/generate_stage1_product_type_coverage.py` → wrote `docs/exports/stage1-product-type-coverage.md` (32 fixture cases)
+  - `make test` → 94 tests, 83 passed, 11 skipped, 0 failures
+- **Status**: DONE_AWAITING_VERIFY

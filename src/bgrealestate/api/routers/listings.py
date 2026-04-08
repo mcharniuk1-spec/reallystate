@@ -8,6 +8,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 
 from ...db.repositories import CanonicalListingRepository
+from ..auth import AuthPrincipal, require_scope
 from ..deps import get_db
 
 router = APIRouter(tags=["listings"])
@@ -56,6 +57,7 @@ def _serialize_listing(m: Any) -> dict[str, Any]:
 
 @router.get("/listings")
 def list_listings(
+    _principal: Annotated[AuthPrincipal, Depends(require_scope("listings:read"))],
     session: Annotated[Session, Depends(get_db)],
     limit: int = Query(50, ge=1, le=200),
     offset: int = Query(0, ge=0),
@@ -73,7 +75,11 @@ def list_listings(
 
 
 @router.get("/listings/{reference_id}")
-def get_listing(reference_id: str, session: Annotated[Session, Depends(get_db)]) -> dict[str, Any]:
+def get_listing(
+    reference_id: str,
+    _principal: Annotated[AuthPrincipal, Depends(require_scope("listings:read"))],
+    session: Annotated[Session, Depends(get_db)],
+) -> dict[str, Any]:
     repo = CanonicalListingRepository(session)
     m = repo.get(reference_id)
     if m is None:

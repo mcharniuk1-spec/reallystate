@@ -1,0 +1,26 @@
+{
+  "address_text": "Lazur district, block 45",
+  "area_sqm": 86.0,
+  "city": "Burgas",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "DM-31001",
+  "image_urls": [
+    "https://domaza.bg/images/DM-31001-1.jpg"
+  ],
+  "latitude": 42.503,
+  "listing_intent": "sale",
+  "listing_url": "https://www.domaza.bg/property/DM-31001",
+  "longitude": 27.473,
+  "owner_group": "Domaza",
+  "parser_version": "v1",
+  "phones": [
+    "+359 56 700 123"
+  ],
+  "price": 128000.0,
+  "property_category": "apartment",
+  "reference_id": "Domaza:DM-31001",
+  "region": "Burgas",
+  "rooms": null,
+  "source_name": "Domaza"
+}

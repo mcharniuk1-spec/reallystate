@@ -79,6 +79,26 @@ flowchart LR
     G --> R["/settings + User/Team Admin"]
 ```
 
+### 5.1 Parallel execution architecture
+
+Execution is parallel by default across specialist lanes, with dependency gates between slices (not between whole phases).
+
+| Lane | Primary owner | Scope | Parallel rule | Gate/handoff |
+|---|---|---|---|---|
+| Persistence + API core | `backend_developer` | migrations, repos, API contracts, workflow runtime | can run in parallel with connector fixture work | unblocks DB-backed ingest, auth, and frontend integration |
+| Tier-1/2 scraping | `scraper_1` | marketplace/classifieds/agency connectors | runs in parallel with backend and UI planning | must pass fixture tests + legal gates before live-safe runs |
+| Tier-3 partner/vendor/official | `scraper_t3` | partner feeds, licensed data, official-service wrappers | runs in parallel as contract-first lane | must enforce contract-required adapters and block unauthorized crawling |
+| Tier-4 social overlays | `scraper_sm` | consent/official API social lead overlays | runs in parallel as policy-first lane | requires consent checklist, redaction, and legal verification |
+| Operator/frontend | `ux_ui_designer` | `/admin`, `/listings`, `/map`, `/chat`, `/settings` | runs in parallel against stable API contracts | backend contract changes require synchronized UI adjustments |
+| Verification + safety | `debugger` | acceptance gates, safety audit, CI parity | runs continuously across all lanes | controls `VERIFIED` status and blocker routing |
+
+Parallel scheduling constraints:
+
+1. Keep one active slice per agent.
+2. Run independent slices concurrently (`GO all`) when dependencies are clear.
+3. Promote only slices that pass acceptance gates to `VERIFIED`.
+4. Refresh dashboard state after task/journey/doc changes (`make dashboard-doc`).
+
 ## 6. Database
 Use PostgreSQL/PostGIS as the source of truth. Store binaries in S3/MinIO, not in Postgres. Use monthly partitions for `raw_capture`, `source_listing_snapshot`, `listing_event`, `lead_message`, and `webhook_event`.
 
@@ -109,11 +129,16 @@ Make commands to create: `make install`, `make db-init`, `make migrate`, `make t
 ## 8. Frontend
 App routes must be built in this order: `/listings`, `/properties/[id]`, `/map`, `/chat`, `/settings`, `/admin`.
 
+MVP geographic scope rule:
+
+- 3D map search is **Varna city + Varna region only** in MVP.
+- Expansion to additional cities/regions is blocked until stage-1 scraping quality is verified across required product types (`sale`, `long_term_rent`, `short_term_rent`, `land`, `new_build`) by debugger.
+
 | Route | Components | Acceptance |
 |---|---|---|
 | `/listings` | `ListingsPageShell`, `ListingsFilterSidebar`, `ListingsSortBar`, `InfiniteListingFeed`, `ListingCard`, `ListingCardGallery`, `SourceBadge`, `FreshnessBadge`, `DedupeGroupBadge` | Infinite scroll, filters, sorting, photo preview, source links, create-lead action |
 | `/properties/[id]` | `PropertyHeader`, `PhotoGallery`, `PriceBox`, `PropertyFactsGrid`, `DescriptionTabs`, `SourceLinksPanel`, `ContactPanel`, `MapMiniPanel`, `PriceHistoryChart`, `LeadActionPanel` | One deduped property view across all sources with provenance |
-| `/map` | `MapShell`, `MapToolbar`, `MapSearchBox`, `MapFilterPanel`, `MapLibreCanvas`, `DeckBuildingLayer`, `ListingClusterLayer`, `PropertyPinLayer`, `BuildingSummaryDrawer`, `ListingPreviewCard` | 2D/3D toggle, viewport loading, building summaries, clusters, fallback where geometry is weak |
+| `/map` | `MapShell`, `MapToolbar`, `MapSearchBox`, `MapFilterPanel`, `MapLibreCanvas`, `DeckBuildingLayer`, `ListingClusterLayer`, `PropertyPinLayer`, `BuildingSummaryDrawer`, `ListingPreviewCard` | 2D/3D toggle, viewport loading, building summaries, clusters, fallback where geometry is weak; MVP scope limited to Varna city/region |
 | `/chat` | `ChatInboxLayout`, `ThreadList`, `ThreadFilters`, `ConversationPane`, `MessageComposer`, `LeadProfilePanel`, `LinkedPropertiesPanel`, `TaskReminderPanel`, `SavedReplyPicker`, `AssignmentMenu`, `AuditTimeline` | Threads, messages, assignment, reminders, templates, manual notes, property/contact links |
 | `/settings` | `ProfileSettings`, `NotificationSettings`, `TeamSettings`, `ApiKeySettings`, `ConnectedChannelsSettings`, `CrawlerSettings`, `PublishingSettings`, `SecurityAuditLog` | User profile, team roles, API keys, channel accounts, crawler/publishing state |
 | `/admin` | `SourceHealthDashboard`, `CrawlerJobTable`, `ParserFailureQueue`, `DuplicateReviewQueue`, `GeocodeReviewQueue`, `ComplianceReviewQueue`, `PublishQueue`, `SyncStatusTable` | Operators can review source health, parser failures, dedupe, building matches, compliance, publishing |
@@ -133,7 +158,7 @@ App routes must be built in this order: `/listings`, `/properties/[id]`, `/map`,
 
 7. Dedupe graph. Inputs: listings, contacts, photos, price, area, addresses. Tools: Cursor, Codex. Skills: `dedupe-entity-resolution`. Outputs: property graph, duplicate candidates, merge confidence, review status. Gate: precision target above 0.90 on labeled Bulgarian sample.
 
-8. Geospatial layer. Inputs: coordinates, addresses, city polygons, OSM/EUBUCCO/cadastre where permitted. Tools: Cursor, Codex, PostGIS. Skills: `geo-map-3d`. Outputs: geocoder adapter, building matcher, confidence scores, priority city coverage. Gate: Sofia, Varna, Burgas, Sunny Beach/Nessebar, Bansko support building match or 2D fallback.
+8. Geospatial layer. Inputs: coordinates, addresses, city polygons, OSM/EUBUCCO/cadastre where permitted. Tools: Cursor, Codex, PostGIS. Skills: `geo-map-3d`. Outputs: geocoder adapter, building matcher, confidence scores, priority city coverage. Gate: MVP gate is Varna city/region first; only after stage-1 scrape verification can coverage expand to Sofia, Burgas, Sunny Beach/Nessebar, Bansko.
 
 9. Search and map APIs. Inputs: property graph, offers, media, building matches. Tools: Cursor, Codex. Skills: `geo-map-3d`, `frontend-pages`. Outputs: listing search, filters, facets, viewport API, building summary API, optional MVT. Gate: search p95 under 300 ms and map p95 under 500 ms on seeded data.
 
@@ -153,6 +178,16 @@ App routes must be built in this order: `/listings`, `/properties/[id]`, `/map`,
 
 17. Final docs/export. Inputs: implemented state and acceptance results. Tools: Cursor, Codex, Claude, Mermaid, Pandoc, LibreOffice. Skills: `docs-export`. Outputs: `platform-mvp-plan.md`, `platform-mvp-plan.docx`, `platform-mvp-plan.pdf`, rendered block scheme. Gate: docs include source matrix, DB structure, app pages, agent automation setup, and numbered plan.
 
+### 9.1 Parallel roadmap execution rule
+
+Roadmap items are ordered for dependency clarity, but execution should be parallelized whenever slice dependencies allow:
+
+- Wave A (parallel): docs/rules stability, DB control plane, tier-1/2 fixture connectors, tier-3 policy/contracts, social policy/contracts.
+- Wave B (parallel): DB-backed ingest runners, stats/admin expansion, auth/RBAC, tier-3 adapter stubs, frontend operator dashboard binding.
+- Wave C (parallel): dedupe/geo/media, map/listing/chat UI depth, publishing dry-run controls, CI hardening.
+
+Use `docs/agents/TASKS.md` dependency graph as the real execution scheduler.
+
 ## 10. Testing
 Use fixture tests for crawlers; never require live network for CI parser tests.
 
@@ -164,14 +199,15 @@ Stability targets: tier-1 fixture parser success above 95%, duplicate precision 
 
 This is the dedicated setup plan for Cursor/Codex/Claude agent automation.
 
-### 11.1 Specialist Agents (5 roles) and Coordination Protocol
-In addition to the lead agent, operate 5 specialist agents. Each specialist keeps an append-only journey log:
+### 11.1 Specialist Agents (6 roles) and Coordination Protocol
+In addition to the lead agent, operate 6 specialist agents. Each specialist keeps an append-only journey log:
 
 - `docs/agents/debugger/JOURNEY.md`
 - `docs/agents/backend_developer/JOURNEY.md` (data engineer / backend structure)
 - `docs/agents/ux_ui_designer/JOURNEY.md` (frontend, operator-first)
-- `docs/agents/scraper_1/JOURNEY.md` (marketplace websites)
-- `docs/agents/scraper_sm/JOURNEY.md` (social overlays, consent/official-only)
+- `docs/agents/scraper_1/JOURNEY.md` (tier-1/2 marketplace websites)
+- `docs/agents/scraper_t3/JOURNEY.md` (tier-3 vendor/partner/official routes)
+- `docs/agents/scraper_sm/JOURNEY.md` (tier-4 social overlays, consent/official-only)
 
 **Coordination protocol** (full details in `docs/agents/README.md`):
 
@@ -224,7 +260,73 @@ Progress update:
 Next step:
 ```
 
-## 12. Assumptions
+## 12. Operator Dashboard Spec
+
+The dashboard is the operating system for the project. It lets an operator create a market-monitoring project, choose compliant source packs, see scraper and database readiness, watch milestone progress, and move directly into source health, map, CRM, and publishing review.
+
+### 12.1 Dashboard layout zones
+
+| Zone | Content | Data source |
+|---|---|---|
+| Top health strip | Postgres, Redis, API, worker, scheduler, object storage | `/api/v1/ready` |
+| KPI row | Enabled sources, live-safe sources, canonical listings, crawl failures, parser failures, duplicate-review count, CRM open threads | `/admin/source-stats` + future endpoints |
+| Left navigation | Project setup, Sources, Crawl jobs, Parser failures, Dedupe review, Geocode review, CRM, Publish queue, Settings | UI navigation |
+| Main work area | Switchable tables, map panels, drawers, project forms | Per-panel endpoints |
+| Right context drawer | Raw metadata, legal notes, source config, audit trail, retry actions | Detail endpoints |
+
+### 12.2 Project creation flow
+
+| Step | Name | Required inputs | Validations | Resulting state |
+|---|---|---|---|---|
+| 1 | Define project identity | Project name, team owner, country/city/resort focus, property intents | Name unique, at least one intent selected | Project draft created |
+| 2 | Pick source packs | Tier-1 portals, agencies, vendor feeds, registers, approved social overlays | At least one source selected | Sources attached to project |
+| 3 | Review compliance | Legal mode, access mode, risk mode, publish allowed per source | No source violates legal mode or requires missing partner route | Compliance gate passed |
+| 4 | Configure cadence | Hourly vs 10-min runs, priority, fixture-only vs live-safe | At least one cadence set | Cadence saved |
+| 5 | Set data rules | Dedupe sensitivity, geocode confidence, required fields, photo expectations | Thresholds in valid range | Data rules saved |
+| 6 | Set CRM routing | Default owner, inbox rules, note templates, reminder defaults | Owner exists | CRM routing saved |
+| 7 | Set milestone targets | Current phase, acceptance gate, verifier, next slice | Phase valid | Milestones saved |
+| 8 | Save and launch | Environment, migration, source-gate checks | All checks green | Project activated |
+
+### 12.3 Operator dashboard modules
+
+| Module | Data source / API | Key KPIs | Primary actions | Backlog status |
+|---|---|---|---|---|
+| Source health table | `/admin/source-stats` | Canonical listings, raw captures, coverage %, legal badges | Filter, drill-down, retry | Spec ready |
+| Crawl jobs table | `GET /crawl-jobs` | Running, succeeded, failed, last run | Retry, inspect metadata | Backend ready |
+| Parser failure queue | `GET /parser-failures` | Failure count, failure rate | Inspect, retry, fix | Backend pending |
+| Dedupe review queue | Future endpoint | Candidate count, merge confidence | Accept, reject, split | Not started |
+| Geocode review queue | Future endpoint | Low-confidence count | Correct, approve, reject | Not started |
+| Compliance review | `/admin/source-stats` | Blocked sources, missing partners | Review, approve, escalate | Spec ready |
+| Publish queue | Future endpoint | Pending jobs, dry-run results | Publish, cancel, retry | Not started |
+| CRM inbox summary | `GET /crm/threads` | Open threads, unassigned, reminders due | Assign, reply, follow up | Backend partial |
+| Map preview | Future viewport API | Coverage polygons, 3D readiness | Pan, zoom, filter | Not started |
+
+### 12.4 Dashboard delivery backlog
+
+| ID | What to build | Status |
+|---|---|---|
+| Dashboard A | Project creation wizard with identity, source pack, compliance, cadence, CRM, and milestone steps | Not started |
+| Dashboard B | Live health strip and KPI row from readiness plus source stats | Backend partial |
+| Dashboard C | Source health table with filters, tier badges, legal badges, and drill-down | Spec ready |
+| Dashboard D | Crawl jobs table with retry and metadata drawer | Backend ready |
+| Dashboard E | Parser failure, dedupe review, geocode review, compliance review, and publish queue panels | Backend pending |
+| Dashboard F | Map preview inside dashboard for project geography and 3D readiness | Not started |
+| Dashboard G | CRM inbox summary widgets and assignment/status shortcuts | Backend partial |
+
+### 12.5 Dashboard acceptance criteria
+
+1. A new project cannot be activated if any selected source violates legal mode or requires a missing partner route.
+2. A new project cannot be activated if migrations are missing or the registry is not synced.
+3. KPI cards must match the same underlying stats that power `/admin/source-stats` and future crawl failure queues.
+4. Every top-level number must open a drill-down table or drawer.
+5. The milestone tracker must show who owns the next slice and which gate must pass next.
+
+### 12.6 Report and export pipeline
+
+The dashboard data is also exported as a static HTML dashboard (`docs/dashboard/index.html`), a JSON data file (`docs/exports/progress-dashboard.json`), and a product summary with all metrics. Generate with `make dashboard-doc`. The export pipeline reads from `data/source_registry.json`, `docs/agents/TASKS.md`, agent `JOURNEY.md` files, and `docs/project-status-roadmap.md`.
+
+## 13. Assumptions
+
 PostgreSQL/PostGIS is the main operational database; S3/MinIO stores raw captures/photos/docs; Temporal is the durable automation layer; Cursor is the main builder; Codex and Claude are supporting agents; public UI starts only after ingestion, map data, CRM, compliance, and publishing controls are stable.
 
 Booking.com and Airbnb stay in scope for market intelligence and reverse publishing, but only through official/authorized/vendor routes. WhatsApp, Viber, private Facebook groups, and private Telegram groups are opt-in/consent-only. Threads is experimental public-profile monitoring only unless official read/search support is confirmed during implementation.
