@@ -1,0 +1,26 @@
+{
+  "address_text": "Sveti Vlas, complex Dolphin",
+  "area_sqm": 90.0,
+  "city": "Sveti Vlas",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "BP-44501",
+  "image_urls": [
+    "https://www.bulgarianproperties.com/images/listings/BP-44501-1.jpg"
+  ],
+  "latitude": 42.711,
+  "listing_intent": "sale",
+  "listing_url": "https://www.bulgarianproperties.com/property/BP-44501",
+  "longitude": 27.76,
+  "owner_group": "Bulgarian Properties",
+  "parser_version": "v1",
+  "phones": [
+    "+359 2 9 11 50"
+  ],
+  "price": 110000.0,
+  "property_category": "apartment",
+  "reference_id": "BulgarianProperties:BP-44501",
+  "region": "Burgas",
+  "rooms": null,
+  "source_name": "BulgarianProperties"
+}

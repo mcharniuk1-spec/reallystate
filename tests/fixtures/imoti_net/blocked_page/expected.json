@@ -1,0 +1,22 @@
+{
+  "address_text": null,
+  "area_sqm": null,
+  "city": null,
+  "currency": "EUR",
+  "district": null,
+  "external_id": "IN-BLOCKED",
+  "image_urls": [],
+  "latitude": null,
+  "listing_intent": "mixed",
+  "listing_url": "https://imoti.net/property/IN-BLOCKED",
+  "longitude": null,
+  "owner_group": "Investor Media Group",
+  "parser_version": "v1",
+  "phones": [],
+  "price": null,
+  "property_category": "unknown",
+  "reference_id": "imoti.net:IN-BLOCKED",
+  "region": null,
+  "rooms": null,
+  "source_name": "imoti.net"
+}

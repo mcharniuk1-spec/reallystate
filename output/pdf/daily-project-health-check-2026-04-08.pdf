@@ -1,0 +1,1088 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 9 /Kids [ 4 0 R 6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R ] >>
+endobj
+3 0 obj
+<< /Length 1902 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+13 TL
+(DAILY PROJECT HEALTH CHECK REPORT) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Date: 2026-04-08) Tj
+T*
+(Generated at: 2026-04-08T11:42:29.065273+00:00) Tj
+T*
+(Workspace: `/Users/getapple/Documents/Real Estate Bulg`) Tj
+T*
+() Tj
+T*
+(Scope) Tj
+T*
+(-----) Tj
+T*
+() Tj
+T*
+(This report audits the repository state, local executable environment, fixture-backed parser) Tj
+T*
+(coverage, export artifacts, and dependency/runtime drift.) Tj
+T*
+(It does not guess missing telemetry. Where the repo or environment does not provide evidence,) Tj
+T*
+(the report explicitly says `no data available`.) Tj
+T*
+() Tj
+T*
+(1. Execution Monitoring \(Scraping Layer\)) Tj
+T*
+(----------------------------------------) Tj
+T*
+() Tj
+T*
+(- Scheduled scraping job telemetry: no data available) Tj
+T*
+(- Crawl success rate: no data available) Tj
+T*
+(- Failed endpoints: no data available) Tj
+T*
+(- Time anomalies vs baseline: no data available) Tj
+T*
+(- Dev worker placeholder: OK) Tj
+T*
+(- Dev scheduler placeholder: OK) Tj
+T*
+(- Tier-1 fixture coverage: 10/10 sources have fixture directories) Tj
+T*
+(- Offline parser regression result: passed \(45 tests, 6 skipped\)) Tj
+T*
+() Tj
+T*
+(Evidence:) Tj
+T*
+(- `PYTHONPATH=src python3 -m bgrealestate.dev_worker --once` -> 0 in 97 ms) Tj
+T*
+(- `PYTHONPATH=src python3 -m bgrealestate.dev_scheduler --once` -> 0 in 103 ms) Tj
+T*
+(- There are no scrape logs, retry logs, or persisted crawl rows available in this shell-backed) Tj
+T*
+(  run.) Tj
+T*
+() Tj
+T*
+(Registry summary:) Tj
+T*
+(- Tier 1: 10) Tj
+T*
+(- Tier 2: 17) Tj
+T*
+(- Tier 3: 10) Tj
+T*
+(- Tier 4: 7) Tj
+T*
+() Tj
+T*
+(Fixture sources:) Tj
+T*
+(- address_bg) Tj
+T*
+(- alo_bg) Tj
+T*
+(- bulgarianproperties) Tj
+T*
+(- homes_bg) Tj
+T*
+(- imot_bg) Tj
+T*
+(- imoti_net) Tj
+T*
+(- luximmo) Tj
+T*
+(- olx_bg) Tj
+T*
+(- property_bg) Tj
+T*
+(- suprimmo) Tj
+T*
+() Tj
+T*
+(2. Data Validation \(Database Layer\)) Tj
+T*
+(Page 1 of 9) Tj
+ET
+endstream
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 3 0 R >>
+endobj
+5 0 obj
+<< /Length 2421 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+13 TL
+(-----------------------------------) Tj
+T*
+() Tj
+T*
+(- Database validation availability: no data available) Tj
+T*
+(- Missing values by column: no data available) Tj
+T*
+(- Duplicate row checks: no data available) Tj
+T*
+(- Price/category anomalies: no data available) Tj
+T*
+(- Freshness window: no data available) Tj
+T*
+(- Schema consistency: blueprint and migration scaffold present; migration tests passed offline.) Tj
+T*
+() Tj
+T*
+(Reason: DATABASE_URL not set) Tj
+T*
+(- `DATABASE_URL` is not configured in this shell, and SQLAlchemy is not installed locally.) Tj
+T*
+(- The optional DB roundtrip test was skipped for the same reason.) Tj
+T*
+() Tj
+T*
+(3. Backend Integrity) Tj
+T*
+(--------------------) Tj
+T*
+() Tj
+T*
+(- FastAPI runtime package: missing) Tj
+T*
+(- SQLAlchemy runtime package: missing) Tj
+T*
+(- Uvicorn runtime package: missing) Tj
+T*
+(- Endpoint availability/status codes/response times: no live data available) Tj
+T*
+(- Data flow scraper -> DB -> API: no live data available) Tj
+T*
+(- Static route inventory present: 13 routes defined in `src/bgrealestate/api/routers`) Tj
+T*
+() Tj
+T*
+(Defined backend routes:) Tj
+T*
+(- `/`) Tj
+T*
+(- `/admin`) Tj
+T*
+(- `/admin/source-stats`) Tj
+T*
+(- `/api/v1/chat`) Tj
+T*
+(- `/api/v1/ready`) Tj
+T*
+(- `/crawl-jobs`) Tj
+T*
+(- `/crm/threads`) Tj
+T*
+(- `/crm/threads/{thread_id}/messages`) Tj
+T*
+(- `/health`) Tj
+T*
+(- `/listings`) Tj
+T*
+(- `/listings/{reference_id}`) Tj
+T*
+(- `/sources`) Tj
+T*
+(- `/status`) Tj
+T*
+() Tj
+T*
+(Runtime evidence:) Tj
+T*
+(- Overall unit test suite: passed) Tj
+T*
+(- FastAPI route tests were skipped in this shell because the `fastapi` package is not installed) Tj
+T*
+(  locally.) Tj
+T*
+(- test_chat_stub \(test_api_fastapi.TestFastAPIApp\) ... skipped 'fastapi not installed in this) Tj
+T*
+(  environment') Tj
+T*
+(- test_crm_threads_returns_503_without_database_url \(test_api_fastapi.TestFastAPIApp\) ...) Tj
+T*
+(  skipped 'fastapi not installed in this environment') Tj
+T*
+(- test_health \(test_api_fastapi.TestFastAPIApp\) ... skipped 'fastapi not installed in this) Tj
+T*
+(  environment') Tj
+T*
+(- test_listings_returns_503_without_database_url \(test_api_fastapi.TestFastAPIApp\) ... skipped) Tj
+T*
+(  'fastapi not installed in this environment') Tj
+T*
+(- test_ready_without_deps \(test_api_fastapi.TestFastAPIApp\) ... skipped 'fastapi not installed) Tj
+T*
+(  in this environment') Tj
+T*
+(Page 2 of 9) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 2447 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+13 TL
+(- This is intentionally optional: ... skipped 'DATABASE_URL not set') Tj
+T*
+(- DB-backed APIs are coded to return 503 when `DATABASE_URL` is not configured.) Tj
+T*
+() Tj
+T*
+(4. Frontend Consistency) Tj
+T*
+(-----------------------) Tj
+T*
+() Tj
+T*
+(- Node runtime: zsh:1: command not found: node) Tj
+T*
+(- npm runtime: zsh:1: command not found: npm) Tj
+T*
+(- Frontend smoke tests: no data available) Tj
+T*
+(- Playwright tests: none found in the repository) Tj
+T*
+() Tj
+T*
+(Required route files:) Tj
+T*
+(- `app/\(main\)/listings/page.tsx`: present) Tj
+T*
+(- `app/\(main\)/properties/[id]/page.tsx`: present) Tj
+T*
+(- `app/\(main\)/map/page.tsx`: present) Tj
+T*
+(- `app/\(main\)/chat/page.tsx`: present) Tj
+T*
+(- `app/\(main\)/settings/page.tsx`: present) Tj
+T*
+(- `app/\(main\)/admin/page.tsx`: present) Tj
+T*
+() Tj
+T*
+(Observed UI behavior from code inspection:) Tj
+T*
+(- `/listings` fetches `/sources` and currently renders source-registry cards, not listing) Tj
+T*
+(  search results.) Tj
+T*
+(- `/chat` renders a proxy-backed assistant playground and a placeholder threads pane.) Tj
+T*
+(- `/map`, `/settings`, `/admin`, and `/properties/[id]` are layout shells awaiting stable APIs.) Tj
+T*
+(- Because Node/npm are absent, lint, typecheck, build, and browser smoke tests could not be) Tj
+T*
+(  executed.) Tj
+T*
+() Tj
+T*
+(5. Reporting Layer) Tj
+T*
+(------------------) Tj
+T*
+() Tj
+T*
+(- Existing report/export artifacts were structurally validated in this run.) Tj
+T*
+(- Aggregation correctness against raw ingested data: no data available) Tj
+T*
+(- PDF visual rendering validation: no data available \(`pdftoppm` is not installed in this) Tj
+T*
+(  shell\)) Tj
+T*
+() Tj
+T*
+(Export artifact checks:) Tj
+T*
+(- `docs/exports/bulgaria-real-estate-source-links.xlsx`: ok) Tj
+T*
+(- `docs/exports/bulgaria-real-estate-source-report.docx`: ok) Tj
+T*
+(- `docs/exports/project-status-roadmap.docx`: ok) Tj
+T*
+(- `docs/exports/project-architecture-execution-guide.pdf`: ok) Tj
+T*
+() Tj
+T*
+(6. Dependency & SDK Drift Detection) Tj
+T*
+(-----------------------------------) Tj
+T*
+() Tj
+T*
+(6.1 Detect Current State) Tj
+T*
+() Tj
+T*
+(- `.python-version`: `3.12`) Tj
+T*
+(- `pyproject.toml` requires Python: `>=3.12`) Tj
+T*
+(- CI Python target: `3.12`) Tj
+T*
+(- CI Node target: `22`) Tj
+T*
+(- Dockerfile base image: `python:3.12-slim`) Tj
+T*
+(- Docker Compose images: `postgis/postgis:17-3.5`, `redis:7-alpine`,) Tj
+T*
+(Page 3 of 9) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 3078 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+13 TL
+(  `minio/minio:RELEASE.2025-04-22T22-12-26Z`, `temporalio/auto-setup:1.27`,) Tj
+T*
+(  `temporalio/ui:2.34.0`) Tj
+T*
+(- Local `python3`: `Python 3.9.6`) Tj
+T*
+(- Local `python3.12`: `zsh:1: command not found: python3.12`) Tj
+T*
+(- Local `node`: `zsh:1: command not found: node`) Tj
+T*
+(- Local `npm`: `zsh:1: command not found: npm`) Tj
+T*
+(- Local `docker`: `zsh:1: command not found: docker`) Tj
+T*
+() Tj
+T*
+(6.2 Compare with Target State) Tj
+T*
+() Tj
+T*
+(- Python target is explicitly defined by `.python-version`, CI, Dockerfile, and) Tj
+T*
+(  `pyproject.toml`.) Tj
+T*
+(- Node target is partially defined by CI \(`22`\) plus the committed Next.js manifest.) Tj
+T*
+(- Exact resolved dependency targets are not defined because there are no committed lockfiles.) Tj
+T*
+() Tj
+T*
+(6.3 Drift Types) Tj
+T*
+() Tj
+T*
+(- Version mismatch: local Python is 3.9.6 while repo targets 3.12.) Tj
+T*
+(- SDK/runtime mismatch: Node/npm are missing locally, so the Next.js app cannot be validated) Tj
+T*
+(  here.) Tj
+T*
+(- Reproducibility drift: no Python or Node lockfile is committed.) Tj
+T*
+(- Deprecated package status: no data available \(offline, no package audit tooling installed\).) Tj
+T*
+(- Security vulnerability status: no data available \(offline, no lockfile, no audit output\).) Tj
+T*
+() Tj
+T*
+(6.4 Drift Analysis) Tj
+T*
+() Tj
+T*
+(| Item | Current version \(repo/local\) | Target version | Status | Evidence |) Tj
+T*
+(| --- | --- | --- | --- | --- |) Tj
+T*
+(| Python local runtime | Python 3.9.6 | 3.12 | conflicting | `.python-version`,) Tj
+T*
+(`pyproject.toml`, `ci.yml`, `Dockerfile` |) Tj
+T*
+(| Python CI runtime | 3.12 | 3.12 | aligned | `.github/workflows/ci.yml` |) Tj
+T*
+(| Python Docker runtime | python:3.12-slim | >=3.12 | aligned | `Dockerfile`, `pyproject.toml`) Tj
+T*
+(|) Tj
+T*
+(| Node local runtime | zsh:1: command not found: node | 22 | conflicting | local shell vs CI |) Tj
+T*
+(| Python lockfile | none | no exact repo target defined | unknown | no `requirements*.txt` /) Tj
+T*
+(`poetry.lock` / lock artifact committed |) Tj
+T*
+(| Node lockfile | none | no exact repo target defined | unknown | no `package-lock.json` /) Tj
+T*
+(`pnpm-lock.yaml` / `yarn.lock` |) Tj
+T*
+(| Python dep `alembic` | `alembic>=1.15` | no exact target defined | unknown | `pyproject.toml`) Tj
+T*
+(only |) Tj
+T*
+(| Python dep `asyncpg` | `asyncpg>=0.30` | no exact target defined | unknown | `pyproject.toml`) Tj
+T*
+(only |) Tj
+T*
+(| Python dep `beautifulsoup4` | `beautifulsoup4>=4.13` | no exact target defined | unknown |) Tj
+T*
+(`pyproject.toml` only |) Tj
+T*
+(| Python dep `boto3` | `boto3>=1.37` | no exact target defined | unknown | `pyproject.toml`) Tj
+T*
+(only |) Tj
+T*
+(| Python dep `dateparser` | `dateparser>=1.2` | no exact target defined | unknown |) Tj
+T*
+(`pyproject.toml` only |) Tj
+T*
+(| Python dep `fastapi` | `fastapi>=0.115` | no exact target defined | unknown |) Tj
+T*
+(`pyproject.toml` only |) Tj
+T*
+(| Python dep `httpx` | `httpx>=0.28` | no exact target defined | unknown | `pyproject.toml`) Tj
+T*
+(only |) Tj
+T*
+(Page 4 of 9) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 3377 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+13 TL
+(| Python dep `imagehash` | `imagehash>=4.3` | no exact target defined | unknown |) Tj
+T*
+(`pyproject.toml` only |) Tj
+T*
+(| Python dep `lxml` | `lxml>=5.3` | no exact target defined | unknown | `pyproject.toml` only |) Tj
+T*
+(| Python dep `openpyxl` | `openpyxl>=3.1` | no exact target defined | unknown |) Tj
+T*
+(`pyproject.toml` only |) Tj
+T*
+(| Python dep `phonenumbers` | `phonenumbers>=8.13` | no exact target defined | unknown |) Tj
+T*
+(`pyproject.toml` only |) Tj
+T*
+(| Python dep `pillow` | `pillow>=11.0` | no exact target defined | unknown | `pyproject.toml`) Tj
+T*
+(only |) Tj
+T*
+(| Python dep `price-parser` | `price-parser>=0.5` | no exact target defined | unknown |) Tj
+T*
+(`pyproject.toml` only |) Tj
+T*
+(| Python dep `psycopg[binary]` | `psycopg[binary]>=3.2` | no exact target defined | unknown |) Tj
+T*
+(`pyproject.toml` only |) Tj
+T*
+(| Python dep `pydantic` | `pydantic>=2.11` | no exact target defined | unknown |) Tj
+T*
+(`pyproject.toml` only |) Tj
+T*
+(| Python dep `pyproj` | `pyproj>=3.7` | no exact target defined | unknown | `pyproject.toml`) Tj
+T*
+(only |) Tj
+T*
+(| Python dep `redis` | `redis>=5.2` | no exact target defined | unknown | `pyproject.toml` only) Tj
+T*
+(|) Tj
+T*
+(| Python dep `shapely` | `shapely>=2.0` | no exact target defined | unknown | `pyproject.toml`) Tj
+T*
+(only |) Tj
+T*
+(| Python dep `sqlalchemy` | `sqlalchemy>=2.0` | no exact target defined | unknown |) Tj
+T*
+(`pyproject.toml` only |) Tj
+T*
+(| Python dep `structlog` | `structlog>=25.0` | no exact target defined | unknown |) Tj
+T*
+(`pyproject.toml` only |) Tj
+T*
+(| Python dep `temporalio` | `temporalio>=1.10` | no exact target defined | unknown |) Tj
+T*
+(`pyproject.toml` only |) Tj
+T*
+(| Python dep `tenacity` | `tenacity>=9.0` | no exact target defined | unknown |) Tj
+T*
+(`pyproject.toml` only |) Tj
+T*
+(| Python dep `uvicorn[standard]` | `uvicorn[standard]>=0.34` | no exact target defined |) Tj
+T*
+(unknown | `pyproject.toml` only |) Tj
+T*
+(| Python dev dep `mypy` | `mypy>=1.15` | no exact target defined | unknown | `pyproject.toml`) Tj
+T*
+(only |) Tj
+T*
+(| Python dev dep `pytest` | `pytest>=8.3` | no exact target defined | unknown |) Tj
+T*
+(`pyproject.toml` only |) Tj
+T*
+(| Python dev dep `ruff` | `ruff>=0.11` | no exact target defined | unknown | `pyproject.toml`) Tj
+T*
+(only |) Tj
+T*
+(| Node package `@deck.gl/core` | `^9.1.0` | no exact target defined | unknown | `package.json`) Tj
+T*
+(only |) Tj
+T*
+(| Node package `@deck.gl/layers` | `^9.1.0` | no exact target defined | unknown |) Tj
+T*
+(`package.json` only |) Tj
+T*
+(| Node package `@deck.gl/react` | `^9.1.0` | no exact target defined | unknown | `package.json`) Tj
+T*
+(only |) Tj
+T*
+(| Node package `@tanstack/react-query` | `^5.74.0` | no exact target defined | unknown |) Tj
+T*
+(`package.json` only |) Tj
+T*
+(| Node package `maplibre-gl` | `^5.3.0` | no exact target defined | unknown | `package.json`) Tj
+T*
+(only |) Tj
+T*
+(| Node package `next` | `^15.3.0` | no exact target defined | unknown | `package.json` only |) Tj
+T*
+(| Node package `react` | `^19.1.0` | no exact target defined | unknown | `package.json` only |) Tj
+T*
+(| Node package `react-dom` | `^19.1.0` | no exact target defined | unknown | `package.json`) Tj
+T*
+(only |) Tj
+T*
+(| Node package `zod` | `^3.24.0` | no exact target defined | unknown | `package.json` only |) Tj
+T*
+(Page 5 of 9) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 2987 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+13 TL
+(| Node package `@playwright/test` | `^1.52.0` | no exact target defined | unknown |) Tj
+T*
+(`package.json` only |) Tj
+T*
+(| Node package `@types/node` | `^22.14.0` | no exact target defined | unknown | `package.json`) Tj
+T*
+(only |) Tj
+T*
+(| Node package `@types/react` | `^19.1.0` | no exact target defined | unknown | `package.json`) Tj
+T*
+(only |) Tj
+T*
+(| Node package `@types/react-dom` | `^19.1.0` | no exact target defined | unknown |) Tj
+T*
+(`package.json` only |) Tj
+T*
+(| Node package `autoprefixer` | `^10.4.21` | no exact target defined | unknown | `package.json`) Tj
+T*
+(only |) Tj
+T*
+(| Node package `eslint` | `^9.25.0` | no exact target defined | unknown | `package.json` only |) Tj
+T*
+(| Node package `eslint-config-next` | `^15.3.0` | no exact target defined | unknown |) Tj
+T*
+(`package.json` only |) Tj
+T*
+(| Node package `postcss` | `^8.5.3` | no exact target defined | unknown | `package.json` only |) Tj
+T*
+(| Node package `prettier` | `^3.5.0` | no exact target defined | unknown | `package.json` only) Tj
+T*
+(|) Tj
+T*
+(| Node package `tailwindcss` | `^3.4.17` | no exact target defined | unknown | `package.json`) Tj
+T*
+(only |) Tj
+T*
+(| Node package `typescript` | `^5.8.0` | no exact target defined | unknown | `package.json`) Tj
+T*
+(only |) Tj
+T*
+() Tj
+T*
+(7. Minimal Alignment Plan) Tj
+T*
+(-------------------------) Tj
+T*
+() Tj
+T*
+(Preferred option: Conservative) Tj
+T*
+() Tj
+T*
+(1. Install the declared runtimes without changing package versions.) Tj
+T*
+(2. Re-run the audit on Python 3.12 with FastAPI/SQLAlchemy/Uvicorn installed.) Tj
+T*
+(3. Commit lockfiles only after a clean install succeeds and tests pass.) Tj
+T*
+(4. Add DB-backed validation once `DATABASE_URL` points to the Compose PostgreSQL service.) Tj
+T*
+(5. Add frontend lint/typecheck and at least one Playwright smoke test once Node/npm are) Tj
+T*
+(   present.) Tj
+T*
+() Tj
+T*
+(Conservative plan \(preferred\):) Tj
+T*
+(- Python: align local shell to 3.12. Risk: low. Impact: unlocks backend validation without) Tj
+T*
+(  changing app code.) Tj
+T*
+(- Node: install Node 22 to match CI. Risk: low. Impact: unlocks Next.js lint/typecheck/build) Tj
+T*
+(  validation.) Tj
+T*
+(- Lockfiles: commit one Python lock artifact and one Node lockfile. Risk: low-medium. Impact:) Tj
+T*
+(  reproducible installs.) Tj
+T*
+(- Database: run Compose services and migrations, then enable DB checks in this audit. Risk:) Tj
+T*
+(  low-medium. Impact: actual scrape/data freshness metrics become available.) Tj
+T*
+() Tj
+T*
+(Progressive plan \(suggestion\):) Tj
+T*
+(- After lockfiles exist, review patch/minor upgrades for FastAPI, SQLAlchemy, Next.js, React,) Tj
+T*
+(  and TypeScript. Risk: medium. Impact: modernized stack with broader test surface.) Tj
+T*
+(- Add package audit tooling and a CI dependency drift job. Risk: medium. Impact: real) Tj
+T*
+(  vulnerability/deprecation visibility.) Tj
+T*
+() Tj
+T*
+(8. Final Report) Tj
+T*
+(---------------) Tj
+T*
+() Tj
+T*
+(Page 6 of 9) Tj
+ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 13 0 R >>
+endobj
+15 0 obj
+<< /Length 2667 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+13 TL
+(8.1 System Status Summary) Tj
+T*
+() Tj
+T*
+(- Scraping: Issues) Tj
+T*
+(- Data: Issues) Tj
+T*
+(- Backend: Issues) Tj
+T*
+(- Frontend: Issues) Tj
+T*
+() Tj
+T*
+(8.2 Key Issues) Tj
+T*
+() Tj
+T*
+(1. Local runtime does not satisfy the repo contract: Python 3.12 is required, but only Python) Tj
+T*
+(   3.9.6 is available; Node/npm/docker are missing.) Tj
+T*
+(2. There is no live ingestion telemetry or database dataset in this environment, so scrape) Tj
+T*
+(   success rate, freshness, duplicate counts, and anomaly checks are unavailable.) Tj
+T*
+(3. Backend route files exist, but FastAPI/SQLAlchemy/Uvicorn are not installed locally, so) Tj
+T*
+(   endpoint execution is not validated in this shell.) Tj
+T*
+(4. The Next.js route scaffold exists, but frontend build/smoke validation is blocked by the) Tj
+T*
+(   missing Node toolchain and the absence of Playwright specs.) Tj
+T*
+(5. Dependency resolution is not reproducible yet because there are no committed Python or Node) Tj
+T*
+(   lockfiles.) Tj
+T*
+() Tj
+T*
+(8.3 Drift Summary) Tj
+T*
+() Tj
+T*
+(- Python runtime mismatch: local 3.9.6 vs target 3.12.) Tj
+T*
+(- Node runtime mismatch: local missing vs CI target 22.) Tj
+T*
+(- No committed lockfile for Python.) Tj
+T*
+(- No committed lockfile for Node.) Tj
+T*
+(- Exact vulnerability/deprecation state cannot be determined from this offline shell.) Tj
+T*
+() Tj
+T*
+(8.4 Recommended Actions) Tj
+T*
+() Tj
+T*
+(1. Install Python 3.12 locally and run the backend stack with committed dev dependencies.) Tj
+T*
+(2. Install Node 22/npm, then run `npm install`, `npm run lint`, and `npm run typecheck`.) Tj
+T*
+(3. Start Compose services and set `DATABASE_URL` so this report can compute live scrape/data) Tj
+T*
+(   metrics.) Tj
+T*
+(4. Commit dependency lockfiles after a clean green run on Python 3.12 and Node 22.) Tj
+T*
+(5. Add one frontend smoke test and one DB-backed golden-path validation script to close the) Tj
+T*
+(   current observability gaps.) Tj
+T*
+() Tj
+T*
+(8.5 Logs Appendix) Tj
+T*
+() Tj
+T*
+(Tooling errors:) Tj
+T*
+(- `python3.12 --version`: zsh:1: command not found: python3.12) Tj
+T*
+(- `node --version`: zsh:1: command not found: node) Tj
+T*
+(- `npm --version`: zsh:1: command not found: npm) Tj
+T*
+(- `docker --version`: zsh:1: command not found: docker) Tj
+T*
+(- `pdftoppm -v`: zsh:1: command not found: pdftoppm) Tj
+T*
+() Tj
+T*
+(Execution traces:) Tj
+T*
+(- Unit tests \(`174 ms`\):) Tj
+T*
+(test_chat_stub \(test_api_fastapi.TestFastAPIApp\) ... skipped 'fastapi not installed in this) Tj
+T*
+(environment') Tj
+T*
+(test_crm_threads_returns_503_without_database_url \(test_api_fastapi.TestFastAPIApp\) ... skipped) Tj
+T*
+(Page 7 of 9) Tj
+ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 15 0 R >>
+endobj
+17 0 obj
+<< /Length 4400 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+13 TL
+('fastapi not installed in this environment') Tj
+T*
+(test_health \(test_api_fastapi.TestFastAPIApp\) ... skipped 'fastapi not installed in this) Tj
+T*
+(environment') Tj
+T*
+(test_listings_returns_503_without_database_url \(test_api_fastapi.TestFastAPIApp\) ... skipped) Tj
+T*
+('fastapi not installed in this environment') Tj
+T*
+(test_ready_without_deps \(test_api_fastapi.TestFastAPIApp\) ... skipped 'fastapi not installed in) Tj
+T*
+(this environment') Tj
+T*
+(test_fixture_harness_imports_without_optional_runtime) Tj
+T*
+(\(test_connector_fixtures_smoke.TestConnectorFixtureHarness\) ... ok) Tj
+T*
+(test_alembic_scaffold_exists \(test_database_migrations.DatabaseMigrationTests\) ... ok) Tj
+T*
+(test_initial_migration_is_syntax_valid_without_alembic_installed) Tj
+T*
+(\(test_database_migrations.DatabaseMigrationTests\) ... ok) Tj
+T*
+(test_initial_migration_reuses_schema_blueprint) Tj
+T*
+(\(test_database_migrations.DatabaseMigrationTests\) ... ok) Tj
+T*
+(test_make_migrate_points_to_alembic \(test_database_migrations.DatabaseMigrationTests\) ... ok) Tj
+T*
+(test_schema_blueprint_contains_core_mvp_tables) Tj
+T*
+(\(test_database_migrations.DatabaseMigrationTests\) ... ok) Tj
+T*
+(test_source_registry_includes_planning_columns) Tj
+T*
+(\(test_database_migrations.DatabaseMigrationTests\) ... ok) Tj
+T*
+(test_db_package_does_not_import_sqlalchemy_on_package_import) Tj
+T*
+(\(test_database_models.DatabaseModelTests\) ... ok) Tj
+T*
+(test_model_foundation_covers_core_mvp_areas \(test_database_models.DatabaseModelTests\) ... ok) Tj
+T*
+(test_sqlalchemy_model_file_is_syntax_valid_without_dependencies_installed) Tj
+T*
+(\(test_database_models.DatabaseModelTests\) ... ok) Tj
+T*
+(test_optional_db_roundtrip \(test_db_roundtrip_optional.TestDbRoundtripOptional\)) Tj
+T*
+(This is intentionally optional: ... skipped 'DATABASE_URL not set') Tj
+T*
+(test_skips_without_database_url \(test_golden_path_check.TestGoldenPathCheck\) ... ok) Tj
+T*
+(test_homes_bg_fixtures \(test_homes_bg_fixture_parsing.TestHomesBgFixtureParsing\) ... ok) Tj
+T*
+(test_homes_uses_specialized_class \(test_marketplace_connectors.TestConnectorFactory\) ... ok) Tj
+T*
+(test_other_uses_scaffold \(test_marketplace_connectors.TestConnectorFactory\) ... ok) Tj
+T*
+(test_licensing_blocks_ingestion \(test_marketplace_connectors.TestLegalDerivation\) ... ok) Tj
+T*
+(test_partner_blocks_scrape \(test_marketplace_connectors.TestLegalDerivation\) ... ok) Tj
+T*
+(test_public_crawl_allows_http_gate \(test_marketplace_connectors.TestLegalDerivation\) ... ok) Tj
+T*
+(test_excludes_social_and_messenger \(test_marketplace_connectors.TestMarketplaceScope\) ... ok) Tj
+T*
+(test_is_marketplace_source \(test_marketplace_connectors.TestMarketplaceScope\) ... ok) Tj
+T*
+(test_olx_bg_fixtures \(test_olx_bg_fixture_parsing.TestOlxBgFixtureParsing\) ... ok) Tj
+T*
+(test_dedupe_scorer_prefers_near_duplicate \(test_pipeline.PipelineTests\) ... ok) Tj
+T*
+(test_pipeline_processes_apartment_detail_page \(test_pipeline.PipelineTests\) ... ok) Tj
+T*
+(test_airbnb_payload_contains_sync_flags \(test_publishing.PublishingTests\) ... ok) Tj
+T*
+(test_blocking_compliance_flag_stops_publish \(test_publishing.PublishingTests\) ... ok) Tj
+T*
+(test_booking_listing_is_eligible \(test_publishing.PublishingTests\) ... ok) Tj
+T*
+(test_matrix_exports_include_seeded_sources \(test_source_registry.SourceRegistryTests\) ... ok) Tj
+T*
+(test_registry_contains_key_priority_sources \(test_source_registry.SourceRegistryTests\) ... ok) Tj
+T*
+(test_registry_exposes_agent_planning_fields \(test_source_registry.SourceRegistryTests\) ... ok) Tj
+T*
+(test_registry_filters_legal_review_queue \(test_source_registry.SourceRegistryTests\) ... ok) Tj
+T*
+(test_registry_loads_expected_tiers \(test_source_registry.SourceRegistryTests\) ... ok) Tj
+T*
+(test_imoti_net_blocks_live_http \(test_tier1_html_fixture_parsing.TestImotiNetLegalGate\) ... ok) Tj
+T*
+(test_address_bg \(test_tier1_html_fixture_parsing.TestTier1HtmlFixtureParsing\) ... ok) Tj
+T*
+(test_alo_bg \(test_tier1_html_fixture_parsing.TestTier1HtmlFixtureParsing\) ... ok) Tj
+T*
+(test_bulgarianproperties \(test_tier1_html_fixture_parsing.TestTier1HtmlFixtureParsing\) ... ok) Tj
+T*
+(test_imot_bg \(test_tier1_html_fixture_parsing.TestTier1HtmlFixtureParsing\) ... ok) Tj
+T*
+(test_imoti_net \(test_tier1_html_fixture_parsing.TestTier1HtmlFixtureParsing\) ... ok) Tj
+T*
+(Page 8 of 9) Tj
+ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 17 0 R >>
+endobj
+19 0 obj
+<< /Length 2196 >>
+stream
+BT
+/F1 10 Tf
+54 738 Td
+13 TL
+(test_luximmo \(test_tier1_html_fixture_parsing.TestTier1HtmlFixtureParsing\) ... ok) Tj
+T*
+(test_property_bg \(test_tier1_html_fixture_parsing.TestTier1HtmlFixtureParsing\) ... ok) Tj
+T*
+(test_suprimmo \(test_tier1_html_fixture_parsing.TestTier1HtmlFixtureParsing\) ... ok) Tj
+T*
+() Tj
+T*
+(----------------------------------------------------------------------) Tj
+T*
+(Ran 45 tests in 0.057s) Tj
+T*
+() Tj
+T*
+(OK \(skipped=6\)) Tj
+T*
+(- Dev worker \(`97 ms`\):) Tj
+T*
+(dev worker started) Tj
+T*
+(note: this is a lightweight placeholder; implement Temporal worker in Stage 3.) Tj
+T*
+(dev worker heartbeat 2026-04-08T11:42:29.600230+00:00) Tj
+T*
+(- Dev scheduler \(`103 ms`\):) Tj
+T*
+(dev scheduler started) Tj
+T*
+(note: this is a lightweight placeholder; implement durable Temporal scheduling in Stage 3.) Tj
+T*
+(dev scheduler heartbeat 2026-04-08T11:42:29.702817+00:00 | sources=44 | tier1-cadence-) Tj
+T*
+(candidates=10) Tj
+T*
+() Tj
+T*
+(Repo state notes:) Tj
+T*
+(- Dirty worktree entries observed: 44) Tj
+T*
+(-  M Dockerfile) Tj
+T*
+(-  M Makefile) Tj
+T*
+(-  M docs/agent-skills-index.md) Tj
+T*
+(-  M docs/agents/README.md) Tj
+T*
+(-  M docs/agents/backend_developer/JOURNEY.md) Tj
+T*
+(-  M docs/agents/debugger/JOURNEY.md) Tj
+T*
+(-  M docs/agents/scraper_1/JOURNEY.md) Tj
+T*
+(-  M docs/development-setup.md) Tj
+T*
+(-  M docs/exports/platform-mvp-plan.md) Tj
+T*
+(-  M docs/exports/project-status-roadmap.docx) Tj
+T*
+(-  M docs/exports/project-status-roadmap.md) Tj
+T*
+(-  M scripts/validate_project.py) Tj
+T*
+(-  M src/bgrealestate/api/main.py) Tj
+T*
+(-  M src/bgrealestate/connectors/factory.py) Tj
+T*
+(-  M src/bgrealestate/connectors/scaffold.py) Tj
+T*
+(-  M src/bgrealestate/db/repositories.py) Tj
+T*
+(-  M src/bgrealestate/pipeline.py) Tj
+T*
+(-  M tests/fixtures/homes_bg/basic_listing/expected.json) Tj
+T*
+(-  M tests/fixtures/homes_bg/missing_geo/expected.json) Tj
+T*
+(-  M tests/fixtures/homes_bg/missing_price/expected.json) Tj
+T*
+(-  M tests/test_api_fastapi.py) Tj
+T*
+(- ?? agent-skills/debugger-golden-path/) Tj
+T*
+(- ?? docs/agents/TASKS.md) Tj
+T*
+(- ?? docs/reports/daily-project-health-check-2026-04-08.md) Tj
+T*
+(- ?? output/) Tj
+T*
+(Page 9 of 9) Tj
+ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 19 0 R >>
+endobj
+21 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+xref
+0 22
+0000000000 65535 f 
+0000000015 00000 n 
+0000000085 00000 n 
+0000000198 00000 n 
+0000002152 00000 n 
+0000002278 00000 n 
+0000004751 00000 n 
+0000004877 00000 n 
+0000007376 00000 n 
+0000007502 00000 n 
+0000010632 00000 n 
+0000010759 00000 n 
+0000014189 00000 n 
+0000014317 00000 n 
+0000017357 00000 n 
+0000017485 00000 n 
+0000020205 00000 n 
+0000020333 00000 n 
+0000024786 00000 n 
+0000024914 00000 n 
+0000027163 00000 n 
+0000027291 00000 n 
+trailer
+<< /Size 22 /Root 21 0 R >>
+startxref
+27341
+%%EOF

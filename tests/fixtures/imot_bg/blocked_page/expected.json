@@ -1,0 +1,22 @@
+{
+  "address_text": null,
+  "area_sqm": null,
+  "city": null,
+  "currency": "EUR",
+  "district": null,
+  "external_id": "IB-BLOCKED",
+  "image_urls": [],
+  "latitude": null,
+  "listing_intent": "mixed",
+  "listing_url": "https://www.imot.bg/pcgi/imot.cgi?act=5&adv=IB-BLOCKED",
+  "longitude": null,
+  "owner_group": "Rezon Media",
+  "parser_version": "v1",
+  "phones": [],
+  "price": null,
+  "property_category": "unknown",
+  "reference_id": "imot.bg:IB-BLOCKED",
+  "region": null,
+  "rooms": null,
+  "source_name": "imot.bg"
+}

@@ -5,7 +5,7 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from .routers import admin, chat, readiness, system
+from .routers import admin, chat, crawl_jobs, crm, listings, readiness, system
 
 
 def create_app() -> FastAPI:
@@ -24,6 +24,9 @@ def create_app() -> FastAPI:
         allow_headers=["*"],
     )
     app.include_router(system.router)
+    app.include_router(listings.router)
+    app.include_router(crm.router)
+    app.include_router(crawl_jobs.router)
     app.include_router(admin.router)
     app.include_router(chat.router, prefix="/api/v1")
     app.include_router(readiness.router, prefix="/api/v1")

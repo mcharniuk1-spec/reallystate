@@ -19,5 +19,6 @@ Canonical skill files live under `agent-skills/<skill-name>/SKILL.md`.
 | `daily-orchestration` | Daily review, roadmap alignment, slicing for agents |
 | `runtime-compliance-evaluator` | Enforce legal/risk/access gates at runtime |
 | `db-sync-and-seeding` | Sync `data/source_registry.json` into PostgreSQL |
+| `debugger-golden-path` | Migrate → sync → fixture ingest → stats → XLSX (optional DB) |
 
 Every agent should state the skills used in its closeout.

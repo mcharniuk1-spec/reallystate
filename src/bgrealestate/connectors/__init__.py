@@ -7,6 +7,7 @@ not introduce live-network dependencies in unit tests (use fixtures).
 from .factory import build_connector, is_marketplace_source, marketplace_sources
 from .legal import DerivedLegalRule, LegalGateError, assert_live_http_allowed, derive_default_legal_rule
 from .scaffold import HtmlPortalConnector
+from .social_parser import extract_social_lead
 
 __all__ = [
     "HtmlPortalConnector",
@@ -15,6 +16,7 @@ __all__ = [
     "assert_live_http_allowed",
     "derive_default_legal_rule",
     "build_connector",
+    "extract_social_lead",
     "is_marketplace_source",
     "marketplace_sources",
 ]

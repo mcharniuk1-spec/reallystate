@@ -32,6 +32,12 @@ The project is pinned to Python 3.12 in `.python-version` and the Dockerfile.
 
 Current local machine check during setup showed `python3 --version` as `3.9.6`, so use Docker, pyenv, or uv to avoid version drift when adding FastAPI, SQLAlchemy, Temporal, and parser dependencies.
 
+```bash
+make doctor     # which interpreter Make uses, 3.12+ check, ruff/mypy presence
+make install    # editable install + dev tools; fails fast if Python is below 3.12
+make test-docker # build Python 3.12 image and run the full unit test suite (needs Docker)
+```
+
 ## Database
 
 The local PostgreSQL URL is (psycopg3):

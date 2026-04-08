@@ -1,0 +1,25 @@
+{
+  "address_text": null,
+  "area_sqm": 65.0,
+  "city": "Варна",
+  "currency": "EUR",
+  "district": "Чайка",
+  "external_id": "987654321",
+  "image_urls": [
+    "https://ireland.apollo.olxcdn.com/v1/files/olx-bg/987654321-1.jpg",
+    "https://ireland.apollo.olxcdn.com/v1/files/olx-bg/987654321-2.jpg"
+  ],
+  "latitude": 43.227,
+  "listing_intent": "sale",
+  "listing_url": "https://www.olx.bg/ad/dvustaen-apartament-varna-CID42-ID987654321.html",
+  "longitude": 27.888,
+  "owner_group": "Naspers Classifieds Bulgaria / OLX",
+  "parser_version": "olx_api_v1",
+  "phones": ["+359 52 600 100"],
+  "price": 78000.0,
+  "property_category": "apartment",
+  "reference_id": "OLX.bg:987654321",
+  "region": "Варна",
+  "rooms": 2.0,
+  "source_name": "OLX.bg"
+}

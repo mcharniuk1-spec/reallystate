@@ -1,0 +1,10 @@
+{
+  "urls": [
+    "https://www.homes.bg/listing/HB-12345",
+    "https://www.homes.bg/listing/HB-12346",
+    "https://www.homes.bg/listing/HB-12347",
+    "https://www.homes.bg/listing/HB-12348",
+    "https://www.homes.bg/listing/HB-12349"
+  ],
+  "next_cursor": {"page": 2}
+}

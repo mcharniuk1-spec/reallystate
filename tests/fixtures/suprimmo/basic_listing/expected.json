@@ -1,0 +1,26 @@
+{
+  "address_text": "кв. Сарафово, ул. Крайбрежна 10",
+  "area_sqm": 68.0,
+  "city": "Бургас",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "SP-66001",
+  "image_urls": [
+    "https://suprimmo.bg/uploads/photos/SP-66001-1.jpg"
+  ],
+  "latitude": 42.558,
+  "listing_intent": "sale",
+  "listing_url": "https://suprimmo.bg/property/SP-66001",
+  "longitude": 27.528,
+  "owner_group": "Stoyanov Enterprises",
+  "parser_version": "v1",
+  "phones": [
+    "+359 56 826 206"
+  ],
+  "price": 89000.0,
+  "property_category": "apartment",
+  "reference_id": "SUPRIMMO:SP-66001",
+  "region": "Бургас",
+  "rooms": null,
+  "source_name": "SUPRIMMO"
+}

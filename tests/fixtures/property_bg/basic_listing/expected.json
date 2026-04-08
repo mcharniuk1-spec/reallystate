@@ -1,0 +1,26 @@
+{
+  "address_text": "Bansko, Royal Towers complex",
+  "area_sqm": 42.0,
+  "city": "Bansko",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "PBG-33001",
+  "image_urls": [
+    "https://property.bg/images/PBG-33001-1.jpg"
+  ],
+  "latitude": 41.8364,
+  "listing_intent": "sale",
+  "listing_url": "https://property.bg/listing/PBG-33001",
+  "longitude": 23.4882,
+  "owner_group": "SUPRIMMO group",
+  "parser_version": "v1",
+  "phones": [
+    "+359 749 88 611"
+  ],
+  "price": 38000.0,
+  "property_category": "apartment",
+  "reference_id": "property.bg:PBG-33001",
+  "region": "Blagoevgrad",
+  "rooms": null,
+  "source_name": "property.bg"
+}

@@ -77,6 +77,11 @@ def _infer_listing_intent(seed: Dict[str, Any], text: str) -> ListingIntent:
         return ListingIntent.SHORT_TERM_RENT
     if intent in {"rent", "long_term_rent"} or "for rent" in text.lower():
         return ListingIntent.LONG_TERM_RENT
+    low = text.lower()
+    if "продажба" in low or "продава" in low:
+        return ListingIntent.SALE
+    if "наем" in low or "под наем" in low:
+        return ListingIntent.LONG_TERM_RENT
     return ListingIntent.MIXED
 
 
@@ -95,17 +100,33 @@ def _infer_property_category(seed: Dict[str, Any], text: str) -> PropertyCategor
     if category in mapping:
         return mapping[category]
     lowered = text.lower()
+    # e.g. "2-стаен апартамент" (common portal copy; not always "двустаен")
+    if re.search(r"\d+\s*[-–]?\s*стаен", lowered):
+        return PropertyCategory.APARTMENT
     for needle, category_enum in (
         ("apartment", PropertyCategory.APARTMENT),
+        ("апартамент", PropertyCategory.APARTMENT),
         ("studio", PropertyCategory.APARTMENT),
+        ("студио", PropertyCategory.APARTMENT),
+        ("едностаен", PropertyCategory.APARTMENT),
+        ("двустаен", PropertyCategory.APARTMENT),
+        ("тристаен", PropertyCategory.APARTMENT),
+        ("многостаен", PropertyCategory.APARTMENT),
         ("house", PropertyCategory.HOUSE),
+        ("къща", PropertyCategory.HOUSE),
         ("building", PropertyCategory.BUILDING),
+        ("сграда", PropertyCategory.BUILDING),
         ("land", PropertyCategory.LAND),
         ("plot", PropertyCategory.LAND),
+        ("земя", PropertyCategory.LAND),
+        ("парцел", PropertyCategory.LAND),
         ("project", PropertyCategory.PROJECT),
         ("office", PropertyCategory.OFFICE),
+        ("офис", PropertyCategory.OFFICE),
         ("villa", PropertyCategory.VILLA),
+        ("вила", PropertyCategory.VILLA),
         ("hotel", PropertyCategory.HOTEL),
+        ("хотел", PropertyCategory.HOTEL),
     ):
         if needle in lowered:
             return category_enum

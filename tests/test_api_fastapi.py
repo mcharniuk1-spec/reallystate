@@ -52,3 +52,30 @@ class TestFastAPIApp(unittest.TestCase):
         data = r.json()
         self.assertEqual(data.get("provider"), "stub")
         self.assertIn("Hello from test", data.get("message", ""))
+
+    def test_listings_returns_503_without_database_url(self) -> None:
+        from bgrealestate.api import deps as deps_mod
+
+        saved = os.environ.pop("DATABASE_URL", None)
+        try:
+            deps_mod._engine = None  # reset cached engine between env changes
+            r = self.client.get("/listings")
+            self.assertEqual(r.status_code, 503)
+            self.assertIn("detail", r.json())
+        finally:
+            if saved is not None:
+                os.environ["DATABASE_URL"] = saved
+            deps_mod._engine = None
+
+    def test_crm_threads_returns_503_without_database_url(self) -> None:
+        from bgrealestate.api import deps as deps_mod
+
+        saved = os.environ.pop("DATABASE_URL", None)
+        try:
+            deps_mod._engine = None
+            r = self.client.get("/crm/threads")
+            self.assertEqual(r.status_code, 503)
+        finally:
+            if saved is not None:
+                os.environ["DATABASE_URL"] = saved
+            deps_mod._engine = None

@@ -1,0 +1,26 @@
+{
+  "address_text": "кв. Бриз, бл. 14",
+  "area_sqm": 80.0,
+  "city": "Варна",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "IN-99001",
+  "image_urls": [
+    "https://imoti.net/pics/IN-99001-1.jpg"
+  ],
+  "latitude": 43.232,
+  "listing_intent": "mixed",
+  "listing_url": "https://imoti.net/property/IN-99001",
+  "longitude": 27.946,
+  "owner_group": "Investor Media Group",
+  "parser_version": "v1",
+  "phones": [
+    "+359 52 600 700"
+  ],
+  "price": 105000.0,
+  "property_category": "apartment",
+  "reference_id": "imoti.net:IN-99001",
+  "region": "Варна",
+  "rooms": null,
+  "source_name": "imoti.net"
+}

@@ -1,0 +1,26 @@
+{
+  "address_text": "Sea Garden Boulevard 12",
+  "area_sqm": 145.0,
+  "city": "Varna",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "LX-88001",
+  "image_urls": [
+    "https://luximmo.bg/photos/LX-88001-1.jpg"
+  ],
+  "latitude": 43.21,
+  "listing_intent": "sale",
+  "listing_url": "https://luximmo.bg/property/LX-88001",
+  "longitude": 27.928,
+  "owner_group": "Stoyanov Enterprises",
+  "parser_version": "v1",
+  "phones": [
+    "+359 52 916 888"
+  ],
+  "price": 320000.0,
+  "property_category": "apartment",
+  "reference_id": "LUXIMMO:LX-88001",
+  "region": "Varna",
+  "rooms": null,
+  "source_name": "LUXIMMO"
+}

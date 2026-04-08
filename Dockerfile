@@ -11,10 +11,13 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 COPY pyproject.toml README.md ./
+COPY Makefile alembic.ini ./
+COPY migrations ./migrations
 COPY src ./src
 COPY tests ./tests
 COPY data ./data
 COPY sql ./sql
+COPY scripts ./scripts
 
 RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -e ".[dev]"

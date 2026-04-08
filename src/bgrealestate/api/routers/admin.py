@@ -1,37 +1,38 @@
 from __future__ import annotations
 
-import os
-from typing import Any
+from typing import Annotated, Any
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from fastapi.responses import HTMLResponse
-from sqlalchemy import create_engine
+from sqlalchemy.engine import Engine
 
-from ...stats.source_stats import fetch_source_stats
+from ...stats.source_stats import SourceStatRow, fetch_source_stats
+from ..deps import get_engine
 
 
 router = APIRouter(tags=["admin"])
 
 
+def _stat_to_dict(r: SourceStatRow) -> dict[str, Any]:
+    return {
+        "source_name": r.source_name,
+        "tier": r.tier,
+        "legal_mode": r.legal_mode,
+        "canonical_listings": r.canonical_listings,
+        "raw_captures": r.raw_captures,
+        "with_description": r.with_description,
+        "has_legal_rule": r.has_legal_rule,
+        "has_endpoint": r.has_endpoint,
+    }
+
+
 @router.get("/admin/source-stats")
-def source_stats() -> dict[str, Any]:
-    url = os.getenv("DATABASE_URL")
-    if not url:
-        return {"ok": False, "error": "DATABASE_URL not set"}
-    engine = create_engine(url, pool_pre_ping=True)
+def source_stats(engine: Annotated[Engine, Depends(get_engine)]) -> dict[str, Any]:
     rows = fetch_source_stats(engine)
     return {
         "ok": True,
         "count": len(rows),
-        "rows": [
-            {
-                "source_name": r.source_name,
-                "canonical_listings": r.canonical_listings,
-                "raw_captures": r.raw_captures,
-                "with_description": r.with_description,
-            }
-            for r in rows
-        ],
+        "rows": [_stat_to_dict(r) for r in rows],
     }
 
 
@@ -59,9 +60,13 @@ def admin_home() -> HTMLResponse:
       <thead>
         <tr>
           <th>Source</th>
+          <th>Tier</th>
+          <th>Legal mode</th>
           <th>Canonical listings</th>
           <th>Raw captures</th>
           <th>With description</th>
+          <th>Legal rule</th>
+          <th>Endpoint</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -82,9 +87,13 @@ def admin_home() -> HTMLResponse:
           for (const r of data.rows) {
             const tr = document.createElement('tr');
             tr.innerHTML = '<td>' + r.source_name + '</td>' +
+              '<td>' + (r.tier ?? '') + '</td>' +
+              '<td>' + (r.legal_mode ?? '') + '</td>' +
               '<td>' + r.canonical_listings + '</td>' +
               '<td>' + r.raw_captures + '</td>' +
-              '<td>' + r.with_description + '</td>';
+              '<td>' + r.with_description + '</td>' +
+              '<td>' + (r.has_legal_rule ? 'Y' : 'N') + '</td>' +
+              '<td>' + (r.has_endpoint ? 'Y' : 'N') + '</td>';
             tbody.appendChild(tr);
           }
           tbl.style.display = '';

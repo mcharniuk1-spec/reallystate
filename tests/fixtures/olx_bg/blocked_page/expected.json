@@ -1,0 +1,22 @@
+{
+  "address_text": null,
+  "area_sqm": null,
+  "city": null,
+  "currency": "EUR",
+  "district": null,
+  "external_id": "olx-blocked",
+  "image_urls": [],
+  "latitude": null,
+  "listing_intent": "mixed",
+  "listing_url": "https://www.olx.bg/api/v1/offers/blocked",
+  "longitude": null,
+  "owner_group": "Naspers Classifieds Bulgaria / OLX",
+  "parser_version": "olx_api_v1",
+  "phones": [],
+  "price": null,
+  "property_category": "unknown",
+  "reference_id": "OLX.bg:olx-blocked",
+  "region": null,
+  "rooms": null,
+  "source_name": "OLX.bg"
+}

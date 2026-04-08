@@ -1,0 +1,26 @@
+{
+  "address_text": "ул. Златен рог 15",
+  "area_sqm": 72.0,
+  "city": "София",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "IB-550010",
+  "image_urls": [
+    "https://img.imot.bg/pics/big/imot-55001-1.jpg"
+  ],
+  "latitude": 42.6751,
+  "listing_intent": "sale",
+  "listing_url": "https://www.imot.bg/pcgi/imot.cgi?act=5&adv=IB-550010",
+  "longitude": 23.3165,
+  "owner_group": "Rezon Media",
+  "parser_version": "v1",
+  "phones": [
+    "+359 2 963 1000"
+  ],
+  "price": 185000.0,
+  "property_category": "apartment",
+  "reference_id": "imot.bg:IB-550010",
+  "region": "София",
+  "rooms": null,
+  "source_name": "imot.bg"
+}

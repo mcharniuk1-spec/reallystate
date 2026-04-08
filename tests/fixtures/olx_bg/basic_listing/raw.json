@@ -1,0 +1,40 @@
+{
+  "id": 987654321,
+  "url": "https://www.olx.bg/ad/dvustaen-apartament-varna-CID42-ID987654321.html",
+  "title": "Двустаен апартамент, кв. Чайка, Варна",
+  "description": "Продава се слънчев двустаен апартамент в кв. Чайка. 65 кв.м., 3-ти етаж от 8, панел. Тел: +359 52 600 100.",
+  "created_time": "2026-03-15T10:00:00+02:00",
+  "last_refresh_time": "2026-04-07T08:30:00+02:00",
+  "category": {
+    "id": 42,
+    "name": "Апартаменти"
+  },
+  "params": [
+    {"key": "price", "value": {"value": 78000, "currency": "EUR", "label": "78 000 EUR"}},
+    {"key": "m", "value": {"key": "65", "label": "65 кв.м."}},
+    {"key": "floor_select", "value": {"key": "3", "label": "3"}},
+    {"key": "builttype", "value": {"key": "panel", "label": "Панел"}},
+    {"key": "rooms_num", "value": {"key": "2", "label": "2-стаен"}}
+  ],
+  "location": {
+    "city": {"name": "Варна", "id": 1},
+    "district": {"name": "Чайка", "id": 101},
+    "region": {"name": "Варна", "id": 10}
+  },
+  "map": {
+    "lat": 43.2270,
+    "lon": 27.8880
+  },
+  "photos": [
+    {"link": "https://ireland.apollo.olxcdn.com/v1/files/olx-bg/987654321-1.jpg"},
+    {"link": "https://ireland.apollo.olxcdn.com/v1/files/olx-bg/987654321-2.jpg"}
+  ],
+  "contact": {
+    "phone": true,
+    "name": "Иван Петров"
+  },
+  "user": {
+    "id": 12345,
+    "name": "Иван Петров"
+  }
+}

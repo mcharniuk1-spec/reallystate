@@ -21,8 +21,23 @@ This repository is the foundation for a Bulgaria real estate ingestion, map, CRM
 - If a Linear issue key is present in the task or branch context, keep implementation and status notes aligned with that issue.
 - If Linear tools are unavailable in the session, use `docs/linear-integration.md` and `docs/exports/linear-import-roadmap.csv` as the fallback project-management source.
 
+## Agent Coordination
+
+Five specialist agents plus the lead agent operate under a structured coordination protocol:
+
+- **Task queue**: `docs/agents/TASKS.md` — single source of truth for what each agent does next.
+- **Journey logs**: `docs/agents/<agent>/JOURNEY.md` — append-only execution log per agent.
+- **Coordination protocol**: `docs/agents/README.md` — dependency graph, verification rules, handoff format.
+- **Cross-verification**: no slice is complete until a verifier agent (usually `debugger`) runs the acceptance gate and logs the result.
+
+Agents: `backend_developer`, `scraper_1`, `scraper_sm`, `ux_ui_designer`, `debugger`.
+
+Before starting work, every agent must read `docs/agents/TASKS.md` to find their current slice.
+
 ## Files To Read First
 
+- `docs/agents/TASKS.md` (your current task)
+- `docs/agents/README.md` (coordination protocol)
 - `PLAN.md`
 - `platform-mvp-plan.md` if present
 - `deep-research-report.md`

@@ -31,6 +31,10 @@ class HtmlPortalConnector(Connector):
         source = self._registry.by_name(self.source_name)
         if not source:
             raise RuntimeError(f"source not found in registry: {self.source_name}")
+        return source
+
+    def _entry_for_fetch(self):
+        source = self._entry()
         assert_live_http_allowed(source)
         return source
 
@@ -38,7 +42,7 @@ class HtmlPortalConnector(Connector):
         return DiscoveryResult(urls=[], next_cursor=cursor, discovered_at=_utc_now())
 
     def fetch_listing_detail(self, *, url: str, fetched_at: datetime) -> RawCapture:
-        source = self._entry()
+        source = self._entry_for_fetch()
         if self._client is None:
             import httpx  # type: ignore
 

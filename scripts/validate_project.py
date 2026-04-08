@@ -35,6 +35,19 @@ def check_pdf(path: Path) -> None:
 
 
 def main() -> int:
+    # Keep exported docs up-to-date on each validation run.
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "generate_architecture_guide.py")], cwd=ROOT, check=True)
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "generate_status_doc.py")], cwd=ROOT, check=True)
+    subprocess.run(
+        [sys.executable, "-m", "bgrealestate", "export-matrices", "--out-dir", str(ROOT / "artifacts")],
+        cwd=ROOT,
+        env={"PYTHONPATH": str(ROOT / "src")},
+        check=True,
+    )
+    # Keep the export-docs copies refreshed too.
+    (ROOT / "docs" / "exports").mkdir(parents=True, exist_ok=True)
+    (ROOT / "docs" / "exports" / "platform-mvp-plan.md").write_text((ROOT / "PLAN.md").read_text(encoding="utf-8"), encoding="utf-8")
+
     checks = [
         lambda: check_json(ROOT / "data/source_registry.json"),
         lambda: check_json(ROOT / ".cursor/mcp.json"),

@@ -1,0 +1,10 @@
+{
+  "intent": "sale",
+  "property_type": "apartment",
+  "city": "София",
+  "district": "Лозенец",
+  "price": 185000,
+  "currency": "EUR",
+  "phones": [],
+  "is_noise": false
+}

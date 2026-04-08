@@ -6,6 +6,7 @@ alwaysApply: true
 # Global Agent Rules
 
 Read `AGENTS.md`, `PLAN.md`, `deep-research-report.md`, `data/source_registry.json`, `sql/schema.sql`, and `README.md` before implementation work.
+Read `docs/agents/TASKS.md` to find your current task slice and `docs/agents/README.md` for the coordination protocol.
 Read `docs/linear-integration.md` when the task involves backlog planning, issue mapping, or delivery tracking.
 
 Keep the implementation incremental:
@@ -24,6 +25,12 @@ Safety gates:
 - No private messaging/social scraping without explicit consent.
 - No autonomous mass account creation or KYC/CAPTCHA bypass.
 - Store raw captures and media in object storage; keep only metadata and storage keys in PostgreSQL.
+
+Agent coordination:
+
+- Find your task in `docs/agents/TASKS.md`; log work in `docs/agents/<agent>/JOURNEY.md`.
+- No slice is complete until the verifier runs its acceptance gate and sets status to `VERIFIED`.
+- If blocked, record the blocker in TASKS.md and your JOURNEY.md.
 
 Delivery tracking:
 

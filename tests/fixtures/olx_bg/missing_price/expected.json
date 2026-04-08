@@ -1,0 +1,22 @@
+{
+  "address_text": null,
+  "area_sqm": 400.0,
+  "city": "Созопол",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "887766001",
+  "image_urls": [],
+  "latitude": 42.418,
+  "listing_intent": "sale",
+  "listing_url": "https://www.olx.bg/ad/parchel-zemya-sozopol-CID45-ID887766001.html",
+  "longitude": 27.694,
+  "owner_group": "Naspers Classifieds Bulgaria / OLX",
+  "parser_version": "olx_api_v1",
+  "phones": [],
+  "price": null,
+  "property_category": "land",
+  "reference_id": "OLX.bg:887766001",
+  "region": "Бургас",
+  "rooms": null,
+  "source_name": "OLX.bg"
+}

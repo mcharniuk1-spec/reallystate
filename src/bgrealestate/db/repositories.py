@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import asdict
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any
 
 from sqlalchemy import select, update
@@ -13,6 +13,9 @@ from ..models import CanonicalListing, RawCapture, SourceRegistryEntry
 from .ids import new_id
 from .models import (
     CanonicalListingModel,
+    CrawlJobModel,
+    LeadMessageModel,
+    LeadThreadModel,
     RawCaptureModel,
     SourceEndpointModel,
     SourceLegalRuleModel,
@@ -144,6 +147,70 @@ class SourceRegistryRepository:
 
     def get_legal_rule(self, source_name: str) -> SourceLegalRuleModel | None:
         return self.session.scalar(select(SourceLegalRuleModel).where(SourceLegalRuleModel.source_name == source_name))
+
+
+class CrawlJobRepository:
+    def __init__(self, session: Session) -> None:
+        self.session = session
+
+    def list_recent(self, *, limit: int = 50, offset: int = 0) -> list[CrawlJobModel]:
+        stmt = (
+            select(CrawlJobModel)
+            .order_by(CrawlJobModel.scheduled_for.desc())
+            .limit(min(limit, 500))
+            .offset(offset)
+        )
+        return list(self.session.scalars(stmt).all())
+
+
+class CrmRepository:
+    def __init__(self, session: Session) -> None:
+        self.session = session
+
+    def list_threads(self, *, limit: int = 50, offset: int = 0, account_id: str | None = None) -> list[LeadThreadModel]:
+        stmt = select(LeadThreadModel).order_by(
+            LeadThreadModel.last_message_at.desc().nulls_last(),
+            LeadThreadModel.created_at.desc(),
+        )
+        if account_id:
+            stmt = stmt.where(LeadThreadModel.account_id == account_id)
+        stmt = stmt.limit(min(limit, 200)).offset(offset)
+        return list(self.session.scalars(stmt).all())
+
+    def get_thread(self, thread_id: str) -> LeadThreadModel | None:
+        return self.session.get(LeadThreadModel, thread_id)
+
+    def list_messages(self, thread_id: str) -> list[LeadMessageModel]:
+        stmt = (
+            select(LeadMessageModel)
+            .where(LeadMessageModel.thread_id == thread_id)
+            .order_by(LeadMessageModel.received_at.asc().nullsfirst(), LeadMessageModel.sent_at.asc().nullsfirst())
+        )
+        return list(self.session.scalars(stmt).all())
+
+    def append_operator_message(self, thread_id: str, body_text: str) -> LeadMessageModel:
+        thread = self.get_thread(thread_id)
+        if thread is None:
+            raise ValueError("thread_not_found")
+        now = datetime.now(timezone.utc)
+        msg = LeadMessageModel(
+            message_id=new_id("lmsg"),
+            thread_id=thread_id,
+            direction="outbound",
+            sender_type="operator",
+            sender_id=None,
+            external_message_id=None,
+            body_text=body_text,
+            body_html=None,
+            language=None,
+            sent_at=now,
+            received_at=None,
+            delivery_status="stored",
+            metadata_jsonb={"kind": "manual_note"},
+        )
+        self.session.add(msg)
+        thread.last_message_at = now
+        return msg
 
 
 class RawCaptureRepository:
@@ -297,4 +364,23 @@ class CanonicalListingRepository:
             )
         )
         self.session.execute(stmt)
+
+    def list_recent(
+        self,
+        *,
+        limit: int = 50,
+        offset: int = 0,
+        source_name: str | None = None,
+        include_removed: bool = False,
+    ) -> list[CanonicalListingModel]:
+        stmt = select(CanonicalListingModel)
+        if not include_removed:
+            stmt = stmt.where(CanonicalListingModel.removed_at.is_(None))
+        if source_name:
+            stmt = stmt.where(CanonicalListingModel.source_name == source_name)
+        stmt = stmt.order_by(CanonicalListingModel.last_seen.desc()).limit(min(limit, 200)).offset(offset)
+        return list(self.session.scalars(stmt).all())
+
+    def get(self, reference_id: str) -> CanonicalListingModel | None:
+        return self.session.get(CanonicalListingModel, reference_id)
 

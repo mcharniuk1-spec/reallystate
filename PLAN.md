@@ -164,7 +164,7 @@ Stability targets: tier-1 fixture parser success above 95%, duplicate precision 
 
 This is the dedicated setup plan for Cursor/Codex/Claude agent automation.
 
-### 11.1 Specialist Agents (5 roles)
+### 11.1 Specialist Agents (5 roles) and Coordination Protocol
 In addition to the lead agent, operate 5 specialist agents. Each specialist keeps an append-only journey log:
 
 - `docs/agents/debugger/JOURNEY.md`
@@ -173,11 +173,20 @@ In addition to the lead agent, operate 5 specialist agents. Each specialist keep
 - `docs/agents/scraper_1/JOURNEY.md` (marketplace websites)
 - `docs/agents/scraper_sm/JOURNEY.md` (social overlays, consent/official-only)
 
+**Coordination protocol** (full details in `docs/agents/README.md`):
+
+- **Task queue**: `docs/agents/TASKS.md` is the single source of truth for what each agent does next. Every slice has: agent, status, inputs, acceptance gate, outputs, verifier, and dependencies.
+- **Cross-verification**: no slice is marked complete until a verifier agent (usually `debugger`) runs the acceptance gate and logs PASS/FAIL in their own JOURNEY.md. Status flow: `TODO` → `IN_PROGRESS` → `DONE_AWAITING_VERIFY` → `VERIFIED` or `BLOCKED`.
+- **Dependency chains**: agents cannot start slices whose dependencies are not yet `VERIFIED`. The dependency graph is documented in TASKS.md.
+- **Review rules**: debugger is the default verifier; backend_developer and scraper_1 cross-verify each other on DB persistence and API contracts; `.cursor/BUGBOT.md` priorities apply to all verification.
+
 Every task slice assigned to a specialist agent must specify:
 
 - inputs (files to read)
 - acceptance gate (tests/commands)
 - outputs (DB rows + XLSX export where applicable)
+- verifier (which agent runs the acceptance gate)
+- dependencies (which slices must be `VERIFIED` first)
 
 1. Create `AGENTS.md` at repo root. It must say: extend existing scaffold, never replace wholesale, use PostgreSQL/PostGIS, use fixtures for crawler tests, enforce source legal rules, no unsafe social/private scraping, no automatic mass account creation, update progress after every phase.
 

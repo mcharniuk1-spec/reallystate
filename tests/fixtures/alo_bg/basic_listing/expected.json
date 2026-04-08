@@ -1,0 +1,26 @@
+{
+  "address_text": "к-с Сий Грейс, бл. 3",
+  "area_sqm": 85.0,
+  "city": "Слънчев бряг",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "ALO-300100",
+  "image_urls": [
+    "https://img.alo.bg/photos/big/alo-ad-img1.jpg"
+  ],
+  "latitude": 42.695,
+  "listing_intent": "sale",
+  "listing_url": "https://www.alo.bg/ad/ALO-300100",
+  "longitude": 27.713,
+  "owner_group": "ALO.BG",
+  "parser_version": "v1",
+  "phones": [
+    "+359 554 28 900"
+  ],
+  "price": 95000.0,
+  "property_category": "apartment",
+  "reference_id": "alo.bg:ALO-300100",
+  "region": "Бургас",
+  "rooms": null,
+  "source_name": "alo.bg"
+}

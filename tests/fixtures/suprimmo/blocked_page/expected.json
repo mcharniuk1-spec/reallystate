@@ -1,0 +1,22 @@
+{
+  "address_text": null,
+  "area_sqm": null,
+  "city": null,
+  "currency": "EUR",
+  "district": null,
+  "external_id": "SP-BLOCKED",
+  "image_urls": [],
+  "latitude": null,
+  "listing_intent": "mixed",
+  "listing_url": "https://suprimmo.bg/property/SP-BLOCKED",
+  "longitude": null,
+  "owner_group": "Stoyanov Enterprises",
+  "parser_version": "v1",
+  "phones": [],
+  "price": null,
+  "property_category": "unknown",
+  "reference_id": "SUPRIMMO:SP-BLOCKED",
+  "region": null,
+  "rooms": null,
+  "source_name": "SUPRIMMO"
+}
