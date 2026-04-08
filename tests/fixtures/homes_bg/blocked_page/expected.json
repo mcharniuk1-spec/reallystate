@@ -1,0 +1,23 @@
+{
+  "address_text": null,
+  "area_sqm": null,
+  "city": null,
+  "currency": "EUR",
+  "district": null,
+  "external_id": "HB-BLOCKED-1",
+  "image_urls": [],
+  "latitude": null,
+  "listing_intent": "mixed",
+  "listing_url": "https://www.homes.bg/listing/HB-BLOCKED-1",
+  "longitude": null,
+  "owner_group": "Jobs.bg",
+  "parser_version": "v1",
+  "phones": [],
+  "price": null,
+  "property_category": "unknown",
+  "reference_id": "Homes.bg:HB-BLOCKED-1",
+  "region": null,
+  "rooms": null,
+  "source_name": "Homes.bg"
+}
+

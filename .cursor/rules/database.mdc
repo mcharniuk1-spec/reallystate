@@ -1,0 +1,21 @@
+---
+description: Database, schema, and migration rules
+globs:
+  - "sql/**"
+  - "migrations/**"
+  - "src/bgrealestate/storage/**"
+---
+
+# Database Rules
+
+PostgreSQL/PostGIS is the source of truth.
+
+Required patterns:
+- Use UUID or stable text IDs consistently per table family.
+- Add GiST indexes for geometry columns.
+- Add GIN indexes for JSONB and full-text fields that will be queried.
+- Add B-tree indexes for source/status/timestamp/assignee/channel columns.
+- Store media/raw file binaries in S3/MinIO, never directly in PostgreSQL.
+- Treat high-volume append-only tables as partition-ready.
+
+Keep schema changes paired with repository tests and migration tests.

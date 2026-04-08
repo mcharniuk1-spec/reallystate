@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bulgaria Real Estate MVP Dev Shell</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #172026;
+        --muted: #52616b;
+        --paper: #f7f2e8;
+        --panel: #fffaf0;
+        --accent: #0b6b57;
+        --line: #dfd4be;
+      }
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        background: radial-gradient(circle at 20% 10%, #f8d8a8 0, transparent 24rem), var(--paper);
+        color: var(--ink);
+      }
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 64px 24px;
+      }
+      .card {
+        background: color-mix(in srgb, var(--panel) 92%, white);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 36px;
+        box-shadow: 0 24px 70px rgb(54 43 25 / 12%);
+      }
+      h1 {
+        font-size: clamp(2.5rem, 7vw, 5.75rem);
+        line-height: 0.9;
+        letter-spacing: -0.06em;
+        margin: 0 0 24px;
+      }
+      p {
+        color: var(--muted);
+        font-size: 1.1rem;
+        line-height: 1.7;
+      }
+      nav {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 12px;
+        margin-top: 28px;
+      }
+      a {
+        display: block;
+        padding: 16px 18px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        color: var(--accent);
+        text-decoration: none;
+        background: #fffdf8;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="card">
+        <h1>Bulgaria Real Estate MVP</h1>
+        <p>
+          Development shell only. The Next.js product UI is planned for a later stage; this page confirms
+          the frontend run target works while backend persistence, connectors, APIs, and CRM are built.
+        </p>
+        <nav aria-label="planned pages">
+          <a href="#listings">/listings planned</a>
+          <a href="#properties">/properties/[id] planned</a>
+          <a href="#map">/map planned</a>
+          <a href="#chat">/chat planned</a>
+          <a href="#settings">/settings planned</a>
+          <a href="#admin">/admin planned</a>
+        </nav>
+      </section>
+    </main>
+  </body>
+</html>

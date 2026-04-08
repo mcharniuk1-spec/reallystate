@@ -1,0 +1,35 @@
+---
+description: Bulgaria real estate MVP global project rules
+alwaysApply: true
+---
+
+# Global Agent Rules
+
+Read `AGENTS.md`, `PLAN.md`, `deep-research-report.md`, `data/source_registry.json`, `sql/schema.sql`, and `README.md` before implementation work.
+
+Keep the implementation incremental:
+- Extend the existing `src/bgrealestate` scaffold instead of replacing it.
+- Work one phase, connector, or frontend page at a time.
+- Keep migrations, models, tests, and docs together for each slice.
+- Update progress in the plan or execution report after completed work.
+
+Safety gates:
+- No live-network dependency in tests.
+- No high-risk connector without `source_legal_rule` or equivalent enforcement.
+- No private messaging/social scraping without explicit consent.
+- No autonomous mass account creation or KYC/CAPTCHA bypass.
+- Store raw captures and media in object storage; keep only metadata and storage keys in PostgreSQL.
+
+Required closeout format:
+```text
+Changed files:
+Agent tools used:
+Skills used:
+Extensions/libraries used:
+Commands run:
+Tests run:
+Outputs produced:
+Risks / blockers:
+Progress update:
+Next step:
+```

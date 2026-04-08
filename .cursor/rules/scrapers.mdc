@@ -1,0 +1,24 @@
+---
+description: Connector and parser rules
+globs:
+  - "src/bgrealestate/connectors/**/*.py"
+  - "src/bgrealestate/parsers/**/*.py"
+  - "tests/fixtures/**"
+  - "tests/connectors/**"
+---
+
+# Scraper Connector Rules
+
+Implement one source at a time. Start with `Homes.bg` unless OLX API credentials are configured and documented.
+
+Each connector must provide:
+- source registry lookup
+- legal/access gate check
+- discovery output
+- detail fetch/parse output
+- raw capture persistence hook
+- canonical listing conversion
+- fixture-backed parser tests
+- no live network dependency in tests
+
+For high-risk sources, implement interface stubs and fixtures only until legal/partner access is approved.

@@ -1,0 +1,16 @@
+{
+  "setup": [
+    "make install || true",
+    "python3 -m unittest discover -s tests -v"
+  ],
+  "terminals": [
+    {
+      "name": "Tests",
+      "command": "python3 -m unittest discover -s tests -v"
+    }
+  ],
+  "notes": [
+    "Do not run live crawlers from background agents unless source legal gates and fixtures already exist.",
+    "Add make run-api, make run-worker, make run-frontend after those commands are implemented and stable."
+  ]
+}

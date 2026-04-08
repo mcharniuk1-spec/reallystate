@@ -1,0 +1,24 @@
+---
+description: Backend rules for src/bgrealestate
+globs:
+  - "src/bgrealestate/**/*.py"
+  - "tests/**/*.py"
+---
+
+# Backend Rules
+
+Use Python 3.12+ style where possible while preserving current compatibility unless the project version is intentionally raised.
+
+Prefer:
+- FastAPI for HTTP APIs.
+- Pydantic v2 for external API schemas.
+- SQLAlchemy 2.0 + Alembic for persistence.
+- Temporal workflows for durable automation.
+- Redis for rate limits, locks, and realtime fanout.
+- pytest/unittest fixture tests without live network access.
+
+Do not:
+- Hard-code secrets.
+- Add crawler network calls to unit tests.
+- Skip source legal/risk checks.
+- Store image binaries in PostgreSQL.

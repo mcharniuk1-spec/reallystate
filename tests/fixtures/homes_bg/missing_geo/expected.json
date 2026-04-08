@@ -1,0 +1,27 @@
+{
+  "address_text": "ул. Без Гео 2",
+  "area_sqm": null,
+  "city": "Варна",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "HB-20001",
+  "image_urls": [
+    "https://img.example/homes/geo-missing.jpg"
+  ],
+  "latitude": null,
+  "listing_intent": "mixed",
+  "listing_url": "https://www.homes.bg/listing/HB-20001",
+  "longitude": null,
+  "owner_group": "Jobs.bg",
+  "parser_version": "v1",
+  "phones": [
+    "+359 88 000 0001"
+  ],
+  "price": 55000.0,
+  "property_category": "unknown",
+  "reference_id": "Homes.bg:HB-20001",
+  "region": "Варна",
+  "rooms": null,
+  "source_name": "Homes.bg"
+}
+

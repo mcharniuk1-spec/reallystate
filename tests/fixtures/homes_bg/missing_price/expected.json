@@ -1,0 +1,27 @@
+{
+  "address_text": "ул. Без Цена 3",
+  "area_sqm": null,
+  "city": "Бургас",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "HB-30001",
+  "image_urls": [
+    "https://img.example/homes/price-missing.jpg"
+  ],
+  "latitude": null,
+  "listing_intent": "mixed",
+  "listing_url": "https://www.homes.bg/listing/HB-30001",
+  "longitude": null,
+  "owner_group": "Jobs.bg",
+  "parser_version": "v1",
+  "phones": [
+    "+359 88 000 0003"
+  ],
+  "price": null,
+  "property_category": "unknown",
+  "reference_id": "Homes.bg:HB-30001",
+  "region": "Бургас",
+  "rooms": null,
+  "source_name": "Homes.bg"
+}
+

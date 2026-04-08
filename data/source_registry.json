@@ -1,0 +1,1145 @@
+{
+  "sources": [
+    {
+      "source_name": "Address.bg",
+      "tier": 1,
+      "source_family": "agency",
+      "owner_group": "Realto Group",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "hourly",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "realto-group",
+      "languages": [
+        "bg"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "crawl listings with ref-id normalization",
+      "notes": "Core agency network with strong local branches.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_first_ingestion",
+      "primary_url": "https://address.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "alo.bg",
+      "tier": 1,
+      "source_family": "classifieds",
+      "owner_group": "ALO.BG",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "ten_minutes",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "static-classifieds",
+      "languages": [
+        "bg"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "short_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "scoped HTML crawl with category filtering",
+      "notes": "Strong coastal inventory, especially land and new-build.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_first_ingestion",
+      "primary_url": "https://www.alo.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "BulgarianProperties",
+      "tier": 1,
+      "source_family": "agency",
+      "owner_group": "Bulgarian Properties",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "hourly",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "foreign-buyer-agency",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "conservative crawl using stable reference IDs",
+      "notes": "Important for new-build and foreign buyer inventory.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_first_ingestion",
+      "primary_url": "https://www.bulgarianproperties.bg/",
+      "related_urls": [
+        "https://www.bulgarianproperties.com/"
+      ]
+    },
+    {
+      "source_name": "Homes.bg",
+      "tier": 1,
+      "source_family": "portal",
+      "owner_group": "Jobs.bg",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "ten_minutes",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "national-portal",
+      "languages": [
+        "bg"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land"
+      ],
+      "best_extraction_method": "server-rendered HTML crawl",
+      "notes": "Crawl-friendly and broad national coverage.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_first_ingestion",
+      "primary_url": "https://www.homes.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "imot.bg",
+      "tier": 1,
+      "source_family": "portal",
+      "owner_group": "Rezon Media",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "ten_minutes",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "rezon-network",
+      "languages": [
+        "bg"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "respectful crawl or partnership feed",
+      "notes": "High-volume benchmark supply source.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_first_ingestion",
+      "primary_url": "https://www.imot.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "imoti.net",
+      "tier": 1,
+      "source_family": "portal",
+      "owner_group": "Investor Media Group",
+      "access_mode": "headless",
+      "risk_mode": "high",
+      "freshness_target": "hourly",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "national-portal",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "partnership first, headless as fallback",
+      "notes": "403 and anti-bot patterns raise risk.",
+      "legal_mode": "legal_review_required",
+      "mvp_phase": "source_first_ingestion",
+      "primary_url": "https://www.imoti.net/",
+      "related_urls": []
+    },
+    {
+      "source_name": "LUXIMMO",
+      "tier": 1,
+      "source_family": "agency",
+      "owner_group": "Stoyanov Enterprises",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "hourly",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "stoyanov-group",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "careful crawl using stable luxury listing reference IDs",
+      "notes": "Luxury coastal segment.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_first_ingestion",
+      "primary_url": "https://www.luximmo.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "OLX.bg",
+      "tier": 1,
+      "source_family": "classifieds",
+      "owner_group": "Naspers Classifieds Bulgaria / OLX",
+      "access_mode": "official_api",
+      "risk_mode": "low",
+      "freshness_target": "ten_minutes",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "consumer-classifieds",
+      "languages": [
+        "bg"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "official developer API first",
+      "notes": "Primary API-first classifieds source.",
+      "legal_mode": "official_api_allowed",
+      "mvp_phase": "source_first_ingestion",
+      "primary_url": "https://www.olx.bg/",
+      "related_urls": [
+        "https://developer.olx.bg/"
+      ]
+    },
+    {
+      "source_name": "property.bg",
+      "tier": 1,
+      "source_family": "portal",
+      "owner_group": "SUPRIMMO group",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "hourly",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "stoyanov-group",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "targeted listing-page crawl",
+      "notes": "Cross-check source for foreign-buyer inventory.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_first_ingestion",
+      "primary_url": "https://www.property.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "SUPRIMMO",
+      "tier": 1,
+      "source_family": "agency",
+      "owner_group": "Stoyanov Enterprises",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "hourly",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "stoyanov-group",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "crawl listings and unify group reference IDs",
+      "notes": "High-value coastal and resort inventory.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_first_ingestion",
+      "primary_url": "https://www.suprimmo.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "ApartmentsBulgaria.com",
+      "tier": 2,
+      "source_family": "ota",
+      "owner_group": "Property Management BG",
+      "access_mode": "headless",
+      "risk_mode": "medium",
+      "freshness_target": "daily",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "managed-hospitality",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "short_term_rent"
+      ],
+      "best_extraction_method": "direct booking integration or careful crawl",
+      "notes": "Managed resort inventory.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_expansion_after_tier1",
+      "primary_url": "https://www.apartmentsbulgaria.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Bazar.bg",
+      "tier": 2,
+      "source_family": "classifieds",
+      "owner_group": "Rezon Media",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "hourly",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "rezon-network",
+      "languages": [
+        "bg"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land"
+      ],
+      "best_extraction_method": "limited HTML crawl",
+      "notes": "Secondary but useful classifieds source.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_expansion_after_tier1",
+      "primary_url": "https://bazar.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Domaza",
+      "tier": 2,
+      "source_family": "portal",
+      "owner_group": "Domaza",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "hourly",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "multi-language-portal",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "short_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "crawl with language canonicalization",
+      "notes": "Needs cross-language dedupe.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_expansion_after_tier1",
+      "primary_url": "https://www.domaza.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Holding Group Real Estate",
+      "tier": 2,
+      "source_family": "agency",
+      "owner_group": "Holding Group",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "hourly",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "varna-agency",
+      "languages": [
+        "bg"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "crawl direct site plus dedupe against portal syndication",
+      "notes": "Strong Varna-side project inventory.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_expansion_after_tier1",
+      "primary_url": "https://holdinggroup.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Home2U",
+      "tier": 2,
+      "source_family": "agency",
+      "owner_group": "Home2U",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "hourly",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "regional-agency",
+      "languages": [
+        "bg",
+        "en",
+        "ru"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "templated HTML parser",
+      "notes": "Important for Varna and project inventory.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_expansion_after_tier1",
+      "primary_url": "https://home2u.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Imoteka.bg",
+      "tier": 2,
+      "source_family": "agency",
+      "owner_group": "Realto Group",
+      "access_mode": "headless",
+      "risk_mode": "high",
+      "freshness_target": "daily",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "realto-group",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "partnership/licensed feed preferred; headless only after legal clearance",
+      "notes": "JS-heavy source with higher content-use risk.",
+      "legal_mode": "legal_review_required",
+      "mvp_phase": "source_expansion_after_tier1",
+      "primary_url": "https://imoteka.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Imoti.info",
+      "tier": 2,
+      "source_family": "classifieds",
+      "owner_group": "Bulinfo OOD",
+      "access_mode": "partner_feed",
+      "risk_mode": "high",
+      "freshness_target": "daily",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "structured-classifieds",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "licensing or partnership first; fixture-only parser research until approved",
+      "notes": "Terms indicate commercial data use requires authorization/payment.",
+      "legal_mode": "licensing_required",
+      "mvp_phase": "source_expansion_after_tier1",
+      "primary_url": "https://imoti.info/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Indomio.bg",
+      "tier": 2,
+      "source_family": "portal",
+      "owner_group": "Spitogatos Network",
+      "access_mode": "headless",
+      "risk_mode": "medium",
+      "freshness_target": "daily",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "multi-country-portal",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land"
+      ],
+      "best_extraction_method": "hybrid HTML/headless crawler",
+      "notes": "Secondary index for coastal supply.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_expansion_after_tier1",
+      "primary_url": "https://www.indomio.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Lions Group",
+      "tier": 2,
+      "source_family": "agency",
+      "owner_group": "Lions Group",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "daily",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "regional-agency",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "server-rendered listing crawl",
+      "notes": "Useful Varna-side agency inventory.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_expansion_after_tier1",
+      "primary_url": "https://lionsgroup.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Pochivka.bg",
+      "tier": 2,
+      "source_family": "ota",
+      "owner_group": "Pochivka BG",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "daily",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "travel-hospitality",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "short_term_rent"
+      ],
+      "best_extraction_method": "partnership or limited travel-catalog crawl",
+      "notes": "Hospitality intelligence more than core sale inventory.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_expansion_after_tier1",
+      "primary_url": "https://pochivka.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "realestates.bg",
+      "tier": 2,
+      "source_family": "classifieds",
+      "owner_group": "ALO.BG network",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "daily",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "alo-network",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land"
+      ],
+      "best_extraction_method": "scope-limited HTML crawl and dedupe against alo.bg",
+      "notes": "Foreign-facing Alo network layer.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_expansion_after_tier1",
+      "primary_url": "https://en.realestates.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Realistimo",
+      "tier": 2,
+      "source_family": "portal",
+      "owner_group": "Realistimo",
+      "access_mode": "headless",
+      "risk_mode": "medium",
+      "freshness_target": "hourly",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "map-driven-portal",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "HTML crawl with map-filter fallback",
+      "notes": "Map-driven browsing suggests structured geo data.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_expansion_after_tier1",
+      "primary_url": "https://realistimo.com/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Rentica.bg",
+      "tier": 2,
+      "source_family": "agency",
+      "owner_group": "Rentica",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "hourly",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "varna-rentals",
+      "languages": [
+        "bg"
+      ],
+      "listing_types": [
+        "long_term_rent"
+      ],
+      "best_extraction_method": "rent-only HTML parser",
+      "notes": "Varna rental specialist.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_expansion_after_tier1",
+      "primary_url": "https://rentica.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Svobodni-kvartiri.com",
+      "tier": 2,
+      "source_family": "portal",
+      "owner_group": "Svobodni kvartiri",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "hourly",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "rentals-portal",
+      "languages": [
+        "bg"
+      ],
+      "listing_types": [
+        "long_term_rent",
+        "short_term_rent"
+      ],
+      "best_extraction_method": "deep pagination crawl by city scope",
+      "notes": "Useful for worker and student rentals.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_expansion_after_tier1",
+      "primary_url": "https://svobodni-kvartiri.com/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Unique Estates",
+      "tier": 2,
+      "source_family": "agency",
+      "owner_group": "Realto Group",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "daily",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "realto-group",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "new_build"
+      ],
+      "best_extraction_method": "luxury listing crawler",
+      "notes": "Luxury sea-segment pages.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_expansion_after_tier1",
+      "primary_url": "https://ues.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Vila.bg",
+      "tier": 2,
+      "source_family": "ota",
+      "owner_group": "Vila Tours",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "daily",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "travel-hospitality",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "short_term_rent"
+      ],
+      "best_extraction_method": "partnership or limited catalog crawl",
+      "notes": "Villa and guest-house coverage.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_expansion_after_tier1",
+      "primary_url": "https://vila.bg/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Yavlena",
+      "tier": 2,
+      "source_family": "agency",
+      "owner_group": "Yavlena",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "hourly",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "regional-agency",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "sale",
+        "long_term_rent"
+      ],
+      "best_extraction_method": "incremental crawl with ID-based URLs",
+      "notes": "Established agency with branch-driven supply.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "source_expansion_after_tier1",
+      "primary_url": "https://www.yavlena.com/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Airbnb",
+      "tier": 3,
+      "source_family": "ota",
+      "owner_group": "Airbnb, Inc.",
+      "access_mode": "partner_feed",
+      "risk_mode": "prohibited_without_contract",
+      "freshness_target": "vendor_sync",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "ota-short-term",
+      "languages": [
+        "multi"
+      ],
+      "listing_types": [
+        "short_term_rent"
+      ],
+      "best_extraction_method": "official authorized partner integration only",
+      "notes": "Do not rely on scraping as a core acquisition path.",
+      "legal_mode": "official_partner_or_vendor_only",
+      "mvp_phase": "reverse_publishing_and_str_intelligence",
+      "primary_url": "https://www.airbnb.com/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Airbtics",
+      "tier": 3,
+      "source_family": "analytics_vendor",
+      "owner_group": "Airbtics",
+      "access_mode": "licensed_data",
+      "risk_mode": "low",
+      "freshness_target": "vendor_sync",
+      "publish_capable": false,
+      "dedupe_cluster_hint": "str-analytics",
+      "languages": [
+        "en"
+      ],
+      "listing_types": [
+        "short_term_rent_metrics"
+      ],
+      "best_extraction_method": "REST API or licensed export",
+      "notes": "Use for coastal STR benchmarks.",
+      "legal_mode": "official_partner_or_vendor_only",
+      "mvp_phase": "enrichment_and_verification",
+      "primary_url": "https://airbtics.com/",
+      "related_urls": []
+    },
+    {
+      "source_name": "AirDNA",
+      "tier": 3,
+      "source_family": "analytics_vendor",
+      "owner_group": "AirDNA",
+      "access_mode": "licensed_data",
+      "risk_mode": "low",
+      "freshness_target": "vendor_sync",
+      "publish_capable": false,
+      "dedupe_cluster_hint": "str-analytics",
+      "languages": [
+        "en"
+      ],
+      "listing_types": [
+        "short_term_rent_metrics"
+      ],
+      "best_extraction_method": "licensed export or enterprise contract",
+      "notes": "Use for STR enrichment, not primary listings.",
+      "legal_mode": "official_partner_or_vendor_only",
+      "mvp_phase": "enrichment_and_verification",
+      "primary_url": "https://www.airdna.co/",
+      "related_urls": []
+    },
+    {
+      "source_name": "BCPEA property auctions",
+      "tier": 3,
+      "source_family": "official_register",
+      "owner_group": "Chamber of Private Bailiffs",
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "freshness_target": "daily",
+      "publish_capable": false,
+      "dedupe_cluster_hint": "auction-market",
+      "languages": [
+        "bg"
+      ],
+      "listing_types": [
+        "auction_sale"
+      ],
+      "best_extraction_method": "HTML crawl plus OCR when notices are scanned",
+      "notes": "Useful opportunistic inventory source.",
+      "legal_mode": "public_crawl_with_review",
+      "mvp_phase": "enrichment_and_verification",
+      "primary_url": "https://sales.bcpea.org/properties",
+      "related_urls": []
+    },
+    {
+      "source_name": "Booking.com",
+      "tier": 3,
+      "source_family": "ota",
+      "owner_group": "Booking Holdings",
+      "access_mode": "partner_feed",
+      "risk_mode": "prohibited_without_contract",
+      "freshness_target": "vendor_sync",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "ota-short-term",
+      "languages": [
+        "multi"
+      ],
+      "listing_types": [
+        "short_term_rent"
+      ],
+      "best_extraction_method": "connectivity/content partner APIs only",
+      "notes": "Certification-first publishing route.",
+      "legal_mode": "official_partner_or_vendor_only",
+      "mvp_phase": "reverse_publishing_and_str_intelligence",
+      "primary_url": "https://www.booking.com/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Flat Manager",
+      "tier": 3,
+      "source_family": "ota",
+      "owner_group": "Flat Manager / Renters.pl",
+      "access_mode": "partner_feed",
+      "risk_mode": "medium",
+      "freshness_target": "vendor_sync",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "managed-hospitality",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "short_term_rent",
+        "property_management"
+      ],
+      "best_extraction_method": "partnership or direct booking integration only",
+      "notes": "Managed STR/direct-booking inventory and potential distribution partner.",
+      "legal_mode": "official_partner_or_vendor_only",
+      "mvp_phase": "reverse_publishing_and_str_intelligence",
+      "primary_url": "https://flatmanager.bg/",
+      "related_urls": [
+        "https://reserve.flatmanager.bg/"
+      ]
+    },
+    {
+      "source_name": "KAIS Cadastre",
+      "tier": 3,
+      "source_family": "official_register",
+      "owner_group": "Agency for Geodesy, Cartography and Cadastre",
+      "access_mode": "manual_consent_only",
+      "risk_mode": "high",
+      "freshness_target": "consent_driven",
+      "publish_capable": false,
+      "dedupe_cluster_hint": "official-verification",
+      "languages": [
+        "bg"
+      ],
+      "listing_types": [
+        "building_geometry",
+        "parcel_validation"
+      ],
+      "best_extraction_method": "official services and permitted exports",
+      "notes": "Geospatial backbone for building matching.",
+      "legal_mode": "consent_or_manual_only",
+      "mvp_phase": "enrichment_and_verification",
+      "primary_url": "https://kais.cadastre.bg/bg/Map",
+      "related_urls": []
+    },
+    {
+      "source_name": "Menada Bulgaria",
+      "tier": 3,
+      "source_family": "ota",
+      "owner_group": "Menada Bulgaria",
+      "access_mode": "partner_feed",
+      "risk_mode": "medium",
+      "freshness_target": "vendor_sync",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "managed-hospitality",
+      "languages": [
+        "bg",
+        "en",
+        "pl"
+      ],
+      "listing_types": [
+        "short_term_rent",
+        "property_management"
+      ],
+      "best_extraction_method": "partnership/direct booking integration",
+      "notes": "Black Sea property management and STR inventory.",
+      "legal_mode": "official_partner_or_vendor_only",
+      "mvp_phase": "reverse_publishing_and_str_intelligence",
+      "primary_url": "https://menadabulgaria.com/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Property Register",
+      "tier": 3,
+      "source_family": "official_register",
+      "owner_group": "Registry Agency",
+      "access_mode": "manual_consent_only",
+      "risk_mode": "high",
+      "freshness_target": "consent_driven",
+      "publish_capable": false,
+      "dedupe_cluster_hint": "official-verification",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "ownership_verification"
+      ],
+      "best_extraction_method": "official e-service queries only",
+      "notes": "Verification layer, not acquisition feed.",
+      "legal_mode": "consent_or_manual_only",
+      "mvp_phase": "enrichment_and_verification",
+      "primary_url": "https://portal.registryagency.bg/en/home-pr",
+      "related_urls": []
+    },
+    {
+      "source_name": "Vrbo",
+      "tier": 3,
+      "source_family": "ota",
+      "owner_group": "Expedia Group",
+      "access_mode": "partner_feed",
+      "risk_mode": "high",
+      "freshness_target": "vendor_sync",
+      "publish_capable": true,
+      "dedupe_cluster_hint": "ota-short-term",
+      "languages": [
+        "multi"
+      ],
+      "listing_types": [
+        "short_term_rent"
+      ],
+      "best_extraction_method": "partnership or licensed feed",
+      "notes": "Not a crawl-first source.",
+      "legal_mode": "official_partner_or_vendor_only",
+      "mvp_phase": "reverse_publishing_and_str_intelligence",
+      "primary_url": "https://www.vrbo.com/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Facebook public groups/pages",
+      "tier": 4,
+      "source_family": "social_public_channel",
+      "owner_group": "Meta",
+      "access_mode": "manual_consent_only",
+      "risk_mode": "high",
+      "freshness_target": "daily",
+      "publish_capable": false,
+      "dedupe_cluster_hint": "social-overlay",
+      "languages": [
+        "bg"
+      ],
+      "listing_types": [
+        "leads",
+        "long_term_rent"
+      ],
+      "best_extraction_method": "manual monitoring or explicit partnerships",
+      "notes": "Do not rely on unstable login-restricted scraping.",
+      "legal_mode": "consent_or_manual_only",
+      "mvp_phase": "lead_intelligence_overlay",
+      "primary_url": "https://www.facebook.com/groups/438018083766467/",
+      "related_urls": []
+    },
+    {
+      "source_name": "Instagram public profiles",
+      "tier": 4,
+      "source_family": "social_public_channel",
+      "owner_group": "Meta",
+      "access_mode": "manual_consent_only",
+      "risk_mode": "high",
+      "freshness_target": "daily",
+      "publish_capable": false,
+      "dedupe_cluster_hint": "social-overlay",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "leads",
+        "branding"
+      ],
+      "best_extraction_method": "authorized business integrations or manual review",
+      "notes": "Treat as agency-branding and lead overlay.",
+      "legal_mode": "consent_or_manual_only",
+      "mvp_phase": "lead_intelligence_overlay",
+      "primary_url": "https://www.instagram.com/bulgarianproperties.bg/",
+      "related_urls": [
+        "https://www.instagram.com/bulgarianpropertiesagency/",
+        "https://www.instagram.com/suprimmo.bg/",
+        "https://www.instagram.com/suprimmo.varna/",
+        "https://www.instagram.com/suprimmo.burgas/",
+        "https://www.instagram.com/luximmo.bg/",
+        "https://www.instagram.com/luximmo.burgas/",
+        "https://www.instagram.com/rentica.bg/"
+      ]
+    },
+    {
+      "source_name": "Telegram public channels",
+      "tier": 4,
+      "source_family": "social_public_channel",
+      "owner_group": "Telegram",
+      "access_mode": "official_api",
+      "risk_mode": "medium",
+      "freshness_target": "hourly",
+      "publish_capable": false,
+      "dedupe_cluster_hint": "social-overlay",
+      "languages": [
+        "bg",
+        "en",
+        "ru"
+      ],
+      "listing_types": [
+        "leads",
+        "sale",
+        "long_term_rent"
+      ],
+      "best_extraction_method": "public API/client ingestion with NLP extraction",
+      "notes": "Lead-intelligence overlay only.",
+      "legal_mode": "official_api_allowed",
+      "mvp_phase": "lead_intelligence_overlay",
+      "primary_url": "https://t.me/rentvarna",
+      "related_urls": [
+        "https://t.me/varnarents",
+        "https://t.me/real_estate_bg",
+        "https://t.me/ads_in_bulgaria",
+        "https://t.me/bgvarna_en",
+        "https://t.me/kvartirivarna"
+      ]
+    },
+    {
+      "source_name": "Threads public profiles",
+      "tier": 4,
+      "source_family": "social_public_channel",
+      "owner_group": "Meta",
+      "access_mode": "manual_consent_only",
+      "risk_mode": "high",
+      "freshness_target": "daily",
+      "publish_capable": false,
+      "dedupe_cluster_hint": "social-overlay",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "leads",
+        "branding",
+        "links"
+      ],
+      "best_extraction_method": "experimental public-profile monitoring only after access review",
+      "notes": "Deferred overlay until official/public read coverage is confirmed.",
+      "legal_mode": "consent_or_manual_only",
+      "mvp_phase": "lead_intelligence_overlay",
+      "primary_url": "",
+      "related_urls": []
+    },
+    {
+      "source_name": "Viber opt-in communities",
+      "tier": 4,
+      "source_family": "private_messenger",
+      "owner_group": "Rakuten Viber",
+      "access_mode": "manual_consent_only",
+      "risk_mode": "high",
+      "freshness_target": "consent_driven",
+      "publish_capable": false,
+      "dedupe_cluster_hint": "private-messaging",
+      "languages": [
+        "bg"
+      ],
+      "listing_types": [
+        "leads",
+        "sale",
+        "long_term_rent"
+      ],
+      "best_extraction_method": "opt-in community ingestion only",
+      "notes": "Privacy-restricted and unstructured.",
+      "legal_mode": "consent_or_manual_only",
+      "mvp_phase": "lead_intelligence_overlay",
+      "primary_url": "https://invite.viber.com/?g2=AQA%2BxCYrr7Jy1VEh6Ic98YLAlDXOmJicE8MDwi%2F0NU%2FsFss%2FWRC%2B0lL9ufcuh96f",
+      "related_urls": [
+        "https://invite.viber.com/?g2=AQAskgj%2FMFVozlMMEjg%2BuNw%2FEqgzSfOC5b8ZiLELo85k4haoyw9L%2B8j8wGKeBc0t",
+        "https://invite.viber.com/?g2=AQBsW%2FKtZgB8VFEa8o8E52s45eL4D9wCwntSBjZysufmDhq3fLznCnlBiYx6vHYN&lang=en",
+        "https://invite.viber.com/?g2=AQBqiGrgkj4dFFS6JHR01wsv8ntsQAaiglrdOkkM4MlwzwqoJZ%2FQ49cp0nvXLpUr&lang=bg"
+      ]
+    },
+    {
+      "source_name": "WhatsApp opt-in groups",
+      "tier": 4,
+      "source_family": "private_messenger",
+      "owner_group": "Meta",
+      "access_mode": "manual_consent_only",
+      "risk_mode": "prohibited_without_contract",
+      "freshness_target": "consent_driven",
+      "publish_capable": false,
+      "dedupe_cluster_hint": "private-messaging",
+      "languages": [
+        "bg"
+      ],
+      "listing_types": [
+        "leads",
+        "sale",
+        "long_term_rent"
+      ],
+      "best_extraction_method": "explicit opt-in via WhatsApp Business only",
+      "notes": "Useful for owned-business communication, not broad scraping.",
+      "legal_mode": "official_partner_or_vendor_only",
+      "mvp_phase": "lead_intelligence_overlay",
+      "primary_url": "https://chat.whatsapp.com/HB3Kt48meI08eIaYSuJ1Go?mode=gi_t",
+      "related_urls": []
+    },
+    {
+      "source_name": "X public search/accounts",
+      "tier": 4,
+      "source_family": "social_public_channel",
+      "owner_group": "X",
+      "access_mode": "official_api",
+      "risk_mode": "low",
+      "freshness_target": "daily",
+      "publish_capable": false,
+      "dedupe_cluster_hint": "social-overlay",
+      "languages": [
+        "bg",
+        "en"
+      ],
+      "listing_types": [
+        "news",
+        "links",
+        "leads"
+      ],
+      "best_extraction_method": "API or public-profile monitoring",
+      "notes": "Useful mostly for market chatter and backlinks.",
+      "legal_mode": "official_api_allowed",
+      "mvp_phase": "lead_intelligence_overlay",
+      "primary_url": "https://x.com/super_imoti",
+      "related_urls": []
+    }
+  ]
+}

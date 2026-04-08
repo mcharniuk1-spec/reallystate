@@ -1,0 +1,25 @@
+---
+description: Documentation and export rules
+globs:
+  - "*.md"
+  - "docs/**"
+  - "agent-skills/**"
+  - ".cursor/**"
+  - ".claude/**"
+---
+
+# Documentation Rules
+
+Markdown must preview in standard viewers.
+
+Docs must include:
+- source coverage matrix
+- legal/risk matrix
+- database structure
+- app page structure
+- agent setup instructions
+- numbered roadmap
+- acceptance gates
+- Mermaid block diagram source
+
+DOCX/PDF export should render the diagram as an image when export tooling is available.

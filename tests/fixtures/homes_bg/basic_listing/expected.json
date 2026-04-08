@@ -1,0 +1,27 @@
+{
+  "address_text": "ул. Примерна 1",
+  "area_sqm": null,
+  "city": "Варна",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "HB-12345",
+  "image_urls": [
+    "https://img.example/homes/1.jpg"
+  ],
+  "latitude": 43.2141,
+  "listing_intent": "mixed",
+  "listing_url": "https://www.homes.bg/listing/HB-12345",
+  "longitude": 27.9147,
+  "owner_group": "Jobs.bg",
+  "parser_version": "v1",
+  "phones": [
+    "+359 88 123 4567"
+  ],
+  "price": 120000.0,
+  "property_category": "unknown",
+  "reference_id": "Homes.bg:HB-12345",
+  "region": "Варна",
+  "rooms": null,
+  "source_name": "Homes.bg"
+}
+

@@ -1,0 +1,25 @@
+---
+description: Frontend rules for the Next.js MVP
+globs:
+  - "web/**"
+---
+
+# Frontend Rules
+
+Build MVP pages in this order:
+1. `/listings`
+2. `/properties/[id]`
+3. `/map`
+4. `/chat`
+5. `/settings`
+6. `/admin`
+
+Use Next.js App Router, TypeScript, TanStack Query, MapLibre GL JS, deck.gl, and one consistent component/CSS system.
+
+The UI must expose:
+- source badges and provenance
+- dedupe grouping
+- map 2D/3D fallback
+- CRM lead actions
+- operator/admin review queues
+- compliance/publishing blockers
