@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-knyazhevo-etazh-ot-kashta-offer683079",
+  "external_id": "f1b751eaaa97",
+  "title": "Етаж от къща в София, Княжево - код на имота: 683079",
+  "description": "Адрес недвижими имоти предлага Етаж от къща в София, Княжево с код на имота: 683079. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/079/683079/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:21:17.057349+00:00",
+  "reference_id": "Address.bg:f1b751eaaa97",
+  "local_image_files": [
+    "data/media/Address.bg_f1b751eaaa97/0000_adc77247.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_f1b751eaaa97/0000_adc77247.jpg"
+  ]
+}

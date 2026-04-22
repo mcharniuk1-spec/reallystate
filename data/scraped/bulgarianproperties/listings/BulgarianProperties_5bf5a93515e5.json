@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD87615BG_House_for_sale_near_Gabrovo.html",
+  "external_id": "5bf5a93515e5",
+  "title": "Bulgarian Properties",
+  "description": "House with four bedrooms, large garden, swimming pool, garages and many recreational areas",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/87615_20.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:35:09.198489+00:00",
+  "reference_id": "BulgarianProperties:5bf5a93515e5",
+  "local_image_files": [
+    "data/media/BulgarianProperties_5bf5a93515e5/0000_19e361a6.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_5bf5a93515e5/0000_19e361a6.jpg"
+  ]
+}

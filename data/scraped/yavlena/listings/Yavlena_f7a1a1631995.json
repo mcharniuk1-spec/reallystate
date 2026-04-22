@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168194",
+  "external_id": "f7a1a1631995",
+  "title": "Тристаен апартамент във Варна 102 кв.м. ID 168194  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/392a6156-0acb-401a-b7a2-7d0b6a3d49fc.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:15:22.852306+00:00",
+  "reference_id": "Yavlena:f7a1a1631995",
+  "local_image_files": [
+    "data/media/Yavlena_f7a1a1631995/0000_3d2c6df2.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_f7a1a1631995/0000_3d2c6df2.jpg"
+  ]
+}

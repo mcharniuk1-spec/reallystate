@@ -1,10 +1,12 @@
 # Development Setup
 
-This project targets Python 3.12+, PostgreSQL/PostGIS, Redis, MinIO, Temporal, and a future Next.js frontend.
+This project targets Python 3.12+, PostgreSQL/PostGIS, Redis, MinIO, Temporal, and Next.js at the repo root.
+
+For **Docker install**, service ports, **media on disk vs MinIO**, and **SQL helper scripts**, see [`docker-and-database.md`](docker-and-database.md).
 
 ## Current Stage
 
-The environment scaffold exists, but the API server, worker, scheduler, and frontend app are not implemented yet.
+Core scaffold, Alembic migrations (initial schema from `sql/schema.sql`), Docker Compose stack, and a Next.js app shell are present; connectors and full API surface evolve per `PLAN.md`.
 
 ## Local Containers
 
@@ -12,6 +14,7 @@ Start infrastructure:
 
 ```bash
 make dev-up
+make dev-ready   # optional: block until Postgres accepts connections
 ```
 
 Stop infrastructure:
@@ -46,21 +49,31 @@ The local PostgreSQL URL is (psycopg3):
 postgresql+psycopg://bgrealestate:bgrealestate@localhost:5432/bgrealestate
 ```
 
-Initialize the database via migrations:
+Initialize the database via migrations (requires `DATABASE_URL` in the environment, e.g. from `.env`):
 
 ```bash
-DATABASE_URL=postgresql+psycopg://bgrealestate:bgrealestate@localhost:5432/bgrealestate make db-init
+cp .env.example .env   # once
+make dev-up && make dev-ready
+make db-init
 ```
 
-Alembic migrations are the next required implementation step; do not rely on raw SQL execution for long-term schema evolution.
+Schema evolution is via Alembic; `sql/schema.sql` is the source of truth loaded by the initial migration.
+
+Interactive SQL:
+
+```bash
+make db-shell
+```
 
 ## Frontend
 
-`package.json` declares the intended frontend stack, but the `web/` app has not been generated yet.
+Next.js lives at the repository root (`package.json`, `app/`). After `npm install`:
 
-Do not run `npm install` or create a lockfile until the frontend implementation phase begins.
+```bash
+npm run dev
+```
 
-For Stage 1 only, `make run-frontend` serves a static development shell from `web/index.html`. Replace it with `npm run dev` after the Next.js app is created.
+`make run-frontend` may still serve a static fallback if present; prefer `npm run dev` for the app shell.
 
 ## Development Entrypoints
 

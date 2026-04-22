@@ -1,0 +1,709 @@
+{
+  "generated_at": "2026-04-21T15:22:11.425853+00:00",
+  "totals": {
+    "sources": 27,
+    "with_live_total": 6,
+    "with_inventory_rows": 6
+  },
+  "sources": [
+    {
+      "tier": 1,
+      "source_name": "Address.bg",
+      "primary_url": "https://address.bg/",
+      "website_total": {
+        "value": 18701,
+        "kind": "exact",
+        "basis": "live_embedded_json",
+        "url": "https://address.bg/sale",
+        "notes": "Computed as sale total 16935 plus rent total 1766 from live `offers-object` payloads."
+      },
+      "saved_listings": 43,
+      "coverage_pct": 0.2299342281161435,
+      "inventory_rows": [
+        {
+          "service": "sale",
+          "property": "all",
+          "count": 16935,
+          "kind": "exact",
+          "basis": "live_embedded_json",
+          "url": "https://address.bg/sale",
+          "notes": "Page payload exposes `total=16935`."
+        },
+        {
+          "service": "long_term_rent",
+          "property": "all",
+          "count": 1766,
+          "kind": "exact",
+          "basis": "live_embedded_json",
+          "url": "https://address.bg/rent",
+          "notes": "Page payload exposes `total=1766`."
+        }
+      ],
+      "counting_method": "Read the live search page and extract `offers-object.total` from the embedded JSON payload.",
+      "counting_gap": "Property-type split still needs category-specific entry pages or in-payload estate-type aggregation.",
+      "analysis_estimate": 18000,
+      "best_extraction_method": "crawl listings with ref-id normalization",
+      "state": "Partial corpus on disk",
+      "next_step": "Continue category-by-category refreshes and push the file-backed corpus into PostgreSQL for `S1-18` evidence.",
+      "estimate_conflict": "Saved analysis estimate 18000 is below the confirmed/lower-bound live count 18701."
+    },
+    {
+      "tier": 1,
+      "source_name": "alo.bg",
+      "primary_url": "https://www.alo.bg/",
+      "website_total": {
+        "value": 75961,
+        "kind": "lower_bound",
+        "basis": "largest_live_category_count",
+        "url": "https://www.alo.bg/obiavi/imoti-prodajbi/apartamenti-stai/",
+        "notes": "Sale apartments alone already exceed the older source estimate, so current total must be at least this large."
+      },
+      "saved_listings": 0,
+      "coverage_pct": 0.0,
+      "inventory_rows": [
+        {
+          "service": "sale",
+          "property": "apartment",
+          "count": 75961,
+          "kind": "exact",
+          "basis": "live_meta_description",
+          "url": "https://www.alo.bg/obiavi/imoti-prodajbi/apartamenti-stai/",
+          "notes": "Meta description says `75961 обяви`."
+        },
+        {
+          "service": "sale",
+          "property": "house",
+          "count": 24695,
+          "kind": "exact",
+          "basis": "live_meta_description",
+          "url": "https://www.alo.bg/obiavi/imoti-prodajbi/kashti-vili/",
+          "notes": "Meta description says `24695 обяви`."
+        },
+        {
+          "service": "sale",
+          "property": "land",
+          "count": null,
+          "kind": "unavailable",
+          "basis": "configured_url_404",
+          "url": "https://www.alo.bg/obiavi/imoti-prodajbi/parzeli-za-zastroiavane-investicionni-proekti/",
+          "notes": "Configured land URL returned 404 during this run and needs remapping."
+        },
+        {
+          "service": "long_term_rent",
+          "property": "apartment",
+          "count": null,
+          "kind": "unavailable",
+          "basis": "configured_url_404",
+          "url": "https://www.alo.bg/obiavi/imoti-naemi/apartamenti-stai/",
+          "notes": "Configured rent URL returned 404 during this run and needs remapping."
+        }
+      ],
+      "counting_method": "Extract counts from the live category page meta description on mapped product pages.",
+      "counting_gap": "Land and rent routes need refreshed discovery URLs before the source can have a trustworthy total.",
+      "analysis_estimate": 35000,
+      "best_extraction_method": "scoped HTML crawl with category filtering",
+      "state": "Configured, zero landed corpus",
+      "next_step": "Run the stalled category-targeted continuation and confirm apartment sale/rent detail capture from `alo.bg/obiavi/...` pages.",
+      "estimate_conflict": "Saved analysis estimate 35000 is below the confirmed/lower-bound live count 75961."
+    },
+    {
+      "tier": 1,
+      "source_name": "BulgarianProperties",
+      "primary_url": "https://www.bulgarianproperties.bg/",
+      "website_total": {
+        "value": 12000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.bulgarianproperties.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 249,
+      "coverage_pct": 2.075,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 12000,
+      "best_extraction_method": "conservative crawl using stable reference IDs",
+      "state": "High-volume corpus on disk",
+      "next_step": "Continue category-by-category refreshes and push the file-backed corpus into PostgreSQL for `S1-18` evidence.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 1,
+      "source_name": "Homes.bg",
+      "primary_url": "https://www.homes.bg/",
+      "website_total": {
+        "value": 120000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.homes.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 49,
+      "coverage_pct": 0.04083333333333333,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 120000,
+      "best_extraction_method": "server-rendered HTML crawl",
+      "state": "Partial corpus on disk",
+      "next_step": "Expand beyond the current apartment-heavy subset by widening the API scopes and continuing city pagination.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 1,
+      "source_name": "imot.bg",
+      "primary_url": "https://www.imot.bg/",
+      "website_total": {
+        "value": 200000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.imot.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 271,
+      "coverage_pct": 0.1355,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 200000,
+      "best_extraction_method": "respectful crawl or partnership feed",
+      "state": "High-volume corpus on disk",
+      "next_step": "Improve item classification and image download completeness; the volume is present but category precision is weak.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 1,
+      "source_name": "imoti.net",
+      "primary_url": "https://www.imoti.net/",
+      "website_total": {
+        "value": 90000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.imoti.net/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 0,
+      "coverage_pct": 0.0,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 90000,
+      "best_extraction_method": "partnership first, headless as fallback",
+      "state": "Legal review required",
+      "next_step": "Run a legal/access review before new live work, then choose headless tracing or partner route.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 1,
+      "source_name": "LUXIMMO",
+      "primary_url": "https://www.luximmo.bg/",
+      "website_total": {
+        "value": 4000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.luximmo.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 15,
+      "coverage_pct": 0.375,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 4000,
+      "best_extraction_method": "careful crawl using stable luxury listing reference IDs",
+      "state": "Partial corpus on disk",
+      "next_step": "Close the text gap on detail pages before widening source coverage.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 1,
+      "source_name": "OLX.bg",
+      "primary_url": "https://www.olx.bg/",
+      "website_total": {
+        "value": 1000,
+        "kind": "lower_bound",
+        "basis": "live_listing_count_banner",
+        "url": "https://www.olx.bg/nedvizhimi-imoti/",
+        "notes": "The live banner says `повече от 1000 обяви`, so this is only a floor."
+      },
+      "saved_listings": 249,
+      "coverage_pct": 24.9,
+      "inventory_rows": [
+        {
+          "service": "all",
+          "property": "all",
+          "count": 1000,
+          "kind": "lower_bound",
+          "basis": "live_listing_count_banner",
+          "url": "https://www.olx.bg/nedvizhimi-imoti/",
+          "notes": "Banner text: `Открихме повече от 1000 обяви`."
+        }
+      ],
+      "counting_method": "Read the search results banner rendered on the listing page.",
+      "counting_gap": "The page only exposes a lower bound; precise per-category totals require client-side API/XHR tracing.",
+      "analysis_estimate": 45000,
+      "best_extraction_method": "official developer API first",
+      "state": "High-volume corpus on disk",
+      "next_step": "Continue category-by-category refreshes and push the file-backed corpus into PostgreSQL for `S1-18` evidence.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 1,
+      "source_name": "property.bg",
+      "primary_url": "https://www.property.bg/",
+      "website_total": {
+        "value": 4229,
+        "kind": "lower_bound",
+        "basis": "live_meta_description",
+        "url": "https://www.property.bg/bulgaria/apartments/",
+        "notes": "The apartments page meta description says `Over 4229 properties`; wording is category-oriented but still needs one confirmation pass."
+      },
+      "saved_listings": 15,
+      "coverage_pct": 0.3546937810357058,
+      "inventory_rows": [
+        {
+          "service": "sale",
+          "property": "apartment",
+          "count": 4229,
+          "kind": "lower_bound",
+          "basis": "live_meta_description",
+          "url": "https://www.property.bg/bulgaria/apartments/",
+          "notes": "Meta description says `Over 4229 properties` on the apartments page."
+        }
+      ],
+      "counting_method": "Extract category counts from live page metadata.",
+      "counting_gap": "Sale-selection and rent-selection pages still need their own counts to separate apartments from broader portal inventory.",
+      "analysis_estimate": 10000,
+      "best_extraction_method": "targeted listing-page crawl",
+      "state": "Partial corpus on disk",
+      "next_step": "Continue category-by-category refreshes and push the file-backed corpus into PostgreSQL for `S1-18` evidence.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 1,
+      "source_name": "SUPRIMMO",
+      "primary_url": "https://www.suprimmo.bg/",
+      "website_total": {
+        "value": 4628,
+        "kind": "lower_bound",
+        "basis": "live_meta_description",
+        "url": "https://www.suprimmo.bg/bulgaria/apartamenti/",
+        "notes": "The apartments page meta description says `Over 4628 ...`, which is a category lower bound rather than a whole-site total."
+      },
+      "saved_listings": 12,
+      "coverage_pct": 0.25929127052722556,
+      "inventory_rows": [
+        {
+          "service": "sale",
+          "property": "apartment",
+          "count": 4628,
+          "kind": "lower_bound",
+          "basis": "live_meta_description",
+          "url": "https://www.suprimmo.bg/bulgaria/apartamenti/",
+          "notes": "Meta description exposes `4628` as the visible apartment count floor."
+        }
+      ],
+      "counting_method": "Extract category counts from live page metadata on the canonical product page.",
+      "counting_gap": "Houses, land, sale-selection, and rent-selection still need separate count captures.",
+      "analysis_estimate": 15000,
+      "best_extraction_method": "crawl listings and unify group reference IDs",
+      "state": "Partial corpus on disk",
+      "next_step": "Continue category-by-category refreshes and push the file-backed corpus into PostgreSQL for `S1-18` evidence.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 2,
+      "source_name": "ApartmentsBulgaria.com",
+      "primary_url": "https://www.apartmentsbulgaria.bg/",
+      "website_total": {
+        "value": 1800,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.apartmentsbulgaria.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 0,
+      "coverage_pct": 0.0,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 1800,
+      "best_extraction_method": "direct booking integration or careful crawl",
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 2,
+      "source_name": "Bazar.bg",
+      "primary_url": "https://bazar.bg/",
+      "website_total": {
+        "value": 221272,
+        "kind": "exact",
+        "basis": "live_category_switcher",
+        "url": "https://bazar.bg/obiavi/kashti-i-vili",
+        "notes": "The page header exposes `Имоти 221 272 обяви`."
+      },
+      "saved_listings": 250,
+      "coverage_pct": 0.11298311580317437,
+      "inventory_rows": [
+        {
+          "service": "all",
+          "property": "all",
+          "count": 221272,
+          "kind": "exact",
+          "basis": "live_category_switcher",
+          "url": "https://bazar.bg/obiavi/kashti-i-vili",
+          "notes": "Real-estate umbrella count exposed in the top category switcher."
+        },
+        {
+          "service": "sale",
+          "property": "apartment",
+          "count": null,
+          "kind": "partial_visible_breakdown",
+          "basis": "live_city_shortcuts",
+          "url": "https://bazar.bg/obiavi/apartamenti",
+          "notes": "Apartment page exposes visible city/subtype slices such as `2-стаен София 12 376` and `3-стаен София 13 540`, but not a single clean apartment total."
+        }
+      ],
+      "counting_method": "Read the visible category switcher for portal total, then mine shortcut blocks for subtype/city slices.",
+      "counting_gap": "A clean apartment/house/land total still needs either a dedicated count endpoint or a DOM/XHR trace.",
+      "analysis_estimate": 8000,
+      "best_extraction_method": "limited HTML crawl",
+      "state": "High-volume corpus on disk",
+      "next_step": "Improve local media downloads and readability before the next large batch.",
+      "estimate_conflict": "Saved analysis estimate 8000 is below the confirmed/lower-bound live count 221272."
+    },
+    {
+      "tier": 2,
+      "source_name": "Domaza",
+      "primary_url": "https://www.domaza.bg/",
+      "website_total": {
+        "value": 22000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.domaza.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 0,
+      "coverage_pct": 0.0,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 22000,
+      "best_extraction_method": "crawl with language canonicalization",
+      "state": "Configured, zero landed corpus",
+      "next_step": "Map the language-canonical search entrypoints and recover the first working detail URL family before broad pagination.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 2,
+      "source_name": "Holding Group Real Estate",
+      "primary_url": "https://holdinggroup.bg/",
+      "website_total": {
+        "value": 3000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://holdinggroup.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 0,
+      "coverage_pct": 0.0,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 3000,
+      "best_extraction_method": "crawl direct site plus dedupe against portal syndication",
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 2,
+      "source_name": "Home2U",
+      "primary_url": "https://home2u.bg/",
+      "website_total": {
+        "value": 6000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://home2u.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 0,
+      "coverage_pct": 0.0,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 6000,
+      "best_extraction_method": "templated HTML parser",
+      "state": "Configured, zero landed corpus",
+      "next_step": "Repair the city landing pages into stable listing archives, then fetch detail pages product by product.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 2,
+      "source_name": "Imoteka.bg",
+      "primary_url": "https://imoteka.bg/",
+      "website_total": {
+        "value": 14000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://imoteka.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 0,
+      "coverage_pct": 0.0,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 14000,
+      "best_extraction_method": "partnership/licensed feed preferred; headless only after legal clearance",
+      "state": "Legal review required",
+      "next_step": "Run a legal/access review before new live work, then choose headless tracing or partner route.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 2,
+      "source_name": "Imoti.info",
+      "primary_url": "https://imoti.info/",
+      "website_total": {
+        "value": 25000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://imoti.info/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 0,
+      "coverage_pct": 0.0,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 25000,
+      "best_extraction_method": "licensing or partnership first; fixture-only parser research until approved",
+      "state": "Licensing required",
+      "next_step": "Do not broaden crawling. Move this source through licensing or partner-feed negotiation first.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 2,
+      "source_name": "Indomio.bg",
+      "primary_url": "https://www.indomio.bg/",
+      "website_total": {
+        "value": 7000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.indomio.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 0,
+      "coverage_pct": 0.0,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 7000,
+      "best_extraction_method": "hybrid HTML/headless crawler",
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 2,
+      "source_name": "Lions Group",
+      "primary_url": "https://lionsgroup.bg/",
+      "website_total": {
+        "value": 2500,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://lionsgroup.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 0,
+      "coverage_pct": 0.0,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 2500,
+      "best_extraction_method": "server-rendered listing crawl",
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 2,
+      "source_name": "Pochivka.bg",
+      "primary_url": "https://pochivka.bg/",
+      "website_total": {
+        "value": 5000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://pochivka.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 0,
+      "coverage_pct": 0.0,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 5000,
+      "best_extraction_method": "partnership or limited travel-catalog crawl",
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 2,
+      "source_name": "realestates.bg",
+      "primary_url": "https://en.realestates.bg/",
+      "website_total": {
+        "value": 6000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://en.realestates.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 0,
+      "coverage_pct": 0.0,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 6000,
+      "best_extraction_method": "scope-limited HTML crawl and dedupe against alo.bg",
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 2,
+      "source_name": "Realistimo",
+      "primary_url": "https://realistimo.com/",
+      "website_total": {
+        "value": 4500,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://realistimo.com/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 0,
+      "coverage_pct": 0.0,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 4500,
+      "best_extraction_method": "HTML crawl with map-filter fallback",
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 2,
+      "source_name": "Rentica.bg",
+      "primary_url": "https://rentica.bg/",
+      "website_total": {
+        "value": 1200,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://rentica.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 0,
+      "coverage_pct": 0.0,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 1200,
+      "best_extraction_method": "rent-only HTML parser",
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 2,
+      "source_name": "Svobodni-kvartiri.com",
+      "primary_url": "https://svobodni-kvartiri.com/",
+      "website_total": {
+        "value": 3500,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://svobodni-kvartiri.com/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 0,
+      "coverage_pct": 0.0,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 3500,
+      "best_extraction_method": "deep pagination crawl by city scope",
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 2,
+      "source_name": "Unique Estates",
+      "primary_url": "https://ues.bg/",
+      "website_total": {
+        "value": 2000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://ues.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 0,
+      "coverage_pct": 0.0,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 2000,
+      "best_extraction_method": "luxury listing crawler",
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 2,
+      "source_name": "Vila.bg",
+      "primary_url": "https://vila.bg/",
+      "website_total": {
+        "value": 4000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://vila.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 0,
+      "coverage_pct": 0.0,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 4000,
+      "best_extraction_method": "partnership or limited catalog crawl",
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "estimate_conflict": ""
+    },
+    {
+      "tier": 2,
+      "source_name": "Yavlena",
+      "primary_url": "https://www.yavlena.com/",
+      "website_total": {
+        "value": 9000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.yavlena.com/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "saved_listings": 251,
+      "coverage_pct": 2.788888888888889,
+      "inventory_rows": [],
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "analysis_estimate": 9000,
+      "best_extraction_method": "incremental crawl with ID-based URLs",
+      "state": "High-volume corpus on disk",
+      "next_step": "Recover detail-page descriptions for the already large on-disk corpus and keep sale buckets fresh.",
+      "estimate_conflict": ""
+    }
+  ]
+}

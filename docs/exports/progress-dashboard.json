@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-08T16:33:12.991271+00:00",
+  "generated_at": "2026-04-22T08:44:32.898985+00:00",
   "roadmap": {
     "done": 46,
     "total": 128,
@@ -7,6 +7,7 @@
   },
   "skills": [
     "backend-data-engineering",
+    "browser-scrape-ops",
     "ci-cd-pipeline",
     "claude-opus-planner",
     "context-engineering",
@@ -22,10 +23,14 @@
     "fullstack-coding",
     "geo-map-3d",
     "google-slides-handoff",
+    "hybrid-scrape-stack",
+    "image-media-pipeline",
     "investor-pitch-yc",
+    "managed-scrape-platforms",
     "multi-agent-patterns",
     "parser-fixture-qa",
     "postgres-analysis",
+    "postgres-ops-psql",
     "postgres-postgis-schema",
     "presentation-pdf-reportlab",
     "presentation-powerpoint-pptx",
@@ -42,6 +47,7 @@
     "software-architecture",
     "subagent-driven-development",
     "test-generator",
+    "universal-agent-scrape-setup",
     "ux-dashboard-design",
     "vercel-nextjs-deploy",
     "visual-3d-map",
@@ -163,6 +169,42 @@
           "commands": "make lint, make typecheck, make test, make validate, make golden-path, make dashboard-doc",
           "status": "",
           "review": "New slices can increase static-analysis surface quickly; rerunning full make gates is required before marking verifier tasks complete., Connector factory returns a broad protocol; tests that call source-specific parse methods should cast/narrow explicitly for mypy."
+        },
+        {
+          "title": "2026-04-21 — VERIFY: scraper_1 heartbeat incremental run (agent: scraper_1)",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "reviewed scraper_1 heartbeat command output from",
+          "status": "FAIL",
+          "review": "Treat this as an environment/runtime blocker, not a source-parser blocker., The next debugger follow-up should verify a live heartbeat only after outbound DNS/network access is available again."
+        },
+        {
+          "title": "2026-04-21 — VERIFY: scraper_1 heartbeat retry (agent: scraper_1)",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "reviewed retry output from",
+          "status": "FAIL",
+          "review": "Repeated failure confirms the blocker is environmental in this heartbeat environment., Keep the heartbeat automation active; do not demote source pattern readiness because of this retry."
+        },
+        {
+          "title": "2026-04-21 — debugger follow-up queued: strict pattern audit and local-media proof (agent: scraper_1)",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "deferred formal verification until the refreshed",
+          "status": "DEFERRED",
+          "review": "The verifier should confirm that only sources with local image-file evidence plus core and structured item fields remain, The verifier should also confirm that downgraded sources still keep their filesystem media evidence visible in the report instead of disappearing from readiness tracking."
+        },
+        {
+          "title": "2026-04-21 — debugger follow-up queued: parser repair wave + DB-runtime blocker proof (agent: scraper_1)",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "deferred formal verification until the refreshed strict pattern artifacts and the environment-runtime checks are preserved in",
+          "status": "DEFERRED",
+          "review": "Verify that the promoted sources now have sample evidence matching the saved report entries in, Verify that the DB proof is correctly marked as blocked by runtime availability rather than misreported as a parser or ingest-code failure."
         }
       ],
       "tasks": {
@@ -196,7 +238,7 @@
         "todo": [
           {
             "id": "DBG-05",
-            "title": "Verify stage-1 scraping is perfect before Varna 3D map MVP",
+            "title": "Verify stage-1 scraping before expanding 3D / building-depth geo",
             "status": "TODO",
             "details": "TODO"
           },
@@ -217,6 +259,12 @@
             "title": "Security audit — auth, injection, XSS, CORS",
             "status": "TODO",
             "details": "TODO"
+          },
+          {
+            "id": "DBG-09",
+            "title": "End-of-run verification sweep",
+            "status": "TODO",
+            "details": "TODO"
           }
         ],
         "blocked": []
@@ -224,11 +272,11 @@
       "counts": {
         "verified": 4,
         "in_progress": 0,
-        "todo": 4,
+        "todo": 5,
         "blocked": 0,
-        "total": 8,
-        "journal_entries": 11,
-        "efficiency_pct": 50
+        "total": 9,
+        "journal_entries": 15,
+        "efficiency_pct": 44
       }
     },
     {
@@ -390,6 +438,15 @@
           "commands": "",
           "status": "",
           "review": ""
+        },
+        {
+          "title": "2026-04-09 — Docker/DB operator docs + env for media path",
+          "summary": "** Encode prior session guidance (Postgres metadata + files/MinIO, introspection SQL, compose flow) in-repo.",
+          "action": "",
+          "changed_files": "** `docs/docker-and-database.md`, `sql/helpers/*.sql` + README, `MEDIA_STORAGE_PATH` in `.env.example`, `data/media/` in `.gitignore`, Makefile `dev-ready` / `db-shell`, README + `docs/development-setup.md` cross-links.",
+          "commands": "",
+          "status": "",
+          "review": ""
         }
       ],
       "tasks": {
@@ -454,7 +511,7 @@
         "todo": [
           {
             "id": "BD-06",
-            "title": "Varna-only MVP map/search + chat context APIs",
+            "title": "Map/search + chat context APIs (geo scope configurable)",
             "status": "TODO",
             "details": "TODO"
           },
@@ -503,7 +560,7 @@
         "todo": 7,
         "blocked": 0,
         "total": 16,
-        "journal_entries": 16,
+        "journal_entries": 17,
         "efficiency_pct": 38
       }
     },
@@ -639,6 +696,15 @@
           "commands": "",
           "status": "",
           "review": ""
+        },
+        {
+          "title": "2026-04-09 — UX-04 scope: nationwide Bulgaria",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
         }
       ],
       "tasks": {
@@ -673,7 +739,7 @@
         "todo": [
           {
             "id": "UX-04",
-            "title": "Varna-only LUN-style map + listings experience",
+            "title": "Nationwide Bulgaria LUN-style map + listings experience",
             "status": "TODO",
             "details": "TODO"
           },
@@ -734,7 +800,7 @@
         "todo": 9,
         "blocked": 0,
         "total": 13,
-        "journal_entries": 13,
+        "journal_entries": 14,
         "efficiency_pct": 19
       }
     },
@@ -949,6 +1015,132 @@
           "commands": "PYTHONPATH=src python3 -m unittest tests.test_media_pipeline -v, make test, 0 linter errors across all changed files",
           "status": "DONE_AWAITING_VERIFY",
           "review": ""
+        },
+        {
+          "title": "Task 19: Live bulk scrape + reports — **PAUSED** (operator stop 2026-04-08)",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "`BLOCKED` (operator pause — resume on demand)",
+          "review": ""
+        },
+        {
+          "title": "2026-04-09 — S1-15 continuation: category-driven harvest bridge + interim five-source evidence",
+          "summary": "",
+          "action": "Promoted the live scraper back into active work for the tier-1/2 lane., Patched, BulgarianProperties, Bazar.bg, Yavlena, alo.bg, Added, Added a reusable import bridge:, src/bgrealestate/connectors/ingest.py, new, make import-scraped, Extended, Updated, Existing harvested corpus already exceeds the operator’s numeric benchmark **on disk**:, Bazar.bg, BulgarianProperties, imot.bg, OLX.bg, Yavlena, This does **not** satisfy, Live rerun probe from this shell failed with DNS resolution errors (",
+          "changed_files": "src/bgrealestate/connectors/ingest.py, scripts/import_scraped_listings.py, scripts/live_scraper.py, scripts/generate_scraping_inventory.py, Makefile, docs/exports/tier12-live-volume-report.md, docs/agents/TASKS.md",
+          "commands": "make list-skills, python3 -m py_compile scripts/live_scraper.py scripts/import_scraped_listings.py src/bgrealestate/connectors/ingest.py, make import-scraped EXTRA_ARGS='--dry-run --limit 20', python3 scripts/live_scraper.py --sources homes_bg --max-pages 1 --max-listings 2, python3 scripts/live_scraper.py --sources bulgarianproperties,bazar_bg,yavlena,imot_bg,olx_bg --max-pages 1 --max-listings 5, make scraping-inventory, make validate, python3 -m py_compile ..., make import-scraped ... --dry-r",
+          "status": "`IN_PROGRESS`",
+          "review": "Next blocking actions are environmental, not structural:"
+        },
+        {
+          "title": "2026-04-09 — S1-15 continuation: repaired tier-1/2 source discovery + readable photo harvest",
+          "summary": "",
+          "action": "Re-read, Opened project-local skills again and kept the same minimum skill set active:, agent-skills/scraper-connector-builder/SKILL.md, agent-skills/real-estate-source-registry/SKILL.md, agent-skills/runtime-compliance-evaluator/SKILL.md, agent-skills/skill-discovery/SKILL.md, Live-probed broken discovery pages and confirmed real URL families:, Address.bg, SUPRIMMO, property.bg, LUXIMMO, Patched, fixed, replaced home-page-only seeds for, aligned pagination with live site behavior (, Ran live co",
+          "changed_files": "scripts/live_scraper.py, docs/exports/scraper-1-tier12-status.md, docs/exports/tier12-live-volume-report.md, docs/agents/TASKS.md, docs/agents/scraper_1/JOURNEY.md",
+          "commands": "curl -L --max-time 20 ..., python3 -m py_compile scripts/live_scraper.py, python3 scripts/live_scraper.py --sources address_bg,suprimmo,luximmo,property_bg --max-pages 3 --max-listings 120 --download-photos, python3 scripts/live_scraper.py --sources suprimmo,luximmo,property_bg --max-pages 2 --max-listings 60 --download-photos, python3 scripts/live_scraper.py --sources luximmo,property_bg --max-pages 2 --max-listings 20 --download-photos, python3 scripts/live_scraper.py --sources property_bg --m",
+          "status": "`IN_PROGRESS`",
+          "review": "The repaired discovery logic is working for four previously weak tier-1 sources., scrape_stats.json, S1-18"
+        },
+        {
+          "title": "2026-04-14 — scraper_1 analysis wave: tier-1/2 source matrix + skills gap planning",
+          "summary": "",
+          "action": "Re-read, Loaded the real-estate Bulgaria wiki material from the available, source registry is the canonical planning layer, compliance gating remains mandatory, the main live gap is DB-backed proof, not missing source inventory, Re-ran local skill discovery and compared project-local skills against the new asks for database operations, browser scraping, and media handling., Installed the external, agent-skills/browser-scrape-ops/SKILL.md, agent-skills/image-media-pipeline/SKILL.md, agent-skills/",
+          "changed_files": "agent-skills/browser-scrape-ops/SKILL.md, agent-skills/image-media-pipeline/SKILL.md, agent-skills/postgres-ops-psql/SKILL.md, docs/agent-skills-index.md, docs/skills/marketplace-adoption.md, scripts/generate_tier12_source_analysis.py, docs/exports/tier12-source-analysis.md, docs/exports/tier12-source-analysis.xlsx, docs/exports/tier12-source-analysis.json, docs/exports/tier12-skill-gap-analysis.md, docs/agents/TASKS.md, docs/agents/scraper_1/JOURNEY.md",
+          "commands": "",
+          "status": "`IN_PROGRESS`",
+          "review": "This run improved project memory and execution readiness without changing live scraper behavior., The next operational bottlenecks are still"
+        },
+        {
+          "title": "2026-04-20 — S1-18 scrape dashboard: service/property coverage and next-step tracker",
+          "summary": "",
+          "action": "Re-read, Consolidated saved tier-1/2 corpus evidence directly from, Added, docs/dashboard/scrape-status.html, docs/exports/scrape-status-dashboard.json, Structured the dashboard so it begins with all tier-1/2 links, state, and further steps, then drills into each source with service/property tables:, buy vs rent, land and commercial coverage where present, description/photo/readable-photo coverage, other captured variables such as, Updated the coordination protocol so each non-debugger agent run",
+          "changed_files": "scripts/generate_scrape_status_dashboard.py, Makefile, scripts/validate_project.py, docs/agents/README.md, docs/agents/TASKS.md, docs/agents/scraper_1/JOURNEY.md",
+          "commands": "python3 - <<'PY' ..., python3 -m py_compile scripts/generate_scrape_status_dashboard.py, make dashboard-doc, python3 -m py_compile scripts/generate_scrape_status_dashboard.py, make dashboard-doc",
+          "status": "`IN_PROGRESS`",
+          "review": "The dashboard makes the next scraper priorities more visible:, S1-18"
+        },
+        {
+          "title": "2026-04-20 — scraper_1 research wave: scraping market radar + universal agent setup",
+          "summary": "",
+          "action": "Re-read the project wiki memory stack and the current agent task and journey files before starting the market scan., Researched current official documentation and release signals for:, Playwright, Crawlee, Browserbase and Stagehand, Firecrawl, Zyte API, curl_cffi, Converted the research into project-local, version-controlled execution assets instead of leaving the conclusions only in chat., Added three new local skills:, agent-skills/hybrid-scrape-stack/SKILL.md, agent-skills/managed-scrape-plat",
+          "changed_files": "pyproject.toml, Makefile, .env.example, agent-skills/hybrid-scrape-stack/SKILL.md, agent-skills/managed-scrape-platforms/SKILL.md, agent-skills/universal-agent-scrape-setup/SKILL.md, docs/exports/scraping-tools-market-radar-2026-04-20.md, docs/exports/universal-agent-scrape-setup-2026-04-20.md, docs/agent-skills-index.md, docs/skills/marketplace-adoption.md, docs/agents/TASKS.md, docs/agents/scraper_1/JOURNEY.md",
+          "commands": "",
+          "status": "`IN_PROGRESS`",
+          "review": "This run improved strategic scraping readiness and agent consistency without changing the live harvesting code path., The next live continuation should explicitly use the new hybrid-stack and managed-platform decision rules when repairing"
+        },
+        {
+          "title": "2026-04-20 — scraper_1 memory update: full gallery and full item-content capture",
+          "summary": "",
+          "action": "Persisted the operator rule that a property item should be scraped as a full evidence unit, not a single-image sample., Updated recurring task notes so future scraper runs keep full-gallery download and readability checks visible., for each property detail page, try to identify the full image gallery, download all reachable item photos, not only the first image, verify whether the downloaded set is readable or decodable, treat description, attributes, contacts, and the full available media set a",
+          "changed_files": "docs/agents/TASKS.md, docs/agents/scraper_1/JOURNEY.md",
+          "commands": "",
+          "status": "`IN_PROGRESS`",
+          "review": "This should reduce false confidence from hero-image-only captures and improve downstream media QA."
+        },
+        {
+          "title": "2026-04-20 — scraper_1 metrics wave: declared offerings vs landed corpus by source",
+          "summary": "",
+          "action": "Generated a reusable deep-dive export that compares each tier-1/2 website's declared offering, estimated site scale, and confirmed landed corpus., Explicitly separated:, estimated active items on the website, active items actually landed in the current corpus, service coverage, property-category coverage, completeness percentages for description, photo URLs, and readable local photos, Added spreadsheet and JSON exports alongside the markdown report., docs/exports/tier12-source-metrics-deep-dive.",
+          "changed_files": "scripts/generate_tier12_metrics_deep_dive.py, Makefile, docs/exports/tier12-source-metrics-deep-dive.md, docs/exports/tier12-source-metrics-deep-dive.xlsx, docs/exports/tier12-source-metrics-deep-dive.json, docs/agents/TASKS.md, docs/agents/scraper_1/JOURNEY.md",
+          "commands": "python3 -m py_compile scripts/generate_tier12_metrics_deep_dive.py, make tier12-metrics, python3 -m py_compile scripts/generate_tier12_metrics_deep_dive.py, make tier12-metrics",
+          "status": "`IN_PROGRESS`",
+          "review": "The report makes one important distinction explicit: several sources already beat the 100-item benchmark but still cover only a small fraction of estimated website scale., This artifact should guide the next continuation wave source by source instead of relying on flat corpus counts alone."
+        },
+        {
+          "title": "2026-04-20 — scraper_1 website-total analysis wave: saved website inventory evidence into dashboard blocks",
+          "summary": "",
+          "action": "Generated a dedicated website-inventory artifact that separates website-side totals from landed corpus totals for each tier-1/2 source., Saved per-source website total basis, category-level count evidence rows, counting methods, counting gaps, and estimate-conflict notes where older scale estimates are already contradicted by live page counts., Extended, website total and coverage vs website, website total basis and notes, counting method and counting gap, a website inventory evidence table befo",
+          "changed_files": "scripts/generate_website_inventory_analysis.py, scripts/generate_scrape_status_dashboard.py, Makefile, docs/exports/website-inventory-analysis.json, docs/exports/website-inventory-analysis.md, docs/dashboard/scrape-status.html, docs/exports/scrape-status-dashboard.json, docs/agents/TASKS.md, docs/agents/scraper_1/JOURNEY.md",
+          "commands": "python3 -m py_compile scripts/generate_website_inventory_analysis.py scripts/generate_scrape_status_dashboard.py, make dashboard-doc, python3 -m py_compile scripts/generate_website_inventory_analysis.py scripts/generate_scrape_status_dashboard.py, make dashboard-doc",
+          "status": "`IN_PROGRESS`",
+          "review": "alo.bg, Several sources still only have estimate-level website totals; the next scraper wave should prioritize live counting passes where the dashboard still says"
+        },
+        {
+          "title": "2026-04-21 — scraper_1 pattern-and-status wave: source-specific item patterns for Homes.bg and imot.bg, plus dashboard status split",
+          "summary": "",
+          "action": "Upgraded, Added source-specific logic for:, Homes.bg, imot.bg, Removed the fixed 15-photo cap so full reachable galleries are downloaded by default unless a future env cap is set., Generated a new structured pattern-status artifact and extended, item-pattern status (, live count status, recent-count status, Varna-count status, best saved sample item and media evidence, Added standing agent instructions that a source should only be called, Created a 15-minute heartbeat automation for the incremen",
+          "changed_files": "scripts/live_scraper.py, scripts/generate_tier12_pattern_status.py, scripts/generate_scrape_status_dashboard.py, Makefile, docs/agents/TASKS.md, docs/agents/README.md, docs/agents/scraper_1/JOURNEY.md, docs/exports/tier12-pattern-status.json, docs/exports/tier12-pattern-status.md, docs/dashboard/scrape-status.html, docs/exports/scrape-status-dashboard.json, docs/exports/progress-dashboard.json",
+          "commands": "python3 -m py_compile scripts/live_scraper.py, python3 scripts/live_scraper.py --sources homes_bg,imot_bg --max-pages 1 --max-listings 12 --download-photos, python3 scripts/live_scraper.py --sources imot_bg --max-pages 1 --max-listings 2 --download-photos, python3 scripts/generate_tier12_pattern_status.py, python3 -m py_compile scripts/generate_scrape_status_dashboard.py scripts/generate_tier12_pattern_status.py, make dashboard-doc, python3 -m py_compile scripts/live_scraper.py, python3 -m py_co",
+          "status": "`DONE_AWAITING_VERIFY`",
+          "review": "FACT:, FACT:, INTERPRETATION: item-pattern readiness and website-count readiness are separate dimensions and should stay separated in the dashboard., GAP:, GAP: most sources still lack trustworthy whole-site"
+        },
+        {
+          "title": "2026-04-21 — scraper_1 heartbeat run: incremental scrape blocked by environment DNS failure",
+          "summary": "",
+          "action": "Triggered the 15-minute heartbeat scrape against the current top patterned sources (, Verified that the local scraper code still compiles, then attempted a small live run inside the heartbeat environment., The live increment did not proceed because outbound hostname resolution failed for both, No new listings landed in this heartbeat window., Existing status artifacts remain the latest valid local state.",
+          "changed_files": "docs/agents/scraper_1/JOURNEY.md",
+          "commands": "python3 -m py_compile scripts/live_scraper.py scripts/generate_tier12_pattern_status.py scripts/generate_scrape_status_dashboard.py, python3 scripts/live_scraper.py --sources homes_bg,imot_bg --max-pages 1 --max-listings 4 --download-photos, python3 -m py_compile scripts/live_scraper.py scripts/generate_tier12_pattern_status.py scripts/generate_scrape_status_dashboard.py",
+          "status": "`BLOCKED`",
+          "review": "FACT: the heartbeat environment had DNS/network failure (, INTERPRETATION: this blocker is environmental and should not downgrade current, NEXT: retry on the next heartbeat or in an environment with outbound DNS/network access, then continue the incremental append/inactive-mark loop."
+        },
+        {
+          "title": "2026-04-21 — scraper_1 heartbeat retry: DNS failure repeated",
+          "summary": "",
+          "action": "Re-ran a minimal heartbeat probe against, The first API discovery request failed immediately with the same DNS error, so no incremental scrape work could proceed.",
+          "changed_files": "docs/agents/scraper_1/JOURNEY.md",
+          "commands": "python3 -m py_compile scripts/live_scraper.py, python3 scripts/live_scraper.py --sources homes_bg --max-pages 1 --max-listings 1 --download-photos, python3 -m py_compile scripts/live_scraper.py",
+          "status": "`BLOCKED`",
+          "review": "FACT: the blocker is still environment DNS resolution, not discovery logic or detail parsing., NEXT: keep the heartbeat active and retry later; avoid treating this as a scraper regression."
+        },
+        {
+          "title": "2026-04-21 — scraper_1 strict pattern audit: local media files plus full-item fields",
+          "summary": "",
+          "action": "Re-audited all currently marked tier-1/2, Upgraded saved listing artifacts so downloaded image binaries are referenced by local file paths (, Added a backfill tool for already-saved listings and tightened the pattern-status generator so a source is only, full reachable gallery saved as local files, description captured, core commercial and location fields present (, at least two structured fields such as, Regenerated the tier-1/2 pattern report and scrape-status dashboard after the stricter audi",
+          "changed_files": "scripts/live_scraper.py, scripts/backfill_local_media_refs.py, scripts/generate_tier12_pattern_status.py, docs/agents/TASKS.md, docs/agents/README.md, docs/agents/scraper_1/JOURNEY.md",
+          "commands": "python3 scripts/backfill_local_media_refs.py, python3 scripts/generate_tier12_pattern_status.py, python3 -m py_compile scripts/live_scraper.py scripts/backfill_local_media_refs.py scripts/generate_tier12_pattern_status.py scripts/generate_scrape_status_dashboard.py, make dashboard-doc, python3 -m py_compile scripts/live_scraper.py scripts/backfill_local_media_refs.py scripts/generate_tier12_pattern_status.py scripts/generate_scrape_status_dashboard.py, make dashboard-doc",
+          "status": "`DONE_AWAITING_VERIFY`",
+          "review": "FACT: only, FACT: several other sources do save local galleries, but still miss core fields or structured fields in the best saved sample and were therefore downgraded to, FACT: image binaries are already stored optimally for the current repo under, GAP:, NEXT: let debugger spot-check the stricter classification and then upgrade downgraded sources one by one until they meet the same bar."
+        },
+        {
+          "title": "2026-04-21 — scraper_1 parser repair wave: strict pattern promotions + DB runtime proof attempt",
+          "summary": "",
+          "action": "Re-read the saved strict-pattern artifacts and repaired the remaining parser gaps for the saved tier-1/2 sample set., Added source-specific parser upgrades for, Reparsed and re-saved the strongest sample artifacts so the dashboard reads corrected listing JSON instead of stale parser output., Regenerated, Attempted the PostgreSQL proof path honestly:, confirmed Python DB deps (, confirmed, checked, checked Docker outside the sandbox and found no Docker daemon/socket, so the repo Compose stack can",
+          "changed_files": "scripts/live_scraper.py, scripts/generate_tier12_pattern_status.py, scripts/reparse_saved_listings.py, tests/test_live_scraper_source_parsers.py, src/bgrealestate/services/media.py, docs/agents/TASKS.md, docs/agents/scraper_1/JOURNEY.md, docs/exports/tier12-pattern-status.json, docs/exports/tier12-pattern-status.md, docs/dashboard/scrape-status.html, docs/exports/scrape-status-dashboard.json, docs/exports/progress-dashboard.json",
+          "commands": "python3 -m py_compile scripts/live_scraper.py scripts/reparse_saved_listings.py tests/test_live_scraper_source_parsers.py, PYTHONPATH=src python3 -m unittest tests.test_live_scraper_source_parsers -v, repaired sample reparse/download runs for, python3 scripts/generate_tier12_pattern_status.py, make dashboard-doc, psql \"postgresql://bgrealestate:bgrealestate@localhost:5432/bgrealestate\" -c 'select 1 as ok', docker ps -a, python3 -m py_compile scripts/live_scraper.py scripts/reparse_saved_listings",
+          "status": "`DONE_AWAITING_VERIFY`",
+          "review": "FACT: the saved strict, FACT:, FACT:, INTERPRETATION: the remaining non-patterned sources are now mostly blocked by missing saved live samples or legal review, not by parser weaknesses in the already-landed corpus., GAP: PostgreSQL persistence is still not proven in this environment because no local Postgres server is running and Docker daemon/compose are unavailable here., NEXT: verify this repair wave with"
         }
       ],
       "tasks": {
@@ -996,12 +1188,18 @@
             "title": "Discovery pagination for ALL tier-1 sources",
             "status": "DONE_AWAITING_VERIFY",
             "details": "DONE_AWAITING_VERIFY` (2026-04-08; discovery parsers + fixtures + tests added for all tier-1 sources)"
+          },
+          {
+            "id": "S1-15",
+            "title": "Live HTTP integration for tier-1 connectors",
+            "status": "IN_PROGRESS",
+            "details": "IN_PROGRESS` (2026-04-21; strict pattern repairs promoted `Address.bg`, `BulgarianProperties`, `LUXIMMO`, `OLX.bg`, `property.bg`, `SUPRIMMO`, `Bazar.bg`, and `Yavlena` to `Patterned` from saved item evidence; DB proof is still blocked because no PostgreSQL server is running locally and Docker daemon/compose are unavailable in this environment; `alo.bg`/`Domaza`/`Home2U` still remain low-yield or zero-sample)"
           }
         ],
         "todo": [
           {
-            "id": "S1-15",
-            "title": "Live HTTP integration for tier-1 connectors",
+            "id": "S1-18",
+            "title": "Tier-1/2 live volume gate (≥100 listings × ≥5 sources) — NON-STOP",
             "status": "TODO",
             "details": "TODO"
           },
@@ -1022,11 +1220,11 @@
       },
       "counts": {
         "verified": 3,
-        "in_progress": 4,
+        "in_progress": 5,
         "todo": 3,
         "blocked": 0,
-        "total": 10,
-        "journal_entries": 22,
+        "total": 11,
+        "journal_entries": 36,
         "efficiency_pct": 50
       }
     },
@@ -1486,7 +1684,7 @@
       "next_tasks": [
         {
           "id": "BD-06",
-          "title": "Varna-only MVP map/search + chat context APIs",
+          "title": "Map/search + chat context APIs (geo scope configurable)",
           "status": "TODO",
           "details": "TODO"
         },
@@ -1533,9 +1731,9 @@
     {
       "key": "scraper_1",
       "label": "Tier-1/2 Scraping",
-      "total": 10,
+      "total": 11,
       "done_count": 3,
-      "current_count": 4,
+      "current_count": 5,
       "next_count": 3,
       "blocked_count": 0,
       "progress_percent": 50,
@@ -1583,12 +1781,18 @@
           "title": "Discovery pagination for ALL tier-1 sources",
           "status": "DONE_AWAITING_VERIFY",
           "details": "DONE_AWAITING_VERIFY` (2026-04-08; discovery parsers + fixtures + tests added for all tier-1 sources)"
+        },
+        {
+          "id": "S1-15",
+          "title": "Live HTTP integration for tier-1 connectors",
+          "status": "IN_PROGRESS",
+          "details": "IN_PROGRESS` (2026-04-21; strict pattern repairs promoted `Address.bg`, `BulgarianProperties`, `LUXIMMO`, `OLX.bg`, `property.bg`, `SUPRIMMO`, `Bazar.bg`, and `Yavlena` to `Patterned` from saved item evidence; DB proof is still blocked because no PostgreSQL server is running locally and Docker daemon/compose are unavailable in this environment; `alo.bg`/`Domaza`/`Home2U` still remain low-yield or zero-sample)"
         }
       ],
       "next_tasks": [
         {
-          "id": "S1-15",
-          "title": "Live HTTP integration for tier-1 connectors",
+          "id": "S1-18",
+          "title": "Tier-1/2 live volume gate (≥100 listings × ≥5 sources) — NON-STOP",
           "status": "TODO",
           "details": "TODO"
         },
@@ -1606,7 +1810,7 @@
         }
       ],
       "blocked_tasks": [],
-      "comment": "3 done, 4 current, 3 next"
+      "comment": "3 done, 5 current, 3 next"
     },
     {
       "key": "scraper_t3",
@@ -1774,7 +1978,7 @@
       "next_tasks": [
         {
           "id": "UX-04",
-          "title": "Varna-only LUN-style map + listings experience",
+          "title": "Nationwide Bulgaria LUN-style map + listings experience",
           "status": "TODO",
           "details": "TODO"
         },
@@ -1833,12 +2037,12 @@
     {
       "key": "debugger",
       "label": "Verification/Safety",
-      "total": 8,
+      "total": 9,
       "done_count": 4,
       "current_count": 0,
-      "next_count": 4,
+      "next_count": 5,
       "blocked_count": 0,
-      "progress_percent": 50,
+      "progress_percent": 44,
       "done_tasks": [
         {
           "id": "DBG-01",
@@ -1869,7 +2073,7 @@
       "next_tasks": [
         {
           "id": "DBG-05",
-          "title": "Verify stage-1 scraping is perfect before Varna 3D map MVP",
+          "title": "Verify stage-1 scraping before expanding 3D / building-depth geo",
           "status": "TODO",
           "details": "TODO"
         },
@@ -1890,10 +2094,16 @@
           "title": "Security audit — auth, injection, XSS, CORS",
           "status": "TODO",
           "details": "TODO"
+        },
+        {
+          "id": "DBG-09",
+          "title": "End-of-run verification sweep",
+          "status": "TODO",
+          "details": "TODO"
         }
       ],
       "blocked_tasks": [],
-      "comment": "4 done, 0 current, 4 next"
+      "comment": "4 done, 0 current, 5 next"
     },
     {
       "key": "lead_agent",
@@ -1950,6 +2160,14 @@
     }
   ],
   "all_tasks": [
+    {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-15",
+      "title": "Live HTTP integration for tier-1 connectors",
+      "status": "IN_PROGRESS",
+      "details": "IN_PROGRESS` (2026-04-21; strict pattern repairs promoted `Address.bg`, `BulgarianProperties`, `LUXIMMO`, `OLX.bg`, `property.bg`, `SUPRIMMO`, `Bazar.bg`, and `Yavlena` to `Patterned` from saved item evidence; DB proof is still blocked because no PostgreSQL server is running locally and Docker daemon/compose are unavailable in this environment; `alo.bg`/`Domaza`/`Home2U` still remain low-yield or zero-sample)"
+    },
     {
       "owner_key": "backend_developer",
       "owner": "Backend Developer",
@@ -2130,7 +2348,7 @@
       "owner_key": "backend_developer",
       "owner": "Backend Developer",
       "id": "BD-06",
-      "title": "Varna-only MVP map/search + chat context APIs",
+      "title": "Map/search + chat context APIs (geo scope configurable)",
       "status": "TODO",
       "details": "TODO"
     },
@@ -2186,7 +2404,7 @@
       "owner_key": "debugger",
       "owner": "Debugger",
       "id": "DBG-05",
-      "title": "Verify stage-1 scraping is perfect before Varna 3D map MVP",
+      "title": "Verify stage-1 scraping before expanding 3D / building-depth geo",
       "status": "TODO",
       "details": "TODO"
     },
@@ -2215,6 +2433,14 @@
       "details": "TODO"
     },
     {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-09",
+      "title": "End-of-run verification sweep",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
       "owner_key": "lead_agent",
       "owner": "Lead Agent",
       "id": "LEAD-05",
@@ -2233,14 +2459,6 @@
     {
       "owner_key": "scraper_1",
       "owner": "Scraper 1",
-      "id": "S1-15",
-      "title": "Live HTTP integration for tier-1 connectors",
-      "status": "TODO",
-      "details": "TODO"
-    },
-    {
-      "owner_key": "scraper_1",
-      "owner": "Scraper 1",
       "id": "S1-16",
       "title": "Remaining tier-2 connectors (full set)",
       "status": "TODO",
@@ -2251,6 +2469,14 @@
       "owner": "Scraper 1",
       "id": "S1-17",
       "title": "Playwright connectors for headless-required sources",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-18",
+      "title": "Tier-1/2 live volume gate (≥100 listings × ≥5 sources) — NON-STOP",
       "status": "TODO",
       "details": "TODO"
     },
@@ -2282,7 +2508,7 @@
       "owner_key": "ux_ui_designer",
       "owner": "UX/UI Designer",
       "id": "UX-04",
-      "title": "Varna-only LUN-style map + listings experience",
+      "title": "Nationwide Bulgaria LUN-style map + listings experience",
       "status": "TODO",
       "details": "TODO"
     },
@@ -3620,5 +3846,215 @@
       "name": "CRM inbox summary widgets",
       "status": "Backend partial"
     }
-  ]
+  ],
+  "roadmap_parallel_waves": [
+    {
+      "id": "wave-a",
+      "name": "Wave A",
+      "summary": "Docs/rules stability, DB control plane, tier-1/2 fixture connectors, tier-3 policy/contracts, social policy/contracts.",
+      "owners": [
+        "backend_developer",
+        "scraper_1",
+        "scraper_t3",
+        "scraper_sm",
+        "debugger"
+      ]
+    },
+    {
+      "id": "wave-b",
+      "name": "Wave B",
+      "summary": "DB-backed ingest runners, stats/admin expansion, auth/RBAC, tier-3 adapter stubs, frontend operator dashboard binding.",
+      "owners": [
+        "backend_developer",
+        "scraper_1",
+        "scraper_t3",
+        "ux_ui_designer",
+        "debugger"
+      ]
+    },
+    {
+      "id": "wave-c",
+      "name": "Wave C",
+      "summary": "Dedupe/geo/media, map/listing/chat UI depth, publishing dry-run controls, CI hardening.",
+      "owners": [
+        "backend_developer",
+        "ux_ui_designer",
+        "scraper_1",
+        "debugger"
+      ]
+    }
+  ],
+  "operator_phases": [
+    {
+      "id": "A",
+      "title": "Tier-1/2 live volume",
+      "subtitle": "Do first — scraper_1 + minimal backend",
+      "parallel_lanes": [
+        "scraper_1",
+        "backend_developer"
+      ],
+      "tasks": [
+        "S1-14",
+        "S1-15",
+        "BD-11",
+        "S1-18"
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Backend core",
+      "subtitle": "After S1-18 VERIFIED",
+      "parallel_lanes": [
+        "backend_developer"
+      ],
+      "tasks": [
+        "BD-12",
+        "BD-13",
+        "BD-14",
+        "BD-15"
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Debugger consolidation",
+      "subtitle": "Batch verify + quality gate",
+      "parallel_lanes": [
+        "debugger",
+        "lead_agent"
+      ],
+      "tasks": [
+        "DBG-06",
+        "DBG-05"
+      ]
+    },
+    {
+      "id": "D",
+      "title": "Other scrapers",
+      "subtitle": "Parked until S1-18 unless unblocker",
+      "parallel_lanes": [
+        "scraper_t3",
+        "scraper_sm"
+      ],
+      "tasks": [
+        "T3-07",
+        "T3-08",
+        "SM-06",
+        "…"
+      ]
+    },
+    {
+      "id": "E",
+      "title": "Frontend depth",
+      "subtitle": "ux_ui_designer",
+      "parallel_lanes": [
+        "ux_ui_designer"
+      ],
+      "tasks": [
+        "UX-13",
+        "UX-08",
+        "UX-09",
+        "UX-10",
+        "UX-11"
+      ]
+    },
+    {
+      "id": "F",
+      "title": "Polish",
+      "subtitle": "Map, 3D, chat, admin, smoke, security",
+      "parallel_lanes": [
+        "ux_ui_designer",
+        "backend_developer",
+        "debugger"
+      ],
+      "tasks": [
+        "UX-04",
+        "UX-07",
+        "BD-08",
+        "UX-05",
+        "BD-07",
+        "UX-12",
+        "DBG-07",
+        "DBG-08"
+      ]
+    },
+    {
+      "id": "G",
+      "title": "Growth",
+      "subtitle": "Expansion connectors + realtime + analytics",
+      "parallel_lanes": [
+        "scraper_1",
+        "scraper_sm",
+        "scraper_t3",
+        "backend_developer"
+      ],
+      "tasks": [
+        "S1-16",
+        "S1-17",
+        "SM-06",
+        "T3-08",
+        "BD-16",
+        "BD-09",
+        "BD-10"
+      ]
+    }
+  ],
+  "global_execution_structure": {
+    "lanes": [
+      {
+        "key": "backend_developer",
+        "label": "Backend / API / DB",
+        "scope": "Migrations, repos, ingest, auth, deployment, map APIs"
+      },
+      {
+        "key": "scraper_1",
+        "label": "Tier-1/2 scraping",
+        "scope": "Portals, classifieds, agencies — HTTP first, Playwright where needed"
+      },
+      {
+        "key": "scraper_t3",
+        "label": "Tier-3 partner/vendor",
+        "scope": "Partner feeds, licensed data, official registers, auctions"
+      },
+      {
+        "key": "scraper_sm",
+        "label": "Tier-4 social",
+        "scope": "Consent-gated public-channel overlays only"
+      },
+      {
+        "key": "ux_ui_designer",
+        "label": "Frontend / UX",
+        "scope": "Next.js routes, map, listings, chat shell, admin"
+      },
+      {
+        "key": "debugger",
+        "label": "Verification",
+        "scope": "Golden path, CI, security gates, VERIFIED promotion"
+      },
+      {
+        "key": "lead_agent",
+        "label": "Lead / orchestration",
+        "scope": "Priorities, investor exports, dashboard hygiene"
+      }
+    ],
+    "rules": [
+      "One active slice per agent at a time unless operator runs GO all.",
+      "Dependencies are enforced at slice level — lanes run in parallel when unblocked.",
+      "Critical path until volume proof: Phase A (S1-15 + BD-11 + S1-18).",
+      "Refresh this dashboard after TASKS.md or JOURNEY.md changes (`make dashboard-doc`)."
+    ],
+    "source_of_truth": [
+      {
+        "doc": "docs/agents/TASKS.md",
+        "role": "Task IDs, status, dependencies"
+      },
+      {
+        "doc": "docs/agents/README.md",
+        "role": "Coordination protocol"
+      },
+      {
+        "doc": "PLAN.md",
+        "role": "Product + parallel wave definitions"
+      }
+    ]
+  }
 }

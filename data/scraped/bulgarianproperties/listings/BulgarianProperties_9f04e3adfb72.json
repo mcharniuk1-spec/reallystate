@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD89862BG_House_for_rent_in_Byala_(Varna).html",
+  "external_id": "9f04e3adfb72",
+  "title": "Bulgarian Properties",
+  "description": "Fully furnished new house with walking distance to the beach and town centre",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89862_16.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:41:14.771882+00:00",
+  "reference_id": "BulgarianProperties:9f04e3adfb72",
+  "local_image_files": [
+    "data/media/BulgarianProperties_9f04e3adfb72/0000_b8968dcc.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_9f04e3adfb72/0000_b8968dcc.jpg"
+  ]
+}

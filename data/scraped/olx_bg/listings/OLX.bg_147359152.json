@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/samostoyatelna-promishlena-sgrada-CID368-ID9YiQv.html?search_reason=search%7Cpromoted",
+  "external_id": "147359152",
+  "title": "Самостоятелна Промишлена Сграда",
+  "description": "От Собственик. Дългосрочно. За Автосервиз, Склад, Цех, Производство, Работилница, друго, самостоятелна сграда със статут на работилница, с основна височина на помещението - 4.5м., настилка- бетон, стени - масивни, покрив - ЛТ ламарина. Самостоятелен двор- 80 кв.м., трифазен ток- битов с мощност 50 кw, сот, офис-битовка, два санитарни възела. гр. Варна, срещу Топливо, на 50м от бул. Република. КАМЕРАТА ЗА БОЯДИСВАНЕ, НЕ Е НАЛИЧНА В ПОМЕЩЕНИЕТО !!! СВОБОДНО от 10.04.26г.",
+  "price": 600.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "office",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/uasu98gdf6ed-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0dlttlsi93c82-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/t26c86uen3zf3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0i89stsr6ag22-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/iuzg8jr27jtd-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/uasu98gdf6ed-BG/image;s=1920x1080"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:24:46.197724+00:00",
+  "reference_id": "OLX.bg:147359152",
+  "local_image_files": [
+    "data/media/OLX.bg_147359152/0000_b397b953.webp",
+    "data/media/OLX.bg_147359152/0001_5ae6e20c.webp",
+    "data/media/OLX.bg_147359152/0002_7288432b.webp",
+    "data/media/OLX.bg_147359152/0003_4716c812.webp",
+    "data/media/OLX.bg_147359152/0004_6d94d305.webp",
+    "data/media/OLX.bg_147359152/0005_938c82a0.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147359152/0000_b397b953.webp",
+    "OLX.bg_147359152/0001_5ae6e20c.webp",
+    "OLX.bg_147359152/0002_7288432b.webp",
+    "OLX.bg_147359152/0003_4716c812.webp",
+    "OLX.bg_147359152/0004_6d94d305.webp",
+    "OLX.bg_147359152/0005_938c82a0.webp"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/burgas-meden-rudnik-zona-d-dvustaen-apartament-offer686047",
+  "external_id": "dd33f5a37d09",
+  "title": "Двустаен апартамент в Бургас, Меден рудник - зона Д - код на имота: 686047",
+  "description": "Адрес недвижими имоти предлага Двустаен апартамент в Бургас, Меден рудник - зона Д с код на имота: 686047. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/047/686047/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:21:08.409343+00:00",
+  "reference_id": "Address.bg:dd33f5a37d09",
+  "local_image_files": [
+    "data/media/Address.bg_dd33f5a37d09/0000_3257dee3.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_dd33f5a37d09/0000_3257dee3.jpg"
+  ]
+}

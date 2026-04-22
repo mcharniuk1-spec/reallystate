@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168171",
+  "external_id": "0c0780a1aa46",
+  "title": "Двустаен апартамент във Варна 62 кв.м. ID 168171  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/392a6156-0acb-401a-b7a2-7d0b6a3d49fc.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:15:40.462063+00:00",
+  "reference_id": "Yavlena:0c0780a1aa46",
+  "local_image_files": [
+    "data/media/Yavlena_0c0780a1aa46/0000_3d2c6df2.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_0c0780a1aa46/0000_3d2c6df2.jpg"
+  ]
+}

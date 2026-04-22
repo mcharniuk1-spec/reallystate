@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/varna-troshevo-kashta-vila-offer666708",
+  "external_id": "c19e34580627",
+  "title": "Къща/Вила във Варна, Трошево - код на имота: 666708",
+  "description": "Адрес недвижими имоти предлага Къща/Вила във Варна, Трошево с код на имота: 666708. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/708/666708/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:20:35.486833+00:00",
+  "reference_id": "Address.bg:c19e34580627",
+  "local_image_files": [
+    "data/media/Address.bg_c19e34580627/0000_b82e818a.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_c19e34580627/0000_b82e818a.jpg"
+  ]
+}

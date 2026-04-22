@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/AD88187BG_2-bedroom_apartment_for_sale_in_Plovdiv.html",
+  "external_id": "bb5c1deb1eae",
+  "title": "Bulgarian Properties",
+  "description": "Newly-built, modern, fully furnished apartment with panorama and southern exposure",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88187_8.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:41:47.543010+00:00",
+  "reference_id": "BulgarianProperties:bb5c1deb1eae",
+  "local_image_files": [
+    "data/media/BulgarianProperties_bb5c1deb1eae/0000_203d4799.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_bb5c1deb1eae/0000_203d4799.jpg"
+  ]
+}

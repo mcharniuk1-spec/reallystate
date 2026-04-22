@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168274",
+  "external_id": "85fb08b148f7",
+  "title": "Едностаен апартамент във Варна 18 кв.м. ID 168274  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/6d153688-d380-4307-a639-142990dab543.JPG"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:14:18.902394+00:00",
+  "reference_id": "Yavlena:85fb08b148f7",
+  "local_image_files": [
+    "data/media/Yavlena_85fb08b148f7/0000_b3b2109f.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_85fb08b148f7/0000_b3b2109f.jpg"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-belite-brezi-CID368-ID9YK3T.html?search_reason=search%7Corganic",
+  "external_id": "147463769",
+  "title": "Двустаен апартамент - Белите брези",
+  "description": "Агенция предлага двустаен апартамент под наем в жк. Белите брези. Жилището е напълно обзаведено и оборудвано с всичко необходимо. Състои се от входно антре, кухня с хол, спалня, баня с тоалетна и тераса. Апартаментът се намира в близост до спирки на градски транспорт, хранителни магазини, заведения, училища и други.",
+  "price": 460.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fcq32aiuhzue2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/k34ae923st8w2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ksexuao1ocl12-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6e4a6lfba4er2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2g5ywjk1nqgx1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fcq32aiuhzue2-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:27:08.087793+00:00",
+  "reference_id": "OLX.bg:147463769",
+  "local_image_files": [
+    "data/media/OLX.bg_147463769/0000_ec34fe98.webp",
+    "data/media/OLX.bg_147463769/0001_ba90b3b2.webp",
+    "data/media/OLX.bg_147463769/0002_48e02c21.webp",
+    "data/media/OLX.bg_147463769/0003_37299417.webp",
+    "data/media/OLX.bg_147463769/0004_6d3d373a.webp",
+    "data/media/OLX.bg_147463769/0005_5e5341ed.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147463769/0000_ec34fe98.webp",
+    "OLX.bg_147463769/0001_ba90b3b2.webp",
+    "OLX.bg_147463769/0002_48e02c21.webp",
+    "OLX.bg_147463769/0003_37299417.webp",
+    "OLX.bg_147463769/0004_6d3d373a.webp",
+    "OLX.bg_147463769/0005_5e5341ed.webp"
+  ]
+}

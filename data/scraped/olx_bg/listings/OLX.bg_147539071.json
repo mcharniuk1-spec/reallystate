@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/ednostaen-apartament-pod-naem-levski-k-s-akademika-CID368-ID9Z3Er.html?search_reason=search%7Corganic",
+  "external_id": "147539071",
+  "title": "ЕДНОСТАЕН апартамент под наем - Левски, к-с Академика",
+  "description": "Имоти Home Place представя на Вашето внимание, ЕДНОСТАЕН апартамент под наем, в района на Левски, к-с Академика. Апартаментът е напълно обзаведен и оборудван с всичко необходимо за едно домакинство. Разположен е на 1-ви етаж в сграда и е с площ 40 кв.м., разпределението на имота е както следва - всекидневна с кухненски бокс, отделен спален кът, баня и тоалетна, тераса. Отоплението в имота се осъществява чрез климатик. В наемната цена са включени входни такси, почистване, интернет и телевизия ! За повече информация обадете се на посочения телефон и цитирайте код на обява: 32712",
+  "price": 440.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2pie48t2ynv53-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/tv6o0addwruh3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/sohnny3brd5t2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xd2rrmskjhp-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/9c5ps4hieiwl1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2pie48t2ynv53-BG/image;s=750x1000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:25:55.924824+00:00",
+  "reference_id": "OLX.bg:147539071",
+  "local_image_files": [
+    "data/media/OLX.bg_147539071/0000_fc5e8f0e.webp",
+    "data/media/OLX.bg_147539071/0001_157d677a.webp",
+    "data/media/OLX.bg_147539071/0002_774b76dd.webp",
+    "data/media/OLX.bg_147539071/0003_f8410889.webp",
+    "data/media/OLX.bg_147539071/0004_40436b0a.webp",
+    "data/media/OLX.bg_147539071/0005_d5f931a6.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539071/0000_fc5e8f0e.webp",
+    "OLX.bg_147539071/0001_157d677a.webp",
+    "OLX.bg_147539071/0002_774b76dd.webp",
+    "OLX.bg_147539071/0003_f8410889.webp",
+    "OLX.bg_147539071/0004_40436b0a.webp",
+    "OLX.bg_147539071/0005_d5f931a6.webp"
+  ]
+}

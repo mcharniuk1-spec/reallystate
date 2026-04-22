@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/kascha-s-idealni-chasti-ot-dvor-v-sartseto-na-kv-iztok-CID368-ID9Ync9.html?search_reason=search%7Corganic",
+  "external_id": "147375869",
+  "title": "Къща с идеални части от двор в сърцето на кв.Изток",
+  "description": "Самостоятелна малка сграда за търговска дейност с РЗП от 90 кв.м (89,75) на две нива със следното разпределение: ниво едно, което е със застроена площ от 40,43 кв.м, се състои от: стълбищна клетка, входно антре, едно голямо помещение и тоалетна; второ ниво (кота 2,90) със застроена площ от 49,32 кв.м се състои от: стълбищна клетка, входно антре, приемна и офис с кухненски бокс. Височината на таваните на ниво две са 2,40 метра. Настилките в помещенията са теракот, стени и тавани - латекс. Сградата е строена през 2001 г. и е в много добро състояние. Може да се ползва за живеене след смяна на статута. В сградата няма ТЕЦ, отоплението е с климатици. СОТ, видеонаблюдение, външни ролетни щори. Идеални части от парцела. Възможност за паркиране на една кола в двора. Локация: тиха улица в близост до ул. Жолио Кюри.",
+  "price": 480000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/7q5a6q167ewn-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8qs9lyx48jlg2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kyv8eipupd883-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ywc17fxn9y7e1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/5yfq3yxux1533-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/7q5a6q167ewn-BG/image;s=750x1000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:22:12.983711+00:00",
+  "reference_id": "OLX.bg:147375869",
+  "local_image_files": [
+    "data/media/OLX.bg_147375869/0000_ca6c8e56.webp",
+    "data/media/OLX.bg_147375869/0001_5dfdf28a.webp",
+    "data/media/OLX.bg_147375869/0002_880afb25.webp",
+    "data/media/OLX.bg_147375869/0003_fec7d06c.webp",
+    "data/media/OLX.bg_147375869/0004_6fae9c6b.webp",
+    "data/media/OLX.bg_147375869/0005_69ffdeb6.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147375869/0000_ca6c8e56.webp",
+    "OLX.bg_147375869/0001_5dfdf28a.webp",
+    "OLX.bg_147375869/0002_880afb25.webp",
+    "OLX.bg_147375869/0003_fec7d06c.webp",
+    "OLX.bg_147375869/0004_6fae9c6b.webp",
+    "OLX.bg_147375869/0005_69ffdeb6.webp"
+  ]
+}

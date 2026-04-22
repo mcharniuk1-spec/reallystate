@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/golyam-ednostaen-apartament-pod-naem-v-kv-briz-CID368-ID9YKag.html?search_reason=search%7Corganic",
+  "external_id": "147464164",
+  "title": "Голям едностаен апартамент под наем в кв. Бриз",
+  "description": "Nedvijimo.bg предлага на Вашето внимание разширен едностаен апартамент в кв. Бриз, на отлична локация – в близост до Parkmart и Паметник на българо-съветската дружба. Районът е много удобен, с хранителни магазини, училища и парк наблизо, като морето е на около 10 минути пешеходно разстояние. Жилището е с площ от 60 кв.м, разположено на 5-ти (последен) етаж със самостоятелен вход. Състои се от спалня и хол с кухня (преходни), баня с тоалетна и три тераси – две затворени и една открита с морска гледка. Едната затворена тераса е с южно изложение и има връзка с откритата, а другата е към спалнята. Апартаментът е много добре шумо и топлоизолиран, което го прави изключително комфортен през цялата година. Предлага се напълно обзаведен и оборудван – съдомиялна, хладилник, климатик, готварска печка, микровълнова и посуда. Таксите за вход са включени в наема. Има паркомясто включено в цената. Както и опцията за използване на обща маза. Допускат се малки домашни любимци с изградени навици. За повече информация се свържете с нас.",
+  "price": 400.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/279diooq04a11-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/9j5pnyrnjkjp3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/z889bgoysayq2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/c9urtu13xxfl-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/97vi1m4jdozs1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/279diooq04a11-BG/image;s=1000x750"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:24:25.790465+00:00",
+  "reference_id": "OLX.bg:147464164",
+  "local_image_files": [
+    "data/media/OLX.bg_147464164/0000_58415e73.webp",
+    "data/media/OLX.bg_147464164/0001_fe7dc786.webp",
+    "data/media/OLX.bg_147464164/0002_98aa2136.webp",
+    "data/media/OLX.bg_147464164/0003_2c2aa456.webp",
+    "data/media/OLX.bg_147464164/0004_72c91d75.webp",
+    "data/media/OLX.bg_147464164/0005_09bad7bc.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464164/0000_58415e73.webp",
+    "OLX.bg_147464164/0001_fe7dc786.webp",
+    "OLX.bg_147464164/0002_98aa2136.webp",
+    "OLX.bg_147464164/0003_2c2aa456.webp",
+    "OLX.bg_147464164/0004_72c91d75.webp",
+    "OLX.bg_147464164/0005_09bad7bc.webp"
+  ]
+}

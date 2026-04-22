@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/ednostaen-ap-pod-naem-v-kv-druzhba-1-CID368-ID9Yn5z.html?search_reason=search%7Corganic",
+  "external_id": "147375461",
+  "title": "Едностаен ап. под наем в кв. Дружба 1",
+  "description": "едностаен апартамент под наем в кв. Дружба 1, в добре уреден район с удобен достъп до транспорт и ежедневни удобства. Жилището е с площ 38 кв.м, разположено на 2-ри етаж от 11 в нова сграда. Изложението е юг/изток. Разпределение: хол с кухненски бокс обособена спална зона баня балкон Апартаментът е напълно обзаведен и се отоплява на ток, посредством климатици. В близост: детски градини, аптеки, банки и спирки на градски транспорт с бърза връзка към центъра и летището. За оглед се свържете с нас и цитирайте реф. номер: 2182808.",
+  "price": 400.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xhbmlc9o1jfm-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2m5sex5vftz22-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0d9kv5euwa5t2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bscku9iq200l1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/eq4vpddrcnso2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xhbmlc9o1jfm-BG/image;s=960x1280"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:25:43.505549+00:00",
+  "reference_id": "OLX.bg:147375461",
+  "local_image_files": [
+    "data/media/OLX.bg_147375461/0000_3ca1e9af.webp",
+    "data/media/OLX.bg_147375461/0001_d8592973.webp",
+    "data/media/OLX.bg_147375461/0002_8aa00ed6.webp",
+    "data/media/OLX.bg_147375461/0003_f8370a9e.webp",
+    "data/media/OLX.bg_147375461/0004_62438b14.webp",
+    "data/media/OLX.bg_147375461/0005_33f23471.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147375461/0000_3ca1e9af.webp",
+    "OLX.bg_147375461/0001_d8592973.webp",
+    "OLX.bg_147375461/0002_8aa00ed6.webp",
+    "OLX.bg_147375461/0003_f8370a9e.webp",
+    "OLX.bg_147375461/0004_62438b14.webp",
+    "OLX.bg_147375461/0005_33f23471.webp"
+  ]
+}

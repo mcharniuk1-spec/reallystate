@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168445",
+  "external_id": "a3329851cfde",
+  "title": "Едностаен апартамент в Добрич 48 кв.м. ID 168445  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/4ed7b8bc-11aa-48cd-8f16-bd647f00e5e3.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:56:19.916161+00:00",
+  "reference_id": "Yavlena:a3329851cfde",
+  "local_image_files": [
+    "data/media/Yavlena_a3329851cfde/0000_561b816d.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_a3329851cfde/0000_561b816d.jpg"
+  ]
+}

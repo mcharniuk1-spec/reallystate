@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168191",
+  "external_id": "fe233947fd3e",
+  "title": "Земеделска земя в Лозен 1170 кв.м. ID 168191  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://userimages.yavlena.com/2987d98d-0613-46a2-a1f0-588d954cf2b3.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:15:26.457249+00:00",
+  "reference_id": "Yavlena:fe233947fd3e",
+  "local_image_files": [
+    "data/media/Yavlena_fe233947fd3e/0000_b6913170.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_fe233947fd3e/0000_b6913170.jpg"
+  ]
+}

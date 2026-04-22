@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/ednostaen-apartament-v-karshiyaka-CID368-ID9X8LE.html?search_reason=search%7Corganic",
+  "external_id": "147082082",
+  "title": "Едностаен апартамент в Кършияка",
+  "description": "Оферта № 946091 Агенция за недвижими имоти Ви представя едностаен апартамент в района на Кършияка, гр. Пловдив. Намира се на много комуникативно място, близо до магазини, училища, детски градини и спирки на градския транспорт. За огледи, можете да се обадите на посочения телефон.",
+  "price": 260.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fkcz6hoc7gq61-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/flfvgvaffa7j2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wdvwdfrf9avc-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vr3pmwhmqa0j1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/j4bm1klpbzo41-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fkcz6hoc7gq61-BG/image;s=1280x960"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:27:43.558806+00:00",
+  "reference_id": "OLX.bg:147082082",
+  "local_image_files": [
+    "data/media/OLX.bg_147082082/0000_6451f66f.webp",
+    "data/media/OLX.bg_147082082/0001_4550e3c2.webp",
+    "data/media/OLX.bg_147082082/0002_280071fd.webp",
+    "data/media/OLX.bg_147082082/0003_71b1b5ea.webp",
+    "data/media/OLX.bg_147082082/0004_1d955706.webp",
+    "data/media/OLX.bg_147082082/0005_f1397485.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147082082/0000_6451f66f.webp",
+    "OLX.bg_147082082/0001_4550e3c2.webp",
+    "OLX.bg_147082082/0002_280071fd.webp",
+    "OLX.bg_147082082/0003_71b1b5ea.webp",
+    "OLX.bg_147082082/0004_1d955706.webp",
+    "OLX.bg_147082082/0005_f1397485.webp"
+  ]
+}

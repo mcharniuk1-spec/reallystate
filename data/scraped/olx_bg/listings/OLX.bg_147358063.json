@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/pomeschenie-pod-naem-CID368-ID9YiyX.html?search_reason=search%7Corganic",
+  "external_id": "147358063",
+  "title": "Помещение ПОД НАЕМ",
+  "description": "Разположено на изключително комуникативно място - срещу Мол Пловдив, в сградата на Хотел Капри. Имотът е подходящ за офис, кабинет, студио за услуги, козметично студио, онлайн магазин, малък шоурум или друга тиха дейност. Намира се в район с голям човекопоток и отлична видимост, в непосредствена близост до търговски обекти, спирки на градски транспорт и паркоместа. Компактно и функционално, подходящо за самостоятелна дейност или малък бизнес.",
+  "price": 1000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bybtz0tr9k1v2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xkapkll42zd63-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/sqgj623ut56h2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/jr7g1dbz8ut22-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/12lh16ukztnc3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bybtz0tr9k1v2-BG/image;s=1200x1600"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:25:21.408054+00:00",
+  "reference_id": "OLX.bg:147358063",
+  "local_image_files": [
+    "data/media/OLX.bg_147358063/0000_5ec1f14f.webp",
+    "data/media/OLX.bg_147358063/0001_8fc4f769.webp",
+    "data/media/OLX.bg_147358063/0002_6efe6ab2.webp",
+    "data/media/OLX.bg_147358063/0003_59f3ef10.webp",
+    "data/media/OLX.bg_147358063/0004_ffbc76e3.webp",
+    "data/media/OLX.bg_147358063/0005_e65239bb.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147358063/0000_5ec1f14f.webp",
+    "OLX.bg_147358063/0001_8fc4f769.webp",
+    "OLX.bg_147358063/0002_6efe6ab2.webp",
+    "OLX.bg_147358063/0003_59f3ef10.webp",
+    "OLX.bg_147358063/0004_ffbc76e3.webp",
+    "OLX.bg_147358063/0005_e65239bb.webp"
+  ]
+}

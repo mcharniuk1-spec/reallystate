@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/aglov-magazin-v-b-19-vitrini-na-2-ulitsi-klimatik-top-vidimost-CID368-ID9Z43y.html?search_reason=search%7Corganic",
+  "external_id": "147540628",
+  "title": "Ъглов магазин в Б-19 – витрини на 2 улици, климатик, топ видимост",
+  "description": "А&Б Пропъртис отдава под наем търговско помещение в зона Б-19 Предлагаме на Вашето внимание функционален търговски обект, разположен в зона Б-19 – район с добра комуникативност и постоянен човекопоток. Имотът е ъглов, с големи стъклени витрини към две улици, което осигурява отлична видимост и възможност за реклама. Основни характеристики: Партерно помещение Ъглова позиция Витрини към две улици Самостоятелен санитарен възел Оборудване: Климатик (отопление и охлаждане) Предимства: Отлична видимост от два потока Подходящ за различни бизнес дейности Лесен достъп Добра локация в развит район Имотът е подходящ за: магазин, офис, шоурум, студио за услуги и други дейности. Локация: зона Б-19 Не се колебайте да се свържете с нас на посочения телефон за повече информация и организиране на оглед!",
+  "price": 650.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8of5a99nujx52-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qvbwek8zghyk3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0ffhy09ai0rd-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zo3je6mnsr4s1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/n50mg6ejq6li3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8of5a99nujx52-BG/image;s=1333x1000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:21:00.348551+00:00",
+  "reference_id": "OLX.bg:147540628",
+  "local_image_files": [
+    "data/media/OLX.bg_147540628/0000_1a783a37.webp",
+    "data/media/OLX.bg_147540628/0001_fcf508ee.webp",
+    "data/media/OLX.bg_147540628/0002_0e389ffc.webp",
+    "data/media/OLX.bg_147540628/0003_c297049f.webp",
+    "data/media/OLX.bg_147540628/0004_7b48849a.webp",
+    "data/media/OLX.bg_147540628/0005_3d7bf824.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540628/0000_1a783a37.webp",
+    "OLX.bg_147540628/0001_fcf508ee.webp",
+    "OLX.bg_147540628/0002_0e389ffc.webp",
+    "OLX.bg_147540628/0003_c297049f.webp",
+    "OLX.bg_147540628/0004_7b48849a.webp",
+    "OLX.bg_147540628/0005_3d7bf824.webp"
+  ]
+}

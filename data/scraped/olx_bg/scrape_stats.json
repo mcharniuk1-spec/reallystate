@@ -1,0 +1,33 @@
+{
+  "source_key": "olx_bg",
+  "source_name": "OLX.bg",
+  "discovery_pages_fetched": 5,
+  "listing_urls_discovered": 257,
+  "listing_pages_fetched": 250,
+  "listing_pages_parsed": 249,
+  "listing_pages_failed": 1,
+  "photos_found": 1365,
+  "photos_downloaded": 1365,
+  "photos_failed": 0,
+  "with_price": 249,
+  "with_geo": 0,
+  "with_address": 0,
+  "with_area": 0,
+  "with_rooms": 0,
+  "with_description": 249,
+  "intents": {
+    "long_term_rent": 117,
+    "sale": 132
+  },
+  "categories": {
+    "office": 13,
+    "apartment": 170,
+    "house": 25,
+    "land": 24,
+    "unknown": 17
+  },
+  "errors": [],
+  "start_time": "2026-04-08T17:18:17.191341+00:00",
+  "end_time": "2026-04-08T17:31:38.962595+00:00",
+  "duration_seconds": 801.8
+}

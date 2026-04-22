@@ -1,0 +1,38 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-47761433/prodawa-3-staen-gr-targowishte-warosha",
+  "external_id": "47761433",
+  "title": "Bazar.BG",
+  "description": "Тристаен апартамент! ул. Поп Сава Катрафилов 13 , кв. Вароша! ПЛАЩАНЕ НА ВНОСКИ!ДИРЕКТНО ОТ СТРОИТЕЛЯ! БЕЗ КОМИСИОНА ОТ КУПУВАЧА!  АКТИВ ИМОТИ представя: Триста",
+  "price": 135000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/741/big1/1c173020443272741_CY.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/741/big/1c173020443272741_ue.jpg",
+    "//imotstatic2.focus.bg/imot/photosimotbg/1/741/big1/1c173020443272741_CY.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:54:07.610651+00:00",
+  "reference_id": "Bazar.bg:47761433",
+  "local_image_files": [
+    "data/media/Bazar.bg_47761433/0000_98205b79.jpg",
+    "data/media/Bazar.bg_47761433/0001_3e51e3e2.jpg",
+    "data/media/Bazar.bg_47761433/0002_98205b79.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_47761433/0000_98205b79.jpg",
+    "Bazar.bg_47761433/0001_3e51e3e2.jpg",
+    "Bazar.bg_47761433/0002_98205b79.jpg"
+  ]
+}

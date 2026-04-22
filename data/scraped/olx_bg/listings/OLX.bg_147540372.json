@@ -1,0 +1,44 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/ednostaen-apartament-v-zhk-hristo-smirnenski-CID368-ID9Z3Zq.html?search_reason=search%7Corganic",
+  "external_id": "147540372",
+  "title": "Едностаен апартамент в жк. Христо Смирненски",
+  "description": "Агенцията разполага с ключ! Титан Пропъртис предлага чисто нов едностаен апартамент под наем в жк. Христо Смирненски. Намира се в непосредствена близост до магазини, зони за отдих и спорт и търговски обекти. Имотът е ситуиран на 1-ви жилищен етаж и разполага с площ 45кв.м, разгърната в следното разпределение: входно антре, хол с кухненски бокс и трапезария, спалня, баня с тоалетна и тераса. Жилището се предлага луксозно обзаведено и оборудвано с всичко необходимо за едно домакинство. С нас, вашето търсене на имот завършва с усмивка. За оглед на това и други атрактивни предложения, не се колебайте да ни потърсите на посочения телефон или да ни изпратите данните си чрез формата за запитване на сайта. Реф. номер: 2221886",
+  "price": 750.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qxejs6qitzql1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/luc7z6k0vxt1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/i9s3h6ma59k71-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pwq8647p6pbw-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qxejs6qitzql1-BG/image;s=1536x1024"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:25:40.432564+00:00",
+  "reference_id": "OLX.bg:147540372",
+  "local_image_files": [
+    "data/media/OLX.bg_147540372/0000_35e1f163.webp",
+    "data/media/OLX.bg_147540372/0001_7a19739e.webp",
+    "data/media/OLX.bg_147540372/0002_2511fc28.webp",
+    "data/media/OLX.bg_147540372/0003_dcc63591.webp",
+    "data/media/OLX.bg_147540372/0004_8943c61c.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540372/0000_35e1f163.webp",
+    "OLX.bg_147540372/0001_7a19739e.webp",
+    "OLX.bg_147540372/0002_2511fc28.webp",
+    "OLX.bg_147540372/0003_dcc63591.webp",
+    "OLX.bg_147540372/0004_8943c61c.webp"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dva-etazha-ot-kascha-v-kapana-CID368-ID9YmQ8.html?search_reason=search%7Corganic",
+  "external_id": "147374504",
+  "title": "два етажа от къща в Капана",
+  "description": "Титан Пропъртис предлага на Вашето внимание два етажа от къща в Капана, Център.Жилището с обща площ 106 кв.м е разположено на втори и трети етаж от триетажна тухлена сграда. Разпределението включва:коридор,кухня, три спални,баня и тоалетна,вътрешни стълби, малка тераса, килер,изба.Отделен вход за достъп.Имотът е обзаведен и се отоплява на електричество, което гарантира практичност и ниски експлоатационни разходи.Сменена дограма.Отличен инвестиционен имот в сърцето на гр.Пловдив. За оглед на това и други атрактивни предложения, не се колебайте да ни потърсите на посочения телефон или да ни изпратите данните си чрез формата за запитване на сайта. Реф. номер: 84775",
+  "price": 310000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8oyhm1ia29uc2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6qgnvqgi6anu-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/7s9f0lkjr4nk1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/s6tiajrgq2ck2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ly694ob3p8dj3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8oyhm1ia29uc2-BG/image;s=1350x1800"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:28:05.152234+00:00",
+  "reference_id": "OLX.bg:147374504",
+  "local_image_files": [
+    "data/media/OLX.bg_147374504/0000_325e31b6.webp",
+    "data/media/OLX.bg_147374504/0001_8e67982e.webp",
+    "data/media/OLX.bg_147374504/0002_4fa9add8.webp",
+    "data/media/OLX.bg_147374504/0003_f5291855.webp",
+    "data/media/OLX.bg_147374504/0004_767bd222.webp",
+    "data/media/OLX.bg_147374504/0005_ff849cb7.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147374504/0000_325e31b6.webp",
+    "OLX.bg_147374504/0001_8e67982e.webp",
+    "OLX.bg_147374504/0002_4fa9add8.webp",
+    "OLX.bg_147374504/0003_f5291855.webp",
+    "OLX.bg_147374504/0004_767bd222.webp",
+    "OLX.bg_147374504/0005_ff849cb7.webp"
+  ]
+}

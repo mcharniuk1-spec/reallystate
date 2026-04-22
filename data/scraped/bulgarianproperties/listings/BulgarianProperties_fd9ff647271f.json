@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Regulated_plots_in_Bulgaria/AD88863BG_Regulated_plot_for_sale_near_Stara_Zagora.html",
+  "external_id": "fd9ff647271f",
+  "title": "Bulgarian Properties",
+  "description": "Plot with a ruined old house in the village of Kovach",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88863_4.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:41:39.844654+00:00",
+  "reference_id": "BulgarianProperties:fd9ff647271f",
+  "local_image_files": [
+    "data/media/BulgarianProperties_fd9ff647271f/0000_991cbaa9.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_fd9ff647271f/0000_991cbaa9.jpg"
+  ]
+}

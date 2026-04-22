@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/164995",
+  "external_id": "aca7930ca0e9",
+  "title": "Двустаен апартамент във Варна 73 кв.м. ID 164995  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/9b877cb9-50b8-4613-b3e2-aa0ba4caa98d.png"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:54:52.004444+00:00",
+  "reference_id": "Yavlena:aca7930ca0e9",
+  "local_image_files": [
+    "data/media/Yavlena_aca7930ca0e9/0000_9b8b52b1.png"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_aca7930ca0e9/0000_9b8b52b1.png"
+  ]
+}

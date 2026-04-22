@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/166994",
+  "external_id": "1b4389f6658b",
+  "title": "Четиристаен апартамент в София 170 кв.м. ID 166994  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/ee94e358-3fdb-49f2-ae61-258ef3ead0fa.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:17:05.368254+00:00",
+  "reference_id": "Yavlena:1b4389f6658b",
+  "local_image_files": [
+    "data/media/Yavlena_1b4389f6658b/0000_beab9be2.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_1b4389f6658b/0000_beab9be2.jpg"
+  ]
+}

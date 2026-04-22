@@ -22,5 +22,11 @@
   "phones": [],
   "amenities": [],
   "scraped_at": "2026-04-08T16:24:50.467257+00:00",
-  "reference_id": "Homes.bg:3e30e1eb6215"
+  "reference_id": "Homes.bg:3e30e1eb6215",
+  "local_image_files": [
+    "data/media/Homes.bg_3e30e1eb6215/0000_6a609f0f.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Homes.bg_3e30e1eb6215/0000_6a609f0f.jpg"
+  ]
 }

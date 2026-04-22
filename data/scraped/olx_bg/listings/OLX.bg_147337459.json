@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-dvoyno-podzemno-parkomyasto-park-otdih-i-kultura-CID368-ID9YdcD.html?search_reason=search%7Cpromoted",
+  "external_id": "147337459",
+  "title": "Двустаен апартамент + двойно подземно паркомясто -Парк Отдих и Култура",
+  "description": "Продавам двустаен апартамент от собственик в гр. Пловдив, район Парк Отдих и култура , в непосредствена близост до парка на Гребния канал. Апартаментът е с застроена площ 73м², разположен на 5-ти етаж в нова жилищна сграда (2023г.). Разпределение: хол с кухненски бокс спалня коридор баня с тоалетна тераса избено помещение Към апартамента е включено голямо подземно паркомясто, подходящо за паркиране на два автомобила включено в цената. Изложение: Юг - Югозапад Имотът предлага панорамен изглед към Рило-Родопския масив и парка на Гребния канал. Подходящ за: живеене инвестиция отдаване под наем Без посредник Без комисионна Локация Един от най-предпочитаните райони на Пловдив: на метри от парка на Гребния канал тиха и зелена среда бърз достъп до центъра близо до училища, детски градини, болници и магазини отлични условия за спорт и разходки Цена Цена: 154 000 евро. Контакт Телефон:08********00",
+  "price": 154000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/c4ml9a77fgf83-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/t1704l6s3pja3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zkf1b4fmxr6b2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6rtnrqwextmb-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0anq7cezhxt41-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/c4ml9a77fgf83-BG/image;s=738x1344"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:22:46.839198+00:00",
+  "reference_id": "OLX.bg:147337459",
+  "local_image_files": [
+    "data/media/OLX.bg_147337459/0000_c53df916.webp",
+    "data/media/OLX.bg_147337459/0001_20ec4f9a.webp",
+    "data/media/OLX.bg_147337459/0002_62ca481d.webp",
+    "data/media/OLX.bg_147337459/0003_2c006327.webp",
+    "data/media/OLX.bg_147337459/0004_9e23a698.webp",
+    "data/media/OLX.bg_147337459/0005_098658f4.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147337459/0000_c53df916.webp",
+    "OLX.bg_147337459/0001_20ec4f9a.webp",
+    "OLX.bg_147337459/0002_62ca481d.webp",
+    "OLX.bg_147337459/0003_2c006327.webp",
+    "OLX.bg_147337459/0004_9e23a698.webp",
+    "OLX.bg_147337459/0005_098658f4.webp"
+  ]
+}

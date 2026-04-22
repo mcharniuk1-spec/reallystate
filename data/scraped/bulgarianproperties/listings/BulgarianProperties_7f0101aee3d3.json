@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD88949BG_1-bedroom_apartment_for_sale_in_Sofia.html",
+  "external_id": "7f0101aee3d3",
+  "title": "Bulgarian Properties",
+  "description": "Investment apartment with tenant, prime location and city views",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88949_9.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:42:31.382833+00:00",
+  "reference_id": "BulgarianProperties:7f0101aee3d3",
+  "local_image_files": [
+    "data/media/BulgarianProperties_7f0101aee3d3/0000_e7f38b2b.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_7f0101aee3d3/0000_e7f38b2b.jpg"
+  ]
+}

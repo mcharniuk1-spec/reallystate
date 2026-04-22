@@ -1,0 +1,53 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-54114251/dawa-pod-naem-2-staen-gr-sofiia-izgrew",
+  "external_id": "54114251",
+  "title": "Bazar.BG",
+  "description": "БЕЗ ПОСРЕДНИК, БЕЗ КОМИСИОННА! ТОП ЛОКАЦИЯ ДО БОРИСОВАТА ГРАДИНА!Отдавам под наем просторен, напълно обзаведен и оборудван двустаен апартамент с площ от 94 кв.м",
+  "price": 950.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://cdn3.focus.bg/imot/photosimotbg/2/225/big1/2c172189392001225_2K.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/225/big1/2c172189392001225_Z2.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/225/big1/2c172189392001225_3z.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/225/big1/2c172189392001225_87.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/225/big1/2c172189392001225_TB.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/225/big1/2c172189392001225_pt.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/225/big1/2c172189392001225_5A.jpg",
+    "//cdn3.focus.bg/imot/photosimotbg/2/225/big1/2c172189392001225_2K.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:43:03.705171+00:00",
+  "reference_id": "Bazar.bg:54114251",
+  "local_image_files": [
+    "data/media/Bazar.bg_54114251/0000_ee41a5f2.jpg",
+    "data/media/Bazar.bg_54114251/0001_2be13fcd.jpg",
+    "data/media/Bazar.bg_54114251/0002_1a10bdc7.jpg",
+    "data/media/Bazar.bg_54114251/0003_7498a000.jpg",
+    "data/media/Bazar.bg_54114251/0004_fd971b5b.jpg",
+    "data/media/Bazar.bg_54114251/0005_64fd7255.jpg",
+    "data/media/Bazar.bg_54114251/0006_22d6ce00.jpg",
+    "data/media/Bazar.bg_54114251/0007_ee41a5f2.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_54114251/0000_ee41a5f2.jpg",
+    "Bazar.bg_54114251/0001_2be13fcd.jpg",
+    "Bazar.bg_54114251/0002_1a10bdc7.jpg",
+    "Bazar.bg_54114251/0003_7498a000.jpg",
+    "Bazar.bg_54114251/0004_fd971b5b.jpg",
+    "Bazar.bg_54114251/0005_64fd7255.jpg",
+    "Bazar.bg_54114251/0006_22d6ce00.jpg",
+    "Bazar.bg_54114251/0007_ee41a5f2.jpg"
+  ]
+}

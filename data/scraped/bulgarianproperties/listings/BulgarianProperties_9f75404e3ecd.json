@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/AD88010BG_2-bedroom_apartment_for_sale_in_Varna.html",
+  "external_id": "9f75404e3ecd",
+  "title": "Bulgarian Properties",
+  "description": "Spacious apartment with peaceful and green location in the seaside capital",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88010_1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:41:53.602032+00:00",
+  "reference_id": "BulgarianProperties:9f75404e3ecd",
+  "local_image_files": [
+    "data/media/BulgarianProperties_9f75404e3ecd/0000_65782e16.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_9f75404e3ecd/0000_65782e16.jpg"
+  ]
+}

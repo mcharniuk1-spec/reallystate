@@ -364,3 +364,533 @@ Modified files:
   - `make test` -> 170 tests, 167 passed, 1 skipped, 3 pre-existing failures (properties seed data fallback)
   - 0 linter errors across all changed files
 - **Status**: DONE_AWAITING_VERIFY
+
+### Task 19: Live bulk scrape + reports — **PAUSED** (operator stop 2026-04-08)
+- **Goal**: Thousands of real listings + photos per tier-1/2 source; refresh scraping inventory (XLSX/MD/PDF) and scraper-1 narrative report (MD/DOCX/PDF) with **live** numbers, not only fixtures.
+- **Done before pause**:
+  - Added `scripts/live_scraper.py` (Homes.bg via `/api/offers`, imot.bg via `/obiava-...` search pages, generic HTML path for other sources).
+  - Fixed protocol-relative image URLs in scraper output path; expanded Homes.bg API seeds (cities + offer types).
+  - Partial runs: **Homes.bg** ~20 listings + photos; **imot.bg** ~250 parsed (photos needed `https:` prefix on `//` CDN URLs — fixed in script for next run).
+  - Many generic discovery URLs were wrong (404): **alo.bg**, **address.bg**, **property.bg**, **home2u**, **SUPRIMMO/LUXIMMO** need re-probing from live homepage `href` samples; **bulgarianproperties**, **bazar.bg**, **yavlena**, **olx.bg** showed listing-like links in probes.
+  - A long batch (`bulgarianproperties,bazar_bg,yavlena,olx_bg`) may have been left running in background — **operator should stop** that job if still active.
+- **Not done**:
+  - Full multi-source harvest to thousands per site.
+  - Merge live stats into `generate_scraping_inventory.py` outputs.
+  - Scraper-1 status DOCX/PDF.
+  - DB ingestion of `data/scraped/**/listings/*.json`.
+- **Next session**: Follow **S1-15 continuation checklist** in `docs/agents/TASKS.md` (2026-04-08 continuation block under S1-15).
+- **Status**: `BLOCKED` (operator pause — resume on demand)
+
+### 2026-04-09 — S1-15 continuation: category-driven harvest bridge + interim five-source evidence
+
+- **Action**:
+  - Promoted the live scraper back into active work for the tier-1/2 lane.
+  - Patched `scripts/live_scraper.py` so working sources are tracked by product/category buckets instead of a single undifferentiated run:
+    - `BulgarianProperties`: sale, rent, land, 1BR, 2BR, 3BR, houses
+    - `Bazar.bg`: apartments, houses, land, garages
+    - `Yavlena`: sales, rentals
+    - `alo.bg`: apartments, houses, land, rentals; fixed listing URL regex to match real `alo.bg/<slug>-<id>` pages
+  - Added `product_breakdown` + `sample_reference_ids` into live scrape stats so batch evidence is easier to audit.
+  - Added a reusable import bridge:
+    - `src/bgrealestate/connectors/ingest.py` now exposes `persist_listing_bundle(...)`
+    - new `scripts/import_scraped_listings.py` imports `data/scraped/**` corpus into the canonical DB pipeline
+    - `make import-scraped` target added
+  - Extended `scripts/generate_scraping_inventory.py` to surface live harvested counts from `data/scraped/*/scrape_stats.json` alongside fixture counts.
+  - Updated `docs/exports/tier12-live-volume-report.md` with interim corpus evidence for the current five viable sources.
+- **Interim findings**:
+  - Existing harvested corpus already exceeds the operator’s numeric benchmark **on disk**:
+    - `Bazar.bg`: 250 parsed
+    - `BulgarianProperties`: 249 parsed
+    - `imot.bg`: 250 parsed
+    - `OLX.bg`: 249 parsed
+    - `Yavlena`: 250 parsed
+  - This does **not** satisfy `S1-18` yet because `DATABASE_URL` is unset and the rows are not counted in PostgreSQL `canonical_listing`.
+  - Live rerun probe from this shell failed with DNS resolution errors (`nodename nor servname provided`) for external sites, confirming sandbox network restriction rather than scraper-logic failure.
+- **Changed files**:
+  - `src/bgrealestate/connectors/ingest.py`
+  - `scripts/import_scraped_listings.py`
+  - `scripts/live_scraper.py`
+  - `scripts/generate_scraping_inventory.py`
+  - `Makefile`
+  - `docs/exports/tier12-live-volume-report.md`
+  - `docs/agents/TASKS.md`
+- **Commands run**:
+  - `make list-skills`
+  - `python3 -m py_compile scripts/live_scraper.py scripts/import_scraped_listings.py src/bgrealestate/connectors/ingest.py`
+  - `make import-scraped EXTRA_ARGS='--dry-run --limit 20'`
+  - `python3 scripts/live_scraper.py --sources homes_bg --max-pages 1 --max-listings 2`
+  - `python3 scripts/live_scraper.py --sources bulgarianproperties,bazar_bg,yavlena,imot_bg,olx_bg --max-pages 1 --max-listings 5` (sandbox DNS blocked; run cancelled)
+  - `make scraping-inventory`
+- **Tests run**:
+  - `make validate` (before execution wave) — pass
+  - `python3 -m py_compile ...` — pass
+  - `make import-scraped ... --dry-run` — pass
+- **Status**: `IN_PROGRESS`
+- **Review comments**:
+  - Next blocking actions are environmental, not structural:
+    1. run live network batch outside sandbox to refresh the five-source harvest
+    2. set `DATABASE_URL`
+    3. run `make import-scraped`
+    4. verify per-source counts in `canonical_listing`
+
+### 2026-04-09 — S1-15 continuation: repaired tier-1/2 source discovery + readable photo harvest
+
+- **Action**:
+  - Re-read `docs/agents/TASKS.md`, `docs/agents/scraper_1/JOURNEY.md`, and the tier-1/2 source matrix before continuing the scraper_1 lane.
+  - Opened project-local skills again and kept the same minimum skill set active:
+    - `agent-skills/scraper-connector-builder/SKILL.md`
+    - `agent-skills/real-estate-source-registry/SKILL.md`
+    - `agent-skills/runtime-compliance-evaluator/SKILL.md`
+    - `agent-skills/skill-discovery/SKILL.md`
+  - Live-probed broken discovery pages and confirmed real URL families:
+    - `Address.bg` detail URLs are `...offer<id>`
+    - `SUPRIMMO` detail URLs are `https://www.suprimmo.bg/imot-<id>-.../`
+    - `property.bg` detail URLs are `https://www.property.bg/property-<id>-.../`
+    - `LUXIMMO` detail URLs are `https://www.luximmo.bg/...-<id>-...html`
+  - Patched `scripts/live_scraper.py` accordingly:
+    - fixed `Address.bg` listing regex
+    - replaced home-page-only seeds for `SUPRIMMO`, `property.bg`, and `LUXIMMO` with category pages
+    - aligned pagination with live site behavior (`/page/{}/` and `index{}.html`)
+  - Ran live continuation batches with photo downloads and checkpointed them once each repaired source had begun landing real detail pages and readable local image files.
+  - Reconciled the authoritative counts from saved listing JSON files and local media directories, then wrote `docs/exports/scraper-1-tier12-status.md`.
+- **File-backed corpus after this continuation**:
+  - `Address.bg`: 43 listings, 43 descriptions, 43 readable local photo sets
+  - `SUPRIMMO`: 12 listings, 12 descriptions, 12 readable local photo sets
+  - `LUXIMMO`: 15 listings, 13 descriptions, 15 readable local photo sets
+  - `property.bg`: 15 listings, 15 descriptions, 15 readable local photo sets
+  - Existing high-volume on-disk leaders remain:
+    - `Bazar.bg`: 250
+    - `BulgarianProperties`: 249
+    - `imot.bg`: 261
+    - `OLX.bg`: 249
+    - `Yavlena`: 250
+- **Still zero-yield in `data/scraped/` after this run**:
+  - `alo.bg`
+  - `Domaza`
+  - `Home2U`
+- **Changed files**:
+  - `scripts/live_scraper.py`
+  - `docs/exports/scraper-1-tier12-status.md`
+  - `docs/exports/tier12-live-volume-report.md`
+  - `docs/agents/TASKS.md`
+  - `docs/agents/scraper_1/JOURNEY.md`
+- **Commands run**:
+  - `curl -L --max-time 20 ...` probes against `address.bg`, `suprimmo.bg`, `luximmo.bg`, `property.bg`, `home2u.bg`, `domaza.bg`
+  - `python3 -m py_compile scripts/live_scraper.py`
+  - `python3 scripts/live_scraper.py --sources address_bg,suprimmo,luximmo,property_bg --max-pages 3 --max-listings 120 --download-photos` (checkpointed)
+  - `python3 scripts/live_scraper.py --sources suprimmo,luximmo,property_bg --max-pages 2 --max-listings 60 --download-photos` (checkpointed)
+  - `python3 scripts/live_scraper.py --sources luximmo,property_bg --max-pages 2 --max-listings 20 --download-photos` (checkpointed)
+  - `python3 scripts/live_scraper.py --sources property_bg --max-pages 2 --max-listings 15 --download-photos`
+  - file-backed tally script over `data/scraped/*/listings/*.json`
+- **Tests run**:
+  - `python3 -m py_compile scripts/live_scraper.py` — pass
+- **Status**: `IN_PROGRESS`
+- **Review comments**:
+  - The repaired discovery logic is working for four previously weak tier-1 sources.
+  - `scrape_stats.json` is incomplete for checkpointed runs, so file-backed corpus counts are currently more trustworthy than the per-run stats files for `Address.bg`, `SUPRIMMO`, and `LUXIMMO`.
+  - `S1-18` remains blocked on PostgreSQL ingest evidence, not on tier-1/2 discovery logic for the repaired sources.
+
+### 2026-04-14 — scraper_1 analysis wave: tier-1/2 source matrix + skills gap planning
+
+- **Action**:
+  - Re-read `docs/agents/TASKS.md` and all current journey logs before starting the analysis pass.
+  - Loaded the real-estate Bulgaria wiki material from the available `getapple/core/wiki` mirrors and extracted the persistent constraints:
+    - source registry is the canonical planning layer
+    - compliance gating remains mandatory
+    - the main live gap is DB-backed proof, not missing source inventory
+  - Re-ran local skill discovery and compared project-local skills against the new asks for database operations, browser scraping, and media handling.
+  - Installed the external `web-scraping` skill into local Codex storage, then mirrored the missing durable capabilities into project-local skills:
+    - `agent-skills/browser-scrape-ops/SKILL.md`
+    - `agent-skills/image-media-pipeline/SKILL.md`
+    - `agent-skills/postgres-ops-psql/SKILL.md`
+  - Generated a new tier-1/2 deep-analysis pack:
+    - `docs/exports/tier12-source-analysis.md`
+    - `docs/exports/tier12-source-analysis.xlsx`
+    - `docs/exports/tier12-source-analysis.json`
+    - `docs/exports/tier12-skill-gap-analysis.md`
+  - Updated task notes so the next continuation wave is guided by the saved source matrix rather than chat-only analysis.
+- **Key findings**:
+  - FACT: implemented source configs already encode apartment-category entrypoints for `Homes.bg`, `imot.bg`, `Address.bg`, `BulgarianProperties`, `SUPRIMMO`, `LUXIMMO`, `property.bg`, `Bazar.bg`, `Yavlena`, `Home2U`, `Domaza`, `alo.bg`, and `OLX.bg`.
+  - INTERPRETATION: for most tier-1/2 sources, the correct pattern is category-first discovery followed by product detail fetch; the homepage is rarely the right ingest entrypoint.
+  - FACT: the repo had media download code but no dedicated local skill for media QA/compression/storage policy.
+  - FACT: external marketplace installation was mixed:
+    - `web-scraping` installed successfully
+    - `postgresql-psql` upstream path did not match installer assumptions
+    - image-compression installation attempts ran into local disk-space exhaustion
+  - HYPOTHESIS: once disk space is stable and DB access is available, the new local skill set is enough to execute the next scraper and media waves without depending on fragile upstream packaging.
+- **Changed files**:
+  - `agent-skills/browser-scrape-ops/SKILL.md`
+  - `agent-skills/image-media-pipeline/SKILL.md`
+  - `agent-skills/postgres-ops-psql/SKILL.md`
+  - `docs/agent-skills-index.md`
+  - `docs/skills/marketplace-adoption.md`
+  - `scripts/generate_tier12_source_analysis.py`
+  - `docs/exports/tier12-source-analysis.md`
+  - `docs/exports/tier12-source-analysis.xlsx`
+  - `docs/exports/tier12-source-analysis.json`
+  - `docs/exports/tier12-skill-gap-analysis.md`
+  - `docs/agents/TASKS.md`
+  - `docs/agents/scraper_1/JOURNEY.md`
+- **Status**: `IN_PROGRESS`
+- **Review comments**:
+  - This run improved project memory and execution readiness without changing live scraper behavior.
+  - The next operational bottlenecks are still `DATABASE_URL` availability and the zero-yield source repairs (`alo.bg`, `Domaza`, `Home2U`).
+
+### 2026-04-20 — S1-18 scrape dashboard: service/property coverage and next-step tracker
+
+- **Action**:
+  - Re-read `docs/agents/TASKS.md`, `docs/agents/scraper_1/JOURNEY.md`, and `docs/agents/README.md` before preparing a new scrape-status operator dashboard.
+  - Consolidated saved tier-1/2 corpus evidence directly from `data/scraped/*/listings/*.json` and `data/media/*` so the dashboard reflects the current file-backed reality.
+  - Added `scripts/generate_scrape_status_dashboard.py` to produce:
+    - `docs/dashboard/scrape-status.html`
+    - `docs/exports/scrape-status-dashboard.json`
+  - Structured the dashboard so it begins with all tier-1/2 links, state, and further steps, then drills into each source with service/property tables:
+    - buy vs rent
+    - land and commercial coverage where present
+    - description/photo/readable-photo coverage
+    - other captured variables such as `price`, `size`, `rooms`, `floor`, `city`, `district`, `address`, `geo`, `phones`, and `amenities`
+  - Updated the coordination protocol so each non-debugger agent run now ends with a debugger handoff task or an explicit deferral reason.
+- **Changed files**:
+  - `scripts/generate_scrape_status_dashboard.py`
+  - `Makefile`
+  - `scripts/validate_project.py`
+  - `docs/agents/README.md`
+  - `docs/agents/TASKS.md`
+  - `docs/agents/scraper_1/JOURNEY.md`
+- **Commands run**:
+  - `python3 - <<'PY' ...` coverage checks over `data/scraped/*/listings/*.json`
+  - `python3 -m py_compile scripts/generate_scrape_status_dashboard.py`
+  - `make dashboard-doc`
+- **Tests run**:
+  - `python3 -m py_compile scripts/generate_scrape_status_dashboard.py` — pass
+  - `make dashboard-doc` — pass
+- **Status**: `IN_PROGRESS`
+- **Review comments**:
+  - The dashboard makes the next scraper priorities more visible: `alo.bg`, `Domaza`, and `Home2U` are still the primary zero-yield repair targets, while `Yavlena` and `imot.bg` need quality upgrades on text/media/classification.
+  - `S1-18` remains blocked on PostgreSQL ingest proof even though the source-by-source file-backed picture is now much clearer.
+
+### 2026-04-20 — scraper_1 research wave: scraping market radar + universal agent setup
+
+- **Action**:
+  - Re-read the project wiki memory stack and the current agent task and journey files before starting the market scan.
+  - Researched current official documentation and release signals for:
+    - Playwright
+    - Crawlee
+    - Browserbase and Stagehand
+    - Firecrawl
+    - Zyte API
+    - `curl_cffi`
+  - Converted the research into project-local, version-controlled execution assets instead of leaving the conclusions only in chat.
+  - Added three new local skills:
+    - `agent-skills/hybrid-scrape-stack/SKILL.md`
+    - `agent-skills/managed-scrape-platforms/SKILL.md`
+    - `agent-skills/universal-agent-scrape-setup/SKILL.md`
+  - Added two operator docs:
+    - `docs/exports/scraping-tools-market-radar-2026-04-20.md`
+    - `docs/exports/universal-agent-scrape-setup-2026-04-20.md`
+  - Standardized shared setup in repo config:
+    - added `scrape-agents` optional dependency extra in `pyproject.toml`
+    - added `make install-scrape-agents`
+    - extended `.env.example` with optional Browserbase, Firecrawl, Zyte, proxy, and Playwright runtime vars
+  - Updated `docs/agent-skills-index.md`, `docs/skills/marketplace-adoption.md`, and `docs/agents/TASKS.md` so the next scraper runs can use the new tool-selection policy.
+- **Key findings**:
+  - FACT: the strongest 2026 pattern is a hybrid ladder, not a single scraper framework.
+  - FACT: Playwright remains the best browser evidence-capture layer, while `curl_cffi` is the most attractive low-cost anti-bot middle tier before committing to full browser automation.
+  - FACT: Browserbase and Firecrawl are moving quickly toward agent-native browser execution, while Zyte remains relevant as a managed structured-extraction fallback.
+  - INTERPRETATION: for this project, managed platforms should be escalation layers for difficult sources, not the default bulk-ingest engine for tier-1 and tier-2 portals.
+  - HYPOTHESIS: keeping most real-estate sources on HTTP or replayed XHR flows will preserve cost control while still leaving a modern fallback path for hostile or JS-heavy sites.
+- **Changed files**:
+  - `pyproject.toml`
+  - `Makefile`
+  - `.env.example`
+  - `agent-skills/hybrid-scrape-stack/SKILL.md`
+  - `agent-skills/managed-scrape-platforms/SKILL.md`
+  - `agent-skills/universal-agent-scrape-setup/SKILL.md`
+  - `docs/exports/scraping-tools-market-radar-2026-04-20.md`
+  - `docs/exports/universal-agent-scrape-setup-2026-04-20.md`
+  - `docs/agent-skills-index.md`
+  - `docs/skills/marketplace-adoption.md`
+  - `docs/agents/TASKS.md`
+  - `docs/agents/scraper_1/JOURNEY.md`
+- **Status**: `IN_PROGRESS`
+- **Review comments**:
+  - This run improved strategic scraping readiness and agent consistency without changing the live harvesting code path.
+  - The next live continuation should explicitly use the new hybrid-stack and managed-platform decision rules when repairing `alo.bg`, `Domaza`, and `Home2U`.
+
+### 2026-04-20 — scraper_1 memory update: full gallery and full item-content capture
+
+- **Action**:
+  - Persisted the operator rule that a property item should be scraped as a full evidence unit, not a single-image sample.
+  - Updated recurring task notes so future scraper runs keep full-gallery download and readability checks visible.
+- **Persistent rule**:
+  - for each property detail page, try to identify the full image gallery
+  - download all reachable item photos, not only the first image
+  - verify whether the downloaded set is readable or decodable
+  - treat description, attributes, contacts, and the full available media set as the default completeness target for one property item
+- **Changed files**:
+  - `docs/agents/TASKS.md`
+  - `docs/agents/scraper_1/JOURNEY.md`
+- **Status**: `IN_PROGRESS`
+- **Review comments**:
+  - This should reduce false confidence from hero-image-only captures and improve downstream media QA.
+
+### 2026-04-20 — scraper_1 metrics wave: declared offerings vs landed corpus by source
+
+- **Action**:
+  - Generated a reusable deep-dive export that compares each tier-1/2 website's declared offering, estimated site scale, and confirmed landed corpus.
+  - Explicitly separated:
+    - estimated active items on the website
+    - active items actually landed in the current corpus
+    - service coverage
+    - property-category coverage
+    - completeness percentages for description, photo URLs, and readable local photos
+  - Added spreadsheet and JSON exports alongside the markdown report.
+- **Outputs**:
+  - `docs/exports/tier12-source-metrics-deep-dive.md`
+  - `docs/exports/tier12-source-metrics-deep-dive.xlsx`
+  - `docs/exports/tier12-source-metrics-deep-dive.json`
+  - `scripts/generate_tier12_metrics_deep_dive.py`
+- **Changed files**:
+  - `scripts/generate_tier12_metrics_deep_dive.py`
+  - `Makefile`
+  - `docs/exports/tier12-source-metrics-deep-dive.md`
+  - `docs/exports/tier12-source-metrics-deep-dive.xlsx`
+  - `docs/exports/tier12-source-metrics-deep-dive.json`
+  - `docs/agents/TASKS.md`
+  - `docs/agents/scraper_1/JOURNEY.md`
+- **Commands run**:
+  - `python3 -m py_compile scripts/generate_tier12_metrics_deep_dive.py`
+  - `make tier12-metrics`
+- **Tests run**:
+  - `python3 -m py_compile scripts/generate_tier12_metrics_deep_dive.py` — pass
+  - `make tier12-metrics` — pass
+- **Status**: `IN_PROGRESS`
+- **Review comments**:
+  - The report makes one important distinction explicit: several sources already beat the 100-item benchmark but still cover only a small fraction of estimated website scale.
+  - This artifact should guide the next continuation wave source by source instead of relying on flat corpus counts alone.
+
+### 2026-04-20 — scraper_1 website-total analysis wave: saved website inventory evidence into dashboard blocks
+
+- **Action**:
+  - Generated a dedicated website-inventory artifact that separates website-side totals from landed corpus totals for each tier-1/2 source.
+  - Saved per-source website total basis, category-level count evidence rows, counting methods, counting gaps, and estimate-conflict notes where older scale estimates are already contradicted by live page counts.
+  - Extended `scrape-status.html` so each website block now shows:
+    - website total and coverage vs website
+    - website total basis and notes
+    - counting method and counting gap
+    - a website inventory evidence table before the landed corpus matrix
+- **Outputs**:
+  - `docs/exports/website-inventory-analysis.json`
+  - `docs/exports/website-inventory-analysis.md`
+  - `docs/dashboard/scrape-status.html`
+  - `docs/exports/scrape-status-dashboard.json`
+- **Changed files**:
+  - `scripts/generate_website_inventory_analysis.py`
+  - `scripts/generate_scrape_status_dashboard.py`
+  - `Makefile`
+  - `docs/exports/website-inventory-analysis.json`
+  - `docs/exports/website-inventory-analysis.md`
+  - `docs/dashboard/scrape-status.html`
+  - `docs/exports/scrape-status-dashboard.json`
+  - `docs/agents/TASKS.md`
+  - `docs/agents/scraper_1/JOURNEY.md`
+- **Commands run**:
+  - `python3 -m py_compile scripts/generate_website_inventory_analysis.py scripts/generate_scrape_status_dashboard.py`
+  - `make dashboard-doc`
+- **Tests run**:
+  - `python3 -m py_compile scripts/generate_website_inventory_analysis.py scripts/generate_scrape_status_dashboard.py` — pass
+  - `make dashboard-doc` — pass
+- **Status**: `IN_PROGRESS`
+- **Review comments**:
+  - `alo.bg` is now a confirmed estimate-conflict source: the saved older site-scale estimate was below the live apartment count floor.
+  - Several sources still only have estimate-level website totals; the next scraper wave should prioritize live counting passes where the dashboard still says `estimate` or `unavailable`.
+
+### 2026-04-21 — scraper_1 pattern-and-status wave: source-specific item patterns for Homes.bg and imot.bg, plus dashboard status split
+
+- **Action**:
+  - Upgraded `scripts/live_scraper.py` so `Homes.bg` and `imot.bg` no longer depend on the generic parser for detail pages.
+  - Added source-specific logic for:
+    - `Homes.bg`: detail extraction from `window.__PRELOADED_STATE__`, including description, attributes, agency/phones, and the full reachable gallery.
+    - `imot.bg`: filtered `obiava-*` product discovery, windows-1251-safe detail decoding, structured params extraction, phones, and full gallery capture from `data-src-gallery`.
+  - Removed the fixed 15-photo cap so full reachable galleries are downloaded by default unless a future env cap is set.
+  - Generated a new structured pattern-status artifact and extended `scrape-status.html` so each source now shows:
+    - item-pattern status (`Patterned` / `without ...`)
+    - live count status
+    - recent-count status
+    - Varna-count status
+    - best saved sample item and media evidence
+  - Added standing agent instructions that a source should only be called `Patterned` when the repo has a saved code pattern and at least one saved full product item with description + full gallery evidence.
+  - Created a 15-minute heartbeat automation for the incremental tier-1/2 scraper loop.
+- **Outputs**:
+  - `scripts/generate_tier12_pattern_status.py`
+  - `docs/exports/tier12-pattern-status.json`
+  - `docs/exports/tier12-pattern-status.md`
+  - refreshed `docs/dashboard/scrape-status.html`
+  - refreshed `docs/exports/scrape-status-dashboard.json`
+  - refreshed `docs/exports/progress-dashboard.json`
+- **Changed files**:
+  - `scripts/live_scraper.py`
+  - `scripts/generate_tier12_pattern_status.py`
+  - `scripts/generate_scrape_status_dashboard.py`
+  - `Makefile`
+  - `docs/agents/TASKS.md`
+  - `docs/agents/README.md`
+  - `docs/agents/scraper_1/JOURNEY.md`
+  - `docs/exports/tier12-pattern-status.json`
+  - `docs/exports/tier12-pattern-status.md`
+  - `docs/dashboard/scrape-status.html`
+  - `docs/exports/scrape-status-dashboard.json`
+  - `docs/exports/progress-dashboard.json`
+- **Commands run**:
+  - `python3 -m py_compile scripts/live_scraper.py`
+  - `python3 scripts/live_scraper.py --sources homes_bg,imot_bg --max-pages 1 --max-listings 12 --download-photos`
+  - `python3 scripts/live_scraper.py --sources imot_bg --max-pages 1 --max-listings 2 --download-photos`
+  - `python3 scripts/generate_tier12_pattern_status.py`
+  - `python3 -m py_compile scripts/generate_scrape_status_dashboard.py scripts/generate_tier12_pattern_status.py`
+  - `make dashboard-doc`
+- **Tests run**:
+  - `python3 -m py_compile scripts/live_scraper.py` — pass
+  - `python3 -m py_compile scripts/generate_scrape_status_dashboard.py scripts/generate_tier12_pattern_status.py` — pass
+  - `make dashboard-doc` — pass
+- **Status**: `DONE_AWAITING_VERIFY`
+- **Review comments**:
+  - FACT: `Homes.bg` now has a strong saved product-level pattern with full gallery proof.
+  - FACT: `imot.bg` now has a product-filtered detail parser and full gallery capture, but live whole-site count/recent/Varna methods are still unresolved.
+  - INTERPRETATION: item-pattern readiness and website-count readiness are separate dimensions and should stay separated in the dashboard.
+  - GAP: `DATABASE_URL` is still unset, so this run cannot prove PostgreSQL persistence for the new sample items.
+  - GAP: most sources still lack trustworthy whole-site `<2 months` and `Varna city + Varna region` counters.
+
+### 2026-04-21 — scraper_1 heartbeat run: incremental scrape blocked by environment DNS failure
+
+- **Action**:
+  - Triggered the 15-minute heartbeat scrape against the current top patterned sources (`Homes.bg`, `imot.bg`) to append new rows and refresh changed listings.
+  - Verified that the local scraper code still compiles, then attempted a small live run inside the heartbeat environment.
+  - The live increment did not proceed because outbound hostname resolution failed for both `www.homes.bg` and `www.imot.bg`.
+- **Outputs**:
+  - No new listings landed in this heartbeat window.
+  - Existing status artifacts remain the latest valid local state.
+- **Changed files**:
+  - `docs/agents/scraper_1/JOURNEY.md`
+- **Commands run**:
+  - `python3 -m py_compile scripts/live_scraper.py scripts/generate_tier12_pattern_status.py scripts/generate_scrape_status_dashboard.py`
+  - `python3 scripts/live_scraper.py --sources homes_bg,imot_bg --max-pages 1 --max-listings 4 --download-photos`
+- **Tests run**:
+  - `python3 -m py_compile scripts/live_scraper.py scripts/generate_tier12_pattern_status.py scripts/generate_scrape_status_dashboard.py` — pass
+- **Status**: `BLOCKED`
+- **Review comments**:
+  - FACT: the heartbeat environment had DNS/network failure (`nodename nor servname provided, or not known`) rather than parser-level failures.
+  - INTERPRETATION: this blocker is environmental and should not downgrade current `Patterned` status for `Homes.bg` or `imot.bg`.
+  - NEXT: retry on the next heartbeat or in an environment with outbound DNS/network access, then continue the incremental append/inactive-mark loop.
+
+### 2026-04-21 — scraper_1 heartbeat retry: DNS failure repeated
+
+- **Action**:
+  - Re-ran a minimal heartbeat probe against `Homes.bg` to test whether outbound resolution had recovered.
+  - The first API discovery request failed immediately with the same DNS error, so no incremental scrape work could proceed.
+- **Changed files**:
+  - `docs/agents/scraper_1/JOURNEY.md`
+- **Commands run**:
+  - `python3 -m py_compile scripts/live_scraper.py`
+  - `python3 scripts/live_scraper.py --sources homes_bg --max-pages 1 --max-listings 1 --download-photos`
+- **Tests run**:
+  - `python3 -m py_compile scripts/live_scraper.py` — pass
+- **Status**: `BLOCKED`
+- **Review comments**:
+  - FACT: the blocker is still environment DNS resolution, not discovery logic or detail parsing.
+  - NEXT: keep the heartbeat active and retry later; avoid treating this as a scraper regression.
+
+### 2026-04-21 — scraper_1 strict pattern audit: local media files plus full-item fields
+
+- **Action**:
+  - Re-audited all currently marked tier-1/2 `Patterned` sources against a stricter readiness bar.
+  - Upgraded saved listing artifacts so downloaded image binaries are referenced by local file paths (`local_image_files`) and storage keys (`local_image_storage_keys`) instead of relying only on remote URLs.
+  - Added a backfill tool for already-saved listings and tightened the pattern-status generator so a source is only `Patterned` when one saved sample proves:
+    - full reachable gallery saved as local files
+    - description captured
+    - core commercial and location fields present (`price` and `city` or `address`)
+    - at least two structured fields such as `area`, `rooms`, `floor`, or `phones`
+  - Regenerated the tier-1/2 pattern report and scrape-status dashboard after the stricter audit.
+- **Outputs**:
+  - `scripts/backfill_local_media_refs.py`
+  - refreshed `docs/exports/tier12-pattern-status.json`
+  - refreshed `docs/exports/tier12-pattern-status.md`
+  - refreshed `docs/dashboard/scrape-status.html`
+  - refreshed `docs/exports/scrape-status-dashboard.json`
+- **Changed files**:
+  - `scripts/live_scraper.py`
+  - `scripts/backfill_local_media_refs.py`
+  - `scripts/generate_tier12_pattern_status.py`
+  - `docs/agents/TASKS.md`
+  - `docs/agents/README.md`
+  - `docs/agents/scraper_1/JOURNEY.md`
+- **Commands run**:
+  - `python3 scripts/backfill_local_media_refs.py`
+  - `python3 scripts/generate_tier12_pattern_status.py`
+  - `python3 -m py_compile scripts/live_scraper.py scripts/backfill_local_media_refs.py scripts/generate_tier12_pattern_status.py scripts/generate_scrape_status_dashboard.py`
+  - `make dashboard-doc`
+- **Tests run**:
+  - `python3 -m py_compile scripts/live_scraper.py scripts/backfill_local_media_refs.py scripts/generate_tier12_pattern_status.py scripts/generate_scrape_status_dashboard.py` — pass
+  - `make dashboard-doc` — pass
+- **Status**: `DONE_AWAITING_VERIFY`
+- **Review comments**:
+  - FACT: only `Homes.bg` and `imot.bg` currently satisfy the strict `Patterned` definition.
+  - FACT: several other sources do save local galleries, but still miss core fields or structured fields in the best saved sample and were therefore downgraded to `without_core_fields_capture`.
+  - FACT: image binaries are already stored optimally for the current repo under `data/media/<reference_id>/...`; the new work makes those local files explicit in listing JSON artifacts too.
+  - GAP: `DATABASE_URL` is still unset, so this run proves file-backed storage and source JSON linkage, not PostgreSQL media metadata persistence.
+  - NEXT: let debugger spot-check the stricter classification and then upgrade downgraded sources one by one until they meet the same bar.
+
+### 2026-04-21 — scraper_1 parser repair wave: strict pattern promotions + DB runtime proof attempt
+
+- **Action**:
+  - Re-read the saved strict-pattern artifacts and repaired the remaining parser gaps for the saved tier-1/2 sample set.
+  - Added source-specific parser upgrades for `BulgarianProperties`, `LUXIMMO`, `property.bg`, `SUPRIMMO`, `OLX.bg`, `Bazar.bg`, `Address.bg`, and `Yavlena`, then added fixture-backed parser tests for the repaired sources.
+  - Reparsed and re-saved the strongest sample artifacts so the dashboard reads corrected listing JSON instead of stale parser output.
+  - Regenerated `tier12-pattern-status` and the scrape dashboard from the corrected saved corpus.
+  - Attempted the PostgreSQL proof path honestly:
+    - confirmed Python DB deps (`sqlalchemy`, `psycopg`, `alembic`) are installed
+    - confirmed `psql` is installed
+    - checked `localhost:5432` outside the sandbox and found no running PostgreSQL server
+    - checked Docker outside the sandbox and found no Docker daemon/socket, so the repo Compose stack cannot be started from this environment
+- **Outputs**:
+  - refreshed `docs/exports/tier12-pattern-status.json`
+  - refreshed `docs/exports/tier12-pattern-status.md`
+  - refreshed `docs/dashboard/scrape-status.html`
+  - refreshed `docs/exports/scrape-status-dashboard.json`
+  - repaired saved samples:
+    - `data/scraped/bulgarianproperties/listings/BulgarianProperties_ec4b0ae64e6c.json`
+    - `data/scraped/yavlena/listings/Yavlena_acbef70866cf.json`
+  - parser regression tests:
+    - `tests/test_live_scraper_source_parsers.py`
+- **Changed files**:
+  - `scripts/live_scraper.py`
+  - `scripts/generate_tier12_pattern_status.py`
+  - `scripts/reparse_saved_listings.py`
+  - `tests/test_live_scraper_source_parsers.py`
+  - `src/bgrealestate/services/media.py`
+  - `docs/agents/TASKS.md`
+  - `docs/agents/scraper_1/JOURNEY.md`
+  - `docs/exports/tier12-pattern-status.json`
+  - `docs/exports/tier12-pattern-status.md`
+  - `docs/dashboard/scrape-status.html`
+  - `docs/exports/scrape-status-dashboard.json`
+  - `docs/exports/progress-dashboard.json`
+- **Commands run**:
+  - `python3 -m py_compile scripts/live_scraper.py scripts/reparse_saved_listings.py tests/test_live_scraper_source_parsers.py`
+  - `PYTHONPATH=src python3 -m unittest tests.test_live_scraper_source_parsers -v`
+  - repaired sample reparse/download runs for `Address.bg`, `BulgarianProperties`, `LUXIMMO`, `OLX.bg`, `property.bg`, `SUPRIMMO`, `Bazar.bg`, `Yavlena`
+  - `python3 scripts/generate_tier12_pattern_status.py`
+  - `make dashboard-doc`
+  - `psql "postgresql://bgrealestate:bgrealestate@localhost:5432/bgrealestate" -c 'select 1 as ok'`
+  - `docker ps -a`
+- **Tests run**:
+  - `python3 -m py_compile scripts/live_scraper.py scripts/reparse_saved_listings.py tests/test_live_scraper_source_parsers.py` — pass
+  - `PYTHONPATH=src python3 -m unittest tests.test_live_scraper_source_parsers -v` — pass
+  - `make dashboard-doc` — pass
+- **Status**: `DONE_AWAITING_VERIFY`
+- **Review comments**:
+  - FACT: the saved strict `Patterned` set is now `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `OLX.bg`, `property.bg`, `SUPRIMMO`, `Bazar.bg`, `Yavlena`.
+  - FACT: `BulgarianProperties` was fixed by removing unrelated recommendation-carousel images from its gallery proof.
+  - FACT: `Yavlena` saved sample output now contains real description, area, rooms, city, district, phones, and the directly embedded current-listing image instead of the previous empty shell.
+  - INTERPRETATION: the remaining non-patterned sources are now mostly blocked by missing saved live samples or legal review, not by parser weaknesses in the already-landed corpus.
+  - GAP: PostgreSQL persistence is still not proven in this environment because no local Postgres server is running and Docker daemon/compose are unavailable here.
+  - NEXT: verify this repair wave with `debugger`, then either start a local PostgreSQL runtime or move the import proof to an environment where the repo DB stack can actually run.

@@ -1,0 +1,28 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-47m2-sofiya-zhk.-krasna-polyana/as1675098",
+  "external_id": "4681cbe7f979",
+  "title": "Двустаен, 47m² - Жк. Красна Поляна, София - Апартамент за продажба - Дом Консулт ЕООД",
+  "description": "ЕКСКЛУЗИВНО! СВЕТЪЛ, СЛЪНЧЕВ И НАПЪЛНО ОБЗАВЕДЕН АПАРТАМЕНТ.Метростанция  ВАРДАР  е на  15 минути, автобусни и трамвайна спирка на 5минутиПредлагаме отличен, на...",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2026-03-23_1/118200279o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T10:05:35.761347+00:00",
+  "reference_id": "Homes.bg:4681cbe7f979",
+  "local_image_files": [],
+  "local_image_storage_keys": []
+}

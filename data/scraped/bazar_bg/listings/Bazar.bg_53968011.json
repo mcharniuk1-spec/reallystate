@@ -1,0 +1,44 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53968011/prodawa-2-staen-gr-sofiia-oborishte",
+  "external_id": "53968011",
+  "title": "Bazar.BG",
+  "description": "ВЪВЕДЕН В ЕКСПЛОАТАЦИЯ (АКТ 16)Живот с характер в сърцето на СофияХарактеристики на имотаАпартамент:  6Вход: ГЕтаж: 3Тип: Двустаен апартамент Обща площ: 64.44 м",
+  "price": 280000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/759/big1/1b176969357418759_h.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/759/big1/1b176969357418759_hV.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/759/big1/1b176969357418759_QJ.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/759/big1/1b176969357418759_dt.jpg",
+    "//imotstatic3.focus.bg/imot/photosimotbg/1/759/big1/1b176969357418759_h.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:44:35.289357+00:00",
+  "reference_id": "Bazar.bg:53968011",
+  "local_image_files": [
+    "data/media/Bazar.bg_53968011/0000_60b432a3.jpg",
+    "data/media/Bazar.bg_53968011/0001_234520ea.jpg",
+    "data/media/Bazar.bg_53968011/0002_f0acc22e.jpg",
+    "data/media/Bazar.bg_53968011/0003_b5fdb0c7.jpg",
+    "data/media/Bazar.bg_53968011/0004_60b432a3.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53968011/0000_60b432a3.jpg",
+    "Bazar.bg_53968011/0001_234520ea.jpg",
+    "Bazar.bg_53968011/0002_f0acc22e.jpg",
+    "Bazar.bg_53968011/0003_b5fdb0c7.jpg",
+    "Bazar.bg_53968011/0004_60b432a3.jpg"
+  ]
+}

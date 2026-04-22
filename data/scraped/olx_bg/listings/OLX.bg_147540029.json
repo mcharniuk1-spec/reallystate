@@ -1,0 +1,35 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/zemedelska-zemya-nivi-selo-izgrev-obschina-suvorovo-oblast-varna-CID368-ID9Z3TT.html?search_reason=search%7Corganic",
+  "external_id": "147540029",
+  "title": "ЗЕМЕДЕЛСКА ЗЕМЯ - НИВИ, село Изгрев, община Суворово, област Варна:",
+  "description": "ЗЕМЕДЕЛСКА ЗЕМЯ - НИВИ, в село Изгрев, община Суворово, област Варна, втора и трета категория на земята, с обща площ от 16 дка, рента.",
+  "price": 15543.27,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/y7fnc4klrycp1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/y7fnc4klrycp1-BG/image;s=1000x656"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:28:25.330288+00:00",
+  "reference_id": "OLX.bg:147540029",
+  "local_image_files": [
+    "data/media/OLX.bg_147540029/0000_8bb163fc.webp",
+    "data/media/OLX.bg_147540029/0001_920aaff1.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540029/0000_8bb163fc.webp",
+    "OLX.bg_147540029/0001_920aaff1.webp"
+  ]
+}

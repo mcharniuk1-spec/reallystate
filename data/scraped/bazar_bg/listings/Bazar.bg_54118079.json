@@ -1,0 +1,47 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-54118079/ednostaen-apartament-pod-naem-do-balgariia-mol-manastirski-liwadi-zapad",
+  "external_id": "54118079",
+  "title": "Bazar.BG",
+  "description": "Собственик дава под наем БЕЗ комисионна , едностаен малък апартамент, нов, ново обзаведен, отоплява се на климатик. Отдава се дългосрочно за сам човек.Намира се",
+  "price": 490.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://cdn8.focus.bg/bazar/8f/original/8f75fe701ed85bf8b161c0fc7c420383.webp",
+    "https://cdn5.focus.bg/bazar/d4/original/d40003f47ec0a1326c7ba3e4a55ceda2.webp",
+    "https://cdn8.focus.bg/bazar/93/original/9372071090784360ed944f0bb37a4ed7.webp",
+    "https://cdn8.focus.bg/bazar/76/original/76df7f3eaa658502096ffc473d8e051d.webp",
+    "https://cdn7.focus.bg/bazar/ad/original/ad869a715b82d867da4612913bec521c.webp",
+    "//cdn8.focus.bg/bazar/8f/pics/8f75fe701ed85bf8b161c0fc7c420383.webp"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:44:40.659049+00:00",
+  "reference_id": "Bazar.bg:54118079",
+  "local_image_files": [
+    "data/media/Bazar.bg_54118079/0000_c651d9ca.webp",
+    "data/media/Bazar.bg_54118079/0001_cdf1627a.webp",
+    "data/media/Bazar.bg_54118079/0002_d0ad8a1c.webp",
+    "data/media/Bazar.bg_54118079/0003_8c96c3bd.webp",
+    "data/media/Bazar.bg_54118079/0004_53455ecb.webp",
+    "data/media/Bazar.bg_54118079/0005_2bc0527e.webp"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_54118079/0000_c651d9ca.webp",
+    "Bazar.bg_54118079/0001_cdf1627a.webp",
+    "Bazar.bg_54118079/0002_d0ad8a1c.webp",
+    "Bazar.bg_54118079/0003_8c96c3bd.webp",
+    "Bazar.bg_54118079/0004_53455ecb.webp",
+    "Bazar.bg_54118079/0005_2bc0527e.webp"
+  ]
+}

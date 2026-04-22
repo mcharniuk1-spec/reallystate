@@ -1,0 +1,50 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-54044244/prodawa-3-staen-gr-sofiia-lyulin-6",
+  "external_id": "54044244",
+  "title": "Bazar.BG",
+  "description": "Предлагаме на вниманието последен тристаен апартамент в затворен комплекс  Елит 6 БЕЗ КОМИСИОННА! ДИРЕКТНО ОТ ИНВЕСТИТОРА! БЕЗ ТАКСИ И УВЕЛИЧЕНИЕ НА ЦЕНАТА !Нач",
+  "price": 192000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/693/big1/1c177497392387693_Jh.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/693/big1/1c177497392387693_mj.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/693/big1/1c177497392387693_ev.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/693/big1/1c177497392387693_Af.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/693/big1/1c177497392387693_uW.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/693/big1/1c177497392387693_Jg.jpg",
+    "//imotstatic1.focus.bg/imot/photosimotbg/1/693/big1/1c177497392387693_Jh.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:47:19.619855+00:00",
+  "reference_id": "Bazar.bg:54044244",
+  "local_image_files": [
+    "data/media/Bazar.bg_54044244/0000_d6c24384.jpg",
+    "data/media/Bazar.bg_54044244/0001_09a2fe46.jpg",
+    "data/media/Bazar.bg_54044244/0002_2ae56c87.jpg",
+    "data/media/Bazar.bg_54044244/0003_31630d21.jpg",
+    "data/media/Bazar.bg_54044244/0004_8aaa8b8c.jpg",
+    "data/media/Bazar.bg_54044244/0005_9b2501fd.jpg",
+    "data/media/Bazar.bg_54044244/0006_d6c24384.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_54044244/0000_d6c24384.jpg",
+    "Bazar.bg_54044244/0001_09a2fe46.jpg",
+    "Bazar.bg_54044244/0002_2ae56c87.jpg",
+    "Bazar.bg_54044244/0003_31630d21.jpg",
+    "Bazar.bg_54044244/0004_8aaa8b8c.jpg",
+    "Bazar.bg_54044244/0005_9b2501fd.jpg",
+    "Bazar.bg_54044244/0006_d6c24384.jpg"
+  ]
+}

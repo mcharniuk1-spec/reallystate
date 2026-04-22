@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD88741BG_House_for_sale_near_Elhovo.html",
+  "external_id": "7a9387977207",
+  "title": "Bulgarian Properties",
+  "description": "House with a flat garden at the very end of a picturesque village",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88741_4.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:38:05.602828+00:00",
+  "reference_id": "BulgarianProperties:7a9387977207",
+  "local_image_files": [
+    "data/media/BulgarianProperties_7a9387977207/0000_9cf0a028.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_7a9387977207/0000_9cf0a028.jpg"
+  ]
+}

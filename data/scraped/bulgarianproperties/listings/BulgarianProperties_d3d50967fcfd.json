@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD84542BG_House_for_sale_in_Kirilovo.html",
+  "external_id": "d3d50967fcfd",
+  "title": "Bulgarian Properties",
+  "description": "Property with nice location 9 km from the town of Elhovo",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/84542_41.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:35:06.978798+00:00",
+  "reference_id": "BulgarianProperties:d3d50967fcfd",
+  "local_image_files": [
+    "data/media/BulgarianProperties_d3d50967fcfd/0000_05129a1a.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_d3d50967fcfd/0000_05129a1a.jpg"
+  ]
+}

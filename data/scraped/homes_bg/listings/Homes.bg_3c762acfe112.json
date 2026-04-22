@@ -1,0 +1,28 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-64m2-sofiya-zhk.-druzhba-1/as1663486",
+  "external_id": "3c762acfe112",
+  "title": "Двустаен, 64m² - Жк. Дружба 1, София - Апартамент за продажба - Титан Пропъртис",
+  "description": "Открийте мястото, където ще се чувствате у дома от първия момент.Титан Пропъртис офис - Черни връх с радост предлага на Вашето внимание двустаен апартамент за п...",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2026-04-09_1/118434630o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T10:05:37.113594+00:00",
+  "reference_id": "Homes.bg:3c762acfe112",
+  "local_image_files": [],
+  "local_image_storage_keys": []
+}

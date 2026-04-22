@@ -1,0 +1,35 @@
+{
+  "source_name": "LUXIMMO",
+  "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/sofiya/luksozni-imoti-mnogostayni-apartamenti/luksozen-imot-37942-mnogostaen-apartament-za-prodajba-v-sofiya.html",
+  "external_id": "6792fbd8a3d6",
+  "title": "Луксиммо",
+  "description": "Представяме петстаен апартамент в подножието на планината в кв. Бояна. Комплексът предлага високо ниво на сигурност, спокойствие и изключителни гледки към града и Витоша. Подходящ е за живеене както за семейства с деца, така и за активно работещи хора. Сградата е проектирана така, че всяко едно от изложенията на жилището да получава максимално количество слънчева светлина. Височината на помещенията е по-висока от стандартните, което създава приятно усещане за простор. Резиденцията е сгушена в полите на Витоша, като предоставя уединение",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.luximmo.org/property-images/big_bg/1774875033T37942_1.jpg",
+    "https://static.luximmo.org/property-images/big_bg/1774875033T37942_1.jpg?v=1775734921"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:42:01.551031+00:00",
+  "reference_id": "LUXIMMO:6792fbd8a3d6",
+  "local_image_files": [
+    "data/media/LUXIMMO_6792fbd8a3d6/0000_63cd2a77.jpg",
+    "data/media/LUXIMMO_6792fbd8a3d6/0001_63cd2a77.jpg"
+  ],
+  "local_image_storage_keys": [
+    "LUXIMMO_6792fbd8a3d6/0000_63cd2a77.jpg",
+    "LUXIMMO_6792fbd8a3d6/0001_63cd2a77.jpg"
+  ]
+}

@@ -17,10 +17,12 @@
   "listing_intent": "sale",
   "property_category": "unknown",
   "image_urls": [
-    "//imotstatic4.focus.bg/imot/photosimotbg/1/185//big/1b177364954991185_pd.jpg"
+    "//imotstatic4.focus.bg/imot/photosimotbg/1/185//big/1b177364954991185_uE.jpg"
   ],
   "phones": [],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:25:13.271245+00:00",
-  "reference_id": "imot.bg:e52bdde38aef"
+  "scraped_at": "2026-04-09T10:06:01.875733+00:00",
+  "reference_id": "imot.bg:e52bdde38aef",
+  "local_image_files": [],
+  "local_image_storage_keys": []
 }

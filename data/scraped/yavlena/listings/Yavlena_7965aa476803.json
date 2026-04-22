@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/154805",
+  "external_id": "7965aa476803",
+  "title": "Тристаен апартамент в София 105 кв.м. ID 154805  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/650e7664-a46a-4003-90c2-438152970d80.png"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:55:40.462300+00:00",
+  "reference_id": "Yavlena:7965aa476803",
+  "local_image_files": [
+    "data/media/Yavlena_7965aa476803/0000_566cd229.png"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_7965aa476803/0000_566cd229.png"
+  ]
+}

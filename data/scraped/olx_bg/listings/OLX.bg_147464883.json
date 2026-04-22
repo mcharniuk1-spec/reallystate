@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/tristaen-apartament-v-nova-zhilischna-sgrada-CID368-ID9YKlR.html?search_reason=search%7Corganic",
+  "external_id": "147464883",
+  "title": "Тристаен апартамент в нова жилищна сграда",
+  "description": "Тристаен апартамент в нова жилищна сграда – кв. Владиславово Компания предлага за продажба тристаен апартамент, разположен в нова модерна сграда в кв. Владиславово, на тиха и развиваща се локация. Имотът е подходящ както за живеене, така и за инвестиция с цел отдаване под наем. Основни характеристики: • Обща площ: 89 кв.м • Дневна с кухня • Две спалня • Баня с тоалет • Етаж: 3 • Изложение: Западно Функционалност и разпределение: • Правилни форми на помещенията • Възможност за оптимално обзавеждане • Подходящ за младо семейство или инвестиция • Добро вътрешно разпределение без излишни площ Паркоместа: • Възможност за покупка на паркомясто Локация и предимства: • Тих и спокоен район • В непосредствена близозт до новият планиран мол на града • Развиваща се зона с ново строителство • В близост до магазини и спирки • Подходящ както за живеене, така и за инвестиция Цена: -131100€ Контакт: Консултант недвижими имоти: Стефан Лозанов Телефон: 08******70 Уебсайт: novdom1.bg Компанията предлага: • Пълно юридическо обслужване • Съдействие за банков кредит • Възможност за довършителни работи до ключ",
+  "price": 133100.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vppkefj94grv1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/sx5tkepm5m3r3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qfbxde1e4fny2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/y4wde1d1ysrs3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/3tr1jmjk4ley1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vppkefj94grv1-BG/image;s=750x1000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:20:50.636910+00:00",
+  "reference_id": "OLX.bg:147464883",
+  "local_image_files": [
+    "data/media/OLX.bg_147464883/0000_37cbbe3c.webp",
+    "data/media/OLX.bg_147464883/0001_b95354e2.webp",
+    "data/media/OLX.bg_147464883/0002_bd998416.webp",
+    "data/media/OLX.bg_147464883/0003_b8cfa47b.webp",
+    "data/media/OLX.bg_147464883/0004_a8095f29.webp",
+    "data/media/OLX.bg_147464883/0005_e54b8628.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464883/0000_37cbbe3c.webp",
+    "OLX.bg_147464883/0001_b95354e2.webp",
+    "OLX.bg_147464883/0002_bd998416.webp",
+    "OLX.bg_147464883/0003_b8cfa47b.webp",
+    "OLX.bg_147464883/0004_a8095f29.webp",
+    "OLX.bg_147464883/0005_e54b8628.webp"
+  ]
+}

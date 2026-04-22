@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-napalno-obzaveden-apartament-v-kyuchuk-parizh-CID368-ID9YmZb.html?search_reason=search%7Corganic",
+  "external_id": "147375065",
+  "title": "Двустаен напълно обзаведен апартамент  в Кючук Париж",
+  "description": "Оферта №3657 Представяме ви двустаен обзаведен апартамент в кв. Кючук Париж, гр. Пловдив. Разпределение: дневна с трапезария и кухненски бокс, спалня, баня с тоалетна, коридор и тераса. Предлага се с всичко необходимо за нанасяне веднага - вградено кухненско с ел. уреди, холова гарнитура, спален комплект. В близост се намират училища, детски градини, паркове за отдих и разходка, големи търговски вериги. Входа на блока е добре поддържан, с контрол на достъп и видеонаблюдение. Към имота има прилежащо избено помещение. За повече информация, можете да се обадите на посочения телефон.",
+  "price": 124000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fgzypmrvz2qz2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/j3170v286se33-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/5e1b73v9yojp1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2q9hyrjr6zsu3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/02r4zr312tu02-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fgzypmrvz2qz2-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:24:20.548878+00:00",
+  "reference_id": "OLX.bg:147375065",
+  "local_image_files": [
+    "data/media/OLX.bg_147375065/0000_888cfa84.webp",
+    "data/media/OLX.bg_147375065/0001_2c4460f7.webp",
+    "data/media/OLX.bg_147375065/0002_c78e4224.webp",
+    "data/media/OLX.bg_147375065/0003_cd131528.webp",
+    "data/media/OLX.bg_147375065/0004_4b3f3c38.webp",
+    "data/media/OLX.bg_147375065/0005_1b100d05.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147375065/0000_888cfa84.webp",
+    "OLX.bg_147375065/0001_2c4460f7.webp",
+    "OLX.bg_147375065/0002_c78e4224.webp",
+    "OLX.bg_147375065/0003_cd131528.webp",
+    "OLX.bg_147375065/0004_4b3f3c38.webp",
+    "OLX.bg_147375065/0005_1b100d05.webp"
+  ]
+}

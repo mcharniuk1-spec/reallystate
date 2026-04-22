@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168107",
+  "external_id": "a091d5e8a3d6",
+  "title": "Магазин във Варна 500 кв.м. ID 168107  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://userimages.yavlena.com/67b5bbe2-cebe-4d77-916f-6558b166d23f.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:16:25.143344+00:00",
+  "reference_id": "Yavlena:a091d5e8a3d6",
+  "local_image_files": [
+    "data/media/Yavlena_a091d5e8a3d6/0000_5ba89232.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_a091d5e8a3d6/0000_5ba89232.jpg"
+  ]
+}

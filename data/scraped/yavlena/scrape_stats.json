@@ -1,0 +1,32 @@
+{
+  "source_key": "yavlena",
+  "source_name": "Yavlena",
+  "discovery_pages_fetched": 5,
+  "listing_urls_discovered": 250,
+  "listing_pages_fetched": 250,
+  "listing_pages_parsed": 250,
+  "listing_pages_failed": 0,
+  "photos_found": 250,
+  "photos_downloaded": 249,
+  "photos_failed": 1,
+  "with_price": 0,
+  "with_geo": 0,
+  "with_address": 0,
+  "with_area": 0,
+  "with_rooms": 0,
+  "with_description": 0,
+  "intents": {
+    "sale": 250
+  },
+  "categories": {
+    "apartment": 145,
+    "house": 40,
+    "unknown": 22,
+    "office": 7,
+    "land": 36
+  },
+  "errors": [],
+  "start_time": "2026-04-08T16:54:12.904866+00:00",
+  "end_time": "2026-04-08T17:18:17.189285+00:00",
+  "duration_seconds": 1444.3
+}

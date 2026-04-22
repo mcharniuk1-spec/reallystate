@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/166493",
+  "external_id": "06897e788b3c",
+  "title": "Магазин в Пловдив 74 кв.м. ID 166493  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://userimages.yavlena.com/f1a6c703-48ec-4328-b9ed-3cb1dbbd645b.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:54:38.204348+00:00",
+  "reference_id": "Yavlena:06897e788b3c",
+  "local_image_files": [
+    "data/media/Yavlena_06897e788b3c/0000_2c46c436.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_06897e788b3c/0000_2c46c436.jpg"
+  ]
+}

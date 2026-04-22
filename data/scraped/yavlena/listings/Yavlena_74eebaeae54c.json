@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/162875",
+  "external_id": "74eebaeae54c",
+  "title": "Етаж от къща в Пловдив 70 кв.м. ID 162875  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://userimages.yavlena.com/cd20866b-5e51-4d80-b444-7ccbd8ab3ef9.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:55:00.873298+00:00",
+  "reference_id": "Yavlena:74eebaeae54c",
+  "local_image_files": [
+    "data/media/Yavlena_74eebaeae54c/0000_2425d372.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_74eebaeae54c/0000_2425d372.jpg"
+  ]
+}

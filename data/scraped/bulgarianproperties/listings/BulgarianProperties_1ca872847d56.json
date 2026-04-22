@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD87043BG_1-bedroom_apartment_for_sale_in_Plovdiv.html",
+  "external_id": "1ca872847d56",
+  "title": "Bulgarian Properties",
+  "description": "Comfortable apartment in a fast-growing area in the cultural capital",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/87043_4.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:37:18.727833+00:00",
+  "reference_id": "BulgarianProperties:1ca872847d56",
+  "local_image_files": [
+    "data/media/BulgarianProperties_1ca872847d56/0000_36c7bd26.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_1ca872847d56/0000_36c7bd26.jpg"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Land_in_Bulgaria/AD83121BG_Land_for_sale_near_Stara_Zagora.html",
+  "external_id": "c23d96cc96b8",
+  "title": "Bulgarian Properties",
+  "description": "Attractive land property with convenient location 15 minutes from the center of Stara Zagora",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/83121_1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:35:40.817695+00:00",
+  "reference_id": "BulgarianProperties:c23d96cc96b8",
+  "local_image_files": [
+    "data/media/BulgarianProperties_c23d96cc96b8/0000_761dcac5.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_c23d96cc96b8/0000_761dcac5.jpg"
+  ]
+}

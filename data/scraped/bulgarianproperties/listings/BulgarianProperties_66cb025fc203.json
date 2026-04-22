@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Hotels_in_Bulgaria/AD88326BG_Hotel_for_sale_in_Sevlievo.html",
+  "external_id": "66cb025fc203",
+  "title": "Bulgarian Properties",
+  "description": "Hotel with 80 beds, swimming pool, and panoramic sunsets  ",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88326_36.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:38:44.970622+00:00",
+  "reference_id": "BulgarianProperties:66cb025fc203",
+  "local_image_files": [
+    "data/media/BulgarianProperties_66cb025fc203/0000_e21d2e54.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_66cb025fc203/0000_e21d2e54.jpg"
+  ]
+}

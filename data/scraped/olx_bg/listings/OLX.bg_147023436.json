@@ -1,0 +1,44 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-v-kamenitsa-1-CID368-ID9VTwK.html?search_reason=search%7Corganic",
+  "external_id": "147023436",
+  "title": "Двустаен апартамент в Каменица 1",
+  "description": "Агенция за недвижими имоти Ви представя двустаен апартамент в Каменица 1. Намира се на много комуникативно място, близо до магазини, училища, детски градини и спирки на градския транспорт. За огледи, можете да се обадите на посочения телефон.",
+  "price": 300.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/r42yidmi9d072-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fu4jk9w9lmwl-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/10xddzhctxtq3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/v9bamu0zy6nh2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/r42yidmi9d072-BG/image;s=1280x960"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:22:38.555109+00:00",
+  "reference_id": "OLX.bg:147023436",
+  "local_image_files": [
+    "data/media/OLX.bg_147023436/0000_21e46fbd.webp",
+    "data/media/OLX.bg_147023436/0001_aa3b0039.webp",
+    "data/media/OLX.bg_147023436/0002_a927b1a8.webp",
+    "data/media/OLX.bg_147023436/0003_eaf5f0db.webp",
+    "data/media/OLX.bg_147023436/0004_4383da41.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147023436/0000_21e46fbd.webp",
+    "OLX.bg_147023436/0001_aa3b0039.webp",
+    "OLX.bg_147023436/0002_a927b1a8.webp",
+    "OLX.bg_147023436/0003_eaf5f0db.webp",
+    "OLX.bg_147023436/0004_4383da41.webp"
+  ]
+}

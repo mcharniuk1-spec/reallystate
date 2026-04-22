@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD89997BG_1-bedroom_apartment_for_sale_in_Sredets.html",
+  "external_id": "40c8948bb81a",
+  "title": "Bulgarian Properties",
+  "description": "Comfortable home in a well-developed area of Sredets",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89997_13.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:42:21.244161+00:00",
+  "reference_id": "BulgarianProperties:40c8948bb81a",
+  "local_image_files": [
+    "data/media/BulgarianProperties_40c8948bb81a/0000_f4fcb198.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_40c8948bb81a/0000_f4fcb198.jpg"
+  ]
+}

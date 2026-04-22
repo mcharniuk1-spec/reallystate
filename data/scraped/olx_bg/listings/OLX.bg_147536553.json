@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/2-staen-v-plovdiv-trakiya-plosch-37-tsena-320-CID368-ID9Z2ZP.html?search_reason=search%7Cpromoted",
+  "external_id": "147536553",
+  "title": "2-стаен в Пловдив-Тракия площ 37 цена 320",
+  "description": "Двустаен под наем в ЖК Тракия, Южно изложение, слънчев и топъл. Голям хол, отделни спалня и кухня. Обзаведен с разтегателен диван, спалня с място за багаж под нея, гардероб, климатик, авт. пералня, бойлер, тец, хладилник и печка с фурна и ел. котлони. Пода е теракот и ламинат, дограмата е ПВЦ, метална входна врата. Ниски месечни разходи, безплатен паркинг до блока.",
+  "price": 320.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zxewcxzjtgyd3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/m0uqdbhl0cxf1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/mb95i45pfhg31-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/v2gu85qivgae1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/u2elzdn3on4o1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zxewcxzjtgyd3-BG/image;s=1349x2400"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:26:08.908111+00:00",
+  "reference_id": "OLX.bg:147536553",
+  "local_image_files": [
+    "data/media/OLX.bg_147536553/0000_b7166632.webp",
+    "data/media/OLX.bg_147536553/0001_8f48a2ba.webp",
+    "data/media/OLX.bg_147536553/0002_e432f095.webp",
+    "data/media/OLX.bg_147536553/0003_18601251.webp",
+    "data/media/OLX.bg_147536553/0004_673fa841.webp",
+    "data/media/OLX.bg_147536553/0005_f9ff4f20.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147536553/0000_b7166632.webp",
+    "OLX.bg_147536553/0001_8f48a2ba.webp",
+    "OLX.bg_147536553/0002_e432f095.webp",
+    "OLX.bg_147536553/0003_18601251.webp",
+    "OLX.bg_147536553/0004_673fa841.webp",
+    "OLX.bg_147536553/0005_f9ff4f20.webp"
+  ]
+}

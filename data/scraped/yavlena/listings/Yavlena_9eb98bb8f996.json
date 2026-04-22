@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/167989",
+  "external_id": "9eb98bb8f996",
+  "title": "Парцел във Варна 15350 кв.м. ID 167989  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://userimages.yavlena.com/ee3adc30-add6-42d2-8986-839dc1d647a1.JPG"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:18:00.028821+00:00",
+  "reference_id": "Yavlena:9eb98bb8f996",
+  "local_image_files": [
+    "data/media/Yavlena_9eb98bb8f996/0000_8653e62d.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_9eb98bb8f996/0000_8653e62d.jpg"
+  ]
+}

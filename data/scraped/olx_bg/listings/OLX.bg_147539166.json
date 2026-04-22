@@ -1,0 +1,44 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/prostoren-chetiristaen-apartament-v-kv-levski-CID368-ID9Z3FY.html?search_reason=search%7Corganic",
+  "external_id": "147539166",
+  "title": "Просторен четиристаен апартамент в кв. Левски!",
+  "description": "International Real Estates (IRE) представя: Четиристаен апартамент тип мезонет за продажба в нова модерна сграда в кв. Левски, гр. Варна. Районът се характеризира с отлична инфраструктура, училища, университети, детски градини, магазини, заведения, аптеки и много други удобства, на метри от спирка на градски транспорт с лесен и бърз достъп до всички централни точки на града. Апартаментът е с площ от 117кв.м., и има следното разпределение: -първо ниво се състои от: коридор, две спални, баня с тоалетна, две тераси; -на второ ниво има: дневна с кухненски бокс, спалня, баня с тоалетна, голяма тераса. Има възможност за закупуване на двойно паркомясто чрез допълнително заплащане. Отличен имот, Атрактивна локация, подходящ, както за целогодишно живеене, отдаване под наем с гарантирана доходност! За повече информация и организиране на оглед, моля свържете се с нас на посочения телефон и цитирайте код на обявата: 2393",
+  "price": 219000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vzu8bch4h0h22-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/16xh95rcn8so2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fqoat7771gjf2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0a6xw17cchfk3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vzu8bch4h0h22-BG/image;s=1333x1000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:25:06.309647+00:00",
+  "reference_id": "OLX.bg:147539166",
+  "local_image_files": [
+    "data/media/OLX.bg_147539166/0000_8bcf98ef.webp",
+    "data/media/OLX.bg_147539166/0001_d6a45709.webp",
+    "data/media/OLX.bg_147539166/0002_b9f85df6.webp",
+    "data/media/OLX.bg_147539166/0003_a24445d7.webp",
+    "data/media/OLX.bg_147539166/0004_65f7b2dd.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539166/0000_8bcf98ef.webp",
+    "OLX.bg_147539166/0001_d6a45709.webp",
+    "OLX.bg_147539166/0002_b9f85df6.webp",
+    "OLX.bg_147539166/0003_a24445d7.webp",
+    "OLX.bg_147539166/0004_65f7b2dd.webp"
+  ]
+}

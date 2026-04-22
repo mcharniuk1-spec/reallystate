@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/prodavam-2-staen-zapaden-park-et-3-CID368-ID9XnIP.html?search_reason=search%7Corganic",
+  "external_id": "147139567",
+  "title": "Продавам 2-СТАЕН, Западен парк, ет. 3",
+  "description": "ПРОДАВАМ 2-СТАЕН непреходен апартамент (панел) в Западен парк до бул. Стамболийски. Етаж 3 от 6, изложение изток-запад, много топъл и светъл, площ - 65 кв.м., с мазе и две тераси. В непосредствена близост до бул. Ал. Стамболийски (50 метра), комуникативна локация, трамвай до центъра на 50 метра, метростанция в близост, Лидл и Т-Маркет, свободен паркинг пред входа. Апартаментът се състои от антре, отделна кухня, остъклена тераса към кухнята, спалня, хол, остъклена тераса към хола (общо 2 тераси), отделна баня, отделна тоалетна, отделно складово помещение. Всички външни и вътрешни дограми са сменени - външните са висок клас алуминиева дограма, а вътрешните са висок клас PVC, ВиК инсталацията е сменена, щранговете са сменени. Отлично поддържан вход! С изключение на дограмите, терасите и инсталациите жилището е за ремонт! За контакт - 08******69",
+  "price": 127333.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/jl3i8w3ht5r3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zs3pcg1ok3q11-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/etrd4jylkysc3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xv0qp0evyc5q-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/y0cwokwdb88u-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/jl3i8w3ht5r3-BG/image;s=1600x1202"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:26:32.222701+00:00",
+  "reference_id": "OLX.bg:147139567",
+  "local_image_files": [
+    "data/media/OLX.bg_147139567/0000_04803720.webp",
+    "data/media/OLX.bg_147139567/0001_838af77c.webp",
+    "data/media/OLX.bg_147139567/0002_2eaf6a4e.webp",
+    "data/media/OLX.bg_147139567/0003_183e3b36.webp",
+    "data/media/OLX.bg_147139567/0004_8ebd65f5.webp",
+    "data/media/OLX.bg_147139567/0005_878b5b8f.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147139567/0000_04803720.webp",
+    "OLX.bg_147139567/0001_838af77c.webp",
+    "OLX.bg_147139567/0002_2eaf6a4e.webp",
+    "OLX.bg_147139567/0003_183e3b36.webp",
+    "OLX.bg_147139567/0004_8ebd65f5.webp",
+    "OLX.bg_147139567/0005_878b5b8f.webp"
+  ]
+}

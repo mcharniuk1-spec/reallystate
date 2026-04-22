@@ -1,0 +1,41 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-luksozno-obzaveden-apartament-v-kyuchuk-parizh-CID368-ID9YmYg.html?search_reason=search%7Corganic",
+  "external_id": "147375008",
+  "title": "Двустаен луксозно обзаведен апартамент в Кючук Париж",
+  "description": "Оферта №9871 Представяме ви двустаен обзаведен апартамент в кв. Кючук Париж, гр. Пловдив. Разпределение: дневна с трапезария и кухненски бокс, спалня, баня с тоалетна, коридор и тераса. . Предлага се с всичко необходимо за нанасяне веднага - вградено кухненско с ел. уреди, холова гарнитура, спален комплект. В близост се намират училища, детски градини, паркове за отдих и разходка, големи търговски вериги. Входа на блока е добре поддържан, с контрол на достъп и видеонаблюдение. Към имота има прилежащо избено помещение. За повече информация, можете да се обадите на посочения телефон.",
+  "price": 122000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/1iehh1jl1vr12-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/mmmjksfzpzwf1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/j01cgs1g4dhs2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/1iehh1jl1vr12-BG/image;s=1024x1536"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:30:32.702151+00:00",
+  "reference_id": "OLX.bg:147375008",
+  "local_image_files": [
+    "data/media/OLX.bg_147375008/0000_216de3dc.webp",
+    "data/media/OLX.bg_147375008/0001_6209b1ee.webp",
+    "data/media/OLX.bg_147375008/0002_601bf3cb.webp",
+    "data/media/OLX.bg_147375008/0003_7038bd2c.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147375008/0000_216de3dc.webp",
+    "OLX.bg_147375008/0001_6209b1ee.webp",
+    "OLX.bg_147375008/0002_601bf3cb.webp",
+    "OLX.bg_147375008/0003_7038bd2c.webp"
+  ]
+}

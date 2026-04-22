@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/165355",
+  "external_id": "be9845807d40",
+  "title": "Офис в Пловдив 650 кв.м. ID 165355  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "office",
+  "image_urls": [
+    "https://userimages.yavlena.com/661696f7-180a-4403-80e2-09633d1928b9.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:54:46.883604+00:00",
+  "reference_id": "Yavlena:be9845807d40",
+  "local_image_files": [
+    "data/media/Yavlena_be9845807d40/0000_c57220fd.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_be9845807d40/0000_c57220fd.jpg"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/tristaen-apartament-kv-hristo-smirnenski-51256-CID368-ID9YKfW.html?search_reason=search%7Corganic",
+  "external_id": "147464515",
+  "title": "Тристаен апартамент - кв. Христо Смирненски - 51256",
+  "description": "Компания `Х` представя на Вашето внимание тристаен апартамент в квартал Христо Смирненски. МЕСТОПОЛОЖЕНИЕ: Квартал Христо Смирненски е един от най-предпочитаните и бързо развиващи се райони в Пловдив. Отличава се с модерна инфраструктура, ново строителство и отлична уреденост. В близост се намират болници, училища, детски градини, паркове и търговски обекти. Районът предлага удобен достъп до центъра на града и основни пътни артерии, което го прави изключително подходящ за живеене и инвестиция. РАЗПРЕДЕЛЕНИЕ: Жилището разполага с площ от 155 кв.м, разгърната в следното функционално разпределение: входно антре, всекидневна с кухненски бокс, две спални, две бани с тоалетна, перално помещение и голяма тераса. СЪСТОЯНИЕ: Предлага се необзаведено и дава възможност на новите собственици да създадат своя нов ДОМ, предавайки му стил чрез своя почерк. Заповядайте да Ви го покажем. Използвайки нашите услуги Вие ще превърнете закупуването на новия си дом в едно приятно изживяване. На Ваше разположение сме всеки ден, от понеделник до неделя от 09:00 до 20:00ч. Възползвайте се от безплатна консултация в наш офис, където ще ви спестим време и ще ви запознаем с всички актуални имоти в България, отговарящи на Вашето търсене. Свържете се с нас на 08******90 или на 08******33 и цитирайте кода към имота: 51256",
+  "price": 279000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/njqf7s7g7ok21-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qrayg0alusnn1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/s0vsil8v8l1j2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fpvj88v3bvan-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zxqvhjuqvdro1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/njqf7s7g7ok21-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:25:59.255073+00:00",
+  "reference_id": "OLX.bg:147464515",
+  "local_image_files": [
+    "data/media/OLX.bg_147464515/0000_cd5c966f.webp",
+    "data/media/OLX.bg_147464515/0001_50f86a6a.webp",
+    "data/media/OLX.bg_147464515/0002_9b5272e1.webp",
+    "data/media/OLX.bg_147464515/0003_2f687d68.webp",
+    "data/media/OLX.bg_147464515/0004_aba56980.webp",
+    "data/media/OLX.bg_147464515/0005_906ad332.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464515/0000_cd5c966f.webp",
+    "OLX.bg_147464515/0001_50f86a6a.webp",
+    "OLX.bg_147464515/0002_9b5272e1.webp",
+    "OLX.bg_147464515/0003_2f687d68.webp",
+    "OLX.bg_147464515/0004_aba56980.webp",
+    "OLX.bg_147464515/0005_906ad332.webp"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/167345",
+  "external_id": "5d14fb283314",
+  "title": "Къща в Божурище 173 кв.м. ID 167345  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://userimages.yavlena.com/0191b0ff-37e3-45ca-b9c1-5e8a3395a947.png"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:54:29.837718+00:00",
+  "reference_id": "Yavlena:5d14fb283314",
+  "local_image_files": [
+    "data/media/Yavlena_5d14fb283314/0000_e30a9b54.png"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_5d14fb283314/0000_e30a9b54.png"
+  ]
+}

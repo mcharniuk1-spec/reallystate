@@ -1,0 +1,32 @@
+{
+  "source_name": "property.bg",
+  "listing_url": "https://www.property.bg/property-126389-two-room-apartment-in-a-new-building-with-spa-and-fitness/",
+  "external_id": "6ff43d21ad22",
+  "title": "Property.bg",
+  "description": "Two-room apartment in a new building with spa and fitness  for sale  - Reinforced concrete structure  - Gas heating system Underfloor heating  - Town views Mountain views from №",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static4.superimoti.bg/property-images/big/1773903758T126389_1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T13:57:57.449321+00:00",
+  "reference_id": "property.bg:6ff43d21ad22",
+  "local_image_files": [
+    "data/media/property.bg_6ff43d21ad22/0000_ff8167b7.jpg"
+  ],
+  "local_image_storage_keys": [
+    "property.bg_6ff43d21ad22/0000_ff8167b7.jpg"
+  ]
+}

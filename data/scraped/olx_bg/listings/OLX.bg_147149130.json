@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/2-staen-apartament-pod-naem-v-tsentara-sofiya-CID368-ID9Xqd4.html?search_reason=search%7Corganic",
+  "external_id": "147149130",
+  "title": "2-стаен апартамент под наем в Центъра, София",
+  "description": "Агенция предлага под наем просторен двустаен апартамент с площ от 70 кв.м. Жилището се намира на 3-ти етаж в сграда с асансьор. Има възможност за допълнително наемане на паркомясто. Разположен е в сърцето на София, само на метри от метростанция, хранителни магазини и с лесен достъп до бул. Витоша и други основни пътни връзки. Апартаментът разполага с антре, просторна дневна с кухненски бокс, спалня, баня с тоалетна и тераса. Кухнята е оборудвана със съдомиялна машина, печка, хладилник и аспиратор. Имотът е идеален за хора, търсещи удобство, функционалност и централна локация.",
+  "price": 550.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6zyqffjxg8ur3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8buede9u67ue-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/apsr02npwei42-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0509dcg060m2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/s6k9wvfgxb8a2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6zyqffjxg8ur3-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:30:19.221719+00:00",
+  "reference_id": "OLX.bg:147149130",
+  "local_image_files": [
+    "data/media/OLX.bg_147149130/0000_1feba0ed.webp",
+    "data/media/OLX.bg_147149130/0001_16152a2e.webp",
+    "data/media/OLX.bg_147149130/0002_dd6cafcc.webp",
+    "data/media/OLX.bg_147149130/0003_f8a457e8.webp",
+    "data/media/OLX.bg_147149130/0004_9822d750.webp",
+    "data/media/OLX.bg_147149130/0005_4a9a8046.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147149130/0000_1feba0ed.webp",
+    "OLX.bg_147149130/0001_16152a2e.webp",
+    "OLX.bg_147149130/0002_dd6cafcc.webp",
+    "OLX.bg_147149130/0003_f8a457e8.webp",
+    "OLX.bg_147149130/0004_9822d750.webp",
+    "OLX.bg_147149130/0005_4a9a8046.webp"
+  ]
+}

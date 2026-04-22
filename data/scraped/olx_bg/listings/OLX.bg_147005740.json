@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/ref-18997-dve-spalni-sreden-etazh-akt-16-h-l-st-peterburg-CID368-ID9VOUk.html?search_reason=search%7Cpromoted",
+  "external_id": "147005740",
+  "title": "реф.18997 Две спални, среден етаж, АКТ 16-х-л Ст. Петербург!",
+  "description": "реф.18997 Предлагаме Ви ТРИСТАЕН апартамент на СРЕДЕН етаж в ЛУКСОЗНА МАЛКА сграда С АКТ 16, разположена в близост до САНКT ПЕТЕРБУРГ и ТОН БОНБОН! Състои се от СВЕТЪЛ и ПРОСТОРЕН хол с кухненски бокс, ДВЕ СПАЛНИ, баня с тоалетна, ОТДЕЛНА тоалетна, ТРИ тераси, функционално входно антре и прилежащо избено помещение. Имотът е с направена финна шпакловка и подготвен за боя!! В близост са разположени детски градини, училища, хранителни магазини, удобен градски транспорт до всяка една точка на града и др. КЪМ ИМОТА МОЖЕ ДА ЗАКУПИТЕ ПАРТЕРЕН ДВОЕН ГАРАЖ И ВЪНШНО ПАРКОМЯСТО!!",
+  "price": 199999.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/3fq2tu00v23p2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/601po8d9v4uz1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zxnk03tevwbu3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/n5gyw8lrgpnf3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ejlskbcg6d8q-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/3fq2tu00v23p2-BG/image;s=800x534"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:20:40.792266+00:00",
+  "reference_id": "OLX.bg:147005740",
+  "local_image_files": [
+    "data/media/OLX.bg_147005740/0000_81718d8e.webp",
+    "data/media/OLX.bg_147005740/0001_43fe7ad1.webp",
+    "data/media/OLX.bg_147005740/0002_2a038711.webp",
+    "data/media/OLX.bg_147005740/0003_532771e7.webp",
+    "data/media/OLX.bg_147005740/0004_6fe3c47a.webp",
+    "data/media/OLX.bg_147005740/0005_81718d8e.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147005740/0000_81718d8e.webp",
+    "OLX.bg_147005740/0001_43fe7ad1.webp",
+    "OLX.bg_147005740/0002_2a038711.webp",
+    "OLX.bg_147005740/0003_532771e7.webp",
+    "OLX.bg_147005740/0004_6fe3c47a.webp",
+    "OLX.bg_147005740/0005_81718d8e.webp"
+  ]
+}

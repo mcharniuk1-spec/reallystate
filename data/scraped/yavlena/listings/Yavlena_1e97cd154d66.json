@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168257",
+  "external_id": "1e97cd154d66",
+  "title": "Къща в Раковски 78 кв.м. ID 168257  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://userimages.yavlena.com/eb913cd2-d7cc-466e-ab17-c7c35a1f2af9.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:14:30.962409+00:00",
+  "reference_id": "Yavlena:1e97cd154d66",
+  "local_image_files": [
+    "data/media/Yavlena_1e97cd154d66/0000_adc634c2.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_1e97cd154d66/0000_adc634c2.jpg"
+  ]
+}

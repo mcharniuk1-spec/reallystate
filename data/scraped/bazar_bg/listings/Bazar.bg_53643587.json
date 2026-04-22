@@ -1,0 +1,35 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53643587/bez-komisiona-dwustaen-s-optsiia-za-parkomiasto",
+  "external_id": "53643587",
+  "title": "Bazar.BG",
+  "description": "Без комисиона. Продава се двустаен апартамент в затворен комплекс на ул. Морска Звезда. Изложение запад-югозапад.\nЦената е за степен на завършеност БДС. Към фев",
+  "price": 120000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://cdn6.focus.bg/bazar/44/original/4468d8dc31a6158382db23c8ea18a5c9.webp",
+    "//cdn6.focus.bg/bazar/44/pics/4468d8dc31a6158382db23c8ea18a5c9.webp"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:47:54.775336+00:00",
+  "reference_id": "Bazar.bg:53643587",
+  "local_image_files": [
+    "data/media/Bazar.bg_53643587/0000_5da6f622.webp",
+    "data/media/Bazar.bg_53643587/0001_3fcb8572.webp"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53643587/0000_5da6f622.webp",
+    "Bazar.bg_53643587/0001_3fcb8572.webp"
+  ]
+}

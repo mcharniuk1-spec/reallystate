@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168383",
+  "external_id": "8114f929c3e5",
+  "title": "Къща във Варна 141 кв.м. ID 168383  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://userimages.yavlena.com/9bf1afc8-e3ad-4bf0-94c6-043ae43d86cc.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:13:21.909837+00:00",
+  "reference_id": "Yavlena:8114f929c3e5",
+  "local_image_files": [
+    "data/media/Yavlena_8114f929c3e5/0000_99dd14a3.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_8114f929c3e5/0000_99dd14a3.jpg"
+  ]
+}

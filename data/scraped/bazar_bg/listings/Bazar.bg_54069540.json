@@ -1,0 +1,53 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-54069540/prodawam-mnogostaen-apartament-idealen-tsentar",
+  "external_id": "54069540",
+  "title": "Bazar.BG",
+  "description": "Продава се тухлен апартамент от 101 м. кв. в идеален център Хасково-ул. Г. Кирков 3 ет.3 без асансьор. Състои се от 4 стаи, кухненски бокс, 3 тераси, тоалетна,",
+  "price": 0.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://cdn7.focus.bg/bazar/80/original/80c72d8b147bf50a2fa98db0704bac98.webp",
+    "https://cdn5.focus.bg/bazar/c7/original/c7f6d62cef9cc82a4070cfff7f461a32.webp",
+    "https://cdn8.focus.bg/bazar/3c/original/3c827f867b8adf3bfef7cdc7b8f424dc.webp",
+    "https://cdn5.focus.bg/bazar/8d/original/8df22b7096e2bc3ebcdc754fc6b7c4a5.webp",
+    "https://cdn7.focus.bg/bazar/7b/original/7b78de3ccd96877b83f590296278c425.webp",
+    "https://cdn5.focus.bg/bazar/18/original/188ea52f2090572f89ad79d497a36474.webp",
+    "https://cdn8.focus.bg/bazar/ca/original/ca8e82e8250c7a6a15c36b3c72d3970e.webp",
+    "//cdn7.focus.bg/bazar/80/pics/80c72d8b147bf50a2fa98db0704bac98.webp"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:45:32.211304+00:00",
+  "reference_id": "Bazar.bg:54069540",
+  "local_image_files": [
+    "data/media/Bazar.bg_54069540/0000_43ce74fe.webp",
+    "data/media/Bazar.bg_54069540/0001_dae3456f.webp",
+    "data/media/Bazar.bg_54069540/0002_3da3fedb.webp",
+    "data/media/Bazar.bg_54069540/0003_622bbd6f.webp",
+    "data/media/Bazar.bg_54069540/0004_3a4b0aa1.webp",
+    "data/media/Bazar.bg_54069540/0005_0637182c.webp",
+    "data/media/Bazar.bg_54069540/0006_61267947.webp",
+    "data/media/Bazar.bg_54069540/0007_b055f228.webp"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_54069540/0000_43ce74fe.webp",
+    "Bazar.bg_54069540/0001_dae3456f.webp",
+    "Bazar.bg_54069540/0002_3da3fedb.webp",
+    "Bazar.bg_54069540/0003_622bbd6f.webp",
+    "Bazar.bg_54069540/0004_3a4b0aa1.webp",
+    "Bazar.bg_54069540/0005_0637182c.webp",
+    "Bazar.bg_54069540/0006_61267947.webp",
+    "Bazar.bg_54069540/0007_b055f228.webp"
+  ]
+}

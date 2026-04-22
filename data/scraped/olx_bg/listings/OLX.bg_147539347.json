@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-v-k-s-nesebar-fort-klub-k-k-slanchev-bryag-CID368-ID9Z3IT.html?search_reason=search%7Corganic",
+  "external_id": "147539347",
+  "title": "Двустаен апартамент в к-с „Несебър Форт Клуб“, к.к. Слънчев бряг",
+  "description": "Предлагаме обзаведен двустаен апартамент в к-с „Несебър Форт Клуб” (Nessebar Fort Club), к.к. Слънчев бряг. Жилището е с площ 56 кв.м и се намира на 3-ти етаж. Апартаментът се състои от: антре, хол с кухненски бокс, спалня, баня с тоалетна и душ кабина, тераса. Жилището е обзаведено и готово за нанасяне или за отдаване като инвестиционен имот. Комплекс „Несебър Форт Клуб” (Nessebar Fort Club) разполага с: денонощна охрана, видеонаблюдение, ограничен достъп, техническа поддръжка, поддръжка на общите части, озеленени площи, паркинг, няколко басейна с шезлонги около тях, водни пързалки, детска площадка, фитнес, голф игрище, тенис корт, ресторант, супермаркети и др. Сградата има Акт. 16 Сградата се поддържа. Около комплекса има добре изградена инфраструктура. Наблизо има: супермаркети, магазини, аптека, ресторанти, заведения за бързо хранене, барове, плаж, аквапарк и други развлечения. Разполагаме с много и разнообразни имоти по цялото Черноморие. За повече информация, свържете се с нас!",
+  "price": 67000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8o5vjc9vzj443-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xe9u9vmovshb1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/s0j1s3sj9bis2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/hws849gb0hk71-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4njorw4e4uky1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8o5vjc9vzj443-BG/image;s=1676x1000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:27:22.562157+00:00",
+  "reference_id": "OLX.bg:147539347",
+  "local_image_files": [
+    "data/media/OLX.bg_147539347/0000_21169944.webp",
+    "data/media/OLX.bg_147539347/0001_e927fb52.webp",
+    "data/media/OLX.bg_147539347/0002_6a3d33bc.webp",
+    "data/media/OLX.bg_147539347/0003_2c115387.webp",
+    "data/media/OLX.bg_147539347/0004_d8d853af.webp",
+    "data/media/OLX.bg_147539347/0005_a6160042.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539347/0000_21169944.webp",
+    "OLX.bg_147539347/0001_e927fb52.webp",
+    "OLX.bg_147539347/0002_6a3d33bc.webp",
+    "OLX.bg_147539347/0003_2c115387.webp",
+    "OLX.bg_147539347/0004_d8d853af.webp",
+    "OLX.bg_147539347/0005_a6160042.webp"
+  ]
+}

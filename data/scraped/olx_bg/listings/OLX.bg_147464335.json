@@ -1,0 +1,38 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/p-l-dobreva-cheshma-1400kv-m-90000-CID368-ID9YKd1.html?search_reason=search%7Corganic",
+  "external_id": "147464335",
+  "title": "П-л Добрева чешма 1400кв.м.-90000€",
+  "description": "Равен парцел с праравоъгална форма в м-т Добрева чешма с лице на асфалтов път и на още една второстепенна улица. Вода и ток на граница. Парцелът е за жилищно застрояване.",
+  "price": 90000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gah246jr4j1n2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/oy0tebezvfjv3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gah246jr4j1n2-BG/image;s=1500x2000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:27:46.781798+00:00",
+  "reference_id": "OLX.bg:147464335",
+  "local_image_files": [
+    "data/media/OLX.bg_147464335/0000_558e3d73.webp",
+    "data/media/OLX.bg_147464335/0001_4c4e95ee.webp",
+    "data/media/OLX.bg_147464335/0002_adc3b77a.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464335/0000_558e3d73.webp",
+    "OLX.bg_147464335/0001_4c4e95ee.webp",
+    "OLX.bg_147464335/0002_adc3b77a.webp"
+  ]
+}

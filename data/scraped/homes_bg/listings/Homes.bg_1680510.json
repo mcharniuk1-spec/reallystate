@@ -1,0 +1,111 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-154m2-sofiya---grad-sofiya/as1680510",
+  "external_id": "1680510",
+  "reference_id": "Homes.bg:1680510",
+  "title": "Тристаен, 154m² - София, София - град",
+  "description": "*БЕЗ КОМИСИОН*\n\nТристаен пентхаус с характер и опция за трета спалня.\n\nПърво ниво: хол с трапезария и кухненски бокс с височина почти 6 метра, спалня, баня, коридор и тераса.\n\nВторо ниво: емпоре, спалня, баня с тоалетна, перално помещение. (опция за изграждане на още една спалня).\n\nВъзможност за закупуване на паркомясто. \n Обади се сега и цитирай този код 677945",
+  "price": 288000.0,
+  "currency": "EUR",
+  "area_sqm": 154.0,
+  "rooms": 3.0,
+  "floor": 7.0,
+  "city": "София",
+  "district": "София",
+  "address_text": "София, София - град",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2026-04-21_1/118602729o.jpg",
+    "https://g1.homes.bg/2026-04-21_1/118602730o.jpg",
+    "https://g1.homes.bg/2026-04-21_1/118602731o.jpg",
+    "https://g1.homes.bg/2026-04-21_1/118602732o.jpg",
+    "https://g1.homes.bg/2026-04-21_1/118602733o.jpg"
+  ],
+  "phones": [
+    "0883224935"
+  ],
+  "amenities": [
+    "Гараж",
+    "Асансьор"
+  ],
+  "scraped_at": "2026-04-21T07:46:55.657370+00:00",
+  "listing_status": "active",
+  "published_text": "днес",
+  "agency_name": "ИМОТЕКА АД",
+  "agency_type": "Агенция",
+  "agency_address": "София пл. Света Неделя No 4, ет. 1",
+  "source_attributes": {
+    "Обзавеждане": "",
+    "Етаж": "7-ми",
+    "Етажи": "7",
+    "Отопление": "Прокарва се",
+    "Състояние": "",
+    "Строителство": "",
+    "Спални": "",
+    "Бани": "",
+    "Двор": "",
+    "Площ на парцела": "",
+    "В регулация": "",
+    "Предназначение": "",
+    "Виза": "",
+    "Разрешение за строеж": "",
+    "Категория": "",
+    "Тип": ""
+  },
+  "photo_metadata": [
+    {
+      "id": 118602729,
+      "name": "118602729",
+      "path": "2026-04-21_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118602730,
+      "name": "118602730",
+      "path": "2026-04-21_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118602731,
+      "name": "118602731",
+      "path": "2026-04-21_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118602732,
+      "name": "118602732",
+      "path": "2026-04-21_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118602733,
+      "name": "118602733",
+      "path": "2026-04-21_1/",
+      "height": 336,
+      "width": 448
+    }
+  ],
+  "raw_offer_type": "as",
+  "view_count": 0,
+  "local_image_files": [
+    "data/media/Homes.bg_1680510/0000_31a4e330.jpg",
+    "data/media/Homes.bg_1680510/0001_45df6ae8.jpg",
+    "data/media/Homes.bg_1680510/0002_2bcc0a6a.jpg",
+    "data/media/Homes.bg_1680510/0003_47a4766a.jpg",
+    "data/media/Homes.bg_1680510/0004_8d3336b3.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Homes.bg_1680510/0000_31a4e330.jpg",
+    "Homes.bg_1680510/0001_45df6ae8.jpg",
+    "Homes.bg_1680510/0002_2bcc0a6a.jpg",
+    "Homes.bg_1680510/0003_47a4766a.jpg",
+    "Homes.bg_1680510/0004_8d3336b3.jpg"
+  ]
+}

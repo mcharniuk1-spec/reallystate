@@ -1,0 +1,50 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53357182/dawa-pod-naem-1-staen-gr-sofiia-studentski-grad",
+  "external_id": "53357182",
+  "title": "Bazar.BG",
+  "description": "Нова оферта: 2793! Агенция за недвижими имоти Имоушън Пропърти Ви предлага едностаен апартамент в кв. Студентски град. Разпределение: студио с кухненски бокс с",
+  "price": 384.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://cdn3.focus.bg/imot/photosimotbg/2/687/big1/2b177022346709687_5y.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/687/big1/2b177022346709687_JF.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/687/big1/2b177022346709687_zk.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/687/big1/2b177022346709687_mk.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/687/big1/2b177022346709687_cC.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/687/big1/2b177022346709687_OK.jpg",
+    "//cdn3.focus.bg/imot/photosimotbg/2/687/big1/2b177022346709687_5y.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:49:03.282163+00:00",
+  "reference_id": "Bazar.bg:53357182",
+  "local_image_files": [
+    "data/media/Bazar.bg_53357182/0000_9e9dcdd4.jpg",
+    "data/media/Bazar.bg_53357182/0001_127d95b5.jpg",
+    "data/media/Bazar.bg_53357182/0002_f008e4da.jpg",
+    "data/media/Bazar.bg_53357182/0003_a1a228f2.jpg",
+    "data/media/Bazar.bg_53357182/0004_2b80d3eb.jpg",
+    "data/media/Bazar.bg_53357182/0005_934e5194.jpg",
+    "data/media/Bazar.bg_53357182/0006_9e9dcdd4.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53357182/0000_9e9dcdd4.jpg",
+    "Bazar.bg_53357182/0001_127d95b5.jpg",
+    "Bazar.bg_53357182/0002_f008e4da.jpg",
+    "Bazar.bg_53357182/0003_a1a228f2.jpg",
+    "Bazar.bg_53357182/0004_2b80d3eb.jpg",
+    "Bazar.bg_53357182/0005_934e5194.jpg",
+    "Bazar.bg_53357182/0006_9e9dcdd4.jpg"
+  ]
+}

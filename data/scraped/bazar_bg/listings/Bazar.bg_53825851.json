@@ -1,0 +1,35 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53825851/prodawa-3-staen-gr-ruse-tsentar",
+  "external_id": "53825851",
+  "title": "Bazar.BG",
+  "description": "АГЕНЦИА 'ЕВИАН ' ПРОДАВА АПАРТАМЕНТ В ИДЕАЛНИЯ ЦЕНТЪР НА ГРАД РУСЕ - НА 300 МЕТРА ОТ ГРАДСКИ ПЛОЩАД, НА 200 М. ОТ УЛ.'АЛЕКСАНДРОВСКА'  В СГРАДА НА ПЕТ ЕТАЖА СЪС",
+  "price": 165000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://cdn3.focus.bg/imot/photosimotbg/1/092/1c177340389771092_8e.jpg",
+    "//cdn3.focus.bg/imot/photosimotbg/1/092/1c177340389771092_8e.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:47:09.519210+00:00",
+  "reference_id": "Bazar.bg:53825851",
+  "local_image_files": [
+    "data/media/Bazar.bg_53825851/0000_7ede5546.jpg",
+    "data/media/Bazar.bg_53825851/0001_7ede5546.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53825851/0000_7ede5546.jpg",
+    "Bazar.bg_53825851/0001_7ede5546.jpg"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-ap-pod-naem-v-kv-nadezhda-2-CID368-ID9Z45m.html?search_reason=search%7Corganic",
+  "external_id": "147540740",
+  "title": "Двустаен ап. под наем в кв. Надежда 2",
+  "description": "двустаен апартамент под наем в ж.к. Надежда 2, разположен на тиха улица с отлична локация. Жилището е с площ 64 кв.м, ситуирано на 3-ти етаж. Изложение е източно. Разпределение: входно антре хол с кухненски бокс спалня мокро помещение баня с тоалетна тераса Апартаментът е напълно обзаведен и оборудван, готов за нанасяне. Отоплява се на ТЕЦ. Локация: в близост до метростанция, детска градина, зони за отдих и спорт, търговски обекти и спирки на градски транспорт. За оглед се свържете с нас и цитирайте реф. номер: 2133493.",
+  "price": 550.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/m1cglxkxg11l3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8woa32bcfamn3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/sleplvvcetm73-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ofcrs4cjn74t1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/w9n30f2wa9gj1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/m1cglxkxg11l3-BG/image;s=354x477"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:23:36.544777+00:00",
+  "reference_id": "OLX.bg:147540740",
+  "local_image_files": [
+    "data/media/OLX.bg_147540740/0000_8d2efa30.webp",
+    "data/media/OLX.bg_147540740/0001_7522a90b.webp",
+    "data/media/OLX.bg_147540740/0002_9137893e.webp",
+    "data/media/OLX.bg_147540740/0003_2531d05f.webp",
+    "data/media/OLX.bg_147540740/0004_df08fa48.webp",
+    "data/media/OLX.bg_147540740/0005_8d2efa30.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540740/0000_8d2efa30.webp",
+    "OLX.bg_147540740/0001_7522a90b.webp",
+    "OLX.bg_147540740/0002_9137893e.webp",
+    "OLX.bg_147540740/0003_2531d05f.webp",
+    "OLX.bg_147540740/0004_df08fa48.webp",
+    "OLX.bg_147540740/0005_8d2efa30.webp"
+  ]
+}

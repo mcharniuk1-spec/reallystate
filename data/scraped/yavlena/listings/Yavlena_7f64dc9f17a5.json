@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168116",
+  "external_id": "7f64dc9f17a5",
+  "title": "Къща във Варна 91 кв.м. ID 168116  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://userimages.yavlena.com/5dcc4435-f050-4af1-b5fe-7aa493a36371.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:16:10.071440+00:00",
+  "reference_id": "Yavlena:7f64dc9f17a5",
+  "local_image_files": [
+    "data/media/Yavlena_7f64dc9f17a5/0000_eb9fa3b5.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_7f64dc9f17a5/0000_eb9fa3b5.jpg"
+  ]
+}

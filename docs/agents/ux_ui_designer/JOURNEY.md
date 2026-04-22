@@ -180,7 +180,7 @@
 - When backend adds `listing_intent` and `property_category` query params to `GET /listings`, push those filters server-side and remove client-side filtering for those fields.
 - The property detail page uses `<img>` for `image_urls[0]`; swap to Next.js `<Image>` with width/height once media pipeline stores known dimensions.
 - "Create lead" button on detail page stays disabled until CRM API (`POST /crm/threads`) exists (BD-04 dependency).
-- UX-04 (Varna-scoped LUN-style experience) is next but blocked on DBG-05 + BD-06 — no work to start until those gate.
+- UX-04 (nationwide Bulgaria LUN-style map + listings) is next but blocked on DBG-05 + BD-06 — no work to start until those gate.
 
 ---
 
@@ -212,7 +212,7 @@
 ### After Task 6
 
 All remaining UX slices are blocked:
-- UX-04 (Varna LUN-style): blocked on BD-06, DBG-05
+- UX-04 (Bulgaria-wide LUN-style): blocked on BD-06, DBG-05
 - UX-05 (AI chat): blocked on UX-04, BD-07
 - UX-07 (3D map): blocked on UX-04, BD-08
 - UX-08 (shop view): blocked on UX-04, BD-12
@@ -364,7 +364,7 @@ Chat expands on input focus, collapses on close button or clicking backdrop. Mes
 
 | Priority | Task | Blocked on |
 |---|---|---|
-| **NEXT** | UX-04: Varna-scoped LUN-style — restrict map + feed to Varna boundaries | BD-06, DBG-05 |
+| **NEXT** | UX-04: Nationwide LUN-style — map + feed default all Bulgaria; optional Varna shortcut for 3D demo | BD-06, DBG-05 |
 | HIGH | UX-08: Full shop view — server-side filters via BD-12 API params | BD-12, UX-04 |
 | HIGH | UX-09: Property detail enrichment — real photos, price history, contact panel live | BD-11, UX-08 |
 | HIGH | UX-10: User profiles + auth — login/register, save favorites, post listing wizard | BD-13, UX-08 |
@@ -466,7 +466,7 @@ Chat expands on input focus, collapses on close button or clicking backdrop. Mes
 
 | Priority | Task | Blocked on |
 |---|---|---|
-| **NEXT** | UX-04: Varna-scoped experience — city boundaries, Varna-only feed | BD-06, DBG-05 |
+| **NEXT** | UX-04: Nationwide experience — country-wide map + feed, filters to narrow geography | BD-06, DBG-05 |
 | HIGH | UX-08: Server-side filter params from BD-12 API | BD-12 |
 | HIGH | UX-09: Real photos + price history + live contact panel | BD-11 |
 | HIGH | UX-10: Auth + registration + post listing wizard | BD-13 |
@@ -477,3 +477,7 @@ Chat expands on input focus, collapses on close button or clicking backdrop. Mes
 | UNBLOCKED | Improve empty state illustrations | — |
 | UNBLOCKED | Add `/analytics` page with placeholder charts | — |
 | UNBLOCKED | Add `/new-builds` page with project cards | — |
+
+### 2026-04-09 — UX-04 scope: nationwide Bulgaria
+
+Operator request: **`UX-04` is whole Bulgaria**, not Varna-only MVP. Updated `docs/agents/TASKS.md` (`UX-04`, `BD-06`, `DBG-05`, dependency graph), `PLAN.md` §8 / geospatial gate / session digest, `docs/exports/platform-mvp-plan.md` (synced from `PLAN.md`), this file, and `product-ux-structure-refined.md`. **Varna-first** remains only for **3D OSM / building extrusion** (`UX-07`, `BD-08`). Regenerated `make dashboard-doc`.

@@ -1,0 +1,35 @@
+{
+  "source_name": "LUXIMMO",
+  "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/pancharevo/luksozni-imoti-tristayni-apartamenti/luksozen-imot-43316-tristaen-apartament-za-prodajba-v-pancharevo.html",
+  "external_id": "3f0ad932ed37",
+  "title": "Луксиммо",
+  "description": "Представяме първокласно завършен апартамент с две спални, с впечатляваща фронтална гледка към езерото Панчарево. С локация само на минути с кола от центъра на столицата, имотът се намира на тихо и спокойно място с чист въздух, красива природа и зелените хълмове. Жилището е разположено на 2-ри етаж в 4-етажна сграда, на първа линия от езерото. Сградата е тип затворен комплекс с охрана. Параметри: обща площ - 300,51 кв.м; застроена площ - 181.52 кв.м; общи части: 49.1 кв.м; тераси: 69.89 кв.м; опция за две закрити паркоместа, всяко по €35 000 Разпределение:",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.luximmo.org/property-images/big_bg/1747988905T43316_15.jpg",
+    "https://static.luximmo.org/property-images/big_bg/1747988905T43316_15.jpg?v=1775734941"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:42:22.293465+00:00",
+  "reference_id": "LUXIMMO:3f0ad932ed37",
+  "local_image_files": [
+    "data/media/LUXIMMO_3f0ad932ed37/0000_c2916c6c.jpg",
+    "data/media/LUXIMMO_3f0ad932ed37/0001_c2916c6c.jpg"
+  ],
+  "local_image_storage_keys": [
+    "LUXIMMO_3f0ad932ed37/0000_c2916c6c.jpg",
+    "LUXIMMO_3f0ad932ed37/0001_c2916c6c.jpg"
+  ]
+}

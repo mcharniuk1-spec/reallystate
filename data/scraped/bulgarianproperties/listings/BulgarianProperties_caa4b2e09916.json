@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/AD89953BG_2-bedroom_apartment_for_sale_in_Stara_Zagora.html",
+  "external_id": "caa4b2e09916",
+  "title": "Bulgarian Properties",
+  "description": "Bright south-facing apartment in a modern new-build in Stara Zagora",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89953_11.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:35:15.105676+00:00",
+  "reference_id": "BulgarianProperties:caa4b2e09916",
+  "local_image_files": [
+    "data/media/BulgarianProperties_caa4b2e09916/0000_d9388986.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_caa4b2e09916/0000_d9388986.jpg"
+  ]
+}

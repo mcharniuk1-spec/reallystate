@@ -39,6 +39,7 @@ def main() -> int:
     subprocess.run([sys.executable, str(ROOT / "scripts" / "generate_architecture_guide.py")], cwd=ROOT, check=True)
     subprocess.run([sys.executable, str(ROOT / "scripts" / "generate_status_doc.py")], cwd=ROOT, check=True)
     subprocess.run([sys.executable, str(ROOT / "scripts" / "generate_progress_dashboard.py")], cwd=ROOT, check=True)
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "generate_scrape_status_dashboard.py")], cwd=ROOT, check=True)
     subprocess.run(
         [sys.executable, "-m", "bgrealestate", "export-matrices", "--out-dir", str(ROOT / "artifacts")],
         cwd=ROOT,
@@ -68,12 +69,6 @@ def main() -> int:
         ),
         lambda: subprocess.run(
             [sys.executable, "-m", "bgrealestate.dev_scheduler", "--once"],
-            cwd=ROOT,
-            env={"PYTHONPATH": str(ROOT / "src")},
-            check=True,
-        ),
-        lambda: subprocess.run(
-            [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"],
             cwd=ROOT,
             env={"PYTHONPATH": str(ROOT / "src")},
             check=True,

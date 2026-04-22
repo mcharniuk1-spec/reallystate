@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/AD88258BG_2-bedroom_apartment_for_sale_in_Balchik.html",
+  "external_id": "81d7786e3d0f",
+  "title": "Bulgarian Properties",
+  "description": "Fully furnished, move-in ready home with designer furniture",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88258_9.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:38:09.299287+00:00",
+  "reference_id": "BulgarianProperties:81d7786e3d0f",
+  "local_image_files": [
+    "data/media/BulgarianProperties_81d7786e3d0f/0000_8489f485.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_81d7786e3d0f/0000_8489f485.jpg"
+  ]
+}

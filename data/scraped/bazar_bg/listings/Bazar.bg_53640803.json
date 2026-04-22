@@ -1,0 +1,50 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53640803/prodawa-2-staen-gr-warna-grand-mol",
+  "external_id": "53640803",
+  "title": "Bazar.BG",
+  "description": "ВСЕКИДНЕВНА, СПАЛНЯ, с голяма открита тераса, светъл и слънчев със западно изложение. Полуобзаведен до Гранд мол, подходящ за живеене и отдаване под наем. В бли",
+  "price": 135000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/383/big1/1b177211717190383_I0.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/383/big1/1b177211717190383_ET.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/383/big1/1b177211717190383_Fc.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/383/big1/1b177211717190383_C9.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/383/big1/1b177211717190383_AI.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/383/big1/1b177211717190383_zA.jpg",
+    "//imotstatic3.focus.bg/imot/photosimotbg/1/383/big1/1b177211717190383_I0.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:44:43.436613+00:00",
+  "reference_id": "Bazar.bg:53640803",
+  "local_image_files": [
+    "data/media/Bazar.bg_53640803/0000_10c87d10.jpg",
+    "data/media/Bazar.bg_53640803/0001_394511e3.jpg",
+    "data/media/Bazar.bg_53640803/0002_cce79bc5.jpg",
+    "data/media/Bazar.bg_53640803/0003_69a75307.jpg",
+    "data/media/Bazar.bg_53640803/0004_cbbb3d98.jpg",
+    "data/media/Bazar.bg_53640803/0005_9b035a6e.jpg",
+    "data/media/Bazar.bg_53640803/0006_10c87d10.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53640803/0000_10c87d10.jpg",
+    "Bazar.bg_53640803/0001_394511e3.jpg",
+    "Bazar.bg_53640803/0002_cce79bc5.jpg",
+    "Bazar.bg_53640803/0003_69a75307.jpg",
+    "Bazar.bg_53640803/0004_cbbb3d98.jpg",
+    "Bazar.bg_53640803/0005_9b035a6e.jpg",
+    "Bazar.bg_53640803/0006_10c87d10.jpg"
+  ]
+}

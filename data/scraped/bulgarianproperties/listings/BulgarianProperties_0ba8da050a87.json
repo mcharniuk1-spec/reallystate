@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD77230BG_House_for_sale_in_Gorni_okol.html",
+  "external_id": "0ba8da050a87",
+  "title": "Bulgarian Properties",
+  "description": "Lovely property with swimming pool, barbecue, garage in picturesque villa area",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/77230_4.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:38:07.437150+00:00",
+  "reference_id": "BulgarianProperties:0ba8da050a87",
+  "local_image_files": [
+    "data/media/BulgarianProperties_0ba8da050a87/0000_06ede123.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_0ba8da050a87/0000_06ede123.jpg"
+  ]
+}

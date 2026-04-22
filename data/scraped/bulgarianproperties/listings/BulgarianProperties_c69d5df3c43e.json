@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD88596BG_House_for_sale_near_Stara_Zagora.html",
+  "external_id": "c69d5df3c43e",
+  "title": "Bulgarian Properties",
+  "description": "House in a quiet area near a school and kindergarten",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88596_38.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:34:59.311493+00:00",
+  "reference_id": "BulgarianProperties:c69d5df3c43e",
+  "local_image_files": [
+    "data/media/BulgarianProperties_c69d5df3c43e/0000_5d9cfd83.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_c69d5df3c43e/0000_5d9cfd83.jpg"
+  ]
+}

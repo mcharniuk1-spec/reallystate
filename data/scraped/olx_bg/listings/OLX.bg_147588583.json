@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-v-kv-belomorski-CID368-ID9Zgx1.html?search_reason=search%7Cpromoted",
+  "external_id": "147588583",
+  "title": "Двустаен апартамент в кв.Беломорски",
+  "description": "ОФЕРТА 264359 ТОП ОФЕРТА! 2-стаен апартамент в кв. Беломорски - ново строителство, панорамна тераса! Предлагаме за продажба стилен двустаен апартамент с площ от 67 кв.м., разположен на 3-ти (последен) етаж в нова луксозна малка кооперация, в началото на кв. Беломорски. Районът е изключително тих и спокоен, с чист въздух и бърз достъп до централната част на града. Разпределение: просторен и светъл хол с кухненски бокс уютна отделна спалня баня с тоалетна голяма панорамна тераса с приятна гледка Състояние: напълно довършен „до ключ“ частично обзаведен модерно кухненско обзавеждане готов за нанасяне или отдаване под наем Сграда: ново строителство малка бутикова кооперация качествено изпълнение и съвременна визия контролиран достъп Локация: тих и зелен район лесен достъп до главни пътни артерии подходящ както за живеене, така и за инвестиция Предимства: последен етаж (без съседи над вас) просторна тераса отлична функционалност ниски разходи за поддръжка",
+  "price": 133500.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/icfp2wazop7k-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/5bewhhoi1vrk3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/lj5wukmntgkf3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6c4aq9rl61bd-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2j01gyv81a033-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/icfp2wazop7k-BG/image;s=1080x512"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:20:04.130506+00:00",
+  "reference_id": "OLX.bg:147588583",
+  "local_image_files": [
+    "data/media/OLX.bg_147588583/0000_c1a2a5ee.webp",
+    "data/media/OLX.bg_147588583/0001_4498fc10.webp",
+    "data/media/OLX.bg_147588583/0002_62521392.webp",
+    "data/media/OLX.bg_147588583/0003_2aec5cd9.webp",
+    "data/media/OLX.bg_147588583/0004_0182239f.webp",
+    "data/media/OLX.bg_147588583/0005_457eb4d2.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147588583/0000_c1a2a5ee.webp",
+    "OLX.bg_147588583/0001_4498fc10.webp",
+    "OLX.bg_147588583/0002_62521392.webp",
+    "OLX.bg_147588583/0003_2aec5cd9.webp",
+    "OLX.bg_147588583/0004_0182239f.webp",
+    "OLX.bg_147588583/0005_457eb4d2.webp"
+  ]
+}

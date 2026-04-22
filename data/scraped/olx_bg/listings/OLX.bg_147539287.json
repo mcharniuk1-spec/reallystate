@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/ureguliran-pozemlen-imot-1380-kv-m-v-s-konevo-obsch-varbitsa-CID368-ID9Z3HW.html?search_reason=search%7Corganic",
+  "external_id": "147539287",
+  "title": "Урегулиран поземлен имот – 1380 кв.м. в с. Конево, общ. Върбица",
+  "description": "Предлагам за продажба УПИ с площ 1380 кв.м., находящ се в живописното село Конево, община Върбица, област Шумен. Имотът е с вписана по документи жилищна сграда (премахната във времето), което се вижда по скица, което дава възможност за ново строителство съгласно действащото законодателство. Урегулиран парцел Равен терен – изключително подходящ за строителство Под имота съвсем наблизо преминава река Страхотна планинска панорама На около 3 км от язовир Тича Тих и спокоен район с чист въздух Имотът е подходящ за изграждане на ваканционна къща, къща за гости или целогодишно жилище.",
+  "price": 6000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0w3m43fp9r071-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kepmz12v5lda3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/57x1lnoqct203-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/lyx380qdp10t3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/10rikyvpf6fi-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0w3m43fp9r071-BG/image;s=1836x4080"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:20:26.529093+00:00",
+  "reference_id": "OLX.bg:147539287",
+  "local_image_files": [
+    "data/media/OLX.bg_147539287/0000_3ba8b126.webp",
+    "data/media/OLX.bg_147539287/0001_7e21b00c.webp",
+    "data/media/OLX.bg_147539287/0002_6a508a70.webp",
+    "data/media/OLX.bg_147539287/0003_c8349b9a.webp",
+    "data/media/OLX.bg_147539287/0004_c702f4fa.webp",
+    "data/media/OLX.bg_147539287/0005_bcd334cc.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539287/0000_3ba8b126.webp",
+    "OLX.bg_147539287/0001_7e21b00c.webp",
+    "OLX.bg_147539287/0002_6a508a70.webp",
+    "OLX.bg_147539287/0003_c8349b9a.webp",
+    "OLX.bg_147539287/0004_c702f4fa.webp",
+    "OLX.bg_147539287/0005_bcd334cc.webp"
+  ]
+}

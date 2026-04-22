@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/1-1-apartament-za-prodazhba-v-sveti-vlas-5286-CID368-ID9YKf6.html?search_reason=search%7Corganic",
+  "external_id": "147464464",
+  "title": "1+1 апартамент за продажба в Свети Влас.#5286",
+  "description": "Предлагаме апартамент 1+1 за продажба в Свети Влас! Предлага се едногодишно разсрочено плащане. Гледка към морето и планината. Състои се от трапезария/кухня, спалня, баня и балкон с красива гледка към планината. Апартаментът е модерно реновиран, напълно обзаведен и оборудван с висококачествени уреди. Прекрасно място за комфортен живот и релакс край морето! Готов е за нанасяне. Всички необходими удобства са наблизо. Удобства на комплекса: 2 басейна/Паркинг за живущите, 24/7 охрана, чипиране, детска площадка, станция за зареждане на електрически превозни средства, стадион и спортна площадка. Фитнес зала, спа център и ресторант на място. Акт 16.#5286 Предлагаем к продаже апартамент 1+1 в Святом Власе! Возможна рассрочка на год. Вид на море и горы. Cостоит из столовой- кухни, спальни, сан узла, балкона с красивым видом на горы. Апартамент с современным ремонтом, полностью меблирован и укомплектован качественной техникой. Прекрасное место для комфортной жизни и отдыха у моря! , полностью готов к проживанию. Вся необходимая инфраструктура рядом. Удобства в комплексе: 2 бассейна/ Парковка для жильцов 24/7 охрана, чиповое внедрение Детская площадка, Зарядка электромобилей, Стадион, спортивная площадка. Тренажерный зал, спа-центр, ресторан на территории отеля. Акт 16.#5286",
+  "price": 79000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/l98xiauxh6i22-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fzjw9n053wco1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nzn0d56ms9ww2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8wu15tvr1yl92-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/v5zg7k7cqztu1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/l98xiauxh6i22-BG/image;s=1400x1867"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:29:18.190611+00:00",
+  "reference_id": "OLX.bg:147464464",
+  "local_image_files": [
+    "data/media/OLX.bg_147464464/0000_7568940d.webp",
+    "data/media/OLX.bg_147464464/0001_97d551f6.webp",
+    "data/media/OLX.bg_147464464/0002_cf27833e.webp",
+    "data/media/OLX.bg_147464464/0003_43d534ba.webp",
+    "data/media/OLX.bg_147464464/0004_c35db727.webp",
+    "data/media/OLX.bg_147464464/0005_f40f6fdb.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464464/0000_7568940d.webp",
+    "OLX.bg_147464464/0001_97d551f6.webp",
+    "OLX.bg_147464464/0002_cf27833e.webp",
+    "OLX.bg_147464464/0003_43d534ba.webp",
+    "OLX.bg_147464464/0004_c35db727.webp",
+    "OLX.bg_147464464/0005_f40f6fdb.webp"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/kascha-v-kv-baykusheva-mahala-malka-koketna-na-dva-etazha-s-vatreshni-stalb-CID368-ID9OCTR.html?search_reason=search%7Cpromoted",
+  "external_id": "145052959",
+  "title": "Къща в кв Байкушева махала малка кокетна на два етажа с вътрешни стълб",
+  "description": "Отлично предложение.Намалена цена..На първия етаж има стая и баня с тоалетна гараж на втори етаж спалня и предверие ЦЕНАТА подлежи на коментар . цена в лева 165854лв.",
+  "price": 83950.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wgpu5fqi876m1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/evckahar379t2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vuj7gsik5z4n2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/e4weh4cj1th11-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pr88wlpx63yi2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wgpu5fqi876m1-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:26:53.071322+00:00",
+  "reference_id": "OLX.bg:145052959",
+  "local_image_files": [
+    "data/media/OLX.bg_145052959/0000_19e11f61.webp",
+    "data/media/OLX.bg_145052959/0001_a4c6c491.webp",
+    "data/media/OLX.bg_145052959/0002_262aeb19.webp",
+    "data/media/OLX.bg_145052959/0003_23452566.webp",
+    "data/media/OLX.bg_145052959/0004_a3529cec.webp",
+    "data/media/OLX.bg_145052959/0005_89405181.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_145052959/0000_19e11f61.webp",
+    "OLX.bg_145052959/0001_a4c6c491.webp",
+    "OLX.bg_145052959/0002_262aeb19.webp",
+    "OLX.bg_145052959/0003_23452566.webp",
+    "OLX.bg_145052959/0004_a3529cec.webp",
+    "OLX.bg_145052959/0005_89405181.webp"
+  ]
+}

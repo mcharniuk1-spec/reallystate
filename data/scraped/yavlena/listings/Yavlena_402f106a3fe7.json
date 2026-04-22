@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/167984",
+  "external_id": "402f106a3fe7",
+  "title": "Многостаен апартамент в Бургас 193 кв.м. ID 167984  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/52d742bc-4d87-49cd-b435-1e712f35f856.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:18:06.990900+00:00",
+  "reference_id": "Yavlena:402f106a3fe7",
+  "local_image_files": [
+    "data/media/Yavlena_402f106a3fe7/0000_d0c2545f.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_402f106a3fe7/0000_d0c2545f.jpg"
+  ]
+}

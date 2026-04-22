@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Apartments_(various_types)_in_Bulgaria/AD80932BG_Apartments_(various_types)_for_sale_in_Sofia.html",
+  "external_id": "ad3847d5245b",
+  "title": "Bulgarian Properties",
+  "description": "New residential complex near Mall of Sofia and Vazrazhdane Park",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/80932_25.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:42:27.237762+00:00",
+  "reference_id": "BulgarianProperties:ad3847d5245b",
+  "local_image_files": [
+    "data/media/BulgarianProperties_ad3847d5245b/0000_bd8f76a9.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_ad3847d5245b/0000_bd8f76a9.jpg"
+  ]
+}

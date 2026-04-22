@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-za-prodazhba-v-kv-kyuchuk-parizh-CID368-ID9Z41T.html?search_reason=search%7Corganic",
+  "external_id": "147540525",
+  "title": "Двустаен апартамент за продажба в кв. Кючук Париж",
+  "description": "Титан Пропъртис предлага за продажба двустаен апартамент в кв. Кючук Париж. Намира се на тиха и спокойна локация, в близост до кафе Камео, спирки на градски транспорт, хипермаркети и зони за отдих и спорт. Имотът е ситуиран на 3-ти жилищен етаж и разполага с площ от 65кв.м. с изцяло южно изложение, което осигурява топлина и естествена светлина през целия ден. Разпределението е функционално и удобно: входно антре, хол с кухненски бокс и трапезария, спалня, баня с тоалетна. Степен на завършеност: Акт 16 Отопление: Електричество Жилището е подходящо както за лично ползване, така и за инвестиция с цел отдаване под наем. Агенцията разполага с множество оферти в и извън района, в различни ценови диапазони и типажи на имотите. За оглед на този и други атрактивни имоти, не се колебайте да се свържете с нас на посочения телефон или чрез формата за запитване на сайта. Реф. номер: 2108352",
+  "price": 138000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/m54zf1zds0nv3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/86mmi00znow61-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/czz0z2q14xzl2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/iabukwswkzjv2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/igm46ewpktr02-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/m54zf1zds0nv3-BG/image;s=1536x1024"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:25:52.622093+00:00",
+  "reference_id": "OLX.bg:147540525",
+  "local_image_files": [
+    "data/media/OLX.bg_147540525/0000_c61ba364.webp",
+    "data/media/OLX.bg_147540525/0001_5c591c47.webp",
+    "data/media/OLX.bg_147540525/0002_2cf20b9e.webp",
+    "data/media/OLX.bg_147540525/0003_ead8fea9.webp",
+    "data/media/OLX.bg_147540525/0004_287fc74f.webp",
+    "data/media/OLX.bg_147540525/0005_e4ac1f0a.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540525/0000_c61ba364.webp",
+    "OLX.bg_147540525/0001_5c591c47.webp",
+    "OLX.bg_147540525/0002_2cf20b9e.webp",
+    "OLX.bg_147540525/0003_ead8fea9.webp",
+    "OLX.bg_147540525/0004_287fc74f.webp",
+    "OLX.bg_147540525/0005_e4ac1f0a.webp"
+  ]
+}

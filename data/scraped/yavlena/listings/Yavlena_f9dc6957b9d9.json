@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168323",
+  "external_id": "f9dc6957b9d9",
+  "title": "Къща в Средни колиби 308 кв.м. ID 168323  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://userimages.yavlena.com/53324802-874e-4104-92ef-a8a4f11e1e4a.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:13:59.752908+00:00",
+  "reference_id": "Yavlena:f9dc6957b9d9",
+  "local_image_files": [
+    "data/media/Yavlena_f9dc6957b9d9/0000_af2ea377.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_f9dc6957b9d9/0000_af2ea377.jpg"
+  ]
+}

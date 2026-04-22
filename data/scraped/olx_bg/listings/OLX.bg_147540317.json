@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/s-klyuch-dvustaen-apartament-v-zhk-hristo-smirnenski-CID368-ID9Z3Yx.html?search_reason=search%7Corganic",
+  "external_id": "147540317",
+  "title": "С ключ! Двустаен апартамент в жк. Христо Смирненски",
+  "description": "Агенцията разполага с ключ! Титан Пропъртис предлага чисто нов двустаен апартамент под наем в жк. Христо Смирненски. Намира се в непосредствена близост до магазини, зони за отдих и спорт и търговски обекти. Имотът е ситуиран на 1-ви жилищен етаж и разполага с площ 72кв.м, разгърната в следното разпределение: входно антре, хол с кухненски бокс и трапезария, спалня, баня с душ кабина и тоалетна, тераса. Жилището се предлага луксозно обзаведено и оборудвано с всичко необходимо за едно домакинство. ’С нас, вашето търсене на имот завършва с усмивка. ’ За оглед на това и други атрактивни предложения, не се колебайте да ни потърсите на посочения телефон или да ни изпратите данните си чрез формата за запитване на сайта. Реф. номер: 2221884",
+  "price": 1100.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4ecluit7j5hg3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/9vidbevlqhxn3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/l68iax1ek5tv1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zjcep46di3bd2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6hdamirpewhs2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4ecluit7j5hg3-BG/image;s=1536x1024"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:27:11.134505+00:00",
+  "reference_id": "OLX.bg:147540317",
+  "local_image_files": [
+    "data/media/OLX.bg_147540317/0000_166907a5.webp",
+    "data/media/OLX.bg_147540317/0001_516d6333.webp",
+    "data/media/OLX.bg_147540317/0002_9aa7c3df.webp",
+    "data/media/OLX.bg_147540317/0003_81c810fb.webp",
+    "data/media/OLX.bg_147540317/0004_829eeaac.webp",
+    "data/media/OLX.bg_147540317/0005_3d3bf746.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540317/0000_166907a5.webp",
+    "OLX.bg_147540317/0001_516d6333.webp",
+    "OLX.bg_147540317/0002_9aa7c3df.webp",
+    "OLX.bg_147540317/0003_81c810fb.webp",
+    "OLX.bg_147540317/0004_829eeaac.webp",
+    "OLX.bg_147540317/0005_3d3bf746.webp"
+  ]
+}

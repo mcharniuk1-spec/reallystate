@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/apartamenti-dvustayni-i-tristayni-ot-sobstvenik-CID368-ID9MQ7i.html?search_reason=search%7Cpromoted",
+  "external_id": "144627108",
+  "title": "Апартаменти двустайни и тристайни ОТ СОБСТВЕНИК",
+  "description": "Нови две жилищни сгради кв.Запад ,затворен комплекс с бариера и дворно място. Комплекса се строи от собственик (MUSCHO). Сградите са по 3 етажа по 3 апартаментa на етаж, в момента и двете сгради са с АКТ 14 Цената варира според начина на плащане! Без комисионна от купувача! Луксозни общи части, изпълнени с дизайн и професионалисти в областта! Архив на сградите от основи до Акт 16,бързо изпълнение в СРОКОВЕ! За повече информация и огледи на място- 08******29",
+  "price": 107500.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wbv95mly2fl82-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/aw0w31uhr76r1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/q4py9s6l3n1s1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/eue1viir4bxp3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wagsia8zs1612-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wbv95mly2fl82-BG/image;s=1600x900"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:28:11.830834+00:00",
+  "reference_id": "OLX.bg:144627108",
+  "local_image_files": [
+    "data/media/OLX.bg_144627108/0000_139eda64.webp",
+    "data/media/OLX.bg_144627108/0001_d3181eb0.webp",
+    "data/media/OLX.bg_144627108/0002_9f3096e8.webp",
+    "data/media/OLX.bg_144627108/0003_8e26a6f0.webp",
+    "data/media/OLX.bg_144627108/0004_d54563eb.webp",
+    "data/media/OLX.bg_144627108/0005_a52bb82c.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_144627108/0000_139eda64.webp",
+    "OLX.bg_144627108/0001_d3181eb0.webp",
+    "OLX.bg_144627108/0002_9f3096e8.webp",
+    "OLX.bg_144627108/0003_8e26a6f0.webp",
+    "OLX.bg_144627108/0004_d54563eb.webp",
+    "OLX.bg_144627108/0005_a52bb82c.webp"
+  ]
+}

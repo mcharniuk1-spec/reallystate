@@ -1,0 +1,42 @@
+{
+  "source_key": "property_bg",
+  "source_name": "property.bg",
+  "discovery_pages_fetched": 1,
+  "listing_urls_discovered": 24,
+  "listing_pages_fetched": 15,
+  "listing_pages_parsed": 15,
+  "listing_pages_failed": 0,
+  "photos_found": 15,
+  "photos_downloaded": 15,
+  "photos_failed": 0,
+  "with_price": 0,
+  "with_geo": 0,
+  "with_address": 0,
+  "with_area": 0,
+  "with_rooms": 0,
+  "with_description": 15,
+  "intents": {
+    "sale": 15
+  },
+  "categories": {
+    "apartment": 12,
+    "unknown": 3
+  },
+  "product_breakdown": {
+    "sale_apartments": 15
+  },
+  "sample_reference_ids": [
+    "property.bg:f70ea09c6a0b",
+    "property.bg:62f6d3332fe6",
+    "property.bg:cd47db08ec3e",
+    "property.bg:bfecbaaac82b",
+    "property.bg:fd515e4e7cc7",
+    "property.bg:6ff43d21ad22",
+    "property.bg:7b21cf9fe60b",
+    "property.bg:289f78133758"
+  ],
+  "errors": [],
+  "start_time": "2026-04-09T13:57:35.772563+00:00",
+  "end_time": "2026-04-09T13:58:24.730154+00:00",
+  "duration_seconds": 49.0
+}

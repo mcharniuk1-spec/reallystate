@@ -1,10 +1,24 @@
 # Bulgaria Real Estate Platform Project Status Roadmap
 
-Updated: 2026-04-08
+Updated: 2026-04-09
 
 ## Current Stage
 
-The project is at **Stage 2: Database And Persistence - In Progress**.
+The project is at **Stage 3: Live tier-1/2 ingestion + volume gate — primary focus**.
+
+**Previous:** Stage 2 (database and persistence) remains in motion with many backend slices implemented or awaiting verification.
+
+**Now:** Execution is **sequenced** per `docs/agents/TASKS.md` § “Immediate execution priorities (2026-04-09)”:
+
+1. **`scraper_1`**: `S1-15` → **`S1-18`** (non-stop until **≥100 listings × ≥5** tier-1/2 sources in **`canonical_listing`**; report in `docs/exports/tier12-live-volume-report.md`).
+2. **`backend_developer`**: **`BD-11`** first so live rows are countable in Postgres; **`BD-12`+** after `S1-18`.
+3. **`debugger`**: **`DBG-06`** / **`DBG-05`** after live volume + ingest proof unless waived.
+
+**Fixture analysis:** `docs/exports/stage1-product-type-coverage.md` — all required product types covered by tier-1/2 fixtures (parser readiness, not production volume).
+
+## Prior Stage Note (Stage 2)
+
+The project was at **Stage 2: Database And Persistence - In Progress**.
 
 Stage 1 development environment setup is complete.
 

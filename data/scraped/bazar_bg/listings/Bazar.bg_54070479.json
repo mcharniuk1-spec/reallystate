@@ -1,0 +1,53 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-54070479/prodawa-3-staen-gr-sofiia-lyulin-5",
+  "external_id": "54070479",
+  "title": "Bazar.BG",
+  "description": "От собственик.Етаж: партер С акт 16Изложение: Юг / Югозапад (среден, топъл)Тип: ТристаенПлощ: обща 133м? | чиста 85,40 м? | общи части 9,75 м?|двор тераса 38,08",
+  "price": 217560.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/461/big1/1c177514846246461_q0.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/461/big1/1c177514846246461_ho.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/461/big1/1c177514846246461_Dg.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/461/big1/1c177514846246461_Le.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/461/big1/1c177514846246461_mh.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/461/big1/1c177514846246461_qQ.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/461/big1/1c177514846246461_Up.jpg",
+    "//imotstatic2.focus.bg/imot/photosimotbg/1/461/big1/1c177514846246461_q0.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:43:36.742370+00:00",
+  "reference_id": "Bazar.bg:54070479",
+  "local_image_files": [
+    "data/media/Bazar.bg_54070479/0000_11cba7fb.jpg",
+    "data/media/Bazar.bg_54070479/0001_60ad1dc1.jpg",
+    "data/media/Bazar.bg_54070479/0002_8a461fdf.jpg",
+    "data/media/Bazar.bg_54070479/0003_61f63e4f.jpg",
+    "data/media/Bazar.bg_54070479/0004_011370d8.jpg",
+    "data/media/Bazar.bg_54070479/0005_00fce387.jpg",
+    "data/media/Bazar.bg_54070479/0006_665e0abb.jpg",
+    "data/media/Bazar.bg_54070479/0007_11cba7fb.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_54070479/0000_11cba7fb.jpg",
+    "Bazar.bg_54070479/0001_60ad1dc1.jpg",
+    "Bazar.bg_54070479/0002_8a461fdf.jpg",
+    "Bazar.bg_54070479/0003_61f63e4f.jpg",
+    "Bazar.bg_54070479/0004_011370d8.jpg",
+    "Bazar.bg_54070479/0005_00fce387.jpg",
+    "Bazar.bg_54070479/0006_665e0abb.jpg",
+    "Bazar.bg_54070479/0007_11cba7fb.jpg"
+  ]
+}

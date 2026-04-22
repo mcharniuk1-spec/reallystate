@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD89909BG_House_for_sale_near_Burgas.html",
+  "external_id": "8eacf9cc69d3",
+  "title": "Bulgarian Properties",
+  "description": "Modern house with veranda and garden",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89909_25.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:39:00.020294+00:00",
+  "reference_id": "BulgarianProperties:8eacf9cc69d3",
+  "local_image_files": [
+    "data/media/BulgarianProperties_8eacf9cc69d3/0000_969c249c.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_8eacf9cc69d3/0000_969c249c.jpg"
+  ]
+}

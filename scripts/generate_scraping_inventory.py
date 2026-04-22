@@ -127,6 +127,15 @@ class FixtureStats:
     discovery_urls_total: int = 0
 
 
+@dataclass
+class LiveScrapeStats:
+    urls_discovered: int = 0
+    listings_parsed: int = 0
+    photos_downloaded: int = 0
+    last_run_utc: str = ""
+    product_breakdown: dict[str, int] = field(default_factory=dict)
+
+
 def _read_json(p: Path) -> dict:
     with open(p) as f:
         return json.load(f)
@@ -187,6 +196,30 @@ def scan_fixtures() -> dict[str, FixtureStats]:
     return stats
 
 
+def scan_live_scrapes() -> dict[str, LiveScrapeStats]:
+    root = REPO / "data" / "scraped"
+    stats: dict[str, LiveScrapeStats] = {}
+    if not root.exists():
+        return stats
+
+    for source_dir in sorted(root.iterdir()):
+        if not source_dir.is_dir():
+            continue
+        stats_path = source_dir / "scrape_stats.json"
+        if not stats_path.exists():
+            continue
+        raw = _read_json(stats_path)
+        source_name = raw.get("source_name") or source_dir.name
+        stats[source_name] = LiveScrapeStats(
+            urls_discovered=int(raw.get("listing_urls_discovered", 0) or 0),
+            listings_parsed=int(raw.get("listing_pages_parsed", 0) or 0),
+            photos_downloaded=int(raw.get("photos_downloaded", 0) or 0),
+            last_run_utc=str(raw.get("end_time") or raw.get("start_time") or ""),
+            product_breakdown=dict(raw.get("product_breakdown") or {}),
+        )
+    return stats
+
+
 def load_registry() -> list[dict]:
     return _read_json(REGISTRY_PATH)["sources"]
 
@@ -195,7 +228,11 @@ def load_registry() -> list[dict]:
 # XLSX generation
 # ---------------------------------------------------------------------------
 
-def generate_xlsx(sources: list[dict], fstats: dict[str, FixtureStats]) -> Path:
+def generate_xlsx(
+    sources: list[dict],
+    fstats: dict[str, FixtureStats],
+    lstats: dict[str, LiveScrapeStats],
+) -> Path:
     from openpyxl import Workbook
     from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
     from openpyxl.utils import get_column_letter
@@ -227,6 +264,11 @@ def generate_xlsx(sources: list[dict], fstats: dict[str, FixtureStats]) -> Path:
         "Risk",
         "Categories to Scrape",
         "Est. Total Listings",
+        "Live URLs Discovered",
+        "Live Listings Parsed",
+        "Live Photos Downloaded",
+        "Latest Live Run (UTC)",
+        "Live Product Buckets",
         "Fixture Listings Scraped",
         "Discovery Fixtures",
         "Discovery URLs Found",
@@ -272,9 +314,12 @@ def generate_xlsx(sources: list[dict], fstats: dict[str, FixtureStats]) -> Path:
         name = src["source_name"]
         tier = src["tier"]
         fs = fstats.get(name, FixtureStats())
+        ls = lstats.get(name, LiveScrapeStats())
         est = ESTIMATED_TOTAL_LISTINGS.get(name, "Unknown")
         cats = [CATEGORY_NICE.get(c, c) for c in src.get("listing_types", [])]
         status = connector_status_map.get(name, "Not yet implemented" if tier <= 2 else "Blocked / deferred")
+        if ls.listings_parsed:
+            status += " + live batch"
 
         row = [
             name,
@@ -286,6 +331,11 @@ def generate_xlsx(sources: list[dict], fstats: dict[str, FixtureStats]) -> Path:
             src.get("risk_mode", ""),
             ", ".join(cats),
             est if isinstance(est, str) else est,
+            ls.urls_discovered,
+            ls.listings_parsed,
+            ls.photos_downloaded,
+            ls.last_run_utc,
+            ", ".join(f"{k}={v}" for k, v in sorted(ls.product_breakdown.items())) if ls.product_breakdown else "-",
             fs.listing_cases,
             fs.discovery_cases,
             fs.discovery_urls_total,
@@ -309,7 +359,7 @@ def generate_xlsx(sources: list[dict], fstats: dict[str, FixtureStats]) -> Path:
             if tier in tier_fills:
                 cell.fill = tier_fills[tier]
 
-    col_widths = [22, 5, 12, 32, 14, 26, 10, 36, 16, 12, 10, 12, 10, 8, 8, 10, 12, 10, 8, 8, 22, 22, 26, 40]
+    col_widths = [22, 5, 12, 32, 14, 26, 10, 36, 16, 12, 12, 12, 18, 28, 12, 10, 12, 10, 8, 8, 10, 12, 10, 8, 8, 22, 22, 26, 40]
     for i, w in enumerate(col_widths, 1):
         ws.column_dimensions[get_column_letter(i)].width = w
 
@@ -327,6 +377,9 @@ def generate_xlsx(sources: list[dict], fstats: dict[str, FixtureStats]) -> Path:
         ("Tier-4 Sources (Social)", sum(1 for s in sources if s["tier"] == 4)),
         ("", ""),
         ("Total Fixture Listing Cases", sum(f.listing_cases for f in fstats.values())),
+        ("Total Live Listings Parsed", sum(f.listings_parsed for f in lstats.values())),
+        ("Total Live URLs Discovered", sum(f.urls_discovered for f in lstats.values())),
+        ("Total Live Photos Downloaded", sum(f.photos_downloaded for f in lstats.values())),
         ("Total Discovery Fixtures", sum(f.discovery_cases for f in fstats.values())),
         ("Total Discovery URLs Extracted", sum(f.discovery_urls_total for f in fstats.values())),
         ("Total Blocked/Error Fixtures", sum(f.blocked_cases for f in fstats.values())),
@@ -352,7 +405,11 @@ def generate_xlsx(sources: list[dict], fstats: dict[str, FixtureStats]) -> Path:
 # Markdown generation
 # ---------------------------------------------------------------------------
 
-def generate_md(sources: list[dict], fstats: dict[str, FixtureStats]) -> Path:
+def generate_md(
+    sources: list[dict],
+    fstats: dict[str, FixtureStats],
+    lstats: dict[str, LiveScrapeStats],
+) -> Path:
     lines: list[str] = []
     now = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     lines.append("# Bulgaria Real Estate - Scraping Inventory & Source Summary\n")
@@ -362,6 +419,8 @@ def generate_md(sources: list[dict], fstats: dict[str, FixtureStats]) -> Path:
     total_listing = sum(f.listing_cases for f in fstats.values())
     total_disc = sum(f.discovery_cases for f in fstats.values())
     total_photos = sum(f.total_photos for f in fstats.values())
+    total_live_parsed = sum(f.listings_parsed for f in lstats.values())
+    total_live_discovered = sum(f.urls_discovered for f in lstats.values())
     lines.append("## Overview\n")
     lines.append("| Metric | Value |")
     lines.append("|--------|-------|")
@@ -371,6 +430,8 @@ def generate_md(sources: list[dict], fstats: dict[str, FixtureStats]) -> Path:
     lines.append(f"| Tier-3 (partner/official) | {sum(1 for s in sources if s['tier']==3)} |")
     lines.append(f"| Tier-4 (social/lead intel) | {sum(1 for s in sources if s['tier']==4)} |")
     lines.append(f"| Total listing fixtures scraped | {total_listing} |")
+    lines.append(f"| Total live listings parsed | {total_live_parsed} |")
+    lines.append(f"| Total live URLs discovered | {total_live_discovered} |")
     lines.append(f"| Total discovery fixtures | {total_disc} |")
     lines.append(f"| Total photos captured in fixtures | {total_photos} |")
     lines.append("")
@@ -387,6 +448,7 @@ def generate_md(sources: list[dict], fstats: dict[str, FixtureStats]) -> Path:
             name = src["source_name"]
             url = src.get("primary_url", "")
             fs = fstats.get(name, FixtureStats())
+            ls = lstats.get(name, LiveScrapeStats())
             cats = [CATEGORY_NICE.get(c, c) for c in src.get("listing_types", [])]
             est = ESTIMATED_TOTAL_LISTINGS.get(name, "Unknown")
 
@@ -402,6 +464,18 @@ def generate_md(sources: list[dict], fstats: dict[str, FixtureStats]) -> Path:
             lines.append(f"- **Est. total listings on site**: {est}")
             lines.append(f"- **Extraction method**: {src.get('best_extraction_method', '-')}")
             lines.append(f"- **Notes**: {src.get('notes', '-')}")
+
+            if ls.listings_parsed or ls.urls_discovered:
+                lines.append("\n**Live Harvest Statistics:**\n")
+                lines.append("| Metric | Count |")
+                lines.append("|--------|-------|")
+                lines.append(f"| Live URLs discovered | {ls.urls_discovered} |")
+                lines.append(f"| Live listings parsed | {ls.listings_parsed} |")
+                lines.append(f"| Live photos downloaded | {ls.photos_downloaded} |")
+                lines.append(f"| Latest live run | {ls.last_run_utc or '-'} |")
+                lines.append(
+                    f"| Live product buckets | {', '.join(f'{k}={v}' for k, v in sorted(ls.product_breakdown.items())) or '-'} |"
+                )
 
             if fs.listing_cases or fs.discovery_cases or fs.blocked_cases:
                 lines.append("\n**Fixture Statistics:**\n")
@@ -444,7 +518,11 @@ def generate_md(sources: list[dict], fstats: dict[str, FixtureStats]) -> Path:
 # PDF generation
 # ---------------------------------------------------------------------------
 
-def generate_pdf(sources: list[dict], fstats: dict[str, FixtureStats]) -> Path:
+def generate_pdf(
+    sources: list[dict],
+    fstats: dict[str, FixtureStats],
+    lstats: dict[str, LiveScrapeStats],
+) -> Path:
     from reportlab.lib import colors
     from reportlab.lib.pagesizes import A4, landscape
     from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
@@ -484,6 +562,7 @@ def generate_pdf(sources: list[dict], fstats: dict[str, FixtureStats]) -> Path:
     total_listing = sum(f.listing_cases for f in fstats.values())
     total_disc = sum(f.discovery_cases for f in fstats.values())
     total_photos = sum(f.total_photos for f in fstats.values())
+    total_live_parsed = sum(f.listings_parsed for f in lstats.values())
 
     sum_data = [
         ["Metric", "Value"],
@@ -493,6 +572,7 @@ def generate_pdf(sources: list[dict], fstats: dict[str, FixtureStats]) -> Path:
         ["Tier-3", str(sum(1 for s in sources if s["tier"] == 3))],
         ["Tier-4", str(sum(1 for s in sources if s["tier"] == 4))],
         ["Listing fixtures", str(total_listing)],
+        ["Live listings parsed", str(total_live_parsed)],
         ["Discovery fixtures", str(total_disc)],
         ["Photos in fixtures", str(total_photos)],
     ]
@@ -612,17 +692,19 @@ def generate_pdf(sources: list[dict], fstats: dict[str, FixtureStats]) -> Path:
 def main():
     sources = load_registry()
     fstats = scan_fixtures()
+    lstats = scan_live_scrapes()
 
-    xlsx_path = generate_xlsx(sources, fstats)
+    xlsx_path = generate_xlsx(sources, fstats, lstats)
     print(f"XLSX: {xlsx_path}")
 
-    md_path = generate_md(sources, fstats)
+    md_path = generate_md(sources, fstats, lstats)
     print(f"MD:   {md_path}")
 
-    pdf_path = generate_pdf(sources, fstats)
+    pdf_path = generate_pdf(sources, fstats, lstats)
     print(f"PDF:  {pdf_path}")
 
     print(f"\nDone. {len(sources)} sources, {sum(f.listing_cases for f in fstats.values())} listing fixtures, "
+          f"{sum(f.listings_parsed for f in lstats.values())} live listings parsed, "
           f"{sum(f.discovery_cases for f in fstats.values())} discovery fixtures, "
           f"{sum(f.total_photos for f in fstats.values())} photos.")
 

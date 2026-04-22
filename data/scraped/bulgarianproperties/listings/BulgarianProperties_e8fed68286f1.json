@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Hotels_in_Bulgaria/AD89933BG_Hotel_for_sale_in_Kosharitsa.html",
+  "external_id": "e8fed68286f1",
+  "title": "Bulgarian Properties",
+  "description": "Hotel with restaurant and SPA center in Kosharitsa – attractive business with immediate income",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89933_7.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:36:54.314807+00:00",
+  "reference_id": "BulgarianProperties:e8fed68286f1",
+  "local_image_files": [
+    "data/media/BulgarianProperties_e8fed68286f1/0000_ea0a17ed.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_e8fed68286f1/0000_ea0a17ed.jpg"
+  ]
+}

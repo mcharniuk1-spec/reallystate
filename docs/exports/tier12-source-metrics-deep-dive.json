@@ -1,0 +1,1612 @@
+{
+  "rows": [
+    {
+      "tier": 1,
+      "source_name": "Address.bg",
+      "primary_url": "https://address.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "crawl listings with ref-id normalization",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "estimated_total_listings": 18000,
+      "saved_listings": 43,
+      "estimated_coverage_pct": 0.2,
+      "benchmark_progress_pct": 43.0,
+      "with_description": 43,
+      "description_pct": 100.0,
+      "with_photo_urls": 43,
+      "photo_pct": 100.0,
+      "with_readable_local_photos": 43,
+      "readable_pct": 100.0,
+      "service_counts": {
+        "sale": 43
+      },
+      "category_counts": {
+        "apartment": 29,
+        "house": 8,
+        "land": 3,
+        "office": 2,
+        "unknown": 1
+      },
+      "field_counts": {
+        "description": 43,
+        "image_urls": 43,
+        "readable_photos": 43
+      },
+      "field_summary": "description 43/43, image_urls 43/43, readable_photos 43/43",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [
+          "sale"
+        ],
+        "covered": 1,
+        "total": 2,
+        "pct": 50.0
+      },
+      "list_organization": "Listings are organized by product/category buckets or broad sale/rent archives; apartment recovery is best from category pages instead of the home page.",
+      "full_list_strategy": "Start from bucket entrypoints, paginate each bucket until no new URLs, regex-match detail URLs, then fetch every detail page for full text and media.",
+      "detail_url_pattern": "address\\.bg/.+-offer\\d{5,}(?:[/?#].*)?$",
+      "detail_requirement": "detail page required",
+      "discovery_entrypoints": [
+        "https://address.bg/sale",
+        "https://address.bg/rent",
+        "https://address.bg/sale/sofia/l4451",
+        "https://address.bg/sale/varna/l4694",
+        "https://address.bg/rent/sofia/l4451"
+      ],
+      "apartment_entrypoints": [],
+      "state": "Partial corpus on disk",
+      "next_step": "Continue category-by-category refreshes and push the file-backed corpus into PostgreSQL for `S1-18` evidence.",
+      "automation_recommendations": [
+        "Keep category-first discovery and push every card into a detail-page queue; do not rely on homepage sampling.",
+        "Expand intent coverage by crawling explicit sale and rent bucket pages separately and tracking them as independent queues.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 1,
+      "source_name": "alo.bg",
+      "primary_url": "https://www.alo.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "scoped HTML crawl with category filtering",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "short_term_rent",
+        "land",
+        "new_build"
+      ],
+      "estimated_total_listings": 35000,
+      "saved_listings": 0,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 0.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 0,
+      "photo_pct": 0.0,
+      "with_readable_local_photos": 0,
+      "readable_pct": 0.0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "field_summary": "none captured yet",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent",
+          "short_term_rent"
+        ],
+        "scraped_intents": [],
+        "covered": 0,
+        "total": 3,
+        "pct": 0.0
+      },
+      "list_organization": "Listings are organized by product/category buckets or broad sale/rent archives; apartment recovery is best from category pages instead of the home page.",
+      "full_list_strategy": "Start from bucket entrypoints, paginate each bucket until no new URLs, regex-match detail URLs, then fetch every detail page for full text and media.",
+      "detail_url_pattern": "alo\\.bg/.+-\\d{5,}(?:[/?#].*)?$",
+      "detail_requirement": "detail page required",
+      "discovery_entrypoints": [
+        "https://www.alo.bg/obiavi/imoti-prodajbi/apartamenti-stai/",
+        "https://www.alo.bg/obiavi/imoti-prodajbi/kashti-vili/",
+        "https://www.alo.bg/obiavi/imoti-prodajbi/parzeli-za-zastroiavane-investicionni-proekti/",
+        "https://www.alo.bg/obiavi/imoti-prodajbi/zemedelska-zemia-gradini-lozia-gora/",
+        "https://www.alo.bg/obiavi/imoti-naemi/apartamenti-stai/"
+      ],
+      "apartment_entrypoints": [
+        "https://www.alo.bg/obiavi/imoti-prodajbi/apartamenti-stai/",
+        "https://www.alo.bg/obiavi/imoti-naemi/apartamenti-stai/"
+      ],
+      "state": "Configured, zero landed corpus",
+      "next_step": "Run the stalled category-targeted continuation and confirm apartment sale/rent detail capture from `alo.bg/obiavi/...` pages.",
+      "automation_recommendations": [
+        "Repair category entrypoints first, then validate one stable detail-URL family before broad pagination.",
+        "Run product-by-product detail fetch with full-gallery download enabled from the first successful item.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 1,
+      "source_name": "BulgarianProperties",
+      "primary_url": "https://www.bulgarianproperties.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "conservative crawl using stable reference IDs",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "estimated_total_listings": 12000,
+      "saved_listings": 249,
+      "estimated_coverage_pct": 2.1,
+      "benchmark_progress_pct": 100.0,
+      "with_description": 249,
+      "description_pct": 100.0,
+      "with_photo_urls": 249,
+      "photo_pct": 100.0,
+      "with_readable_local_photos": 249,
+      "readable_pct": 100.0,
+      "service_counts": {
+        "sale": 246,
+        "long_term_rent": 3
+      },
+      "category_counts": {
+        "house": 34,
+        "unknown": 108,
+        "apartment": 93,
+        "land": 10,
+        "office": 4
+      },
+      "field_counts": {
+        "description": 249,
+        "image_urls": 249,
+        "readable_photos": 249
+      },
+      "field_summary": "description 249/249, image_urls 249/249, readable_photos 249/249",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [
+          "long_term_rent",
+          "sale"
+        ],
+        "covered": 2,
+        "total": 2,
+        "pct": 100.0
+      },
+      "list_organization": "Listings are organized by product/category buckets or broad sale/rent archives; apartment recovery is best from category pages instead of the home page.",
+      "full_list_strategy": "Start from bucket entrypoints, paginate each bucket until no new URLs, regex-match detail URLs, then fetch every detail page for full text and media.",
+      "detail_url_pattern": "bulgarianproperties\\.com/.+AD\\d+BG",
+      "detail_requirement": "detail page required",
+      "discovery_entrypoints": [
+        "https://www.bulgarianproperties.com/properties_for_sale_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/properties_for_rent_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/land_for_sale_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/3-bedroom_apartments_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/houses_in_Bulgaria/index.html"
+      ],
+      "apartment_entrypoints": [
+        "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/3-bedroom_apartments_in_Bulgaria/index.html"
+      ],
+      "state": "High-volume corpus on disk",
+      "next_step": "Continue category-by-category refreshes and push the file-backed corpus into PostgreSQL for `S1-18` evidence.",
+      "automation_recommendations": [
+        "Keep category-first discovery and push every card into a detail-page queue; do not rely on homepage sampling.",
+        "Improve item classification with title heuristics, structured-data parsing, and URL-path category mapping."
+      ]
+    },
+    {
+      "tier": 1,
+      "source_name": "Homes.bg",
+      "primary_url": "https://www.homes.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "server-rendered HTML crawl",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land"
+      ],
+      "estimated_total_listings": 120000,
+      "saved_listings": 37,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 37.0,
+      "with_description": 37,
+      "description_pct": 100.0,
+      "with_photo_urls": 36,
+      "photo_pct": 97.3,
+      "with_readable_local_photos": 20,
+      "readable_pct": 54.1,
+      "service_counts": {
+        "sale": 37
+      },
+      "category_counts": {
+        "apartment": 37
+      },
+      "field_counts": {
+        "description": 37,
+        "image_urls": 36,
+        "readable_photos": 20
+      },
+      "field_summary": "description 37/37, image_urls 36/37, readable_photos 20/37",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [
+          "sale"
+        ],
+        "covered": 1,
+        "total": 2,
+        "pct": 50.0
+      },
+      "list_organization": "Apartment feed is discovered from Homes.bg JSON API result pages, then each card points to an HTML detail page.",
+      "full_list_strategy": "Loop `offerType` sale/rent and city scopes, paginate API responses until empty, collect `viewHref`, then fetch each detail page for full text, photos, and structured data.",
+      "detail_url_pattern": "",
+      "detail_requirement": "detail page required",
+      "discovery_entrypoints": [
+        "https://www.homes.bg/"
+      ],
+      "apartment_entrypoints": [],
+      "state": "Partial corpus on disk",
+      "next_step": "Expand beyond the current apartment-heavy subset by widening the API scopes and continuing city pagination.",
+      "automation_recommendations": [
+        "Keep category-first discovery and push every card into a detail-page queue; do not rely on homepage sampling.",
+        "Normalize gallery extraction so each item attempts the full reachable photo set, not only the lead image.",
+        "Add image URL normalization, decode validation, and re-download retries for unreadable or lazy-loaded media.",
+        "Expand intent coverage by crawling explicit sale and rent bucket pages separately and tracking them as independent queues.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 1,
+      "source_name": "imot.bg",
+      "primary_url": "https://www.imot.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "respectful crawl or partnership feed",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "estimated_total_listings": 200000,
+      "saved_listings": 261,
+      "estimated_coverage_pct": 0.1,
+      "benchmark_progress_pct": 100.0,
+      "with_description": 261,
+      "description_pct": 100.0,
+      "with_photo_urls": 261,
+      "photo_pct": 100.0,
+      "with_readable_local_photos": 1,
+      "readable_pct": 0.4,
+      "service_counts": {
+        "sale": 261
+      },
+      "category_counts": {
+        "unknown": 261
+      },
+      "field_counts": {
+        "description": 261,
+        "image_urls": 261,
+        "city": 261,
+        "readable_photos": 1
+      },
+      "field_summary": "city 261/261, description 261/261, image_urls 261/261, readable_photos 1/261",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [
+          "sale"
+        ],
+        "covered": 1,
+        "total": 2,
+        "pct": 50.0
+      },
+      "list_organization": "Apartment and other property grids live on city+intent listing pages; detail pages are `obiava-*` URLs.",
+      "full_list_strategy": "Walk city and intent search pages, increment `/p-{page}` until no new URLs, normalize `obiava-*` detail URLs, then parse each detail page.",
+      "detail_url_pattern": "",
+      "detail_requirement": "detail page required",
+      "discovery_entrypoints": [
+        "https://www.imot.bg/"
+      ],
+      "apartment_entrypoints": [],
+      "state": "High-volume corpus on disk",
+      "next_step": "Improve item classification and image download completeness; the volume is present but category precision is weak.",
+      "automation_recommendations": [
+        "Keep category-first discovery and push every card into a detail-page queue; do not rely on homepage sampling.",
+        "Add image URL normalization, decode validation, and re-download retries for unreadable or lazy-loaded media.",
+        "Improve item classification with title heuristics, structured-data parsing, and URL-path category mapping.",
+        "Expand intent coverage by crawling explicit sale and rent bucket pages separately and tracking them as independent queues."
+      ]
+    },
+    {
+      "tier": 1,
+      "source_name": "imoti.net",
+      "primary_url": "https://www.imoti.net/",
+      "access_mode": "headless",
+      "legal_mode": "legal_review_required",
+      "best_extraction_method": "partnership first, headless as fallback",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "estimated_total_listings": 90000,
+      "saved_listings": 0,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 0.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 0,
+      "photo_pct": 0.0,
+      "with_readable_local_photos": 0,
+      "readable_pct": 0.0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "field_summary": "none captured yet",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [],
+        "covered": 0,
+        "total": 2,
+        "pct": 0.0
+      },
+      "list_organization": "Likely JS-heavy result grid or map-first browse flow.",
+      "full_list_strategy": "Trace entry pages and XHR calls first, then decide between browser automation and lower-level API extraction.",
+      "detail_url_pattern": "",
+      "detail_requirement": "detail page required",
+      "discovery_entrypoints": [
+        "https://www.imoti.net/"
+      ],
+      "apartment_entrypoints": [],
+      "state": "Legal review required",
+      "next_step": "Run a legal/access review before new live work, then choose headless tracing or partner route.",
+      "automation_recommendations": [
+        "Repair category entrypoints first, then validate one stable detail-URL family before broad pagination.",
+        "Run product-by-product detail fetch with full-gallery download enabled from the first successful item.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 1,
+      "source_name": "LUXIMMO",
+      "primary_url": "https://www.luximmo.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "careful crawl using stable luxury listing reference IDs",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "estimated_total_listings": 4000,
+      "saved_listings": 15,
+      "estimated_coverage_pct": 0.4,
+      "benchmark_progress_pct": 15.0,
+      "with_description": 13,
+      "description_pct": 86.7,
+      "with_photo_urls": 15,
+      "photo_pct": 100.0,
+      "with_readable_local_photos": 15,
+      "readable_pct": 100.0,
+      "service_counts": {
+        "sale": 15
+      },
+      "category_counts": {
+        "unknown": 5,
+        "apartment": 10
+      },
+      "field_counts": {
+        "image_urls": 15,
+        "readable_photos": 15,
+        "description": 13,
+        "price": 2
+      },
+      "field_summary": "image_urls 15/15, readable_photos 15/15, description 13/15, price 2/15",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [
+          "sale"
+        ],
+        "covered": 1,
+        "total": 2,
+        "pct": 50.0
+      },
+      "list_organization": "Listings are organized by product/category buckets or broad sale/rent archives; apartment recovery is best from category pages instead of the home page.",
+      "full_list_strategy": "Start from bucket entrypoints, paginate each bucket until no new URLs, regex-match detail URLs, then fetch every detail page for full text and media.",
+      "detail_url_pattern": "luximmo\\.bg/.+-\\d{5,}-[^\\\"'<> ]+\\.html(?:[?#][^\\\"'<> ]*)?$",
+      "detail_requirement": "detail page required",
+      "discovery_entrypoints": [
+        "https://www.luximmo.bg/apartamenti/"
+      ],
+      "apartment_entrypoints": [
+        "https://www.luximmo.bg/apartamenti/"
+      ],
+      "state": "Partial corpus on disk",
+      "next_step": "Close the text gap on detail pages before widening source coverage.",
+      "automation_recommendations": [
+        "Keep category-first discovery and push every card into a detail-page queue; do not rely on homepage sampling.",
+        "Add detail-page fallback extraction for missing descriptions and keep raw HTML for retries.",
+        "Improve item classification with title heuristics, structured-data parsing, and URL-path category mapping.",
+        "Expand intent coverage by crawling explicit sale and rent bucket pages separately and tracking them as independent queues.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 1,
+      "source_name": "OLX.bg",
+      "primary_url": "https://www.olx.bg/",
+      "access_mode": "official_api",
+      "legal_mode": "official_api_allowed",
+      "best_extraction_method": "official developer API first",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "estimated_total_listings": 45000,
+      "saved_listings": 249,
+      "estimated_coverage_pct": 0.6,
+      "benchmark_progress_pct": 100.0,
+      "with_description": 249,
+      "description_pct": 100.0,
+      "with_photo_urls": 249,
+      "photo_pct": 100.0,
+      "with_readable_local_photos": 249,
+      "readable_pct": 100.0,
+      "service_counts": {
+        "long_term_rent": 117,
+        "sale": 132
+      },
+      "category_counts": {
+        "apartment": 170,
+        "house": 25,
+        "land": 24,
+        "office": 13,
+        "unknown": 17
+      },
+      "field_counts": {
+        "description": 249,
+        "image_urls": 249,
+        "readable_photos": 249,
+        "price": 249
+      },
+      "field_summary": "description 249/249, image_urls 249/249, price 249/249, readable_photos 249/249",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [
+          "long_term_rent",
+          "sale"
+        ],
+        "covered": 2,
+        "total": 2,
+        "pct": 100.0
+      },
+      "list_organization": "Listings are organized by product/category buckets or broad sale/rent archives; apartment recovery is best from category pages instead of the home page.",
+      "full_list_strategy": "Start from bucket entrypoints, paginate each bucket until no new URLs, regex-match detail URLs, then fetch every detail page for full text and media.",
+      "detail_url_pattern": "olx\\.bg/d/ad/",
+      "detail_requirement": "detail page required",
+      "discovery_entrypoints": [
+        "https://www.olx.bg/nedvizhimi-imoti/"
+      ],
+      "apartment_entrypoints": [],
+      "state": "High-volume corpus on disk",
+      "next_step": "Continue category-by-category refreshes and push the file-backed corpus into PostgreSQL for `S1-18` evidence.",
+      "automation_recommendations": [
+        "Keep category-first discovery and push every card into a detail-page queue; do not rely on homepage sampling."
+      ]
+    },
+    {
+      "tier": 1,
+      "source_name": "property.bg",
+      "primary_url": "https://www.property.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "targeted listing-page crawl",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "estimated_total_listings": 10000,
+      "saved_listings": 15,
+      "estimated_coverage_pct": 0.1,
+      "benchmark_progress_pct": 15.0,
+      "with_description": 15,
+      "description_pct": 100.0,
+      "with_photo_urls": 15,
+      "photo_pct": 100.0,
+      "with_readable_local_photos": 15,
+      "readable_pct": 100.0,
+      "service_counts": {
+        "sale": 15
+      },
+      "category_counts": {
+        "apartment": 12,
+        "unknown": 3
+      },
+      "field_counts": {
+        "description": 15,
+        "image_urls": 15,
+        "readable_photos": 15
+      },
+      "field_summary": "description 15/15, image_urls 15/15, readable_photos 15/15",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [
+          "sale"
+        ],
+        "covered": 1,
+        "total": 2,
+        "pct": 50.0
+      },
+      "list_organization": "Listings are organized by product/category buckets or broad sale/rent archives; apartment recovery is best from category pages instead of the home page.",
+      "full_list_strategy": "Start from bucket entrypoints, paginate each bucket until no new URLs, regex-match detail URLs, then fetch every detail page for full text and media.",
+      "detail_url_pattern": "property\\.bg/property-\\d{5,}(?:[-/][^\\\"'<> ]*)?",
+      "detail_requirement": "detail page required",
+      "discovery_entrypoints": [
+        "https://www.property.bg/bulgaria/apartments/",
+        "https://www.property.bg/sales/bulgaria/selection/",
+        "https://www.property.bg/rentals/bulgaria/selection/"
+      ],
+      "apartment_entrypoints": [
+        "https://www.property.bg/bulgaria/apartments/"
+      ],
+      "state": "Partial corpus on disk",
+      "next_step": "Continue category-by-category refreshes and push the file-backed corpus into PostgreSQL for `S1-18` evidence.",
+      "automation_recommendations": [
+        "Keep category-first discovery and push every card into a detail-page queue; do not rely on homepage sampling.",
+        "Expand intent coverage by crawling explicit sale and rent bucket pages separately and tracking them as independent queues.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 1,
+      "source_name": "SUPRIMMO",
+      "primary_url": "https://www.suprimmo.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "crawl listings and unify group reference IDs",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "estimated_total_listings": 15000,
+      "saved_listings": 12,
+      "estimated_coverage_pct": 0.1,
+      "benchmark_progress_pct": 12.0,
+      "with_description": 12,
+      "description_pct": 100.0,
+      "with_photo_urls": 12,
+      "photo_pct": 100.0,
+      "with_readable_local_photos": 12,
+      "readable_pct": 100.0,
+      "service_counts": {
+        "sale": 12
+      },
+      "category_counts": {
+        "apartment": 10,
+        "unknown": 2
+      },
+      "field_counts": {
+        "description": 12,
+        "image_urls": 12,
+        "readable_photos": 12,
+        "price": 9
+      },
+      "field_summary": "description 12/12, image_urls 12/12, readable_photos 12/12, price 9/12",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [
+          "sale"
+        ],
+        "covered": 1,
+        "total": 2,
+        "pct": 50.0
+      },
+      "list_organization": "Listings are organized by product/category buckets or broad sale/rent archives; apartment recovery is best from category pages instead of the home page.",
+      "full_list_strategy": "Start from bucket entrypoints, paginate each bucket until no new URLs, regex-match detail URLs, then fetch every detail page for full text and media.",
+      "detail_url_pattern": "suprimmo\\.bg/imot-\\d{5,}(?:[-/][^\\\"'<> ]*)?",
+      "detail_requirement": "detail page required",
+      "discovery_entrypoints": [
+        "https://www.suprimmo.bg/bulgaria/apartamenti/",
+        "https://www.suprimmo.bg/bulgaria/kushti-vili/",
+        "https://www.suprimmo.bg/bulgaria/partseli/",
+        "https://www.suprimmo.bg/prodajba/bulgaria/selectsya/",
+        "https://www.suprimmo.bg/naem/bulgaria/selectsya/"
+      ],
+      "apartment_entrypoints": [
+        "https://www.suprimmo.bg/bulgaria/apartamenti/"
+      ],
+      "state": "Partial corpus on disk",
+      "next_step": "Continue category-by-category refreshes and push the file-backed corpus into PostgreSQL for `S1-18` evidence.",
+      "automation_recommendations": [
+        "Keep category-first discovery and push every card into a detail-page queue; do not rely on homepage sampling.",
+        "Expand intent coverage by crawling explicit sale and rent bucket pages separately and tracking them as independent queues.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 2,
+      "source_name": "ApartmentsBulgaria.com",
+      "primary_url": "https://www.apartmentsbulgaria.bg/",
+      "access_mode": "headless",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "direct booking integration or careful crawl",
+      "declared_offers": [
+        "short_term_rent"
+      ],
+      "estimated_total_listings": 1800,
+      "saved_listings": 0,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 0.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 0,
+      "photo_pct": 0.0,
+      "with_readable_local_photos": 0,
+      "readable_pct": 0.0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "field_summary": "none captured yet",
+      "service_coverage": {
+        "declared_intents": [
+          "short_term_rent"
+        ],
+        "scraped_intents": [],
+        "covered": 0,
+        "total": 1,
+        "pct": 0.0
+      },
+      "list_organization": "Short-term-rent catalog; likely property-type and resort pages rather than one national apartment feed.",
+      "full_list_strategy": "Map resort/category pages first, then enumerate property cards and fetch each item page for room mix, amenities, and gallery.",
+      "detail_url_pattern": "",
+      "detail_requirement": "Detail page required for photos, amenities, and availability-style metadata.",
+      "discovery_entrypoints": [
+        "https://www.apartmentsbulgaria.bg/"
+      ],
+      "apartment_entrypoints": [],
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "automation_recommendations": [
+        "Repair category entrypoints first, then validate one stable detail-URL family before broad pagination.",
+        "Run product-by-product detail fetch with full-gallery download enabled from the first successful item.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 2,
+      "source_name": "Bazar.bg",
+      "primary_url": "https://bazar.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "limited HTML crawl",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land"
+      ],
+      "estimated_total_listings": 8000,
+      "saved_listings": 250,
+      "estimated_coverage_pct": 3.1,
+      "benchmark_progress_pct": 100.0,
+      "with_description": 250,
+      "description_pct": 100.0,
+      "with_photo_urls": 250,
+      "photo_pct": 100.0,
+      "with_readable_local_photos": 249,
+      "readable_pct": 99.6,
+      "service_counts": {
+        "sale": 225,
+        "long_term_rent": 25
+      },
+      "category_counts": {
+        "unknown": 45,
+        "apartment": 204,
+        "office": 1
+      },
+      "field_counts": {
+        "description": 250,
+        "image_urls": 250,
+        "readable_photos": 249,
+        "price": 250
+      },
+      "field_summary": "description 250/250, image_urls 250/250, price 250/250, readable_photos 249/250",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [
+          "long_term_rent",
+          "sale"
+        ],
+        "covered": 2,
+        "total": 2,
+        "pct": 100.0
+      },
+      "list_organization": "Listings are organized by product/category buckets or broad sale/rent archives; apartment recovery is best from category pages instead of the home page.",
+      "full_list_strategy": "Start from bucket entrypoints, paginate each bucket until no new URLs, regex-match detail URLs, then fetch every detail page for full text and media.",
+      "detail_url_pattern": "bazar\\.bg/obiava-\\d{5,}",
+      "detail_requirement": "detail page required",
+      "discovery_entrypoints": [
+        "https://bazar.bg/obiavi/apartamenti",
+        "https://bazar.bg/obiavi/kashti-i-vili",
+        "https://bazar.bg/obiavi/zemya",
+        "https://bazar.bg/obiavi/garazhi-i-parkoingi"
+      ],
+      "apartment_entrypoints": [
+        "https://bazar.bg/obiavi/apartamenti"
+      ],
+      "state": "High-volume corpus on disk",
+      "next_step": "Improve local media downloads and readability before the next large batch.",
+      "automation_recommendations": [
+        "Keep category-first discovery and push every card into a detail-page queue; do not rely on homepage sampling.",
+        "Add image URL normalization, decode validation, and re-download retries for unreadable or lazy-loaded media."
+      ]
+    },
+    {
+      "tier": 2,
+      "source_name": "Domaza",
+      "primary_url": "https://www.domaza.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "crawl with language canonicalization",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "short_term_rent",
+        "land",
+        "new_build"
+      ],
+      "estimated_total_listings": 22000,
+      "saved_listings": 0,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 0.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 0,
+      "photo_pct": 0.0,
+      "with_readable_local_photos": 0,
+      "readable_pct": 0.0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "field_summary": "none captured yet",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent",
+          "short_term_rent"
+        ],
+        "scraped_intents": [],
+        "covered": 0,
+        "total": 3,
+        "pct": 0.0
+      },
+      "list_organization": "Listings are organized by product/category buckets or broad sale/rent archives; apartment recovery is best from category pages instead of the home page.",
+      "full_list_strategy": "Start from bucket entrypoints, paginate each bucket until no new URLs, regex-match detail URLs, then fetch every detail page for full text and media.",
+      "detail_url_pattern": "domaza\\.(bg|biz)/.+ID\\d+",
+      "detail_requirement": "detail page required",
+      "discovery_entrypoints": [
+        "https://www.domaza.bg/property/index/search/1/s/572da6146f10beb4bf6333d75039731a4d2b9902",
+        "https://www.domaza.bg/property/index/search/1/s/c8a3ad4db8f37d4e8b31fe9db66bc4d1f537ba5a",
+        "https://www.domaza.bg/property/index/search/1/s/e8780bcda8fa201940f1ce87e404f870d0c5c3fc"
+      ],
+      "apartment_entrypoints": [],
+      "state": "Configured, zero landed corpus",
+      "next_step": "Map the language-canonical search entrypoints and recover the first working detail URL family before broad pagination.",
+      "automation_recommendations": [
+        "Repair category entrypoints first, then validate one stable detail-URL family before broad pagination.",
+        "Run product-by-product detail fetch with full-gallery download enabled from the first successful item.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 2,
+      "source_name": "Holding Group Real Estate",
+      "primary_url": "https://holdinggroup.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "crawl direct site plus dedupe against portal syndication",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "estimated_total_listings": 3000,
+      "saved_listings": 0,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 0.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 0,
+      "photo_pct": 0.0,
+      "with_readable_local_photos": 0,
+      "readable_pct": 0.0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "field_summary": "none captured yet",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [],
+        "covered": 0,
+        "total": 2,
+        "pct": 0.0
+      },
+      "list_organization": "Agency inventory organized around direct sale/project pages, likely city and project buckets.",
+      "full_list_strategy": "Start from city/project category pages, dedupe against syndication, then fetch each offer detail page.",
+      "detail_url_pattern": "",
+      "detail_requirement": "Detail page required.",
+      "discovery_entrypoints": [
+        "https://holdinggroup.bg/"
+      ],
+      "apartment_entrypoints": [],
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "automation_recommendations": [
+        "Repair category entrypoints first, then validate one stable detail-URL family before broad pagination.",
+        "Run product-by-product detail fetch with full-gallery download enabled from the first successful item.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 2,
+      "source_name": "Home2U",
+      "primary_url": "https://home2u.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "templated HTML parser",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "estimated_total_listings": 6000,
+      "saved_listings": 0,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 0.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 0,
+      "photo_pct": 0.0,
+      "with_readable_local_photos": 0,
+      "readable_pct": 0.0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "field_summary": "none captured yet",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [],
+        "covered": 0,
+        "total": 2,
+        "pct": 0.0
+      },
+      "list_organization": "Listings are organized by product/category buckets or broad sale/rent archives; apartment recovery is best from category pages instead of the home page.",
+      "full_list_strategy": "Start from bucket entrypoints, paginate each bucket until no new URLs, regex-match detail URLs, then fetch every detail page for full text and media.",
+      "detail_url_pattern": "home2u\\.bg/.+-[a-z0-9]{5,}",
+      "detail_requirement": "detail page required",
+      "discovery_entrypoints": [
+        "https://home2u.bg/nedvizhimi-imoti-sofia/",
+        "https://home2u.bg/nedvizhimi-imoti-varna/",
+        "https://home2u.bg/nedvizhimi-imoti-burgas/",
+        "https://home2u.bg/nedvizhimi-imoti-plovdiv/",
+        "https://home2u.bg/apartamenti-pod-naem-sofia/",
+        "https://home2u.bg/apartamenti-pod-naem-varna/"
+      ],
+      "apartment_entrypoints": [
+        "https://home2u.bg/nedvizhimi-imoti-sofia/",
+        "https://home2u.bg/nedvizhimi-imoti-varna/",
+        "https://home2u.bg/nedvizhimi-imoti-burgas/",
+        "https://home2u.bg/nedvizhimi-imoti-plovdiv/",
+        "https://home2u.bg/apartamenti-pod-naem-sofia/",
+        "https://home2u.bg/apartamenti-pod-naem-varna/"
+      ],
+      "state": "Configured, zero landed corpus",
+      "next_step": "Repair the city landing pages into stable listing archives, then fetch detail pages product by product.",
+      "automation_recommendations": [
+        "Repair category entrypoints first, then validate one stable detail-URL family before broad pagination.",
+        "Run product-by-product detail fetch with full-gallery download enabled from the first successful item.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 2,
+      "source_name": "Imoteka.bg",
+      "primary_url": "https://imoteka.bg/",
+      "access_mode": "headless",
+      "legal_mode": "legal_review_required",
+      "best_extraction_method": "partnership/licensed feed preferred; headless only after legal clearance",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "estimated_total_listings": 14000,
+      "saved_listings": 0,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 0.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 0,
+      "photo_pct": 0.0,
+      "with_readable_local_photos": 0,
+      "readable_pct": 0.0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "field_summary": "none captured yet",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [],
+        "covered": 0,
+        "total": 2,
+        "pct": 0.0
+      },
+      "list_organization": "Likely JS-heavy agency portal with filtered grids and campaign/new-build emphasis.",
+      "full_list_strategy": "Legal review first, then browser trace category/XHR flows before parser work.",
+      "detail_url_pattern": "",
+      "detail_requirement": "Detail page required.",
+      "discovery_entrypoints": [
+        "https://imoteka.bg/"
+      ],
+      "apartment_entrypoints": [],
+      "state": "Legal review required",
+      "next_step": "Run a legal/access review before new live work, then choose headless tracing or partner route.",
+      "automation_recommendations": [
+        "Repair category entrypoints first, then validate one stable detail-URL family before broad pagination.",
+        "Run product-by-product detail fetch with full-gallery download enabled from the first successful item.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 2,
+      "source_name": "Imoti.info",
+      "primary_url": "https://imoti.info/",
+      "access_mode": "partner_feed",
+      "legal_mode": "licensing_required",
+      "best_extraction_method": "licensing or partnership first; fixture-only parser research until approved",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "estimated_total_listings": 25000,
+      "saved_listings": 0,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 0.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 0,
+      "photo_pct": 0.0,
+      "with_readable_local_photos": 0,
+      "readable_pct": 0.0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "field_summary": "none captured yet",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [],
+        "covered": 0,
+        "total": 2,
+        "pct": 0.0
+      },
+      "list_organization": "Partner-feed style marketplace; browsing exists but licensing governs commercial extraction.",
+      "full_list_strategy": "Do not crawl broadly. Seek licensing or partner export before item recovery.",
+      "detail_url_pattern": "",
+      "detail_requirement": "Would require detail pages or feed payloads, but licensing is the first gate.",
+      "discovery_entrypoints": [
+        "https://imoti.info/"
+      ],
+      "apartment_entrypoints": [],
+      "state": "Licensing required",
+      "next_step": "Do not broaden crawling. Move this source through licensing or partner-feed negotiation first.",
+      "automation_recommendations": [
+        "Repair category entrypoints first, then validate one stable detail-URL family before broad pagination.",
+        "Run product-by-product detail fetch with full-gallery download enabled from the first successful item.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 2,
+      "source_name": "Indomio.bg",
+      "primary_url": "https://www.indomio.bg/",
+      "access_mode": "headless",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "hybrid HTML/headless crawler",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land"
+      ],
+      "estimated_total_listings": 7000,
+      "saved_listings": 0,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 0.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 0,
+      "photo_pct": 0.0,
+      "with_readable_local_photos": 0,
+      "readable_pct": 0.0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "field_summary": "none captured yet",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [],
+        "covered": 0,
+        "total": 2,
+        "pct": 0.0
+      },
+      "list_organization": "Portal-style result grids with filterable categories and likely JS-assisted navigation.",
+      "full_list_strategy": "Map category/city entry pages, inspect XHR if present, then reconcile to detail pages.",
+      "detail_url_pattern": "",
+      "detail_requirement": "Detail page required.",
+      "discovery_entrypoints": [
+        "https://www.indomio.bg/"
+      ],
+      "apartment_entrypoints": [],
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "automation_recommendations": [
+        "Repair category entrypoints first, then validate one stable detail-URL family before broad pagination.",
+        "Run product-by-product detail fetch with full-gallery download enabled from the first successful item.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 2,
+      "source_name": "Lions Group",
+      "primary_url": "https://lionsgroup.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "server-rendered listing crawl",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "estimated_total_listings": 2500,
+      "saved_listings": 0,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 0.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 0,
+      "photo_pct": 0.0,
+      "with_readable_local_photos": 0,
+      "readable_pct": 0.0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "field_summary": "none captured yet",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [],
+        "covered": 0,
+        "total": 2,
+        "pct": 0.0
+      },
+      "list_organization": "Agency site with city/project-driven inventory sections.",
+      "full_list_strategy": "Enumerate listing archives and project buckets, then fetch each listing page.",
+      "detail_url_pattern": "",
+      "detail_requirement": "Detail page required.",
+      "discovery_entrypoints": [
+        "https://lionsgroup.bg/"
+      ],
+      "apartment_entrypoints": [],
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "automation_recommendations": [
+        "Repair category entrypoints first, then validate one stable detail-URL family before broad pagination.",
+        "Run product-by-product detail fetch with full-gallery download enabled from the first successful item.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 2,
+      "source_name": "Pochivka.bg",
+      "primary_url": "https://pochivka.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "partnership or limited travel-catalog crawl",
+      "declared_offers": [
+        "short_term_rent"
+      ],
+      "estimated_total_listings": 5000,
+      "saved_listings": 0,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 0.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 0,
+      "photo_pct": 0.0,
+      "with_readable_local_photos": 0,
+      "readable_pct": 0.0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "field_summary": "none captured yet",
+      "service_coverage": {
+        "declared_intents": [
+          "short_term_rent"
+        ],
+        "scraped_intents": [],
+        "covered": 0,
+        "total": 1,
+        "pct": 0.0
+      },
+      "list_organization": "Travel catalog rather than classic sale feed; apartment inventory is hospitality-oriented.",
+      "full_list_strategy": "Treat as STR intelligence. Traverse resort/location catalogs to item pages.",
+      "detail_url_pattern": "",
+      "detail_requirement": "Detail page required.",
+      "discovery_entrypoints": [
+        "https://pochivka.bg/"
+      ],
+      "apartment_entrypoints": [],
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "automation_recommendations": [
+        "Repair category entrypoints first, then validate one stable detail-URL family before broad pagination.",
+        "Run product-by-product detail fetch with full-gallery download enabled from the first successful item.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 2,
+      "source_name": "realestates.bg",
+      "primary_url": "https://en.realestates.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "scope-limited HTML crawl and dedupe against alo.bg",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land"
+      ],
+      "estimated_total_listings": 6000,
+      "saved_listings": 0,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 0.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 0,
+      "photo_pct": 0.0,
+      "with_readable_local_photos": 0,
+      "readable_pct": 0.0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "field_summary": "none captured yet",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [],
+        "covered": 0,
+        "total": 2,
+        "pct": 0.0
+      },
+      "list_organization": "Foreign-facing portal layer related to alo.bg; likely mirrored listing pages and translated categories.",
+      "full_list_strategy": "Scope crawl carefully and dedupe aggressively against alo.bg by URL/title/price/media hash.",
+      "detail_url_pattern": "",
+      "detail_requirement": "Detail page required.",
+      "discovery_entrypoints": [
+        "https://en.realestates.bg/"
+      ],
+      "apartment_entrypoints": [],
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "automation_recommendations": [
+        "Repair category entrypoints first, then validate one stable detail-URL family before broad pagination.",
+        "Run product-by-product detail fetch with full-gallery download enabled from the first successful item.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 2,
+      "source_name": "Realistimo",
+      "primary_url": "https://realistimo.com/",
+      "access_mode": "headless",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "HTML crawl with map-filter fallback",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "estimated_total_listings": 4500,
+      "saved_listings": 0,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 0.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 0,
+      "photo_pct": 0.0,
+      "with_readable_local_photos": 0,
+      "readable_pct": 0.0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "field_summary": "none captured yet",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [],
+        "covered": 0,
+        "total": 2,
+        "pct": 0.0
+      },
+      "list_organization": "Map-led browsing with geo filters and listing cards.",
+      "full_list_strategy": "Map initial browse endpoints, discover backing XHR or map payloads, then fetch detail pages.",
+      "detail_url_pattern": "",
+      "detail_requirement": "Detail page required.",
+      "discovery_entrypoints": [
+        "https://realistimo.com/"
+      ],
+      "apartment_entrypoints": [],
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "automation_recommendations": [
+        "Repair category entrypoints first, then validate one stable detail-URL family before broad pagination.",
+        "Run product-by-product detail fetch with full-gallery download enabled from the first successful item.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 2,
+      "source_name": "Rentica.bg",
+      "primary_url": "https://rentica.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "rent-only HTML parser",
+      "declared_offers": [
+        "long_term_rent"
+      ],
+      "estimated_total_listings": 1200,
+      "saved_listings": 0,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 0.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 0,
+      "photo_pct": 0.0,
+      "with_readable_local_photos": 0,
+      "readable_pct": 0.0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "field_summary": "none captured yet",
+      "service_coverage": {
+        "declared_intents": [
+          "long_term_rent"
+        ],
+        "scraped_intents": [],
+        "covered": 0,
+        "total": 1,
+        "pct": 0.0
+      },
+      "list_organization": "Rent-specialist listing grid, probably city-first and apartment-heavy.",
+      "full_list_strategy": "Target city rental pages, paginate deeply, then fetch item pages.",
+      "detail_url_pattern": "",
+      "detail_requirement": "Detail page required.",
+      "discovery_entrypoints": [
+        "https://rentica.bg/"
+      ],
+      "apartment_entrypoints": [],
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "automation_recommendations": [
+        "Repair category entrypoints first, then validate one stable detail-URL family before broad pagination.",
+        "Run product-by-product detail fetch with full-gallery download enabled from the first successful item.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 2,
+      "source_name": "Svobodni-kvartiri.com",
+      "primary_url": "https://svobodni-kvartiri.com/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "deep pagination crawl by city scope",
+      "declared_offers": [
+        "long_term_rent",
+        "short_term_rent"
+      ],
+      "estimated_total_listings": 3500,
+      "saved_listings": 0,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 0.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 0,
+      "photo_pct": 0.0,
+      "with_readable_local_photos": 0,
+      "readable_pct": 0.0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "field_summary": "none captured yet",
+      "service_coverage": {
+        "declared_intents": [
+          "long_term_rent",
+          "short_term_rent"
+        ],
+        "scraped_intents": [],
+        "covered": 0,
+        "total": 2,
+        "pct": 0.0
+      },
+      "list_organization": "Deep city pagination focused on rentals, rooms, and worker/student supply.",
+      "full_list_strategy": "Paginate per city and rental type, then fetch each item page.",
+      "detail_url_pattern": "",
+      "detail_requirement": "Detail page required.",
+      "discovery_entrypoints": [
+        "https://svobodni-kvartiri.com/"
+      ],
+      "apartment_entrypoints": [],
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "automation_recommendations": [
+        "Repair category entrypoints first, then validate one stable detail-URL family before broad pagination.",
+        "Run product-by-product detail fetch with full-gallery download enabled from the first successful item.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 2,
+      "source_name": "Unique Estates",
+      "primary_url": "https://ues.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "luxury listing crawler",
+      "declared_offers": [
+        "sale",
+        "long_term_rent",
+        "new_build"
+      ],
+      "estimated_total_listings": 2000,
+      "saved_listings": 0,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 0.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 0,
+      "photo_pct": 0.0,
+      "with_readable_local_photos": 0,
+      "readable_pct": 0.0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "field_summary": "none captured yet",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [],
+        "covered": 0,
+        "total": 2,
+        "pct": 0.0
+      },
+      "list_organization": "Luxury agency catalog with sale/rent/new-build buckets.",
+      "full_list_strategy": "Enumerate category archives and project/luxury pages, then item pages.",
+      "detail_url_pattern": "",
+      "detail_requirement": "Detail page required.",
+      "discovery_entrypoints": [
+        "https://ues.bg/"
+      ],
+      "apartment_entrypoints": [],
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "automation_recommendations": [
+        "Repair category entrypoints first, then validate one stable detail-URL family before broad pagination.",
+        "Run product-by-product detail fetch with full-gallery download enabled from the first successful item.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 2,
+      "source_name": "Vila.bg",
+      "primary_url": "https://vila.bg/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "partnership or limited catalog crawl",
+      "declared_offers": [
+        "short_term_rent"
+      ],
+      "estimated_total_listings": 4000,
+      "saved_listings": 0,
+      "estimated_coverage_pct": 0.0,
+      "benchmark_progress_pct": 0.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 0,
+      "photo_pct": 0.0,
+      "with_readable_local_photos": 0,
+      "readable_pct": 0.0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "field_summary": "none captured yet",
+      "service_coverage": {
+        "declared_intents": [
+          "short_term_rent"
+        ],
+        "scraped_intents": [],
+        "covered": 0,
+        "total": 1,
+        "pct": 0.0
+      },
+      "list_organization": "Vacation and villa catalog, likely organized by destination rather than strict apartment taxonomy.",
+      "full_list_strategy": "Treat as resort/vacation inventory; traverse destination pages to item pages.",
+      "detail_url_pattern": "",
+      "detail_requirement": "Detail page required.",
+      "discovery_entrypoints": [
+        "https://vila.bg/"
+      ],
+      "apartment_entrypoints": [],
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "automation_recommendations": [
+        "Repair category entrypoints first, then validate one stable detail-URL family before broad pagination.",
+        "Run product-by-product detail fetch with full-gallery download enabled from the first successful item.",
+        "Increase batch depth per category until the source clears the 100-item benchmark or a real blocker is observed."
+      ]
+    },
+    {
+      "tier": 2,
+      "source_name": "Yavlena",
+      "primary_url": "https://www.yavlena.com/",
+      "access_mode": "html",
+      "legal_mode": "public_crawl_with_review",
+      "best_extraction_method": "incremental crawl with ID-based URLs",
+      "declared_offers": [
+        "sale",
+        "long_term_rent"
+      ],
+      "estimated_total_listings": 9000,
+      "saved_listings": 250,
+      "estimated_coverage_pct": 2.8,
+      "benchmark_progress_pct": 100.0,
+      "with_description": 0,
+      "description_pct": 0.0,
+      "with_photo_urls": 250,
+      "photo_pct": 100.0,
+      "with_readable_local_photos": 249,
+      "readable_pct": 99.6,
+      "service_counts": {
+        "sale": 250
+      },
+      "category_counts": {
+        "apartment": 145,
+        "house": 40,
+        "land": 36,
+        "unknown": 22,
+        "office": 7
+      },
+      "field_counts": {
+        "image_urls": 250,
+        "readable_photos": 249
+      },
+      "field_summary": "image_urls 250/250, readable_photos 249/250",
+      "service_coverage": {
+        "declared_intents": [
+          "sale",
+          "long_term_rent"
+        ],
+        "scraped_intents": [
+          "sale"
+        ],
+        "covered": 1,
+        "total": 2,
+        "pct": 50.0
+      },
+      "list_organization": "Listings are organized by product/category buckets or broad sale/rent archives; apartment recovery is best from category pages instead of the home page.",
+      "full_list_strategy": "Start from bucket entrypoints, paginate each bucket until no new URLs, regex-match detail URLs, then fetch every detail page for full text and media.",
+      "detail_url_pattern": "yavlena\\.com/bg/\\d{5,}",
+      "detail_requirement": "detail page required",
+      "discovery_entrypoints": [
+        "https://www.yavlena.com/bg/sales",
+        "https://www.yavlena.com/bg/rentals"
+      ],
+      "apartment_entrypoints": [],
+      "state": "High-volume corpus, description gap",
+      "next_step": "Recover detail-page descriptions for the already large on-disk corpus and keep sale buckets fresh.",
+      "automation_recommendations": [
+        "Keep category-first discovery and push every card into a detail-page queue; do not rely on homepage sampling.",
+        "Add detail-page fallback extraction for missing descriptions and keep raw HTML for retries.",
+        "Add image URL normalization, decode validation, and re-download retries for unreadable or lazy-loaded media.",
+        "Expand intent coverage by crawling explicit sale and rent bucket pages separately and tracking them as independent queues."
+      ]
+    }
+  ],
+  "tier_totals": {
+    "1": {
+      "sources": 10,
+      "saved": 881,
+      "estimated": 549000
+    },
+    "2": {
+      "sources": 17,
+      "saved": 500,
+      "estimated": 124500
+    }
+  }
+}

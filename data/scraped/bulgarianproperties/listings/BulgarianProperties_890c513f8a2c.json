@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD84964BG_1-bedroom_apartment_for_sale_in_Plovdiv.html",
+  "external_id": "890c513f8a2c",
+  "title": "Bulgarian Properties",
+  "description": "1-bedroom apartment in a new building in Krshiyaka",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/84964_3.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:41:28.338349+00:00",
+  "reference_id": "BulgarianProperties:890c513f8a2c",
+  "local_image_files": [
+    "data/media/BulgarianProperties_890c513f8a2c/0000_82b64e9d.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_890c513f8a2c/0000_82b64e9d.jpg"
+  ]
+}

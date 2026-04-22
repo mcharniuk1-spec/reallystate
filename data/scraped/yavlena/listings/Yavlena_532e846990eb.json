@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/167961",
+  "external_id": "532e846990eb",
+  "title": "Офис в Горни Богров 355 кв.м. ID 167961  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "office",
+  "image_urls": [
+    "https://userimages.yavlena.com/6fd8ddd8-1ee0-488e-b4e7-4fe27a9d357e.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:18:15.510674+00:00",
+  "reference_id": "Yavlena:532e846990eb",
+  "local_image_files": [
+    "data/media/Yavlena_532e846990eb/0000_8d1f5fb0.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_532e846990eb/0000_8d1f5fb0.jpg"
+  ]
+}

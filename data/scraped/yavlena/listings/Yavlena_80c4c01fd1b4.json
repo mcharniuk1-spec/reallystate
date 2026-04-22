@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168443",
+  "external_id": "80c4c01fd1b4",
+  "title": "Двустаен апартамент в Бургас 76 кв.м. ID 168443  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/d37f5554-8eef-41f9-aaf9-e6c3b8c0557b.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:56:21.571194+00:00",
+  "reference_id": "Yavlena:80c4c01fd1b4",
+  "local_image_files": [
+    "data/media/Yavlena_80c4c01fd1b4/0000_01bea75d.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_80c4c01fd1b4/0000_01bea75d.jpg"
+  ]
+}

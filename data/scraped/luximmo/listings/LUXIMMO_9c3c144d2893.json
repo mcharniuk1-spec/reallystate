@@ -1,0 +1,35 @@
+{
+  "source_name": "LUXIMMO",
+  "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/sofiya/luksozni-imoti-tristayni-apartamenti/luksozen-imot-45719-tristaen-apartament-za-prodajba-v-sofiya.html",
+  "external_id": "9c3c144d2893",
+  "title": "Луксиммо",
+  "description": "Ексклузивно представяме за продажба апартамент в модерна градска резиденция с отличителен дизайн разположена в престижната южна част на София. Тя съчетава елегантна архитектура, премиум материали и съвременни технологии. Промоционална цена с -4% отстъпка до 13.04.2026 г. Сградата се намира в престижната южна част на столицата – в непосредствена близост до Зоологическата градина, само на 950 м от Paradise Center и метростанция „Витоша“. Разположена на тиха вътрешна улица, сградата осигурява уединение и сигурност, съчетани с бърза връзка",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.luximmo.org/property-images/big_bg/1775559392T45719_1.jpg",
+    "https://static.luximmo.org/property-images/big_bg/1775559392T45719_1.jpg?v=1775734953"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:42:33.673585+00:00",
+  "reference_id": "LUXIMMO:9c3c144d2893",
+  "local_image_files": [
+    "data/media/LUXIMMO_9c3c144d2893/0000_aacb8ed8.jpg",
+    "data/media/LUXIMMO_9c3c144d2893/0001_aacb8ed8.jpg"
+  ],
+  "local_image_storage_keys": [
+    "LUXIMMO_9c3c144d2893/0000_aacb8ed8.jpg",
+    "LUXIMMO_9c3c144d2893/0001_aacb8ed8.jpg"
+  ]
+}

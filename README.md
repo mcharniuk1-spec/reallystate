@@ -42,9 +42,8 @@ make dev-up
 
 See the detailed setup guide:
 
-```bash
-docs/development-setup.md
-```
+- [`docs/development-setup.md`](docs/development-setup.md) — Python, tests, env
+- [`docs/docker-and-database.md`](docs/docker-and-database.md) — Docker Compose, Postgres/MinIO/Temporal, migrations, media on disk vs S3, SQL helpers
 
 Run the standard test target:
 

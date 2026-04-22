@@ -1,6 +1,6 @@
 # Bulgaria Real Estate - Scraping Inventory & Source Summary
 
-*Generated: 2026-04-08 15:57 UTC*
+*Generated: 2026-04-09 09:52 UTC*
 
 ## Overview
 
@@ -12,6 +12,8 @@
 | Tier-3 (partner/official) | 10 |
 | Tier-4 (social/lead intel) | 7 |
 | Total listing fixtures scraped | 31 |
+| Total live listings parsed | 1248 |
+| Total live URLs discovered | 1283 |
 | Total discovery fixtures | 14 |
 | Total photos captured in fixtures | 26 |
 
@@ -93,6 +95,16 @@
 - **Extraction method**: conservative crawl using stable reference IDs
 - **Notes**: Important for new-build and foreign buyer inventory.
 
+**Live Harvest Statistics:**
+
+| Metric | Count |
+|--------|-------|
+| Live URLs discovered | 250 |
+| Live listings parsed | 249 |
+| Live photos downloaded | 249 |
+| Latest live run | 2026-04-08T16:42:37.971917+00:00 |
+| Live product buckets | - |
+
 **Fixture Statistics:**
 
 | Metric | Count |
@@ -154,6 +166,16 @@
 - **Est. total listings on site**: 200000
 - **Extraction method**: respectful crawl or partnership feed
 - **Notes**: High-volume benchmark supply source.
+
+**Live Harvest Statistics:**
+
+| Metric | Count |
+|--------|-------|
+| Live URLs discovered | 254 |
+| Live listings parsed | 250 |
+| Live photos downloaded | 1 |
+| Latest live run | 2026-04-08T16:30:52.841147+00:00 |
+| Live product buckets | - |
 
 **Fixture Statistics:**
 
@@ -247,6 +269,16 @@
 - **Est. total listings on site**: 45000
 - **Extraction method**: official developer API first
 - **Notes**: Primary API-first classifieds source.
+
+**Live Harvest Statistics:**
+
+| Metric | Count |
+|--------|-------|
+| Live URLs discovered | 257 |
+| Live listings parsed | 249 |
+| Live photos downloaded | 1365 |
+| Latest live run | 2026-04-08T17:31:38.962595+00:00 |
+| Live product buckets | - |
 
 **Fixture Statistics:**
 
@@ -359,6 +391,16 @@
 - **Est. total listings on site**: 8000
 - **Extraction method**: limited HTML crawl
 - **Notes**: Secondary but useful classifieds source.
+
+**Live Harvest Statistics:**
+
+| Metric | Count |
+|--------|-------|
+| Live URLs discovered | 272 |
+| Live listings parsed | 250 |
+| Live photos downloaded | 2487 |
+| Latest live run | 2026-04-08T16:54:12.900549+00:00 |
+| Live product buckets | - |
 
 **Fixture Statistics:**
 
@@ -656,6 +698,16 @@
 - **Est. total listings on site**: 9000
 - **Extraction method**: incremental crawl with ID-based URLs
 - **Notes**: Established agency with branch-driven supply.
+
+**Live Harvest Statistics:**
+
+| Metric | Count |
+|--------|-------|
+| Live URLs discovered | 250 |
+| Live listings parsed | 250 |
+| Live photos downloaded | 249 |
+| Latest live run | 2026-04-08T17:18:17.189285+00:00 |
+| Live product buckets | - |
 
 **Fixture Statistics:**
 

@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/167993",
+  "external_id": "ef96f208f9f3",
+  "title": "Тристаен апартамент в София 107 кв.м. ID 167993  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/6424771a-0bad-41b7-a852-92cb4a2eb04e.png"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:17:54.705078+00:00",
+  "reference_id": "Yavlena:ef96f208f9f3",
+  "local_image_files": [
+    "data/media/Yavlena_ef96f208f9f3/0000_73996308.png"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_ef96f208f9f3/0000_73996308.png"
+  ]
+}

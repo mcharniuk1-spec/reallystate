@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/ednostaen-apartament-v-tsentara-CID368-ID9VS53.html?search_reason=search%7Corganic",
+  "external_id": "147017937",
+  "title": "Едностаен апартамент в Центъра",
+  "description": "Агенция за недвижими имоти Ви представя едностаен апартамент в Центъра. Намира се на много комуникативно място, близо до магазини, училища, детски градини и спирки на градския транспорт. За огледи, можете да се обадите на посочения телефон.",
+  "price": 240.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vtz85w3tcgj33-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zcn7lms73nbe2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qgehhu55mu461-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/62wifjqp0o4t-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xopgf2xufp4s2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vtz85w3tcgj33-BG/image;s=1280x623"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:29:40.299038+00:00",
+  "reference_id": "OLX.bg:147017937",
+  "local_image_files": [
+    "data/media/OLX.bg_147017937/0000_bd55cd67.webp",
+    "data/media/OLX.bg_147017937/0001_3fd82a68.webp",
+    "data/media/OLX.bg_147017937/0002_d7a324ab.webp",
+    "data/media/OLX.bg_147017937/0003_399e8d53.webp",
+    "data/media/OLX.bg_147017937/0004_4e5db89d.webp",
+    "data/media/OLX.bg_147017937/0005_6749bd18.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147017937/0000_bd55cd67.webp",
+    "OLX.bg_147017937/0001_3fd82a68.webp",
+    "OLX.bg_147017937/0002_d7a324ab.webp",
+    "OLX.bg_147017937/0003_399e8d53.webp",
+    "OLX.bg_147017937/0004_4e5db89d.webp",
+    "OLX.bg_147017937/0005_6749bd18.webp"
+  ]
+}

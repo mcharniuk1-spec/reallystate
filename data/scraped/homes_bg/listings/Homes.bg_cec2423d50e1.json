@@ -1,0 +1,28 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-109m2-sofiya-centyr/as1643554",
+  "external_id": "cec2423d50e1",
+  "title": "Тристаен, 109m² -  Център, София - Апартамент за продажба - АСГАРД ПРОПЪРТИС",
+  "description": "АСГАРД ПРОПЪРТИС продава просторен 3-стаен апартамент с чиста площ 109 кв.м.,  разположен в масивна санирана сграда в стария център на София. Жилището се намира...",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2025-08-12_2/115282459o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T10:05:42.333076+00:00",
+  "reference_id": "Homes.bg:cec2423d50e1",
+  "local_image_files": [],
+  "local_image_storage_keys": []
+}

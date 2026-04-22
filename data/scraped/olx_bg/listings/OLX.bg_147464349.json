@@ -1,0 +1,44 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/1-staen-apartament-pod-naem-v-studentski-grad-napalno-obzaveden-CID368-ID9YKdf.html?search_reason=search%7Corganic",
+  "external_id": "147464349",
+  "title": "1-стаен апартамент под наем в студентски град – напълно обзаведен!",
+  "description": "Предлагаме Ви функционален и светъл едностаен апартамент, разположен в един от най-предпочитаните райони – Студентски град, в непосредствена близост до университети, спирки на градски транспорт, магазини и заведения. Разпределение: Просторна стая (хол/спалня) Отделен кухненски бокс Баня с тоалетна Тераса Състояние и обзавеждане: Напълно обзаведен Кухненски бокс с електроуреди Пералня Удобно легло и функционални мебели Много светлина и приятно разпределение Локация: В сърцето на Студентски град Близо до университети и спирки Магазини, фитнеси и заведения на пешеходно разстояние Наем: 350 евро Идеален за студент или работещ човек, търсещ удобство и комуникативна локация! За повече информация и оглед: Свържете се с нас!",
+  "price": 350.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/dvelkhya5nqk-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/jvugk9u01zi93-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/h33n6htaiykd2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/dbft21y3ogie1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/dvelkhya5nqk-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:21:36.098378+00:00",
+  "reference_id": "OLX.bg:147464349",
+  "local_image_files": [
+    "data/media/OLX.bg_147464349/0000_59e0335e.webp",
+    "data/media/OLX.bg_147464349/0001_fb9d72a2.webp",
+    "data/media/OLX.bg_147464349/0002_7c35f50b.webp",
+    "data/media/OLX.bg_147464349/0003_2c480b20.webp",
+    "data/media/OLX.bg_147464349/0004_1d1b13c9.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464349/0000_59e0335e.webp",
+    "OLX.bg_147464349/0001_fb9d72a2.webp",
+    "OLX.bg_147464349/0002_7c35f50b.webp",
+    "OLX.bg_147464349/0003_2c480b20.webp",
+    "OLX.bg_147464349/0004_1d1b13c9.webp"
+  ]
+}

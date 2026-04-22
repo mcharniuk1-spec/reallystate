@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/gela-parcel-teren-offer660015",
+  "external_id": "fcc30398f55f",
+  "title": "Парцел/Терен в Гела - код на имота: 660015",
+  "description": "Адрес недвижими имоти предлага Парцел/Терен в Гела с код на имота: 660015. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/015/660015/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:20:21.904599+00:00",
+  "reference_id": "Address.bg:fcc30398f55f",
+  "local_image_files": [
+    "data/media/Address.bg_fcc30398f55f/0000_119a8e33.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_fcc30398f55f/0000_119a8e33.jpg"
+  ]
+}

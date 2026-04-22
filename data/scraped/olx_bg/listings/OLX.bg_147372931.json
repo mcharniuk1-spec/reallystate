@@ -1,0 +1,41 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/premium-imot-v-sartseto-na-sofiya-kv-oborische-CID368-ID9YmqL.html?search_reason=search%7Cpromoted",
+  "external_id": "147372931",
+  "title": "Премиум имот в сърцето на София – кв. Оборище!",
+  "description": "ПРЕМИУМ ИМОТ В СЪРЦЕТО НА СОФИЯ – кв. Оборище! ДИРЕКТНО ОТ СОБСТВЕНИК | БЕЗ КОМИСИОННА Ако търсите не просто апартамент, а стойност, локация и усещане за градски живот на високо ниво – това е вашият имот. Предлагаме ви 73 кв.м съвършено позициониран апартамент в нова, модерна сграда на ул. „Русалка“ 1 – една от най-тихите и същевременно централни улици в кв. Оборище. Факти, които продават сами: Площ: 73 кв.м Цена на кв.м: 5100 € Обща цена: 372 300 € Локация: 1 минута от метро На крачки от паркове, зеленина и спокойствие В близост до елитни училища Магазини, мол и театри Перфектен баланс между център и тишина Сграда и качество: Ново строителство с модерна архитектура Висок клас материали и пространствена визия Имот, който ще запази и увеличава стойността си Защо този апартамент е различен: Изключително рядка комбинация: локация + ново строителство Подходящ както за личен дом, така и за премиум инвестиция Сигурност, ликвидност и престиж ДИРЕКТНО ОТ СОБСТВЕНИК | БЕЗ КОМИСИОННА Обадете се сега! Запазете своето място в най-желаната част на София. ТЕЛЕФОН ЗА ВРЪЗКА: 08******96",
+  "price": 372300.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ah0zbqwotods-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/3zslu4zeon4q-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/7jkm2fojyokm3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ah0zbqwotods-BG/image;s=1024x1024"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:21:20.689830+00:00",
+  "reference_id": "OLX.bg:147372931",
+  "local_image_files": [
+    "data/media/OLX.bg_147372931/0000_cf34bb5c.webp",
+    "data/media/OLX.bg_147372931/0001_1bf3bc92.webp",
+    "data/media/OLX.bg_147372931/0002_054aa3ea.webp",
+    "data/media/OLX.bg_147372931/0003_758f8fd4.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147372931/0000_cf34bb5c.webp",
+    "OLX.bg_147372931/0001_1bf3bc92.webp",
+    "OLX.bg_147372931/0002_054aa3ea.webp",
+    "OLX.bg_147372931/0003_758f8fd4.webp"
+  ]
+}

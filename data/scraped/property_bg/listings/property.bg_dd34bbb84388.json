@@ -1,0 +1,32 @@
+{
+  "source_name": "property.bg",
+  "listing_url": "https://www.property.bg/property-117955-three-room-apartment-with-garden-terrace-in-7-angels/",
+  "external_id": "dd34bbb84388",
+  "title": "Property.bg",
+  "description": "Three-room apartment with garden terrace in 7 Angels for sale  - High ceilings (over 2.85 m) Completely renovated building Reinforced concrete structure Brick-built Completely refurbished property  - Gas heating system  - Views to inner garden Forest views Mountain views Ski run views from №",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static4.superimoti.bg/property-images/big/1773329202T117955_6.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T13:58:13.086618+00:00",
+  "reference_id": "property.bg:dd34bbb84388",
+  "local_image_files": [
+    "data/media/property.bg_dd34bbb84388/0000_8be9146e.jpg"
+  ],
+  "local_image_storage_keys": [
+    "property.bg_dd34bbb84388/0000_8be9146e.jpg"
+  ]
+}

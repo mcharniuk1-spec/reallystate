@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/tristaen-mezonet-v-zhilischna-sgrada-CID368-ID9NTzn.html?search_reason=search%7Cpromoted",
+  "external_id": "144878709",
+  "title": "Тристаен мезонет в жилищна сграда",
+  "description": "Представяме Ви прекрасен тристаен апартамент в жилищна сграда с ниска такса поддръжка (0.5 Евро на кв. м на година). Намира се в сграда до градската част и 15 минути пешеходно от лифта и също толкова от центъра. Апартаментът е необзаведен (съдействаме с обзавеждане) и е на две нива с две бани с тоалетни. Отлично качество на строителство. Прекрасна гледка от терасата. Отлична възможност за почивка, отдаване под наем или живеене. За повече информация на телефон 08******05",
+  "price": 100000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/b6cgu3zk4r3c-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wswzvukba2531-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gdtc7sicrj6b3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/t58lfhf5rian-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/yb4k7gwky5qo-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/b6cgu3zk4r3c-BG/image;s=1000x750"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:19:17.229052+00:00",
+  "reference_id": "OLX.bg:144878709",
+  "local_image_files": [
+    "data/media/OLX.bg_144878709/0000_79dd8935.webp",
+    "data/media/OLX.bg_144878709/0001_fce5883e.webp",
+    "data/media/OLX.bg_144878709/0002_dff3c244.webp",
+    "data/media/OLX.bg_144878709/0003_88e300bf.webp",
+    "data/media/OLX.bg_144878709/0004_caf6de54.webp",
+    "data/media/OLX.bg_144878709/0005_e37b90cd.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_144878709/0000_79dd8935.webp",
+    "OLX.bg_144878709/0001_fce5883e.webp",
+    "OLX.bg_144878709/0002_dff3c244.webp",
+    "OLX.bg_144878709/0003_88e300bf.webp",
+    "OLX.bg_144878709/0004_caf6de54.webp",
+    "OLX.bg_144878709/0005_e37b90cd.webp"
+  ]
+}

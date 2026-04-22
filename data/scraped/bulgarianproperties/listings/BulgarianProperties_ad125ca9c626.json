@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Shops_in_Bulgaria/AD89913BG_Shop_for_sale_in_Yambol.html",
+  "external_id": "ad125ca9c626",
+  "title": "Bulgarian Properties",
+  "description": "Residential and administrative building on a common plot of land",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89913_4.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:37:37.798384+00:00",
+  "reference_id": "BulgarianProperties:ad125ca9c626",
+  "local_image_files": [
+    "data/media/BulgarianProperties_ad125ca9c626/0000_2a88486a.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_ad125ca9c626/0000_2a88486a.jpg"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "source_name": "imot.bg",
+  "listing_url": "https://www.imot.bg/obiava-1e177668513535988-prodava-mnogostaen-apartament-grad-sofiya-tsentar",
+  "external_id": "f503ed5f7b24",
+  "title": "Imot.bg",
+  "description": "ЕКСКЛУЗИВНО! ЦЯЛ ЕТАЖ В ИДЕАЛНИЯ ЦЕНТЪР НА СОФИЯ   БУЛ.  ПАТРИАРХ ЕВТИМИЙ  | 150 КВ.М | 3-ТИ ЕТАЖ С АСАНСЬОР | ПАНОРАМА КЪМ НДК И ВИТОША Без посредник! Предлагам за продажба изключителен имот с рядка локация и престижно позициониране в сърцето на София   на бул.  Патриарх Евтимий , с директна близост до НДК, централни градски удобства, емблематични заведения, културни и административни точки. Имотът представлява цял етаж в сграда с асансьор, разположен на 3-ти етаж, с площ от 150 кв.м, и впечатлява с простор, светлина и неповторима гледка към градинката на НДК и Витоша. Това е имот с характер, представителност и огромен потенциал   подходящ както за луксозно жилище, така и за бутиков офис, кантора, кабинет, инвестиция или комбинирано предназначение. Основни предимства: * Топ локация в идеалния център на София * Цял етаж   усещане за простор, самостоятелност и престиж * 150 кв.м функционална площ * 3-ти етаж * Асансьор * Уникална панорама към НДК и Витоша * 3 големи тавански помещения * Изключително рядко предложение за района * Имот с висока стойност и дългосрочен инвестиционен потенциал Ако търсите представителен имот в една от най-желаните и емблематични части на столицата, това предложение заслужава Вашето внимание.",
+  "price": 979000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "Център",
+  "district": "град София",
+  "address_text": "град София, Център",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/988//big1/1e177668513535988_RX.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/988//big1/1e177668513535988_Qt.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/988//big1/1e177668513535988_8h.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/988//big1/1e177668513535988_pS.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/988//big1/1e177668513535988_5D.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/988//big1/1e177668513535988_3E.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/988//big1/1e177668513535988_uL.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/988//big1/1e177668513535988_Li.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/988//big/1e177668513535988_RX.jpg"
+  ],
+  "phones": [
+    "0883386863",
+    "Вашия телефон:",
+    "Частно лице",
+    "Изпрати E-mail до продавача"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-21T07:47:26.863003+00:00",
+  "reference_id": "imot.bg:f503ed5f7b24",
+  "source_attributes": {},
+  "listing_status": "active",
+  "local_image_files": [
+    "data/media/imot.bg_f503ed5f7b24/0000_bc4ede62.jpg",
+    "data/media/imot.bg_f503ed5f7b24/0001_cf528037.jpg",
+    "data/media/imot.bg_f503ed5f7b24/0002_25320b86.jpg",
+    "data/media/imot.bg_f503ed5f7b24/0003_bf73f089.jpg",
+    "data/media/imot.bg_f503ed5f7b24/0004_834263c3.jpg",
+    "data/media/imot.bg_f503ed5f7b24/0005_f8d54cbc.jpg",
+    "data/media/imot.bg_f503ed5f7b24/0006_08c9f74e.jpg",
+    "data/media/imot.bg_f503ed5f7b24/0007_1847c464.jpg",
+    "data/media/imot.bg_f503ed5f7b24/0008_1c6f125c.jpg"
+  ],
+  "local_image_storage_keys": [
+    "imot.bg_f503ed5f7b24/0000_bc4ede62.jpg",
+    "imot.bg_f503ed5f7b24/0001_cf528037.jpg",
+    "imot.bg_f503ed5f7b24/0002_25320b86.jpg",
+    "imot.bg_f503ed5f7b24/0003_bf73f089.jpg",
+    "imot.bg_f503ed5f7b24/0004_834263c3.jpg",
+    "imot.bg_f503ed5f7b24/0005_f8d54cbc.jpg",
+    "imot.bg_f503ed5f7b24/0006_08c9f74e.jpg",
+    "imot.bg_f503ed5f7b24/0007_1847c464.jpg",
+    "imot.bg_f503ed5f7b24/0008_1c6f125c.jpg"
+  ]
+}

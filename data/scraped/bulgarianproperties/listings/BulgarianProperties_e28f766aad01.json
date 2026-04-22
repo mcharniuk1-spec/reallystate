@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD88016BG_House_for_sale_in_Znamenosets.html",
+  "external_id": "e28f766aad01",
+  "title": "Bulgarian Properties",
+  "description": "House for renovation 35 km from Stara Zagora",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88016_14.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:40:20.605715+00:00",
+  "reference_id": "BulgarianProperties:e28f766aad01",
+  "local_image_files": [
+    "data/media/BulgarianProperties_e28f766aad01/0000_034a8265.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_e28f766aad01/0000_034a8265.jpg"
+  ]
+}

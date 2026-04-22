@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD89892BG_House_for_sale_near_Stara_Zagora.html",
+  "external_id": "bd067d70b053",
+  "title": "Bulgarian Properties",
+  "description": "Authentic home with spacious garden and beautiful surroundings, close to SPA resorts ",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89892_2.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:38:46.884055+00:00",
+  "reference_id": "BulgarianProperties:bd067d70b053",
+  "local_image_files": [
+    "data/media/BulgarianProperties_bd067d70b053/0000_193f4590.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_bd067d70b053/0000_193f4590.jpg"
+  ]
+}

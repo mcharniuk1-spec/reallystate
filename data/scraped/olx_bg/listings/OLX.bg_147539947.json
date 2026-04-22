@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-v-kv-buzludzha-CID368-ID9Z3Sz.html?search_reason=search%7Corganic",
+  "external_id": "147539947",
+  "title": "Двустаен в кв. Бузлуджа",
+  "description": "Екипът на Агенция Нов Дом имаме удоволствието да Ви предложим слънчева гарсониера, в един от най-предпочитаните за живеене квартал Бузлуджа. Местоположението е комуникативно, в близост до всички необходими удобства - множество магазини, парк, училище, автобусна спирка, заведения и др. Междублоковото пространство осигурява свободни места за паркиране. Жилището се състои от всекидневна с кът за спане, трапезария с кухня, входно антре, баня с тоалетна, и панорамна тераса. Отоплението е посредством климатик, интериорът е с подменена ПВЦ дограма. Имотът е напълно обзаведен и разполага с готварска печка, пералня, хладилник и телевизор. Не пропускайте да разгледате това предложение за нов дом под наем.",
+  "price": 270.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/50qdfzhq1z1e3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/o5xyqxo78irm2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/c2qcvwg8cwr53-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ro63ypoc3x7a1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/yh9wthghop7g3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/50qdfzhq1z1e3-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:27:49.643802+00:00",
+  "reference_id": "OLX.bg:147539947",
+  "local_image_files": [
+    "data/media/OLX.bg_147539947/0000_c4f39046.webp",
+    "data/media/OLX.bg_147539947/0001_0b444eb8.webp",
+    "data/media/OLX.bg_147539947/0002_b0ee3a01.webp",
+    "data/media/OLX.bg_147539947/0003_9874ad4a.webp",
+    "data/media/OLX.bg_147539947/0004_11dee098.webp",
+    "data/media/OLX.bg_147539947/0005_9a4e5422.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539947/0000_c4f39046.webp",
+    "OLX.bg_147539947/0001_0b444eb8.webp",
+    "OLX.bg_147539947/0002_b0ee3a01.webp",
+    "OLX.bg_147539947/0003_9874ad4a.webp",
+    "OLX.bg_147539947/0004_11dee098.webp",
+    "OLX.bg_147539947/0005_9a4e5422.webp"
+  ]
+}

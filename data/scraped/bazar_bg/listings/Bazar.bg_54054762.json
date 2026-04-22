@@ -1,0 +1,47 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-54054762/prodawa-2-staen-gr-sofiia-studentski-grad",
+  "external_id": "54054762",
+  "title": "Bazar.BG",
+  "description": "Агенция за  недвижими имоти Имоушън пропърти Ви предлага двустаен апартамент в кв. Студентски град. Разпределение: антре, хол с кухненски бокс, спалня, баня с т",
+  "price": 150000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/680/big1/1b177504819469680_pj.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/680/big1/1b177504819469680_rR.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/680/big1/1b177504819469680_46.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/680/big1/1b177504819469680_1e.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/680/big1/1b177504819469680_RE.jpg",
+    "//imotstatic3.focus.bg/imot/photosimotbg/1/680/big1/1b177504819469680_pj.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:49:35.171248+00:00",
+  "reference_id": "Bazar.bg:54054762",
+  "local_image_files": [
+    "data/media/Bazar.bg_54054762/0000_82b06ab8.jpg",
+    "data/media/Bazar.bg_54054762/0001_b9f21032.jpg",
+    "data/media/Bazar.bg_54054762/0002_ac5f2fa9.jpg",
+    "data/media/Bazar.bg_54054762/0003_98e7c293.jpg",
+    "data/media/Bazar.bg_54054762/0004_2c5e78d3.jpg",
+    "data/media/Bazar.bg_54054762/0005_82b06ab8.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_54054762/0000_82b06ab8.jpg",
+    "Bazar.bg_54054762/0001_b9f21032.jpg",
+    "Bazar.bg_54054762/0002_ac5f2fa9.jpg",
+    "Bazar.bg_54054762/0003_98e7c293.jpg",
+    "Bazar.bg_54054762/0004_2c5e78d3.jpg",
+    "Bazar.bg_54054762/0005_82b06ab8.jpg"
+  ]
+}

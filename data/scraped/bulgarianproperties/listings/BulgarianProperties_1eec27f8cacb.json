@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD89978BG_1-bedroom_apartment_for_sale_near_Sofia.html",
+  "external_id": "1eec27f8cacb",
+  "title": "Bulgarian Properties",
+  "description": "Stylish apartment in a green residential complex in Kostinbrod",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89978_13.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:35:32.688015+00:00",
+  "reference_id": "BulgarianProperties:1eec27f8cacb",
+  "local_image_files": [
+    "data/media/BulgarianProperties_1eec27f8cacb/0000_3e983f94.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_1eec27f8cacb/0000_3e983f94.jpg"
+  ]
+}

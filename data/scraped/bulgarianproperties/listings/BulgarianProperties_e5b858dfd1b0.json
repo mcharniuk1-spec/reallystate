@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/AD89971BG_2-bedroom_apartment_for_sale_in_Stara_Zagora.html",
+  "external_id": "e5b858dfd1b0",
+  "title": "Bulgarian Properties",
+  "description": "Bright and functional home with two bedrooms in a quiet area near a park and urban amenities\n",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89971_7.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:35:28.781139+00:00",
+  "reference_id": "BulgarianProperties:e5b858dfd1b0",
+  "local_image_files": [
+    "data/media/BulgarianProperties_e5b858dfd1b0/0000_3c527411.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_e5b858dfd1b0/0000_3c527411.jpg"
+  ]
+}

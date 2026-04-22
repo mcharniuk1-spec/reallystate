@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168387",
+  "external_id": "82194327615b",
+  "title": "Парцел в Бургас 640 кв.м. ID 168387  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://userimages.yavlena.com/0aa2f6e7-1038-45bc-8af7-9674ab528c9a.JPG"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:13:18.532524+00:00",
+  "reference_id": "Yavlena:82194327615b",
+  "local_image_files": [
+    "data/media/Yavlena_82194327615b/0000_9f13e581.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_82194327615b/0000_9f13e581.jpg"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53769704/prodawa-2-staen-gr-sofiia-oborishte",
+  "external_id": "53769704",
+  "title": "Bazar.BG",
+  "description": "Предлагаме за продажба двустаен апартамент с обща площ 68,21 кв.м (чиста жилищна площ 57,03 кв.м) в модерна сграда с Акт 16 от 2012 г.Апартаментът е разположен",
+  "price": 265888.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/527/big1/1b177306582828527_9M.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/527/big1/1b177306582828527_BZ.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/527/big1/1b177306582828527_qz.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/527/big1/1b177306582828527_Dz.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/527/big1/1b177306582828527_Vz.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/527/big1/1b177306582828527_pJ.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/527/big1/1b177306582828527_mn.jpg",
+    "//imotstatic4.focus.bg/imot/photosimotbg/1/527/big1/1b177306582828527_9M.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:45:02.500475+00:00",
+  "reference_id": "Bazar.bg:53769704",
+  "local_image_files": [
+    "data/media/Bazar.bg_53769704/0000_4e3d6130.jpg",
+    "data/media/Bazar.bg_53769704/0001_cff3dbef.jpg",
+    "data/media/Bazar.bg_53769704/0002_a579adee.jpg",
+    "data/media/Bazar.bg_53769704/0003_b211efe2.jpg",
+    "data/media/Bazar.bg_53769704/0004_67c64580.jpg",
+    "data/media/Bazar.bg_53769704/0005_6c8a3056.jpg",
+    "data/media/Bazar.bg_53769704/0006_8e160ea0.jpg",
+    "data/media/Bazar.bg_53769704/0007_4e3d6130.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53769704/0000_4e3d6130.jpg",
+    "Bazar.bg_53769704/0001_cff3dbef.jpg",
+    "Bazar.bg_53769704/0002_a579adee.jpg",
+    "Bazar.bg_53769704/0003_b211efe2.jpg",
+    "Bazar.bg_53769704/0004_67c64580.jpg",
+    "Bazar.bg_53769704/0005_6c8a3056.jpg",
+    "Bazar.bg_53769704/0006_8e160ea0.jpg",
+    "Bazar.bg_53769704/0007_4e3d6130.jpg"
+  ]
+}

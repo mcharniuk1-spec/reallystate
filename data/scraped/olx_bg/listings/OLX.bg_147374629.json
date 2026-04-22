@@ -1,0 +1,35 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/pomeschenie-sas-statut-za-barzo-hranene-CID368-ID9YmS9.html?search_reason=search%7Corganic",
+  "external_id": "147374629",
+  "title": "Помещение със статут за Бързо Хранене",
+  "description": "Експрес Имоти предлага за продажба заведение със статут и изградена аспирация. Намира се на оживено място. Може да се закупи с цел отдаване под наем или за търговска дейност. За повече въпроси сме на разположение. Оферта номер 17784",
+  "price": 65000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/axtkjryvr3f01-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/axtkjryvr3f01-BG/image;s=800x600"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:24:23.660742+00:00",
+  "reference_id": "OLX.bg:147374629",
+  "local_image_files": [
+    "data/media/OLX.bg_147374629/0000_a337e167.webp",
+    "data/media/OLX.bg_147374629/0001_a337e167.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147374629/0000_a337e167.webp",
+    "OLX.bg_147374629/0001_a337e167.webp"
+  ]
+}

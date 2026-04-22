@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168081",
+  "external_id": "938f70267d22",
+  "title": "Тристаен апартамент в София 145 кв.м. ID 168081  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/b2b6223f-b673-4683-be92-f1b2f811ac9b.png"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:16:53.094731+00:00",
+  "reference_id": "Yavlena:938f70267d22",
+  "local_image_files": [
+    "data/media/Yavlena_938f70267d22/0000_b8304099.png"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_938f70267d22/0000_b8304099.png"
+  ]
+}

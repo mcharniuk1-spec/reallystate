@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168110",
+  "external_id": "f6a1df6bbecb",
+  "title": "Тристаен апартамент в София 91 кв.м. ID 168110  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/70a2451d-5d07-4ef4-9e0f-70f49205df39.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:16:19.999754+00:00",
+  "reference_id": "Yavlena:f6a1df6bbecb",
+  "local_image_files": [
+    "data/media/Yavlena_f6a1df6bbecb/0000_1d843d82.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_f6a1df6bbecb/0000_1d843d82.jpg"
+  ]
+}

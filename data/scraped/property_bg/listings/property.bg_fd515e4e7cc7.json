@@ -1,0 +1,32 @@
+{
+  "source_name": "property.bg",
+  "listing_url": "https://www.property.bg/property-128088-two-bedroom-apartment-with-frontal-views-of-pancharevo-lake/",
+  "external_id": "fd515e4e7cc7",
+  "title": "Property.bg",
+  "description": "Two-bedroom apartment with frontal views of Pancharevo Lake  for sale  - Heat pump  - Lake views Hills views from №",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static4.superimoti.bg/property-images/big/1749714965T128088_6.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T13:57:54.571572+00:00",
+  "reference_id": "property.bg:fd515e4e7cc7",
+  "local_image_files": [
+    "data/media/property.bg_fd515e4e7cc7/0000_e09aef9e.jpg"
+  ],
+  "local_image_storage_keys": [
+    "property.bg_fd515e4e7cc7/0000_e09aef9e.jpg"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/podzemen-ofis-za-sporten-klub-zala-za-tantsi-laboratoriya-CID368-ID9YmMt.html?search_reason=search%7Corganic",
+  "external_id": "147374277",
+  "title": "Подземен офис за спортен клуб, зала за танци, лаборатория",
+  "description": "Експрес Имоти предлага за продажба подземен офис, в нова сграда, в хотелски комплекс с басейн и медицински център. Офисът е цяло помещение, не е разделено на отделни стаи. Може да се ползва за козметични процедури, за лаборатория или байк фитнес и други спортни дейности. Сградата е завършена , има А16 от 2007 ма година. Към момента не е обзаведено. СНИМИКИТЕ СА ИЛЮСТРАТИВНИ. Оферта 17783",
+  "price": 76000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "office",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vxa8e7f5i54j1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/iopqqz8s2xdz1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/jpmhpm8lswvw2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vxa8e7f5i54j1-BG/image;s=800x600"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:27:56.191542+00:00",
+  "reference_id": "OLX.bg:147374277",
+  "local_image_files": [
+    "data/media/OLX.bg_147374277/0000_b7d53a79.webp",
+    "data/media/OLX.bg_147374277/0001_d917dbf2.webp",
+    "data/media/OLX.bg_147374277/0002_623864be.webp",
+    "data/media/OLX.bg_147374277/0003_b7d53a79.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147374277/0000_b7d53a79.webp",
+    "OLX.bg_147374277/0001_d917dbf2.webp",
+    "OLX.bg_147374277/0002_623864be.webp",
+    "OLX.bg_147374277/0003_b7d53a79.webp"
+  ]
+}

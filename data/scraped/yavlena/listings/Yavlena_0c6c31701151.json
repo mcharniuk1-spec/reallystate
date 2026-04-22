@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/161080",
+  "external_id": "0c6c31701151",
+  "title": "Къща в Българи 100 кв.м. ID 161080  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://userimages.yavlena.com/d172f0ab-16fa-41fe-b232-0be750a13a88.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:55:09.797780+00:00",
+  "reference_id": "Yavlena:0c6c31701151",
+  "local_image_files": [
+    "data/media/Yavlena_0c6c31701151/0000_3e591d24.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_0c6c31701151/0000_3e591d24.jpg"
+  ]
+}

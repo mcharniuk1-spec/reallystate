@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168101",
+  "external_id": "b70457a24170",
+  "title": "Други бизнес имоти във Варна 94 кв.м. ID 168101  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://userimages.yavlena.com/75b34e5b-87a8-4f1b-bdcb-052d83da4857.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:16:33.538795+00:00",
+  "reference_id": "Yavlena:b70457a24170",
+  "local_image_files": [
+    "data/media/Yavlena_b70457a24170/0000_c15455cb.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_b70457a24170/0000_c15455cb.jpg"
+  ]
+}

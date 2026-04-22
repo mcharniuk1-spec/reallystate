@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-vitosha-tristaen-apartament-offer677305",
+  "external_id": "244e4eceb2bd",
+  "title": "Тристаен апартамент в София, Витоша - код на имота: 677305",
+  "description": "Адрес недвижими имоти предлага Тристаен апартамент в София, Витоша с код на имота: 677305. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/305/677305/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:21:27.373620+00:00",
+  "reference_id": "Address.bg:244e4eceb2bd",
+  "local_image_files": [
+    "data/media/Address.bg_244e4eceb2bd/0000_91bca31a.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_244e4eceb2bd/0000_91bca31a.jpg"
+  ]
+}

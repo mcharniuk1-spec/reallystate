@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Regulated_plots_in_Bulgaria/AD89883BG_Regulated_plot_for_sale_near_Stara_Zagora.html",
+  "external_id": "d728b5fcea05",
+  "title": "Bulgarian Properties",
+  "description": "Residential plot 34 km from Stara Zagora",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89883_5.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:39:34.256729+00:00",
+  "reference_id": "BulgarianProperties:d728b5fcea05",
+  "local_image_files": [
+    "data/media/BulgarianProperties_d728b5fcea05/0000_75759914.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_d728b5fcea05/0000_75759914.jpg"
+  ]
+}

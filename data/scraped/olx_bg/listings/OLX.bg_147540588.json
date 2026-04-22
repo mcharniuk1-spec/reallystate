@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/chetiristaen-apartament-v-k-s-sveti-georgi-palas-gr-sveti-vlas-CID368-ID9Z42U.html?search_reason=search%7Corganic",
+  "external_id": "147540588",
+  "title": "Четиристаен апартамент в к-с „Свети Георги Палас“, гр. Свети Влас",
+  "description": "Предлагаме просторен обзаведен четиристаен апартамент в к-с „Свети Георги Палас“(Saint George Palace), гр. Свети Влас. Жилището е с площ 121 кв.м и се намира на партерен етаж. Апартаментът се състои от: антре, всекидневна с кухня, две спални, просторен хол с кухненски бокс, две бани с тоалетна и душ, веранда с излаз към озеленените площи. Жилището е напълно обзаведено и готово за нанасяне или за отдаване като инвестиционен имот. Комплекс „Свети Георги Палас“(Saint George Palace) разполага с: денонощна охрана, видеонаблюдение, ограничен достъп, техническа поддръжка, поддръжка на общите части, озеленени площи, паркинг, басейн с шезлонги около него, детска площадка, тенис на маса, ресторант, pool–бар и др. Сградата има Акт. 16 Сградата се поддържа. Комплексът се намира на 300 м от плажа и е в централната част на гр. Свети Влас. Около комплекса има добре изградена инфраструктура. Наблизо има:, магазини, аптека, спирка на автобуса, ресторанти, бързи хранения, плаж и други развлечения. Разполагаме с много и разнообразни имоти по цялото Черноморие. За повече информация, свържете се с нас!",
+  "price": 126000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/7ujjskamkimw2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fps95c9u9rhs3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/yg5fgytcnovl1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/r8u5gowboxei3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/eoo93yx4twpr-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/7ujjskamkimw2-BG/image;s=1458x963"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:26:23.091425+00:00",
+  "reference_id": "OLX.bg:147540588",
+  "local_image_files": [
+    "data/media/OLX.bg_147540588/0000_e697c5f7.webp",
+    "data/media/OLX.bg_147540588/0001_07230a1b.webp",
+    "data/media/OLX.bg_147540588/0002_e26e9f6e.webp",
+    "data/media/OLX.bg_147540588/0003_06259f6a.webp",
+    "data/media/OLX.bg_147540588/0004_88fb1612.webp",
+    "data/media/OLX.bg_147540588/0005_328c9067.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540588/0000_e697c5f7.webp",
+    "OLX.bg_147540588/0001_07230a1b.webp",
+    "OLX.bg_147540588/0002_e26e9f6e.webp",
+    "OLX.bg_147540588/0003_06259f6a.webp",
+    "OLX.bg_147540588/0004_88fb1612.webp",
+    "OLX.bg_147540588/0005_328c9067.webp"
+  ]
+}

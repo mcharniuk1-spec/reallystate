@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/studio-v-zhilischen-kompleks-v-tsentara-na-slanchev-bryag-4639-CID368-ID9YKgh.html?search_reason=search%7Corganic",
+  "external_id": "147464537",
+  "title": "Студио в жилищен комплекс в центъра на Слънчев бряг. #4639",
+  "description": "Предлагаме за продажба студио в жилищен комплекс, разположен в централната част на Слънчев бряг, на 700 метра от морето. Студиото е обзаведено и оборудвано. На пешеходно разстояние се намират супермаркет, магазини, аптека, кафенета, ресторанти, снек-бар, пазари за плодове и зеленчуци, както и спирка на градски транспорт. Инфраструктурата и удобствата в комплекса включват: басейн; охрана; паркинг и детска площадка. Сградата е подходяща за сезонно и целогодишно ползване. Акт 16. #4639 Предлагаем к продаже студию в жилом комплексе, который находится в центральной части курорта Солнечный берег, в 700 м от моря. Студия меблирована и оснащена В пешей доступности супермаркет, магазины, аптека, кафетерии, рестораны, закусочная, овощные и фруктовые рынки и остановка общественного транспорта. Инфраструктура и удобства в комплекса: Бассейн; Охрана; Парковка, детская площадка. Здание предназначено для сезонного и круглогодичного использования. Акт 16. #4639",
+  "price": 66000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/915k4lx58te4-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xk8q0rc4up0k-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/chn4t3ezh1k33-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/llhhl2zso97s-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/7kujdqqkx3ek1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/915k4lx58te4-BG/image;s=1400x1050"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:29:21.482359+00:00",
+  "reference_id": "OLX.bg:147464537",
+  "local_image_files": [
+    "data/media/OLX.bg_147464537/0000_eec806fb.webp",
+    "data/media/OLX.bg_147464537/0001_3d5e4d5f.webp",
+    "data/media/OLX.bg_147464537/0002_d67bf721.webp",
+    "data/media/OLX.bg_147464537/0003_6d409b16.webp",
+    "data/media/OLX.bg_147464537/0004_0ee7c527.webp",
+    "data/media/OLX.bg_147464537/0005_8c23ac67.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464537/0000_eec806fb.webp",
+    "OLX.bg_147464537/0001_3d5e4d5f.webp",
+    "OLX.bg_147464537/0002_d67bf721.webp",
+    "OLX.bg_147464537/0003_6d409b16.webp",
+    "OLX.bg_147464537/0004_0ee7c527.webp",
+    "OLX.bg_147464537/0005_8c23ac67.webp"
+  ]
+}

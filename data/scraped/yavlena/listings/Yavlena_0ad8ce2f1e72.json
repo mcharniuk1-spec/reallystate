@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168248",
+  "external_id": "0ad8ce2f1e72",
+  "title": "Двустаен апартамент в София 92 кв.м. ID 168248  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/b7937a4b-d133-4817-a6d0-a29eed765ac3.png"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:14:39.612994+00:00",
+  "reference_id": "Yavlena:0ad8ce2f1e72",
+  "local_image_files": [
+    "data/media/Yavlena_0ad8ce2f1e72/0000_e44503d4.png"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_0ad8ce2f1e72/0000_e44503d4.png"
+  ]
+}

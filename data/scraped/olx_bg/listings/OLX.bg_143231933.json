@@ -1,0 +1,35 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/nova-namalena-tsena-etazh-ot-administrativna-sgrada-v-tsentara-na-kameno-CID368-ID9GZat.html?search_reason=search%7Cpromoted",
+  "external_id": "143231933",
+  "title": "НОВА НАМАЛЕНА ЦЕНА! Етаж от административна сграда в центъра на Камено",
+  "description": "ПРОМОЦИОНАЛНА ЦЕНА! Eтаж от масивна административна сграда в центъра на град Камено, с РЗП 250 кв.м. Разположението е като следва: коридор, кабинет, помещение за секретар, офис с южно изложение, канцелария (запад), още две канцеларии (север), плюс две тавански помещения, предназначени за канцеларии. Имотът е разположен на третия етаж, и е с перспектива за развитие на бизнес - подходящ за отдаване под наем като офиси, учебни школи, кабинети и др.",
+  "price": 28500.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "office",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6jos3vv9w2g12-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6jos3vv9w2g12-BG/image;s=1049x701"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:23:27.862604+00:00",
+  "reference_id": "OLX.bg:143231933",
+  "local_image_files": [
+    "data/media/OLX.bg_143231933/0000_de408b7d.webp",
+    "data/media/OLX.bg_143231933/0001_b780621f.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_143231933/0000_de408b7d.webp",
+    "OLX.bg_143231933/0001_b780621f.webp"
+  ]
+}

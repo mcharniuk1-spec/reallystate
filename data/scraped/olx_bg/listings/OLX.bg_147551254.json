@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-ap-pod-naem-v-kv-lyulin-5-CID368-ID9Z6OV.html?search_reason=search%7Corganic",
+  "external_id": "147551254",
+  "title": "Двустаен ап. под наем в кв. Люлин 5",
+  "description": "двустаен апартамент под наем в ж.к. Люлин 5, на удобна локация с бърз достъп до транспорт, училища и ежедневни удобства. Жилището е с площ 50 кв.м, разположено на 7-ми етаж от 8 в панелен блок. Изложението е юг/изток. Разпределение: хол спалня отделна кухня баня с тоалетна тераса Апартаментът е необзаведен, което дава възможност да бъде обзаведен по ваш вкус. Отоплява се на ТЕЦ, осигурявайки комфорт през зимните месеци. В близост: 96 СУ Лев Николаевич Толстой , ДГ 55 Иглика , аптеки, банки и спирки на градски транспорт. За оглед се свържете с нас и цитирайте реф. номер: 2205886.",
+  "price": 300.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8847ux1e6no5-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/r2qrjulj4t2i-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0z74bip38q7p-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/105jdedmgy27-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/miu6lt0xr2sq3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8847ux1e6no5-BG/image;s=800x600"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:18:51.615303+00:00",
+  "reference_id": "OLX.bg:147551254",
+  "local_image_files": [
+    "data/media/OLX.bg_147551254/0000_9dfd850b.webp",
+    "data/media/OLX.bg_147551254/0001_708b71ff.webp",
+    "data/media/OLX.bg_147551254/0002_fc2c1682.webp",
+    "data/media/OLX.bg_147551254/0003_7553e5a4.webp",
+    "data/media/OLX.bg_147551254/0004_e49a3bae.webp",
+    "data/media/OLX.bg_147551254/0005_9dfd850b.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147551254/0000_9dfd850b.webp",
+    "OLX.bg_147551254/0001_708b71ff.webp",
+    "OLX.bg_147551254/0002_fc2c1682.webp",
+    "OLX.bg_147551254/0003_7553e5a4.webp",
+    "OLX.bg_147551254/0004_e49a3bae.webp",
+    "OLX.bg_147551254/0005_9dfd850b.webp"
+  ]
+}

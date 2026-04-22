@@ -1,0 +1,55 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-bistrica-parcel-teren-offer626861",
+  "external_id": "45556d0cad2d",
+  "title": "Парцел/Терен в София, Бистрица - код на имота: 626861",
+  "description": "Адрес недвижими имоти предлага Парцел/Терен в София, Бистрица с код на имота: 626861. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 425000.0,
+  "currency": "EUR",
+  "area_sqm": 1000.0,
+  "rooms": null,
+  "floor": null,
+  "city": "София",
+  "district": "Бистрица",
+  "address_text": "София, Бистрица",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/861/626861/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-02-23",
+    "359675416199998",
+    "024-07-30",
+    "018-05-09",
+    "018-07-06",
+    "0888 81 89 21",
+    "0887760440",
+    "024-07-31",
+    "024-09-02",
+    "0203621373704252020362137376",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-21T15:06:34.222974+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Парцел/Терен Бистрица"
+  },
+  "reference_id": "Address.bg:45556d0cad2d",
+  "local_image_files": [
+    "data/media/Address.bg_45556d0cad2d/0000_6ae4210c.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_45556d0cad2d/0000_6ae4210c.jpg"
+  ]
+}

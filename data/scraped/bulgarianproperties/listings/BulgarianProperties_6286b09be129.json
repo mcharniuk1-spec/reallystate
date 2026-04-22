@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD89860BG_House_for_sale_near_Varna.html",
+  "external_id": "6286b09be129",
+  "title": "Bulgarian Properties",
+  "description": "Rural property with potential for major renovation 5 km from the town of Valchi Dol",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89860_37.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:41:12.796348+00:00",
+  "reference_id": "BulgarianProperties:6286b09be129",
+  "local_image_files": [
+    "data/media/BulgarianProperties_6286b09be129/0000_415cf5f1.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_6286b09be129/0000_415cf5f1.jpg"
+  ]
+}

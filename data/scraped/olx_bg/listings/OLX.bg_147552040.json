@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/prodava-se-sreden-dvustaen-apartament-sofiya-CID368-ID9Z71C.html?search_reason=search%7Cpromoted",
+  "external_id": "147552040",
+  "title": "Продава се среден двустаен апартамент-  София",
+  "description": "БЕЗ КОМИСИОННА ОТ КУПУВАЧА! Продава се среден двустаен апартамент в гр.София кв. Слатина – отлична локация с изградена инфраструктура и бърз достъп до центъра. Разпределение: Дневна с кухненски бокс Просторна спалня Баня с тоалет Тераса Етаж: 4-ти от 6 Отопление: ТЕЦ и висок клас климатик В близост до бъдеща метростанция, детска градина, училища, магазини и удобен градски транспорт. Среден апартамент – топъл и енергийно ефективен. Напълно обзаведен и готов за нанасяне. Подходящ както за живеене, така и за инвестиция. Снимките са авторски. Използването им без разрешение ще доведе до сигнал и правни действия. За повече информаци – свържете се с нас!",
+  "price": 190000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bql3t6338wsh3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/iv3b75rfwz0y-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/tb007hac2ksv3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gc8p4mimdmzc-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/05zqt8lue1tu2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bql3t6338wsh3-BG/image;s=720x540"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:26:47.421823+00:00",
+  "reference_id": "OLX.bg:147552040",
+  "local_image_files": [
+    "data/media/OLX.bg_147552040/0000_997f5df6.webp",
+    "data/media/OLX.bg_147552040/0001_32176e25.webp",
+    "data/media/OLX.bg_147552040/0002_72800c41.webp",
+    "data/media/OLX.bg_147552040/0003_09c68ff4.webp",
+    "data/media/OLX.bg_147552040/0004_629ff84d.webp",
+    "data/media/OLX.bg_147552040/0005_997f5df6.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147552040/0000_997f5df6.webp",
+    "OLX.bg_147552040/0001_32176e25.webp",
+    "OLX.bg_147552040/0002_72800c41.webp",
+    "OLX.bg_147552040/0003_09c68ff4.webp",
+    "OLX.bg_147552040/0004_629ff84d.webp",
+    "OLX.bg_147552040/0005_997f5df6.webp"
+  ]
+}

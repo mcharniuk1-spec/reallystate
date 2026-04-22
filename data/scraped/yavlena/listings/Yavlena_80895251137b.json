@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168425",
+  "external_id": "80895251137b",
+  "title": "Едностаен апартамент в Слънчев бряг 38 кв.м. ID 168425  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/1f94b520-ac6b-41df-9907-6fdbc4baa5ed.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:12:55.592014+00:00",
+  "reference_id": "Yavlena:80895251137b",
+  "local_image_files": [
+    "data/media/Yavlena_80895251137b/0000_61c385fe.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_80895251137b/0000_61c385fe.jpg"
+  ]
+}

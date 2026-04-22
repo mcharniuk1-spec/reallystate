@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/top-oferta-2-staen-v-ovcha-kupel-prostoren-svetal-obzaveden-CID368-ID9YKnb.html?search_reason=search%7Corganic",
+  "external_id": "147464965",
+  "title": "ТОП ОФЕРТА! 2-стаен в Овча Купел – просторен, светъл, обзаведен!",
+  "description": "Предлагаме Ви уютен и функционален двустаен апартамент, разположен в предпочитан район – кв. Овча купел, с отлична локация и бърз достъп до градски транспорт, магазини и зелени площи. Разпределение: Просторен хол Самостоятелна спалня Отделна кухня Баня с тоалетна Тераса Състояние и обзавеждане: Напълно обзаведен Светли и просторни помещения Функционална кухня с електроуреди Удобна спалня + гардероб Готов за нанасяне веднага Локация: Спокоен и комуникативен район В близост до метростанция Магазини, училища и паркове Лесен достъп до центъра Идеален както за живеене, така и за инвестиция! За повече информация и оглед: Свържете се с нас! Брокер за връзка: 08******09 Евгени Георгиев",
+  "price": 450.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/dqfqmqvb159r3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/40ekp9qcfeay-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6jznyis794qu-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kbj2scfexezq1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/26q2jskxj8753-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/dqfqmqvb159r3-BG/image;s=1440x1080"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:24:33.904470+00:00",
+  "reference_id": "OLX.bg:147464965",
+  "local_image_files": [
+    "data/media/OLX.bg_147464965/0000_b007e603.webp",
+    "data/media/OLX.bg_147464965/0001_745e7b6d.webp",
+    "data/media/OLX.bg_147464965/0002_ae3811cf.webp",
+    "data/media/OLX.bg_147464965/0003_8c82e49a.webp",
+    "data/media/OLX.bg_147464965/0004_5bbc1a25.webp",
+    "data/media/OLX.bg_147464965/0005_d28ef979.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464965/0000_b007e603.webp",
+    "OLX.bg_147464965/0001_745e7b6d.webp",
+    "OLX.bg_147464965/0002_ae3811cf.webp",
+    "OLX.bg_147464965/0003_8c82e49a.webp",
+    "OLX.bg_147464965/0004_5bbc1a25.webp",
+    "OLX.bg_147464965/0005_d28ef979.webp"
+  ]
+}

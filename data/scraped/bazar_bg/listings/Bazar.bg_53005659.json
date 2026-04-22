@@ -1,0 +1,50 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53005659/prodawa-3-staen-gr-sofiia-hipodruma",
+  "external_id": "53005659",
+  "title": "Bazar.BG",
+  "description": "Жилището има следното функционално разпределение: светла дневна, две преходни спални в които се влиза през хола, тип  немски преход  просторна кухня, баня, отде",
+  "price": 310000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/779/big1/1c176769873419779_2h.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/779/big1/1c176769873419779_Py.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/779/big1/1c176769873419779_Qu.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/779/big1/1c176769873419779_8n.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/779/big1/1c176769873419779_3V.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/779/big1/1c176769873419779_fM.jpg",
+    "//imotstatic3.focus.bg/imot/photosimotbg/1/779/big1/1c176769873419779_2h.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:51:59.255402+00:00",
+  "reference_id": "Bazar.bg:53005659",
+  "local_image_files": [
+    "data/media/Bazar.bg_53005659/0000_5a721e04.jpg",
+    "data/media/Bazar.bg_53005659/0001_c0e1bc7a.jpg",
+    "data/media/Bazar.bg_53005659/0002_eb2f9f48.jpg",
+    "data/media/Bazar.bg_53005659/0003_69695eed.jpg",
+    "data/media/Bazar.bg_53005659/0004_cc17dcd5.jpg",
+    "data/media/Bazar.bg_53005659/0005_bbfe8145.jpg",
+    "data/media/Bazar.bg_53005659/0006_5a721e04.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53005659/0000_5a721e04.jpg",
+    "Bazar.bg_53005659/0001_c0e1bc7a.jpg",
+    "Bazar.bg_53005659/0002_eb2f9f48.jpg",
+    "Bazar.bg_53005659/0003_69695eed.jpg",
+    "Bazar.bg_53005659/0004_cc17dcd5.jpg",
+    "Bazar.bg_53005659/0005_bbfe8145.jpg",
+    "Bazar.bg_53005659/0006_5a721e04.jpg"
+  ]
+}

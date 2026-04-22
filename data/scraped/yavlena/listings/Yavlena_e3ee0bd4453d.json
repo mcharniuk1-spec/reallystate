@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168169",
+  "external_id": "e3ee0bd4453d",
+  "title": "Тристаен апартамент в Слънчев бряг 66 кв.м. ID 168169  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/1f94b520-ac6b-41df-9907-6fdbc4baa5ed.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:15:42.178792+00:00",
+  "reference_id": "Yavlena:e3ee0bd4453d",
+  "local_image_files": [
+    "data/media/Yavlena_e3ee0bd4453d/0000_61c385fe.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_e3ee0bd4453d/0000_61c385fe.jpg"
+  ]
+}

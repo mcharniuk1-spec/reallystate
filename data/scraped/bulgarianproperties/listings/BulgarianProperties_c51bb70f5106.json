@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD89958BG_Houses_for_sale_in_Burgas.html",
+  "external_id": "c51bb70f5106",
+  "title": "Bulgarian Properties",
+  "description": "Luxury gated development near Burgas Bay in the area of Burgas",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89958_1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:36:23.765385+00:00",
+  "reference_id": "BulgarianProperties:c51bb70f5106",
+  "local_image_files": [
+    "data/media/BulgarianProperties_c51bb70f5106/0000_c2b46c5c.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_c51bb70f5106/0000_c2b46c5c.jpg"
+  ]
+}

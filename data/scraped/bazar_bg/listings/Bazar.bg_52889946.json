@@ -1,0 +1,50 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-52889946/prodawa-2-staen-gr-sofiia-banishora",
+  "external_id": "52889946",
+  "title": "Bazar.BG",
+  "description": "L' Artista предлага светъл и просторен апартамент с френски прозорци, които изпълват жилището с естествена светлина и разкриват прекрасна панорамна гледка. Имот",
+  "price": 139990.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/993/big1/1b176656506137993_ra.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/993/big/1b176656506137993_eS.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/993/big1/1b176656506137993_bH.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/993/big1/1b176656506137993_XW.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/993/big1/1b176656506137993_2K.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/993/big1/1b176656506137993_4w.jpg",
+    "//imotstatic4.focus.bg/imot/photosimotbg/1/993/big1/1b176656506137993_ra.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:44:21.222670+00:00",
+  "reference_id": "Bazar.bg:52889946",
+  "local_image_files": [
+    "data/media/Bazar.bg_52889946/0000_aef6408a.jpg",
+    "data/media/Bazar.bg_52889946/0001_b6c6d108.jpg",
+    "data/media/Bazar.bg_52889946/0002_fd37dc21.jpg",
+    "data/media/Bazar.bg_52889946/0003_2b0c219b.jpg",
+    "data/media/Bazar.bg_52889946/0004_43ccd3a3.jpg",
+    "data/media/Bazar.bg_52889946/0005_10b667a8.jpg",
+    "data/media/Bazar.bg_52889946/0006_aef6408a.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_52889946/0000_aef6408a.jpg",
+    "Bazar.bg_52889946/0001_b6c6d108.jpg",
+    "Bazar.bg_52889946/0002_fd37dc21.jpg",
+    "Bazar.bg_52889946/0003_2b0c219b.jpg",
+    "Bazar.bg_52889946/0004_43ccd3a3.jpg",
+    "Bazar.bg_52889946/0005_10b667a8.jpg",
+    "Bazar.bg_52889946/0006_aef6408a.jpg"
+  ]
+}

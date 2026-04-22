@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/ednostaen-ap-pod-naem-v-kv-studentski-grad-CID368-ID9Z464.html?search_reason=search%7Corganic",
+  "external_id": "147540784",
+  "title": "Едностаен ап. под наем в кв. Студентски град",
+  "description": "едностаен апартамент под наем в ж.к. Студентски град, с отлична локация в близост до университети и удобства. Жилището е с площ 65 кв.м, ситуирано на 1-ви етаж от 5 в нова сграда. Изложението е източно. Разпределение: еднопространствено помещение баня с тоалетна остъклена тераса Апартаментът е обзаведен и готов за нанасяне, с всички необходими мебели и уреди. Отоплява се на ток, разполага с климатик. Локация: на пешеходно разстояние от УНСС, магазини като Lidl и Billa, парк и спирки на градски транспорт (94, 280, 413), осигуряващи бърз достъп до града. За оглед се свържете с нас и цитирайте реф. номер: 2212774.",
+  "price": 500.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8sqnxh5e7kb81-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pp887tl98t8p2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/tao7ji6765j23-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0c55o3bsw02m2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0lhqzzs0yofn3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8sqnxh5e7kb81-BG/image;s=1920x1440"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:22:53.307743+00:00",
+  "reference_id": "OLX.bg:147540784",
+  "local_image_files": [
+    "data/media/OLX.bg_147540784/0000_e180f3ad.webp",
+    "data/media/OLX.bg_147540784/0001_05695123.webp",
+    "data/media/OLX.bg_147540784/0002_05695123.webp",
+    "data/media/OLX.bg_147540784/0003_605daae8.webp",
+    "data/media/OLX.bg_147540784/0004_9a7b664d.webp",
+    "data/media/OLX.bg_147540784/0005_ce25e0de.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540784/0000_e180f3ad.webp",
+    "OLX.bg_147540784/0001_05695123.webp",
+    "OLX.bg_147540784/0002_05695123.webp",
+    "OLX.bg_147540784/0003_605daae8.webp",
+    "OLX.bg_147540784/0004_9a7b664d.webp",
+    "OLX.bg_147540784/0005_ce25e0de.webp"
+  ]
+}

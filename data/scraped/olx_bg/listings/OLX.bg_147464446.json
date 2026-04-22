@@ -1,0 +1,44 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/prodava-garazh-zheleznik-iztok-CID368-ID9YKeO.html?search_reason=search%7Corganic",
+  "external_id": "147464446",
+  "title": "продава гараж Железник- изток",
+  "description": "Продава се гараж в кв. Железник-Изток Продавам подземен гараж, разположен в кв. Железник-Изток. Обща площ: 20 кв.м. Чиста площ: 17 кв.м. Наличие на ток и вода Подходящ за паркиране или складово помещение Гаражът е удобен за достъп и се намира в добре устроен район. За повече информация и огледи – свържете се с мен.",
+  "price": 17500.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8cqkpe1pr2rt-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/eo9xbsztcuyc2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/q6m0xenskdos-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/j6tk7q06b53n3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8cqkpe1pr2rt-BG/image;s=1600x738"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:26:35.291587+00:00",
+  "reference_id": "OLX.bg:147464446",
+  "local_image_files": [
+    "data/media/OLX.bg_147464446/0000_14dc15bb.webp",
+    "data/media/OLX.bg_147464446/0001_46a88636.webp",
+    "data/media/OLX.bg_147464446/0002_a86363dd.webp",
+    "data/media/OLX.bg_147464446/0003_e244d3ed.webp",
+    "data/media/OLX.bg_147464446/0004_b1ef2b2e.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464446/0000_14dc15bb.webp",
+    "OLX.bg_147464446/0001_46a88636.webp",
+    "OLX.bg_147464446/0002_a86363dd.webp",
+    "OLX.bg_147464446/0003_e244d3ed.webp",
+    "OLX.bg_147464446/0004_b1ef2b2e.webp"
+  ]
+}

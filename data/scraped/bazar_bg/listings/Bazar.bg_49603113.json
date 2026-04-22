@@ -1,0 +1,41 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-49603113/prodawa-3-staen-gr-targowishte-zapad-2",
+  "external_id": "49603113",
+  "title": "Bazar.BG",
+  "description": "Тристаен апартамент със самостоятелен двор с площ от 76 кв.м.! Апартаменти за инвестиция! Бул.  3-ти март  54, кв. Запад 2! ОТ СТРОИТЕЛЯ! ДИРЕКТНО ОТ СТРОИТЕЛЯ!",
+  "price": 95000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/429/big1/1c174271843164429_e9.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/429/big1/1c174271843164429_vu.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/429/big1/1c174271843164429_lJ.jpg",
+    "//imotstatic2.focus.bg/imot/photosimotbg/1/429/big1/1c174271843164429_e9.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:53:28.026390+00:00",
+  "reference_id": "Bazar.bg:49603113",
+  "local_image_files": [
+    "data/media/Bazar.bg_49603113/0000_b851df3e.jpg",
+    "data/media/Bazar.bg_49603113/0001_598052a6.jpg",
+    "data/media/Bazar.bg_49603113/0002_88e68a94.jpg",
+    "data/media/Bazar.bg_49603113/0003_b851df3e.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_49603113/0000_b851df3e.jpg",
+    "Bazar.bg_49603113/0001_598052a6.jpg",
+    "Bazar.bg_49603113/0002_88e68a94.jpg",
+    "Bazar.bg_49603113/0003_b851df3e.jpg"
+  ]
+}

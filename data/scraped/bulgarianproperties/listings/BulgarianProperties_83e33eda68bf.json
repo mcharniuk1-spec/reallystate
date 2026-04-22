@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD81388BG_House_for_sale_near_Shabla.html",
+  "external_id": "83e33eda68bf",
+  "title": "Bulgarian Properties",
+  "description": "Property with unique location at the picturesque coast of Tyulenovo",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/81388_48.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:41:06.971920+00:00",
+  "reference_id": "BulgarianProperties:83e33eda68bf",
+  "local_image_files": [
+    "data/media/BulgarianProperties_83e33eda68bf/0000_96f5e652.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_83e33eda68bf/0000_96f5e652.jpg"
+  ]
+}

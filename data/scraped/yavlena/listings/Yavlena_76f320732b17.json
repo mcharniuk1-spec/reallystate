@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168111",
+  "external_id": "76f320732b17",
+  "title": "Тристаен апартамент в София 128 кв.м. ID 168111  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/f73062cd-0542-489b-92ee-125960dd42e5.png"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:16:18.340927+00:00",
+  "reference_id": "Yavlena:76f320732b17",
+  "local_image_files": [
+    "data/media/Yavlena_76f320732b17/0000_fbfb26b0.png"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_76f320732b17/0000_fbfb26b0.png"
+  ]
+}

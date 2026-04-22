@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168398",
+  "external_id": "39f6c9d130c6",
+  "title": "Двустаен апартамент в Свети Влас 59 кв.м. ID 168398  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/b7b1adb2-d03e-40f2-8db2-b45677a67172.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:13:13.357198+00:00",
+  "reference_id": "Yavlena:39f6c9d130c6",
+  "local_image_files": [
+    "data/media/Yavlena_39f6c9d130c6/0000_d2bfecb3.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_39f6c9d130c6/0000_d2bfecb3.jpg"
+  ]
+}

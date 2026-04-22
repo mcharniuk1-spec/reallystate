@@ -180,3 +180,49 @@
 
 ## Review comments (after each task)
 
+### 2026-04-21 — VERIFY: scraper_1 heartbeat incremental run (agent: scraper_1)
+
+- **Gate commands run**:
+  - reviewed scraper_1 heartbeat command output from `python3 scripts/live_scraper.py --sources homes_bg,imot_bg --max-pages 1 --max-listings 4 --download-photos`
+- **Result**: FAIL
+- **Failure details**:
+  - The run was blocked before discovery because DNS resolution failed for `www.homes.bg` and `www.imot.bg` (`nodename nor servname provided, or not known`).
+  - No evidence suggests parser regression; the failure happened at network resolution.
+- **Review comments**:
+  - Treat this as an environment/runtime blocker, not a source-parser blocker.
+  - The next debugger follow-up should verify a live heartbeat only after outbound DNS/network access is available again.
+
+### 2026-04-21 — VERIFY: scraper_1 heartbeat retry (agent: scraper_1)
+
+- **Gate commands run**:
+  - reviewed retry output from `python3 scripts/live_scraper.py --sources homes_bg --max-pages 1 --max-listings 1 --download-photos`
+- **Result**: FAIL
+- **Failure details**:
+  - `www.homes.bg` still failed on hostname resolution before discovery started.
+  - No new evidence of parser breakage appeared in this retry.
+- **Review comments**:
+  - Repeated failure confirms the blocker is environmental in this heartbeat environment.
+  - Keep the heartbeat automation active; do not demote source pattern readiness because of this retry.
+
+### 2026-04-21 — debugger follow-up queued: strict pattern audit and local-media proof (agent: scraper_1)
+
+- **Gate commands run**:
+  - deferred formal verification until the refreshed `tier12-pattern-status` artifacts and dashboard outputs are the stable latest versions for this run
+- **Result**: DEFERRED
+- **Failure details**:
+  - No parser failure is implied here. This is an explicit handoff note so the stricter `Patterned` classification can be spot-checked after artifact regeneration is complete.
+- **Review comments**:
+  - The verifier should confirm that only sources with local image-file evidence plus core and structured item fields remain `Patterned`.
+  - The verifier should also confirm that downgraded sources still keep their filesystem media evidence visible in the report instead of disappearing from readiness tracking.
+
+### 2026-04-21 — debugger follow-up queued: parser repair wave + DB-runtime blocker proof (agent: scraper_1)
+
+- **Gate commands run**:
+  - deferred formal verification until the refreshed strict pattern artifacts and the environment-runtime checks are preserved in `scraper_1` JOURNEY for this run
+- **Result**: DEFERRED
+- **Failure details**:
+  - No parser failure is implied by this handoff note.
+  - The remaining blocker to full acceptance is environment runtime, not code: PostgreSQL is not running on `localhost:5432`, and Docker daemon/socket are unavailable for starting the repo stack here.
+- **Review comments**:
+  - Verify that the promoted sources now have sample evidence matching the saved report entries in `docs/exports/tier12-pattern-status.md`.
+  - Verify that the DB proof is correctly marked as blocked by runtime availability rather than misreported as a parser or ingest-code failure.

@@ -1,0 +1,47 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53640867/prodawa-1-staen-gr-targowishte-warosha",
+  "external_id": "53640867",
+  "title": "Bazar.BG",
+  "description": "Старт на строителството на Жилищна сграда РаковскаЗапочваме изграждането на поредния ни жилищен проект!ДИРЕКТНО ОТ СТРОИТЕЛЯ! БЕЗ КОМИСИОНА ОТ КУПУВАЧА!  ПЛАЩАН",
+  "price": 0.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/349/big1/1d176769573828349_rr.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/349/big1/1d176769573828349_Qw.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/349/big1/1d176769573828349_pt.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/349/big1/1d176769573828349_Du.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/349/big1/1d176769573828349_pb.jpg",
+    "//imotstatic4.focus.bg/imot/photosimotbg/1/349/big1/1d176769573828349_rr.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:52:32.994612+00:00",
+  "reference_id": "Bazar.bg:53640867",
+  "local_image_files": [
+    "data/media/Bazar.bg_53640867/0000_0e393282.jpg",
+    "data/media/Bazar.bg_53640867/0001_c5c4aabf.jpg",
+    "data/media/Bazar.bg_53640867/0002_4c09d045.jpg",
+    "data/media/Bazar.bg_53640867/0003_8ebff7e0.jpg",
+    "data/media/Bazar.bg_53640867/0004_562d813b.jpg",
+    "data/media/Bazar.bg_53640867/0005_0e393282.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53640867/0000_0e393282.jpg",
+    "Bazar.bg_53640867/0001_c5c4aabf.jpg",
+    "Bazar.bg_53640867/0002_4c09d045.jpg",
+    "Bazar.bg_53640867/0003_8ebff7e0.jpg",
+    "Bazar.bg_53640867/0004_562d813b.jpg",
+    "Bazar.bg_53640867/0005_0e393282.jpg"
+  ]
+}

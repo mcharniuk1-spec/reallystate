@@ -539,3 +539,11 @@ project validation ok
 - **Listing submission deferred:** POST /listings for seller mode requires media upload to S3/MinIO (not yet wired). This is a natural follow-up slice.
 - **No email verification:** Registration accepts any email format. Add email verification flow before production launch.
 - **User mode switch is free:** Users can switch buyer→seller→agent freely. Future: enforce organization membership for agent mode.
+
+### 2026-04-09 — Docker/DB operator docs + env for media path
+
+**Goal:** Encode prior session guidance (Postgres metadata + files/MinIO, introspection SQL, compose flow) in-repo.
+
+**Added:** `docs/docker-and-database.md`, `sql/helpers/*.sql` + README, `MEDIA_STORAGE_PATH` in `.env.example`, `data/media/` in `.gitignore`, Makefile `dev-ready` / `db-shell`, README + `docs/development-setup.md` cross-links.
+
+**Note:** Docker Engine remains a host install; the repo documents `make dev-up` / `make db-init` only.

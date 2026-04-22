@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/1-staen-apartament-CID368-ID9Z5Ks.html?search_reason=search%7Cpromoted",
+  "external_id": "147547132",
+  "title": "1-стаен апартамент",
+  "description": "Продава се 1-стаен апартамент – Център Продава се апартамент в Център, гр. София. Ново построена сграда от висок клас Въведена в експлоатация от 2009 г. Площ: от 36 до 61 кв.м Тип строителство: тухла Етаж: 6/8 Изложение: север Цена: от 125 860 EUR Жилището е светло и функционално, с възможност за преустройство на 2 стаен апартамент. Жилището се предлага със степен на завършеност „до ключ“. Находящ се, в карето бул. Сливница и ул. Раковски. Подходящо е както за лично ползване, така и за инвестиция. Чудесна възможност за платформи за краткосрочно настаняване поради непосредствената си близост до всички централни локации. Ново построена сграда на един от водещите строители у нас. Спечелила конкурса „Сграда на годината“. Продаваме и други апартаменти в сградата. Има възможност за закупуване на паркомясто. За повече информация и огледи: 08********84 Кирил Ангелов",
+  "price": 125860.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kazsyjau5z1r2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/woqwpexhyllj2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qv902s8g61mh3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/w7tkyjh6ibae-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/p3a7vz9i5qpv3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kazsyjau5z1r2-BG/image;s=1241x1755"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:25:27.878010+00:00",
+  "reference_id": "OLX.bg:147547132",
+  "local_image_files": [
+    "data/media/OLX.bg_147547132/0000_378d5ce3.webp",
+    "data/media/OLX.bg_147547132/0001_69abc648.webp",
+    "data/media/OLX.bg_147547132/0002_738b67b9.webp",
+    "data/media/OLX.bg_147547132/0003_378d5ce3.webp",
+    "data/media/OLX.bg_147547132/0004_5ce70f84.webp",
+    "data/media/OLX.bg_147547132/0005_019ad567.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147547132/0000_378d5ce3.webp",
+    "OLX.bg_147547132/0001_69abc648.webp",
+    "OLX.bg_147547132/0002_738b67b9.webp",
+    "OLX.bg_147547132/0003_378d5ce3.webp",
+    "OLX.bg_147547132/0004_5ce70f84.webp",
+    "OLX.bg_147547132/0005_019ad567.webp"
+  ]
+}

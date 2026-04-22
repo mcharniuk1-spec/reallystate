@@ -1,0 +1,41 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53489150/prodawa-3-staen-gr-sofiia-geo-milew",
+  "external_id": "53489150",
+  "title": "Bazar.BG",
+  "description": "Апартамент на много добра локация, бул. ЦАРИГРАДСКО ШОСЕ 77, блок 104, на много комуникативно и тихо място, в непосредствена близост до магазини, детска градина",
+  "price": 292600.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/752/big1/1c177118745247752_7H.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/752/big1/1c177118745247752_HE.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/752/big1/1c177118745247752_LF.jpg",
+    "//imotstatic3.focus.bg/imot/photosimotbg/1/752/big1/1c177118745247752_7H.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:45:42.214317+00:00",
+  "reference_id": "Bazar.bg:53489150",
+  "local_image_files": [
+    "data/media/Bazar.bg_53489150/0000_42daff49.jpg",
+    "data/media/Bazar.bg_53489150/0001_6b78063f.jpg",
+    "data/media/Bazar.bg_53489150/0002_b93b96bb.jpg",
+    "data/media/Bazar.bg_53489150/0003_42daff49.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53489150/0000_42daff49.jpg",
+    "Bazar.bg_53489150/0001_6b78063f.jpg",
+    "Bazar.bg_53489150/0002_b93b96bb.jpg",
+    "Bazar.bg_53489150/0003_42daff49.jpg"
+  ]
+}

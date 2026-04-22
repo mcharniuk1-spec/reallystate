@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/panoramni-partseli-starozagorski-bani-CID368-ID9BFrv.html?search_reason=search%7Cpromoted",
+  "external_id": "141964470",
+  "title": "Панорамни парцели Старозагорски бани",
+  "description": "Представям на вашето внимание панорамни парцели намиращи се в северната и най-атрактивна част на Старозагорски минерални бани по пътя за Богородична стъпка. До борова гора, изчистени, със сменено предназначение и готови за строителство на еднофамилни къщи. Парцелите са както следва: - 70202.3.63 - 1000 кв.м. - 90 000 евро - 70202.3.65 - 900 кв.м. - 81 000 евро Отделно предлагам и борова гора, граничеща с гореописаните парцели: - 4076 кв.м. - 69 292 евро.",
+  "price": 81000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gg2wakb6xbpp3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/k7bchuwyj0jg-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/lddn1mwno8wi2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wrbj9saf9n2k-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/jcb055h7y217-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gg2wakb6xbpp3-BG/image;s=730x1000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:29:36.347665+00:00",
+  "reference_id": "OLX.bg:141964470",
+  "local_image_files": [
+    "data/media/OLX.bg_141964470/0000_f44baaba.webp",
+    "data/media/OLX.bg_141964470/0001_30560d8a.webp",
+    "data/media/OLX.bg_141964470/0002_c9999002.webp",
+    "data/media/OLX.bg_141964470/0003_cf25b58d.webp",
+    "data/media/OLX.bg_141964470/0004_2b8001a0.webp",
+    "data/media/OLX.bg_141964470/0005_275992e7.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_141964470/0000_f44baaba.webp",
+    "OLX.bg_141964470/0001_30560d8a.webp",
+    "OLX.bg_141964470/0002_c9999002.webp",
+    "OLX.bg_141964470/0003_cf25b58d.webp",
+    "OLX.bg_141964470/0004_2b8001a0.webp",
+    "OLX.bg_141964470/0005_275992e7.webp"
+  ]
+}

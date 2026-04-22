@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/AD89342BG_2-bedroom_apartment_for_sale_in_Sveti_Vlas.html",
+  "external_id": "4c0ff75dac1d",
+  "title": "Bulgarian Properties",
+  "description": "Stylish seaside home with excellent investment potential in Sveti Vlas",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89342_18.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:38:31.290134+00:00",
+  "reference_id": "BulgarianProperties:4c0ff75dac1d",
+  "local_image_files": [
+    "data/media/BulgarianProperties_4c0ff75dac1d/0000_2c9fa203.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_4c0ff75dac1d/0000_2c9fa203.jpg"
+  ]
+}

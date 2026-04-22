@@ -1,0 +1,32 @@
+{
+  "source_name": "LUXIMMO",
+  "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/borovets/luksozni-imoti-tristayni-apartamenti/luksozen-imot-40082-tristaen-apartament-za-prodajba-v-borovets.html",
+  "external_id": "dd380de467bb",
+  "title": "Луксиммо",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.luximmo.org/property-images/big_bg/1773329202T40082_6.jpg?v=1775734945"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:42:25.584432+00:00",
+  "reference_id": "LUXIMMO:dd380de467bb",
+  "local_image_files": [
+    "data/media/LUXIMMO_dd380de467bb/0000_7b68006c.jpg"
+  ],
+  "local_image_storage_keys": [
+    "LUXIMMO_dd380de467bb/0000_7b68006c.jpg"
+  ]
+}

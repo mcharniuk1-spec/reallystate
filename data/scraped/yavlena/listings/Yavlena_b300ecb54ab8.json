@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168414",
+  "external_id": "b300ecb54ab8",
+  "title": "Тристаен апартамент в София 87 кв.м. ID 168414  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/e87bb778-b62f-44e0-9f0f-0738b95c7135.png"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:13:03.520363+00:00",
+  "reference_id": "Yavlena:b300ecb54ab8",
+  "local_image_files": [
+    "data/media/Yavlena_b300ecb54ab8/0000_916d8709.png"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_b300ecb54ab8/0000_916d8709.png"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "source_name": "imot.bg",
+  "listing_url": "https://www.imot.bg/obiava-8437-zhilishtna-sgrada-grad-sofiya-krastova-vada-ul-asen-yordanov",
+  "external_id": "76498ef19791",
+  "title": "Imot.bg",
+  "description": "Imot.bg - №1 сайт за имоти от собственици и брокери",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "София",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://cdn3.focus.bg/imot/photosnb/437//big1/8437_NH.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/437//big1/8437_W7.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/437//big1/8437_2E.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/437//big1/8437_iC.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/437//big1/8437_4m.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/437//big/8437_NH.jpg"
+  ],
+  "phones": [
+    "0883200300"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-21T07:47:15.983205+00:00",
+  "reference_id": "imot.bg:76498ef19791",
+  "source_attributes": {},
+  "listing_status": "active",
+  "local_image_files": [
+    "data/media/imot.bg_76498ef19791/0000_5b55f14f.jpg",
+    "data/media/imot.bg_76498ef19791/0001_a7abaaba.jpg",
+    "data/media/imot.bg_76498ef19791/0002_e1cc7d59.jpg",
+    "data/media/imot.bg_76498ef19791/0003_7de5f64c.jpg",
+    "data/media/imot.bg_76498ef19791/0004_f89bd5e0.jpg",
+    "data/media/imot.bg_76498ef19791/0005_9e3c9862.jpg"
+  ],
+  "local_image_storage_keys": [
+    "imot.bg_76498ef19791/0000_5b55f14f.jpg",
+    "imot.bg_76498ef19791/0001_a7abaaba.jpg",
+    "imot.bg_76498ef19791/0002_e1cc7d59.jpg",
+    "imot.bg_76498ef19791/0003_7de5f64c.jpg",
+    "imot.bg_76498ef19791/0004_f89bd5e0.jpg",
+    "imot.bg_76498ef19791/0005_9e3c9862.jpg"
+  ]
+}

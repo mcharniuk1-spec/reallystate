@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/3-bedroom_apartments_in_Bulgaria/AD88891BG_3-bedroom_apartment_for_sale_in_Burgas.html",
+  "external_id": "f100276b4858",
+  "title": "Bulgarian Properties",
+  "description": "A rare opportunity in a cultural heritage building, steps away from the Sea Garden ",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88891_7.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:35:56.561874+00:00",
+  "reference_id": "BulgarianProperties:f100276b4858",
+  "local_image_files": [
+    "data/media/BulgarianProperties_f100276b4858/0000_c88a527f.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_f100276b4858/0000_c88a527f.jpg"
+  ]
+}

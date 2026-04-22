@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-pod-naem-zh-k-izgrev-CID368-ID9Z3Ia.html?search_reason=search%7Corganic",
+  "external_id": "147539302",
+  "title": "Двустаен, под наем, ж.к Изгрев",
+  "description": "Титан Пропъртис предлага под наем, Двустаен апартамент в ж.к Изгрев. Намира се в непосредствена близост до Английската гимназия \" Гео Милев\", болница, хранителни магазини, автобусни спирки и др. Имотът е ситуиран на 4-ти жилищен етаж и разполага с площ 65кв.м, разгърната в следното разпределение: коридор, хол, кухня, спалня, тераса, баня с тоалетна. Жилището се предлага напълно обзаведено. За оглед на това и други атрактивни предложения, не се колебайте да ни потърсите на посочения телефон или да ни изпратите данните си чрез формата за запитване на сайта. Реф. номер: 2163732",
+  "price": 380.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6q2w3hbjtm771-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gqanhscihhp82-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xhdpkclmzvwk2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0eab06j339zx-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/sk1gqt5ub9vj3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6q2w3hbjtm771-BG/image;s=1536x2048"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:29:58.742092+00:00",
+  "reference_id": "OLX.bg:147539302",
+  "local_image_files": [
+    "data/media/OLX.bg_147539302/0000_cbc5bacb.webp",
+    "data/media/OLX.bg_147539302/0001_d7cd7463.webp",
+    "data/media/OLX.bg_147539302/0002_109cd05d.webp",
+    "data/media/OLX.bg_147539302/0003_eb100f5c.webp",
+    "data/media/OLX.bg_147539302/0004_c762334c.webp",
+    "data/media/OLX.bg_147539302/0005_53428379.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539302/0000_cbc5bacb.webp",
+    "OLX.bg_147539302/0001_d7cd7463.webp",
+    "OLX.bg_147539302/0002_109cd05d.webp",
+    "OLX.bg_147539302/0003_eb100f5c.webp",
+    "OLX.bg_147539302/0004_c762334c.webp",
+    "OLX.bg_147539302/0005_53428379.webp"
+  ]
+}

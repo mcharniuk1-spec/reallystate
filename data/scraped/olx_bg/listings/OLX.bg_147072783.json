@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/masivna-kascha-v-s-enina-CID368-ID9X6lF.html?search_reason=search%7Corganic",
+  "external_id": "147072783",
+  "title": "Масивна къща в с.Енина",
+  "description": "ТОП ОФЕРТА!!! ТОП ЦЕНА!!! САМОСТОЯТЕЛНА ТРИЕТАЖНА КЪЩА В С. ЕНИНА!!! УНИКАЛНА КЪЩА РЗП-210кв.м. Двор- 800кв.м. Къщата има следното разположение: ЕТАЖ 1 голяма всекидневна ,кухня,спалня ЕТАЖ 2 коридор ,2 спални с баня и тоалетна . ЕТАЖ 3 - Две спални и 2 тераси с уникална панорамна гледка! ГАРАЖ 30 кв.м. ДОПЪЛВАЩИ ПОСТРОЙКИ -40 кв.м. Между всеки от етажите е плоча. За огледи и въпроси, позвънете на телефонните номера за връзка с Агенция \"Vesta Home\". 08******83 / 08******55",
+  "price": 350000.0,
+  "currency": "BGN",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/rf74t4fiv9743-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/hrfeyzwjjzxd2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/uhjfmkt7jmyu1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/spt9u0cl73zn3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/lq8qb7odabo81-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/rf74t4fiv9743-BG/image;s=751x1000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:25:14.862762+00:00",
+  "reference_id": "OLX.bg:147072783",
+  "local_image_files": [
+    "data/media/OLX.bg_147072783/0000_cbea5198.webp",
+    "data/media/OLX.bg_147072783/0001_0fa00962.webp",
+    "data/media/OLX.bg_147072783/0002_4a893aa4.webp",
+    "data/media/OLX.bg_147072783/0003_7a69bacc.webp",
+    "data/media/OLX.bg_147072783/0004_6218efe2.webp",
+    "data/media/OLX.bg_147072783/0005_43984b6c.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147072783/0000_cbea5198.webp",
+    "OLX.bg_147072783/0001_0fa00962.webp",
+    "OLX.bg_147072783/0002_4a893aa4.webp",
+    "OLX.bg_147072783/0003_7a69bacc.webp",
+    "OLX.bg_147072783/0004_6218efe2.webp",
+    "OLX.bg_147072783/0005_43984b6c.webp"
+  ]
+}

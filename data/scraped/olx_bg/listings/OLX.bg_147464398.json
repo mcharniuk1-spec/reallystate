@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/2-1-apartament-v-tselogodishen-kompleks-v-slanchev-bryag-5455-CID368-ID9YKe2.html?search_reason=search%7Corganic",
+  "external_id": "147464398",
+  "title": "2+1 апартамент в целогодишен комплекс в Слънчев бряг#5455",
+  "description": "Предлага се за продажба апартамент 2+1 в целогодишен комплекс в Слънчев бряг. Апартаментът е наскоро реновиран и разполага с модерни мебели и уреди. Комплексът се намира в центъра на курорта и е на пешеходно разстояние от всички необходими целогодишни удобства: супермаркети, магазини, ресторанти, кафенета, клиника, полицейско управление, банки, банкомати и автобусна спирка. Морето е на 5 минути пеша. Комплексът разполага още с басейн и ресторант. Акт 16.#5455 Предлагается к продаже апартамент 2+1 в круглогодичном комплексе на Солнечном Берегу. Апартамент с новым ремонтом, современной мебелью и техникой. Комплекс расположен в центре курорта и в шаговой доступности от всей необходимой круглогодичной инфраструктуры: супермаркеты, магазины, рестораны, кафе, поликлиника, полиция, банки, банкоматы, автобусная остановка. К морю 5 минут пешком. На территории комплекса находиться бассейн ресторан. Акт.16.#5455",
+  "price": 126000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/jala3p0cpoly-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pbqrrme3car51-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/i3a21pjc07xa-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/9e4gqypd5ifo1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xyiqqfmch27e-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/jala3p0cpoly-BG/image;s=1400x1050"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:31:04.248047+00:00",
+  "reference_id": "OLX.bg:147464398",
+  "local_image_files": [
+    "data/media/OLX.bg_147464398/0000_4358a1a5.webp",
+    "data/media/OLX.bg_147464398/0001_b9803305.webp",
+    "data/media/OLX.bg_147464398/0002_a0c2851c.webp",
+    "data/media/OLX.bg_147464398/0003_0d5e8395.webp",
+    "data/media/OLX.bg_147464398/0004_a9437449.webp",
+    "data/media/OLX.bg_147464398/0005_69ab3641.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464398/0000_4358a1a5.webp",
+    "OLX.bg_147464398/0001_b9803305.webp",
+    "OLX.bg_147464398/0002_a0c2851c.webp",
+    "OLX.bg_147464398/0003_0d5e8395.webp",
+    "OLX.bg_147464398/0004_a9437449.webp",
+    "OLX.bg_147464398/0005_69ab3641.webp"
+  ]
+}

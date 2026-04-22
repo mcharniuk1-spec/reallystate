@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/topal-i-funktsionalen-apartament-v-rayona-na-hei-i-chataldzha-CID368-ID9TIkD.html?search_reason=search%7Cpromoted",
+  "external_id": "146265479",
+  "title": "Топъл и функционален апартамент в района на ХЕИ и Чаталджа",
+  "description": "Предлагаме обзаведен двустаен апартамент в тухлена кооперация в близост до Чаталджа и ХЕИ. Жилището е с климатик, изцяло южно, много топло и се състои от дневна с кухненски бокс и спалня, като и двете стаи имат достъп до остъклена с ПВЦ общо помещение. От там се излиза на хубава слънчева и открита тераса. В дневната има диван, гардероб, скрин, хладилник, печка. Банята и тоалетът са заедно, в голямо общо помещение. Има и помощно помещение просторен килер. Отлична локация в пешеходна близост до университети Медицински университет и колеж , Втори корпус на ВИНС, МЕИ. Централните части на града също са в близост. Добра инфраструктура в района спирки на градския транспорт, магазини, училища, детски градини. Жилището се предлага И НЕОБЗАВЕДЕНО.",
+  "price": 300.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gwj8p7gg06ie2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/q2qrc8dfk5n12-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2y3sr0eucb362-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/dzhpgq261ve22-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/khx231rdqifl3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gwj8p7gg06ie2-BG/image;s=4896x3672"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:19:20.882000+00:00",
+  "reference_id": "OLX.bg:146265479",
+  "local_image_files": [
+    "data/media/OLX.bg_146265479/0000_f1c8ffc1.webp",
+    "data/media/OLX.bg_146265479/0001_e2a42c67.webp",
+    "data/media/OLX.bg_146265479/0002_446eaf9f.webp",
+    "data/media/OLX.bg_146265479/0003_4bcc4e2f.webp",
+    "data/media/OLX.bg_146265479/0004_b518f1a8.webp",
+    "data/media/OLX.bg_146265479/0005_be69c5be.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_146265479/0000_f1c8ffc1.webp",
+    "OLX.bg_146265479/0001_e2a42c67.webp",
+    "OLX.bg_146265479/0002_446eaf9f.webp",
+    "OLX.bg_146265479/0003_4bcc4e2f.webp",
+    "OLX.bg_146265479/0004_b518f1a8.webp",
+    "OLX.bg_146265479/0005_be69c5be.webp"
+  ]
+}

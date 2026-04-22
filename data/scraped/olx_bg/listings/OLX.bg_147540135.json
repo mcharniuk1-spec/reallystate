@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-v-gr-varna-briz-CID368-ID9Z3WB.html?search_reason=search%7Corganic",
+  "external_id": "147540135",
+  "title": "Двустаен апартамент  в гр.Варна, Бриз!",
+  "description": "Референтен номер: 2163155 Революшън Естейт представя двустаен апартамент в гр.Варна, Бриз! Отлична локация в непосредствена близост до търговски обекти, спирки и вскички необходими удобства . Информация за горепосочения имот, може да получите чрез формата на запитване или чрез директна връзка с нас на посочения телефон.",
+  "price": 850.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fchdm9kabto82-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/hi4hfu6xz6ca-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/sr8ka2jsfiqo3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/7d8wldfnrpuq2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/f32m9vmjc7sa1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fchdm9kabto82-BG/image;s=1536x1024"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:29:11.624917+00:00",
+  "reference_id": "OLX.bg:147540135",
+  "local_image_files": [
+    "data/media/OLX.bg_147540135/0000_e13172c0.webp",
+    "data/media/OLX.bg_147540135/0001_04d2c6c2.webp",
+    "data/media/OLX.bg_147540135/0002_b2c86377.webp",
+    "data/media/OLX.bg_147540135/0003_925641dc.webp",
+    "data/media/OLX.bg_147540135/0004_425bf4b3.webp",
+    "data/media/OLX.bg_147540135/0005_a8311e8a.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540135/0000_e13172c0.webp",
+    "OLX.bg_147540135/0001_04d2c6c2.webp",
+    "OLX.bg_147540135/0002_b2c86377.webp",
+    "OLX.bg_147540135/0003_925641dc.webp",
+    "OLX.bg_147540135/0004_425bf4b3.webp",
+    "OLX.bg_147540135/0005_a8311e8a.webp"
+  ]
+}

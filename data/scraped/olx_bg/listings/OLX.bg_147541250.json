@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/izgoden-dvustaen-v-slanchev-bryag-CID368-ID9Z4dA.html?search_reason=search%7Corganic",
+  "external_id": "147541250",
+  "title": "Изгоден двустаен в Слънчев Бряг",
+  "description": "Предлагаме просторен двустаен апартамент в комплекс Balkan Breeze, к.к. Слънчев бряг. Жилището е с площ 78 кв.м, разположено на 5-ти етаж, и включва антре, светла дневна с кухненски кът, спалня, баня с WC и душ, както и голяма тераса с панорамна гледка. Апартаментът се продава напълно обзаведен и е готов за нанасяне или отдаване под наем. Комплексът предлага басейн, ресторант, охрана, видеонаблюдение и добре поддържани общи части. Сградата е с Акт 16 и се намира на около 700 м от плажа, в близост до центъра и всички удобства. 38418 ID на имот",
+  "price": 73000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bcqkf9cfj2o81-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/3g1rivhmymbe3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/7jit4t84lf453-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/oiikxjn98zb33-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/tyv4ybezthnc3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bcqkf9cfj2o81-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:27:58.805309+00:00",
+  "reference_id": "OLX.bg:147541250",
+  "local_image_files": [
+    "data/media/OLX.bg_147541250/0000_56878204.webp",
+    "data/media/OLX.bg_147541250/0001_38323741.webp",
+    "data/media/OLX.bg_147541250/0002_e80a15bf.webp",
+    "data/media/OLX.bg_147541250/0003_07c8275c.webp",
+    "data/media/OLX.bg_147541250/0004_f77e7e86.webp",
+    "data/media/OLX.bg_147541250/0005_781ab393.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147541250/0000_56878204.webp",
+    "OLX.bg_147541250/0001_38323741.webp",
+    "OLX.bg_147541250/0002_e80a15bf.webp",
+    "OLX.bg_147541250/0003_07c8275c.webp",
+    "OLX.bg_147541250/0004_f77e7e86.webp",
+    "OLX.bg_147541250/0005_781ab393.webp"
+  ]
+}

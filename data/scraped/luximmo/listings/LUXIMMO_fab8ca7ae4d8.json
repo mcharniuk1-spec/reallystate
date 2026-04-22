@@ -1,0 +1,35 @@
+{
+  "source_name": "LUXIMMO",
+  "listing_url": "https://www.luximmo.bg/bulgaria/oblast-burgas/lozenets/luksozni-imoti-dvustayni-apartamenti/luksozen-imot-46745-dvustaen-apartament-za-prodajba-v-lozenets.html",
+  "external_id": "fab8ca7ae4d8",
+  "title": "Луксиммо",
+  "description": "Представяме за продажба, с ексклузивни права, този луксозно обзаведен двустаен апартамент, разположен в може би най-престижната и красива жилищна сграда в артистичния морски курорт Лозенец - Belle epoque Beach Residence. Локацията е безупречна — на абсолютна първа морска линия, в северната зона на обширния централен плаж на курорта, в съседство със сърф училището Kite Surf Park Lozenets, плажния бар The Spot и красивия скалист нос Амбелиц. Центърът на курорта Лозенец е само на 8 минути пеша. Belle epoque Beach Residence е проектирана",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.luximmo.org/property-images/big_bg/1774879592T46745_1.jpg",
+    "https://static.luximmo.org/property-images/big_bg/1774879592T46745_1.jpg?v=1775734910"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:41:50.646814+00:00",
+  "reference_id": "LUXIMMO:fab8ca7ae4d8",
+  "local_image_files": [
+    "data/media/LUXIMMO_fab8ca7ae4d8/0000_848dcc3f.jpg",
+    "data/media/LUXIMMO_fab8ca7ae4d8/0001_848dcc3f.jpg"
+  ],
+  "local_image_storage_keys": [
+    "LUXIMMO_fab8ca7ae4d8/0000_848dcc3f.jpg",
+    "LUXIMMO_fab8ca7ae4d8/0001_848dcc3f.jpg"
+  ]
+}

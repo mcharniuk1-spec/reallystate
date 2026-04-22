@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD89876BG_House_for_sale_near_Yablanitsa.html",
+  "external_id": "d87813a17f0b",
+  "title": "Bulgarian Properties",
+  "description": "Vegetable farm with 10 decares of land, modern facilities, and a fully furnished 3-bedroom house",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89876_79.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:40:34.087469+00:00",
+  "reference_id": "BulgarianProperties:d87813a17f0b",
+  "local_image_files": [
+    "data/media/BulgarianProperties_d87813a17f0b/0000_cfd95421.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_d87813a17f0b/0000_cfd95421.jpg"
+  ]
+}

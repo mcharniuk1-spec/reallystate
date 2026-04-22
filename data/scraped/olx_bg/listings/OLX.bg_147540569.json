@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-obelya-1-do-metro-CID368-ID9Z42B.html?search_reason=search%7Corganic",
+  "external_id": "147540569",
+  "title": "Двустаен апартамент Обеля 1 до метро",
+  "description": "Двустаен апартамент Обеля 1 до метро. С квадратура 66 кв.м и една основна тераса от 6 кв.м., което прави живущата площ 72 кв.м.и една открита тераса от 6кв.м.с изцяло южно изложение. Апартамента е след основен ремонт със сменени ВиК, Ел.инсталация и е преустроен в 3-стаен . Материалите са висококачествени :италиански гранитогрес, паркет АЦ5 -2см., поръчкова кухня, като е оборудвана изцяло, климатици в всяка стая и напълно оборудвана баня. Отлична локация: Метростанция на 200 метра, трамвайна спирка на 200 метра, рейсове на 200 м.и на 100 м. В изключителен тих район с много междублоково пространство, детски площадки, училища,детски градини, магазини,паркинги със свободен достъп, аптеки и денонощни магазини. Само за частни лица.",
+  "price": 219000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/jy0zj0febg2m2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/mz6pyeqahuz63-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0vfo5z5a24jl1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8kgdkkccuevs2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/d7luzmx41y29-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/jy0zj0febg2m2-BG/image;s=607x1806"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:21:54.158697+00:00",
+  "reference_id": "OLX.bg:147540569",
+  "local_image_files": [
+    "data/media/OLX.bg_147540569/0000_17a656bd.webp",
+    "data/media/OLX.bg_147540569/0001_15e74e1a.webp",
+    "data/media/OLX.bg_147540569/0002_23c54fc8.webp",
+    "data/media/OLX.bg_147540569/0003_851bd38d.webp",
+    "data/media/OLX.bg_147540569/0004_fb7890de.webp",
+    "data/media/OLX.bg_147540569/0005_4e27bfb3.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540569/0000_17a656bd.webp",
+    "OLX.bg_147540569/0001_15e74e1a.webp",
+    "OLX.bg_147540569/0002_23c54fc8.webp",
+    "OLX.bg_147540569/0003_851bd38d.webp",
+    "OLX.bg_147540569/0004_fb7890de.webp",
+    "OLX.bg_147540569/0005_4e27bfb3.webp"
+  ]
+}

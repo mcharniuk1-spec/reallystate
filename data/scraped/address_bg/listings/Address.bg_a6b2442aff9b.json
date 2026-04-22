@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/varna-cveten-kvartal-tristaen-apartament-offer690953",
+  "external_id": "a6b2442aff9b",
+  "title": "Многостаен апартамент във Варна, Цветен квартал - код на имота: 690953",
+  "description": "Адрес недвижими имоти предлага Многостаен апартамент във Варна, Цветен квартал с код на имота: 690953. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/953/690953/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:21:20.512270+00:00",
+  "reference_id": "Address.bg:a6b2442aff9b",
+  "local_image_files": [
+    "data/media/Address.bg_a6b2442aff9b/0000_4ff1ab1d.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_a6b2442aff9b/0000_4ff1ab1d.jpg"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Apartments_(various_types)_in_Bulgaria/AD85785BG_Apartments_(various_types)_for_sale_in_Bansko.html",
+  "external_id": "1c084da65f96",
+  "title": "Bulgarian Properties",
+  "description": "Studios, one- and two-bedroom apartments with unique views of the Rila, Pirin and Rhodope mountains",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/85785_6.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:34:49.225051+00:00",
+  "reference_id": "BulgarianProperties:1c084da65f96",
+  "local_image_files": [
+    "data/media/BulgarianProperties_1c084da65f96/0000_f8711801.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_1c084da65f96/0000_f8711801.jpg"
+  ]
+}

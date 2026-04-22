@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD78605BG_1-bedroom_apartment_for_sale_in_Sunny_Beach.html",
+  "external_id": "20903020dc8e",
+  "title": "Bulgarian Properties",
+  "description": "Furnished holiday property with frontal sea view in elite complex on the first line from the beach",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/78605_19.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:37:20.762788+00:00",
+  "reference_id": "BulgarianProperties:20903020dc8e",
+  "local_image_files": [
+    "data/media/BulgarianProperties_20903020dc8e/0000_7a8a826e.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_20903020dc8e/0000_7a8a826e.jpg"
+  ]
+}

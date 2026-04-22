@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168188",
+  "external_id": "cd6ffdc343b5",
+  "title": "Парцел в Раковски 11128 кв.м. ID 168188  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://userimages.yavlena.com/68fbada8-aa8b-4c2b-bf3f-19b87412b85c.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:15:28.095168+00:00",
+  "reference_id": "Yavlena:cd6ffdc343b5",
+  "local_image_files": [
+    "data/media/Yavlena_cd6ffdc343b5/0000_f42b6dcf.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_cd6ffdc343b5/0000_f42b6dcf.jpg"
+  ]
+}

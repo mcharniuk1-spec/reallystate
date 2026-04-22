@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/imot-v-regulatsiya-2220-kv-m-vik-blizo-do-tsentara-s-harlets-CID368-ID9YaCr.html?search_reason=search%7Corganic",
+  "external_id": "147327527",
+  "title": "Имот в регулация 2220 кв.м | ВиК | близо до центъра – с. Хърлец",
+  "description": "Продавам поземлен имот в регулация, намиращ се в землището на с. Хърлец, с лице и излаз към ул. Трапезица. Имотът е на 200 метра от главен път 11, на 600 метра от центъра на селото и само 12 км от гр. Козлодуй, което го прави отличен както за жилищно строителство, така и за инвестиция. Имотът е с обща площ от 2220 кв.м, състоящ се от два съседни парцела. Разполага с голямо лице към улица – над 700 кв.м, което позволява удобно застрояване и лесен достъп. В имота е изградена паянтова сграда със застроена площ 60 кв.м. Дворът е поддържан и разполага с овошни дръвчета и лозя. Инфраструктура: ВиК – издадена партида Електро мрежа – достъп на 5–10 метра (възможност за бързо откриване на партида) Асфалтов път и лесен подход към имота Имотът е без тежести, с нотариално заверен акт, готов за сделка. Цена: 25 000 EUR Тел. за контакт: 08*********81",
+  "price": 22970.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/20l9mvzxvd0g-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2k798exyhtm91-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ujxbddsb58f13-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/1lyipk3c58zs3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/c0kd0bxombho3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/20l9mvzxvd0g-BG/image;s=1810x943"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:30:53.291979+00:00",
+  "reference_id": "OLX.bg:147327527",
+  "local_image_files": [
+    "data/media/OLX.bg_147327527/0000_d2f49645.webp",
+    "data/media/OLX.bg_147327527/0001_3a7c40b5.webp",
+    "data/media/OLX.bg_147327527/0002_5662dda6.webp",
+    "data/media/OLX.bg_147327527/0003_b942fd1e.webp",
+    "data/media/OLX.bg_147327527/0004_71d42429.webp",
+    "data/media/OLX.bg_147327527/0005_550b4bcb.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147327527/0000_d2f49645.webp",
+    "OLX.bg_147327527/0001_3a7c40b5.webp",
+    "OLX.bg_147327527/0002_5662dda6.webp",
+    "OLX.bg_147327527/0003_b942fd1e.webp",
+    "OLX.bg_147327527/0004_71d42429.webp",
+    "OLX.bg_147327527/0005_550b4bcb.webp"
+  ]
+}

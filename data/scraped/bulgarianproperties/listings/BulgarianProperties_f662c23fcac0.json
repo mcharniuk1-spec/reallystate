@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/AD88542BG_2-bedroom_apartment_for_rent_in_Varna.html",
+  "external_id": "f662c23fcac0",
+  "title": "Bulgarian Properties",
+  "description": "New, elegantly furnished apartment next to the Sea Garden and the beach",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88542_17.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:35:48.858394+00:00",
+  "reference_id": "BulgarianProperties:f662c23fcac0",
+  "local_image_files": [
+    "data/media/BulgarianProperties_f662c23fcac0/0000_9b6b9a7c.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_f662c23fcac0/0000_9b6b9a7c.jpg"
+  ]
+}

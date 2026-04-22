@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-pod-naem-zh-k-ovcha-kupel-CID368-ID9Z3Gi.html?search_reason=search%7Corganic",
+  "external_id": "147539186",
+  "title": "Двустаен, под наем, ж.к Овча Купел",
+  "description": "Титан Пропъртис - офис Хиподрума с радост предлага на Вашето внимание двустаен апартамент под наем в ж.к. Овча купел, София. Жилището от 54 кв.м е на 2-ри етаж в новопостроена пететажна сграда. Изложението към Запад гарантира добро осветление. Разпределението включва хол с кухненски бокс, спалня, баня с тоалетна и балкон. Апартаментът е изцяло обзаведен и отоплението е на газ. Месечният наем е 650 EUR. Сред допълнителните предимства са близост до спирки, което улеснява придвижването в града. В близост до имота ще намерите: - ЧОУ \"Томас Едисън“ - Професионална гимназия по електротехника и автоматика - Банка: ДСК - Алианц Банк, БЦ Павлово - Медицински център: Престиж - София - Медицински център: Ортогин - Трамвайна спирка: Кв. Павлово - Трамвайна спирка: Кв. Овча купел \"С нас, вашето търсене на имот завършва с усмивка.\" За оглед на това и други атрактивни предложения, не се колебайте да ни потърсите на посочения телефон ( достъпен и във Viber, Whatsapp, Telegram ) или да ни изпратите данните си чрез формата за запитване на сайта. Реф. номер: 2221868",
+  "price": 650.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/snx46wh9ywhg2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vb0a80ja24ao1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4v16wuhmh3jq3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xh1wuetzqdns2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/5tgxmneomd3u2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/snx46wh9ywhg2-BG/image;s=1401x795"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:24:17.390001+00:00",
+  "reference_id": "OLX.bg:147539186",
+  "local_image_files": [
+    "data/media/OLX.bg_147539186/0000_8a30df30.webp",
+    "data/media/OLX.bg_147539186/0001_61cd5f4b.webp",
+    "data/media/OLX.bg_147539186/0002_1870b2e2.webp",
+    "data/media/OLX.bg_147539186/0003_b80022e6.webp",
+    "data/media/OLX.bg_147539186/0004_2bb2c735.webp",
+    "data/media/OLX.bg_147539186/0005_00efab43.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539186/0000_8a30df30.webp",
+    "OLX.bg_147539186/0001_61cd5f4b.webp",
+    "OLX.bg_147539186/0002_1870b2e2.webp",
+    "OLX.bg_147539186/0003_b80022e6.webp",
+    "OLX.bg_147539186/0004_2bb2c735.webp",
+    "OLX.bg_147539186/0005_00efab43.webp"
+  ]
+}

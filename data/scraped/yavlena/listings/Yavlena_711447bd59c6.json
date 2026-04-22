@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/163109",
+  "external_id": "711447bd59c6",
+  "title": "Двустаен апартамент в Лозенец 48 кв.м. ID 163109  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/614bf3e5-2efb-4eee-ad43-7c5307c04da6.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:54:59.145978+00:00",
+  "reference_id": "Yavlena:711447bd59c6",
+  "local_image_files": [
+    "data/media/Yavlena_711447bd59c6/0000_9e228dc8.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_711447bd59c6/0000_9e228dc8.jpg"
+  ]
+}

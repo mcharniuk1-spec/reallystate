@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Bars_and_Restaurants_in_Bulgaria/AD89923BG_Bar_and_Restaurant_for_sale_in_Burgas.html",
+  "external_id": "e103edae6c8e",
+  "title": "Bulgarian Properties",
+  "description": "Fully fitted business premises with equipment in Burgas",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89923_2.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:37:46.115569+00:00",
+  "reference_id": "BulgarianProperties:e103edae6c8e",
+  "local_image_files": [
+    "data/media/BulgarianProperties_e103edae6c8e/0000_b3028bc8.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_e103edae6c8e/0000_b3028bc8.jpg"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/kascha-na-100-metra-ot-dunavskata-gradina-s-nov-pokriv-i-dograma-9-stai-CID368-ID9VgPt.html?search_reason=search%7Cpromoted",
+  "external_id": "146874743",
+  "title": "Къща на 100 метра от Дунавската градина с нов покрив и дограма, 9 стаи",
+  "description": "Собственик Продава Къща в Град Силистра - Къщата може да се полсва за - живеене , офис , стаи за гости , фризьорски или козметичен салон , шивашко ателие и др. Къщата се намира върху парцел с площ от 233кв.м Застроена площ - 174кв.м Двор - 59кв.м На много добра локация - 100м от дунавската градина - 150м от река Дунав - 50м от автогарата - 350м от центъра (Площада) - 9 стаи - 1 тоалетна - 1 баня - 1 кухня - С нов покрив. - С нова дограма (нови прозорци пвц и нови врати) - С частична изолация на определени места. - Стаите са за ремонт - ( 7-те стаи ремонта е почнат но недовършен, 2 те стаи са за тотален ремонт ). - Въпреки че имотът е в нужда от ремонт, това представлява отлична възможност за новия собственик да го реновира и персонализира според своите предпочитания и нужди. - Има ток и вода - Има канализация Къщата е на тихо и спокойно място - С добри съседи. - В близост до - дунавската градина , автогара ,център, община , училища , детцки градини , болница , жп гара , бензиностанции , магазини , складове , мол , кафенета , ресторанти , закусвални , сватбени зали , автосервизи , магазини за строителни материали , изипей и други важни обекти. Цена - 75 000 евро. - Коментар по цената на място при оглед! - Да звънят само сериозни които имат близка сума до обявената цена. - Готови документи за прехвърляне. За повече информация и огледи - 08******99",
+  "price": 75000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/9z0tw1p9ia321-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xzq1xzy0r1ps3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/1ithi4owihko2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zmd4cyl06jqg3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qilb2ul9v7e9-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/9z0tw1p9ia321-BG/image;s=1536x2048"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:24:04.725839+00:00",
+  "reference_id": "OLX.bg:146874743",
+  "local_image_files": [
+    "data/media/OLX.bg_146874743/0000_2eb6061b.webp",
+    "data/media/OLX.bg_146874743/0001_36bd3703.webp",
+    "data/media/OLX.bg_146874743/0002_21df04bd.webp",
+    "data/media/OLX.bg_146874743/0003_315b60d3.webp",
+    "data/media/OLX.bg_146874743/0004_df046511.webp",
+    "data/media/OLX.bg_146874743/0005_65608fb6.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_146874743/0000_2eb6061b.webp",
+    "OLX.bg_146874743/0001_36bd3703.webp",
+    "OLX.bg_146874743/0002_21df04bd.webp",
+    "OLX.bg_146874743/0003_315b60d3.webp",
+    "OLX.bg_146874743/0004_df046511.webp",
+    "OLX.bg_146874743/0005_65608fb6.webp"
+  ]
+}

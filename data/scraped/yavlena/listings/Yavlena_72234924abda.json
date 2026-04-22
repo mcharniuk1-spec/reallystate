@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168441",
+  "external_id": "72234924abda",
+  "title": "Студио в Царево 54 кв.м. ID 168441  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/3a0e2ddc-8be6-479e-990b-16c14a60fa7f.JPG"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:56:25.273602+00:00",
+  "reference_id": "Yavlena:72234924abda",
+  "local_image_files": [
+    "data/media/Yavlena_72234924abda/0000_c28bf43a.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_72234924abda/0000_c28bf43a.jpg"
+  ]
+}

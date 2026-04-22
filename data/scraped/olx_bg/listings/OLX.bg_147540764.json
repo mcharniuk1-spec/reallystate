@@ -1,0 +1,35 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/apartamenti-v-prodazhba-vladislavovo-CID368-ID9Z45K.html?search_reason=search%7Corganic",
+  "external_id": "147540764",
+  "title": "Апартаменти в продажба - Владиславово",
+  "description": "Имотен център Варна предлага апартаменти в продажба в район Владиславово. Едностайни от 57 000€ Двустайни от 65 000€ Тристайни от 115 000€ ЦЕНИ ОТ 1120 €/квадрат! Предлагаме сграда на проект с модерна визия и се състои от 8 жилищни етажа. В продажба имаме разнообразие от апартаменти, паркоместа и гаражи. Възможност за разсрочено плащане, съобразено с етапите на строителство. Апартаментите ще бъдат издадени по БДС (както на снимката). Запази своето жилище сега! За разпределения, актуални цени и схеми на плащане потърсете брокер - Росен Димитров.",
+  "price": 57000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nc9spq3rkuks-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nc9spq3rkuks-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:19:31.767363+00:00",
+  "reference_id": "OLX.bg:147540764",
+  "local_image_files": [
+    "data/media/OLX.bg_147540764/0000_89d2c209.webp",
+    "data/media/OLX.bg_147540764/0001_01477e6c.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540764/0000_89d2c209.webp",
+    "OLX.bg_147540764/0001_01477e6c.webp"
+  ]
+}

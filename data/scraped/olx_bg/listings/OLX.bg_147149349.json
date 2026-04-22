@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/2-staen-apartament-pod-naem-v-zhk-obelya-CID368-ID9XqgB.html?search_reason=search%7Corganic",
+  "external_id": "147149349",
+  "title": "2-стаен апартамент под наем в жк. Обеля",
+  "description": "Агенция предлага чисто нов апартамент в жк. Обеля - на метри от метростанция 'Обеля' , както и автобусни спирки, хранителни магазини, заведения и други. Състои се от входно антре, кухня с хол, спалня, баня с тоалетна и тераса. Жилището е напълно обзаведено и оборудвано с всичко необходимо за живеене.",
+  "price": 490.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ajj4bkjnaup21-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/20fhwv4wf6zx2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/rixflfoc2dhk2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zcjwmd127cj21-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/oxld44jgq4pp3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ajj4bkjnaup21-BG/image;s=1600x2133"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:29:02.170638+00:00",
+  "reference_id": "OLX.bg:147149349",
+  "local_image_files": [
+    "data/media/OLX.bg_147149349/0000_a8d96fbc.webp",
+    "data/media/OLX.bg_147149349/0001_e0208f7c.webp",
+    "data/media/OLX.bg_147149349/0002_89ec6724.webp",
+    "data/media/OLX.bg_147149349/0003_d3b25729.webp",
+    "data/media/OLX.bg_147149349/0004_27b1147b.webp",
+    "data/media/OLX.bg_147149349/0005_f7e63733.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147149349/0000_a8d96fbc.webp",
+    "OLX.bg_147149349/0001_e0208f7c.webp",
+    "OLX.bg_147149349/0002_89ec6724.webp",
+    "OLX.bg_147149349/0003_d3b25729.webp",
+    "OLX.bg_147149349/0004_27b1147b.webp",
+    "OLX.bg_147149349/0005_f7e63733.webp"
+  ]
+}

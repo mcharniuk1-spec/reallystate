@@ -1,0 +1,45 @@
+{
+  "source_name": "imot.bg",
+  "listing_url": "https://www.imot.bg/obiava-1r172778503997075-prodava-partsel-grad-sofiya-s-mirovyane",
+  "external_id": "b175154f17b4",
+  "title": "Imot.bg",
+  "description": "Мировяне е разположено в Западна България, в  непосредствена близост до гр. София   на около 12 км. По данни на НСИ към 1-ви януари 2007 г., населението на кв. Мировяне наброява 1534 жители. Жилищната територия е застроена с едно- и двуфамилни къщи с прилежащи дворове. Пощенският код на квартала е 1289. УПИ на тихо и спокойно място в село Мировяне.Теренът е равен и с правилна форма. Попада в зона Жм с плътност на застрояване 40%, кинт 1,3 и кота корниз 10 метра. Ток и ВиК в съседство. За имотите има одобрен и влязъл в сила ПУП, който предвижда достъпа до тях.",
+  "price": 221000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "с. Мировяне",
+  "district": "град София",
+  "address_text": "град София, с. Мировяне",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/075//big1/1r172778503997075_Yy.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/075//big1/1r172778503997075_Xt.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/075//big/1r172778503997075_Yy.jpg"
+  ],
+  "phones": [
+    "0896626641",
+    "Вашия телефон:",
+    "Частно лице",
+    "Изпрати E-mail до продавача"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-21T07:47:32.294815+00:00",
+  "reference_id": "imot.bg:b175154f17b4",
+  "source_attributes": {},
+  "listing_status": "active",
+  "local_image_files": [
+    "data/media/imot.bg_b175154f17b4/0000_d984ecda.jpg",
+    "data/media/imot.bg_b175154f17b4/0001_945d4f47.jpg",
+    "data/media/imot.bg_b175154f17b4/0002_8df54a5b.jpg"
+  ],
+  "local_image_storage_keys": [
+    "imot.bg_b175154f17b4/0000_d984ecda.jpg",
+    "imot.bg_b175154f17b4/0001_945d4f47.jpg",
+    "imot.bg_b175154f17b4/0002_8df54a5b.jpg"
+  ]
+}

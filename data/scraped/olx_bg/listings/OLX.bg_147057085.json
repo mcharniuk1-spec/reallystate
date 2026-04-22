@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/103597-chastichno-obzavedeno-yuzhno-studio-v-kv-kartala-gr-v-tarnovo-CID368-ID9X2gt.html?search_reason=search%7Corganic",
+  "external_id": "147057085",
+  "title": "103597 Частично обзаведено южно студио в кв. Картала, гр. В. Търново",
+  "description": "Предлагаме под наем студио, разположено в тухлена кооперация в кв. „Картала”, гр. Велико Търново. Апартаментът се намира на партерен етаж и е с изцяло южно изложение. Жилищната му площ възлиза на 22 кв.м. и включва една стая, обзаведена с единично легло, маса за хранене със столове, хладилник, микровълнова печка, гардероб и скрин. Входно антре с портманто и баня с тоалетна, допълват жилищното пространство. Студиото има също и външен достъп до тераса. Интериорът се състои от стени боядисани с латекс, дървени врати и диграма, и подове с ламиниран паркет и теракот. Жилището се предлага под наем в добро състояние, частично обзаведено и на изгодна цена. Предлаганият имот е разположен в уреден, предпочитан квартал на града, осигуряващ лесен достъп до детски градини, училища, паркове, заведения, автобусни спирки, магазини и супермаркети. Реф. номер:103597",
+  "price": 170.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/1c0gg5r0vvuc-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xfd7mxc9w1v1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/84mpk9xr588l1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ro572z9lyafg2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8p864rq4d4dl3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/1c0gg5r0vvuc-BG/image;s=1024x768"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:26:38.305707+00:00",
+  "reference_id": "OLX.bg:147057085",
+  "local_image_files": [
+    "data/media/OLX.bg_147057085/0000_48b0c4ce.webp",
+    "data/media/OLX.bg_147057085/0001_f3424514.webp",
+    "data/media/OLX.bg_147057085/0002_7325bdd5.webp",
+    "data/media/OLX.bg_147057085/0003_a799408f.webp",
+    "data/media/OLX.bg_147057085/0004_1a85df01.webp",
+    "data/media/OLX.bg_147057085/0005_407d4d3f.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147057085/0000_48b0c4ce.webp",
+    "OLX.bg_147057085/0001_f3424514.webp",
+    "OLX.bg_147057085/0002_7325bdd5.webp",
+    "OLX.bg_147057085/0003_a799408f.webp",
+    "OLX.bg_147057085/0004_1a85df01.webp",
+    "OLX.bg_147057085/0005_407d4d3f.webp"
+  ]
+}

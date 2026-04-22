@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD89850BG_House_for_sale_near_Veliko_Tarnovo.html",
+  "external_id": "d200daf68901",
+  "title": "Bulgarian Properties",
+  "description": "House for renovation with garden in the village centre and excellent access",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89850_1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:41:32.137655+00:00",
+  "reference_id": "BulgarianProperties:d200daf68901",
+  "local_image_files": [
+    "data/media/BulgarianProperties_d200daf68901/0000_56b959e8.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_d200daf68901/0000_56b959e8.jpg"
+  ]
+}

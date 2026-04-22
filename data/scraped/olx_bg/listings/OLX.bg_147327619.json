@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/imot-v-regulatsiya-2542-kv-m-litse-kam-tri-ulitsi-vik-s-harlets-CID368-ID9YaDW.html?search_reason=search%7Corganic",
+  "external_id": "147327619",
+  "title": "Имот в регулация 2542 кв.м | Лице към три улици | ВиК – с. Хърлец",
+  "description": "Продавам поземлен имот в регулация, находящ се в землището на с. Хърлец, с лице и излаз към три улици: ул. Георги Димитров ул. Петко Войвода (асфалтов път) ул. Иван Нивянин с чакълеста настилка Локацията е много удобна — имотът се намира на 500 метра от центъра на селото, 600 метра от река Огоста и 600 метра от главен път 11. Подходящ е за жилищно строителство, инвестиционен проект или за развитие на туристическо/селско стопанство. Имотът е с обща площ от 2542 кв.м, състоящ се от два съседни парцела. Инфраструктура: ВиК – достъп до мрежата (без издадена партида) Електро мрежа – на 5–7 метра от имота (възможност за бързо откриване на партида) Асфалтиран достъп по две улици + трета с чакъл Имотът е без тежести, с нотариално заверени актове, готов за сделка. Цена: 25 000 EUR Тел. за контакт: 08*********81",
+  "price": 22950.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/sw7v0bgcj10g3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/votukg31xxxs2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/34kayvcno0qa3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/587voq1fsjav2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/h5t56wwtoh1l1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/sw7v0bgcj10g3-BG/image;s=1804x853"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:18:54.459764+00:00",
+  "reference_id": "OLX.bg:147327619",
+  "local_image_files": [
+    "data/media/OLX.bg_147327619/0000_3a545f10.webp",
+    "data/media/OLX.bg_147327619/0001_19b8d8dd.webp",
+    "data/media/OLX.bg_147327619/0002_047234a1.webp",
+    "data/media/OLX.bg_147327619/0003_9032dbbb.webp",
+    "data/media/OLX.bg_147327619/0004_77e26add.webp",
+    "data/media/OLX.bg_147327619/0005_d15c11b3.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147327619/0000_3a545f10.webp",
+    "OLX.bg_147327619/0001_19b8d8dd.webp",
+    "OLX.bg_147327619/0002_047234a1.webp",
+    "OLX.bg_147327619/0003_9032dbbb.webp",
+    "OLX.bg_147327619/0004_77e26add.webp",
+    "OLX.bg_147327619/0005_d15c11b3.webp"
+  ]
+}

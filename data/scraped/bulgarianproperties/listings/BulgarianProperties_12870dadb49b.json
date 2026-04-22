@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD88976BG_House_for_sale_near_Varna.html",
+  "external_id": "12870dadb49b",
+  "title": "Bulgarian Properties",
+  "description": "Modern family homes with large gardens near the sea and Varna",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88976_9.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:39:10.085072+00:00",
+  "reference_id": "BulgarianProperties:12870dadb49b",
+  "local_image_files": [
+    "data/media/BulgarianProperties_12870dadb49b/0000_6586c1f8.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_12870dadb49b/0000_6586c1f8.jpg"
+  ]
+}

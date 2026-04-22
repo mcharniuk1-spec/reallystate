@@ -1,0 +1,28 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-106m2-sofiya-zhk.-ovcha-kupel/as1597817",
+  "external_id": "0b1b3714c429",
+  "title": "Тристаен, 106m² - Жк. Овча Купел, София - Апартамент за продажба - АЛДЕС НЕДВИЖИМИ ИМОТИ",
+  "description": "ПРОСТОРЕН, НЕПРЕХОДЕН, ТИХ ап. с паркомясто в двора и с отлична локация, в близост до метростанция Овча купел, спирка на трамваи и автобуси,училище, детска град...",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2025-09-11_2/115640928o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T10:05:29.232264+00:00",
+  "reference_id": "Homes.bg:0b1b3714c429",
+  "local_image_files": [],
+  "local_image_storage_keys": []
+}

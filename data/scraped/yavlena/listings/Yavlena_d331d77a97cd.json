@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/157504",
+  "external_id": "d331d77a97cd",
+  "title": "Жилищна сграда във Варна 3956 кв.м. ID 157504  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://userimages.yavlena.com/12d12d3f-29b6-49bc-8152-720ca7dda3df.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:55:20.447973+00:00",
+  "reference_id": "Yavlena:d331d77a97cd",
+  "local_image_files": [
+    "data/media/Yavlena_d331d77a97cd/0000_0ad11465.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_d331d77a97cd/0000_0ad11465.jpg"
+  ]
+}

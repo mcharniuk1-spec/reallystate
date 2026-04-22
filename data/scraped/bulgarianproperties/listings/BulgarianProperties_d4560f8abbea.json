@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Shops_in_Bulgaria/AD89864BG_Shop_for_rent_in_Varna.html",
+  "external_id": "d4560f8abbea",
+  "title": "Bulgarian Properties",
+  "description": "Retail space with a storefront on a main boulevard, fully finished and ready for business",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89864_14.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:41:16.892465+00:00",
+  "reference_id": "BulgarianProperties:d4560f8abbea",
+  "local_image_files": [
+    "data/media/BulgarianProperties_d4560f8abbea/0000_f4f3236c.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_d4560f8abbea/0000_f4f3236c.jpg"
+  ]
+}

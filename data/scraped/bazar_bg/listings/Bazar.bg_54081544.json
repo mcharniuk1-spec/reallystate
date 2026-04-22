@@ -1,0 +1,47 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-54081544/dawa-pod-naem-2-staen-gr-sofiia-krastowa-wada",
+  "external_id": "54081544",
+  "title": "Bazar.BG",
+  "description": "* Дава се под наем 2-стаен апартамент в луксозна жилищна сграда, ново строителство, с акт 16 от 2023г., на 8 мин. пеша от метростанция Витоша;* Южно изложение;*",
+  "price": 640.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic3.focus.bg/imot/photosimotbg/2/236/big1/2c177522606437236_CW.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/2/236/big1/2c177522606437236_Ux.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/2/236/big1/2c177522606437236_BV.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/2/236/big1/2c177522606437236_p2.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/2/236/big1/2c177522606437236_y4.jpg",
+    "//imotstatic3.focus.bg/imot/photosimotbg/2/236/big1/2c177522606437236_CW.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:42:58.671084+00:00",
+  "reference_id": "Bazar.bg:54081544",
+  "local_image_files": [
+    "data/media/Bazar.bg_54081544/0000_4cf222df.jpg",
+    "data/media/Bazar.bg_54081544/0001_d3b7ec35.jpg",
+    "data/media/Bazar.bg_54081544/0002_5d3b82b6.jpg",
+    "data/media/Bazar.bg_54081544/0003_46e18a84.jpg",
+    "data/media/Bazar.bg_54081544/0004_6293b5af.jpg",
+    "data/media/Bazar.bg_54081544/0005_4cf222df.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_54081544/0000_4cf222df.jpg",
+    "Bazar.bg_54081544/0001_d3b7ec35.jpg",
+    "Bazar.bg_54081544/0002_5d3b82b6.jpg",
+    "Bazar.bg_54081544/0003_46e18a84.jpg",
+    "Bazar.bg_54081544/0004_6293b5af.jpg",
+    "Bazar.bg_54081544/0005_4cf222df.jpg"
+  ]
+}

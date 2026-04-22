@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-v-zh-k-ovcha-kupel-2-CID368-ID9Z3Kq.html?search_reason=search%7Corganic",
+  "external_id": "147539442",
+  "title": "Двустаен апартамент в ж.к. Овча купел 2",
+  "description": "Референтен номер: 2107329 Революшън Естейт представя двустаен апартамент в София, ж.к. Овча купел 2. Локацията е модерна и развиваща се, с удобен достъп до основни пътни артерии и градски транспорт. В близост има магазини, заведения, бизнес сгради и разнообразни удобства, което я прави отличен избор за съвременен градски живот. Информация за горепосочения имот, може да получите чрез формата на запитване или чрез директна връзка с нас на посочения телефон.",
+  "price": 313000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/hibbpq3fr1751-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/j6ffvq5a7ehs1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/k0k6gdorxxhz2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/m2s0fcm31ehq3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qhb61wnakdu31-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/hibbpq3fr1751-BG/image;s=1920x1280"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:27:37.246980+00:00",
+  "reference_id": "OLX.bg:147539442",
+  "local_image_files": [
+    "data/media/OLX.bg_147539442/0000_a74b6119.webp",
+    "data/media/OLX.bg_147539442/0001_fc83a681.webp",
+    "data/media/OLX.bg_147539442/0002_9bde0530.webp",
+    "data/media/OLX.bg_147539442/0003_34bbbf89.webp",
+    "data/media/OLX.bg_147539442/0004_bd1add6f.webp",
+    "data/media/OLX.bg_147539442/0005_47521182.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539442/0000_a74b6119.webp",
+    "OLX.bg_147539442/0001_fc83a681.webp",
+    "OLX.bg_147539442/0002_9bde0530.webp",
+    "OLX.bg_147539442/0003_34bbbf89.webp",
+    "OLX.bg_147539442/0004_bd1add6f.webp",
+    "OLX.bg_147539442/0005_47521182.webp"
+  ]
+}

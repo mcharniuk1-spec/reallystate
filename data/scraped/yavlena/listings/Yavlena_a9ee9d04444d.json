@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/167232",
+  "external_id": "a9ee9d04444d",
+  "title": "Тристаен апартамент в София 111 кв.м. ID 167232  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/b2b6223f-b673-4683-be92-f1b2f811ac9b.png"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:54:33.093717+00:00",
+  "reference_id": "Yavlena:a9ee9d04444d",
+  "local_image_files": [
+    "data/media/Yavlena_a9ee9d04444d/0000_b8304099.png"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_a9ee9d04444d/0000_b8304099.png"
+  ]
+}

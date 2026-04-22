@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/otdavam-atelie-pod-naem-kv-reduta-za-sam-chovek-balgarin-CID368-ID9HwAe.html?search_reason=search%7Cpromoted",
+  "external_id": "143356538",
+  "title": "отдавам Ателие под наем, кв.Редута, за сам човек-българин",
+  "description": "улица Боян магесник, тухла 2008г. с АКТ16, етаж 4/5 с Асансьор БЕЗ КОМИСИОННА ЗА АГЕНЦИИ! - отдава се само на сам човек, без животни - такса вход + 18евро на месец - еднопространствено помещение - фурна и климатик няма - сметките за ток и вода са изключително ниски - дивана е разтегателен - има тераса - топла вода от бойлер, отопление с конвекторна печка - изложение: Север/Запад - адресна регистрация не предлагам - отдава се дългосрочно-минимум една календарна година - апартамента е свободен НАЕМ: 350евро ДЕПОЗИТ: 525евро КОМИСИОННА: 0евро Много моля всякакъв вид брокери и агенции да не ми крадат снимките и да качват обява без изричното ми съгласие!",
+  "price": 350.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/97ke0w0cem5p-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0hnuef1a0g0n1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0nhil3swm2tb1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qm5lh9en12h21-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qpi5x9wgink02-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/97ke0w0cem5p-BG/image;s=600x800"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:29:33.595720+00:00",
+  "reference_id": "OLX.bg:143356538",
+  "local_image_files": [
+    "data/media/OLX.bg_143356538/0000_2cc48d03.webp",
+    "data/media/OLX.bg_143356538/0001_3353d6f1.webp",
+    "data/media/OLX.bg_143356538/0002_1ea4b329.webp",
+    "data/media/OLX.bg_143356538/0003_b69b88d7.webp",
+    "data/media/OLX.bg_143356538/0004_5af13fc0.webp",
+    "data/media/OLX.bg_143356538/0005_f60f4fdc.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_143356538/0000_2cc48d03.webp",
+    "OLX.bg_143356538/0001_3353d6f1.webp",
+    "OLX.bg_143356538/0002_1ea4b329.webp",
+    "OLX.bg_143356538/0003_b69b88d7.webp",
+    "OLX.bg_143356538/0004_5af13fc0.webp",
+    "OLX.bg_143356538/0005_f60f4fdc.webp"
+  ]
+}

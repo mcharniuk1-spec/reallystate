@@ -1,0 +1,47 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53322755/prodawa-1-staen-gr-sofiia-mladost-3",
+  "external_id": "53322755",
+  "title": "Bazar.BG",
+  "description": "В непосредствена близост до училище и детска градина   силен плюс за дългосрочно отдаване под наем.Апартаментът е разположен на последен етаж с южно изложение",
+  "price": 115000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://cdn3.focus.bg/imot/photosimotbg/1/199/big1/1a177003423592199_CG.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/199/big1/1a177003423592199_yU.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/199/big1/1a177003423592199_f1.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/199/big1/1a177003423592199_Ks.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/199/big1/1a177003423592199_OC.jpg",
+    "//cdn3.focus.bg/imot/photosimotbg/1/199/big1/1a177003423592199_CG.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:52:01.615485+00:00",
+  "reference_id": "Bazar.bg:53322755",
+  "local_image_files": [
+    "data/media/Bazar.bg_53322755/0000_58ce3e06.jpg",
+    "data/media/Bazar.bg_53322755/0001_b25a2c0c.jpg",
+    "data/media/Bazar.bg_53322755/0002_2058478c.jpg",
+    "data/media/Bazar.bg_53322755/0003_58be534b.jpg",
+    "data/media/Bazar.bg_53322755/0004_c81a811f.jpg",
+    "data/media/Bazar.bg_53322755/0005_58ce3e06.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53322755/0000_58ce3e06.jpg",
+    "Bazar.bg_53322755/0001_b25a2c0c.jpg",
+    "Bazar.bg_53322755/0002_2058478c.jpg",
+    "Bazar.bg_53322755/0003_58be534b.jpg",
+    "Bazar.bg_53322755/0004_c81a811f.jpg",
+    "Bazar.bg_53322755/0005_58ce3e06.jpg"
+  ]
+}

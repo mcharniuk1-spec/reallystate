@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD89908BG_1-bedroom_apartment_for_sale_in_Borovets.html",
+  "external_id": "df88ba8a32b4",
+  "title": "Bulgarian Properties",
+  "description": "Fully furnished one-bedroom property with mountain views and excellent rental potential",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89908_12.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:38:56.245803+00:00",
+  "reference_id": "BulgarianProperties:df88ba8a32b4",
+  "local_image_files": [
+    "data/media/BulgarianProperties_df88ba8a32b4/0000_1da94c06.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_df88ba8a32b4/0000_1da94c06.jpg"
+  ]
+}

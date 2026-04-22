@@ -1,0 +1,35 @@
+{
+  "source_name": "LUXIMMO",
+  "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/sofiya/luksozni-imoti-tristayni-apartamenti/luksozen-imot-45320-tristaen-apartament-za-prodajba-v-sofiya.html",
+  "external_id": "278e5801c9d7",
+  "title": "Луксиммо",
+  "description": "Представяме полуобзаведен тристаен апартамент в бутикова сграда в кв. Лозенец. Локацията на имота е на тиха локация, на крачки от Южен парк и същевременно на метри от бул. Черни връх и от там до всички точки на града. Метростанция Витоша и мол Парадайс Център са на 650 м пешеходно разстояние. В района са на разположение още училища, детски градини, банки, хипермаркети, малки магазини, медицински центрове, спортни центрове, заведения и други. Параметри на имота: • застроена площ: 92.26 кв.м; • етаж: 1-ви над партер; • изложение:",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.luximmo.org/property-images/big_bg/1774634200T45320_1.jpg",
+    "https://static.luximmo.org/property-images/big_bg/1774634200T45320_1.jpg?v=1775734950"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:42:30.896263+00:00",
+  "reference_id": "LUXIMMO:278e5801c9d7",
+  "local_image_files": [
+    "data/media/LUXIMMO_278e5801c9d7/0000_c8abe9d1.jpg",
+    "data/media/LUXIMMO_278e5801c9d7/0001_c8abe9d1.jpg"
+  ],
+  "local_image_storage_keys": [
+    "LUXIMMO_278e5801c9d7/0000_c8abe9d1.jpg",
+    "LUXIMMO_278e5801c9d7/0001_c8abe9d1.jpg"
+  ]
+}

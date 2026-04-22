@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/kascha-v-pleven-oblast-s-tuchenitsa-plosch-74-tsena-29000-CID368-ID9Z3F7.html?search_reason=search%7Corganic",
+  "external_id": "147539113",
+  "title": "Къща в Плевен, област-с.Тученица площ 74 цена 29000",
+  "description": "'Адрес' недвижими имоти предлага двуетажна къща в село Тученица. Къщата е с площ от 74 кв.м. и е със здрави основи. Подходяща е за пълна реконструкция или изграждане по вкус и нужди на новите собственици. Дворът към къщата е равен, с площ от 1840 кв.м. Имотът разполага с кладенец и две допълнителн постройки, които са в добро състояние. За информация и огледи - 08********59. Съдействаме за ипотечни и потребителски кредити, чрез КредитЦентър. Последвайте страницата ни във фейсбук: Кристиян Цветанов - Адрес Недвижими имоти.",
+  "price": 29000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/o076ac2r5koq3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ew9o1ovosfhr2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/dfm3fqwiimam3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/t6gmuidlgffn2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/p8r2qh1yno6r3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/o076ac2r5koq3-BG/image;s=1350x1800"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:20:34.260937+00:00",
+  "reference_id": "OLX.bg:147539113",
+  "local_image_files": [
+    "data/media/OLX.bg_147539113/0000_fd6078bf.webp",
+    "data/media/OLX.bg_147539113/0001_5cd894e1.webp",
+    "data/media/OLX.bg_147539113/0002_45440423.webp",
+    "data/media/OLX.bg_147539113/0003_f02b4638.webp",
+    "data/media/OLX.bg_147539113/0004_8c6fb3e4.webp",
+    "data/media/OLX.bg_147539113/0005_c12ee249.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539113/0000_fd6078bf.webp",
+    "OLX.bg_147539113/0001_5cd894e1.webp",
+    "OLX.bg_147539113/0002_45440423.webp",
+    "OLX.bg_147539113/0003_f02b4638.webp",
+    "OLX.bg_147539113/0004_8c6fb3e4.webp",
+    "OLX.bg_147539113/0005_c12ee249.webp"
+  ]
+}

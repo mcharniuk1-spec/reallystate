@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168308",
+  "external_id": "db4951814b34",
+  "title": "Тристаен апартамент във Варна 86 кв.м. ID 168308  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/19d05bad-b33d-4220-9ab6-4d7f7e33354d.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:14:05.010702+00:00",
+  "reference_id": "Yavlena:db4951814b34",
+  "local_image_files": [
+    "data/media/Yavlena_db4951814b34/0000_6cb55740.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_db4951814b34/0000_6cb55740.jpg"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53647527/prodawa-2-staen-gr-targowishte-warosha",
+  "external_id": "53647527",
+  "title": "Bazar.BG",
+  "description": "Двустаен апартамент! Апартаменти за инвестиция! ул. 'Г.С.Раковски' 81, кв. Вароша! ОТ СТРОИТЕЛЯ! ДИРЕКТНО ОТ СТРОИТЕЛЯ! БЕЗ КОМИСИОНА ОТ КУПУВАЧА!  ПЛАЩАНЕ НА В",
+  "price": 77000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/377/big/1b177220165080377_Kp.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/377/big1/1b177220165080377_EA.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/377/big1/1b177220165080377_Ss.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/377/big1/1b177220165080377_a1.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/377/big/1b177220165080377_k5.jpg",
+    "//imotstatic2.focus.bg/imot/photosimotbg/1/377/big/1b177220165080377_Kp.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:52:35.183857+00:00",
+  "reference_id": "Bazar.bg:53647527",
+  "local_image_files": [
+    "data/media/Bazar.bg_53647527/0000_25607a96.jpg",
+    "data/media/Bazar.bg_53647527/0001_c5c4aabf.jpg",
+    "data/media/Bazar.bg_53647527/0002_4c09d045.jpg",
+    "data/media/Bazar.bg_53647527/0003_8ebff7e0.jpg",
+    "data/media/Bazar.bg_53647527/0004_25607a96.jpg",
+    "data/media/Bazar.bg_53647527/0005_25607a96.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53647527/0000_25607a96.jpg",
+    "Bazar.bg_53647527/0001_c5c4aabf.jpg",
+    "Bazar.bg_53647527/0002_4c09d045.jpg",
+    "Bazar.bg_53647527/0003_8ebff7e0.jpg",
+    "Bazar.bg_53647527/0004_25607a96.jpg",
+    "Bazar.bg_53647527/0005_25607a96.jpg"
+  ]
+}

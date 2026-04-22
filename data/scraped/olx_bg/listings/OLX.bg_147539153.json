@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/uyuten-2-staen-lyatno-kino-CID368-ID9Z3FL.html?search_reason=search%7Corganic",
+  "external_id": "147539153",
+  "title": "Уютен 2 стаен Лятно Кино",
+  "description": "Агенция за недвижими имоти THE HOME ESTATE предлага под наем напълно обзаведен ДВУСТАЕН апартамент в района на ЛЯТНО КИНО. Състои се от коридор, баня с тоалет, спалня, всекидневна с кухненски бокс, тераса. Жилището е напълно обзаведено с всичко необходимо за едно домакинство. Отоплението и охлаждането е с КЛИМАТИК. Намира се на изключително комуникативна локация. В непосредствена близост до автобусни спирки, супермаркети. Номер на обявата: 34321 . За повече информация и огледи: 08********69",
+  "price": 500.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8mq0cuu7nc3b2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/mscui35hnijs2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pvllhhmn2xu43-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nixk7lplslb81-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/t4bxuabi19n53-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8mq0cuu7nc3b2-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:24:14.021098+00:00",
+  "reference_id": "OLX.bg:147539153",
+  "local_image_files": [
+    "data/media/OLX.bg_147539153/0000_a5f8bd95.webp",
+    "data/media/OLX.bg_147539153/0001_e8374732.webp",
+    "data/media/OLX.bg_147539153/0002_721b094c.webp",
+    "data/media/OLX.bg_147539153/0003_32da7611.webp",
+    "data/media/OLX.bg_147539153/0004_a2e53cd2.webp",
+    "data/media/OLX.bg_147539153/0005_c69bede5.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539153/0000_a5f8bd95.webp",
+    "OLX.bg_147539153/0001_e8374732.webp",
+    "OLX.bg_147539153/0002_721b094c.webp",
+    "OLX.bg_147539153/0003_32da7611.webp",
+    "OLX.bg_147539153/0004_a2e53cd2.webp",
+    "OLX.bg_147539153/0005_c69bede5.webp"
+  ]
+}

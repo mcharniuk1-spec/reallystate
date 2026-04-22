@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/ednostaen-apartament-v-zhk-lozenets-do-metrostantsiya-evropeyski-sayuz-CID368-ID9Zm8y.html?search_reason=search%7Cpromoted",
+  "external_id": "147610130",
+  "title": "Едностаен апартамент в жк Лозенец до метростанция Европейски съюз",
+  "description": "Предлагаме под наем стилен едностаен апартамент в престижния квартал Лозенец, в непосредствена близост до метростанция „Европейски съюз“ и Сити Център. Жилището е разположено на първи етаж в масивна тухлена сграда и се отличава с функционално разпределение: просторна стая, отделна кухня и баня. Апартаментът е изцяло обзаведен с нови и качествени мебели и настилки, което създава усещане за комфорт и уют. Локацията е едно от основните предимства – район с отлична инфраструктура, бърз достъп до центъра на града, множество магазини, заведения и удобен градски транспорт. Подходящ за сам човек или двойка, търсещи удобство и комуникативна градска среда.",
+  "price": 400.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vanz2man3xmc2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kas81nny6jx73-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ie57ijef6yvs3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/oi8scj5lq3p33-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/a98pqtgf151k1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vanz2man3xmc2-BG/image;s=1440x2560"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:23:24.688981+00:00",
+  "reference_id": "OLX.bg:147610130",
+  "local_image_files": [
+    "data/media/OLX.bg_147610130/0000_94d35cef.webp",
+    "data/media/OLX.bg_147610130/0001_9ff5d804.webp",
+    "data/media/OLX.bg_147610130/0002_bdcecc16.webp",
+    "data/media/OLX.bg_147610130/0003_d2c69457.webp",
+    "data/media/OLX.bg_147610130/0004_f7132255.webp",
+    "data/media/OLX.bg_147610130/0005_4a67d45c.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147610130/0000_94d35cef.webp",
+    "OLX.bg_147610130/0001_9ff5d804.webp",
+    "OLX.bg_147610130/0002_bdcecc16.webp",
+    "OLX.bg_147610130/0003_d2c69457.webp",
+    "OLX.bg_147610130/0004_f7132255.webp",
+    "OLX.bg_147610130/0005_4a67d45c.webp"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168379",
+  "external_id": "4a2de613f480",
+  "title": "Офис в Ловеч 373 кв.м. ID 168379  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "office",
+  "image_urls": [
+    "https://userimages.yavlena.com/6e239347-a0ac-44af-9d89-9f9c09c6b7fe.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:13:23.686601+00:00",
+  "reference_id": "Yavlena:4a2de613f480",
+  "local_image_files": [
+    "data/media/Yavlena_4a2de613f480/0000_de41f474.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_4a2de613f480/0000_de41f474.jpg"
+  ]
+}

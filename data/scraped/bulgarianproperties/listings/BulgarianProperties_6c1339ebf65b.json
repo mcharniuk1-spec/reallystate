@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Large_apartments_in_Bulgaria/AD88106BG_Large_apartment_for_sale_in_Pomorie.html",
+  "external_id": "6c1339ebf65b",
+  "title": "Bulgarian Properties",
+  "description": "Spacious apartment in close proximity to the pedestrian zone and the promenade",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88106_14.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:40:49.445240+00:00",
+  "reference_id": "BulgarianProperties:6c1339ebf65b",
+  "local_image_files": [
+    "data/media/BulgarianProperties_6c1339ebf65b/0000_fd624b69.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_6c1339ebf65b/0000_fd624b69.jpg"
+  ]
+}

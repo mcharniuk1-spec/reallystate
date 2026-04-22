@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Businesses_in_Bulgaria/AD80268BG_Business_for_sale_in_Sveti_Vlas.html",
+  "external_id": "2a02c2a88b3f",
+  "title": "Bulgarian Properties",
+  "description": "Building with Act 14 – an excellent investment in one of Bulgaria's most popular seaside towns",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/80268_35.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:39:07.889125+00:00",
+  "reference_id": "BulgarianProperties:2a02c2a88b3f",
+  "local_image_files": [
+    "data/media/BulgarianProperties_2a02c2a88b3f/0000_bb58769e.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_2a02c2a88b3f/0000_bb58769e.jpg"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/3-staen-v-pazardzhik-oblast-gr-velingrad-plosch-104-tsena-85000-CID368-ID9Y1B1.html?search_reason=search%7Cpromoted",
+  "external_id": "147292843",
+  "title": "3-стаен в Пазарджик, област-гр.Велинград площ 104 цена 85000",
+  "description": "Предлагаме 3-стаен апартамент в широк център на Велинград. Намира се в района на плаж Кафернова и аквапарк Делфин. В близост са разположени магазини за хранителни стоки и домашни потреби, плод-зеленчук, кафе, аптека, фитнес, хотели, предлагащи СПА услуги и други. Жилището се състои от входен коридор, просторен и светъл хол с място за кухненски бокс и тераса с панорамен изглед, баня с тоалетна , мокро помещение и две спални с общ достъп към втора тераса с красив изглед. Имотът е напълно подходящ, както за постоянно или ваканционно ползване, така и за дългосрочно отдаване под наем и за нощувки. За повече информация и огледи се обадете на телефон +35************87. Обява 550 Разполагаме с различни имоти, според Вашите нужди и предпочитания. Предлагаме консултантски, посреднически, юридически и застрахователни услуги на нашите клиенти. Съдействаме за финансиране на сделки чрез банкови кредити. За повече информация заповядайте на място, гр. Велинград, ул. Лиляна Димитрова 3, ет.3 или позвънете на телефон +35************87.",
+  "price": 85000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ol5bcoqg1asb1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/73xdcg4r5uro3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/s1bmb3m6fy99-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xaul6ec3rmkm3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8mfaw07g45ar3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ol5bcoqg1asb1-BG/image;s=1333x1000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:29:30.031040+00:00",
+  "reference_id": "OLX.bg:147292843",
+  "local_image_files": [
+    "data/media/OLX.bg_147292843/0000_987c4626.webp",
+    "data/media/OLX.bg_147292843/0001_345545ab.webp",
+    "data/media/OLX.bg_147292843/0002_dc694342.webp",
+    "data/media/OLX.bg_147292843/0003_c4598a68.webp",
+    "data/media/OLX.bg_147292843/0004_456267d3.webp",
+    "data/media/OLX.bg_147292843/0005_f9ddece2.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147292843/0000_987c4626.webp",
+    "OLX.bg_147292843/0001_345545ab.webp",
+    "OLX.bg_147292843/0002_dc694342.webp",
+    "OLX.bg_147292843/0003_c4598a68.webp",
+    "OLX.bg_147292843/0004_456267d3.webp",
+    "OLX.bg_147292843/0005_f9ddece2.webp"
+  ]
+}

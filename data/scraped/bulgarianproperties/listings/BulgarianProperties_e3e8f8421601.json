@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Regulated_plots_in_Bulgaria/AD88817BG_Regulated_plot_for_sale_in_Govedartsi.html",
+  "external_id": "e3e8f8421601",
+  "title": "Bulgarian Properties",
+  "description": "An ideal property for a holiday villa or family home in the heart of nature",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88817_7.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:37:11.755933+00:00",
+  "reference_id": "BulgarianProperties:e3e8f8421601",
+  "local_image_files": [
+    "data/media/BulgarianProperties_e3e8f8421601/0000_3d9e4e26.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_e3e8f8421601/0000_3d9e4e26.jpg"
+  ]
+}

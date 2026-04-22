@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD87984BG_House_for_sale_near_Stara_Zagora.html",
+  "external_id": "d4bae66a5dda",
+  "title": "Bulgarian Properties",
+  "description": "House with garden and garage in a quiet area on the outskirts of town",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/87984_24.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:35:38.836681+00:00",
+  "reference_id": "BulgarianProperties:d4bae66a5dda",
+  "local_image_files": [
+    "data/media/BulgarianProperties_d4bae66a5dda/0000_25948ef5.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_d4bae66a5dda/0000_25948ef5.jpg"
+  ]
+}

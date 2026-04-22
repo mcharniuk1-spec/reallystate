@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/prodavam-zemedelski-zemi-v-gr-bankya-kv-verdikal-CID368-ID9Y69F.html?search_reason=search%7Cpromoted",
+  "external_id": "147310367",
+  "title": "Продавам земеделски земи в гр.Банкя, кв. Вердикал",
+  "description": "Продавам земеделски земи в гр.Банкя, кв. Вердикал. Директно от собственик, без такси и комисионни. -Градище, Идентификатор:02659.2208.26 -Полето, Идентификатор:02659.2220.106 -Пожаревски път, Идентификатор:02659.2223.36 -Серовско равнище,Идентификатор:02659.2214.16 -Слатина, Идентификатор:02659.2218.5 -Големата, Идентификатор:02659.2225.20 -Куманин Дол, Идентификатор:02659.2222.74 -Унгол, Идентификатор:02659.2216.37 -Чешма, Идентификатор:02659.2236.59 -Баличин дол, Идентификатор:02659.2232.83 -Грамада, Идентификатор: 02659.2226.45 - С аренден договор са. При интерес, извадени са и удостоверение за данъчна оценка и удостоверение за характеристика на имотите Незастроен имот за жилищни нужди:02659.2196.2376 - финална цена - 12 500 лева Всички цени подлежат промяна и договаряне с наследниците. Телефони за връзка: +35********01",
+  "price": 20000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/y09ypelhvjqg-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/e0vcr6q6n2ho3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/avtvf5bc8fvk2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/x4i3hhidxvav1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/5c2ktykq7jku3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/y09ypelhvjqg-BG/image;s=2255x3200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:26:05.318839+00:00",
+  "reference_id": "OLX.bg:147310367",
+  "local_image_files": [
+    "data/media/OLX.bg_147310367/0000_14908a6f.webp",
+    "data/media/OLX.bg_147310367/0001_cafee867.webp",
+    "data/media/OLX.bg_147310367/0002_491b8254.webp",
+    "data/media/OLX.bg_147310367/0003_7194cd0f.webp",
+    "data/media/OLX.bg_147310367/0004_83861057.webp",
+    "data/media/OLX.bg_147310367/0005_12da9504.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147310367/0000_14908a6f.webp",
+    "OLX.bg_147310367/0001_cafee867.webp",
+    "OLX.bg_147310367/0002_491b8254.webp",
+    "OLX.bg_147310367/0003_7194cd0f.webp",
+    "OLX.bg_147310367/0004_83861057.webp",
+    "OLX.bg_147310367/0005_12da9504.webp"
+  ]
+}

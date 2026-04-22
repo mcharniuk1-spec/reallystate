@@ -1,0 +1,32 @@
+{
+  "source_name": "property.bg",
+  "listing_url": "https://www.property.bg/property-117960-spacious-two-room-turnkey-apartment-in-7-angels/",
+  "external_id": "57b42ab05a23",
+  "title": "Property.bg",
+  "description": "Spacious two-room turnkey apartment in 7 Angels for sale  - High ceilings (over 2.85 m) Completely renovated building Reinforced concrete structure Brick-built Completely refurbished property  - Gas heating system  - Views to inner garden Forest views Mountain views Ski run views from №",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static4.superimoti.bg/property-images/big/1773329202T117960_25.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T13:58:21.523440+00:00",
+  "reference_id": "property.bg:57b42ab05a23",
+  "local_image_files": [
+    "data/media/property.bg_57b42ab05a23/0000_3997bbb1.jpg"
+  ],
+  "local_image_storage_keys": [
+    "property.bg_57b42ab05a23/0000_3997bbb1.jpg"
+  ]
+}

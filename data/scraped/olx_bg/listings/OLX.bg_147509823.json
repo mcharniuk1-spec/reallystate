@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/prodava-se-partsel-na-glaven-pat-CID368-ID9YV2H.html?search_reason=search%7Corganic",
+  "external_id": "147509823",
+  "title": "Продава се парцел на главен път",
+  "description": "Продавам парцел с лице 40 м на главен път стара загора богомилово в близост до автокъща оникс карс на растояние 300 м Имота е със сменено предназначение Партида трифазен ток 15kw Насипан със скална маса на ниво на главния път с право за застрояване Подходящ за различен вид търговски дейности",
+  "price": 150000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/51wikyaz7yj9-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/tljpw69u43hc2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/q22l7tkagqq91-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/olm5yrar6ipr3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8rrjdjp04jih-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/51wikyaz7yj9-BG/image;s=750x1000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:18:57.447489+00:00",
+  "reference_id": "OLX.bg:147509823",
+  "local_image_files": [
+    "data/media/OLX.bg_147509823/0000_dc91874b.webp",
+    "data/media/OLX.bg_147509823/0001_0b626f51.webp",
+    "data/media/OLX.bg_147509823/0002_1b2daabe.webp",
+    "data/media/OLX.bg_147509823/0003_f47a9990.webp",
+    "data/media/OLX.bg_147509823/0004_298d2f05.webp",
+    "data/media/OLX.bg_147509823/0005_7d86c217.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147509823/0000_dc91874b.webp",
+    "OLX.bg_147509823/0001_0b626f51.webp",
+    "OLX.bg_147509823/0002_1b2daabe.webp",
+    "OLX.bg_147509823/0003_f47a9990.webp",
+    "OLX.bg_147509823/0004_298d2f05.webp",
+    "OLX.bg_147509823/0005_7d86c217.webp"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/napalno-zavarshen-apartament-v-kv-briz-s-parkomyasto-CID368-ID9KAwt.html?search_reason=search%7Cpromoted",
+  "external_id": "144090447",
+  "title": "Напълно завършен апартамент в кв.Бриз с ПАРКОМЯСТО",
+  "description": "Агенция ДЕМОС - 2000 ЕООД продава апартамент е със застроена площ от 104 квадратни метра. Спираща дъха нескриваема морска панорама .Малка бутикова сграда със седем апартамента, въведена в експлоатация 2013 год. Описание : дневна - трапезария с кухненски бокс, две спални, коридор, баня с тоалетна, килер и открита барбекю тераса. Продава се обзаведен. ПАРКОМЯСТО пред входа на сградата с площ 12,50кв.м. на цена 20000 Евро.. За огледи: брокер Елена Стоилова 08*******30",
+  "price": 298000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6ps53p6r6aa21-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/km2dvbqfdheq3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/1c57e4djb1492-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kzhwuadkfmdp-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/tacy1h5ey4vs2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6ps53p6r6aa21-BG/image;s=1333x1000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:28:15.043055+00:00",
+  "reference_id": "OLX.bg:144090447",
+  "local_image_files": [
+    "data/media/OLX.bg_144090447/0000_adfb721c.webp",
+    "data/media/OLX.bg_144090447/0001_ec5acb17.webp",
+    "data/media/OLX.bg_144090447/0002_7824d2cf.webp",
+    "data/media/OLX.bg_144090447/0003_5c2a5562.webp",
+    "data/media/OLX.bg_144090447/0004_46f0905a.webp",
+    "data/media/OLX.bg_144090447/0005_518082d3.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_144090447/0000_adfb721c.webp",
+    "OLX.bg_144090447/0001_ec5acb17.webp",
+    "OLX.bg_144090447/0002_7824d2cf.webp",
+    "OLX.bg_144090447/0003_5c2a5562.webp",
+    "OLX.bg_144090447/0004_46f0905a.webp",
+    "OLX.bg_144090447/0005_518082d3.webp"
+  ]
+}

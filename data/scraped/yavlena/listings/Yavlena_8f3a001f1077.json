@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168159",
+  "external_id": "8f3a001f1077",
+  "title": "Едностаен апартамент в София 47 кв.м. ID 168159  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/e71b94cb-fc0a-49e0-b3fc-a81892c16404.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:15:55.643010+00:00",
+  "reference_id": "Yavlena:8f3a001f1077",
+  "local_image_files": [
+    "data/media/Yavlena_8f3a001f1077/0000_e51027d1.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_8f3a001f1077/0000_e51027d1.jpg"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/kascha-v-gr-varna-m-t-alen-mak-CID368-ID9Z3Yw.html?search_reason=search%7Corganic",
+  "external_id": "147540315",
+  "title": "Къща  в гр.Варна, м-т Ален мак!",
+  "description": "Референтен номер: 2181229 Революшън Естейт представя къща в гр.Варна, м-т Ален мак! Отлична локация в непосредствена близост до търговски обекти, спирки и вскички необходими удобства . Информация за горепосочения имот, може да получите чрез формата на запитване или чрез директна връзка с нас на посочения телефон.",
+  "price": 350.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/cgyw2fkev1x93-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/go6tlm7bzx0m2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vlnr39z4apv72-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/y1le2lv068qz1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/z1uosy1gmvlx-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/cgyw2fkev1x93-BG/image;s=1536x1024"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:31:31.114053+00:00",
+  "reference_id": "OLX.bg:147540315",
+  "local_image_files": [
+    "data/media/OLX.bg_147540315/0000_4003a326.webp",
+    "data/media/OLX.bg_147540315/0001_0e76f264.webp",
+    "data/media/OLX.bg_147540315/0002_0af30faa.webp",
+    "data/media/OLX.bg_147540315/0003_f07d4240.webp",
+    "data/media/OLX.bg_147540315/0004_996c34ec.webp",
+    "data/media/OLX.bg_147540315/0005_13e629ab.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540315/0000_4003a326.webp",
+    "OLX.bg_147540315/0001_0e76f264.webp",
+    "OLX.bg_147540315/0002_0af30faa.webp",
+    "OLX.bg_147540315/0003_f07d4240.webp",
+    "OLX.bg_147540315/0004_996c34ec.webp",
+    "OLX.bg_147540315/0005_13e629ab.webp"
+  ]
+}

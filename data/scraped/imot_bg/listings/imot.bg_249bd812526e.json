@@ -22,5 +22,7 @@
   "phones": [],
   "amenities": [],
   "scraped_at": "2026-04-08T16:29:25.686774+00:00",
-  "reference_id": "imot.bg:249bd812526e"
+  "reference_id": "imot.bg:249bd812526e",
+  "local_image_files": [],
+  "local_image_storage_keys": []
 }

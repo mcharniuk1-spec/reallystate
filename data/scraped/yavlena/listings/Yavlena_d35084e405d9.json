@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/166760",
+  "external_id": "d35084e405d9",
+  "title": "Тристаен апартамент в София 130 кв.м. ID 166760  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/179a74e0-772d-476d-8090-94998c8a57f2.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:54:36.595599+00:00",
+  "reference_id": "Yavlena:d35084e405d9",
+  "local_image_files": [
+    "data/media/Yavlena_d35084e405d9/0000_8ab536bf.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_d35084e405d9/0000_8ab536bf.jpg"
+  ]
+}

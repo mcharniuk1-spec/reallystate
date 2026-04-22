@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/AD89896BG_2-bedroom_apartment_for_sale_in_Ravda.html",
+  "external_id": "ccbf22b5a4ab",
+  "title": "Bulgarian Properties",
+  "description": "An elegant, fully furnished apartment combining space, style, and top-tier comfort.\n",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89896_1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:37:31.566935+00:00",
+  "reference_id": "BulgarianProperties:ccbf22b5a4ab",
+  "local_image_files": [
+    "data/media/BulgarianProperties_ccbf22b5a4ab/0000_f3f1869f.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_ccbf22b5a4ab/0000_f3f1869f.jpg"
+  ]
+}

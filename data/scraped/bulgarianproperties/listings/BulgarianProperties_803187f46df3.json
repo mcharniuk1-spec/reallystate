@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD83859BG_House_for_sale_near_Plovdiv.html",
+  "external_id": "803187f46df3",
+  "title": "Bulgarian Properties",
+  "description": "Spacious house with parking spaces, outbuilding and mountain view",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/83859_9.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:37:07.295929+00:00",
+  "reference_id": "BulgarianProperties:803187f46df3",
+  "local_image_files": [
+    "data/media/BulgarianProperties_803187f46df3/0000_4b7fac88.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_803187f46df3/0000_4b7fac88.jpg"
+  ]
+}

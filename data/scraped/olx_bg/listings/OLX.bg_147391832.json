@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/of-25472-dizaynerski-tristaen-sadiyski-CID368-ID9YrlC.html?search_reason=search%7Cpromoted",
+  "external_id": "147391832",
+  "title": "оф.25472 Дизайнерски тристаен/ Съдийски",
+  "description": "оф.25472 ИЗЦЯЛО ОБЗАВЕДЕН ПО ДИЗАЙНЕРСКИ ПРОЕКТ ! АКТ 16 ! БЕЗ АНАЛОГ НА ПАЗАРА ! ОБЗАВЕЖДАНЕ С НАЙ-ВИСОК КЛАС МЕБЕЛИ И ЕЛ.УРЕДИ ! Предлагаме Ви да закупите страхотен тристаен апартамент без аналог на пазара , състоящ се от ПРОСТОРЕН ХОЛ С КУХНЕНСКИ БОКС И ТРАПЕЗАРИЯ , ДВЕ ГОЛЕМИ СПАЛНИ , БАНЯ С ТОАЛЕТНА , ОТДЕЛНА ТОАЛЕТНА , ПЕРАЛНО ПОМЕЩЕНИЕ , КОРИДОР И ДВЕ ТЕРАСИ . Жилището , което Ви предлагаме да закупите , се продава изцяло обзаведено по дизайнерски проект , с мебели и ел.уреди от най-висок клас , което ще Ви дава пълната възможност да се нанесете веднага. Имотът е перфектния избор , както за вашия нов и мечтан дом , така и с цел инвестиция отдаване под наем. Намира се в един от най-предпочитаните райони на гр.Пловдив , в близост до училища , детски градини , университети , автобусни спирки , магазини , центъра на града и др. Има възможност за закупуването на подземни и надземни паркоместа ! Авангард Риъл Естейт предлага Висока сигурност при покупка на имот и цялостно съдействие до финализиране на сделката пред нотариус.",
+  "price": 244999.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/3zhelnzcjcdf2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/d9iyldd8pvas-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/unkjz16v6e3d1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/n0kvz7gcha2k1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/75d4ajsj659c-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/3zhelnzcjcdf2-BG/image;s=1200x900"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:18:38.705464+00:00",
+  "reference_id": "OLX.bg:147391832",
+  "local_image_files": [
+    "data/media/OLX.bg_147391832/0000_7e87fb3d.webp",
+    "data/media/OLX.bg_147391832/0001_0f928e81.webp",
+    "data/media/OLX.bg_147391832/0002_6509ac16.webp",
+    "data/media/OLX.bg_147391832/0003_9b47035d.webp",
+    "data/media/OLX.bg_147391832/0004_6ecd026e.webp",
+    "data/media/OLX.bg_147391832/0005_ede0e3aa.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147391832/0000_7e87fb3d.webp",
+    "OLX.bg_147391832/0001_0f928e81.webp",
+    "OLX.bg_147391832/0002_6509ac16.webp",
+    "OLX.bg_147391832/0003_9b47035d.webp",
+    "OLX.bg_147391832/0004_6ecd026e.webp",
+    "OLX.bg_147391832/0005_ede0e3aa.webp"
+  ]
+}

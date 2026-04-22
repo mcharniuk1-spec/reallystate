@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/tristaen-apartament-v-zh-k-geo-milev-CID368-ID9YKiC.html?search_reason=search%7Corganic",
+  "external_id": "147464682",
+  "title": "Тристаен апартамент в ж.к. Гео Милев",
+  "description": "Референтен номер: 2095561 Революшън Естейт представя тристаен апартамент в София, Гео Милев. Районът е комуникативен и добре развит, с бърз достъп до градски транспорт и основни пътни артерии. В близост има магазини, училища, детски градини, паркове и разнообразни услуги, което осигурява удобна и комфортна среда за живеене. Информация за горепосочения имот, може да получите чрез формата на запитване или чрез директна връзка с нас на посочения телефон.",
+  "price": 220000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/v74qexf8u31t-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/v2twtlmjzy5y-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/v3t3gkirfa013-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/3mfcqrq1vl9o1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/u5vod6a9tsf63-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/v74qexf8u31t-BG/image;s=1536x1024"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:20:53.566934+00:00",
+  "reference_id": "OLX.bg:147464682",
+  "local_image_files": [
+    "data/media/OLX.bg_147464682/0000_a31f94b8.webp",
+    "data/media/OLX.bg_147464682/0001_f8d4ea19.webp",
+    "data/media/OLX.bg_147464682/0002_3afb5038.webp",
+    "data/media/OLX.bg_147464682/0003_cc7a93ba.webp",
+    "data/media/OLX.bg_147464682/0004_b1797aa9.webp",
+    "data/media/OLX.bg_147464682/0005_bccb9592.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464682/0000_a31f94b8.webp",
+    "OLX.bg_147464682/0001_f8d4ea19.webp",
+    "OLX.bg_147464682/0002_3afb5038.webp",
+    "OLX.bg_147464682/0003_cc7a93ba.webp",
+    "OLX.bg_147464682/0004_b1797aa9.webp",
+    "OLX.bg_147464682/0005_bccb9592.webp"
+  ]
+}

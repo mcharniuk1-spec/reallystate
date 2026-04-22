@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Large_apartments_in_Bulgaria/AD89826BG_Large_apartment_for_sale_in_Sofia.html",
+  "external_id": "b949ac2ed177",
+  "title": "Bulgarian Properties",
+  "description": "Two modernly furnished maisonettes with option to purchase a garage",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89826_1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:42:17.209375+00:00",
+  "reference_id": "BulgarianProperties:b949ac2ed177",
+  "local_image_files": [
+    "data/media/BulgarianProperties_b949ac2ed177/0000_6e36dca8.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_b949ac2ed177/0000_6e36dca8.jpg"
+  ]
+}

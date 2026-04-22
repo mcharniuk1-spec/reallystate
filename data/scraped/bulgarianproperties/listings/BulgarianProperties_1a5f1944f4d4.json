@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD89947BG_1-bedroom_apartment_for_sale_in_Sveti_Vlas.html",
+  "external_id": "1a5f1944f4d4",
+  "title": "Bulgarian Properties",
+  "description": "Stylishly furnished apartment 400 m from the beach in Sveti Vlas",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89947_23.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:42:29.300945+00:00",
+  "reference_id": "BulgarianProperties:1a5f1944f4d4",
+  "local_image_files": [
+    "data/media/BulgarianProperties_1a5f1944f4d4/0000_0216563b.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_1a5f1944f4d4/0000_0216563b.jpg"
+  ]
+}

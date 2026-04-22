@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168437",
+  "external_id": "a17becfb9965",
+  "title": "Двустаен апартамент в Бургас 67 кв.м. ID 168437  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/d37f5554-8eef-41f9-aaf9-e6c3b8c0557b.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:56:27.034593+00:00",
+  "reference_id": "Yavlena:a17becfb9965",
+  "local_image_files": [
+    "data/media/Yavlena_a17becfb9965/0000_01bea75d.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_a17becfb9965/0000_01bea75d.jpg"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/pomorie-svoboda-magazin-offer582545",
+  "external_id": "2a2e9af7ed78",
+  "title": "Магазин в Поморие, Свобода - код на имота: 582545",
+  "description": "Адрес недвижими имоти предлага Магазин в Поморие, Свобода с код на имота: 582545. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/545/582545/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:21:05.073627+00:00",
+  "reference_id": "Address.bg:2a2e9af7ed78",
+  "local_image_files": [
+    "data/media/Address.bg_2a2e9af7ed78/0000_f4b7d0a2.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_2a2e9af7ed78/0000_f4b7d0a2.jpg"
+  ]
+}

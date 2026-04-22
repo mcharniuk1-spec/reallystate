@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/klyuch-v-ofisa-tristaen-pod-naem-zh-k-slaveykov-CID368-ID9Z3Qb.html?search_reason=search%7Corganic",
+  "external_id": "147539799",
+  "title": "Ключ в офиса! Тристаен, под наем, ж.к Славейков",
+  "description": "Открийте мястото, където ще се чувствате у дома от първия момент. Агенция за недвижими имоти Титан Пропъртис предлага на Вашето внимание Двустаен апартамент ПРЕУСТРОЕН в Тристаен с локация ж.к Славейков. Намира се в непосредствена близост до СУ \" Димчо Дебелянов\", хранителни магазини, автобусна спирка, заведение, детска градина и др. Ситуиран е на 2-ри жилищен етаж от общо 12 с асансьор. Имота разполага с жилищна площ 63 кв.м, разгърната в следното разпределение: коридор, хол с кухня, 2 спални, баня с тоалетна и тераса. Жилището се предлага напълно обзаведено с всичко необходимо за едно комфортно ежедневие. Настилка: ламинат , теракот Изложение: Запад/ Изток \"С нас, вашето търсене на имот завършва с усмивка.\" За оглед на това и други атрактивни предложения, не се колебайте да ни потърсите на посочения телефон ( Telegram, Viber, Whatsapp) или да ни изпратите данните си чрез формата за запитване на сайта. Реф. номер: 2220779",
+  "price": 500.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/d1g7rvppzubu3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/r1gvtv7ur0gt-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/7qeeuhwocjsx1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ihv2579ukm4e2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/1bhazkfhuei23-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/d1g7rvppzubu3-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:27:52.993740+00:00",
+  "reference_id": "OLX.bg:147539799",
+  "local_image_files": [
+    "data/media/OLX.bg_147539799/0000_75c6270f.webp",
+    "data/media/OLX.bg_147539799/0001_12f0761a.webp",
+    "data/media/OLX.bg_147539799/0002_4b160c39.webp",
+    "data/media/OLX.bg_147539799/0003_8893e02a.webp",
+    "data/media/OLX.bg_147539799/0004_6d0759b8.webp",
+    "data/media/OLX.bg_147539799/0005_7bb74883.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539799/0000_75c6270f.webp",
+    "OLX.bg_147539799/0001_12f0761a.webp",
+    "OLX.bg_147539799/0002_4b160c39.webp",
+    "OLX.bg_147539799/0003_8893e02a.webp",
+    "OLX.bg_147539799/0004_6d0759b8.webp",
+    "OLX.bg_147539799/0005_7bb74883.webp"
+  ]
+}

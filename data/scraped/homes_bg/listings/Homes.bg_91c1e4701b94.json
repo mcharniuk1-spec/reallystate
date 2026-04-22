@@ -1,0 +1,28 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-80m2-sofiya-centyr/as1625586",
+  "external_id": "91c1e4701b94",
+  "title": "Двустаен, 80m² -  Център, София - Апартамент за продажба - АСГАРД ПРОПЪРТИС",
+  "description": "АСГАРД ПРОПЪРТИС продава непреходен 2-стаен апартамент с чиста площ 80 кв.м., разположен в отлично поддържана сграда на метри от Mall Sofia и метростанция Опълч...",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2025-05-02_1/113970929o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T10:05:39.730014+00:00",
+  "reference_id": "Homes.bg:91c1e4701b94",
+  "local_image_files": [],
+  "local_image_storage_keys": []
+}

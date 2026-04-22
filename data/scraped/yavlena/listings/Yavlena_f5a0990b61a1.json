@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168421",
+  "external_id": "f5a0990b61a1",
+  "title": "Тристаен апартамент в София 97 кв.м. ID 168421  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/9e8a9d4e-eb03-47ea-b0ab-8d358a2f0a02.png"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:54:26.129160+00:00",
+  "reference_id": "Yavlena:f5a0990b61a1",
+  "local_image_files": [
+    "data/media/Yavlena_f5a0990b61a1/0000_a89ab4e4.png"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_f5a0990b61a1/0000_a89ab4e4.png"
+  ]
+}

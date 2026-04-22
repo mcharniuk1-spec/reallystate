@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/pod-1-na-kv-m-skladove-i-proizvodstveni-pomescheniya-pod-naem-CID368-ID9jbgL.html?search_reason=search%7Cpromoted",
+  "external_id": "137558579",
+  "title": "Под 1 € на кв.м., складове и производствени помещения под наем",
+  "description": "Склад/Промишлено помещение под наем. Възможност за наемане на помещения с площ от 300 до 4600 кв. м. Височина: 3.30 м. Сграда: Тухла и стоманобетон. Възможност за паркиране: Да. Такса за поддръжка: Не. Подходящо за: Всякакъв тип производствено-стопанска и логистично-складова дейност. Цени под 1 € за кв. м. в зависимост от квадратурата. Цената от 300 € е за минималната площ от 300кв. м., за по-големи площи цената пада до 0,50€ за кв. м. Повече информация може да намерите на www.skladirai.me Директно от собственик и без дължима комисионна!",
+  "price": 300.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0zrh8gzdgbz72-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qpyc3cbwsc9n-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xuawi47b7pfg2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kq4w201cg1ye2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/mgidmvyqzgnl-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0zrh8gzdgbz72-BG/image;s=3840x2408"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:28:08.287807+00:00",
+  "reference_id": "OLX.bg:137558579",
+  "local_image_files": [
+    "data/media/OLX.bg_137558579/0000_1334d42f.webp",
+    "data/media/OLX.bg_137558579/0001_0b5b37bd.webp",
+    "data/media/OLX.bg_137558579/0002_d1332721.webp",
+    "data/media/OLX.bg_137558579/0003_5343181c.webp",
+    "data/media/OLX.bg_137558579/0004_37b1c6b1.webp",
+    "data/media/OLX.bg_137558579/0005_51af3b25.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_137558579/0000_1334d42f.webp",
+    "OLX.bg_137558579/0001_0b5b37bd.webp",
+    "OLX.bg_137558579/0002_d1332721.webp",
+    "OLX.bg_137558579/0003_5343181c.webp",
+    "OLX.bg_137558579/0004_37b1c6b1.webp",
+    "OLX.bg_137558579/0005_51af3b25.webp"
+  ]
+}

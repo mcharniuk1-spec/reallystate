@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168073",
+  "external_id": "2ba48411c1d9",
+  "title": "Двустаен апартамент във Варна 82 кв.м. ID 168073  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/544ebc49-9974-42d4-a6f7-96c00d7e5630.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:17:00.570365+00:00",
+  "reference_id": "Yavlena:2ba48411c1d9",
+  "local_image_files": [
+    "data/media/Yavlena_2ba48411c1d9/0000_ac0d69f9.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_2ba48411c1d9/0000_ac0d69f9.jpg"
+  ]
+}

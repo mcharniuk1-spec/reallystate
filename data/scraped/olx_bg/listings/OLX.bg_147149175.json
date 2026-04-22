@@ -1,0 +1,44 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/2-staen-apartament-dragalevtsi-CID368-ID9XqdN.html?search_reason=search%7Corganic",
+  "external_id": "147149175",
+  "title": "2-стаен апартамент -Драгалевци",
+  "description": "Агенция предлага под наем апартамент в кв. Драгалевци, разположен на 2-ри етаж, с площ от 65 кв.м. Имотът се състои от дневна с кухня, спалня, баня с тоалетна и тераса и е напълно обзаведен с всичко необходимо за живеене. Жилището е в много добро състояние и предлага спокойна среда и удобна локация. В района има удобен градски транспорт, търговски обекти, детски градини и училища.",
+  "price": 540.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/as8tq25ra0tb2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/o7j9x1lwayh81-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/3r9okvxk1vnp3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/7mq5qpl2yppe-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/as8tq25ra0tb2-BG/image;s=1600x2133"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:29:24.684037+00:00",
+  "reference_id": "OLX.bg:147149175",
+  "local_image_files": [
+    "data/media/OLX.bg_147149175/0000_9035bb3e.webp",
+    "data/media/OLX.bg_147149175/0001_02fe5a39.webp",
+    "data/media/OLX.bg_147149175/0002_309c9d8d.webp",
+    "data/media/OLX.bg_147149175/0003_9cd3c2fd.webp",
+    "data/media/OLX.bg_147149175/0004_a22095d3.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147149175/0000_9035bb3e.webp",
+    "OLX.bg_147149175/0001_02fe5a39.webp",
+    "OLX.bg_147149175/0002_309c9d8d.webp",
+    "OLX.bg_147149175/0003_9cd3c2fd.webp",
+    "OLX.bg_147149175/0004_a22095d3.webp"
+  ]
+}

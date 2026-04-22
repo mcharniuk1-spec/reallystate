@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/studio-apartament-v-zatvoren-kompleks-v-slanchev-bryag-4637-CID368-ID9Z4mr.html?search_reason=search%7Corganic",
+  "external_id": "147541799",
+  "title": "Студио апартамент в затворен комплекс в Слънчев бряг #4637",
+  "description": "Предлагаме за продажба уютно студио в затворен комплекс в Слънчев бряг. Студиото е обзаведено и оборудвано с всички необходими уреди. Прозорецът гледа към вътрешния двор. Комплексът се намира на 350 метра от Cacao Beach в популярния курорт Слънчев бряг. Проектиран във френски неокласически бароков стил, декорът е изискан: фонтани, антични скулптури и беседки, ковани железни арки и парапети. Имотът се гордее с великолепна градина и басейн за възрастни и деца, подземен паркинг и детска площадка. Всички необходими удобства за приятен престой и ежедневие са на пешеходно разстояние, включително ресторанти, кафенета, аптеки, медицински център, целогодишни супермаркети, фитнес зала и салон за красота. Акт 16.#4637 Предлагаем к покупке уютную студию в закрытом комплексе на Солнечном Берегу. Студия меблирована и оснащена необходимой техникой. Вид из окна на двор. Комплекс расположен в 350 метрах от пляжа Какао Бич на популярном курорте Солнечный берег. Спроектирован в стиле французского неоклассического Барокко. Очень элегантный декор: фонтаны, антические скульптуры и беседки, арки и перила из кованного железа. Великолепный сад на территории и бассейн для взрослых и детей, подземный паркинг, детская зона. В пешей доступности вся необходимая для приятного отдыха и повседневной жизни инфраструктура. Рестораны, кафе, аптеки, медицинский центр, круглогодично работающие супермаркеты, тренажерный зал, салон красоты. Акт. 16.#4637",
+  "price": 55500.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/krlur198wp1s2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2t2qkqgrzy773-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/r4z71gidrhbh2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/cefl66qbvsl5-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/mct9inwsy09g-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/krlur198wp1s2-BG/image;s=1400x1867"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:24:52.500971+00:00",
+  "reference_id": "OLX.bg:147541799",
+  "local_image_files": [
+    "data/media/OLX.bg_147541799/0000_b8e56104.webp",
+    "data/media/OLX.bg_147541799/0001_ad6aff69.webp",
+    "data/media/OLX.bg_147541799/0002_ccf55534.webp",
+    "data/media/OLX.bg_147541799/0003_1dff2f48.webp",
+    "data/media/OLX.bg_147541799/0004_2d4a50ee.webp",
+    "data/media/OLX.bg_147541799/0005_3108496f.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147541799/0000_b8e56104.webp",
+    "OLX.bg_147541799/0001_ad6aff69.webp",
+    "OLX.bg_147541799/0002_ccf55534.webp",
+    "OLX.bg_147541799/0003_1dff2f48.webp",
+    "OLX.bg_147541799/0004_2d4a50ee.webp",
+    "OLX.bg_147541799/0005_3108496f.webp"
+  ]
+}

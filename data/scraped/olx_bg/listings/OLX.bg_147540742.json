@@ -1,0 +1,44 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/partsel-v-kv-shenini-gr-gabrovo-CID368-ID9Z45o.html?search_reason=search%7Corganic",
+  "external_id": "147540742",
+  "title": "Парцел в кв. Шенини, гр. Габрово",
+  "description": "Предлагаме ви за продажба земеделска земя в кв. Шейнени, гр. Габрово, с площ 1350 кв.м. Земята е придобита по параграф 4. В имота е имало построена едноетажна постройка на площ 25 кв. м., която се е съборила. Парцелът граничи с път, ток и вода! Ако това е търсеният от вас имот, обадете ни се! Брокер: Павлина Бойновска 08********88",
+  "price": 13500.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zq8adszzymf33-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/9h2mz1ft1ro8-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2l5u1papm30u3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/alfj6wu717zt-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zq8adszzymf33-BG/image;s=4032x3024"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:20:16.982423+00:00",
+  "reference_id": "OLX.bg:147540742",
+  "local_image_files": [
+    "data/media/OLX.bg_147540742/0000_4118300b.webp",
+    "data/media/OLX.bg_147540742/0001_649b689a.webp",
+    "data/media/OLX.bg_147540742/0002_c415bcba.webp",
+    "data/media/OLX.bg_147540742/0003_e9a6935b.webp",
+    "data/media/OLX.bg_147540742/0004_0fffae68.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540742/0000_4118300b.webp",
+    "OLX.bg_147540742/0001_649b689a.webp",
+    "OLX.bg_147540742/0002_c415bcba.webp",
+    "OLX.bg_147540742/0003_e9a6935b.webp",
+    "OLX.bg_147540742/0004_0fffae68.webp"
+  ]
+}

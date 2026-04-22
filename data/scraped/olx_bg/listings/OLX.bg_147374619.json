@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/tristaen-apartament-v-krasno-selo-CID368-ID9YmRZ.html?search_reason=search%7Corganic",
+  "external_id": "147374619",
+  "title": "Тристаен апартамент в Красно село",
+  "description": "Broadway Estate Ви предлага един модерен дом изключително топъл, създава чувство за уют и простор. В близост до спирки на градски транспорт, детска градина, училище, търговски център, големи вериги хранителни магазини, аптеки, ресторанти, заведения за вечерни забави танци и всичко необходимо за дълъг и щастлив живот в добре устроена градска среда. За оглед на това и други атрактивни предложения, не се колебайте да ни потърсите на посочения телефон или да ни изпратите данните си чрез формата за запитване на сайта. Реф. номер: 99566",
+  "price": 180000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/g35emme6y4jr-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fuv9r9k1iq382-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/a5g7r9q1njfl3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/e7vfddxwlsnc3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/hfurgvtttt3o-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/g35emme6y4jr-BG/image;s=900x1600"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:25:37.269754+00:00",
+  "reference_id": "OLX.bg:147374619",
+  "local_image_files": [
+    "data/media/OLX.bg_147374619/0000_cbefff2c.webp",
+    "data/media/OLX.bg_147374619/0001_36726fcd.webp",
+    "data/media/OLX.bg_147374619/0002_0a2c4e44.webp",
+    "data/media/OLX.bg_147374619/0003_ba1f1bf1.webp",
+    "data/media/OLX.bg_147374619/0004_8519519a.webp",
+    "data/media/OLX.bg_147374619/0005_a1e63a18.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147374619/0000_cbefff2c.webp",
+    "OLX.bg_147374619/0001_36726fcd.webp",
+    "OLX.bg_147374619/0002_0a2c4e44.webp",
+    "OLX.bg_147374619/0003_ba1f1bf1.webp",
+    "OLX.bg_147374619/0004_8519519a.webp",
+    "OLX.bg_147374619/0005_a1e63a18.webp"
+  ]
+}

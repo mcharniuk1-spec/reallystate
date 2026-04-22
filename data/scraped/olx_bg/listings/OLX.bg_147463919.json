@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/prodava-dvuetazhna-masivna-kascha-grad-dryanovo-CID368-ID9YK6j.html?search_reason=search%7Corganic",
+  "external_id": "147463919",
+  "title": "Продава двуетажна масивна къща - град Дряново",
+  "description": "Гарант имоти продава масивна къща в тих квартал на град Дряново, застроена на парцел с площ 433 кв.м., предлагащ удобна пътна свързаност и улеснения на новите купувачи. Къщата е разположена на слънчево място като двора е равен, заграден и предлага възможности за оптимизиране на имота. Разполага с два етажа по 90 кв.м, и подпокривно пространство с възможност за усвояване и преустройство в допълнителни стаи. Имотът предлага по две спални ,просторна кухня с трапезария и санитарен възел на всеки един от етажите като съответно те са свързани с вътрешно масивно стълбище. Могат да бъдат обособени като самостоятелен обект в сграда по избор на новите купувачи - има два входа за достъп в имота. Къщата е със здрав покрив, хидроизолирана и са монтирани нови улуци. Сменена частично дограма. Имотът е без никакви конструктивни за бележки, идеален за многодетни семейства, търсещи комфорта и близостта на всичко необходимо в типичната градска среда. За огледи и конкретна информация, потърсете Илия Бончев - Гарант имоти на тел-08********31",
+  "price": 85000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2s8mithyy37l2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/aax5j3mt357k3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/mb4glbocqtbk3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/06w1t67aaco12-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nsqvsfc4q602-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2s8mithyy37l2-BG/image;s=1024x1024"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:31:34.255148+00:00",
+  "reference_id": "OLX.bg:147463919",
+  "local_image_files": [
+    "data/media/OLX.bg_147463919/0000_7a2f74f8.webp",
+    "data/media/OLX.bg_147463919/0001_12162432.webp",
+    "data/media/OLX.bg_147463919/0002_a1fc0c0f.webp",
+    "data/media/OLX.bg_147463919/0003_4eda1b07.webp",
+    "data/media/OLX.bg_147463919/0004_8c03a730.webp",
+    "data/media/OLX.bg_147463919/0005_a087ad03.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147463919/0000_7a2f74f8.webp",
+    "OLX.bg_147463919/0001_12162432.webp",
+    "OLX.bg_147463919/0002_a1fc0c0f.webp",
+    "OLX.bg_147463919/0003_4eda1b07.webp",
+    "OLX.bg_147463919/0004_8c03a730.webp",
+    "OLX.bg_147463919/0005_a087ad03.webp"
+  ]
+}

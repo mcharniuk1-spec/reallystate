@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/tristaen-apartament-za-prodazhba-v-bansko-CID368-ID9Z3Sa.html?search_reason=search%7Corganic",
+  "external_id": "147539922",
+  "title": "Тристаен апартамент за продажба в Банско",
+  "description": "www.unikalniimotibansko.com БЕЗ КОМИСИОННА ОТ КУПУВАЧА! Агенция ”Уникални Имоти Банско” предлага за продажба НАПЪЛНО ОБЗАВЕДЕН И ГОТОВ ЗА НАНАСЯНЕ ТРИСТАЕН АПАРТАМЕНТ, РАЗПОЛОЖЕН В СГРАДА, КОЯТО СЕ НАМИРА НА МЕТРИ ОТ ОКОЛОВРЪСТНИЯ ПЪТ, КОЙТО ВОДИ КЪМ СКИ ЗОНАТА! РАЗСТОЯНИЕ ДО ЛИФТА - ОКОЛО 10 МИНУТИ ПЕША И НА 2-3 МИНУТИ С КОЛА! Апартаментът е разположен на 2-ри етаж, като е съставен от входно антре, три самостоятелно и НЕпреходно разположени стаи - две спални и всекидневна и самостоятелно разположена баня. Всекидневната е с оборудван кухненски бокс, срещу който има разположени два дивана с холна масичка, а на стената има окачен телевизор. Стаята разполага със собствена слънчева и просторна тераса. Двете спални са еднотипно обзаведени с по едно голямо двойно легло и гардероб. Банята е просторна. Снабдена е с душ кабина и тоалетна. Сградата е разположена на околовръстен път, който води към ски зоната. Страхотна инвестиция в имот, който може да ползвате за постоянно живеене, отдаване под наем или ваканционни посещения!",
+  "price": 130000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/du9g9b8a1t612-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/3gz8dv5flbwe-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/68oemp9k4eix1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pf9g4nzyrn2r1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/v7pgc7uq0ag02-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/du9g9b8a1t612-BG/image;s=1024x768"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:28:33.922484+00:00",
+  "reference_id": "OLX.bg:147539922",
+  "local_image_files": [
+    "data/media/OLX.bg_147539922/0000_07820474.webp",
+    "data/media/OLX.bg_147539922/0001_c0239fbd.webp",
+    "data/media/OLX.bg_147539922/0002_687e921e.webp",
+    "data/media/OLX.bg_147539922/0003_521ed2e1.webp",
+    "data/media/OLX.bg_147539922/0004_9dd716de.webp",
+    "data/media/OLX.bg_147539922/0005_7f41ccf4.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539922/0000_07820474.webp",
+    "OLX.bg_147539922/0001_c0239fbd.webp",
+    "OLX.bg_147539922/0002_687e921e.webp",
+    "OLX.bg_147539922/0003_521ed2e1.webp",
+    "OLX.bg_147539922/0004_9dd716de.webp",
+    "OLX.bg_147539922/0005_7f41ccf4.webp"
+  ]
+}

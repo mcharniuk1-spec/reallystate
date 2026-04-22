@@ -2,14 +2,14 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-7234-zhilishtna-sgrada-grad-sofiya-tsentar",
   "external_id": "4a4878e3b371",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "Жилищна сграда в град София Център обява 7234",
+  "description": "Imot.bg - №1 сайт за имоти от собственици и брокери",
   "price": null,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 7234.0,
   "rooms": null,
   "floor": null,
-  "city": "�����",
+  "city": "София",
   "district": "",
   "address_text": "",
   "latitude": null,
@@ -17,10 +17,50 @@
   "listing_intent": "sale",
   "property_category": "unknown",
   "image_urls": [
-    "//cdn3.focus.bg/imot/photosnb/234//big/7234_97.jpg"
+    "https://cdn3.focus.bg/imot/photosnb/234//big1/7234_97.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/234//big1/7234_S9.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/234//big1/7234_Mn.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/234//big1/7234_Qa.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/234//big1/7234_f4.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/234//big1/7234_FR.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/234//big1/7234_I1.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/234//big1/7234_Eu.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/234//big1/7234_V2.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/234//big1/7234_Al.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/234//big/7234_97.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "0887597532"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:29:03.307399+00:00",
-  "reference_id": "imot.bg:4a4878e3b371"
+  "scraped_at": "2026-04-21T08:07:28.991185+00:00",
+  "reference_id": "imot.bg:4a4878e3b371",
+  "source_attributes": {},
+  "listing_status": "active",
+  "local_image_files": [
+    "data/media/imot.bg_4a4878e3b371/0000_c6aafeb6.jpg",
+    "data/media/imot.bg_4a4878e3b371/0001_d02d4776.jpg",
+    "data/media/imot.bg_4a4878e3b371/0002_391c7fb3.jpg",
+    "data/media/imot.bg_4a4878e3b371/0003_3191ac8c.jpg",
+    "data/media/imot.bg_4a4878e3b371/0004_fa73d5db.jpg",
+    "data/media/imot.bg_4a4878e3b371/0005_8b79f4ee.jpg",
+    "data/media/imot.bg_4a4878e3b371/0006_0b045050.jpg",
+    "data/media/imot.bg_4a4878e3b371/0007_be87b2c9.jpg",
+    "data/media/imot.bg_4a4878e3b371/0008_39a58c93.jpg",
+    "data/media/imot.bg_4a4878e3b371/0009_629e00a9.jpg",
+    "data/media/imot.bg_4a4878e3b371/0010_e9e51513.jpg"
+  ],
+  "local_image_storage_keys": [
+    "imot.bg_4a4878e3b371/0000_c6aafeb6.jpg",
+    "imot.bg_4a4878e3b371/0001_d02d4776.jpg",
+    "imot.bg_4a4878e3b371/0002_391c7fb3.jpg",
+    "imot.bg_4a4878e3b371/0003_3191ac8c.jpg",
+    "imot.bg_4a4878e3b371/0004_fa73d5db.jpg",
+    "imot.bg_4a4878e3b371/0005_8b79f4ee.jpg",
+    "imot.bg_4a4878e3b371/0006_0b045050.jpg",
+    "imot.bg_4a4878e3b371/0007_be87b2c9.jpg",
+    "imot.bg_4a4878e3b371/0008_39a58c93.jpg",
+    "imot.bg_4a4878e3b371/0009_629e00a9.jpg",
+    "imot.bg_4a4878e3b371/0010_e9e51513.jpg"
+  ]
 }

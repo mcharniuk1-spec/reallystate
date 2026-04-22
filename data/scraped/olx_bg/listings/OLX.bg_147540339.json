@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/of-25574-luksozen-tristaen-v-malka-sgrada-trakiya-CID368-ID9Z3YT.html?search_reason=search%7Corganic",
+  "external_id": "147540339",
+  "title": "оф.25574 Луксозен тристаен в малка сграда/ Тракия",
+  "description": "оф.25574 ЕКСКЛУЗИВНО ! МАЛКА СГРАДА ! ИЗЦЯЛО ОБЗАВЕДЕН ! ВЪЗМОЖНОСТ ЗА ЗАКУПУВАНЕ НА ПОДЗЕМЕН ГАРАЖ ! ВИСОК КЛАС НА СТРОИТЕЛСТВО !! Предлагаме Ви да закупите страхотен тристаен апартамент в МАЛКА СГРАДА , състоящ се от ХОЛ С КУХНЕНСКИ БОКС И ТРАПЕЗАРИЯ , ДВЕ СПАЛНИ , БАНЯ С ТОАЛЕТНА , ТРИ ТЕРАСИ , КОРИДОР И ПРИЛЕЖАЩО ИЗБЕНО ПОМЕЩЕНИЕ. Жилището , което Ви предлагаме да закупите се продава изцяло обзаведено , което Ви дава пълната възможност да се нанесете веднага. Имотът е перфектния избор , както за вашия , нов и мечтан дом , така и с цел инвестиция отдаване под наем. Намира се на спокойна и комуникативна локация , в близост до училища , детски градини , автобусни спирки , магазини , паркове и др. Има възможност за закупуването на подземен гараж ! Авангард Риъл Естейт предлага Висока сигурност при покупка на имот и цялостно съдействие до финализиране на сделката пред нотариус.",
+  "price": 229999.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wdonp4c1djdp3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/5z4elgtzpjrm2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/sejeiq7pgsba-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4q583k0hmm722-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vk0pduo8n6nm-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wdonp4c1djdp3-BG/image;s=1200x900"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:23:43.063325+00:00",
+  "reference_id": "OLX.bg:147540339",
+  "local_image_files": [
+    "data/media/OLX.bg_147540339/0000_46c7277c.webp",
+    "data/media/OLX.bg_147540339/0001_e783bd4d.webp",
+    "data/media/OLX.bg_147540339/0002_e94c1c7c.webp",
+    "data/media/OLX.bg_147540339/0003_6d0642c9.webp",
+    "data/media/OLX.bg_147540339/0004_ddd34251.webp",
+    "data/media/OLX.bg_147540339/0005_e08acde5.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540339/0000_46c7277c.webp",
+    "OLX.bg_147540339/0001_e783bd4d.webp",
+    "OLX.bg_147540339/0002_e94c1c7c.webp",
+    "OLX.bg_147540339/0003_6d0642c9.webp",
+    "OLX.bg_147540339/0004_ddd34251.webp",
+    "OLX.bg_147540339/0005_e08acde5.webp"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Businesses_in_Bulgaria/AD89074BG_Business_for_sale_in_Sveti_Vlas.html",
+  "external_id": "bd29101d56f9",
+  "title": "Bulgarian Properties",
+  "description": "Fully completed and operational complex with long-term tenants, 500 m from the beach",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89074_76.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:41:10.850399+00:00",
+  "reference_id": "BulgarianProperties:bd29101d56f9",
+  "local_image_files": [
+    "data/media/BulgarianProperties_bd29101d56f9/0000_9f855c4b.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_bd29101d56f9/0000_9f855c4b.jpg"
+  ]
+}

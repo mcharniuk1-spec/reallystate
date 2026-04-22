@@ -1,0 +1,35 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-54090808/ot-sobstwenik-goliam-dwustaen-apartament",
+  "external_id": "54090808",
+  "title": "Bazar.BG",
+  "description": "БЕЗ ПОСРЕДНИЦИ !!!\nОт собственик, напълно обзаведен голям двустаен апартамент с обща площ- 95кв.м. в Златни Пясъци. \nСъстоящ се от коридор, баня с вана и тоалет",
+  "price": 90000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://bazar.bg/img/gallery/noPhoto.svg",
+    "//bazar.bg/img/gallery/noPhoto.svg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:43:55.409567+00:00",
+  "reference_id": "Bazar.bg:54090808",
+  "local_image_files": [
+    "data/media/Bazar.bg_54090808/0000_5bced1d4.svg",
+    "data/media/Bazar.bg_54090808/0001_5bced1d4.svg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_54090808/0000_5bced1d4.svg",
+    "Bazar.bg_54090808/0001_5bced1d4.svg"
+  ]
+}

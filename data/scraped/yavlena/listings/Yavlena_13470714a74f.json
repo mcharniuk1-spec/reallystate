@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168385",
+  "external_id": "13470714a74f",
+  "title": "Тристаен апартамент в Казанлък 109 кв.м. ID 168385  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/4f7e57ea-c3ed-4f8b-a59e-d4d87b207a6e.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:13:20.173961+00:00",
+  "reference_id": "Yavlena:13470714a74f",
+  "local_image_files": [
+    "data/media/Yavlena_13470714a74f/0000_04f9c558.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_13470714a74f/0000_04f9c558.jpg"
+  ]
+}

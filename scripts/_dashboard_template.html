@@ -3,19 +3,50 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reallystate — Project Dashboard</title>
+  <title>BGEstate — Project Dashboard</title>
   <style>
     :root {
-      --bg: #f4f5f7; --card: #fff; --border: #dfe1e6; --text: #172b4d;
-      --muted: #5e6c84; --accent: #0052cc; --green: #00875a; --amber: #ff991f;
-      --red: #de350b; --purple: #6554c0; --teal: #00b8d9; --blue-light: #deebff;
-      --green-light: #e3fcef; --amber-light: #fffae6; --red-light: #ffebe6;
-      --purple-light: #eae6ff; --radius: 8px; --shadow: 0 1px 3px rgba(0,0,0,.08);
+      --bg: #eef2f6;
+      --surface-2: #e8edf3;
+      --card: #ffffff;
+      --border: #c9d4e0;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #0d9488;
+      --accent-hover: #0f766e;
+      --accent-muted: #ccfbf1;
+      --lane-backend: #0d9488;
+      --lane-s1: #059669;
+      --lane-t3: #ca8a04;
+      --lane-sm: #7c3aed;
+      --lane-ux: #2563eb;
+      --lane-dbg: #dc2626;
+      --lane-lead: #334155;
+      --green: #059669;
+      --amber: #d97706;
+      --red: #dc2626;
+      --purple: #7c3aed;
+      --teal: #0d9488;
+      --blue-light: #dbeafe;
+      --green-light: #d1fae5;
+      --amber-light: #fef3c7;
+      --red-light: #fee2e2;
+      --purple-light: #ede9fe;
+      --radius: 10px;
+      --shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
     }
     *, *::before, *::after { box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.5; }
 
-    .topbar { background: #0052cc; color: #fff; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .topbar {
+      background: linear-gradient(135deg, #0f766e 0%, #0d9488 45%, #115e59 100%);
+      color: #fff;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(15, 118, 110, 0.25);
+    }
     .topbar h1 { margin: 0; font-size: 18px; font-weight: 700; letter-spacing: -.3px; }
     .topbar .meta { font-size: 12px; opacity: .85; }
 
@@ -34,12 +65,13 @@
     .fill-green { background: var(--green); }
     .fill-amber { background: var(--amber); }
     .fill-blue { background: var(--accent); }
+    .fill-teal { background: var(--accent); }
 
     /* Tabs */
     .tabs { display: flex; gap: 0; border-bottom: 2px solid var(--border); margin-bottom: 20px; }
     .tab { padding: 10px 20px; cursor: pointer; font-weight: 600; font-size: 13px; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all .15s; }
     .tab:hover { color: var(--text); }
-    .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .tab.active { color: var(--accent-hover); border-bottom-color: var(--accent); }
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
 
@@ -65,10 +97,10 @@
     /* Status badges */
     .badge { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .3px; }
     .badge-green { background: var(--green-light); color: var(--green); }
-    .badge-amber { background: var(--amber-light); color: #b8860b; }
+    .badge-amber { background: var(--amber-light); color: #92400e; }
     .badge-red { background: var(--red-light); color: var(--red); }
     .badge-purple { background: var(--purple-light); color: var(--purple); }
-    .badge-blue { background: var(--blue-light); color: var(--accent); }
+    .badge-blue { background: var(--blue-light); color: #1d4ed8; }
     .badge-gray { background: #f0f0f0; color: #666; }
 
     /* Tables */
@@ -103,7 +135,7 @@
     .pipeline-stage .stage-num { font-size: 16px; font-weight: 700; display: block; }
     .pipeline-stage .stage-name { font-size: 10px; font-weight: 400; color: var(--muted); display: block; margin-top: 2px; }
     .stage-complete { background: var(--green-light); border-color: var(--green); }
-    .stage-progress { background: var(--blue-light); border-color: var(--accent); }
+    .stage-progress { background: var(--accent-muted); border-color: var(--accent); }
     .stage-partial { background: var(--amber-light); border-color: var(--amber); }
     .stage-pending { background: #f7f8fa; }
 
@@ -124,14 +156,14 @@
     .pill-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
     .pill { display: inline-flex; align-items: center; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .2px; }
     .pill-done { background: var(--green-light); color: var(--green); }
-    .pill-current { background: var(--amber-light); color: #b8860b; }
-    .pill-next { background: var(--blue-light); color: var(--accent); }
+    .pill-current { background: var(--amber-light); color: #92400e; }
+    .pill-next { background: var(--accent-muted); color: #0f766e; }
     .pill-blocked { background: var(--red-light); color: var(--red); }
     .subtask-list { margin: 0; padding-left: 16px; font-size: 12px; }
     .subtask-list li { margin: 2px 0; }
     .subtask-done { color: var(--green); }
-    .subtask-current { color: #b8860b; }
-    .subtask-next { color: var(--accent); }
+    .subtask-current { color: #92400e; }
+    .subtask-next { color: #0f766e; }
     .subtask-blocked { color: var(--red); }
     .all-tasks-wrap { max-height: 620px; overflow: auto; border: 1px solid var(--border); border-radius: var(--radius); }
 
@@ -145,16 +177,12 @@
     .tier-group { margin-bottom: 24px; }
     .tier-group-header { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: var(--radius); font-weight: 700; font-size: 14px; margin-bottom: 8px; }
     .tier-1-bg { background: var(--green-light); color: var(--green); }
-    .tier-2-bg { background: var(--blue-light); color: var(--accent); }
-    .tier-3-bg { background: var(--amber-light); color: #b8860b; }
+    .tier-2-bg { background: var(--blue-light); color: #1e40af; }
+    .tier-3-bg { background: var(--amber-light); color: #92400e; }
     .tier-4-bg { background: var(--purple-light); color: var(--purple); }
     .scrape-table-wrap { max-height: 500px; overflow: auto; border: 1px solid var(--border); border-radius: var(--radius); }
     .scrape-table-wrap table { margin: 0; }
     .scrape-table-wrap th { position: sticky; top: 0; z-index: 1; }
-
-    /* Skills chips */
-    .skills-grid { display: flex; flex-wrap: wrap; gap: 6px; }
-    .skill-chip { display: inline-block; background: var(--blue-light); color: var(--accent); font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
 
     /* Agent detail panel */
     .agent-detail-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.45); z-index: 100; display: none; }
@@ -170,11 +198,32 @@
     .step-card .step-title { font-weight: 700; font-size: 13px; margin-bottom: 4px; }
     .step-card .step-body { font-size: 12px; color: var(--muted); line-height: 1.6; }
     .step-card .step-meta { font-size: 11px; color: var(--accent); margin-top: 4px; }
+
+    .lead-note { font-size: 13px; color: var(--muted); margin: 0 0 12px; line-height: 1.55; }
+    .waves-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-bottom: 4px; }
+    .wave-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; box-shadow: var(--shadow); border-top: 4px solid var(--accent); }
+    .wave-card h3 { margin: 0 0 6px; font-size: 14px; color: var(--text); }
+    .wave-owners { font-size: 11px; color: var(--muted); margin-top: 10px; line-height: 1.4; }
+    .lane-strip { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 16px; }
+    .lane-chip { font-size: 11px; font-weight: 700; padding: 6px 12px; border-radius: 999px; color: #fff; }
+    .phase-timeline { margin-top: 4px; }
+    .phase-block { display: grid; grid-template-columns: 52px 1fr; gap: 14px; margin-bottom: 16px; align-items: start; }
+    .phase-id { width: 48px; height: 48px; border-radius: 10px; background: linear-gradient(145deg, #0f766e, #14b8a6); color: #fff; font-weight: 800; font-size: 18px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .phase-body { background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; }
+    .phase-body h3 { margin: 0 0 4px; font-size: 14px; }
+    .phase-meta { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .task-chip-row { display: flex; flex-wrap: wrap; gap: 6px; }
+    .task-chip { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 6px; background: var(--card); border: 1px solid var(--border); color: var(--text); }
+    .rules-list { margin: 0; padding-left: 18px; font-size: 13px; color: var(--muted); }
+    .rules-list li { margin: 4px 0; }
+    .doc-grid { display: grid; grid-template-columns: minmax(120px, 1fr) 2fr; gap: 8px 16px; font-size: 12px; margin-top: 10px; align-items: start; }
+    .doc-grid dt { font-weight: 700; color: var(--text); }
+    .doc-grid dd { margin: 0; color: var(--muted); }
   </style>
 </head>
 <body>
   <div class="topbar">
-    <h1>Reallystate — Project Dashboard</h1>
+    <h1>BGEstate — Project Dashboard</h1>
     <div class="meta" id="gen-time"></div>
   </div>
 
@@ -194,6 +243,29 @@
       <div id="global-stages"></div>
     </div>
 
+    <div class="card" id="parallel-waves-card">
+      <h2>Parallel roadmap waves (PLAN §9.1)</h2>
+      <p class="lead-note">Waves run in parallel across specialist lanes whenever slice dependencies allow. The dependency graph in <code>docs/agents/TASKS.md</code> is the real scheduler.</p>
+      <div class="waves-grid" id="waves-grid"></div>
+    </div>
+
+    <div class="card" id="global-structure-card">
+      <h2>Global structure — specialist lanes</h2>
+      <p class="lead-note">Each lane owns a tier or stack layer. One active slice per agent; <strong>Phase A</strong> (tier-1/2 live volume + <code>BD-11</code>) is the current critical path until <code>S1-18</code> is verified.</p>
+      <div id="lane-details"></div>
+      <div class="lane-strip" id="lane-strip"></div>
+      <h3 style="margin-top:8px;font-size:13px">Operating rules</h3>
+      <ul class="rules-list" id="rules-list"></ul>
+      <h3 style="margin-top:14px;font-size:13px">Documentation sources of truth</h3>
+      <dl class="doc-grid" id="doc-source-grid"></dl>
+    </div>
+
+    <div class="card" id="operator-phases-card">
+      <h2>Operator delivery phases (sequenced timeline)</h2>
+      <p class="lead-note">Phases <strong>A → G</strong> from <code>docs/agents/TASKS.md</code> (priority execution order). Tasks inside a phase may still run in parallel across agents when unblocked.</p>
+      <div class="phase-timeline" id="phase-timeline"></div>
+    </div>
+
     <!-- Tabs -->
     <div class="tabs" id="tabs">
       <div class="tab active" data-tab="kanban">Kanban Board</div>
@@ -203,6 +275,7 @@
       <div class="tab" data-tab="sources">Source Matrix</div>
       <div class="tab" data-tab="backlog">Dashboard Backlog</div>
       <div class="tab" data-tab="skills">Skills</div>
+      <div class="tab" data-tab="timeline">Timeline &amp; phases</div>
     </div>
 
     <!-- Tab: Kanban -->
@@ -225,6 +298,9 @@
 
     <!-- Tab: Skills -->
     <div class="tab-panel" id="panel-skills"></div>
+
+    <!-- Tab: Timeline (duplicate printable view) -->
+    <div class="tab-panel" id="panel-timeline"></div>
   </div>
 
   <div class="agent-detail-overlay" id="agent-detail-overlay">
@@ -237,13 +313,13 @@
     <script id="dashboard-data" type="application/json">__DASHBOARD_DATA__</script>
   <script>
     const AGENT_COLORS = {
-      debugger: '#de350b',
-      backend_developer: '#0052cc',
-      ux_ui_designer: '#6554c0',
-      scraper_1: '#00875a',
-      scraper_t3: '#ff991f',
-      scraper_sm: '#00b8d9',
-      lead_agent: '#172b4d',
+      debugger: '#dc2626',
+      backend_developer: '#0d9488',
+      ux_ui_designer: '#2563eb',
+      scraper_1: '#059669',
+      scraper_t3: '#ca8a04',
+      scraper_sm: '#7c3aed',
+      lead_agent: '#334155',
     };
     const AGENT_INITIALS = {
       debugger: 'DB',
@@ -278,6 +354,73 @@
       if (status === 'IN PROGRESS') return 'stage-progress';
       if (status === 'PARTIAL' || status === 'NEXT') return 'stage-partial';
       return 'stage-pending';
+    }
+
+    function wavesHtml(waves) {
+      return (waves || []).map(w => {
+        const owners = (w.owners || []).map(o => {
+          const c = AGENT_COLORS[o] || '#64748b';
+          return `<span style="color:${c};font-weight:600">${esc(o)}</span>`;
+        }).join(' · ');
+        return `<div class="wave-card"><h3>${esc(w.name)}</h3><div style="font-size:12px;color:var(--muted);line-height:1.45">${esc(w.summary)}</div><div class="wave-owners"><strong>Lanes:</strong> ${owners}</div></div>`;
+      }).join('');
+    }
+
+    function phasesHtml(phases) {
+      return (phases || []).map(p => {
+        const lanes = (p.parallel_lanes || []).map(pk => {
+          const c = AGENT_COLORS[pk] || '#64748b';
+          return `<span style="color:${c};font-weight:600;font-size:11px">${esc(pk)}</span>`;
+        }).join(' · ');
+        const chips = (p.tasks || []).map(tid => `<span class="task-chip">${esc(tid)}</span>`).join('');
+        return `<div class="phase-block"><div class="phase-id">${esc(p.id)}</div><div class="phase-body"><h3>${esc(p.title)}</h3><div class="phase-meta">${esc(p.subtitle || '')}</div><div style="font-size:11px;margin-bottom:6px;color:var(--muted)">Parallel lanes: ${lanes}</div><div class="task-chip-row">${chips}</div></div></div>`;
+      }).join('');
+    }
+
+    function renderOverviewTimeline(data) {
+      const waves = data.roadmap_parallel_waves || [];
+      const phases = data.operator_phases || [];
+      const glob = data.global_execution_structure || {};
+      const wg = document.getElementById('waves-grid');
+      if (wg) wg.innerHTML = wavesHtml(waves);
+      const ls = document.getElementById('lane-strip');
+      if (ls) {
+        ls.innerHTML = (glob.lanes || []).map(l => {
+          const c = AGENT_COLORS[l.key] || '#64748b';
+          return `<span class="lane-chip" style="background:${c}" title="${esc(l.scope)}">${esc(l.label)}</span>`;
+        }).join('');
+      }
+      const ld = document.getElementById('lane-details');
+      if (ld) {
+        ld.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:8px;">' +
+          (glob.lanes || []).map(l => {
+            const c = AGENT_COLORS[l.key] || '#64748b';
+            return `<div style="font-size:12px;padding:10px 12px;border:1px solid var(--border);border-radius:8px;border-left:3px solid ${c};background:var(--card)"><strong style="color:${c}">${esc(l.label)}</strong><div style="color:var(--muted);margin-top:4px;line-height:1.4">${esc(l.scope)}</div></div>`;
+          }).join('') + '</div>';
+      }
+      const rl = document.getElementById('rules-list');
+      if (rl) rl.innerHTML = (glob.rules || []).map(r => `<li>${esc(r)}</li>`).join('');
+      const dg = document.getElementById('doc-source-grid');
+      if (dg) {
+        let dhtml = '';
+        for (const s of glob.source_of_truth || []) {
+          dhtml += `<dt>${esc(s.doc)}</dt><dd>${esc(s.role)}</dd>`;
+        }
+        dg.innerHTML = dhtml;
+      }
+      const pt = document.getElementById('phase-timeline');
+      if (pt) pt.innerHTML = phasesHtml(phases);
+    }
+
+    function renderTimelineTab(data) {
+      const panel = document.getElementById('panel-timeline');
+      if (!panel) return;
+      const waves = data.roadmap_parallel_waves || [];
+      const phases = data.operator_phases || [];
+      panel.innerHTML = `
+        <div class="card"><h2>PLAN §9.1 — parallel waves</h2><p class="lead-note">Print-friendly copy of the overview section.</p><div class="waves-grid">${wavesHtml(waves)}</div></div>
+        <div class="card"><h2>Operator phases A–G</h2><div class="phase-timeline">${phasesHtml(phases)}</div></div>
+        <div class="card"><h2>Markdown exports</h2><p class="lead-note" style="margin:0">Regenerate with <code>make dashboard-doc</code>:</p><ul class="rules-list"><li><code>docs/exports/parallel-execution-timeline.md</code> — waves + phases narrative</li><li><code>docs/exports/scraper-activity-snapshot.md</code> — tier-1/2/3/4 scraper summary</li><li><code>docs/exports/progress-dashboard.json</code> — machine-readable payload</li></ul></div>`;
     }
 
     async function loadDashboardData() {
@@ -320,6 +463,7 @@
       }
 
       document.getElementById('gen-time').textContent = 'Generated: ' + new Date(data.generated_at).toLocaleString();
+      window.__DASHBOARD_DATA__ = data;
 
       // KPI strip
       const agents = data.agents || [];
@@ -331,7 +475,7 @@
       const src = data.sources || {};
 
       const kpis = [
-        { label: 'Roadmap', value: `${rm.done || 0} / ${rm.total || 0}`, sub: `${rm.remaining || 0} remaining`, pct: rm.total ? Math.round((rm.done / rm.total) * 100) : 0, fill: 'fill-blue' },
+        { label: 'Roadmap', value: `${rm.done || 0} / ${rm.total || 0}`, sub: `${rm.remaining || 0} remaining`, pct: rm.total ? Math.round((rm.done / rm.total) * 100) : 0, fill: 'fill-teal' },
         { label: 'Verified Tasks', value: totalVerified, sub: `across ${agents.length} agents`, pct: 0, fill: '' },
         { label: 'TODO Tasks', value: totalTodo, sub: totalInProgress + ' in progress', pct: 0, fill: '' },
         { label: 'Journal Entries', value: totalJournal, sub: 'completed work items', pct: 0, fill: '' },
@@ -354,10 +498,13 @@
         pipeline.innerHTML += `<div class="pipeline-stage ${stageClass(s.status)}"><span class="stage-num">${s.stage}</span><span class="stage-name">${esc(s.name)}</span>${statusBadge(s.status)}</div>`;
       }
       const pct = rm.total ? Math.round((rm.done / rm.total) * 100) : 0;
-      document.getElementById('roadmap-bar').innerHTML = `<div style="margin-top:10px;font-size:12px;color:var(--muted)">Overall: ${rm.done}/${rm.total} steps (${pct}%)</div><div class="progress-bar-wrap"><div class="progress-bar-fill fill-blue" style="width:${pct}%"></div></div>`;
+      document.getElementById('roadmap-bar').innerHTML = `<div style="margin-top:10px;font-size:12px;color:var(--muted)">Overall: ${rm.done}/${rm.total} steps (${pct}%)</div><div class="progress-bar-wrap"><div class="progress-bar-fill fill-teal" style="width:${pct}%"></div></div>`;
 
       // Global process stages with colored pills + subtasks
       renderGlobalStages(data.processes || []);
+
+      // Parallel waves, lane structure, operator phases
+      renderOverviewTimeline(data);
 
       // Tabs
       document.querySelectorAll('.tab').forEach(tab => {
@@ -389,6 +536,9 @@
 
       // Skills
       renderSkills(data.skills || []);
+
+      // Printable timeline tab
+      renderTimelineTab(data);
     }
 
     function renderKanban(agents, processes) {
@@ -414,7 +564,7 @@
       if (processes && processes.length) {
         html += '<div class="card"><h2>Process Progress (% by lane)</h2><div class="kpi-strip">';
         for (const p of processes) {
-          html += `<div class="kpi"><div class="label">${esc(p.label)}</div><div class="value">${p.progress_percent}%</div><div class="sub">${esc(p.comment || '')}</div><div class="progress-bar-wrap"><div class="progress-bar-fill fill-blue" style="width:${p.progress_percent || 0}%"></div></div></div>`;
+          html += `<div class="kpi"><div class="label">${esc(p.label)}</div><div class="value">${p.progress_percent}%</div><div class="sub">${esc(p.comment || '')}</div><div class="progress-bar-wrap"><div class="progress-bar-fill fill-teal" style="width:${p.progress_percent || 0}%"></div></div></div>`;
         }
         html += '</div></div>';
       }
@@ -477,7 +627,7 @@
             <span>${esc(p.label)}</span>
             <span>${pct}%</span>
           </div>
-          <div class="progress-bar-wrap"><div class="progress-bar-fill fill-blue" style="width:${pct}%"></div></div>
+          <div class="progress-bar-wrap"><div class="progress-bar-fill fill-teal" style="width:${pct}%"></div></div>
           <div class="process-comment">${esc(p.comment || '')}</div>
           <div class="pill-row">
             <span class="pill pill-done">Done ${p.done_count ?? done.length}</span>
@@ -507,12 +657,12 @@
         const color = AGENT_COLORS[agent.key] || '#999';
         const c = agent.counts || {};
         html += `<div class="agent-section card">`;
-        html += `<div class="agent-header"><div class="agent-avatar" style="background:${color}">${AGENT_INITIALS[agent.key]}</div><div style="flex:1"><strong>${esc(agent.display_name)}</strong><div style="font-size:12px;color:var(--muted);margin-top:2px">${esc(agent.description || '')}</div><div class="agent-stats"><span>${c.verified || 0} verified</span><span>${c.in_progress || 0} current</span><span>${c.todo || 0} todo</span><span>${c.journal_entries || 0} log entries</span></div></div><button onclick="openAgentDetail('${agent.key}')" style="background:var(--accent);color:#fff;border:none;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px;font-weight:600;">View Details</button></div>`;
+        html += `<div class="agent-header"><div class="agent-avatar" style="background:${color}">${AGENT_INITIALS[agent.key]}</div><div style="flex:1"><strong>${esc(agent.display_name)}</strong><div style="font-size:12px;color:var(--muted);margin-top:2px">${esc(agent.description || '')}</div><div class="agent-stats"><span>${c.verified || 0} verified</span><span>${c.in_progress || 0} current</span><span>${c.todo || 0} todo</span><span>${c.journal_entries || 0} log entries</span></div></div><button onclick="openAgentDetail('${agent.key}')" style="background:var(--accent);color:#fff;border:none;border-radius:6px;padding:6px 14px;cursor:pointer;font-size:12px;font-weight:600;box-shadow:0 1px 3px rgba(13,148,136,.35);">View Details</button></div>`;
 
         // Efficiency bar
         const eff = c.efficiency_pct || 0;
         html += `<div style="margin:8px 0 4px 50px;font-size:12px;color:var(--muted)">Efficiency: ${eff}% (${c.verified || 0} done + ${c.in_progress || 0} current of ${c.total || 0} total)</div>`;
-        html += `<div class="progress-bar-wrap" style="margin-left:50px;margin-bottom:12px"><div class="progress-bar-fill fill-blue" style="width:${eff}%"></div></div>`;
+        html += `<div class="progress-bar-wrap" style="margin-left:50px;margin-bottom:12px"><div class="progress-bar-fill fill-teal" style="width:${eff}%"></div></div>`;
 
         // Skills
         const skills = agent.skills || [];
@@ -574,7 +724,7 @@
 
       // KPI strip
       html += '<div class="kpi-strip" style="margin-bottom:16px">';
-      html += `<div class="kpi"><div class="label">Efficiency</div><div class="value">${c.efficiency_pct || 0}%</div><div class="progress-bar-wrap"><div class="progress-bar-fill fill-blue" style="width:${c.efficiency_pct || 0}%"></div></div></div>`;
+        html += `<div class="kpi"><div class="label">Efficiency</div><div class="value">${c.efficiency_pct || 0}%</div><div class="progress-bar-wrap"><div class="progress-bar-fill fill-teal" style="width:${c.efficiency_pct || 0}%"></div></div></div>`;
       html += `<div class="kpi"><div class="label">Verified</div><div class="value">${c.verified || 0}</div></div>`;
       html += `<div class="kpi"><div class="label">Current</div><div class="value">${c.in_progress || 0}</div></div>`;
       html += `<div class="kpi"><div class="label">TODO</div><div class="value">${c.todo || 0}</div></div>`;
@@ -623,7 +773,8 @@
 
       // Source-specific detail for scraper agents
       if (agentKey.startsWith('scraper')) {
-        const src = DATA.sources || {};
+        const g = typeof window.__DASHBOARD_DATA__ !== 'undefined' ? window.__DASHBOARD_DATA__ : {};
+        const src = g.sources || {};
         const sources = src.sources || [];
         const tierMap = { scraper_1: [1, 2], scraper_t3: [3], scraper_sm: [4] };
         const myTiers = tierMap[agentKey] || [];

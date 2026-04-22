@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/zhilischno-stroitelstvo-apartamenti-CID368-ID9VsgF.html?search_reason=search%7Cpromoted",
+  "external_id": "146918713",
+  "title": "Жилищно строителство,Апартаменти",
+  "description": "НОВО!!!НОВО!!!НОВО!!! СОБСТВЕНИК БЕЗ КОМИСИОННА! Започва новостроящ се затворен жилищен комплекс гр.Асеновград кв.Запад. -подземни гаражи(затворени с врати ОТДЕЛНИ),избени помещения складови -външни парко места -собствен двор със зелени площи 700кв -детски кът -видео контрол -архив от изкоп до акт 16 Обектите се изпълняват със сертифицирани материали! Живей луксозно, животът е кратък! Снимките са на завършени обекти!",
+  "price": 70000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gvqxpo8kzodl3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vxi1itvidpn92-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kuso5dq8fqy21-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kjcm9z63l9q51-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ybero1lcb83n1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gvqxpo8kzodl3-BG/image;s=2416x2909"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:28:55.741910+00:00",
+  "reference_id": "OLX.bg:146918713",
+  "local_image_files": [
+    "data/media/OLX.bg_146918713/0000_8adb9f6a.webp",
+    "data/media/OLX.bg_146918713/0001_ad551803.webp",
+    "data/media/OLX.bg_146918713/0002_97bb4bb5.webp",
+    "data/media/OLX.bg_146918713/0003_d85cce90.webp",
+    "data/media/OLX.bg_146918713/0004_14e61f15.webp",
+    "data/media/OLX.bg_146918713/0005_b1f2f3ed.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_146918713/0000_8adb9f6a.webp",
+    "OLX.bg_146918713/0001_ad551803.webp",
+    "OLX.bg_146918713/0002_97bb4bb5.webp",
+    "OLX.bg_146918713/0003_d85cce90.webp",
+    "OLX.bg_146918713/0004_14e61f15.webp",
+    "OLX.bg_146918713/0005_b1f2f3ed.webp"
+  ]
+}

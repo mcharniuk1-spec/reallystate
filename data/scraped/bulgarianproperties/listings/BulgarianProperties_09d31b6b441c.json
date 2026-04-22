@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Regulated_plots_in_Bulgaria/AD89967BG_Regulated_plot_for_sale_in_Sofia.html",
+  "external_id": "09d31b6b441c",
+  "title": "Bulgarian Properties",
+  "description": "Development land with strong investment potential near Vladimir Vazov Blvd",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89967_1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:35:54.786292+00:00",
+  "reference_id": "BulgarianProperties:09d31b6b441c",
+  "local_image_files": [
+    "data/media/BulgarianProperties_09d31b6b441c/0000_2cd9642d.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_09d31b6b441c/0000_2cd9642d.jpg"
+  ]
+}

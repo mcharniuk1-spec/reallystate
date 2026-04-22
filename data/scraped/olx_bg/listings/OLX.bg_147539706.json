@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/apartament-v-dolna-mitropoliya-do-pleven-CID368-ID9Z3OG.html?search_reason=search%7Corganic",
+  "external_id": "147539706",
+  "title": "Апартамент в Долна Митрополия до Плевен .",
+  "description": "Продава се апартамент в Долна Митрополия. Близо до гр. Плевен. Апартаментът е за ремонт, но на атрактивна цена. Намира се в тих и спокоен район. Блокът е населен, сменена дограма на общите части. Допълнителни прилежащи към апартамента са маза -12 кв.метра и таванско помещение-9 кв. метра .",
+  "price": 30000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/cw1hs2gnkp51-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/3a8np31eiq821-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/u7atijmsznfr2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/72sgvz1k4744-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xuuyeofv1r3k3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/cw1hs2gnkp51-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:23:52.271697+00:00",
+  "reference_id": "OLX.bg:147539706",
+  "local_image_files": [
+    "data/media/OLX.bg_147539706/0000_ce4b7b79.webp",
+    "data/media/OLX.bg_147539706/0001_fb8c39c0.webp",
+    "data/media/OLX.bg_147539706/0002_15f82de4.webp",
+    "data/media/OLX.bg_147539706/0003_e9d1a506.webp",
+    "data/media/OLX.bg_147539706/0004_992db9c1.webp",
+    "data/media/OLX.bg_147539706/0005_99e7f864.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539706/0000_ce4b7b79.webp",
+    "OLX.bg_147539706/0001_fb8c39c0.webp",
+    "OLX.bg_147539706/0002_15f82de4.webp",
+    "OLX.bg_147539706/0003_e9d1a506.webp",
+    "OLX.bg_147539706/0004_992db9c1.webp",
+    "OLX.bg_147539706/0005_99e7f864.webp"
+  ]
+}

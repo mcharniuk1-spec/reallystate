@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/targovski-obekt-za-prodazhba-na-ul-mayor-pavel-pavlov-kv-manastirski-CID368-ID9YncT.html?search_reason=search%7Corganic",
+  "external_id": "147375915",
+  "title": "Търговски обект за продажба на ул. Майор Павел Павлов, кв. Манастирски",
+  "description": "ЕРА Голд има удоволствието да Ви представи търговски обект - магазин за продажба на ул. Майор Павел Павлов в кв. Манастирски ливади - в непосредствена близост до ул. Тодор Каблешков, ул. Луи Айер и ЛИДЛ. Имотът е подходящ за всякаква дейност - магазин, офис, салон за красота, заведение и други дейности. Магазинът предлага търговска работна площ и санитарен възел. Обща площ: 33,25 кв. м. Застроена площ: 28,44 кв. м. Детайли: - Високи тавани и голяма витрина - Възможност за свързване с комина аспирация - Отопление на ток, с монтиран климатик Daikin и бойлер - Представителна сграда от 2020 г. CreditERA предоставя безплатна консултация и съдействие при финансиране на избрания от Вас имот от всички водещи банки в страната и ще договори най-добрите условия за вас! Оферта №4062845",
+  "price": 99750.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "office",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/obnfch379i57-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/lh4zgnalezxb-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gv3jnbyjsdx53-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/04c6u5zwbeu33-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qgvwmie4s2mn3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/obnfch379i57-BG/image;s=800x600"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:22:19.094207+00:00",
+  "reference_id": "OLX.bg:147375915",
+  "local_image_files": [
+    "data/media/OLX.bg_147375915/0000_a6951960.webp",
+    "data/media/OLX.bg_147375915/0001_ad249035.webp",
+    "data/media/OLX.bg_147375915/0002_96d66646.webp",
+    "data/media/OLX.bg_147375915/0003_45ee84ec.webp",
+    "data/media/OLX.bg_147375915/0004_c4e468ce.webp",
+    "data/media/OLX.bg_147375915/0005_a6951960.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147375915/0000_a6951960.webp",
+    "OLX.bg_147375915/0001_ad249035.webp",
+    "OLX.bg_147375915/0002_96d66646.webp",
+    "OLX.bg_147375915/0003_45ee84ec.webp",
+    "OLX.bg_147375915/0004_c4e468ce.webp",
+    "OLX.bg_147375915/0005_a6951960.webp"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-pod-naem-v-kv-simeonovo-CID368-ID9XpPK.html?search_reason=search%7Corganic",
+  "external_id": "147147684",
+  "title": "Двустаен апартамент под наем в кв. Симеоново",
+  "description": "Агенция предлага двустаен апартамент под наем в кв. Симеоново. Намира се в близост до планина Витоша, търговски обекти, заведения и спирки на градски транспорт. Жилището се състои от входно антре, кухня с хол, спалня, баня с тоалетна и тераса. Напълно обзаведен и оборудван с всичко необходимо.",
+  "price": 520.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ecev1toknp8y-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ix4ll508q8ci-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8li4c3pw0k553-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vzyqovtrjv5i-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/3nqr5ovcqwka2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ecev1toknp8y-BG/image;s=1600x900"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:30:25.468754+00:00",
+  "reference_id": "OLX.bg:147147684",
+  "local_image_files": [
+    "data/media/OLX.bg_147147684/0000_4e4ad7ff.webp",
+    "data/media/OLX.bg_147147684/0001_2463e642.webp",
+    "data/media/OLX.bg_147147684/0002_40277bc6.webp",
+    "data/media/OLX.bg_147147684/0003_96fdc19a.webp",
+    "data/media/OLX.bg_147147684/0004_7d77d2bc.webp",
+    "data/media/OLX.bg_147147684/0005_55c46d86.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147147684/0000_4e4ad7ff.webp",
+    "OLX.bg_147147684/0001_2463e642.webp",
+    "OLX.bg_147147684/0002_40277bc6.webp",
+    "OLX.bg_147147684/0003_96fdc19a.webp",
+    "OLX.bg_147147684/0004_7d77d2bc.webp",
+    "OLX.bg_147147684/0005_55c46d86.webp"
+  ]
+}

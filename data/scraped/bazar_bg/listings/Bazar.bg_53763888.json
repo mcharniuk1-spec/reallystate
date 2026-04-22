@@ -1,0 +1,44 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53763888/prodawa-3-staen-gr-sofiia-lewski-g",
+  "external_id": "53763888",
+  "title": "Bazar.BG",
+  "description": "Апартамент находящ се в сграда с контролиран достъп и видеонаблюдение в жк. Левски  Г, в близост до 92 ДГ  Мечта, храм  Св. Апостол Йоан Богослов  и 199 ОУ  Св.",
+  "price": 208888.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/302/big1/1c176097362054302_t4.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/302/big1/1c176097362054302_YZ.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/302/big1/1c176097362054302_PI.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/302/big1/1c176097362054302_nN.jpg",
+    "//imotstatic1.focus.bg/imot/photosimotbg/1/302/big1/1c176097362054302_t4.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:46:30.663538+00:00",
+  "reference_id": "Bazar.bg:53763888",
+  "local_image_files": [
+    "data/media/Bazar.bg_53763888/0000_31c8b137.jpg",
+    "data/media/Bazar.bg_53763888/0001_d4fb28cb.jpg",
+    "data/media/Bazar.bg_53763888/0002_c6a61d5c.jpg",
+    "data/media/Bazar.bg_53763888/0003_1c4994f2.jpg",
+    "data/media/Bazar.bg_53763888/0004_31c8b137.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53763888/0000_31c8b137.jpg",
+    "Bazar.bg_53763888/0001_d4fb28cb.jpg",
+    "Bazar.bg_53763888/0002_c6a61d5c.jpg",
+    "Bazar.bg_53763888/0003_1c4994f2.jpg",
+    "Bazar.bg_53763888/0004_31c8b137.jpg"
+  ]
+}

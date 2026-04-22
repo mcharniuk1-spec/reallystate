@@ -1,0 +1,41 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dava-pod-naem-dava-pod-naem-sklad-na-okolovrasten-pat-350-m2-CID368-ID9RVVA.html?search_reason=search%7Cpromoted",
+  "external_id": "145844992",
+  "title": "дава под наем Дава под наем Склад на Околовръстен път, 350 м2",
+  "description": "Директно от собственик, без посредници и комисионна - Новопостроена складова база на адрес ул. Околовръстен път 345, в локалното платно за движение между Герман и Горубляне. Сградата е с отделен санитарен възел, както и трифазно напрежение. Складовата база разполага с видеонаблюдение, осигурена е възможност за интернет връзка. Обекта има постоянна жива охрана. Строителството е от термопанели. Има изградена асфалтова настилка на територията на обекта и възможност за добавяне на паркови места.",
+  "price": 2625.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/m095x3qu30sa1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/o6wc2mj8ddt51-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/teyisup3m2kk1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/m095x3qu30sa1-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:26:50.212663+00:00",
+  "reference_id": "OLX.bg:145844992",
+  "local_image_files": [
+    "data/media/OLX.bg_145844992/0000_efe3f3fa.webp",
+    "data/media/OLX.bg_145844992/0001_1041e547.webp",
+    "data/media/OLX.bg_145844992/0002_116f7a72.webp",
+    "data/media/OLX.bg_145844992/0003_c9d97738.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_145844992/0000_efe3f3fa.webp",
+    "OLX.bg_145844992/0001_1041e547.webp",
+    "OLX.bg_145844992/0002_116f7a72.webp",
+    "OLX.bg_145844992/0003_c9d97738.webp"
+  ]
+}

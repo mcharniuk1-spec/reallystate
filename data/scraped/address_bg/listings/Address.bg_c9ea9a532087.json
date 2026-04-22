@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/burgas-lazur-ofis-offer683381",
+  "external_id": "c9ea9a532087",
+  "title": "Офис в Бургас, Лазур - код на имота: 683381",
+  "description": "Адрес недвижими имоти предлага Офис в Бургас, Лазур с код на имота: 683381. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "office",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/381/683381/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:21:25.702535+00:00",
+  "reference_id": "Address.bg:c9ea9a532087",
+  "local_image_files": [
+    "data/media/Address.bg_c9ea9a532087/0000_77e9d345.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_c9ea9a532087/0000_77e9d345.jpg"
+  ]
+}

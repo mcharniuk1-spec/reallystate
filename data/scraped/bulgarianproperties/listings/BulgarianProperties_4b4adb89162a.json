@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD88294BG_1-bedroom_apartment_for_rent_in_Varna.html",
+  "external_id": "4b4adb89162a",
+  "title": "Bulgarian Properties",
+  "description": "Furnished property for rent on the first line of Kabakum beach",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88294_11.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:40:22.567665+00:00",
+  "reference_id": "BulgarianProperties:4b4adb89162a",
+  "local_image_files": [
+    "data/media/BulgarianProperties_4b4adb89162a/0000_9aac45a8.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_4b4adb89162a/0000_9aac45a8.jpg"
+  ]
+}

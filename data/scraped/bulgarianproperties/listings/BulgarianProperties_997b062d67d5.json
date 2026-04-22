@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD89968BG_House_for_sale_near_Troyan.html",
+  "external_id": "997b062d67d5",
+  "title": "Bulgarian Properties",
+  "description": "A house requiring attention with a 50-meter-long garden\n",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89968_60.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:35:24.980096+00:00",
+  "reference_id": "BulgarianProperties:997b062d67d5",
+  "local_image_files": [
+    "data/media/BulgarianProperties_997b062d67d5/0000_5cb9e1de.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_997b062d67d5/0000_5cb9e1de.jpg"
+  ]
+}

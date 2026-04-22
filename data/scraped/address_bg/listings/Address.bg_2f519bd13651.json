@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-bistrica-kashta-vila-offer667831",
+  "external_id": "2f519bd13651",
+  "title": "Къща/Вила в София, Бистрица - код на имота: 667831",
+  "description": "Адрес недвижими имоти предлага Къща/Вила в София, Бистрица с код на имота: 667831. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/831/667831/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:20:27.014136+00:00",
+  "reference_id": "Address.bg:2f519bd13651",
+  "local_image_files": [
+    "data/media/Address.bg_2f519bd13651/0000_0bef9c6f.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_2f519bd13651/0000_0bef9c6f.jpg"
+  ]
+}

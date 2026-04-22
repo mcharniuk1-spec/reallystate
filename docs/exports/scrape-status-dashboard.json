@@ -1,0 +1,3005 @@
+{
+  "generated_at": "2026-04-22T08:57:18.383341+00:00",
+  "sources": [
+    {
+      "tier": 1,
+      "source_name": "Address.bg",
+      "primary_url": "https://address.bg/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "crawl listings with ref-id normalization",
+      "notes": "Core agency network with strong local branches.",
+      "saved_listings": 43,
+      "with_description": 43,
+      "with_photo_urls": 43,
+      "with_readable_local_photos": 43,
+      "service_counts": {
+        "sale": 43
+      },
+      "category_counts": {
+        "apartment": 29,
+        "house": 8,
+        "land": 3,
+        "office": 2,
+        "unknown": 1
+      },
+      "field_counts": {
+        "description": 43,
+        "image_urls": 43,
+        "readable_photos": 43,
+        "price": 1,
+        "area_sqm": 1,
+        "city": 1,
+        "district": 1,
+        "address_text": 1,
+        "phones": 1
+      },
+      "state": "Partial corpus on disk",
+      "next_step": "Continue category-by-category refreshes and push the file-backed corpus into PostgreSQL for `S1-18` evidence.",
+      "discovery_links": [
+        "https://address.bg/sale",
+        "https://address.bg/rent",
+        "https://address.bg/sale/sofia/l4451",
+        "https://address.bg/sale/varna/l4694",
+        "https://address.bg/rent/sofia/l4451"
+      ],
+      "apartment_links": [],
+      "combo_rows": [
+        {
+          "intent": "sale",
+          "category": "apartment",
+          "count": 29,
+          "description": 29,
+          "photo_urls": 29,
+          "readable_photos": 29,
+          "fields": {}
+        },
+        {
+          "intent": "sale",
+          "category": "house",
+          "count": 8,
+          "description": 8,
+          "photo_urls": 8,
+          "readable_photos": 8,
+          "fields": {}
+        },
+        {
+          "intent": "sale",
+          "category": "land",
+          "count": 3,
+          "description": 3,
+          "photo_urls": 3,
+          "readable_photos": 3,
+          "fields": {
+            "price": 1,
+            "area_sqm": 1,
+            "city": 1,
+            "district": 1,
+            "address_text": 1,
+            "phones": 1
+          }
+        },
+        {
+          "intent": "sale",
+          "category": "office",
+          "count": 2,
+          "description": 2,
+          "photo_urls": 2,
+          "readable_photos": 2,
+          "fields": {}
+        },
+        {
+          "intent": "sale",
+          "category": "unknown",
+          "count": 1,
+          "description": 1,
+          "photo_urls": 1,
+          "readable_photos": 1,
+          "fields": {}
+        }
+      ],
+      "website_total": {
+        "value": 18701,
+        "kind": "exact",
+        "basis": "live_embedded_json",
+        "url": "https://address.bg/sale",
+        "notes": "Computed as sale total 16935 plus rent total 1766 from live `offers-object` payloads."
+      },
+      "website_inventory_rows": [
+        {
+          "service": "sale",
+          "property": "all",
+          "count": 16935,
+          "kind": "exact",
+          "basis": "live_embedded_json",
+          "url": "https://address.bg/sale",
+          "notes": "Page payload exposes `total=16935`."
+        },
+        {
+          "service": "long_term_rent",
+          "property": "all",
+          "count": 1766,
+          "kind": "exact",
+          "basis": "live_embedded_json",
+          "url": "https://address.bg/rent",
+          "notes": "Page payload exposes `total=1766`."
+        }
+      ],
+      "website_coverage_pct": 0.2299342281161435,
+      "counting_method": "Read the live search page and extract `offers-object.total` from the embedded JSON payload.",
+      "counting_gap": "Property-type split still needs category-specific entry pages or in-payload estate-type aggregation.",
+      "estimate_conflict": "Saved analysis estimate 18000 is below the confirmed/lower-bound live count 18701.",
+      "pattern_status": "Patterned",
+      "pattern_issue": "Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields.",
+      "count_status": "recounted_live",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "crawl listings with ref-id normalization",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": {
+        "source_key": "address_bg",
+        "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/listings",
+        "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/raw",
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/listings/Address.bg_45556d0cad2d.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/raw/Address.bg_45556d0cad2d.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/Address.bg_45556d0cad2d",
+        "reference_id": "Address.bg:45556d0cad2d",
+        "listing_url": "https://address.bg/sofia-bistrica-parcel-teren-offer626861",
+        "title": "Парцел/Терен в София, Бистрица - код на имота: 626861",
+        "description_chars": 177,
+        "remote_photo_count": 1,
+        "local_photo_count": 1,
+        "local_photo_coverage_pct": 100.0,
+        "has_full_gallery": true,
+        "has_description": true,
+        "has_price": true,
+        "has_area": true,
+        "has_rooms": false,
+        "has_floor": false,
+        "has_phones": true,
+        "has_city": true,
+        "has_district": true,
+        "has_address": true,
+        "has_local_image_files": true,
+        "local_image_files_count": 1,
+        "local_image_files_preview": [
+          "data/media/Address.bg_45556d0cad2d/0000_6ae4210c.jpg"
+        ],
+        "structured_fields_count": 2,
+        "source_attributes_count": 1
+      }
+    },
+    {
+      "tier": 1,
+      "source_name": "alo.bg",
+      "primary_url": "https://www.alo.bg/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "short_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "scoped HTML crawl with category filtering",
+      "notes": "Strong coastal inventory, especially land and new-build.",
+      "saved_listings": 0,
+      "with_description": 0,
+      "with_photo_urls": 0,
+      "with_readable_local_photos": 0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "state": "Configured, zero landed corpus",
+      "next_step": "Run the stalled category-targeted continuation and confirm apartment sale/rent detail capture from `alo.bg/obiavi/...` pages.",
+      "discovery_links": [
+        "https://www.alo.bg/obiavi/imoti-prodajbi/apartamenti-stai/",
+        "https://www.alo.bg/obiavi/imoti-prodajbi/kashti-vili/",
+        "https://www.alo.bg/obiavi/imoti-prodajbi/parzeli-za-zastroiavane-investicionni-proekti/",
+        "https://www.alo.bg/obiavi/imoti-prodajbi/zemedelska-zemia-gradini-lozia-gora/",
+        "https://www.alo.bg/obiavi/imoti-naemi/apartamenti-stai/"
+      ],
+      "apartment_links": [
+        "https://www.alo.bg/obiavi/imoti-prodajbi/apartamenti-stai/",
+        "https://www.alo.bg/obiavi/imoti-naemi/apartamenti-stai/"
+      ],
+      "combo_rows": [],
+      "website_total": {
+        "value": 75961,
+        "kind": "lower_bound",
+        "basis": "largest_live_category_count",
+        "url": "https://www.alo.bg/obiavi/imoti-prodajbi/apartamenti-stai/",
+        "notes": "Sale apartments alone already exceed the older source estimate, so current total must be at least this large."
+      },
+      "website_inventory_rows": [
+        {
+          "service": "sale",
+          "property": "apartment",
+          "count": 75961,
+          "kind": "exact",
+          "basis": "live_meta_description",
+          "url": "https://www.alo.bg/obiavi/imoti-prodajbi/apartamenti-stai/",
+          "notes": "Meta description says `75961 обяви`."
+        },
+        {
+          "service": "sale",
+          "property": "house",
+          "count": 24695,
+          "kind": "exact",
+          "basis": "live_meta_description",
+          "url": "https://www.alo.bg/obiavi/imoti-prodajbi/kashti-vili/",
+          "notes": "Meta description says `24695 обяви`."
+        },
+        {
+          "service": "sale",
+          "property": "land",
+          "count": null,
+          "kind": "unavailable",
+          "basis": "configured_url_404",
+          "url": "https://www.alo.bg/obiavi/imoti-prodajbi/parzeli-za-zastroiavane-investicionni-proekti/",
+          "notes": "Configured land URL returned 404 during this run and needs remapping."
+        },
+        {
+          "service": "long_term_rent",
+          "property": "apartment",
+          "count": null,
+          "kind": "unavailable",
+          "basis": "configured_url_404",
+          "url": "https://www.alo.bg/obiavi/imoti-naemi/apartamenti-stai/",
+          "notes": "Configured rent URL returned 404 during this run and needs remapping."
+        }
+      ],
+      "website_coverage_pct": 0.0,
+      "counting_method": "Extract counts from the live category page meta description on mapped product pages.",
+      "counting_gap": "Land and rent routes need refreshed discovery URLs before the source can have a trustworthy total.",
+      "estimate_conflict": "Saved analysis estimate 35000 is below the confirmed/lower-bound live count 75961.",
+      "pattern_status": "without_sample_product_capture",
+      "pattern_issue": "No saved full product sample exists yet for this source.",
+      "count_status": "recounted_live",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "scoped HTML crawl with category filtering",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": null
+    },
+    {
+      "tier": 1,
+      "source_name": "BulgarianProperties",
+      "primary_url": "https://www.bulgarianproperties.bg/",
+      "related_urls": [
+        "https://www.bulgarianproperties.com/"
+      ],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "conservative crawl using stable reference IDs",
+      "notes": "Important for new-build and foreign buyer inventory.",
+      "saved_listings": 249,
+      "with_description": 249,
+      "with_photo_urls": 249,
+      "with_readable_local_photos": 249,
+      "service_counts": {
+        "sale": 246,
+        "long_term_rent": 3
+      },
+      "category_counts": {
+        "house": 34,
+        "unknown": 108,
+        "apartment": 93,
+        "land": 10,
+        "office": 4
+      },
+      "field_counts": {
+        "description": 249,
+        "image_urls": 249,
+        "readable_photos": 249,
+        "price": 1,
+        "rooms": 1,
+        "city": 1,
+        "address_text": 1,
+        "phones": 1
+      },
+      "state": "High-volume corpus on disk",
+      "next_step": "Continue category-by-category refreshes and push the file-backed corpus into PostgreSQL for `S1-18` evidence.",
+      "discovery_links": [
+        "https://www.bulgarianproperties.com/properties_for_sale_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/properties_for_rent_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/land_for_sale_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/3-bedroom_apartments_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/houses_in_Bulgaria/index.html"
+      ],
+      "apartment_links": [
+        "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/3-bedroom_apartments_in_Bulgaria/index.html"
+      ],
+      "combo_rows": [
+        {
+          "intent": "sale",
+          "category": "apartment",
+          "count": 92,
+          "description": 92,
+          "photo_urls": 92,
+          "readable_photos": 92,
+          "fields": {
+            "price": 1,
+            "rooms": 1,
+            "city": 1,
+            "address_text": 1,
+            "phones": 1
+          }
+        },
+        {
+          "intent": "long_term_rent",
+          "category": "apartment",
+          "count": 1,
+          "description": 1,
+          "photo_urls": 1,
+          "readable_photos": 1,
+          "fields": {}
+        },
+        {
+          "intent": "sale",
+          "category": "house",
+          "count": 34,
+          "description": 34,
+          "photo_urls": 34,
+          "readable_photos": 34,
+          "fields": {}
+        },
+        {
+          "intent": "sale",
+          "category": "land",
+          "count": 10,
+          "description": 10,
+          "photo_urls": 10,
+          "readable_photos": 10,
+          "fields": {}
+        },
+        {
+          "intent": "sale",
+          "category": "office",
+          "count": 4,
+          "description": 4,
+          "photo_urls": 4,
+          "readable_photos": 4,
+          "fields": {}
+        },
+        {
+          "intent": "sale",
+          "category": "unknown",
+          "count": 106,
+          "description": 106,
+          "photo_urls": 106,
+          "readable_photos": 106,
+          "fields": {}
+        },
+        {
+          "intent": "long_term_rent",
+          "category": "unknown",
+          "count": 2,
+          "description": 2,
+          "photo_urls": 2,
+          "readable_photos": 2,
+          "fields": {}
+        }
+      ],
+      "website_total": {
+        "value": 12000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.bulgarianproperties.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 2.075,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "Patterned",
+      "pattern_issue": "Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "conservative crawl using stable reference IDs",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": {
+        "source_key": "bulgarianproperties",
+        "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/bulgarianproperties/listings",
+        "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/bulgarianproperties/raw",
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/bulgarianproperties/listings/BulgarianProperties_ec4b0ae64e6c.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/bulgarianproperties/raw/BulgarianProperties_ec4b0ae64e6c.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/BulgarianProperties_ec4b0ae64e6c",
+        "reference_id": "BulgarianProperties:ec4b0ae64e6c",
+        "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD86759BG_1-bedroom_apartment_for_sale_in_Sozopol.html",
+        "title": "One bedroom turnkey apartment in Sozopol",
+        "description_chars": 51,
+        "remote_photo_count": 16,
+        "local_photo_count": 38,
+        "local_photo_coverage_pct": 237.5,
+        "has_full_gallery": true,
+        "has_description": true,
+        "has_price": true,
+        "has_area": false,
+        "has_rooms": true,
+        "has_floor": false,
+        "has_phones": true,
+        "has_city": true,
+        "has_district": false,
+        "has_address": true,
+        "has_local_image_files": true,
+        "local_image_files_count": 38,
+        "local_image_files_preview": [
+          "data/media/BulgarianProperties_ec4b0ae64e6c/0000_30b1485f.jpg",
+          "data/media/BulgarianProperties_ec4b0ae64e6c/0001_30b1485f.jpg",
+          "data/media/BulgarianProperties_ec4b0ae64e6c/0002_21d91181.jpg",
+          "data/media/BulgarianProperties_ec4b0ae64e6c/0003_1b0c98f9.jpg",
+          "data/media/BulgarianProperties_ec4b0ae64e6c/0004_23e343be.jpg"
+        ],
+        "structured_fields_count": 2,
+        "source_attributes_count": 4
+      }
+    },
+    {
+      "tier": 1,
+      "source_name": "Homes.bg",
+      "primary_url": "https://www.homes.bg/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land"
+      ],
+      "best_extraction_method": "server-rendered HTML crawl",
+      "notes": "Crawl-friendly and broad national coverage.",
+      "saved_listings": 49,
+      "with_description": 49,
+      "with_photo_urls": 48,
+      "with_readable_local_photos": 32,
+      "service_counts": {
+        "sale": 49
+      },
+      "category_counts": {
+        "apartment": 49
+      },
+      "field_counts": {
+        "description": 49,
+        "image_urls": 48,
+        "readable_photos": 32,
+        "price": 12,
+        "area_sqm": 12,
+        "rooms": 11,
+        "floor": 12,
+        "city": 12,
+        "district": 12,
+        "address_text": 12,
+        "phones": 12,
+        "amenities": 7
+      },
+      "state": "Partial corpus on disk",
+      "next_step": "Expand beyond the current apartment-heavy subset by widening the API scopes and continuing city pagination.",
+      "discovery_links": [],
+      "apartment_links": [],
+      "combo_rows": [
+        {
+          "intent": "sale",
+          "category": "apartment",
+          "count": 49,
+          "description": 49,
+          "photo_urls": 48,
+          "readable_photos": 32,
+          "fields": {
+            "price": 12,
+            "area_sqm": 12,
+            "rooms": 11,
+            "floor": 12,
+            "city": 12,
+            "district": 12,
+            "address_text": 12,
+            "phones": 12,
+            "amenities": 7
+          }
+        }
+      ],
+      "website_total": {
+        "value": 120000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.homes.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.04083333333333333,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "Patterned",
+      "pattern_issue": "Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "Homes JSON discovery API + detail-page `__PRELOADED_STATE__` extraction with full gallery download.",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::_scrape_homes_bg",
+        "scripts/live_scraper.py::parse_homes_detail"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": {
+        "source_key": "homes_bg",
+        "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/listings",
+        "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/raw",
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/listings/Homes.bg_1680493.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/raw/Homes.bg_1680493.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/Homes.bg_1680493",
+        "reference_id": "Homes.bg:1680493",
+        "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-57m2-sofiya-zhk.-suhata-reka/as1680493",
+        "title": "Двустаен, 57m² - жк. Сухата Река, София",
+        "description_chars": 1026,
+        "remote_photo_count": 10,
+        "local_photo_count": 10,
+        "local_photo_coverage_pct": 100.0,
+        "has_full_gallery": true,
+        "has_description": true,
+        "has_price": true,
+        "has_area": true,
+        "has_rooms": true,
+        "has_floor": true,
+        "has_phones": true,
+        "has_city": true,
+        "has_district": true,
+        "has_address": true,
+        "has_local_image_files": true,
+        "local_image_files_count": 10,
+        "local_image_files_preview": [
+          "data/media/Homes.bg_1680493/0000_69f4c0fe.jpg",
+          "data/media/Homes.bg_1680493/0001_007b8f52.jpg",
+          "data/media/Homes.bg_1680493/0002_accd0edf.jpg",
+          "data/media/Homes.bg_1680493/0003_f7b19633.jpg",
+          "data/media/Homes.bg_1680493/0004_3cd7c7c8.jpg"
+        ],
+        "structured_fields_count": 4,
+        "source_attributes_count": 16
+      }
+    },
+    {
+      "tier": 1,
+      "source_name": "imot.bg",
+      "primary_url": "https://www.imot.bg/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "respectful crawl or partnership feed",
+      "notes": "High-volume benchmark supply source.",
+      "saved_listings": 271,
+      "with_description": 271,
+      "with_photo_urls": 271,
+      "with_readable_local_photos": 15,
+      "service_counts": {
+        "sale": 271
+      },
+      "category_counts": {
+        "unknown": 264,
+        "apartment": 7
+      },
+      "field_counts": {
+        "description": 271,
+        "image_urls": 271,
+        "city": 271,
+        "readable_photos": 15,
+        "price": 9,
+        "district": 9,
+        "address_text": 9,
+        "phones": 14,
+        "area_sqm": 4,
+        "rooms": 2,
+        "floor": 2,
+        "amenities": 2
+      },
+      "state": "High-volume corpus on disk",
+      "next_step": "Improve item classification and image download completeness; the volume is present but category precision is weak.",
+      "discovery_links": [],
+      "apartment_links": [],
+      "combo_rows": [
+        {
+          "intent": "sale",
+          "category": "apartment",
+          "count": 7,
+          "description": 7,
+          "photo_urls": 7,
+          "readable_photos": 7,
+          "fields": {
+            "price": 7,
+            "city": 7,
+            "district": 7,
+            "address_text": 7,
+            "phones": 7,
+            "area_sqm": 2,
+            "rooms": 2,
+            "floor": 2,
+            "amenities": 2
+          }
+        },
+        {
+          "intent": "sale",
+          "category": "unknown",
+          "count": 264,
+          "description": 264,
+          "photo_urls": 264,
+          "readable_photos": 8,
+          "fields": {
+            "city": 264,
+            "price": 2,
+            "district": 2,
+            "address_text": 2,
+            "phones": 7,
+            "area_sqm": 2
+          }
+        }
+      ],
+      "website_total": {
+        "value": 200000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.imot.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.1355,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "Patterned",
+      "pattern_issue": "Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "Server-rendered search pagination + filtered `obiava-*` detail URLs + structured detail-page blocks for params, text, phones, and full gallery.",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::_scrape_imot_bg",
+        "scripts/live_scraper.py::parse_imot_detail"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": {
+        "source_key": "imot_bg",
+        "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/listings",
+        "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/raw",
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/listings/imot.bg_e42f7bff1005.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/raw/imot.bg_e42f7bff1005.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/imot.bg_e42f7bff1005",
+        "reference_id": "imot.bg:e42f7bff1005",
+        "listing_url": "https://www.imot.bg/obiava-1b177261786459012-prodava-dvustaen-apartament-grad-sofiya-levski-g",
+        "title": "Продава 2-СТАЕН град София, Левски Г Обява: 1b177261786459012",
+        "description_chars": 1590,
+        "remote_photo_count": 17,
+        "local_photo_count": 17,
+        "local_photo_coverage_pct": 100.0,
+        "has_full_gallery": true,
+        "has_description": true,
+        "has_price": true,
+        "has_area": true,
+        "has_rooms": true,
+        "has_floor": true,
+        "has_phones": true,
+        "has_city": true,
+        "has_district": true,
+        "has_address": true,
+        "has_local_image_files": true,
+        "local_image_files_count": 17,
+        "local_image_files_preview": [
+          "data/media/imot.bg_e42f7bff1005/0000_6c35fb32.jpg",
+          "data/media/imot.bg_e42f7bff1005/0001_64b2cc01.jpg",
+          "data/media/imot.bg_e42f7bff1005/0002_e84e83dd.jpg",
+          "data/media/imot.bg_e42f7bff1005/0003_981cf594.jpg",
+          "data/media/imot.bg_e42f7bff1005/0004_bae4aa5b.jpg"
+        ],
+        "structured_fields_count": 4,
+        "source_attributes_count": 4
+      }
+    },
+    {
+      "tier": 1,
+      "source_name": "imoti.net",
+      "primary_url": "https://www.imoti.net/",
+      "related_urls": [],
+      "access_mode": "headless",
+      "risk_mode": "high",
+      "legal_mode": "legal_review_required",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "partnership first, headless as fallback",
+      "notes": "403 and anti-bot patterns raise risk.",
+      "saved_listings": 0,
+      "with_description": 0,
+      "with_photo_urls": 0,
+      "with_readable_local_photos": 0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "state": "Legal review required",
+      "next_step": "Run a legal/access review before new live work, then choose headless tracing or partner route.",
+      "discovery_links": [],
+      "apartment_links": [],
+      "combo_rows": [],
+      "website_total": {
+        "value": 90000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.imoti.net/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.0,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "without_authorized_pattern",
+      "pattern_issue": "Source needs legal review before a live pattern can be promoted.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "partnership first, headless as fallback",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": null
+    },
+    {
+      "tier": 1,
+      "source_name": "LUXIMMO",
+      "primary_url": "https://www.luximmo.bg/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "careful crawl using stable luxury listing reference IDs",
+      "notes": "Luxury coastal segment.",
+      "saved_listings": 15,
+      "with_description": 13,
+      "with_photo_urls": 15,
+      "with_readable_local_photos": 15,
+      "service_counts": {
+        "sale": 15
+      },
+      "category_counts": {
+        "unknown": 5,
+        "apartment": 10
+      },
+      "field_counts": {
+        "image_urls": 15,
+        "readable_photos": 15,
+        "description": 13,
+        "price": 2,
+        "area_sqm": 1,
+        "rooms": 1,
+        "city": 1,
+        "address_text": 1,
+        "phones": 1
+      },
+      "state": "Partial corpus on disk",
+      "next_step": "Close the text gap on detail pages before widening source coverage.",
+      "discovery_links": [
+        "https://www.luximmo.bg/apartamenti/"
+      ],
+      "apartment_links": [
+        "https://www.luximmo.bg/apartamenti/"
+      ],
+      "combo_rows": [
+        {
+          "intent": "sale",
+          "category": "apartment",
+          "count": 10,
+          "description": 10,
+          "photo_urls": 10,
+          "readable_photos": 10,
+          "fields": {
+            "price": 2,
+            "area_sqm": 1,
+            "rooms": 1,
+            "city": 1,
+            "address_text": 1,
+            "phones": 1
+          }
+        },
+        {
+          "intent": "sale",
+          "category": "unknown",
+          "count": 5,
+          "description": 3,
+          "photo_urls": 5,
+          "readable_photos": 5,
+          "fields": {}
+        }
+      ],
+      "website_total": {
+        "value": 4000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.luximmo.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.375,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "Patterned",
+      "pattern_issue": "Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "careful crawl using stable luxury listing reference IDs",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": {
+        "source_key": "luximmo",
+        "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/listings",
+        "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/raw",
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/listings/LUXIMMO_0c9fd22cfdbb.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/raw/LUXIMMO_0c9fd22cfdbb.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/LUXIMMO_0c9fd22cfdbb",
+        "reference_id": "LUXIMMO:0c9fd22cfdbb",
+        "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/borovets/luksozni-imoti-dvustayni-apartamenti/luksozen-imot-40091-dvustaen-apartament-za-prodajba-v-borovets.html",
+        "title": "Двустаен апартамент \"до ключ\" в престижния комплекс 7 Angels",
+        "description_chars": 541,
+        "remote_photo_count": 30,
+        "local_photo_count": 30,
+        "local_photo_coverage_pct": 100.0,
+        "has_full_gallery": true,
+        "has_description": true,
+        "has_price": true,
+        "has_area": true,
+        "has_rooms": true,
+        "has_floor": false,
+        "has_phones": true,
+        "has_city": true,
+        "has_district": false,
+        "has_address": true,
+        "has_local_image_files": true,
+        "local_image_files_count": 30,
+        "local_image_files_preview": [
+          "data/media/LUXIMMO_0c9fd22cfdbb/0000_02293170.jpg",
+          "data/media/LUXIMMO_0c9fd22cfdbb/0001_02293170.jpg",
+          "data/media/LUXIMMO_0c9fd22cfdbb/0002_196babe3.jpg",
+          "data/media/LUXIMMO_0c9fd22cfdbb/0003_dc0063d4.jpg",
+          "data/media/LUXIMMO_0c9fd22cfdbb/0004_a719601f.jpg"
+        ],
+        "structured_fields_count": 3,
+        "source_attributes_count": 3
+      }
+    },
+    {
+      "tier": 1,
+      "source_name": "OLX.bg",
+      "primary_url": "https://www.olx.bg/",
+      "related_urls": [
+        "https://developer.olx.bg/"
+      ],
+      "access_mode": "official_api",
+      "risk_mode": "low",
+      "legal_mode": "official_api_allowed",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "official developer API first",
+      "notes": "Primary API-first classifieds source.",
+      "saved_listings": 249,
+      "with_description": 249,
+      "with_photo_urls": 249,
+      "with_readable_local_photos": 249,
+      "service_counts": {
+        "long_term_rent": 117,
+        "sale": 132
+      },
+      "category_counts": {
+        "apartment": 170,
+        "house": 25,
+        "land": 24,
+        "office": 13,
+        "unknown": 17
+      },
+      "field_counts": {
+        "description": 249,
+        "image_urls": 249,
+        "readable_photos": 249,
+        "price": 249,
+        "area_sqm": 1,
+        "rooms": 1,
+        "city": 1,
+        "district": 1,
+        "address_text": 1,
+        "phones": 1
+      },
+      "state": "High-volume corpus on disk",
+      "next_step": "Continue category-by-category refreshes and push the file-backed corpus into PostgreSQL for `S1-18` evidence.",
+      "discovery_links": [
+        "https://www.olx.bg/nedvizhimi-imoti/"
+      ],
+      "apartment_links": [],
+      "combo_rows": [
+        {
+          "intent": "sale",
+          "category": "apartment",
+          "count": 80,
+          "description": 80,
+          "photo_urls": 80,
+          "readable_photos": 80,
+          "fields": {
+            "price": 80
+          }
+        },
+        {
+          "intent": "long_term_rent",
+          "category": "apartment",
+          "count": 90,
+          "description": 90,
+          "photo_urls": 90,
+          "readable_photos": 90,
+          "fields": {
+            "price": 90,
+            "area_sqm": 1,
+            "rooms": 1,
+            "city": 1,
+            "district": 1,
+            "address_text": 1,
+            "phones": 1
+          }
+        },
+        {
+          "intent": "sale",
+          "category": "house",
+          "count": 23,
+          "description": 23,
+          "photo_urls": 23,
+          "readable_photos": 23,
+          "fields": {
+            "price": 23
+          }
+        },
+        {
+          "intent": "long_term_rent",
+          "category": "house",
+          "count": 2,
+          "description": 2,
+          "photo_urls": 2,
+          "readable_photos": 2,
+          "fields": {
+            "price": 2
+          }
+        },
+        {
+          "intent": "sale",
+          "category": "land",
+          "count": 18,
+          "description": 18,
+          "photo_urls": 18,
+          "readable_photos": 18,
+          "fields": {
+            "price": 18
+          }
+        },
+        {
+          "intent": "long_term_rent",
+          "category": "land",
+          "count": 6,
+          "description": 6,
+          "photo_urls": 6,
+          "readable_photos": 6,
+          "fields": {
+            "price": 6
+          }
+        },
+        {
+          "intent": "sale",
+          "category": "office",
+          "count": 5,
+          "description": 5,
+          "photo_urls": 5,
+          "readable_photos": 5,
+          "fields": {
+            "price": 5
+          }
+        },
+        {
+          "intent": "long_term_rent",
+          "category": "office",
+          "count": 8,
+          "description": 8,
+          "photo_urls": 8,
+          "readable_photos": 8,
+          "fields": {
+            "price": 8
+          }
+        },
+        {
+          "intent": "sale",
+          "category": "unknown",
+          "count": 6,
+          "description": 6,
+          "photo_urls": 6,
+          "readable_photos": 6,
+          "fields": {
+            "price": 6
+          }
+        },
+        {
+          "intent": "long_term_rent",
+          "category": "unknown",
+          "count": 11,
+          "description": 11,
+          "photo_urls": 11,
+          "readable_photos": 11,
+          "fields": {
+            "price": 11
+          }
+        }
+      ],
+      "website_total": {
+        "value": 1000,
+        "kind": "lower_bound",
+        "basis": "live_listing_count_banner",
+        "url": "https://www.olx.bg/nedvizhimi-imoti/",
+        "notes": "The live banner says `повече от 1000 обяви`, so this is only a floor."
+      },
+      "website_inventory_rows": [
+        {
+          "service": "all",
+          "property": "all",
+          "count": 1000,
+          "kind": "lower_bound",
+          "basis": "live_listing_count_banner",
+          "url": "https://www.olx.bg/nedvizhimi-imoti/",
+          "notes": "Banner text: `Открихме повече от 1000 обяви`."
+        }
+      ],
+      "website_coverage_pct": 24.9,
+      "counting_method": "Read the search results banner rendered on the listing page.",
+      "counting_gap": "The page only exposes a lower bound; precise per-category totals require client-side API/XHR tracing.",
+      "estimate_conflict": "",
+      "pattern_status": "Patterned",
+      "pattern_issue": "Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields.",
+      "count_status": "recounted_live",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "official developer API first",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": {
+        "source_key": "olx_bg",
+        "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/olx_bg/listings",
+        "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/olx_bg/raw",
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/olx_bg/listings/OLX.bg_147540772.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/olx_bg/raw/OLX.bg_147540772.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/OLX.bg_147540772",
+        "reference_id": "OLX.bg:147540772",
+        "listing_url": "https://www.olx.bg/d/ad/dvustaen-ap-pod-naem-v-kv-lyulin-5-CID368-ID9Z45S.html",
+        "title": "Двустаен ап. под наем в кв. Люлин 5",
+        "description_chars": 585,
+        "remote_photo_count": 6,
+        "local_photo_count": 6,
+        "local_photo_coverage_pct": 100.0,
+        "has_full_gallery": true,
+        "has_description": true,
+        "has_price": true,
+        "has_area": true,
+        "has_rooms": true,
+        "has_floor": false,
+        "has_phones": true,
+        "has_city": true,
+        "has_district": true,
+        "has_address": true,
+        "has_local_image_files": true,
+        "local_image_files_count": 6,
+        "local_image_files_preview": [
+          "data/media/OLX.bg_147540772/0000_9dfd850b.webp",
+          "data/media/OLX.bg_147540772/0001_708b71ff.webp",
+          "data/media/OLX.bg_147540772/0002_fc2c1682.webp",
+          "data/media/OLX.bg_147540772/0003_7553e5a4.webp",
+          "data/media/OLX.bg_147540772/0004_e49a3bae.webp"
+        ],
+        "structured_fields_count": 3,
+        "source_attributes_count": 0
+      }
+    },
+    {
+      "tier": 1,
+      "source_name": "property.bg",
+      "primary_url": "https://www.property.bg/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "targeted listing-page crawl",
+      "notes": "Cross-check source for foreign-buyer inventory.",
+      "saved_listings": 15,
+      "with_description": 15,
+      "with_photo_urls": 15,
+      "with_readable_local_photos": 15,
+      "service_counts": {
+        "sale": 15
+      },
+      "category_counts": {
+        "apartment": 13,
+        "unknown": 2
+      },
+      "field_counts": {
+        "description": 15,
+        "image_urls": 15,
+        "readable_photos": 15,
+        "price": 1,
+        "area_sqm": 1,
+        "rooms": 1,
+        "city": 1,
+        "district": 1,
+        "address_text": 1,
+        "phones": 1
+      },
+      "state": "Partial corpus on disk",
+      "next_step": "Continue category-by-category refreshes and push the file-backed corpus into PostgreSQL for `S1-18` evidence.",
+      "discovery_links": [
+        "https://www.property.bg/bulgaria/apartments/",
+        "https://www.property.bg/sales/bulgaria/selection/",
+        "https://www.property.bg/rentals/bulgaria/selection/"
+      ],
+      "apartment_links": [
+        "https://www.property.bg/bulgaria/apartments/"
+      ],
+      "combo_rows": [
+        {
+          "intent": "sale",
+          "category": "apartment",
+          "count": 13,
+          "description": 13,
+          "photo_urls": 13,
+          "readable_photos": 13,
+          "fields": {
+            "price": 1,
+            "area_sqm": 1,
+            "rooms": 1,
+            "city": 1,
+            "district": 1,
+            "address_text": 1,
+            "phones": 1
+          }
+        },
+        {
+          "intent": "sale",
+          "category": "unknown",
+          "count": 2,
+          "description": 2,
+          "photo_urls": 2,
+          "readable_photos": 2,
+          "fields": {}
+        }
+      ],
+      "website_total": {
+        "value": 4229,
+        "kind": "lower_bound",
+        "basis": "live_meta_description",
+        "url": "https://www.property.bg/bulgaria/apartments/",
+        "notes": "The apartments page meta description says `Over 4229 properties`; wording is category-oriented but still needs one confirmation pass."
+      },
+      "website_inventory_rows": [
+        {
+          "service": "sale",
+          "property": "apartment",
+          "count": 4229,
+          "kind": "lower_bound",
+          "basis": "live_meta_description",
+          "url": "https://www.property.bg/bulgaria/apartments/",
+          "notes": "Meta description says `Over 4229 properties` on the apartments page."
+        }
+      ],
+      "website_coverage_pct": 0.3546937810357058,
+      "counting_method": "Extract category counts from live page metadata.",
+      "counting_gap": "Sale-selection and rent-selection pages still need their own counts to separate apartments from broader portal inventory.",
+      "estimate_conflict": "",
+      "pattern_status": "Patterned",
+      "pattern_issue": "Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields.",
+      "count_status": "recounted_live",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "targeted listing-page crawl",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": {
+        "source_key": "property_bg",
+        "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/property_bg/listings",
+        "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/property_bg/raw",
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/property_bg/listings/property.bg_c6be6a6838ca.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/property_bg/raw/property.bg_c6be6a6838ca.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/property.bg_c6be6a6838ca",
+        "reference_id": "property.bg:c6be6a6838ca",
+        "listing_url": "https://www.property.bg/property-117962-two-room-maisonette-quotturnkeyquot-in-the-luxury-complex-7-angels/",
+        "title": "Two-room maisonette \"turnkey\" in the luxury complex 7 Angels",
+        "description_chars": 298,
+        "remote_photo_count": 87,
+        "local_photo_count": 87,
+        "local_photo_coverage_pct": 100.0,
+        "has_full_gallery": true,
+        "has_description": true,
+        "has_price": true,
+        "has_area": true,
+        "has_rooms": true,
+        "has_floor": false,
+        "has_phones": true,
+        "has_city": true,
+        "has_district": true,
+        "has_address": true,
+        "has_local_image_files": true,
+        "local_image_files_count": 87,
+        "local_image_files_preview": [
+          "data/media/property.bg_c6be6a6838ca/0000_b1d8f58f.jpg",
+          "data/media/property.bg_c6be6a6838ca/0001_5e2b4b85.jpg",
+          "data/media/property.bg_c6be6a6838ca/0002_a0b2db92.jpg",
+          "data/media/property.bg_c6be6a6838ca/0003_e1384009.jpg",
+          "data/media/property.bg_c6be6a6838ca/0004_8ba2135b.jpg"
+        ],
+        "structured_fields_count": 3,
+        "source_attributes_count": 3
+      }
+    },
+    {
+      "tier": 1,
+      "source_name": "SUPRIMMO",
+      "primary_url": "https://www.suprimmo.bg/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "crawl listings and unify group reference IDs",
+      "notes": "High-value coastal and resort inventory.",
+      "saved_listings": 12,
+      "with_description": 12,
+      "with_photo_urls": 12,
+      "with_readable_local_photos": 12,
+      "service_counts": {
+        "sale": 12
+      },
+      "category_counts": {
+        "apartment": 11,
+        "unknown": 1
+      },
+      "field_counts": {
+        "description": 12,
+        "image_urls": 12,
+        "readable_photos": 12,
+        "price": 9,
+        "area_sqm": 1,
+        "rooms": 1,
+        "city": 1,
+        "district": 1,
+        "address_text": 1,
+        "phones": 1
+      },
+      "state": "Partial corpus on disk",
+      "next_step": "Continue category-by-category refreshes and push the file-backed corpus into PostgreSQL for `S1-18` evidence.",
+      "discovery_links": [
+        "https://www.suprimmo.bg/bulgaria/apartamenti/",
+        "https://www.suprimmo.bg/bulgaria/kushti-vili/",
+        "https://www.suprimmo.bg/bulgaria/partseli/",
+        "https://www.suprimmo.bg/prodajba/bulgaria/selectsya/",
+        "https://www.suprimmo.bg/naem/bulgaria/selectsya/"
+      ],
+      "apartment_links": [
+        "https://www.suprimmo.bg/bulgaria/apartamenti/"
+      ],
+      "combo_rows": [
+        {
+          "intent": "sale",
+          "category": "apartment",
+          "count": 11,
+          "description": 11,
+          "photo_urls": 11,
+          "readable_photos": 11,
+          "fields": {
+            "price": 8,
+            "area_sqm": 1,
+            "rooms": 1,
+            "city": 1,
+            "district": 1,
+            "address_text": 1,
+            "phones": 1
+          }
+        },
+        {
+          "intent": "sale",
+          "category": "unknown",
+          "count": 1,
+          "description": 1,
+          "photo_urls": 1,
+          "readable_photos": 1,
+          "fields": {
+            "price": 1
+          }
+        }
+      ],
+      "website_total": {
+        "value": 4628,
+        "kind": "lower_bound",
+        "basis": "live_meta_description",
+        "url": "https://www.suprimmo.bg/bulgaria/apartamenti/",
+        "notes": "The apartments page meta description says `Over 4628 ...`, which is a category lower bound rather than a whole-site total."
+      },
+      "website_inventory_rows": [
+        {
+          "service": "sale",
+          "property": "apartment",
+          "count": 4628,
+          "kind": "lower_bound",
+          "basis": "live_meta_description",
+          "url": "https://www.suprimmo.bg/bulgaria/apartamenti/",
+          "notes": "Meta description exposes `4628` as the visible apartment count floor."
+        }
+      ],
+      "website_coverage_pct": 0.25929127052722556,
+      "counting_method": "Extract category counts from live page metadata on the canonical product page.",
+      "counting_gap": "Houses, land, sale-selection, and rent-selection still need separate count captures.",
+      "estimate_conflict": "",
+      "pattern_status": "Patterned",
+      "pattern_issue": "Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields.",
+      "count_status": "recounted_live",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "crawl listings and unify group reference IDs",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": {
+        "source_key": "suprimmo",
+        "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/suprimmo/listings",
+        "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/suprimmo/raw",
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/suprimmo/listings/SUPRIMMO_STO-132154.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/suprimmo/raw/SUPRIMMO_STO-132154.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/SUPRIMMO_STO-132154",
+        "reference_id": "SUPRIMMO:STO-132154",
+        "listing_url": "https://www.suprimmo.bg/imot-132154-yujen-dvustaen-apartament-s-otdelna-kuhnya-v-spokoen-i-zelen-rayon/",
+        "title": "Южен двустаен апартамент с отделна кухня, в спокоен и зелен район",
+        "description_chars": 542,
+        "remote_photo_count": 43,
+        "local_photo_count": 43,
+        "local_photo_coverage_pct": 100.0,
+        "has_full_gallery": true,
+        "has_description": true,
+        "has_price": true,
+        "has_area": true,
+        "has_rooms": true,
+        "has_floor": false,
+        "has_phones": true,
+        "has_city": true,
+        "has_district": true,
+        "has_address": true,
+        "has_local_image_files": true,
+        "local_image_files_count": 43,
+        "local_image_files_preview": [
+          "data/media/SUPRIMMO_STO-132154/0000_6d93e91f.jpg",
+          "data/media/SUPRIMMO_STO-132154/0001_c7298b7d.jpg",
+          "data/media/SUPRIMMO_STO-132154/0002_a9bae48c.jpg",
+          "data/media/SUPRIMMO_STO-132154/0003_dc2e39d6.jpg",
+          "data/media/SUPRIMMO_STO-132154/0004_50cd4fd2.jpg"
+        ],
+        "structured_fields_count": 3,
+        "source_attributes_count": 3
+      }
+    },
+    {
+      "tier": 2,
+      "source_name": "ApartmentsBulgaria.com",
+      "primary_url": "https://www.apartmentsbulgaria.bg/",
+      "related_urls": [],
+      "access_mode": "headless",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "short_term_rent"
+      ],
+      "best_extraction_method": "direct booking integration or careful crawl",
+      "notes": "Managed resort inventory.",
+      "saved_listings": 0,
+      "with_description": 0,
+      "with_photo_urls": 0,
+      "with_readable_local_photos": 0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "discovery_links": [],
+      "apartment_links": [],
+      "combo_rows": [],
+      "website_total": {
+        "value": 1800,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.apartmentsbulgaria.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.0,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "without_sample_product_capture",
+      "pattern_issue": "No saved full product sample exists yet for this source.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "direct booking integration or careful crawl",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": null
+    },
+    {
+      "tier": 2,
+      "source_name": "Bazar.bg",
+      "primary_url": "https://bazar.bg/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land"
+      ],
+      "best_extraction_method": "limited HTML crawl",
+      "notes": "Secondary but useful classifieds source.",
+      "saved_listings": 250,
+      "with_description": 250,
+      "with_photo_urls": 250,
+      "with_readable_local_photos": 249,
+      "service_counts": {
+        "sale": 225,
+        "long_term_rent": 25
+      },
+      "category_counts": {
+        "unknown": 45,
+        "apartment": 204,
+        "office": 1
+      },
+      "field_counts": {
+        "description": 250,
+        "image_urls": 250,
+        "readable_photos": 249,
+        "price": 250,
+        "area_sqm": 1,
+        "rooms": 1,
+        "city": 1,
+        "district": 1,
+        "address_text": 1,
+        "phones": 1
+      },
+      "state": "High-volume corpus on disk",
+      "next_step": "Improve local media downloads and readability before the next large batch.",
+      "discovery_links": [
+        "https://bazar.bg/obiavi/apartamenti",
+        "https://bazar.bg/obiavi/kashti-i-vili",
+        "https://bazar.bg/obiavi/zemya",
+        "https://bazar.bg/obiavi/garazhi-i-parkoingi"
+      ],
+      "apartment_links": [
+        "https://bazar.bg/obiavi/apartamenti"
+      ],
+      "combo_rows": [
+        {
+          "intent": "sale",
+          "category": "apartment",
+          "count": 182,
+          "description": 182,
+          "photo_urls": 182,
+          "readable_photos": 182,
+          "fields": {
+            "price": 182,
+            "area_sqm": 1,
+            "rooms": 1,
+            "city": 1,
+            "district": 1,
+            "address_text": 1,
+            "phones": 1
+          }
+        },
+        {
+          "intent": "long_term_rent",
+          "category": "apartment",
+          "count": 22,
+          "description": 22,
+          "photo_urls": 22,
+          "readable_photos": 21,
+          "fields": {
+            "price": 22
+          }
+        },
+        {
+          "intent": "sale",
+          "category": "office",
+          "count": 1,
+          "description": 1,
+          "photo_urls": 1,
+          "readable_photos": 1,
+          "fields": {
+            "price": 1
+          }
+        },
+        {
+          "intent": "sale",
+          "category": "unknown",
+          "count": 42,
+          "description": 42,
+          "photo_urls": 42,
+          "readable_photos": 42,
+          "fields": {
+            "price": 42
+          }
+        },
+        {
+          "intent": "long_term_rent",
+          "category": "unknown",
+          "count": 3,
+          "description": 3,
+          "photo_urls": 3,
+          "readable_photos": 3,
+          "fields": {
+            "price": 3
+          }
+        }
+      ],
+      "website_total": {
+        "value": 221272,
+        "kind": "exact",
+        "basis": "live_category_switcher",
+        "url": "https://bazar.bg/obiavi/kashti-i-vili",
+        "notes": "The page header exposes `Имоти 221 272 обяви`."
+      },
+      "website_inventory_rows": [
+        {
+          "service": "all",
+          "property": "all",
+          "count": 221272,
+          "kind": "exact",
+          "basis": "live_category_switcher",
+          "url": "https://bazar.bg/obiavi/kashti-i-vili",
+          "notes": "Real-estate umbrella count exposed in the top category switcher."
+        },
+        {
+          "service": "sale",
+          "property": "apartment",
+          "count": null,
+          "kind": "partial_visible_breakdown",
+          "basis": "live_city_shortcuts",
+          "url": "https://bazar.bg/obiavi/apartamenti",
+          "notes": "Apartment page exposes visible city/subtype slices such as `2-стаен София 12 376` and `3-стаен София 13 540`, but not a single clean apartment total."
+        }
+      ],
+      "website_coverage_pct": 0.11298311580317437,
+      "counting_method": "Read the visible category switcher for portal total, then mine shortcut blocks for subtype/city slices.",
+      "counting_gap": "A clean apartment/house/land total still needs either a dedicated count endpoint or a DOM/XHR trace.",
+      "estimate_conflict": "Saved analysis estimate 8000 is below the confirmed/lower-bound live count 221272.",
+      "pattern_status": "Patterned",
+      "pattern_issue": "Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields.",
+      "count_status": "recounted_live",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "limited HTML crawl",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": {
+        "source_key": "bazar_bg",
+        "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/bazar_bg/listings",
+        "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/bazar_bg/raw",
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/bazar_bg/listings/Bazar.bg_53706749.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/bazar_bg/raw/Bazar.bg_53706749.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/Bazar.bg_53706749",
+        "reference_id": "Bazar.bg:53706749",
+        "listing_url": "https://bazar.bg/obiava-53706749/prodava-4-staen-gr-sofiya-krastova-vada",
+        "title": "Продава 4-СТАЕН, гр. София, Кръстова вада → Обява 53706749",
+        "description_chars": 160,
+        "remote_photo_count": 15,
+        "local_photo_count": 15,
+        "local_photo_coverage_pct": 100.0,
+        "has_full_gallery": true,
+        "has_description": true,
+        "has_price": true,
+        "has_area": true,
+        "has_rooms": true,
+        "has_floor": false,
+        "has_phones": true,
+        "has_city": true,
+        "has_district": true,
+        "has_address": true,
+        "has_local_image_files": true,
+        "local_image_files_count": 15,
+        "local_image_files_preview": [
+          "data/media/Bazar.bg_53706749/0000_de4ef8a5.jpg",
+          "data/media/Bazar.bg_53706749/0001_b614c18e.jpg",
+          "data/media/Bazar.bg_53706749/0002_5b16c2c8.jpg",
+          "data/media/Bazar.bg_53706749/0003_3276c5ee.jpg",
+          "data/media/Bazar.bg_53706749/0004_eb4e6ab9.jpg"
+        ],
+        "structured_fields_count": 3,
+        "source_attributes_count": 0
+      }
+    },
+    {
+      "tier": 2,
+      "source_name": "Domaza",
+      "primary_url": "https://www.domaza.bg/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "short_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "crawl with language canonicalization",
+      "notes": "Needs cross-language dedupe.",
+      "saved_listings": 0,
+      "with_description": 0,
+      "with_photo_urls": 0,
+      "with_readable_local_photos": 0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "state": "Configured, zero landed corpus",
+      "next_step": "Map the language-canonical search entrypoints and recover the first working detail URL family before broad pagination.",
+      "discovery_links": [
+        "https://www.domaza.bg/property/index/search/1/s/572da6146f10beb4bf6333d75039731a4d2b9902",
+        "https://www.domaza.bg/property/index/search/1/s/c8a3ad4db8f37d4e8b31fe9db66bc4d1f537ba5a",
+        "https://www.domaza.bg/property/index/search/1/s/e8780bcda8fa201940f1ce87e404f870d0c5c3fc"
+      ],
+      "apartment_links": [],
+      "combo_rows": [],
+      "website_total": {
+        "value": 22000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.domaza.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.0,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "without_sample_product_capture",
+      "pattern_issue": "No saved full product sample exists yet for this source.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "crawl with language canonicalization",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": null
+    },
+    {
+      "tier": 2,
+      "source_name": "Holding Group Real Estate",
+      "primary_url": "https://holdinggroup.bg/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "crawl direct site plus dedupe against portal syndication",
+      "notes": "Strong Varna-side project inventory.",
+      "saved_listings": 0,
+      "with_description": 0,
+      "with_photo_urls": 0,
+      "with_readable_local_photos": 0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "discovery_links": [],
+      "apartment_links": [],
+      "combo_rows": [],
+      "website_total": {
+        "value": 3000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://holdinggroup.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.0,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "without_sample_product_capture",
+      "pattern_issue": "No saved full product sample exists yet for this source.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "crawl direct site plus dedupe against portal syndication",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": null
+    },
+    {
+      "tier": 2,
+      "source_name": "Home2U",
+      "primary_url": "https://home2u.bg/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "templated HTML parser",
+      "notes": "Important for Varna and project inventory.",
+      "saved_listings": 0,
+      "with_description": 0,
+      "with_photo_urls": 0,
+      "with_readable_local_photos": 0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "state": "Configured, zero landed corpus",
+      "next_step": "Repair the city landing pages into stable listing archives, then fetch detail pages product by product.",
+      "discovery_links": [
+        "https://home2u.bg/nedvizhimi-imoti-sofia/",
+        "https://home2u.bg/nedvizhimi-imoti-varna/",
+        "https://home2u.bg/nedvizhimi-imoti-burgas/",
+        "https://home2u.bg/nedvizhimi-imoti-plovdiv/",
+        "https://home2u.bg/apartamenti-pod-naem-sofia/",
+        "https://home2u.bg/apartamenti-pod-naem-varna/"
+      ],
+      "apartment_links": [
+        "https://home2u.bg/nedvizhimi-imoti-sofia/",
+        "https://home2u.bg/nedvizhimi-imoti-varna/",
+        "https://home2u.bg/nedvizhimi-imoti-burgas/",
+        "https://home2u.bg/nedvizhimi-imoti-plovdiv/",
+        "https://home2u.bg/apartamenti-pod-naem-sofia/",
+        "https://home2u.bg/apartamenti-pod-naem-varna/"
+      ],
+      "combo_rows": [],
+      "website_total": {
+        "value": 6000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://home2u.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.0,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "without_sample_product_capture",
+      "pattern_issue": "No saved full product sample exists yet for this source.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "templated HTML parser",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": null
+    },
+    {
+      "tier": 2,
+      "source_name": "Imoteka.bg",
+      "primary_url": "https://imoteka.bg/",
+      "related_urls": [],
+      "access_mode": "headless",
+      "risk_mode": "high",
+      "legal_mode": "legal_review_required",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "partnership/licensed feed preferred; headless only after legal clearance",
+      "notes": "JS-heavy source with higher content-use risk.",
+      "saved_listings": 0,
+      "with_description": 0,
+      "with_photo_urls": 0,
+      "with_readable_local_photos": 0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "state": "Legal review required",
+      "next_step": "Run a legal/access review before new live work, then choose headless tracing or partner route.",
+      "discovery_links": [],
+      "apartment_links": [],
+      "combo_rows": [],
+      "website_total": {
+        "value": 14000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://imoteka.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.0,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "without_authorized_pattern",
+      "pattern_issue": "Source needs legal review before a live pattern can be promoted.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "partnership/licensed feed preferred; headless only after legal clearance",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": null
+    },
+    {
+      "tier": 2,
+      "source_name": "Imoti.info",
+      "primary_url": "https://imoti.info/",
+      "related_urls": [],
+      "access_mode": "partner_feed",
+      "risk_mode": "high",
+      "legal_mode": "licensing_required",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "licensing or partnership first; fixture-only parser research until approved",
+      "notes": "Terms indicate commercial data use requires authorization/payment.",
+      "saved_listings": 0,
+      "with_description": 0,
+      "with_photo_urls": 0,
+      "with_readable_local_photos": 0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "state": "Licensing required",
+      "next_step": "Do not broaden crawling. Move this source through licensing or partner-feed negotiation first.",
+      "discovery_links": [],
+      "apartment_links": [],
+      "combo_rows": [],
+      "website_total": {
+        "value": 25000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://imoti.info/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.0,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "without_authorized_pattern",
+      "pattern_issue": "Source is licensing-gated; no public scraping pattern should be marked complete.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "licensing or partnership first; fixture-only parser research until approved",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": null
+    },
+    {
+      "tier": 2,
+      "source_name": "Indomio.bg",
+      "primary_url": "https://www.indomio.bg/",
+      "related_urls": [],
+      "access_mode": "headless",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land"
+      ],
+      "best_extraction_method": "hybrid HTML/headless crawler",
+      "notes": "Secondary index for coastal supply.",
+      "saved_listings": 0,
+      "with_description": 0,
+      "with_photo_urls": 0,
+      "with_readable_local_photos": 0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "discovery_links": [],
+      "apartment_links": [],
+      "combo_rows": [],
+      "website_total": {
+        "value": 7000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.indomio.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.0,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "without_sample_product_capture",
+      "pattern_issue": "No saved full product sample exists yet for this source.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "hybrid HTML/headless crawler",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": null
+    },
+    {
+      "tier": 2,
+      "source_name": "Lions Group",
+      "primary_url": "https://lionsgroup.bg/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "server-rendered listing crawl",
+      "notes": "Useful Varna-side agency inventory.",
+      "saved_listings": 0,
+      "with_description": 0,
+      "with_photo_urls": 0,
+      "with_readable_local_photos": 0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "discovery_links": [],
+      "apartment_links": [],
+      "combo_rows": [],
+      "website_total": {
+        "value": 2500,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://lionsgroup.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.0,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "without_sample_product_capture",
+      "pattern_issue": "No saved full product sample exists yet for this source.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "server-rendered listing crawl",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": null
+    },
+    {
+      "tier": 2,
+      "source_name": "Pochivka.bg",
+      "primary_url": "https://pochivka.bg/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "short_term_rent"
+      ],
+      "best_extraction_method": "partnership or limited travel-catalog crawl",
+      "notes": "Hospitality intelligence more than core sale inventory.",
+      "saved_listings": 0,
+      "with_description": 0,
+      "with_photo_urls": 0,
+      "with_readable_local_photos": 0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "discovery_links": [],
+      "apartment_links": [],
+      "combo_rows": [],
+      "website_total": {
+        "value": 5000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://pochivka.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.0,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "without_sample_product_capture",
+      "pattern_issue": "No saved full product sample exists yet for this source.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "partnership or limited travel-catalog crawl",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": null
+    },
+    {
+      "tier": 2,
+      "source_name": "realestates.bg",
+      "primary_url": "https://en.realestates.bg/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land"
+      ],
+      "best_extraction_method": "scope-limited HTML crawl and dedupe against alo.bg",
+      "notes": "Foreign-facing Alo network layer.",
+      "saved_listings": 0,
+      "with_description": 0,
+      "with_photo_urls": 0,
+      "with_readable_local_photos": 0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "discovery_links": [],
+      "apartment_links": [],
+      "combo_rows": [],
+      "website_total": {
+        "value": 6000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://en.realestates.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.0,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "without_sample_product_capture",
+      "pattern_issue": "No saved full product sample exists yet for this source.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "scope-limited HTML crawl and dedupe against alo.bg",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": null
+    },
+    {
+      "tier": 2,
+      "source_name": "Realistimo",
+      "primary_url": "https://realistimo.com/",
+      "related_urls": [],
+      "access_mode": "headless",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "land",
+        "new_build"
+      ],
+      "best_extraction_method": "HTML crawl with map-filter fallback",
+      "notes": "Map-driven browsing suggests structured geo data.",
+      "saved_listings": 0,
+      "with_description": 0,
+      "with_photo_urls": 0,
+      "with_readable_local_photos": 0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "discovery_links": [],
+      "apartment_links": [],
+      "combo_rows": [],
+      "website_total": {
+        "value": 4500,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://realistimo.com/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.0,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "without_sample_product_capture",
+      "pattern_issue": "No saved full product sample exists yet for this source.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "HTML crawl with map-filter fallback",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": null
+    },
+    {
+      "tier": 2,
+      "source_name": "Rentica.bg",
+      "primary_url": "https://rentica.bg/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "long_term_rent"
+      ],
+      "best_extraction_method": "rent-only HTML parser",
+      "notes": "Varna rental specialist.",
+      "saved_listings": 0,
+      "with_description": 0,
+      "with_photo_urls": 0,
+      "with_readable_local_photos": 0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "discovery_links": [],
+      "apartment_links": [],
+      "combo_rows": [],
+      "website_total": {
+        "value": 1200,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://rentica.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.0,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "without_sample_product_capture",
+      "pattern_issue": "No saved full product sample exists yet for this source.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "rent-only HTML parser",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": null
+    },
+    {
+      "tier": 2,
+      "source_name": "Svobodni-kvartiri.com",
+      "primary_url": "https://svobodni-kvartiri.com/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "long_term_rent",
+        "short_term_rent"
+      ],
+      "best_extraction_method": "deep pagination crawl by city scope",
+      "notes": "Useful for worker and student rentals.",
+      "saved_listings": 0,
+      "with_description": 0,
+      "with_photo_urls": 0,
+      "with_readable_local_photos": 0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "discovery_links": [],
+      "apartment_links": [],
+      "combo_rows": [],
+      "website_total": {
+        "value": 3500,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://svobodni-kvartiri.com/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.0,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "without_sample_product_capture",
+      "pattern_issue": "No saved full product sample exists yet for this source.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "deep pagination crawl by city scope",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": null
+    },
+    {
+      "tier": 2,
+      "source_name": "Unique Estates",
+      "primary_url": "https://ues.bg/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent",
+        "new_build"
+      ],
+      "best_extraction_method": "luxury listing crawler",
+      "notes": "Luxury sea-segment pages.",
+      "saved_listings": 0,
+      "with_description": 0,
+      "with_photo_urls": 0,
+      "with_readable_local_photos": 0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "discovery_links": [],
+      "apartment_links": [],
+      "combo_rows": [],
+      "website_total": {
+        "value": 2000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://ues.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.0,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "without_sample_product_capture",
+      "pattern_issue": "No saved full product sample exists yet for this source.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "luxury listing crawler",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": null
+    },
+    {
+      "tier": 2,
+      "source_name": "Vila.bg",
+      "primary_url": "https://vila.bg/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "short_term_rent"
+      ],
+      "best_extraction_method": "partnership or limited catalog crawl",
+      "notes": "Villa and guest-house coverage.",
+      "saved_listings": 0,
+      "with_description": 0,
+      "with_photo_urls": 0,
+      "with_readable_local_photos": 0,
+      "service_counts": {},
+      "category_counts": {},
+      "field_counts": {},
+      "state": "Planned / no landed corpus",
+      "next_step": "Map apartment/category entry pages first, capture fixtures, then build detail-page recovery.",
+      "discovery_links": [],
+      "apartment_links": [],
+      "combo_rows": [],
+      "website_total": {
+        "value": 4000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://vila.bg/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 0.0,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "without_sample_product_capture",
+      "pattern_issue": "No saved full product sample exists yet for this source.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "partnership or limited catalog crawl",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": null
+    },
+    {
+      "tier": 2,
+      "source_name": "Yavlena",
+      "primary_url": "https://www.yavlena.com/",
+      "related_urls": [],
+      "access_mode": "html",
+      "risk_mode": "medium",
+      "legal_mode": "public_crawl_with_review",
+      "listing_types": [
+        "sale",
+        "long_term_rent"
+      ],
+      "best_extraction_method": "incremental crawl with ID-based URLs",
+      "notes": "Established agency with branch-driven supply.",
+      "saved_listings": 251,
+      "with_description": 2,
+      "with_photo_urls": 251,
+      "with_readable_local_photos": 250,
+      "service_counts": {
+        "sale": 251
+      },
+      "category_counts": {
+        "apartment": 146,
+        "house": 40,
+        "land": 36,
+        "unknown": 22,
+        "office": 7
+      },
+      "field_counts": {
+        "image_urls": 251,
+        "readable_photos": 250,
+        "description": 2,
+        "price": 2,
+        "area_sqm": 2,
+        "rooms": 2,
+        "city": 2,
+        "district": 2,
+        "address_text": 2,
+        "phones": 2
+      },
+      "state": "High-volume corpus on disk",
+      "next_step": "Recover detail-page descriptions for the already large on-disk corpus and keep sale buckets fresh.",
+      "discovery_links": [
+        "https://www.yavlena.com/bg/sales",
+        "https://www.yavlena.com/bg/rentals"
+      ],
+      "apartment_links": [],
+      "combo_rows": [
+        {
+          "intent": "sale",
+          "category": "apartment",
+          "count": 146,
+          "description": 2,
+          "photo_urls": 146,
+          "readable_photos": 146,
+          "fields": {
+            "price": 2,
+            "area_sqm": 2,
+            "rooms": 2,
+            "city": 2,
+            "district": 2,
+            "address_text": 2,
+            "phones": 2
+          }
+        },
+        {
+          "intent": "sale",
+          "category": "house",
+          "count": 40,
+          "description": 0,
+          "photo_urls": 40,
+          "readable_photos": 40,
+          "fields": {}
+        },
+        {
+          "intent": "sale",
+          "category": "land",
+          "count": 36,
+          "description": 0,
+          "photo_urls": 36,
+          "readable_photos": 36,
+          "fields": {}
+        },
+        {
+          "intent": "sale",
+          "category": "office",
+          "count": 7,
+          "description": 0,
+          "photo_urls": 7,
+          "readable_photos": 7,
+          "fields": {}
+        },
+        {
+          "intent": "sale",
+          "category": "unknown",
+          "count": 22,
+          "description": 0,
+          "photo_urls": 22,
+          "readable_photos": 21,
+          "fields": {}
+        }
+      ],
+      "website_total": {
+        "value": 9000,
+        "kind": "estimate",
+        "basis": "analysis_estimate",
+        "url": "https://www.yavlena.com/",
+        "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
+      },
+      "website_inventory_rows": [],
+      "website_coverage_pct": 2.788888888888889,
+      "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
+      "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
+      "estimate_conflict": "",
+      "pattern_status": "Patterned",
+      "pattern_issue": "Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields.",
+      "count_status": "without_live_count_method",
+      "recent_status": "without_recent_count_method",
+      "varna_status": "without_varna_count_method",
+      "recent_under_2m": {
+        "value": null,
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site posted-within-2-months counter saved in the repo."
+      },
+      "varna_split": {
+        "city": null,
+        "region": null,
+        "text": "n/a+n/a",
+        "kind": "unavailable",
+        "basis": "not_recomputed",
+        "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
+      },
+      "pattern_method": "incremental crawl with ID-based URLs",
+      "pattern_code_paths": [
+        "scripts/live_scraper.py::generic"
+      ],
+      "db_status": "without_database_target",
+      "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
+      "sample": {
+        "source_key": "yavlena",
+        "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/listings",
+        "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/raw",
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/listings/Yavlena_acbef70866cf.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/raw/Yavlena_acbef70866cf.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/Yavlena_acbef70866cf",
+        "reference_id": "Yavlena:acbef70866cf",
+        "listing_url": "https://www.yavlena.com/bg/168366",
+        "title": "Тристаен апартамент в София 124 кв.м. ID 168366  | Явлена",
+        "description_chars": 570,
+        "remote_photo_count": 1,
+        "local_photo_count": 1,
+        "local_photo_coverage_pct": 100.0,
+        "has_full_gallery": true,
+        "has_description": true,
+        "has_price": true,
+        "has_area": true,
+        "has_rooms": true,
+        "has_floor": false,
+        "has_phones": true,
+        "has_city": true,
+        "has_district": true,
+        "has_address": true,
+        "has_local_image_files": true,
+        "local_image_files_count": 1,
+        "local_image_files_preview": [
+          "data/media/Yavlena_acbef70866cf/0000_3f8b072f.jpg"
+        ],
+        "structured_fields_count": 3,
+        "source_attributes_count": 3
+      }
+    }
+  ],
+  "totals": {
+    "tier_counts": {
+      "1": 10,
+      "2": 17
+    },
+    "saved_sources": 10,
+    "with_website_totals": 27,
+    "patterned_sources": 10,
+    "saved_listings": 1404,
+    "with_description": 1153,
+    "with_photo_urls": 1403,
+    "with_readable_local_photos": 1129
+  }
+}

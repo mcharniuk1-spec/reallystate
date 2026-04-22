@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168326",
+  "external_id": "04d8c7116f54",
+  "title": "Парцел в Мулдава 4500 кв.м. ID 168326  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://userimages.yavlena.com/661696f7-180a-4403-80e2-09633d1928b9.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:13:56.419511+00:00",
+  "reference_id": "Yavlena:04d8c7116f54",
+  "local_image_files": [
+    "data/media/Yavlena_04d8c7116f54/0000_c57220fd.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_04d8c7116f54/0000_c57220fd.jpg"
+  ]
+}

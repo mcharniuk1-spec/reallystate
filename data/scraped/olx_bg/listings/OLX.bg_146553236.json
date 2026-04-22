@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/prodavam-ednostaen-apartament-do-red-kafe-CID368-ID9UWbS.html?search_reason=search%7Corganic",
+  "external_id": "146553236",
+  "title": "Продавам едностаен апартамент до Ред Кафе",
+  "description": "НОВА, по -ниска ЦЕНА! Продавам едностаен апартамент до Ред Кафе, находящ се на първи жилищен етаж. Жилището е след основен ремонт. Сменени са - ВИК, ЕЛ, дограми, врати. Състои се от просторна основна стая, в която е ситуирана и кухненска част с нови: кухненски шкафове, хладилник, пералня и бойлер. На пода, под новия ламинат има солидна изолация. В банята ЕЛ и ВИК инсталациите са подновени и всичко е ново. В близост до жилището има голям супермаркет, заведения, ресторанти, детски градини, училища и автобусни спирки. Подходящо е и за фризьорски салон, студио или офис. Апартамента се намира в един от най - предпочитаните и оживени райони в града. Можете да се нанесете веднага, след покупката на имота или да го отдава под наем. Зад блока и пред него има голям паркинг, което е допълнително удобство. Извършените ремонтни действия, обзавеждане и оборудване с нова техника ще ви спестят много време и негативни емоции, което прави жилището с много повече предимства пред останалите имоти на пазара.",
+  "price": 39000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bsot30v6l3rj-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pm79ie02k56j3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/x8k1euvfitpi3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/jrqqockyvm5o3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/tna9g1patm1x1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bsot30v6l3rj-BG/image;s=4000x3000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:21:42.144509+00:00",
+  "reference_id": "OLX.bg:146553236",
+  "local_image_files": [
+    "data/media/OLX.bg_146553236/0000_18463997.webp",
+    "data/media/OLX.bg_146553236/0001_46256b32.webp",
+    "data/media/OLX.bg_146553236/0002_59043e74.webp",
+    "data/media/OLX.bg_146553236/0003_82e8f7e0.webp",
+    "data/media/OLX.bg_146553236/0004_69bd9d00.webp",
+    "data/media/OLX.bg_146553236/0005_de800eea.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_146553236/0000_18463997.webp",
+    "OLX.bg_146553236/0001_46256b32.webp",
+    "OLX.bg_146553236/0002_59043e74.webp",
+    "OLX.bg_146553236/0003_82e8f7e0.webp",
+    "OLX.bg_146553236/0004_69bd9d00.webp",
+    "OLX.bg_146553236/0005_de800eea.webp"
+  ]
+}

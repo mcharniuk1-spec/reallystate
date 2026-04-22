@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/tristaen-ap-pod-naem-v-kv-mladost-1-CID368-ID9YKkS.html?search_reason=search%7Corganic",
+  "external_id": "147464822",
+  "title": "Тристаен ап. под наем в кв. Младост 1",
+  "description": "тристаен апартамент под наем в ж.к. Младост 1, в един от най-търсените райони с бърз достъп до метро и ключови точки в града. Жилището е с площ 70 кв.м, разположено на 1-ви етаж от 12 в ЕПК сграда. Изложението е юг/изток. Разпределение: хол с кухненски бокс две спални баня с тоалетна тераса Апартаментът е обзаведен и готов за нанасяне, отоплява се на ТЕЦ, което осигурява комфорт през зимните месеци. Локация: в близост до метростанция Младост 1 , училища, банки, медицински центрове и спирки на градски транспорт. За оглед се свържете с нас и цитирайте реф. номер: 2202524.",
+  "price": 615.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ufjox6g2wcuj3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2g6tt59zfq602-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/y2hi89a4jv5e3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/f66ici7q7ne7-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/1ohgpxkwze331-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ufjox6g2wcuj3-BG/image;s=1536x1024"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:20:37.724128+00:00",
+  "reference_id": "OLX.bg:147464822",
+  "local_image_files": [
+    "data/media/OLX.bg_147464822/0000_e34b894e.webp",
+    "data/media/OLX.bg_147464822/0001_74ce7f14.webp",
+    "data/media/OLX.bg_147464822/0002_82a0a5fa.webp",
+    "data/media/OLX.bg_147464822/0003_426e3124.webp",
+    "data/media/OLX.bg_147464822/0004_b4201028.webp",
+    "data/media/OLX.bg_147464822/0005_babf4c6b.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464822/0000_e34b894e.webp",
+    "OLX.bg_147464822/0001_74ce7f14.webp",
+    "OLX.bg_147464822/0002_82a0a5fa.webp",
+    "OLX.bg_147464822/0003_426e3124.webp",
+    "OLX.bg_147464822/0004_b4201028.webp",
+    "OLX.bg_147464822/0005_babf4c6b.webp"
+  ]
+}

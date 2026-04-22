@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168099",
+  "external_id": "e490654d0e39",
+  "title": "Двустаен апартамент във Варна 60 кв.м. ID 168099  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/67b5bbe2-cebe-4d77-916f-6558b166d23f.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:16:35.580384+00:00",
+  "reference_id": "Yavlena:e490654d0e39",
+  "local_image_files": [
+    "data/media/Yavlena_e490654d0e39/0000_5ba89232.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_e490654d0e39/0000_5ba89232.jpg"
+  ]
+}

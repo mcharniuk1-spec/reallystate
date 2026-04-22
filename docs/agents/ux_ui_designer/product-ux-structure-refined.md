@@ -529,7 +529,7 @@ App
                        │
                ┌───────┴────────┐
                │                │
-            UX-06 (this spec)  UX-04 (Varna LUN) ← blocked BD-06, DBG-05
+            UX-06 (this spec)  UX-04 (Bulgaria LUN) ← blocked BD-06, DBG-05
                │                │
                │            UX-07 (3D map) ← blocked BD-08
                │                │

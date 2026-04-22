@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/165188",
+  "external_id": "8a3fb725fce7",
+  "title": "Къща в Паталеница 558 кв.м. ID 165188  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://userimages.yavlena.com/5948078e-b536-4e3e-aa28-f6a2e7c1fc3e.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:54:48.576792+00:00",
+  "reference_id": "Yavlena:8a3fb725fce7",
+  "local_image_files": [
+    "data/media/Yavlena_8a3fb725fce7/0000_55483f63.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_8a3fb725fce7/0000_55483f63.jpg"
+  ]
+}

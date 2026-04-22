@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Studios_in_Bulgaria/AD86269BG_Studio_for_sale_in_Bansko.html",
+  "external_id": "7dcabf3d2053",
+  "title": "Bulgarian Properties",
+  "description": "Studio  apartment in a residential building with and underground parking near the center",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/86269_18.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:34:57.400221+00:00",
+  "reference_id": "BulgarianProperties:7dcabf3d2053",
+  "local_image_files": [
+    "data/media/BulgarianProperties_7dcabf3d2053/0000_f73f2e54.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_7dcabf3d2053/0000_f73f2e54.jpg"
+  ]
+}

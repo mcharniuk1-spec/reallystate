@@ -1,4 +1,4 @@
-.PHONY: doctor install dev-up dev-down dev-logs db-init migrate test test-docker golden-path lint typecheck validate docs-refresh run-api run-worker run-scheduler run-frontend export-docs source-report status-report linear-export architecture-doc dashboard-doc connector-fixtures list-sources list-skills ingest-fixture ingest-fixture-dry sync-registry sync-social-registry export-tier4-data seed-social-fixtures export-source-stats tier4-plan scraping-inventory download-images scrape-bcpea
+.PHONY: doctor install install-scrape-agents dev-up dev-down dev-ready dev-logs db-shell db-init migrate test test-docker golden-path lint typecheck validate docs-refresh run-api run-worker run-scheduler run-frontend export-docs source-report status-report linear-export architecture-doc dashboard-doc connector-fixtures list-sources list-skills ingest-fixture ingest-fixture-dry sync-registry sync-social-registry export-tier4-data seed-social-fixtures export-source-stats tier4-plan scraping-inventory tier12-metrics download-images import-scraped scrape-bcpea
 
 # Prefer 3.13/3.12 when unset so install/lint match pyproject.toml requires-python >=3.12
 PYENV_PYTHON := $(shell ls "$$HOME"/.pyenv/versions/3.13*/bin/python3.13 "$$HOME"/.pyenv/versions/3.12*/bin/python3.12 2>/dev/null | sed -n '1p')
@@ -24,11 +24,26 @@ install:
 		{ echo >&2 "bgrealestate requires Python 3.12+. Current: $$($(PYTHON) -V). Install python3.12+ (e.g. brew install python@3.12), set PYTHON=python3.12, or use: make test-docker"; exit 1; }
 	$(PYTHON) -m pip install -e ".[dev]"
 
+install-scrape-agents:
+	@$(PYTHON) -c "import sys; sys.exit(0 if sys.version_info >= (3, 12) else 1)" || \
+		{ echo >&2 "bgrealestate requires Python 3.12+. Current: $$($(PYTHON) -V). Install python3.12+ (e.g. brew install python@3.12), set PYTHON=python3.12, or use: make test-docker"; exit 1; }
+	$(PYTHON) -m pip install -e ".[dev,scrape-agents]"
+	@echo "Installed scrape-agent extras. If browser automation is needed next, run: $(PYTHON) -m playwright install chromium"
+
 dev-up:
 	docker compose up -d postgres redis minio temporal temporal-ui
 
+dev-ready:
+	@command -v docker >/dev/null 2>&1 || { echo >&2 "docker is required"; exit 1; }
+	@echo "Waiting for Postgres (bgrealestate)..."
+	@until docker compose exec -T postgres pg_isready -U bgrealestate -d bgrealestate >/dev/null 2>&1; do sleep 1; done
+	@echo "Postgres is ready."
+
 dev-down:
 	docker compose down
+
+db-shell:
+	docker compose exec postgres psql -U bgrealestate -d bgrealestate
 
 dev-logs:
 	docker compose logs -f --tail=100
@@ -116,6 +131,9 @@ architecture-doc:
 
 dashboard-doc:
 	$(PYTHON) scripts/generate_progress_dashboard.py
+	$(PYTHON) scripts/generate_website_inventory_analysis.py
+	$(PYTHON) scripts/generate_tier12_pattern_status.py
+	$(PYTHON) scripts/generate_scrape_status_dashboard.py
 
 investor-deck:
 	$(PYTHON) scripts/generate_investor_presentation.py
@@ -163,5 +181,11 @@ scrape-bcpea-dry:
 scraping-inventory:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) scripts/generate_scraping_inventory.py
 
+tier12-metrics:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) scripts/generate_tier12_metrics_deep_dive.py
+
 download-images:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate download-images $(EXTRA_ARGS)
+
+import-scraped:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) scripts/import_scraped_listings.py $(EXTRA_ARGS)

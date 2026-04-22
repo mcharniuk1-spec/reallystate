@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD86999BG_House_for_rent_in_Varna.html",
+  "external_id": "9f9719938495",
+  "title": "Bulgarian Properties",
+  "description": "Furnished house with a superb location, minutes by car to the golden beaches",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/86999_34.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:35:44.772684+00:00",
+  "reference_id": "BulgarianProperties:9f9719938495",
+  "local_image_files": [
+    "data/media/BulgarianProperties_9f9719938495/0000_937eab63.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_9f9719938495/0000_937eab63.jpg"
+  ]
+}

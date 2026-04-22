@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/prodava-dva-sasedni-partsela-po-edin-dekar-na-glavniya-pat-za-varna-CID368-ID9bPPW.html?search_reason=search%7Corganic",
+  "external_id": "135807895",
+  "title": "Продава ДВА СЪСЕДНИ ПАРЦЕЛА по един декар на главния път за Варна",
+  "description": "Продава ДВА СЪСЕДНИ самостоятелни ПАРЦЕЛА по един декар на главния път за Варна. Всеки от тях е с 26м. дължина на лицето по главният път след бензиностанция \"Петрол\" и са на равно място. Всеки от парцелите е с площ от 1071кв.м. Може да се продадат поотделно и заедно / с обща площ от 2 142 кв.м на двата парцела/. Единият парцел е ъглов . Идеални са за всякакъв бизнес - промишлено и жилищно строителство. Възможна е смяна на статута на земята - в зависимост от конкретното предназначение!!! Пред парцелите има допълнително място, което може да се усвои или да се използва за паркиране.",
+  "price": 53000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fb2ekjcghnmh1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/v9dvvt65plq71-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/jx80rq9haod81-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/dadmgboa1f972-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/odg96ofng96k3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fb2ekjcghnmh1-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:31:10.517100+00:00",
+  "reference_id": "OLX.bg:135807895",
+  "local_image_files": [
+    "data/media/OLX.bg_135807895/0000_6074d9cb.webp",
+    "data/media/OLX.bg_135807895/0001_db57cbe6.webp",
+    "data/media/OLX.bg_135807895/0002_0d204511.webp",
+    "data/media/OLX.bg_135807895/0003_8a9f10e2.webp",
+    "data/media/OLX.bg_135807895/0004_0707951a.webp",
+    "data/media/OLX.bg_135807895/0005_db74e56c.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_135807895/0000_6074d9cb.webp",
+    "OLX.bg_135807895/0001_db57cbe6.webp",
+    "OLX.bg_135807895/0002_0d204511.webp",
+    "OLX.bg_135807895/0003_8a9f10e2.webp",
+    "OLX.bg_135807895/0004_0707951a.webp",
+    "OLX.bg_135807895/0005_db74e56c.webp"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168348",
+  "external_id": "ec207bdc4298",
+  "title": "Къща във Варна 305 кв.м. ID 168348  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://userimages.yavlena.com/ee3adc30-add6-42d2-8986-839dc1d647a1.JPG"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:13:47.586041+00:00",
+  "reference_id": "Yavlena:ec207bdc4298",
+  "local_image_files": [
+    "data/media/Yavlena_ec207bdc4298/0000_8653e62d.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_ec207bdc4298/0000_8653e62d.jpg"
+  ]
+}

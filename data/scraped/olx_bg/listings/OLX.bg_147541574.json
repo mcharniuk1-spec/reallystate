@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/apartament-1-1-v-tselogodishen-kompleks-v-slanchev-bryag-5715-CID368-ID9Z4iO.html?search_reason=search%7Corganic",
+  "external_id": "147541574",
+  "title": "Апартамент 1+1 в целогодишен комплекс в Слънчев бряг #5715",
+  "description": "Предлагаме за продажба апартамент 1+1 в целогодишен комплекс в Слънчев бряг. Апартаментът е обзаведен и оборудван, готов за незабавно нанасяне. Предлага отличен потенциал за отдаване под наем. Комплексът разполага с голям басейн, ресторант и бар. Студиото се намира в тих район. Акт 16. Такса поддръжка: 6 евро/м. Акт 16.#5715 Предлагаем к продаже апартамент 1+1 в круглогодичном комплексе на Солнечном Берегу. Квартира укомплектована мебелью и техникой, готова к моментальному заселению. Хороший потенциал аренды. На территории комплекса есть большой бассейн, ресторан и бар. Студия находится в спокойном районе. Акт 16. Такса поддержки-6 евро/м. Акт.16.#571",
+  "price": 71000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/v7vax5g82zv12-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/456n63jshoy8-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/oeoa8nfnwq7r2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4dqss8lcj3pm-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/g9qlhdo36en13-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/v7vax5g82zv12-BG/image;s=1400x788"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:24:40.118695+00:00",
+  "reference_id": "OLX.bg:147541574",
+  "local_image_files": [
+    "data/media/OLX.bg_147541574/0000_006aa214.webp",
+    "data/media/OLX.bg_147541574/0001_ed6105ec.webp",
+    "data/media/OLX.bg_147541574/0002_74ab99d9.webp",
+    "data/media/OLX.bg_147541574/0003_6668fa65.webp",
+    "data/media/OLX.bg_147541574/0004_3720d8f8.webp",
+    "data/media/OLX.bg_147541574/0005_1adc8a24.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147541574/0000_006aa214.webp",
+    "OLX.bg_147541574/0001_ed6105ec.webp",
+    "OLX.bg_147541574/0002_74ab99d9.webp",
+    "OLX.bg_147541574/0003_6668fa65.webp",
+    "OLX.bg_147541574/0004_3720d8f8.webp",
+    "OLX.bg_147541574/0005_1adc8a24.webp"
+  ]
+}

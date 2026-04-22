@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-ap-pod-naem-v-kv-manastirski-livadi-CID368-ID9Xd5d.html?search_reason=search%7Corganic",
+  "external_id": "147098671",
+  "title": "Двустаен ап. под наем в кв. Манастирски ливади",
+  "description": "двустаен апартамент под наем в жк. Манастирски ливади, София. Жилището е с площ 60 кв.м. и се намира на 2 ри етаж от общо 6 в нова сграда. Изложението Запад/Юг осигурява приятна светлина през целия ден. Разпределението включва входно антре, хол с кухненски бокс, спалня, баня с тоалетна и балкон. Апартаментът е обзаведен и разполага с отопление на ток посредством климатици. В близост до имота ще намерите: - Детска градина Мила - Casa dei bambini Монтесори детска градина 'Къща на децата' - Банкомат: iBank ATM - Банка: SBI BG - Аптека: Аптека Надежда - Аптека: Аптека Прополис 4 - Трамвайна спирка: КВ. МАНАСТИРСКИ ЛИВАДИ - ЗАПАД - Трамвайна спирка: Кв. Манастирски ливади-запад 'С нас, вашето търсене на имот завършва с усмивка.' За оглед на това и други атрактивни предложения, не се колебайте да ни потърсите на посочения телефон (достъпен и във Viber, Whatsapp, Telegram) или да ни изпратите данните си чрез формата за запитване на сайта. Реф. номер: 2219158.",
+  "price": 650.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ibf26l98xwxj-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xk3ktef9xwe42-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/5atv4hu1wnbt1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/syxm2t7rpezj2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xek11sawib3l3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ibf26l98xwxj-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:21:38.996030+00:00",
+  "reference_id": "OLX.bg:147098671",
+  "local_image_files": [
+    "data/media/OLX.bg_147098671/0000_95e9f87f.webp",
+    "data/media/OLX.bg_147098671/0001_860f1805.webp",
+    "data/media/OLX.bg_147098671/0002_bca377b5.webp",
+    "data/media/OLX.bg_147098671/0003_8b7f3ff2.webp",
+    "data/media/OLX.bg_147098671/0004_edf3663d.webp",
+    "data/media/OLX.bg_147098671/0005_6b9bd996.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147098671/0000_95e9f87f.webp",
+    "OLX.bg_147098671/0001_860f1805.webp",
+    "OLX.bg_147098671/0002_bca377b5.webp",
+    "OLX.bg_147098671/0003_8b7f3ff2.webp",
+    "OLX.bg_147098671/0004_edf3663d.webp",
+    "OLX.bg_147098671/0005_6b9bd996.webp"
+  ]
+}

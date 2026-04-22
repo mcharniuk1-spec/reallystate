@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/2-staen-apartament-pod-naem-v-zhk-nadezhda-2-CID368-ID9XuPr.html?search_reason=search%7Corganic",
+  "external_id": "147166885",
+  "title": "2-стаен апартамент под наем в жк. Надежда 2",
+  "description": "Агенция предлага двустаен апартамент под наем в жк. Надежда 2. Жилището е напълно оборудвано и обзаведено с всичко необходимо. Състои се от входно антре, кухня с просторна дневна, спалня, баня с тоалетна и тераса. Намира се в нова сграда на 4-ти етаж. В близост до спирки на градски транспорт, търговски обекти, училища и заведения.",
+  "price": 499.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0hnybgcidpa71-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/x77fwahsovvp2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/cq5gbuph9w1q-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6h5nebpw0b9f-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zwbwbd8eklxl1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0hnybgcidpa71-BG/image;s=800x593"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:29:08.739370+00:00",
+  "reference_id": "OLX.bg:147166885",
+  "local_image_files": [
+    "data/media/OLX.bg_147166885/0000_7e7865aa.webp",
+    "data/media/OLX.bg_147166885/0001_8156ab3e.webp",
+    "data/media/OLX.bg_147166885/0002_13830cdb.webp",
+    "data/media/OLX.bg_147166885/0003_b50ddc13.webp",
+    "data/media/OLX.bg_147166885/0004_cba4e76f.webp",
+    "data/media/OLX.bg_147166885/0005_7e7865aa.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147166885/0000_7e7865aa.webp",
+    "OLX.bg_147166885/0001_8156ab3e.webp",
+    "OLX.bg_147166885/0002_13830cdb.webp",
+    "OLX.bg_147166885/0003_b50ddc13.webp",
+    "OLX.bg_147166885/0004_cba4e76f.webp",
+    "OLX.bg_147166885/0005_7e7865aa.webp"
+  ]
+}

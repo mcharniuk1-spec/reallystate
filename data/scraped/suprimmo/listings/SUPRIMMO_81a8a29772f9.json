@@ -1,0 +1,32 @@
+{
+  "source_name": "SUPRIMMO",
+  "listing_url": "https://www.suprimmo.bg/imot-117953-dvustaen-apartament-s-gradinska-terasa-v-7-angels/",
+  "external_id": "81a8a29772f9",
+  "title": "Superimoti.bg",
+  "description": "Двустаен апартамент с градинска тераса в 7 Angels  на цена по запитване  ✔️ Имот с площ 73 м² ⭐ SUPRIMMO ⭐  За повече посетете сайта или на ☎0883 700 335 / ☎0700 70 335",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static4.superimoti.bg/property-images/big/1773329202T117953_22.jpg?v=1775733875"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:24:36.764833+00:00",
+  "reference_id": "SUPRIMMO:81a8a29772f9",
+  "local_image_files": [
+    "data/media/SUPRIMMO_81a8a29772f9/0000_1b8f682a.jpg"
+  ],
+  "local_image_storage_keys": [
+    "SUPRIMMO_81a8a29772f9/0000_1b8f682a.jpg"
+  ]
+}

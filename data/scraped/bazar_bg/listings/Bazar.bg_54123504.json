@@ -1,0 +1,47 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-54123504/dawa-pod-naem-2-staen-gr-sofiia-lyulin-7",
+  "external_id": "54123504",
+  "title": "Bazar.BG",
+  "description": "Дава пад наем непреходен обзаведен двустаен , близо до метрото. Разпределение : кухня, хол , спалня , баня с тоалетна , две тераси, антре . Апартамента е много",
+  "price": 550.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic1.focus.bg/imot/photosimotbg/2/461/big/2c177556505216461_DC.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/2/461/big/2c177556505216461_Jc.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/2/461/big/2c177556505216461_2X.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/2/461/big/2c177556505216461_7i.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/2/461/big/2c177556505216461_RX.jpg",
+    "//imotstatic1.focus.bg/imot/photosimotbg/2/461/big/2c177556505216461_DC.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:48:14.808092+00:00",
+  "reference_id": "Bazar.bg:54123504",
+  "local_image_files": [
+    "data/media/Bazar.bg_54123504/0000_bd5881d6.jpg",
+    "data/media/Bazar.bg_54123504/0001_553c2b92.jpg",
+    "data/media/Bazar.bg_54123504/0002_4b2032a3.jpg",
+    "data/media/Bazar.bg_54123504/0003_a63fe8bd.jpg",
+    "data/media/Bazar.bg_54123504/0004_aab82d0a.jpg",
+    "data/media/Bazar.bg_54123504/0005_bd5881d6.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_54123504/0000_bd5881d6.jpg",
+    "Bazar.bg_54123504/0001_553c2b92.jpg",
+    "Bazar.bg_54123504/0002_4b2032a3.jpg",
+    "Bazar.bg_54123504/0003_a63fe8bd.jpg",
+    "Bazar.bg_54123504/0004_aab82d0a.jpg",
+    "Bazar.bg_54123504/0005_bd5881d6.jpg"
+  ]
+}

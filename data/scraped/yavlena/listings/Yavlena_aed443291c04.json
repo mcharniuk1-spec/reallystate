@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/167988",
+  "external_id": "aed443291c04",
+  "title": "Многостаен апартамент във Варна 139 кв.м. ID 167988  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/544ebc49-9974-42d4-a6f7-96c00d7e5630.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:18:03.352255+00:00",
+  "reference_id": "Yavlena:aed443291c04",
+  "local_image_files": [
+    "data/media/Yavlena_aed443291c04/0000_ac0d69f9.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_aed443291c04/0000_ac0d69f9.jpg"
+  ]
+}

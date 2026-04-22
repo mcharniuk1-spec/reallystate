@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD87823BG_House_for_sale_near_Veliko_Tarnovo.html",
+  "external_id": "e54360de0415",
+  "title": "Bulgarian Properties",
+  "description": "House with garden equipped with everything necessary for living",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/87823_3.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:34:55.276256+00:00",
+  "reference_id": "BulgarianProperties:e54360de0415",
+  "local_image_files": [
+    "data/media/BulgarianProperties_e54360de0415/0000_ebbaa81c.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_e54360de0415/0000_ebbaa81c.jpg"
+  ]
+}

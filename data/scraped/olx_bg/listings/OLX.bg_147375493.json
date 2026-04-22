@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-ap-pod-naem-v-kv-malinova-dolina-CID368-ID9Yn65.html?search_reason=search%7Corganic",
+  "external_id": "147375493",
+  "title": "Двустаен ап. под наем в кв. Малинова долина",
+  "description": "двустаен апартамент под наем в кв. Малинова долина, в бързоразвиващ се район с удобен достъп до транспорт и ключови точки в града. Жилището е с площ 56 кв.м, разположено на 1-ви етаж от 5 в нова сграда от 2023 г. Изложението е южно. Разпределение: хол с кухненски бокс спалня баня с тоалетна тераса Апартаментът е напълно обзаведен и климатизиран, отоплява се на ток и разполага с интернет окабеляване, което го прави отличен избор за сам човек или двойка. В близост: детски градини, медицински центрове, аптеки и спирки на градски транспорт с връзка към Студентски град и центъра. За оглед се свържете с нас и цитирайте реф. номер: 2220811.",
+  "price": 600.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fraa1h0tfzsm1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/dp3nssdoc24u-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zzl4fj5idhzc1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/o9zukm6koyck-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/d840imnitthi-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fraa1h0tfzsm1-BG/image;s=525x700"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:23:55.698053+00:00",
+  "reference_id": "OLX.bg:147375493",
+  "local_image_files": [
+    "data/media/OLX.bg_147375493/0000_55c319b7.webp",
+    "data/media/OLX.bg_147375493/0001_9a4fe86e.webp",
+    "data/media/OLX.bg_147375493/0002_55c319b7.webp",
+    "data/media/OLX.bg_147375493/0003_55c319b7.webp",
+    "data/media/OLX.bg_147375493/0004_6f0652d4.webp",
+    "data/media/OLX.bg_147375493/0005_55c319b7.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147375493/0000_55c319b7.webp",
+    "OLX.bg_147375493/0001_9a4fe86e.webp",
+    "OLX.bg_147375493/0002_55c319b7.webp",
+    "OLX.bg_147375493/0003_55c319b7.webp",
+    "OLX.bg_147375493/0004_6f0652d4.webp",
+    "OLX.bg_147375493/0005_55c319b7.webp"
+  ]
+}

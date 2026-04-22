@@ -1,0 +1,41 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-CID368-ID9YVcb.html?search_reason=search%7Cpromoted",
+  "external_id": "147510411",
+  "title": "Двустаен апартамент",
+  "description": "Дава се под наем двустаен апартамент.Жилището е напълно обзаведено и се състои от дневна с кухненски бокс, спалня, баня с тоалетна и балкон. Светъл, уютен и готов за нанасяне. Намира се на комуникативно място с удобен достъп до транспорт и магазини.",
+  "price": 400.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/jeb41fjxyjlp3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/m05ohe3s8wec1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/698q48ormle13-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/jeb41fjxyjlp3-BG/image;s=1000x667"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:24:01.871104+00:00",
+  "reference_id": "OLX.bg:147510411",
+  "local_image_files": [
+    "data/media/OLX.bg_147510411/0000_500f32a7.webp",
+    "data/media/OLX.bg_147510411/0001_ec043521.webp",
+    "data/media/OLX.bg_147510411/0002_9eabc993.webp",
+    "data/media/OLX.bg_147510411/0003_500f32a7.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147510411/0000_500f32a7.webp",
+    "OLX.bg_147510411/0001_ec043521.webp",
+    "OLX.bg_147510411/0002_9eabc993.webp",
+    "OLX.bg_147510411/0003_500f32a7.webp"
+  ]
+}

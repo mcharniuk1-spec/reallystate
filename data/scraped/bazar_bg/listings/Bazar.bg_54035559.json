@@ -1,0 +1,50 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-54035559/prodawa-3-staen-gr-sofiia-malinowa-dolina",
+  "external_id": "54035559",
+  "title": "Bazar.BG",
+  "description": "АКТ 14 ! Тристаен апартамент 91.53кв.м. с двор 78,98 кв.м!  Сграда - Трапезица , Малинова долина.  Чиста площ: 79,07 кв.м | Обща площ с общи части: 91.53 кв.м +",
+  "price": 238000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/574/big1/1c177312978560574_H2.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/574/big1/1c177312978560574_NG.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/574/big1/1c177312978560574_6R.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/574/big1/1c177312978560574_tN.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/574/big1/1c177312978560574_tt.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/574/big1/1c177312978560574_Vc.jpg",
+    "//imotstatic3.focus.bg/imot/photosimotbg/1/574/big1/1c177312978560574_H2.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:46:45.768834+00:00",
+  "reference_id": "Bazar.bg:54035559",
+  "local_image_files": [
+    "data/media/Bazar.bg_54035559/0000_d5d7afb3.jpg",
+    "data/media/Bazar.bg_54035559/0001_a98e7cdb.jpg",
+    "data/media/Bazar.bg_54035559/0002_3a0631c6.jpg",
+    "data/media/Bazar.bg_54035559/0003_f4f5ed02.jpg",
+    "data/media/Bazar.bg_54035559/0004_77238f71.jpg",
+    "data/media/Bazar.bg_54035559/0005_5488772f.jpg",
+    "data/media/Bazar.bg_54035559/0006_d5d7afb3.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_54035559/0000_d5d7afb3.jpg",
+    "Bazar.bg_54035559/0001_a98e7cdb.jpg",
+    "Bazar.bg_54035559/0002_3a0631c6.jpg",
+    "Bazar.bg_54035559/0003_f4f5ed02.jpg",
+    "Bazar.bg_54035559/0004_77238f71.jpg",
+    "Bazar.bg_54035559/0005_5488772f.jpg",
+    "Bazar.bg_54035559/0006_d5d7afb3.jpg"
+  ]
+}

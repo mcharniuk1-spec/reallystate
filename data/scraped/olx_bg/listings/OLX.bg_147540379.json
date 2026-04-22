@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/tristaen-apartament-v-gr-varna-asparuhovo-CID368-ID9Z3Zx.html?search_reason=search%7Corganic",
+  "external_id": "147540379",
+  "title": "Тристаен апартамент  в гр.Варна, Аспарухово!",
+  "description": "Референтен номер: 2160199 Революшън Естейт представя тристаен апартамент в гр.Варна, Аспарухово! Отлична локация в непосредствена близост до търговски обекти, спирки и вскички необходими удобства . Информация за горепосочения имот, може да получите чрез формата на запитване или чрез директна връзка с нас на посочения телефон.",
+  "price": 750.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/391zvb64ppy11-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qr6wkqwpa7a8-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2ybcvzojsquv-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fejpxlaxwy1w2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/3ewyxljy932u2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/391zvb64ppy11-BG/image;s=1536x1024"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:23:15.294494+00:00",
+  "reference_id": "OLX.bg:147540379",
+  "local_image_files": [
+    "data/media/OLX.bg_147540379/0000_c01e3631.webp",
+    "data/media/OLX.bg_147540379/0001_e31eef5f.webp",
+    "data/media/OLX.bg_147540379/0002_4f7150f5.webp",
+    "data/media/OLX.bg_147540379/0003_f9add604.webp",
+    "data/media/OLX.bg_147540379/0004_d31cee2c.webp",
+    "data/media/OLX.bg_147540379/0005_d8b92eeb.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540379/0000_c01e3631.webp",
+    "OLX.bg_147540379/0001_e31eef5f.webp",
+    "OLX.bg_147540379/0002_4f7150f5.webp",
+    "OLX.bg_147540379/0003_f9add604.webp",
+    "OLX.bg_147540379/0004_d31cee2c.webp",
+    "OLX.bg_147540379/0005_d8b92eeb.webp"
+  ]
+}

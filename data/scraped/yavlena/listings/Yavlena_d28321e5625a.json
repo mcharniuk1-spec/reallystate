@@ -1,0 +1,28 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/167866",
+  "external_id": "d28321e5625a",
+  "title": "Склад в Добровница 880 кв.м. ID 167866  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://userimages.yavlena.com/074ef376-dfb5-473c-bfef-bab5a374e566.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:56:32.047958+00:00",
+  "reference_id": "Yavlena:d28321e5625a",
+  "local_image_files": [],
+  "local_image_storage_keys": []
+}

@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD89891BG_1-bedroom_apartment_for_sale_in_Sunny_Beach.html",
+  "external_id": "a204ee35d89e",
+  "title": "Bulgarian Properties",
+  "description": "Stylish fully furnished and equipped apartment near the Aquapark in Sunny Beach",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89891_2.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:39:36.164101+00:00",
+  "reference_id": "BulgarianProperties:a204ee35d89e",
+  "local_image_files": [
+    "data/media/BulgarianProperties_a204ee35d89e/0000_33e3bbfe.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_a204ee35d89e/0000_33e3bbfe.jpg"
+  ]
+}

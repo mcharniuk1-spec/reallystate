@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD88065BG_House_for_sale_in_Trakia.html",
+  "external_id": "eeeab35481d7",
+  "title": "Bulgarian Properties",
+  "description": "Solid house with large garden, additional buildings and garage in Trakia village",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88065_22.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:38:34.875874+00:00",
+  "reference_id": "BulgarianProperties:eeeab35481d7",
+  "local_image_files": [
+    "data/media/BulgarianProperties_eeeab35481d7/0000_00aa9a0e.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_eeeab35481d7/0000_00aa9a0e.jpg"
+  ]
+}

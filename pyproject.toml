@@ -41,6 +41,11 @@ dev = [
   "pytest>=8.3",
   "ruff>=0.11",
 ]
+scrape-agents = [
+  "curl-cffi>=0.11.4",
+  "playwright>=1.59",
+  "selectolax>=0.3.26",
+]
 
 [tool.setuptools.packages.find]
 where = ["src"]

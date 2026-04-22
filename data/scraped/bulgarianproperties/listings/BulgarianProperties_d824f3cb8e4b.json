@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Large_apartments_in_Bulgaria/AD89039BG_Large_apartment_for_sale_in_Sveti_Vlas.html",
+  "external_id": "d824f3cb8e4b",
+  "title": "Bulgarian Properties",
+  "description": "Excellent property with premium furniture and impressive design 50 m from the sea",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89039_43.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:39:24.552854+00:00",
+  "reference_id": "BulgarianProperties:d824f3cb8e4b",
+  "local_image_files": [
+    "data/media/BulgarianProperties_d824f3cb8e4b/0000_ee5e78f5.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_d824f3cb8e4b/0000_ee5e78f5.jpg"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_name": "property.bg",
+  "listing_url": "https://www.property.bg/property-117945-spacious-one-bedroom-apartment-with-garden-terrace-in-7-angels/",
+  "external_id": "289f78133758",
+  "title": "Property.bg",
+  "description": "Spacious one bedroom apartment with garden terrace in 7 Angels for sale  - High ceilings (over 2.85 m) Completely renovated building Reinforced concrete structure Brick-built Completely refurbished property  - Gas heating system  - Views to inner garden Forest views Mountain views Ski run views from №",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static4.superimoti.bg/property-images/big/1773329202T117945_23.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T13:58:03.719194+00:00",
+  "reference_id": "property.bg:289f78133758",
+  "local_image_files": [
+    "data/media/property.bg_289f78133758/0000_490a3a05.jpg"
+  ],
+  "local_image_storage_keys": [
+    "property.bg_289f78133758/0000_490a3a05.jpg"
+  ]
+}

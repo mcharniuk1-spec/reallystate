@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/prahovo-boyadzhiyno-pod-naem-napalno-oborudvano-CID368-ID9WGFj.html?search_reason=search%7Corganic",
+  "external_id": "146735729",
+  "title": "Прахово бояджийно под наем, напълно оборудвано",
+  "description": "Напълно оборудвано прахово бояджийно, техниката е нова - 270 л компресор, компресорен изсушител, GEMA. Стелаж, високоповдигаща палетна количка, маса за почистване. Бояджийната камера е с размер Ш125, Д261, В193; печката е с размер Ш99, Д300, В186 см. Филтрираща система с изтупване на филтрите. Товарна врата 400 см.",
+  "price": 1350.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0x8vb2wupbv63-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zshucb2klnu-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bhylsu9rrxrr1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wlgsfid1wll-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/o2wgejo9blhr2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0x8vb2wupbv63-BG/image;s=2048x1537"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:19:50.940663+00:00",
+  "reference_id": "OLX.bg:146735729",
+  "local_image_files": [
+    "data/media/OLX.bg_146735729/0000_ac2ea4bb.webp",
+    "data/media/OLX.bg_146735729/0001_3262d8b1.webp",
+    "data/media/OLX.bg_146735729/0002_98b70c3c.webp",
+    "data/media/OLX.bg_146735729/0003_a6a6e4dd.webp",
+    "data/media/OLX.bg_146735729/0004_0f8ecbe7.webp",
+    "data/media/OLX.bg_146735729/0005_7c14874a.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_146735729/0000_ac2ea4bb.webp",
+    "OLX.bg_146735729/0001_3262d8b1.webp",
+    "OLX.bg_146735729/0002_98b70c3c.webp",
+    "OLX.bg_146735729/0003_a6a6e4dd.webp",
+    "OLX.bg_146735729/0004_0f8ecbe7.webp",
+    "OLX.bg_146735729/0005_7c14874a.webp"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvuetazhna-kascha-s-panorama-more-v-kv-sarafovo-burgas-CID368-ID9Z3IO.html?search_reason=search%7Corganic",
+  "external_id": "147539342",
+  "title": "Двуетажна къща с ПАНОРАМА МОРЕ в кв. Сарафово, Бургас",
+  "description": "Предлагаме просторна необзаведена двуетажна къща с ГЛЕДКА МОРЕ и просторен двор в кв. Сарафово, гр. Бургас. Имотът е БЕЗ ТАКСА ПОДДРЪЖКА. Жилището е с площ 203.5 кв.м и 356 кв. м двор. Къщата е на два етажа със следното разпределение: 1 етаж: антре, всекидневна с изводи за кухня, спалня, баня с тоалетна и душ, дрешник, склад, веранда с излаз към двора; 2 етаж: коридор, две спални, всяка от които с дрешник, баня с тоалетна и душ, просторна тераса с изглед към Бургаския залив. Къщата ще бъде завършена през октомври 2026 г. Жилището е подходящо, както за сезонно, така и за целогодишно ползване. Има възможност за разсрочено плащане. Къщата разполага с: ограничен достъп, техническа поддръжка, поддръжка на общите части, озеленени площи, паркинг и др. Къщата се намира на 900 м от морето. Наоколо има добре изградена инфраструктура. Наблизо има: супермаркети, магазини, ресторанти, заведения, плаж, увеселителен парк и други развлечения. Разполагаме с много и разнообразни имоти по цялото Черноморие. За повече информация, свържете се с нас!",
+  "price": 377000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nbl3j6buwlmx-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pihxwk9bqdy83-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/jknwnxsuo1dj3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/m7syl5trc2x4-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4ywgi9qmbeft2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nbl3j6buwlmx-BG/image;s=1333x1000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:23:12.129577+00:00",
+  "reference_id": "OLX.bg:147539342",
+  "local_image_files": [
+    "data/media/OLX.bg_147539342/0000_570306a5.webp",
+    "data/media/OLX.bg_147539342/0001_200e3d25.webp",
+    "data/media/OLX.bg_147539342/0002_6b28f223.webp",
+    "data/media/OLX.bg_147539342/0003_9bcd3c35.webp",
+    "data/media/OLX.bg_147539342/0004_ece89eeb.webp",
+    "data/media/OLX.bg_147539342/0005_950fd46f.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539342/0000_570306a5.webp",
+    "OLX.bg_147539342/0001_200e3d25.webp",
+    "OLX.bg_147539342/0002_6b28f223.webp",
+    "OLX.bg_147539342/0003_9bcd3c35.webp",
+    "OLX.bg_147539342/0004_ece89eeb.webp",
+    "OLX.bg_147539342/0005_950fd46f.webp"
+  ]
+}

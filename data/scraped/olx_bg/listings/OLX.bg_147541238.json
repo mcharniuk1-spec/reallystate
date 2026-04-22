@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/2-staen-apartament-lyulin-9-do-metro-CID368-ID9Z4do.html?search_reason=search%7Corganic",
+  "external_id": "147541238",
+  "title": "2 стаен апартамент Люлин 9 до метро",
+  "description": "2 стаен апартамент Люлин 9 до метро. Комуникативно място в близост до 40 ОУ, 12 ДКЦ, спирки на тролей номер 6 и 7 и на 6/7 минути пеша от метростанция Западен парк. Само за частни лица.",
+  "price": 152000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/lpshmy49016s3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/d3tou30tlgj42-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/h7cspdzkbayd2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/tii6r9rzee72-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vc99aiqpewwv1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/lpshmy49016s3-BG/image;s=483x628"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:25:49.383498+00:00",
+  "reference_id": "OLX.bg:147541238",
+  "local_image_files": [
+    "data/media/OLX.bg_147541238/0000_de0fce4e.webp",
+    "data/media/OLX.bg_147541238/0001_c9bbee53.webp",
+    "data/media/OLX.bg_147541238/0002_f922beb9.webp",
+    "data/media/OLX.bg_147541238/0003_107ab3a0.webp",
+    "data/media/OLX.bg_147541238/0004_863ce536.webp",
+    "data/media/OLX.bg_147541238/0005_de0fce4e.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147541238/0000_de0fce4e.webp",
+    "OLX.bg_147541238/0001_c9bbee53.webp",
+    "OLX.bg_147541238/0002_f922beb9.webp",
+    "OLX.bg_147541238/0003_107ab3a0.webp",
+    "OLX.bg_147541238/0004_863ce536.webp",
+    "OLX.bg_147541238/0005_de0fce4e.webp"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/sobstvenik-dvustaen-sveti-vlas-CID368-ID9ZjmV.html?search_reason=search%7Cpromoted",
+  "external_id": "147599490",
+  "title": "Собственик! Двустаен Свети Влас",
+  "description": "Продавам двустаен апартамент комплекс Виста дел Мар. 2 етаж. Акт 16. Отделни партиди ток и вода. 60м2. Такса 10евр/м2. На 300м. От морето.",
+  "price": 76000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/5k85j4if0y0f-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wo0cs7r1v36n1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/k7zjia0ivszj3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/t402i4de7oun3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wvdux1zljxij1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/5k85j4if0y0f-BG/image;s=576x768"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:30:04.527262+00:00",
+  "reference_id": "OLX.bg:147599490",
+  "local_image_files": [
+    "data/media/OLX.bg_147599490/0000_80a9b44d.webp",
+    "data/media/OLX.bg_147599490/0001_4796c908.webp",
+    "data/media/OLX.bg_147599490/0002_2183a98c.webp",
+    "data/media/OLX.bg_147599490/0003_1439b8a3.webp",
+    "data/media/OLX.bg_147599490/0004_8c6a1286.webp",
+    "data/media/OLX.bg_147599490/0005_5923b04f.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147599490/0000_80a9b44d.webp",
+    "OLX.bg_147599490/0001_4796c908.webp",
+    "OLX.bg_147599490/0002_2183a98c.webp",
+    "OLX.bg_147599490/0003_1439b8a3.webp",
+    "OLX.bg_147599490/0004_8c6a1286.webp",
+    "OLX.bg_147599490/0005_5923b04f.webp"
+  ]
+}

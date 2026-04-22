@@ -1,0 +1,28 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-121m2-sofiya-zhk.-yavorov/as1651638",
+  "external_id": "f477c4eef873",
+  "title": "Тристаен, 121m² - Жк. Яворов, София - Апартамент за продажба - АСГАРД ПРОПЪРТИС",
+  "description": "АСГАРД ПРОПЪРТИС продава луксозно ремонтиран апартамент в санирана сграда с безупречни общи части в престижния квартал Яворов. Жилището е с чиста площ 121 кв.м....",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2025-10-01_2/115869510o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T10:05:38.407101+00:00",
+  "reference_id": "Homes.bg:f477c4eef873",
+  "local_image_files": [],
+  "local_image_storage_keys": []
+}

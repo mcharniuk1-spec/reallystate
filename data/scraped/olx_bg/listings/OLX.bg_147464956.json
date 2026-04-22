@@ -1,0 +1,44 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-v-kv-trakiya-92424-CID368-ID9YKn2.html?search_reason=search%7Corganic",
+  "external_id": "147464956",
+  "title": "Двустаен апартамент в кв. Тракия - 92424",
+  "description": "Компания Х представя на Вашето внимание двустаен в Тракия! МЕСТОПОЛОЖЕНИЕ: Квартал Тракия е един от най-големите и модерни жилищни райони на град Пловдив. Намира се в източната част на града и е известен с добре развита инфраструктура, множество зелени площи, училища, детски градини, търговски центрове и удобен градски транспорт. Районът предлага съчетание от градски комфорт и подредена среда, като е предпочитан както за семейства, така и за млади хора. РАЗПРЕДЕЛЕНИЕ: Имотът е с площ от 75 кв. м. СЪСТОЯНИЕ: В строеж Заповядайте да Ви го покажем. Използвайки нашите услуги Вие ще превърнете закупуването на новия си дом в едно приятно изживяване, ще получите персонален консултант, съдействие при кандидатстване за кредит от всички банки в България, интериорни дизайнери и екип, който да се погрижи за нужните документи по Вашата сделка. На Ваше разположение сме всеки ден, от понеделник до неделя от 09:00 до 20:00ч. Възползвайте се от безплатна консултация в наш офис, където ще ви спестим време и ще ви запознаем с всички актуални имоти в България, отговарящи на Вашето търсене. Нужен Ви е кодът към имота: 92424",
+  "price": 126000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ebluera81lcb3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/c7v2mvszwh7a-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/1x25ppzdyonv1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zy07xfq9izyj1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ebluera81lcb3-BG/image;s=1440x1704"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:30:35.425640+00:00",
+  "reference_id": "OLX.bg:147464956",
+  "local_image_files": [
+    "data/media/OLX.bg_147464956/0000_59abd408.webp",
+    "data/media/OLX.bg_147464956/0001_b068c89d.webp",
+    "data/media/OLX.bg_147464956/0002_b8e6764f.webp",
+    "data/media/OLX.bg_147464956/0003_fbb060c1.webp",
+    "data/media/OLX.bg_147464956/0004_7ca903f3.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464956/0000_59abd408.webp",
+    "OLX.bg_147464956/0001_b068c89d.webp",
+    "OLX.bg_147464956/0002_b8e6764f.webp",
+    "OLX.bg_147464956/0003_fbb060c1.webp",
+    "OLX.bg_147464956/0004_7ca903f3.webp"
+  ]
+}

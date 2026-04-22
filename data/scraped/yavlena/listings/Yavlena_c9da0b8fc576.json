@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168451",
+  "external_id": "c9da0b8fc576",
+  "title": "Двустаен апартамент във Варна 66 кв.м. ID 168451  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/51ab61c3-048e-4aca-b468-3f2adab108db.JPG"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:56:16.427053+00:00",
+  "reference_id": "Yavlena:c9da0b8fc576",
+  "local_image_files": [
+    "data/media/Yavlena_c9da0b8fc576/0000_e68c490d.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_c9da0b8fc576/0000_e68c490d.jpg"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/ednostaen-50m2-sofiya-zhk.-lozenec/as1659480",
+  "external_id": "01bf996371bd",
+  "title": "Едностаен, 50m² - Жк. Лозенец, София - Апартамент за продажба - АСГАРД ПРОПЪРТИС",
+  "description": "АСГАРД ПРОПЪРТИС продава луксозно ремонтиран, напълно обзаведен апартамент, разположен на втори етаж в нова сграда на метри от Южния парк и Paradise Mall. Жилищ...",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2025-11-12_2/116414691o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T10:05:43.635969+00:00",
+  "reference_id": "Homes.bg:01bf996371bd",
+  "local_image_files": [],
+  "local_image_storage_keys": []
+}

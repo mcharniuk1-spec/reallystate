@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD88116BG_House_for_sale_in_Varna.html",
+  "external_id": "10e957e859d1",
+  "title": "Bulgarian Properties",
+  "description": "New two-storey house using the latest energy efficiency technologies, with unobstructed sea view",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88116_5.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:40:53.280322+00:00",
+  "reference_id": "BulgarianProperties:10e957e859d1",
+  "local_image_files": [
+    "data/media/BulgarianProperties_10e957e859d1/0000_20385dab.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_10e957e859d1/0000_20385dab.jpg"
+  ]
+}

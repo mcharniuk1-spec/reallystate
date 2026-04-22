@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD88212BG_House_for_sale_in_Apriltsi.html",
+  "external_id": "d3f92d85307d",
+  "title": "Bulgarian Properties",
+  "description": "Renovated house with garden, barbecue and central location in Novo selo dstrict",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88212_20.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:38:03.781218+00:00",
+  "reference_id": "BulgarianProperties:d3f92d85307d",
+  "local_image_files": [
+    "data/media/BulgarianProperties_d3f92d85307d/0000_2e68b546.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_d3f92d85307d/0000_2e68b546.jpg"
+  ]
+}

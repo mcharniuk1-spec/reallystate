@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168068",
+  "external_id": "864abbd5099d",
+  "title": "Къща във Велико Търново 148 кв.м. ID 168068  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://userimages.yavlena.com/ea20436c-dde2-4d41-80b8-22d3b3e847b4.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:17:07.188923+00:00",
+  "reference_id": "Yavlena:864abbd5099d",
+  "local_image_files": [
+    "data/media/Yavlena_864abbd5099d/0000_5666c928.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_864abbd5099d/0000_5666c928.jpg"
+  ]
+}

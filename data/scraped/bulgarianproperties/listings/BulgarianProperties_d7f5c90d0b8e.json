@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/AD85764BG_2-bedroom_apartment_for_sale_in_Sveti_Vlas.html",
+  "external_id": "d7f5c90d0b8e",
+  "title": "Bulgarian Properties",
+  "description": "Furnished apartment with sea view in complex \"Bademite\" in Sveti Vlas",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/85764_15.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:38:43.121984+00:00",
+  "reference_id": "BulgarianProperties:d7f5c90d0b8e",
+  "local_image_files": [
+    "data/media/BulgarianProperties_d7f5c90d0b8e/0000_e92068b0.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_d7f5c90d0b8e/0000_e92068b0.jpg"
+  ]
+}

@@ -131,14 +131,15 @@ App routes must be built in this order: `/listings`, `/properties/[id]`, `/map`,
 
 MVP geographic scope rule:
 
-- 3D map search is **Varna city + Varna region only** in MVP.
-- Expansion to additional cities/regions is blocked until stage-1 scraping quality is verified across required product types (`sale`, `long_term_rent`, `short_term_rent`, `land`, `new_build`) by debugger.
+- **Map + listings browse** (`UX-04`, LUN-style homepage/`/map` feed) is **nationwide Bulgaria** (all regions/cities; user can narrow by filter/bbox).
+- **3D building extrusion** and OSM building mesh for extruded heights remain **Varna city + Varna region only** in MVP (`UX-07`, `BD-08`).
+- Expansion of **building-match depth** and 3D mesh to additional cities is blocked until stage-1 scraping quality is verified across required product types (`sale`, `long_term_rent`, `short_term_rent`, `land`, `new_build`) by debugger (`DBG-05`).
 
 | Route | Components | Acceptance |
 |---|---|---|
 | `/listings` | `ListingsPageShell`, `ListingsFilterSidebar`, `ListingsSortBar`, `InfiniteListingFeed`, `ListingCard`, `ListingCardGallery`, `SourceBadge`, `FreshnessBadge`, `DedupeGroupBadge` | Infinite scroll, filters, sorting, photo preview, source links, create-lead action |
 | `/properties/[id]` | `PropertyHeader`, `PhotoGallery`, `PriceBox`, `PropertyFactsGrid`, `DescriptionTabs`, `SourceLinksPanel`, `ContactPanel`, `MapMiniPanel`, `PriceHistoryChart`, `LeadActionPanel` | One deduped property view across all sources with provenance |
-| `/map` | `MapShell`, `MapToolbar`, `MapSearchBox`, `MapFilterPanel`, `MapLibreCanvas`, `DeckBuildingLayer`, `ListingClusterLayer`, `PropertyPinLayer`, `BuildingSummaryDrawer`, `ListingPreviewCard` | 2D/3D toggle, viewport loading, building summaries, clusters, fallback where geometry is weak; MVP scope limited to Varna city/region |
+| `/map` | `MapShell`, `MapToolbar`, `MapSearchBox`, `MapFilterPanel`, `MapLibreCanvas`, `DeckBuildingLayer`, `ListingClusterLayer`, `PropertyPinLayer`, `BuildingSummaryDrawer`, `ListingPreviewCard` | 2D/3D toggle, viewport loading, clusters, listing pins **nationwide**; 3D extrusion **Varna pilot** where building tiles exist; 2D fallback elsewhere |
 | `/chat` | `ChatInboxLayout`, `ThreadList`, `ThreadFilters`, `ConversationPane`, `MessageComposer`, `LeadProfilePanel`, `LinkedPropertiesPanel`, `TaskReminderPanel`, `SavedReplyPicker`, `AssignmentMenu`, `AuditTimeline` | Threads, messages, assignment, reminders, templates, manual notes, property/contact links |
 | `/settings` | `ProfileSettings`, `NotificationSettings`, `TeamSettings`, `ApiKeySettings`, `ConnectedChannelsSettings`, `CrawlerSettings`, `PublishingSettings`, `SecurityAuditLog` | User profile, team roles, API keys, channel accounts, crawler/publishing state |
 | `/admin` | `SourceHealthDashboard`, `CrawlerJobTable`, `ParserFailureQueue`, `DuplicateReviewQueue`, `GeocodeReviewQueue`, `ComplianceReviewQueue`, `PublishQueue`, `SyncStatusTable` | Operators can review source health, parser failures, dedupe, building matches, compliance, publishing |
@@ -158,7 +159,7 @@ MVP geographic scope rule:
 
 7. Dedupe graph. Inputs: listings, contacts, photos, price, area, addresses. Tools: Cursor, Codex. Skills: `dedupe-entity-resolution`. Outputs: property graph, duplicate candidates, merge confidence, review status. Gate: precision target above 0.90 on labeled Bulgarian sample.
 
-8. Geospatial layer. Inputs: coordinates, addresses, city polygons, OSM/EUBUCCO/cadastre where permitted. Tools: Cursor, Codex, PostGIS. Skills: `geo-map-3d`. Outputs: geocoder adapter, building matcher, confidence scores, priority city coverage. Gate: MVP gate is Varna city/region first; only after stage-1 scrape verification can coverage expand to Sofia, Burgas, Sunny Beach/Nessebar, Bansko.
+8. Geospatial layer. Inputs: coordinates, addresses, city polygons, OSM/EUBUCCO/cadastre where permitted. Tools: Cursor, Codex, PostGIS. Skills: `geo-map-3d`. Outputs: geocoder adapter, building matcher, confidence scores, nationwide listing map coverage, priority city coverage for building depth. Gate: **Listing/map browse** supports **all Bulgaria**; **building mesh + 3D extrusion MVP** is Varna city/region first; only after stage-1 scrape verification can building-match depth expand to Sofia, Burgas, Sunny Beach/Nessebar, Bansko.
 
 9. Search and map APIs. Inputs: property graph, offers, media, building matches. Tools: Cursor, Codex. Skills: `geo-map-3d`, `frontend-pages`. Outputs: listing search, filters, facets, viewport API, building summary API, optional MVT. Gate: search p95 under 300 ms and map p95 under 500 ms on seeded data.
 
@@ -323,7 +324,7 @@ The dashboard is the operating system for the project. It lets an operator creat
 
 ### 12.6 Report and export pipeline
 
-The dashboard data is also exported as a static HTML dashboard (`docs/dashboard/index.html`), a JSON data file (`docs/exports/progress-dashboard.json`), and a product summary with all metrics. Generate with `make dashboard-doc`. The export pipeline reads from `data/source_registry.json`, `docs/agents/TASKS.md`, agent `JOURNEY.md` files, and `docs/project-status-roadmap.md`.
+The dashboard data is also exported as a static HTML dashboard (`docs/dashboard/index.html`), a JSON data file (`docs/exports/progress-dashboard.json`), parallel timeline + scraper snapshot markdown (`docs/exports/parallel-execution-timeline.md`, `docs/exports/scraper-activity-snapshot.md`), and a product summary with all metrics. Generate with `make dashboard-doc`. The export pipeline reads from `data/source_registry.json`, `docs/agents/TASKS.md`, agent `JOURNEY.md` files, and `docs/project-status-roadmap.md`. The HTML dashboard includes parallel roadmap waves (PLAN §9.1), specialist lane structure, operator phases A–G, and the full parsed task backlog.
 
 ## 13. Business Model & Unit Economics
 
@@ -352,7 +353,7 @@ Investor presentation: `output/pdf/investor-presentation-{date}.pdf` (generate: 
 
 ### 13.3 Product positioning
 
-Buyer-oriented marketplace. Owners post directly. Agents appear as "owner representative" (never "realtor"). Platform aggregates 30+ sources with AI-powered deduplication, 3D map (Varna MVP), and persistent AI chat assistant.
+Buyer-oriented marketplace. Owners post directly. Agents appear as "owner representative" (never "realtor"). Platform aggregates 30+ sources with AI-powered deduplication, **nationwide map + listings browse**, **3D buildings (Varna pilot)**, and persistent AI chat assistant.
 
 Full product UX structure: `docs/business/product-ux-structure.md`
 3D map integration plan: `docs/business/varna-3d-osm-integration.md`
@@ -389,7 +390,7 @@ This section preserves the full execution context and decisions from the latest 
   - tier-1/2: `scraper_1`
   - tier-3 partner/vendor/official: `scraper_t3`
   - tier-4 social overlays: `scraper_sm`
-- MVP map/search scope is constrained to **Varna city + Varna region** until stage-1 scrape quality gate passes (`DBG-05`).
+- **Map + listings UX** is **nationwide Bulgaria** (`UX-04`). **3D building mesh** stays **Varna-first** (`UX-07` / `BD-08`). Stage-1 quality gate (`DBG-05`) still gates expansion of **building-match / 3D** to more cities, not the nationwide browse shell.
 - Social and private channels remain consent-gated; no unsafe scraping or account automation.
 - Marketplace positioning is buyer-oriented: owners post directly; agency participation is framed as owner representation.
 
@@ -422,13 +423,17 @@ This section preserves the full execution context and decisions from the latest 
   - `docs/dashboard/index.html` now supports embedded payload mode for `file://` opens
   - generator injects JSON payload into dashboard HTML and keeps fetch fallback for hosted mode
 
-### 16.4 Current execution focus (critical path)
+### 16.4 Current execution focus (critical path) — updated 2026-04-09
 
-1. verify all pending `DONE_AWAITING_VERIFY` slices (`DBG-06` batch)
-2. close stage-1 gate (`DBG-05`) and unblock Varna map/search/chat chain
-3. complete backend unification + filter APIs (`BD-11`, `BD-12`)
-4. complete frontend shop/detail/profile chain (`UX-08`, `UX-09`, `UX-10`)
-5. deploy backend/frontend (`BD-14`, `UX-11`) and run end-to-end smoke/security gates (`DBG-07`, `DBG-08`)
+**Wave 1 — Tier-1/2 live data (non-stop):** `scraper_1` completes `S1-15` (live HTTP + discovery + detail) and **`S1-18`**: at least **100** persisted listings **per** source across **at least 5** tier-1/2 sources, counted in **`canonical_listing`** (see `docs/exports/tier12-live-volume-report.md`). Do not idle between slices until the gate is met or a **BLOCKED** reason is logged.
+
+**Wave 1b — Minimal backend for counting:** `backend_developer` prioritizes **`BD-11`** verification and any ingest wiring required so live scrapes land in Postgres for auditable `S1-18` counts. **`BD-12`+** waits until `S1-18` is `VERIFIED` unless it unblocks ingest.
+
+**Wave 2 — Backend expansion:** after `S1-18`, resume `BD-12` → `BD-13` → `BD-14` → `BD-15` per `docs/agents/TASKS.md`.
+
+**Wave 3 — Debugger:** `DBG-06` (batch verify pending slices) and `DBG-05` (fixtures + live volume evidence) **after** `S1-18` and live `BD-11` proof, unless the operator explicitly requests early spot checks.
+
+**Fixture readiness (already true):** `docs/exports/stage1-product-type-coverage.md` shows tier-1/2 fixtures cover required product types; this is **not** a substitute for the live volume gate.
 
 ### 16.5 Backlog source-of-truth links
 
@@ -436,4 +441,5 @@ This section preserves the full execution context and decisions from the latest 
 - operational guardrails and GO rules: `AGENTS.md`
 - coordination protocol: `docs/agents/README.md`
 - dashboard state: `docs/dashboard/index.html` + `docs/exports/progress-dashboard.json`
+- live volume tracking: `docs/exports/tier12-live-volume-report.md`
 - architecture export set: `docs/exports/project-architecture-execution-guide.*`

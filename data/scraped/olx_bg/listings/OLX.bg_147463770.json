@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/unikalen-tristaen-apartament-v-grad-balchik-CID368-ID9YK3U.html?search_reason=search%7Corganic",
+  "external_id": "147463770",
+  "title": "Уникален тристаен апартамент в град Балчик",
+  "description": "ТОПИММО предлага за продажба бутиков тристаен апартамент в град Балчик, квартал Балик, в близост до магазини, заведения, аптеки, спирка, училище, детска градина, фитнес зала, спортна площадка, на 3 минути с автомобил до морето. Апартаментът е разположен на 3-ти етаж от 6 в сграда с добре поддържани общи части и асансьор. Състои се от коридор, всекидневна с кухня и трапезария, две спални, голяма остъклена тераса, баня с тоалетна. От имота се разкрива изглед към морето. Изцяло ремонтиран, без да е ползван за живеене, готов за нанасяне. Сменени Ел. и ВиК инсталации, външна изолация - фибран10 см, вътрешна изолация - гипсокартон с вата 5 см на абсолютно всички стени плюс тавана, което прави апартамента изключително добре изолиран и обезшумен. Качествена дограма, външни ролетни и вътрешни дървени щори. Висококачествен ламинат, испански теракот, италиански тапети с копринени нишки, чисто нови уреди над средния клас и дизайнерски ръчно изработени масивни мебели от парен бук и качествена телешка кожа. В две от стаите (във всекидневната и в по-голямата спалня) са оставени изходи за климатици. Жилището разполага със СОТ. Паркинг пред блока, което осигурява винаги да има паркомясто. Можем да организираме оглед в удобно за вас време, свържете се с нас! Референтен номер: IG-4850",
+  "price": 125000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/40rq1c2iw1ck2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/aduxu7hxto692-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/mb3zawxsg0ru2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ibmvk8d2qbj2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/j9x4m1hrn8663-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/40rq1c2iw1ck2-BG/image;s=1080x810"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:25:02.271803+00:00",
+  "reference_id": "OLX.bg:147463770",
+  "local_image_files": [
+    "data/media/OLX.bg_147463770/0000_adcac190.webp",
+    "data/media/OLX.bg_147463770/0001_2050e0c1.webp",
+    "data/media/OLX.bg_147463770/0002_0c2785c5.webp",
+    "data/media/OLX.bg_147463770/0003_4290f151.webp",
+    "data/media/OLX.bg_147463770/0004_29380316.webp",
+    "data/media/OLX.bg_147463770/0005_14f40802.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147463770/0000_adcac190.webp",
+    "OLX.bg_147463770/0001_2050e0c1.webp",
+    "OLX.bg_147463770/0002_0c2785c5.webp",
+    "OLX.bg_147463770/0003_4290f151.webp",
+    "OLX.bg_147463770/0004_29380316.webp",
+    "OLX.bg_147463770/0005_14f40802.webp"
+  ]
+}

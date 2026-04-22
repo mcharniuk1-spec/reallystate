@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/160078",
+  "external_id": "567c507d5e4b",
+  "title": "Къща в Дъбене 100 кв.м. ID 160078  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://userimages.yavlena.com/3f800464-9b54-4469-91f9-0655a065fee4.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:55:16.858284+00:00",
+  "reference_id": "Yavlena:567c507d5e4b",
+  "local_image_files": [
+    "data/media/Yavlena_567c507d5e4b/0000_90023106.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_567c507d5e4b/0000_90023106.jpg"
+  ]
+}

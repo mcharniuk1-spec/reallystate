@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-v-gotse-delchev-CID368-ID9YmK7.html?search_reason=search%7Corganic",
+  "external_id": "147374131",
+  "title": "Двустаен апартамент в Гоце Делчев",
+  "description": "Broadway Estate Ви предлага един модерен дом изключително топъл, създава чувство за уют и простор. В близост до спирки на градски транспорт, детска градина, училище, търговски център, големи вериги хранителни магазини, аптеки, ресторанти, заведения за вечерни забави танци и всичко необходимо за дълъг и щастлив живот в добре устроена градска среда. За оглед на това и други атрактивни предложения, не се колебайте да ни потърсите на посочения телефон или да ни изпратите данните си чрез формата за запитване на сайта. Реф. номер: 101387",
+  "price": 269000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pfcy0ubpcs3b-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ggxcyq11q0w73-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/67oai2lu3sne2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/mquo22xayw1g-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kf6ac9br1zw71-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pfcy0ubpcs3b-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:29:43.325911+00:00",
+  "reference_id": "OLX.bg:147374131",
+  "local_image_files": [
+    "data/media/OLX.bg_147374131/0000_a16c4806.webp",
+    "data/media/OLX.bg_147374131/0001_e5ee208d.webp",
+    "data/media/OLX.bg_147374131/0002_2ef1605c.webp",
+    "data/media/OLX.bg_147374131/0003_3b1b4355.webp",
+    "data/media/OLX.bg_147374131/0004_34f1004e.webp",
+    "data/media/OLX.bg_147374131/0005_7883f4ee.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147374131/0000_a16c4806.webp",
+    "OLX.bg_147374131/0001_e5ee208d.webp",
+    "OLX.bg_147374131/0002_2ef1605c.webp",
+    "OLX.bg_147374131/0003_3b1b4355.webp",
+    "OLX.bg_147374131/0004_34f1004e.webp",
+    "OLX.bg_147374131/0005_7883f4ee.webp"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD88812BG_House_for_sale_near_Gabrovo.html",
+  "external_id": "f46b98dc490f",
+  "title": "Bulgarian Properties",
+  "description": "A peaceful mountain home surrounded by nature ",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88812_1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:41:08.904027+00:00",
+  "reference_id": "BulgarianProperties:f46b98dc490f",
+  "local_image_files": [
+    "data/media/BulgarianProperties_f46b98dc490f/0000_99ea0487.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_f46b98dc490f/0000_99ea0487.jpg"
+  ]
+}

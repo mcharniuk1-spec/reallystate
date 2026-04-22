@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/tristaen-apartament-bez-taksa-poddrazhka-s-morska-panorama-CID368-ID9Z4iG.html?search_reason=search%7Corganic",
+  "external_id": "147541566",
+  "title": "Тристаен апартамент без такса поддръжка с морска панорама",
+  "description": "Предлагаме за продажба просторен тристаен апартамент в Свети Влас, квартал Русалка с красива морска панорамав в жилищна сграда без такса поддръжка. Апартаментът е разположен на трети жилищен етаж и е с квадратура 100 кв.м. Разпределение: просторна дневна с кът за хранене и зона за отдих, отделена кухня, две спални, коридор, 2 бани с тоалетна – едната с душ, а другата – с душ кабина. Апартаментът се продава напълно обзаведен и оборудван. Сградата е с много добра локация, на около 200 м. от центъра на курортното селище, в тих и спокоен район, в близост до разнообразни магазини и заведения за хранене и развлечения, автобусна спирка. Акт 16 и битов ток. Апартаментът е изключително подходящ за живеене и отдаване под наем целогодишно. Номер на обява в сайта ни: 8771",
+  "price": 110000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2xfpinvebh393-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/w09by7o2ft762-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fz10oxuupfkd1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/12wxiza2ax361-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/keqykuqqw2331-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2xfpinvebh393-BG/image;s=1600x900"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:23:04.897295+00:00",
+  "reference_id": "OLX.bg:147541566",
+  "local_image_files": [
+    "data/media/OLX.bg_147541566/0000_f4f97051.webp",
+    "data/media/OLX.bg_147541566/0001_e39890d7.webp",
+    "data/media/OLX.bg_147541566/0002_b8ba365b.webp",
+    "data/media/OLX.bg_147541566/0003_5423e1bd.webp",
+    "data/media/OLX.bg_147541566/0004_962cd96f.webp",
+    "data/media/OLX.bg_147541566/0005_9b628df8.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147541566/0000_f4f97051.webp",
+    "OLX.bg_147541566/0001_e39890d7.webp",
+    "OLX.bg_147541566/0002_b8ba365b.webp",
+    "OLX.bg_147541566/0003_5423e1bd.webp",
+    "OLX.bg_147541566/0004_962cd96f.webp",
+    "OLX.bg_147541566/0005_9b628df8.webp"
+  ]
+}

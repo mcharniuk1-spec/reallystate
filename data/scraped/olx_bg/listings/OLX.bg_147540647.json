@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/ekskluzivna-oferta-dvustaen-apartament-v-zhk-mladezhki-halm-CID368-ID9Z43R.html?search_reason=search%7Corganic",
+  "external_id": "147540647",
+  "title": "ЕКСКЛУЗИВНА ОФЕРТА! Двустаен апартамент в жк. Младежки хълм",
+  "description": "АГЕНЦИЯТА РАЗПОЛАГА С КЛЮЧ! ЕКСКЛУЗИВНА ОФЕРТА! Титан Пропъртис предлага под наем ДВУСТАЕН реновиран апартамент, разположен в района на Младежки хълм – комуникативна локация с бърз достъп до центъра на града и в близост до Mall Пловдив, болници, училища, детски градини, супермаркети и търговски обекти. Имотът е ситуиран на 2-ри жилищен етаж и се състои от: входно антре, просторна всекидневна с трапезария и разтегателен диван, отделна кухня с бар, спалня, дрешник (гардеробна), баня, отделна тоалетна и балкон. Жилището е изцяло реновирано, като всичко в него е чисто ново и оборудвано с висококачествени уреди, осигуряващи комфорт и удобство за едно домакинство. ’С нас, вашето търсене на имот завършва с усмивка. ’ За оглед на това и други атрактивни предложения, не се колебайте да се свържете с нас на посочения телефон или да изпратите запитване чрез формата в сайта. Реф. номер: 2221328",
+  "price": 600.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/l8snlkncswrv3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4suk99kxwa741-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/658uqegvjkbk-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/olv7tohttc7n3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/rfejslss74rd1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/l8snlkncswrv3-BG/image;s=1920x1440"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:23:30.310698+00:00",
+  "reference_id": "OLX.bg:147540647",
+  "local_image_files": [
+    "data/media/OLX.bg_147540647/0000_13a8f16a.webp",
+    "data/media/OLX.bg_147540647/0001_7e5a610f.webp",
+    "data/media/OLX.bg_147540647/0002_0a30681e.webp",
+    "data/media/OLX.bg_147540647/0003_0c75d7fe.webp",
+    "data/media/OLX.bg_147540647/0004_7538f005.webp",
+    "data/media/OLX.bg_147540647/0005_a5e5ecc0.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540647/0000_13a8f16a.webp",
+    "OLX.bg_147540647/0001_7e5a610f.webp",
+    "OLX.bg_147540647/0002_0a30681e.webp",
+    "OLX.bg_147540647/0003_0c75d7fe.webp",
+    "OLX.bg_147540647/0004_7538f005.webp",
+    "OLX.bg_147540647/0005_a5e5ecc0.webp"
+  ]
+}

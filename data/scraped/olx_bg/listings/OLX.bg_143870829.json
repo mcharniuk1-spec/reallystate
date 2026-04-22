@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/ot-sobstvenik-kascha-s-unikalna-panorama-v-s-krushevets-obsch-sozopol-CID368-ID9JFnf.html?search_reason=search%7Cpromoted",
+  "external_id": "143870829",
+  "title": "ОТ СОБСТВЕНИК! Къща с уникална панорама в с.Крушевец, общ.Созопол",
+  "description": "Комфортна и уютна масивна къща, находяща се в с.Крушевец обл.Бургас, на 29км.от гр.Бургас и гр.Приморско, в полите на Странджа. Сградата е 84кв.м, с втора плоча и възможност за надстрояване, три самостоятелни стаи, баня и тоалетна, огромна веранда(частично остъклена) и чудесна панорама към планината, 850 кв.м дворно място. Поддържан и озеленен двор(селектирани розови храсти), барбекю и градинско осветление. Къщата е след пълен основен ремонт, ремонтиран покрив, сменени електрическа и ВИК инсталация, окачени тавани, нови врати, подови настилки и баня. Цялото обзавеждане е ново, по поръчка. Кухненското оборудване също е ново, като включва: фурна, керамични котлони, микровълнова фурна, аспиратор, съдомиялна, хладилник и пералня; 3бр.LED телевизора, нов климатик. В двора има бетонна площадка за паркиране на една кола. Имотът е в перфектно състояние, готов за живеене без абсолютно никакъв ремонт и ще бъде предоставен за ползване веднага след подписване на предварителен договор! Значителна отстъпка от цената за клиент, който е без посредник!",
+  "price": 143000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ar8efinwhc8i1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/f6zkn739i6rs-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kamizlc7dwew-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/hs5jaj2jmqm-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nz1d1ta4uulr-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ar8efinwhc8i1-BG/image;s=720x1223"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:20:00.748308+00:00",
+  "reference_id": "OLX.bg:143870829",
+  "local_image_files": [
+    "data/media/OLX.bg_143870829/0000_53e53be5.webp",
+    "data/media/OLX.bg_143870829/0001_2f7bec72.webp",
+    "data/media/OLX.bg_143870829/0002_b518d484.webp",
+    "data/media/OLX.bg_143870829/0003_73bbe752.webp",
+    "data/media/OLX.bg_143870829/0004_8da9ce78.webp",
+    "data/media/OLX.bg_143870829/0005_c9c817f5.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_143870829/0000_53e53be5.webp",
+    "OLX.bg_143870829/0001_2f7bec72.webp",
+    "OLX.bg_143870829/0002_b518d484.webp",
+    "OLX.bg_143870829/0003_73bbe752.webp",
+    "OLX.bg_143870829/0004_8da9ce78.webp",
+    "OLX.bg_143870829/0005_c9c817f5.webp"
+  ]
+}

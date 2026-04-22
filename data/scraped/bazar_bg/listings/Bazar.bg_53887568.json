@@ -1,0 +1,44 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53887568/dawa-pod-naem-1-staen-gr-sofiia-manastirski-liwadi",
+  "external_id": "53887568",
+  "title": "Bazar.BG",
+  "description": "Собственик дава под наем БЕЗ комисионна , едностаен малък апартамент, нов, ново обзаведен, отоплява се на климатик. Отдава се дългосрочно за сам човек.Намира се",
+  "price": 490.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://cdn3.focus.bg/imot/photosimotbg/2/801/big/2b177383974295801_6Q.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/801/big1/2b177383974295801_Lr.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/801/big1/2b177383974295801_pj.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/801/big1/2b177383974295801_WE.jpg",
+    "//cdn3.focus.bg/imot/photosimotbg/2/801/big/2b177383974295801_6Q.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:47:30.855217+00:00",
+  "reference_id": "Bazar.bg:53887568",
+  "local_image_files": [
+    "data/media/Bazar.bg_53887568/0000_5bd67c4b.jpg",
+    "data/media/Bazar.bg_53887568/0001_e9af762d.jpg",
+    "data/media/Bazar.bg_53887568/0002_525d8df4.jpg",
+    "data/media/Bazar.bg_53887568/0003_9dc09b1f.jpg",
+    "data/media/Bazar.bg_53887568/0004_5bd67c4b.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53887568/0000_5bd67c4b.jpg",
+    "Bazar.bg_53887568/0001_e9af762d.jpg",
+    "Bazar.bg_53887568/0002_525d8df4.jpg",
+    "Bazar.bg_53887568/0003_9dc09b1f.jpg",
+    "Bazar.bg_53887568/0004_5bd67c4b.jpg"
+  ]
+}

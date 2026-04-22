@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/start-na-stroitelstvoto-1-staen-2-staen-3-staen-4-staen-zhk-algara-CID368-ID9XwW2.html?search_reason=search%7Corganic",
+  "external_id": "147171076",
+  "title": "Старт на строителството! 1-Стаен, 2-Стаен, 3-Стаен, 4-Стаен! ЖК АЛГАРА",
+  "description": "Старт на строителството на Жилищен комплекс АЛГАРА Започваме изграждането на поредния ни жилищен проект! Жилищен комплекс АЛГАРА - перлата в кв. Запад 2, гр. Търговище, бул. 3-ти март 54. Проект на Актив! Едностайни, Двустайни, Тристайни и Четиристайни апартаменти! Зеленина, свежест и класа - това събира в себе си Комплекс АЛГАРА, даващ усещане за спокойствие и хармония. С изчистена и стилна визия, Комплекс АЛГАРА е изграден от две самостоятелни жилищни сгради на 5 етажа, предлагащи висок комфорт на обитаване, спокойствие и уединение. Типовете апартаменти са с една, две и три спални, както и градински апартаменти със собствен двор. Осигурено е подземно и надземно паркиране, с гаражи и паркоместа към всяко жилище. За децата е предвидена детска площадка. Осигурена е достъпна среда. ДИРЕКТНО ОТ СТРОИТЕЛЯ! БЕЗ КОМИСИОНА ОТ КУПУВАЧА! ПЛАЩАНЕ НА ВНОСКИ! АКТИВ ИМОТИ - ИМОТ ЗА ВСЕКИ www.active-imoti.com 7700 Търговище ул.Г.С.Раковски 75 Burada Turkce konusuyoruz! We speak English! Wir sprechen Deutsch! Mы говорим по Русски! РАЗЧИТАЙТЕ НА НАС ПРИ ИЗБОРА НА ВАШИЯ ИМОТ! АКТИВ ИМОТИ - ТРАДИЦИЯ, КАЧЕСТВО, ДОВЕРИЕ, СИГУРНОСТ!",
+  "price": 79000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4dfx1ty8vzxb-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ze3f19vdkn4h1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vvg754xdds9l1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/h9zbspvtd9vz2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/a5760pqgsaf42-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4dfx1ty8vzxb-BG/image;s=938x938"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:19:07.174306+00:00",
+  "reference_id": "OLX.bg:147171076",
+  "local_image_files": [
+    "data/media/OLX.bg_147171076/0000_3cba1d82.webp",
+    "data/media/OLX.bg_147171076/0001_538dd8b4.webp",
+    "data/media/OLX.bg_147171076/0002_3404daec.webp",
+    "data/media/OLX.bg_147171076/0003_600ad841.webp",
+    "data/media/OLX.bg_147171076/0004_4a62760c.webp",
+    "data/media/OLX.bg_147171076/0005_8a0efc6e.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147171076/0000_3cba1d82.webp",
+    "OLX.bg_147171076/0001_538dd8b4.webp",
+    "OLX.bg_147171076/0002_3404daec.webp",
+    "OLX.bg_147171076/0003_600ad841.webp",
+    "OLX.bg_147171076/0004_4a62760c.webp",
+    "OLX.bg_147171076/0005_8a0efc6e.webp"
+  ]
+}

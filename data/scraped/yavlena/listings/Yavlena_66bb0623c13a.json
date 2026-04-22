@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/161667",
+  "external_id": "66bb0623c13a",
+  "title": "Четиристаен апартамент в София 180 кв.м. ID 161667  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/39879737-7f8b-4285-b3bf-9d10778e8898.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:55:08.208659+00:00",
+  "reference_id": "Yavlena:66bb0623c13a",
+  "local_image_files": [
+    "data/media/Yavlena_66bb0623c13a/0000_ce4f041e.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_66bb0623c13a/0000_ce4f041e.jpg"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/apartament-s-dva-dvora-i-dve-terasi-v-gartsiya-nov-kompleks-CID368-ID9Y5Zq.html?search_reason=search%7Corganic",
+  "external_id": "147309732",
+  "title": "Апартамент с два двора и две тераси в Гърция – нов комплекс",
+  "description": "Предлагаме апартаменти в новия жилищен комплекс OLIVE в Ставрос, Северна Гърция, разположен само на 300 метра от плажа. Комплексът се състои от модерни жилища, проектирани за комфортно ваканционно ползване или инвестиция с отдаване под наем. Апартаментите са с площ 32 кв.м и се намират на партерен етаж. Разпределение: хол с кухня спалня баня с тоалетна тераса към хола 8.2 кв.м тераса към спалнята 4 кв.м двор към хола 8 кв.м двор към спалнята 8 кв.м Всяко жилище разполага със собствено паркомясто. Жилищата се предават напълно завършени „до ключ“, включително оборудвана кухня, електроуреди, климатици и соларен бойлер. Строителството започва през март 2026 г., а срокът за завършване е 18 месеца. Комплексът се намира в тих район на Ставрос, на пешеходно разстояние от плажа, ресторанти и магазини. Разстоянието до Солун е около 80 км, а до международното летище – приблизително един час. Имотът се продава директно от строителя без комисионна. За повече информация и огледи използвайте формата за контакт в обявата.",
+  "price": 95000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6qv4khiib2d41-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gwwgsbwpmp09-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/c6dd7v2jnlr4-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/geot1okfkdfd1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6qv4khiib2d41-BG/image;s=1536x1024"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:19:10.361811+00:00",
+  "reference_id": "OLX.bg:147309732",
+  "local_image_files": [
+    "data/media/OLX.bg_147309732/0000_d8a97338.webp",
+    "data/media/OLX.bg_147309732/0001_055ebe5c.webp",
+    "data/media/OLX.bg_147309732/0002_7315198b.webp",
+    "data/media/OLX.bg_147309732/0003_3c8671d7.webp",
+    "data/media/OLX.bg_147309732/0004_9fbb3196.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147309732/0000_d8a97338.webp",
+    "OLX.bg_147309732/0001_055ebe5c.webp",
+    "OLX.bg_147309732/0002_7315198b.webp",
+    "OLX.bg_147309732/0003_3c8671d7.webp",
+    "OLX.bg_147309732/0004_9fbb3196.webp"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Agricultural_land_in_Bulgaria/AD83992BG_Agricultural_land_for_sale_in_Brestnik.html",
+  "external_id": "134f0eb459b2",
+  "title": "Bulgarian Properties",
+  "description": "Large land property in an area with potential for investment",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/83992_1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:39:30.493591+00:00",
+  "reference_id": "BulgarianProperties:134f0eb459b2",
+  "local_image_files": [
+    "data/media/BulgarianProperties_134f0eb459b2/0000_5c91ac2f.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_134f0eb459b2/0000_5c91ac2f.jpg"
+  ]
+}

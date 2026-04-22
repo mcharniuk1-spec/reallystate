@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/165530",
+  "external_id": "060cce20e081",
+  "title": "Тристаен апартамент в Пловдив 83 кв.м. ID 165530  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/d172f0ab-16fa-41fe-b232-0be750a13a88.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:54:45.217996+00:00",
+  "reference_id": "Yavlena:060cce20e081",
+  "local_image_files": [
+    "data/media/Yavlena_060cce20e081/0000_3e591d24.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_060cce20e081/0000_3e591d24.jpg"
+  ]
+}

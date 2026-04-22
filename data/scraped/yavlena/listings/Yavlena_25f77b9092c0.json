@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168164",
+  "external_id": "25f77b9092c0",
+  "title": "Земеделска земя в Лисово 36350 кв.м. ID 168164  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://userimages.yavlena.com/6fd4fac3-bfea-471a-a599-f2625673a6c7.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:15:50.447914+00:00",
+  "reference_id": "Yavlena:25f77b9092c0",
+  "local_image_files": [
+    "data/media/Yavlena_25f77b9092c0/0000_1644ec86.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_25f77b9092c0/0000_1644ec86.jpg"
+  ]
+}

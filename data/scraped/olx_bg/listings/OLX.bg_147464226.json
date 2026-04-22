@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-v-karshiyaka-CID368-ID9YKbg.html?search_reason=search%7Corganic",
+  "external_id": "147464226",
+  "title": "Двустаен апартамент в Кършияка",
+  "description": "ДВУСТАЕН АПАРТАМЕНТ | СРЕДЕН ЕТАЖ | КОМПАКТНА СГРАДА Предлагаме за продажба двустаен апартамент, разположен на среден етаж в малка жилищна кооперация, с удобно и добре организирано разпределение: всекидневна с кухненски кът и трапезна част, спалня, баня с тоалетна, входно антре и тераса. Жилището се издава на шпакловка и замазка, което дава възможност на бъдещите собственици да го завършат и обзаведат изцяло според своя вкус и предпочитания. Апартаментът е подходящ както за лично ползване, така и като инвестиция с цел отдаване под наем. За допълнителна информация и организиране на оглед, не се колебайте да се свържете с нас.",
+  "price": 115000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/9tmcyitl2dhr2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/00hz8mfqjox32-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xzuf6u1jzcpc1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ksfi69fsdkgs2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zb3vgjztsorv2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/9tmcyitl2dhr2-BG/image;s=1333x1000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:21:48.343245+00:00",
+  "reference_id": "OLX.bg:147464226",
+  "local_image_files": [
+    "data/media/OLX.bg_147464226/0000_30277ad5.webp",
+    "data/media/OLX.bg_147464226/0001_8073e122.webp",
+    "data/media/OLX.bg_147464226/0002_8e212169.webp",
+    "data/media/OLX.bg_147464226/0003_4b92d30d.webp",
+    "data/media/OLX.bg_147464226/0004_c5bd3cc0.webp",
+    "data/media/OLX.bg_147464226/0005_04d5d08d.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464226/0000_30277ad5.webp",
+    "OLX.bg_147464226/0001_8073e122.webp",
+    "OLX.bg_147464226/0002_8e212169.webp",
+    "OLX.bg_147464226/0003_4b92d30d.webp",
+    "OLX.bg_147464226/0004_c5bd3cc0.webp",
+    "OLX.bg_147464226/0005_04d5d08d.webp"
+  ]
+}

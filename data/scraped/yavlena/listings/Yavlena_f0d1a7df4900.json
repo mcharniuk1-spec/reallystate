@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/167607",
+  "external_id": "f0d1a7df4900",
+  "title": "Тристаен апартамент в София 65 кв.м. ID 167607  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/fd1bd567-c285-4aeb-a029-1fe81e77cb46.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:54:28.173841+00:00",
+  "reference_id": "Yavlena:f0d1a7df4900",
+  "local_image_files": [
+    "data/media/Yavlena_f0d1a7df4900/0000_3c60dad0.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_f0d1a7df4900/0000_3c60dad0.jpg"
+  ]
+}

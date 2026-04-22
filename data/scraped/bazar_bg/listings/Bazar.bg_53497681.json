@@ -1,0 +1,47 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53497681/ednostaen-apartament-w-studentski-grad",
+  "external_id": "53497681",
+  "title": "Bazar.BG",
+  "description": "Отдавам под наем напълно обзаведен, едностаен апартамент в студентски град. Отопление на климатик Фуджицу 12. Свободен след 05.4",
+  "price": 435.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://cdn7.focus.bg/bazar/65/original/65f92e0c61ec065263f4cbd840df322d.webp",
+    "https://cdn6.focus.bg/bazar/67/original/6719dbdf90806ea081261467df4df260.webp",
+    "https://cdn1.focus.bg/bazar/e2/original/e2b598e144854a9cf759950c7fe0b9ce.webp",
+    "https://cdn6.focus.bg/bazar/02/original/02091a8367b4c5041b2011b4cd680b36.webp",
+    "https://cdn6.focus.bg/bazar/0b/original/0bb7e3600d3ce3fb75e27cb9cd911e09.webp",
+    "//cdn7.focus.bg/bazar/65/pics/65f92e0c61ec065263f4cbd840df322d.webp"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:42:52.144332+00:00",
+  "reference_id": "Bazar.bg:53497681",
+  "local_image_files": [
+    "data/media/Bazar.bg_53497681/0000_616beff7.webp",
+    "data/media/Bazar.bg_53497681/0001_510a3574.webp",
+    "data/media/Bazar.bg_53497681/0002_71778440.webp",
+    "data/media/Bazar.bg_53497681/0003_75ecca79.webp",
+    "data/media/Bazar.bg_53497681/0004_cc3c8553.webp",
+    "data/media/Bazar.bg_53497681/0005_6bc5bd46.webp"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53497681/0000_616beff7.webp",
+    "Bazar.bg_53497681/0001_510a3574.webp",
+    "Bazar.bg_53497681/0002_71778440.webp",
+    "Bazar.bg_53497681/0003_75ecca79.webp",
+    "Bazar.bg_53497681/0004_cc3c8553.webp",
+    "Bazar.bg_53497681/0005_6bc5bd46.webp"
+  ]
+}

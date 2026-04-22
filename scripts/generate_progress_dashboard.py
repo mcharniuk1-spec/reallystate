@@ -515,13 +515,218 @@ def _dashboard_backlog() -> list[dict[str, str]]:
     ]
 
 
+def _roadmap_parallel_waves() -> list[dict[str, Any]]:
+    """PLAN.md §9.1 — parallel roadmap waves (dependency-gated)."""
+    return [
+        {
+            "id": "wave-a",
+            "name": "Wave A",
+            "summary": "Docs/rules stability, DB control plane, tier-1/2 fixture connectors, tier-3 policy/contracts, social policy/contracts.",
+            "owners": ["backend_developer", "scraper_1", "scraper_t3", "scraper_sm", "debugger"],
+        },
+        {
+            "id": "wave-b",
+            "name": "Wave B",
+            "summary": "DB-backed ingest runners, stats/admin expansion, auth/RBAC, tier-3 adapter stubs, frontend operator dashboard binding.",
+            "owners": ["backend_developer", "scraper_1", "scraper_t3", "ux_ui_designer", "debugger"],
+        },
+        {
+            "id": "wave-c",
+            "name": "Wave C",
+            "summary": "Dedupe/geo/media, map/listing/chat UI depth, publishing dry-run controls, CI hardening.",
+            "owners": ["backend_developer", "ux_ui_designer", "scraper_1", "debugger"],
+        },
+    ]
+
+
+def _operator_phases_timeline() -> list[dict[str, Any]]:
+    """TASKS.md — PRIORITY EXECUTION ORDER (2026-04-09 operator wave) + parallel lanes."""
+    return [
+        {
+            "id": "A",
+            "title": "Tier-1/2 live volume",
+            "subtitle": "Do first — scraper_1 + minimal backend",
+            "parallel_lanes": ["scraper_1", "backend_developer"],
+            "tasks": ["S1-14", "S1-15", "BD-11", "S1-18"],
+        },
+        {
+            "id": "B",
+            "title": "Backend core",
+            "subtitle": "After S1-18 VERIFIED",
+            "parallel_lanes": ["backend_developer"],
+            "tasks": ["BD-12", "BD-13", "BD-14", "BD-15"],
+        },
+        {
+            "id": "C",
+            "title": "Debugger consolidation",
+            "subtitle": "Batch verify + quality gate",
+            "parallel_lanes": ["debugger", "lead_agent"],
+            "tasks": ["DBG-06", "DBG-05"],
+        },
+        {
+            "id": "D",
+            "title": "Other scrapers",
+            "subtitle": "Parked until S1-18 unless unblocker",
+            "parallel_lanes": ["scraper_t3", "scraper_sm"],
+            "tasks": ["T3-07", "T3-08", "SM-06", "…"],
+        },
+        {
+            "id": "E",
+            "title": "Frontend depth",
+            "subtitle": "ux_ui_designer",
+            "parallel_lanes": ["ux_ui_designer"],
+            "tasks": ["UX-13", "UX-08", "UX-09", "UX-10", "UX-11"],
+        },
+        {
+            "id": "F",
+            "title": "Polish",
+            "subtitle": "Map, 3D, chat, admin, smoke, security",
+            "parallel_lanes": ["ux_ui_designer", "backend_developer", "debugger"],
+            "tasks": ["UX-04", "UX-07", "BD-08", "UX-05", "BD-07", "UX-12", "DBG-07", "DBG-08"],
+        },
+        {
+            "id": "G",
+            "title": "Growth",
+            "subtitle": "Expansion connectors + realtime + analytics",
+            "parallel_lanes": ["scraper_1", "scraper_sm", "scraper_t3", "backend_developer"],
+            "tasks": ["S1-16", "S1-17", "SM-06", "T3-08", "BD-16", "BD-09", "BD-10"],
+        },
+    ]
+
+
+def _global_execution_structure() -> dict[str, Any]:
+    """Single payload for dashboard “global structure” section."""
+    return {
+        "lanes": [
+            {
+                "key": "backend_developer",
+                "label": "Backend / API / DB",
+                "scope": "Migrations, repos, ingest, auth, deployment, map APIs",
+            },
+            {
+                "key": "scraper_1",
+                "label": "Tier-1/2 scraping",
+                "scope": "Portals, classifieds, agencies — HTTP first, Playwright where needed",
+            },
+            {
+                "key": "scraper_t3",
+                "label": "Tier-3 partner/vendor",
+                "scope": "Partner feeds, licensed data, official registers, auctions",
+            },
+            {
+                "key": "scraper_sm",
+                "label": "Tier-4 social",
+                "scope": "Consent-gated public-channel overlays only",
+            },
+            {
+                "key": "ux_ui_designer",
+                "label": "Frontend / UX",
+                "scope": "Next.js routes, map, listings, chat shell, admin",
+            },
+            {
+                "key": "debugger",
+                "label": "Verification",
+                "scope": "Golden path, CI, security gates, VERIFIED promotion",
+            },
+            {
+                "key": "lead_agent",
+                "label": "Lead / orchestration",
+                "scope": "Priorities, investor exports, dashboard hygiene",
+            },
+        ],
+        "rules": [
+            "One active slice per agent at a time unless operator runs GO all.",
+            "Dependencies are enforced at slice level — lanes run in parallel when unblocked.",
+            "Critical path until volume proof: Phase A (S1-15 + BD-11 + S1-18).",
+            "Refresh this dashboard after TASKS.md or JOURNEY.md changes (`make dashboard-doc`).",
+        ],
+        "source_of_truth": [
+            {"doc": "docs/agents/TASKS.md", "role": "Task IDs, status, dependencies"},
+            {"doc": "docs/agents/README.md", "role": "Coordination protocol"},
+            {"doc": "PLAN.md", "role": "Product + parallel wave definitions"},
+        ],
+    }
+
+
+def _write_parallel_timeline_md(path: Path, generated_at: str) -> None:
+    lines = [
+        "# Parallel execution timeline",
+        "",
+        f"_Generated: {generated_at}_",
+        "",
+        "Aligned with `PLAN.md` §9.1 (waves) and `docs/agents/TASKS.md` priority phases.",
+        "",
+        "## Parallel waves (PLAN §9.1)",
+        "",
+    ]
+    for w in _roadmap_parallel_waves():
+        lines.append(f"### {w['name']}")
+        lines.append("")
+        lines.append(w["summary"])
+        lines.append("")
+        lines.append("**Typical owners:** " + ", ".join(w["owners"]) + ".")
+        lines.append("")
+    lines.extend(
+        [
+            "## Operator phases (TASKS — critical path)",
+            "",
+        ]
+    )
+    for p in _operator_phases_timeline():
+        lines.append(f"### Phase {p['id']} — {p['title']}")
+        lines.append("")
+        lines.append(f"*{p['subtitle']}*")
+        lines.append("")
+        lines.append("- **Parallel lanes:** " + ", ".join(p["parallel_lanes"]))
+        lines.append("- **Task IDs:** " + ", ".join(p["tasks"]))
+        lines.append("")
+    path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def _write_scraper_snapshot_md(path: Path, generated_at: str) -> None:
+    """Condensed snapshot; full detail remains in each agent JOURNEY.md."""
+    body = f"""# Scraper activity snapshot
+
+_Generated: {generated_at}_
+
+Summary of **fixture and live** work across scraper lanes. Authoritative logs: `docs/agents/scraper_1/JOURNEY.md`, `docs/agents/scraper_t3/JOURNEY.md`, `docs/agents/scraper_sm/JOURNEY.md`.
+
+## Scraper 1 (tier-1/2 marketplaces)
+
+- **Tier-1:** All 10 sources have fixture paths: Homes.bg, OLX.bg (API JSON), alo.bg, imot.bg, BulgarianProperties, Address.bg, SUPRIMMO, LUXIMMO, property.bg, imoti.net (legal-gated live).
+- **Parser hardening:** Bulgarian keywords for intent/category; legal gate on fetch-only for `legal_review_required` sources.
+- **Discovery:** `parse_discovery_html` + OLX JSON discovery; fixtures for tier-1 discovery pagination (**S1-14**).
+- **Tier-2 stubs:** bazar_bg, domaza, yavlena, home2u (**S1-12**).
+- **Stage-1 product types:** Coverage matrix + tests (**S1-13**); export `docs/exports/stage1-product-type-coverage.md`.
+- **CLI:** `ingest-fixture`, live-safe runner tests (**S1-11**).
+- **Inventory:** `make scraping-inventory` → XLSX / MD / PDF under `docs/exports/`.
+- **Media:** Download/proxy pipeline, `listing_media`, `download-images` CLI (**image pipeline** — see JOURNEY Task 18).
+- **Live harvest (2026-04-09):** `scripts/live_scraper.py` + `make import-scraped`; file-backed corpus for multiple sources (e.g. Bazar.bg, BulgarianProperties, imot.bg, OLX.bg, Yavlena ~250 each); repaired Address.bg, SUPRIMMO, LUXIMMO, property.bg discovery. **S1-18** still requires PostgreSQL ingest evidence (`DATABASE_URL` + `canonical_listing` counts).
+
+## Scraper T3 (tier-3)
+
+- Policy + tier3 fixture templates (**T3-01**).
+- Licensed STR metrics parser (**T3-02**), BCPEA auctions (**T3-03**), partner feed stubs (**T3-04**), official register wrappers (**T3-05**). Status: see `TASKS.md` / verifier.
+
+## Scraper SM (tier-4 social)
+
+- Social ingestion contract, Telegram fixtures, redaction tests (**SM-01**).
+- Telegram connector mapper (**SM-02**); X public mapper (**SM-03**) — see JOURNEY for any BLOCKED notes tied to unrelated test failures.
+
+---
+Regenerate with `make dashboard-doc` (rewrites this file).
+"""
+    path.write_text(body, encoding="utf-8")
+
+
 def main() -> None:
     EXPORT_DIR.mkdir(parents=True, exist_ok=True)
     DASHBOARD_HTML.parent.mkdir(parents=True, exist_ok=True)
 
     tasks_by_agent = _parse_tasks_md()
+    generated_at = datetime.now(timezone.utc).isoformat()
     payload = {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": generated_at,
         "roadmap": _roadmap_stats(),
         "skills": _skills(),
         "agents": _agent_data(),
@@ -530,13 +735,20 @@ def main() -> None:
         "sources": _source_registry_stats(),
         "progress_path": _progress_path(),
         "dashboard_backlog": _dashboard_backlog(),
+        "roadmap_parallel_waves": _roadmap_parallel_waves(),
+        "operator_phases": _operator_phases_timeline(),
+        "global_execution_structure": _global_execution_structure(),
     }
 
     payload_json = json.dumps(payload, indent=2, ensure_ascii=False)
     DASHBOARD_JSON.write_text(payload_json, encoding="utf-8")
     DASHBOARD_HTML.write_text(_dashboard_html(payload_json), encoding="utf-8")
+    _write_parallel_timeline_md(EXPORT_DIR / "parallel-execution-timeline.md", generated_at)
+    _write_scraper_snapshot_md(EXPORT_DIR / "scraper-activity-snapshot.md", generated_at)
     print(f"generated dashboard json: {DASHBOARD_JSON}")
     print(f"dashboard html available at: {DASHBOARD_HTML}")
+    print(f"wrote {EXPORT_DIR / 'parallel-execution-timeline.md'}")
+    print(f"wrote {EXPORT_DIR / 'scraper-activity-snapshot.md'}")
 
 
 def _dashboard_html(payload_json: str) -> str:

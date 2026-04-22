@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-ap-pod-naem-v-kv-geo-milev-CID368-ID9Z45a.html?search_reason=search%7Corganic",
+  "external_id": "147540728",
+  "title": "Двустаен ап. под наем в кв. Гео Милев",
+  "description": "двустаен апартамент под наем в кв. Гео Милев, разположен в предпочитан район с отлична локация. Жилището е с площ 54 кв.м, ситуирано на 4-и етаж от 4 в тухлена сграда. Изложението Изток/Юг осигурява светли и просторни помещения през целия ден. Разпределение: коридор хол с кухненски бокс спалня баня с тоалетна остъклен балкон Апартаментът е обзаведен и готов за нанасяне. Отоплява се на ток, разполага с климатик за допълнителен комфорт. Локация: срещу външно министерство и зала Универсиада , в близост до училища, банки, аптеки и спирки на градски транспорт. За оглед се свържете с нас и цитирайте реф. номер: 2102351.",
+  "price": 650.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/yvuqo0ge3gm23-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ft3e7nchyi8j2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nz2xyaez1wk4-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/f079hsmmdd9s-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bh3wzq97gvc12-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/yvuqo0ge3gm23-BG/image;s=1600x900"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:23:33.421209+00:00",
+  "reference_id": "OLX.bg:147540728",
+  "local_image_files": [
+    "data/media/OLX.bg_147540728/0000_c5f4bfe6.webp",
+    "data/media/OLX.bg_147540728/0001_e70e9054.webp",
+    "data/media/OLX.bg_147540728/0002_c498a9b2.webp",
+    "data/media/OLX.bg_147540728/0003_a179f620.webp",
+    "data/media/OLX.bg_147540728/0004_f2fabf40.webp",
+    "data/media/OLX.bg_147540728/0005_8979c3c2.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540728/0000_c5f4bfe6.webp",
+    "OLX.bg_147540728/0001_e70e9054.webp",
+    "OLX.bg_147540728/0002_c498a9b2.webp",
+    "OLX.bg_147540728/0003_a179f620.webp",
+    "OLX.bg_147540728/0004_f2fabf40.webp",
+    "OLX.bg_147540728/0005_8979c3c2.webp"
+  ]
+}

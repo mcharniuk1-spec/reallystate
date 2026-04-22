@@ -1,0 +1,50 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-54126087/dawa-pod-naem-2-staen-gr-sofiia-studentski-grad",
+  "external_id": "54126087",
+  "title": "Bazar.BG",
+  "description": "Нова оферта: Агенция за недвижими имоти Имоушън Пропърти Ви предлага двустаен апартамент в кв. Студентски град. Разположен е на седми етаж. Разпределение: антре",
+  "price": 460.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic2.focus.bg/imot/photosimotbg/2/722/big1/2c177557548708722_IC.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/2/722/big1/2c177557548708722_9H.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/2/722/big1/2c177557548708722_HB.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/2/722/big1/2c177557548708722_j7.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/2/722/big1/2c177557548708722_rJ.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/2/722/big1/2c177557548708722_NG.jpg",
+    "//imotstatic2.focus.bg/imot/photosimotbg/2/722/big1/2c177557548708722_IC.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:49:47.622764+00:00",
+  "reference_id": "Bazar.bg:54126087",
+  "local_image_files": [
+    "data/media/Bazar.bg_54126087/0000_b86a5552.jpg",
+    "data/media/Bazar.bg_54126087/0001_d63c14eb.jpg",
+    "data/media/Bazar.bg_54126087/0002_855d88cd.jpg",
+    "data/media/Bazar.bg_54126087/0003_c7b39e81.jpg",
+    "data/media/Bazar.bg_54126087/0004_60399299.jpg",
+    "data/media/Bazar.bg_54126087/0005_34dce191.jpg",
+    "data/media/Bazar.bg_54126087/0006_b86a5552.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_54126087/0000_b86a5552.jpg",
+    "Bazar.bg_54126087/0001_d63c14eb.jpg",
+    "Bazar.bg_54126087/0002_855d88cd.jpg",
+    "Bazar.bg_54126087/0003_c7b39e81.jpg",
+    "Bazar.bg_54126087/0004_60399299.jpg",
+    "Bazar.bg_54126087/0005_34dce191.jpg",
+    "Bazar.bg_54126087/0006_b86a5552.jpg"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/kascha-s-dvor-s-mogilino-CID368-ID9PxuP.html?search_reason=search%7Cpromoted",
+  "external_id": "145270515",
+  "title": "КЪЩА С ДВОР    с.Могилино",
+  "description": "Къща с голям двор в центъра на с. Могилино точно до Кметството. Къщата е на 2 етажа по 170 кв.м или общо застроена площ 340 кв.м. и голям двор с площ 1 055 кв.м. И на двата етажа има бани и тоалетни. Ток и вода и всичко необходимо за хубав и спокоен живот!!! Точно в центъра на селото с лице към площада на асфалтов път. Идеален имот,както за живеене така и за бизнес начинание. Подходящо е за къща за гости или дом за възрастни. Селото се намира на 25км от гр. Бяла и на 60км от гр. Русе",
+  "price": 49900.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/t2mdabteud1b-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/96bu8atnv5xm3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nvq1faaoheug2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/k5z1eoeaipb63-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/33wn7jzcd66c-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/t2mdabteud1b-BG/image;s=940x747"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:25:30.620350+00:00",
+  "reference_id": "OLX.bg:145270515",
+  "local_image_files": [
+    "data/media/OLX.bg_145270515/0000_5f98114f.webp",
+    "data/media/OLX.bg_145270515/0001_5f1da17e.webp",
+    "data/media/OLX.bg_145270515/0002_c83de6ff.webp",
+    "data/media/OLX.bg_145270515/0003_b773136d.webp",
+    "data/media/OLX.bg_145270515/0004_7fa4fee4.webp",
+    "data/media/OLX.bg_145270515/0005_3b1ec50e.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_145270515/0000_5f98114f.webp",
+    "OLX.bg_145270515/0001_5f1da17e.webp",
+    "OLX.bg_145270515/0002_c83de6ff.webp",
+    "OLX.bg_145270515/0003_b773136d.webp",
+    "OLX.bg_145270515/0004_7fa4fee4.webp",
+    "OLX.bg_145270515/0005_3b1ec50e.webp"
+  ]
+}

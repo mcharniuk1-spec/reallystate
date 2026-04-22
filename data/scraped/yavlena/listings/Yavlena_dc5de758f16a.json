@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/167962",
+  "external_id": "dc5de758f16a",
+  "title": "Парцел в Батак 554 кв.м. ID 167962  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://userimages.yavlena.com/24f424f1-da99-4c4c-8aca-78c1c891d97d.JPG"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:17:13.985644+00:00",
+  "reference_id": "Yavlena:dc5de758f16a",
+  "local_image_files": [
+    "data/media/Yavlena_dc5de758f16a/0000_aaa250fd.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_dc5de758f16a/0000_aaa250fd.jpg"
+  ]
+}

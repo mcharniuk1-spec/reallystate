@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/petko-slaveykov-kashta-vila-offer664795",
+  "external_id": "ced7ec97495a",
+  "title": "Къща/Вила в Петко Славейков - код на имота: 664795",
+  "description": "Адрес недвижими имоти предлага Къща/Вила в Петко Славейков с код на имота: 664795. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/795/664795/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:20:41.941495+00:00",
+  "reference_id": "Address.bg:ced7ec97495a",
+  "local_image_files": [
+    "data/media/Address.bg_ced7ec97495a/0000_26b098ea.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_ced7ec97495a/0000_26b098ea.jpg"
+  ]
+}

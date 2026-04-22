@@ -1,0 +1,53 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-51267270/ot-sobstwenik-2-staen-grad-plowdiw-hristo-smirnenski-bez-komisionna",
+  "external_id": "51267270",
+  "title": "Bazar.BG",
+  "description": "📢 Продава се 2-стаен апартамент – Христо Смирненски, гр. Пловдив\n\n📢 Частно лице, без комисионна ! Агенции да не ми звънят !!! \n\n📍 В тиха улица между болници Пъл",
+  "price": 129000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://cdn5.focus.bg/bazar/1c/original/1c79dbcdf1476457babd12e740a93ec7.webp",
+    "https://cdn5.focus.bg/bazar/1e/original/1ef8a612a89a267dfe875667025f9a3e.webp",
+    "https://cdn1.focus.bg/bazar/1a/original/1a2f77b1f6cb87c2d14fc645d3939861.webp",
+    "https://cdn5.focus.bg/bazar/b8/original/b837b1a6c880940f4290fc6251d012af.webp",
+    "https://cdn7.focus.bg/bazar/98/original/98f6b70d4cf0e0e770cbe09fba1f54fb.webp",
+    "https://cdn1.focus.bg/bazar/79/original/791c697f63cd899df983c6641ae73023.webp",
+    "https://cdn1.focus.bg/bazar/9b/original/9bbd6f8163053d01752a53e590af6555.webp",
+    "//cdn5.focus.bg/bazar/1c/pics/1c79dbcdf1476457babd12e740a93ec7.webp"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:45:14.986341+00:00",
+  "reference_id": "Bazar.bg:51267270",
+  "local_image_files": [
+    "data/media/Bazar.bg_51267270/0000_7cc3e29f.webp",
+    "data/media/Bazar.bg_51267270/0001_ad17acf6.webp",
+    "data/media/Bazar.bg_51267270/0002_670f8eec.webp",
+    "data/media/Bazar.bg_51267270/0003_6fec8c28.webp",
+    "data/media/Bazar.bg_51267270/0004_ebdaddc4.webp",
+    "data/media/Bazar.bg_51267270/0005_5f9e7c6b.webp",
+    "data/media/Bazar.bg_51267270/0006_93ad532e.webp",
+    "data/media/Bazar.bg_51267270/0007_a57f2a1b.webp"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_51267270/0000_7cc3e29f.webp",
+    "Bazar.bg_51267270/0001_ad17acf6.webp",
+    "Bazar.bg_51267270/0002_670f8eec.webp",
+    "Bazar.bg_51267270/0003_6fec8c28.webp",
+    "Bazar.bg_51267270/0004_ebdaddc4.webp",
+    "Bazar.bg_51267270/0005_5f9e7c6b.webp",
+    "Bazar.bg_51267270/0006_93ad532e.webp",
+    "Bazar.bg_51267270/0007_a57f2a1b.webp"
+  ]
+}

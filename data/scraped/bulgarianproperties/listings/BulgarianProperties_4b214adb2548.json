@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD89959BG_House_for_sale_in_Sunny_Beach.html",
+  "external_id": "4b214adb2548",
+  "title": "Bulgarian Properties",
+  "description": "Luxury property with panoramic terraces, ready for living or a profitable business – Zora villa zone\n",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89959_7.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:36:25.704814+00:00",
+  "reference_id": "BulgarianProperties:4b214adb2548",
+  "local_image_files": [
+    "data/media/BulgarianProperties_4b214adb2548/0000_e7dd8617.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_4b214adb2548/0000_e7dd8617.jpg"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/id-832-apartament-1-1-v-zhilischen-kompleks-v-slanchev-bryag-CID368-ID9Z3Xm.html?search_reason=search%7Corganic",
+  "external_id": "147540244",
+  "title": "ID: 832 Апартамент 1+1 в жилищен комплекс в Слънчев Бряг",
+  "description": "ID: 832 Предлагаме апартамент с две спални в Слънчев бряг. Апартаментът се състои от хол с кухненски бокс, спалня, коридор и баня. Напълно обзаведен и оборудван. На 750 метра от морето. Затворен, добре поддържан двор с басейн и контролиран достъп. Акт 16 Агенция за недвижими имоти Kristal Property",
+  "price": 69000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4jauimpze1zm2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/j8d4iupljsr62-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pb4qxgf92csp-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ihyvi29n8t5e-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/q2byyfupghld3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4jauimpze1zm2-BG/image;s=1400x1050"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:31:37.444026+00:00",
+  "reference_id": "OLX.bg:147540244",
+  "local_image_files": [
+    "data/media/OLX.bg_147540244/0000_3fd13214.webp",
+    "data/media/OLX.bg_147540244/0001_fd83a3a7.webp",
+    "data/media/OLX.bg_147540244/0002_0be1e262.webp",
+    "data/media/OLX.bg_147540244/0003_068b87fd.webp",
+    "data/media/OLX.bg_147540244/0004_68c2023c.webp",
+    "data/media/OLX.bg_147540244/0005_2476c5e3.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540244/0000_3fd13214.webp",
+    "OLX.bg_147540244/0001_fd83a3a7.webp",
+    "OLX.bg_147540244/0002_0be1e262.webp",
+    "OLX.bg_147540244/0003_068b87fd.webp",
+    "OLX.bg_147540244/0004_68c2023c.webp",
+    "OLX.bg_147540244/0005_2476c5e3.webp"
+  ]
+}

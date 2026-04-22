@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-vrabnitsa-2-CID368-ID9YK79.html?search_reason=search%7Corganic",
+  "external_id": "147463971",
+  "title": "Двустаен апартамент - Връбница 2",
+  "description": "Агенция предлага под наем двустаен апартамент в жк. Връбница 2. Намира се в нова сграда в близост до Северния парк, метростанция Бели Дунав, търговски обекти, училища и други. Състои от входно антре, спалня, кухня с хол, баня с тоалетна и тераса. Обзаведен и оборудван.",
+  "price": 450.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/uib8va0jixkr2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fqelgddh1s862-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xgrykgm3h4ub3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/r2bxl5mfauar1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4lavyol5r14y2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/uib8va0jixkr2-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:21:03.541247+00:00",
+  "reference_id": "OLX.bg:147463971",
+  "local_image_files": [
+    "data/media/OLX.bg_147463971/0000_f4ef2a5f.webp",
+    "data/media/OLX.bg_147463971/0001_f81979ef.webp",
+    "data/media/OLX.bg_147463971/0002_d096f2c9.webp",
+    "data/media/OLX.bg_147463971/0003_16aeb797.webp",
+    "data/media/OLX.bg_147463971/0004_db1001bc.webp",
+    "data/media/OLX.bg_147463971/0005_99486fbe.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147463971/0000_f4ef2a5f.webp",
+    "OLX.bg_147463971/0001_f81979ef.webp",
+    "OLX.bg_147463971/0002_d096f2c9.webp",
+    "OLX.bg_147463971/0003_16aeb797.webp",
+    "OLX.bg_147463971/0004_db1001bc.webp",
+    "OLX.bg_147463971/0005_99486fbe.webp"
+  ]
+}

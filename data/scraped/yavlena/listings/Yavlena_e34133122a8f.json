@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168249",
+  "external_id": "e34133122a8f",
+  "title": "Земеделска земя в Поморие 2966 кв.м. ID 168249  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://userimages.yavlena.com/1deacdd5-d38a-4684-898c-5e77e73bbea3.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:14:37.995376+00:00",
+  "reference_id": "Yavlena:e34133122a8f",
+  "local_image_files": [
+    "data/media/Yavlena_e34133122a8f/0000_1bb0648c.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_e34133122a8f/0000_1bb0648c.jpg"
+  ]
+}

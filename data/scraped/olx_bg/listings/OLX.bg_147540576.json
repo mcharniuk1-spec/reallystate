@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/top-myasto-na-lyulin-pazar-20-kv-m-s-litse-kam-bulevard-i-silen-potok-CID368-ID9Z42I.html?search_reason=search%7Corganic",
+  "external_id": "147540576",
+  "title": "ТОП място на Люлин пазар – 20 кв.м с лице към булевард и силен поток",
+  "description": "А&Б Пропъртис отдава под наем търговско помещение на силна локация Предлагаме на Вашето внимание магазин, разположен на кооперативния пазар в ж.к. Люлин – една от най-търговските зони в района, с изключително силен човекопоток. Имотът се намира в една от най-добрите части на пазара, с лице към бул. „Панчо Владигеров“, което осигурява отлична видимост и постоянен поток от клиенти. Основни характеристики: Площ: 20 кв.м. Партерно помещение Лице към булевард Предимства: ТОП позиция в рамките на пазара Постоянен човекопоток Отлична видимост към бул. „Панчо Владигеров“ Подходящ за разнообразни търговски дейности Доказана локация – дългогодишно функциониращ обект Допълнително: Последно използван като магазин за щори и дограми Свободен за наемане от началото на май Имотът е подходящ за: магазин, павилион, шоурум, услуги и други търговски дейности. Локация: кооперативен пазар, ж.к. Люлин Наем: 790 €/месец Не се колебайте да се свържете с нас на посочения телефон за повече информация и организиране на оглед!",
+  "price": 790.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/h7mwt7rvmjws2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/rslh8qdnm8p82-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/5ctpzor4lmau-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bcdl9hsud2212-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ou5hthtz9wnn3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/h7mwt7rvmjws2-BG/image;s=1333x1000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:25:46.468857+00:00",
+  "reference_id": "OLX.bg:147540576",
+  "local_image_files": [
+    "data/media/OLX.bg_147540576/0000_5c484e32.webp",
+    "data/media/OLX.bg_147540576/0001_88d5e0fd.webp",
+    "data/media/OLX.bg_147540576/0002_fbd94f2a.webp",
+    "data/media/OLX.bg_147540576/0003_a9503d6b.webp",
+    "data/media/OLX.bg_147540576/0004_00fb492b.webp",
+    "data/media/OLX.bg_147540576/0005_2683c56c.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540576/0000_5c484e32.webp",
+    "OLX.bg_147540576/0001_88d5e0fd.webp",
+    "OLX.bg_147540576/0002_fbd94f2a.webp",
+    "OLX.bg_147540576/0003_a9503d6b.webp",
+    "OLX.bg_147540576/0004_00fb492b.webp",
+    "OLX.bg_147540576/0005_2683c56c.webp"
+  ]
+}

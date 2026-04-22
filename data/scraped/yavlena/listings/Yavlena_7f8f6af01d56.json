@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168272",
+  "external_id": "7f8f6af01d56",
+  "title": "Многостаен апартамент в Царево 165 кв.м. ID 168272  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/614bf3e5-2efb-4eee-ad43-7c5307c04da6.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:14:20.575540+00:00",
+  "reference_id": "Yavlena:7f8f6af01d56",
+  "local_image_files": [
+    "data/media/Yavlena_7f8f6af01d56/0000_9e228dc8.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_7f8f6af01d56/0000_9e228dc8.jpg"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-54100233/dawa-pod-naem-2-staen-gr-sofiia-zona-b-18",
+  "external_id": "54100233",
+  "title": "Bazar.BG",
+  "description": "Отдавам под наем уютен двустаен апартамент, готов за нанасяне веднага.Локация: Зона Б-18 на 9 мин от Метростанция 'Опълченска' и Мол София.Апартаментът се намир",
+  "price": 500.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic3.focus.bg/imot/photosimotbg/2/417/big/2c177470419980417_5r.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/2/417/big1/2c177470419980417_SV.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/2/417/big/2c177470419980417_mW.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/2/417/big/2c177470419980417_cp.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/2/417/big/2c177470419980417_gK.jpg",
+    "//imotstatic3.focus.bg/imot/photosimotbg/2/417/big/2c177470419980417_5r.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:49:07.906183+00:00",
+  "reference_id": "Bazar.bg:54100233",
+  "local_image_files": [
+    "data/media/Bazar.bg_54100233/0000_3a31a3cf.jpg",
+    "data/media/Bazar.bg_54100233/0001_247955f5.jpg",
+    "data/media/Bazar.bg_54100233/0002_35a17137.jpg",
+    "data/media/Bazar.bg_54100233/0003_66c1cff7.jpg",
+    "data/media/Bazar.bg_54100233/0004_086a1f03.jpg",
+    "data/media/Bazar.bg_54100233/0005_3a31a3cf.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_54100233/0000_3a31a3cf.jpg",
+    "Bazar.bg_54100233/0001_247955f5.jpg",
+    "Bazar.bg_54100233/0002_35a17137.jpg",
+    "Bazar.bg_54100233/0003_66c1cff7.jpg",
+    "Bazar.bg_54100233/0004_086a1f03.jpg",
+    "Bazar.bg_54100233/0005_3a31a3cf.jpg"
+  ]
+}

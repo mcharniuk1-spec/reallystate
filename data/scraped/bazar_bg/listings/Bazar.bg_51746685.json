@@ -1,0 +1,44 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-51746685/prodawa-2-staen-gr-targowishte-zapad-2",
+  "external_id": "51746685",
+  "title": "Bazar.BG",
+  "description": "Двустаен апартамент! Апартаменти за инвестиция! Бул.  3-ти март  54, кв. Запад 2! ОТ СТРОИТЕЛЯ! ДИРЕКТНО ОТ СТРОИТЕЛЯ! БЕЗ КОМИСИОНА ОТ КУПУВАЧА!  ПЛАЩАНЕ НА ВН",
+  "price": 47000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/641/big1/1b173582457567641_Q1.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/641/big1/1b173582457567641_TI.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/641/big1/1b173582457567641_LF.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/641/big1/1b173582457567641_mg.jpg",
+    "//imotstatic3.focus.bg/imot/photosimotbg/1/641/big1/1b173582457567641_Q1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:52:58.630629+00:00",
+  "reference_id": "Bazar.bg:51746685",
+  "local_image_files": [
+    "data/media/Bazar.bg_51746685/0000_1f4f8fa9.jpg",
+    "data/media/Bazar.bg_51746685/0001_68b1d6d5.jpg",
+    "data/media/Bazar.bg_51746685/0002_6f378917.jpg",
+    "data/media/Bazar.bg_51746685/0003_88e68a94.jpg",
+    "data/media/Bazar.bg_51746685/0004_1f4f8fa9.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_51746685/0000_1f4f8fa9.jpg",
+    "Bazar.bg_51746685/0001_68b1d6d5.jpg",
+    "Bazar.bg_51746685/0002_6f378917.jpg",
+    "Bazar.bg_51746685/0003_88e68a94.jpg",
+    "Bazar.bg_51746685/0004_1f4f8fa9.jpg"
+  ]
+}

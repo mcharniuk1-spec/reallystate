@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/of-23540-prostoren-ednostaen-karshiyaka-CID368-ID9Z3ZB.html?search_reason=search%7Corganic",
+  "external_id": "147540383",
+  "title": "оф.23540 Просторен едностаен/ Кършияка",
+  "description": "оф.23540 ПРОСТОРЕН ЕДНОСТАЕН / ЮЖНО ИЗЛОЖЕНИЕ / РЕАЛНА КВАДРАТУРА Предлагаме Ви да закупите чудесен едностаен в квартал Кършияка. Състои се от просторна стая и тераса към нея, коридор и баня с тоалетна. Жилището се предлага обзаведено, което Ви позволява да се нанесете веднага или да продължите да го отдавате под наем, тъй като в момента е с наемател. Локацията е предпочитана, заради близостта си до центъра на града и до всичко необходимо. Авангард Риъл Естейт предлага Висока сигурност при покупка на имот и цялостно съдействие до финализиране на сделката пред нотариус.",
+  "price": 94999.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6yd1ykqf55651-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wcm7a5ein2da3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/9v5mfr6cuhh3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/iaok44ulnkjr1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/aoumndsehyj02-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6yd1ykqf55651-BG/image;s=1200x900"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:23:46.239107+00:00",
+  "reference_id": "OLX.bg:147540383",
+  "local_image_files": [
+    "data/media/OLX.bg_147540383/0000_8fff23d6.webp",
+    "data/media/OLX.bg_147540383/0001_f2cebd0d.webp",
+    "data/media/OLX.bg_147540383/0002_a2124fd2.webp",
+    "data/media/OLX.bg_147540383/0003_85bf6ec1.webp",
+    "data/media/OLX.bg_147540383/0004_d6ba8240.webp",
+    "data/media/OLX.bg_147540383/0005_c787a361.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540383/0000_8fff23d6.webp",
+    "OLX.bg_147540383/0001_f2cebd0d.webp",
+    "OLX.bg_147540383/0002_a2124fd2.webp",
+    "OLX.bg_147540383/0003_85bf6ec1.webp",
+    "OLX.bg_147540383/0004_d6ba8240.webp",
+    "OLX.bg_147540383/0005_c787a361.webp"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/167998",
+  "external_id": "ae49ed330938",
+  "title": "Тристаен апартамент в София 95 кв.м. ID 167998  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/38fa8edf-fab0-4011-b8a4-91c13f3e74f8.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:17:45.952191+00:00",
+  "reference_id": "Yavlena:ae49ed330938",
+  "local_image_files": [
+    "data/media/Yavlena_ae49ed330938/0000_fb1bee46.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_ae49ed330938/0000_fb1bee46.jpg"
+  ]
+}

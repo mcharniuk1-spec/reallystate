@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD86708BG_1-bedroom_apartment_for_sale_in_Bansko.html",
+  "external_id": "3360e30a9526",
+  "title": "Bulgarian Properties",
+  "description": "Holiday dwelling with underground parking space near the ski lift",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/86708_10.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:35:42.780071+00:00",
+  "reference_id": "BulgarianProperties:3360e30a9526",
+  "local_image_files": [
+    "data/media/BulgarianProperties_3360e30a9526/0000_43f9fd8d.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_3360e30a9526/0000_43f9fd8d.jpg"
+  ]
+}

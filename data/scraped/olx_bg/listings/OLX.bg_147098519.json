@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-ekskluziven-obzaveden-apartament-pod-naem-sled-osnoven-rem-CID368-ID9Xd2L.html?search_reason=search%7Corganic",
+  "external_id": "147098519",
+  "title": "Двустаен, ексклузивен, обзаведен апартамент под наем, след основен рем",
+  "description": "ЕКСКЛУЗИВНО! ЕРА Варна Тренд предлага под наем двустаен апартамент с чиста застроена площ 45 кв.м, разположен на шести етаж от общо 8 етажа. Имотът се състои от дневна с кухненски бокс и спалня, като двете стаи са с излаз на остъклена с ПВЦ тераса, коридор и баня с тоалетна. Жилището е след основен ремонт. Отдава се обзаведено и оборудвано с нови ел. уреди - хладилник, готварска печка, аспиратор, микровълнова фурна и пералня. В коридора са изнесени шкафове с мивка. Спалнята е с двойно легло с нов матрак, гардероб и скрин. Подовите покрития са ламинат и теракот. Стените са боядисани с латекс, в банята са с фаянс. Поставена е ПВЦ дограма. Отоплението е с електричество. Двустайният апартамент се намира в жк Трошево, над ОУ Добри Чинтулов, в осеметажна панелна сграда с асансьор. Паркира се свободно в междублоковото пространство. В близост има още детска ясла, детска градина, читалище Елин Пелин, търговски център Двете кули, Пфое Мол, Мол Варна, Делта Планет Мол, хипермаркети Лидъл, Технополис, Практикер, Mr. Bricolage, автобусни спирки. Оферта №0219349",
+  "price": 500.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/v0u35ezzhxou1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ynevam5srkeb3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/o91xhm4eh39q-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/dgbsk6iq3pi03-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0xuzfy4wa71o1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/v0u35ezzhxou1-BG/image;s=800x600"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:28:22.204071+00:00",
+  "reference_id": "OLX.bg:147098519",
+  "local_image_files": [
+    "data/media/OLX.bg_147098519/0000_5d7f1185.webp",
+    "data/media/OLX.bg_147098519/0001_de59bba7.webp",
+    "data/media/OLX.bg_147098519/0002_f1378f30.webp",
+    "data/media/OLX.bg_147098519/0003_10017981.webp",
+    "data/media/OLX.bg_147098519/0004_9a419438.webp",
+    "data/media/OLX.bg_147098519/0005_5d7f1185.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147098519/0000_5d7f1185.webp",
+    "OLX.bg_147098519/0001_de59bba7.webp",
+    "OLX.bg_147098519/0002_f1378f30.webp",
+    "OLX.bg_147098519/0003_10017981.webp",
+    "OLX.bg_147098519/0004_9a419438.webp",
+    "OLX.bg_147098519/0005_5d7f1185.webp"
+  ]
+}

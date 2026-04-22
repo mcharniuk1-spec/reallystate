@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/tristaen-apartament-v-kv-serdika-sled-osnoven-remont-CID368-ID9Z45V.html?search_reason=search%7Corganic",
+  "external_id": "147540776",
+  "title": "Тристаен апартамент в кв. Сердика след основен ремонт",
+  "description": "СЛЕД ОСНОВЕН РЕМОНТ! СВОБОДНО МЯСТО ЗА ПАРКИРАНЕ! ГРАДСКИ ТРАНСПОРТ ! Представяме Ви тристаен апартамент с отличен потенциал и функционално разпределение, подходящ както за лично ползване, така и за инвестиция. Имотът е след основен ремонт, с подменени електро- и ВиК инсталации и изцяло завършена баня. Жилището е необзаведено, което дава възможност да бъде довършено и обзаведено изцяло по Ваш вкус и концепция. Отоплението е на ТЕЦ – сигурно и предпочитано решение. Локацията е комуникативна – в близост до градски транспорт и основни пътни артерии, осигуряващи бърз достъп до различни части на града. Центърът е на около 15 минути. Допълнително предимство е наличието на свободно паркиране пред блока – практично решение за ежедневието. За повече информация и за организиране на оглед, не се колебайте да се свържете с нас. Ще се радваме да ви предоставим всички детайли и да уговорим удобен час за посещение на имота! Отговорен брокер - Мирослав Нинов 08******60",
+  "price": 195000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kqehzr54ag6j2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2bpbzvewcqb3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/t75f0z7lk7to3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/uvv060gve37v3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/dqu11nlub4oi2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kqehzr54ag6j2-BG/image;s=750x1000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:29:15.088264+00:00",
+  "reference_id": "OLX.bg:147540776",
+  "local_image_files": [
+    "data/media/OLX.bg_147540776/0000_b99ed775.webp",
+    "data/media/OLX.bg_147540776/0001_1cd5dd49.webp",
+    "data/media/OLX.bg_147540776/0002_3bd4a26f.webp",
+    "data/media/OLX.bg_147540776/0003_c4d16d50.webp",
+    "data/media/OLX.bg_147540776/0004_9ceffb6b.webp",
+    "data/media/OLX.bg_147540776/0005_f89b8c27.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540776/0000_b99ed775.webp",
+    "OLX.bg_147540776/0001_1cd5dd49.webp",
+    "OLX.bg_147540776/0002_3bd4a26f.webp",
+    "OLX.bg_147540776/0003_c4d16d50.webp",
+    "OLX.bg_147540776/0004_9ceffb6b.webp",
+    "OLX.bg_147540776/0005_f89b8c27.webp"
+  ]
+}

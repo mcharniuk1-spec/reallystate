@@ -1,0 +1,28 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-128m2-sofiya-kv.-hladilnika/as1678986",
+  "external_id": "bcf25659f0bc",
+  "title": "Тристаен, 128m² - Кв. Хладилника, София - Апартамент за продажба - ЕКС НВД",
+  "description": "Компания `ЕКС` представя на Вашето внимание тристаен апартамент в кв. Хладилника.МЕСТОПОЛОЖЕНИЕ: Намира се на 300 метра от метростанция Витоша и МОЛ Парадайз , ...",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2026-04-09_2/118434740o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T10:05:25.281032+00:00",
+  "reference_id": "Homes.bg:bcf25659f0bc",
+  "local_image_files": [],
+  "local_image_storage_keys": []
+}

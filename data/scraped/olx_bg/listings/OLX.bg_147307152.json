@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-obzaveden-apartament-nov-s-akt-16-na-razsrocheno-plaschane-CID368-ID9Y5jO.html?search_reason=search%7Cpromoted",
+  "external_id": "147307152",
+  "title": "Двустаен обзаведен апартамент, нов, с Акт 16, на разсрочено плащане",
+  "description": "Продаваме в гр.Асеновград, обл.Пловдив: Двустаен обзаведен апартамент, ново строителство, с чиста площ 61.98кв.м, състоящ се от дневна с кухненски бокс, спалня, антре, баня и тоалетна, тераса, с панорамна гледка към града и планината. Апартаментът е с изцяло южно изложение. Към него има 6,38% ид.части от общите части на сградата, равняващи се на 10.52кв.м. Продава се заедно с изба, с площ 10.42кв.м, към която има 1.77кв.м от общите части. Има възможност, за закупуване, на разсрочено плащане. Апартаментът се намира, в малка завършена сграда, с Акт 16 и поддържани общи части. Общата квадратура на целия имот, който се продава, заедно с общите части е 84,69кв.м - апартамент и изба. Намира се, в района между бул.България и автогарата. За повече информация и консултации, може да заповядате, в нашия офис, намиращ се на ул. Трети март 32, до Change бюрото, срещу магазин за злато и сребро ”Lady Gold” и магазин СОКО, след кафене Кьошето, в центъра на гр. Асеновград. Други оферти, за апартаменти ново строителство, може да разгледате, в нашата Фейсбук група - НОВО СТРОИТЕЛСТВО АСЕНОВГРАД Офертите ни, може да следите и в нашия Инстаграм профил - imotekspres99, или във Фейсбук страницата ни - facebook.com/imotekpres www.imotekspres.com/bg Агенцията е на пазара, с имоти от 1999г. и се ползва, с доверие от своите клиенти, партньори и институции. Държим на коректно и културно отношение, от всички страни по сделките, с недвижима собственост. Оказваме съдействие за банкови кредити, изповядване на сделки пред нотариус, проверки относно собствеността на имота, юридически и геодезически услуги и други.",
+  "price": 102000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6zu3agtokt8s3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zxsvpwyxfse8-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pp4wr69c8r4y1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/rqhfz1p1j8e23-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/m1fn93vjnsqj1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6zu3agtokt8s3-BG/image;s=2000x1500"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:27:26.045499+00:00",
+  "reference_id": "OLX.bg:147307152",
+  "local_image_files": [
+    "data/media/OLX.bg_147307152/0000_524c5cf0.webp",
+    "data/media/OLX.bg_147307152/0001_7f7b918a.webp",
+    "data/media/OLX.bg_147307152/0002_da0fc2c4.webp",
+    "data/media/OLX.bg_147307152/0003_8507d66a.webp",
+    "data/media/OLX.bg_147307152/0004_8f5e899a.webp",
+    "data/media/OLX.bg_147307152/0005_827cd93b.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147307152/0000_524c5cf0.webp",
+    "OLX.bg_147307152/0001_7f7b918a.webp",
+    "OLX.bg_147307152/0002_da0fc2c4.webp",
+    "OLX.bg_147307152/0003_8507d66a.webp",
+    "OLX.bg_147307152/0004_8f5e899a.webp",
+    "OLX.bg_147307152/0005_827cd93b.webp"
+  ]
+}

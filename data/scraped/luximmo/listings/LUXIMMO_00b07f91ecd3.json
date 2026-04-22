@@ -1,0 +1,32 @@
+{
+  "source_name": "LUXIMMO",
+  "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/borovets/luksozni-imoti-chetiristayni-apartamenti/luksozen-imot-40086-chetiristaen-apartament-za-prodajba-v-borovets.html",
+  "external_id": "00b07f91ecd3",
+  "title": "Луксиммо",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.luximmo.org/property-images/big_bg/1773329202T40086_24.jpg?v=1775734934"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:42:15.170923+00:00",
+  "reference_id": "LUXIMMO:00b07f91ecd3",
+  "local_image_files": [
+    "data/media/LUXIMMO_00b07f91ecd3/0000_9f4b3c73.jpg"
+  ],
+  "local_image_storage_keys": [
+    "LUXIMMO_00b07f91ecd3/0000_9f4b3c73.jpg"
+  ]
+}

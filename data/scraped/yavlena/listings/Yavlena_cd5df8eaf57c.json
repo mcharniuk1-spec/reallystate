@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168466",
+  "external_id": "cd5df8eaf57c",
+  "title": "Тристаен апартамент във Велико Търново 91 кв.м. ID 168466  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/33a87e43-2060-4c95-b240-2145965ed8ae.png"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:56:08.970665+00:00",
+  "reference_id": "Yavlena:cd5df8eaf57c",
+  "local_image_files": [
+    "data/media/Yavlena_cd5df8eaf57c/0000_cfad3db6.png"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_cd5df8eaf57c/0000_cfad3db6.png"
+  ]
+}

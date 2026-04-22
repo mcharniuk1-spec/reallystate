@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD72175BG_1-bedroom_apartment_for_rent_in_Sofia.html",
+  "external_id": "ad90bf9db404",
+  "title": "Bulgarian Properties",
+  "description": "Excellent home with a convenient layout in a nice area Ovcha Kupel",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/72175_19.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:40:26.450684+00:00",
+  "reference_id": "BulgarianProperties:ad90bf9db404",
+  "local_image_files": [
+    "data/media/BulgarianProperties_ad90bf9db404/0000_3b6069b8.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_ad90bf9db404/0000_3b6069b8.jpg"
+  ]
+}

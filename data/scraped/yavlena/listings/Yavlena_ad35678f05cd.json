@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/167994",
+  "external_id": "ad35678f05cd",
+  "title": "Тристаен апартамент в София 101 кв.м. ID 167994  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/07af385a-d2ed-495a-9f14-ff5c7926ee5a.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:17:52.894260+00:00",
+  "reference_id": "Yavlena:ad35678f05cd",
+  "local_image_files": [
+    "data/media/Yavlena_ad35678f05cd/0000_0e892756.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_ad35678f05cd/0000_0e892756.jpg"
+  ]
+}

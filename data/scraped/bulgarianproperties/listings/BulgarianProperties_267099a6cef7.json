@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Shops_in_Bulgaria/AD88684BG_Shop_for_sale_in_Sofia.html",
+  "external_id": "267099a6cef7",
+  "title": "Bulgarian Properties",
+  "description": "Modern business property in a new building – ideal for a shop, children's center, office, or showroom",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "office",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88684_4.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:41:43.663556+00:00",
+  "reference_id": "BulgarianProperties:267099a6cef7",
+  "local_image_files": [
+    "data/media/BulgarianProperties_267099a6cef7/0000_dbd749e6.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_267099a6cef7/0000_dbd749e6.jpg"
+  ]
+}

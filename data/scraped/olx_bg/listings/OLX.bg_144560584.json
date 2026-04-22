@@ -1,0 +1,35 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/zemedelska-zemya-ot-direkten-prodavach-1350-evro-dka-CID368-ID9MyOk.html?search_reason=search%7Cpromoted",
+  "external_id": "144560584",
+  "title": "Земеделска земя от директен продавач - 1350 евро/дка",
+  "description": "Добра земя, от собственик, с готови документи. Възможност за бърза сделка. Гъвкавост при интерес. - Местонахождение: землище на с. Войводино, ЕКАТТЕ 11836, общ. Вълчи дол, обл. Варна Цена на дка - 1350 евро Предлагаме следните имоти: 1. Нива 8.399 дка – 3-та категория, м. „Арпалък“ – ПРОДАДЕНА 2. Нива 2.85 дка – 4-та категория, м. „Срещу село“ – ПРОДАДЕНА 3. Нива 17 дка – 4-та категория, м. „Зад баирите“ – имот № 052023 4. Нива 21.43 дка – 3-та категория, м. „Дели бак“ – ПРОДАДЕНА - Всички имоти са с едногодишни аренди договори - Средна рента последните 3 г.: 95 лв/дка - Скици и документи – налични - Продава се от собственик, без посредник",
+  "price": 22999.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/grtrfi2iewmt1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/grtrfi2iewmt1-BG/image;s=740x812"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:30:51.086666+00:00",
+  "reference_id": "OLX.bg:144560584",
+  "local_image_files": [
+    "data/media/OLX.bg_144560584/0000_de11b0e3.webp",
+    "data/media/OLX.bg_144560584/0001_096fbc6a.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_144560584/0000_de11b0e3.webp",
+    "OLX.bg_144560584/0001_096fbc6a.webp"
+  ]
+}

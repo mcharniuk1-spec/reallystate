@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/apartament-v-burgas-CID368-ID9YmJZ.html?search_reason=search%7Corganic",
+  "external_id": "147374123",
+  "title": "Апартамент в Бургас",
+  "description": "Предлагам под наем/продажба уютен двустаен апартамент в гр. Бургас, кв. Изгрев в близост до Мол Плаза. Площ 60 м2., ет.7 Просторен и функционален интериор. Напълно обзаведен и готов за нанасяне!",
+  "price": 130000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/16lcwkm3v3f13-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/rocrg945vfgz2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/immoro3j7jq41-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/vpsyu3j6q5qn2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/r4qd8sx00rhq-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/16lcwkm3v3f13-BG/image;s=879x669"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:18:44.804467+00:00",
+  "reference_id": "OLX.bg:147374123",
+  "local_image_files": [
+    "data/media/OLX.bg_147374123/0000_5e94cb90.webp",
+    "data/media/OLX.bg_147374123/0001_00e484e6.webp",
+    "data/media/OLX.bg_147374123/0002_24423a23.webp",
+    "data/media/OLX.bg_147374123/0003_ca9fbef1.webp",
+    "data/media/OLX.bg_147374123/0004_8407297c.webp",
+    "data/media/OLX.bg_147374123/0005_5e94cb90.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147374123/0000_5e94cb90.webp",
+    "OLX.bg_147374123/0001_00e484e6.webp",
+    "OLX.bg_147374123/0002_24423a23.webp",
+    "OLX.bg_147374123/0003_ca9fbef1.webp",
+    "OLX.bg_147374123/0004_8407297c.webp",
+    "OLX.bg_147374123/0005_5e94cb90.webp"
+  ]
+}

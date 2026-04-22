@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/AD89927BG_2-bedroom_apartment_for_sale_near_Bansko.html",
+  "external_id": "d37b9657495e",
+  "title": "Bulgarian Properties",
+  "description": "Comfortable Fully Furnished Apartment near Bansko",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89927_1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:37:48.180298+00:00",
+  "reference_id": "BulgarianProperties:d37b9657495e",
+  "local_image_files": [
+    "data/media/BulgarianProperties_d37b9657495e/0000_bca01a7e.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_d37b9657495e/0000_bca01a7e.jpg"
+  ]
+}

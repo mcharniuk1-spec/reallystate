@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168147",
+  "external_id": "33136ba4cd9d",
+  "title": "Парцел в Долни Богров 100000 кв.м. ID 168147  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://userimages.yavlena.com/2402c9df-8628-448d-92ea-51e70aadb1c1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:16:06.474295+00:00",
+  "reference_id": "Yavlena:33136ba4cd9d",
+  "local_image_files": [
+    "data/media/Yavlena_33136ba4cd9d/0000_a611d31a.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_33136ba4cd9d/0000_a611d31a.jpg"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/partsel-v-regulatsiya-v-s-gaytani-obsch-gabrovo-CID368-ID9Z3Z6.html?search_reason=search%7Corganic",
+  "external_id": "147540352",
+  "title": "Парцел в регулация в с. Гайтани, общ. Габрово",
+  "description": "Предлагаме ви за продажба парцел в регулация в китното село Гайтани. Селото е разположено само на 4 км. от центъра на гр. Габрово. Имотът е с площ 1026 кв.м., равен , добре поддържан, с южно изложение и прекрасна панорамна гледка към Витите скали. В парцела има активна партида за вода, токът е на уличната регулация. Лицето на имота към асфалтовия път е 30 метра. Ако искате да построите своя нов дом в подножието на Витите скали и да станете част от жителите в с. Гайтани, обадете ни се! Брокер: Павлина Бойновска 08********88",
+  "price": 22000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/9xp0e7e8kzwp2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/e00sl7z9t1q71-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qzx0y5xxurlh3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gu8tehqr7hen2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/9xp0e7e8kzwp2-BG/image;s=2000x1333"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:24:37.005374+00:00",
+  "reference_id": "OLX.bg:147540352",
+  "local_image_files": [
+    "data/media/OLX.bg_147540352/0000_4db94db9.webp",
+    "data/media/OLX.bg_147540352/0001_129a036f.webp",
+    "data/media/OLX.bg_147540352/0002_abc4d7e9.webp",
+    "data/media/OLX.bg_147540352/0003_a691adc7.webp",
+    "data/media/OLX.bg_147540352/0004_eb313236.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540352/0000_4db94db9.webp",
+    "OLX.bg_147540352/0001_129a036f.webp",
+    "OLX.bg_147540352/0002_abc4d7e9.webp",
+    "OLX.bg_147540352/0003_a691adc7.webp",
+    "OLX.bg_147540352/0004_eb313236.webp"
+  ]
+}

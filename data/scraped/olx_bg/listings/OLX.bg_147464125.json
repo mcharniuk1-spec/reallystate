@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-v-ostromila-CID368-ID9YK9D.html?search_reason=search%7Corganic",
+  "external_id": "147464125",
+  "title": "Двустаен апартамент в Остромила",
+  "description": "ДВУСТАЕН АПАРТАМЕНТ | СРЕДЕН ЕТАЖ | КОМПАКТНА СГРАДА Предлагаме за продажба двустаен апартамент, разположен на среден етаж в малка жилищна кооперация, с удобно и добре организирано разпределение: всекидневна с кухненски кът и трапезна част, спалня, баня с тоалетна, входно антре и тераса. Жилището се издава на шпакловка и замазка, което дава възможност на бъдещите собственици да го завършат и обзаведат изцяло според своя вкус и предпочитания. Имотът е разположен в комуникативен и търсен район. Предлага се и опция за закупуване на паркомясто на цена от 14 000 евро. Апартаментът е подходящ както за лично ползване, така и като инвестиция с цел отдаване под наем. За допълнителна информация и организиране на оглед, не се колебайте да се свържете с нас.",
+  "price": 83000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/a905ml1e9wfi-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bucvnhywf16e-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/hs0du3m14y9s-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bhbq9cx92uyo2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ei6kgh1w86k3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/a905ml1e9wfi-BG/image;s=1500x1000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:22:10.004412+00:00",
+  "reference_id": "OLX.bg:147464125",
+  "local_image_files": [
+    "data/media/OLX.bg_147464125/0000_d61b92f0.webp",
+    "data/media/OLX.bg_147464125/0001_ea5cc04a.webp",
+    "data/media/OLX.bg_147464125/0002_92a7e4b4.webp",
+    "data/media/OLX.bg_147464125/0003_338227ba.webp",
+    "data/media/OLX.bg_147464125/0004_081b233e.webp",
+    "data/media/OLX.bg_147464125/0005_6f052747.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464125/0000_d61b92f0.webp",
+    "OLX.bg_147464125/0001_ea5cc04a.webp",
+    "OLX.bg_147464125/0002_92a7e4b4.webp",
+    "OLX.bg_147464125/0003_338227ba.webp",
+    "OLX.bg_147464125/0004_081b233e.webp",
+    "OLX.bg_147464125/0005_6f052747.webp"
+  ]
+}

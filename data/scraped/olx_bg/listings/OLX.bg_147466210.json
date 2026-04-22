@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/nov-1-staen-apartament-reduta-s-novi-mebeli-CID368-ID9YKHg.html?search_reason=search%7Corganic",
+  "external_id": "147466210",
+  "title": "Нов 1 стаен апартамент Редута с нови мебели",
+  "description": "Дава под наем чисто нов едностаен апартамент в чисто нова сграда в квартал Редута. Едностаен /еднопространствен/ с нови мебели и чудесна тераса. Свободна паркиране за 1 човек. Отопление на климатик. Само за частни лица",
+  "price": 380.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2t2p73p6ewo91-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wkxs2tztuy76-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/9305nxoyk00h1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/43600f4ypwlc1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/lerd0apphe0h2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2t2p73p6ewo91-BG/image;s=1200x1600"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:19:37.248866+00:00",
+  "reference_id": "OLX.bg:147466210",
+  "local_image_files": [
+    "data/media/OLX.bg_147466210/0000_75e5d6ff.webp",
+    "data/media/OLX.bg_147466210/0001_2375d1a3.webp",
+    "data/media/OLX.bg_147466210/0002_f42f2406.webp",
+    "data/media/OLX.bg_147466210/0003_557fb261.webp",
+    "data/media/OLX.bg_147466210/0004_63e94149.webp",
+    "data/media/OLX.bg_147466210/0005_10393e55.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147466210/0000_75e5d6ff.webp",
+    "OLX.bg_147466210/0001_2375d1a3.webp",
+    "OLX.bg_147466210/0002_f42f2406.webp",
+    "OLX.bg_147466210/0003_557fb261.webp",
+    "OLX.bg_147466210/0004_63e94149.webp",
+    "OLX.bg_147466210/0005_10393e55.webp"
+  ]
+}

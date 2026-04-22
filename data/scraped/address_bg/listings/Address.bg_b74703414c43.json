@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/lilyanovo-parcel-teren-offer616605",
+  "external_id": "b74703414c43",
+  "title": "Парцел/Терен в Лиляново - код на имота: 616605",
+  "description": "Адрес недвижими имоти предлага Парцел/Терен в Лиляново с код на имота: 616605. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/605/616605/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:21:13.764743+00:00",
+  "reference_id": "Address.bg:b74703414c43",
+  "local_image_files": [
+    "data/media/Address.bg_b74703414c43/0000_d79de65c.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_b74703414c43/0000_d79de65c.jpg"
+  ]
+}

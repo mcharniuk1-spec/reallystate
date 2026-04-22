@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/167106",
+  "external_id": "bfda3375154f",
+  "title": "Магазин в София 500 кв.м. ID 167106  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://userimages.yavlena.com/afeaf341-654f-43b0-ad51-9d8b10447214.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:15:11.889640+00:00",
+  "reference_id": "Yavlena:bfda3375154f",
+  "local_image_files": [
+    "data/media/Yavlena_bfda3375154f/0000_883263dd.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_bfda3375154f/0000_883263dd.jpg"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/partsel-s-litse-na-asflatov-pat-59metra-do-letische-plovdiv-CID368-ID9Z3Gv.html?search_reason=search%7Corganic",
+  "external_id": "147539200",
+  "title": "Парцел с лице на асфлатов път  59метра до летище Пловдив",
+  "description": "Оферта 79376 Парцел с лице на асфлатов път 59 метра до летище Пловдив на парцела статута не е сменян земеделска земя разполагам с още три имота съседни парцела с лице на пътя за повече информация и огледи на посочения телефон 08******01 - Костадинов Имоти",
+  "price": 166500.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/r55t8gucmbme2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/r55t8gucmbme2-BG/image;s=384x258"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:31:01.756028+00:00",
+  "reference_id": "OLX.bg:147539200",
+  "local_image_files": [
+    "data/media/OLX.bg_147539200/0000_ddf3e64d.webp",
+    "data/media/OLX.bg_147539200/0001_ddf3e64d.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539200/0000_ddf3e64d.webp",
+    "OLX.bg_147539200/0001_ddf3e64d.webp"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/varna-mladost-2-mnogostaen-apartament-offer688032",
+  "external_id": "d6bb054f86eb",
+  "title": "Многостаен апартамент във Варна, Младост 2 - код на имота: 688032",
+  "description": "Адрес недвижими имоти предлага Многостаен апартамент във Варна, Младост 2 с код на имота: 688032. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/032/688032/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:20:25.427072+00:00",
+  "reference_id": "Address.bg:d6bb054f86eb",
+  "local_image_files": [
+    "data/media/Address.bg_d6bb054f86eb/0000_f50c96af.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_d6bb054f86eb/0000_f50c96af.jpg"
+  ]
+}

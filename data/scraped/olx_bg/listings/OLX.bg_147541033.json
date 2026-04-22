@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/skladovo-pomeschenie-v-pomorie-67726-CID368-ID9Z4a5.html?search_reason=search%7Corganic",
+  "external_id": "147541033",
+  "title": "Складово помещение в Поморие! 67726",
+  "description": "Компания `Х` представя на Вашето внимание Склад в Поморие! МЕСТОПОЛОЖЕНИЕ: Поморие съчетава морска близост, спокойствие и отлична свързаност. Разположен на живописен полуостров, градът е заобиколен от море, което създава усещане за простор, светлина и непрекъснат контакт с природата. Градът е известен с чистия си въздух и лечебните природни ресурси, което допринася за по-здравословен начин на живот. Поморие е място, където морето, спокойствието и удобството се срещат – отличен избор както за живеене, така и за инвестиция. РАПРЕДЕЛЕНИЕ: Сградата е с площ от 800 кв.м. Състои се от склад - 600 кв.м., офис от 200 кв.м. Двор с площ от 6000 кв.м. Заповядайте да Ви го покажем. Използвайки нашите услуги Вие ще превърнете закупуването в едно приятно изживяване, ще получите персонален консултант, съдействие при кандидатстване за кредит от всички банки в България, интериорни дизайнери и екип, който да се погрижи за нужните документи по Вашата сделка. На Ваше разположение сме всеки ден, от понеделник до неделя от 09:00 до 20:00ч. Възползвайте се от безплатна консултация в наш офис, където ще ви спестим време и ще ви запознаем с всички актуални имоти в България, отговарящи на Вашето търсене. Свържете се с нас на 08******90 или на 08******83 и цитирайте кода към имота: 67726",
+  "price": 312000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "office",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xez5qh7zkxod2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/1a8ba0x0c7co-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/cya963jdgwcv-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/lurio0z5dd9h1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xprs0egupp3x2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/xez5qh7zkxod2-BG/image;s=450x600"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:30:22.659837+00:00",
+  "reference_id": "OLX.bg:147541033",
+  "local_image_files": [
+    "data/media/OLX.bg_147541033/0000_f13ffb14.webp",
+    "data/media/OLX.bg_147541033/0001_a375bc73.webp",
+    "data/media/OLX.bg_147541033/0002_542ea4a9.webp",
+    "data/media/OLX.bg_147541033/0003_abfaf02f.webp",
+    "data/media/OLX.bg_147541033/0004_9114f778.webp",
+    "data/media/OLX.bg_147541033/0005_f13ffb14.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147541033/0000_f13ffb14.webp",
+    "OLX.bg_147541033/0001_a375bc73.webp",
+    "OLX.bg_147541033/0002_542ea4a9.webp",
+    "OLX.bg_147541033/0003_abfaf02f.webp",
+    "OLX.bg_147541033/0004_9114f778.webp",
+    "OLX.bg_147541033/0005_f13ffb14.webp"
+  ]
+}

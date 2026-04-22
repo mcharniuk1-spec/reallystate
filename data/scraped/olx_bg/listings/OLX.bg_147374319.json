@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/ednostaen-apartament-v-mladost-4-CID368-ID9YmN9.html?search_reason=search%7Corganic",
+  "external_id": "147374319",
+  "title": "Едностаен апартамент в Младост 4",
+  "description": "Broadway Estate Ви предлага един модерен дом изключително топъл, създава чувство за уют и простор. В близост до спирки на градски транспорт, детска градина, училище, търговски център, големи вериги хранителни магазини, аптеки, ресторанти, заведения за вечерни забави танци и всичко необходимо за дълъг и щастлив живот в добре устроена градска среда. За оглед на това и други атрактивни предложения, не се колебайте да ни потърсите на посочения телефон или да ни изпратите данните си чрез формата за запитване на сайта. Реф. номер: 99784",
+  "price": 135000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/spwccsie92oq1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/c8dy57a2vi9j2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kt9fjo01frpw2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/zwvackqxd5sa1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/x1yifhu6r3o6-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/spwccsie92oq1-BG/image;s=1600x901"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:29:46.640764+00:00",
+  "reference_id": "OLX.bg:147374319",
+  "local_image_files": [
+    "data/media/OLX.bg_147374319/0000_443b96e0.webp",
+    "data/media/OLX.bg_147374319/0001_79ecf6c9.webp",
+    "data/media/OLX.bg_147374319/0002_70da9f92.webp",
+    "data/media/OLX.bg_147374319/0003_2dd3a7fd.webp",
+    "data/media/OLX.bg_147374319/0004_2b8f7593.webp",
+    "data/media/OLX.bg_147374319/0005_fc8ede32.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147374319/0000_443b96e0.webp",
+    "OLX.bg_147374319/0001_79ecf6c9.webp",
+    "OLX.bg_147374319/0002_70da9f92.webp",
+    "OLX.bg_147374319/0003_2dd3a7fd.webp",
+    "OLX.bg_147374319/0004_2b8f7593.webp",
+    "OLX.bg_147374319/0005_fc8ede32.webp"
+  ]
+}

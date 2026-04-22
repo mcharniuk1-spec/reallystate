@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD88661BG_1-bedroom_apartment_for_sale_in_Sozopol.html",
+  "external_id": "fdf9e78de917",
+  "title": "Bulgarian Properties",
+  "description": "Furnished apartment with three balconies near the center",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88661_3.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:39:53.226167+00:00",
+  "reference_id": "BulgarianProperties:fdf9e78de917",
+  "local_image_files": [
+    "data/media/BulgarianProperties_fdf9e78de917/0000_61ae26a1.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_fdf9e78de917/0000_61ae26a1.jpg"
+  ]
+}

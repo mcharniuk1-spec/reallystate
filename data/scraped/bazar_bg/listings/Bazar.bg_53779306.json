@@ -1,0 +1,38 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53779306/prodawa-mnogostaen-gr-sofiia-w-z-malinowa-dolina",
+  "external_id": "53779306",
+  "title": "Bazar.BG",
+  "description": "Здравейте,Продава се обзаведен апартамент 176 м2 (160 м2 чиста площ) с дневна с трапезария и кухня, 3 спални, 2 бани и техническо помещение.Апартаментът се нами",
+  "price": 775000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://cdn3.focus.bg/imot/photosimotbg/1/111/big1/1e176838024460111_z1.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/111/big1/1e176838024460111_zN.jpg",
+    "//cdn3.focus.bg/imot/photosimotbg/1/111/big1/1e176838024460111_z1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:47:32.887756+00:00",
+  "reference_id": "Bazar.bg:53779306",
+  "local_image_files": [
+    "data/media/Bazar.bg_53779306/0000_79fccb24.jpg",
+    "data/media/Bazar.bg_53779306/0001_0977e05a.jpg",
+    "data/media/Bazar.bg_53779306/0002_79fccb24.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53779306/0000_79fccb24.jpg",
+    "Bazar.bg_53779306/0001_0977e05a.jpg",
+    "Bazar.bg_53779306/0002_79fccb24.jpg"
+  ]
+}

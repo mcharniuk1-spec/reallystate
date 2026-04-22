@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-64-kv-m-vazrazhdane-1-sobstvenik-pred-akt-14-CID368-ID9RY3B.html?search_reason=search%7Cpromoted",
+  "external_id": "145849271",
+  "title": "Двустаен 64 кв.м Възраждане 1 Собственик! Пред Акт 14",
+  "description": "СОБСТВЕНИК! Продава Двустаен 64 кв.м Сградата има два входа със модерна визия. Като във най високата си част става 11 етажа. Апартамента е среден на етаж 5 от 11 , югозапад. Състоящ се от функционална дневна 19.1 кв.м./ спалня 13 кв.м/ баня 3.2 кв.м/ килер 2.4 кв.м/ тераса 4 кв.м както и входно антре. Квадратури и цени както следва. АП. 54 / 64 кв.м / чисто 54.09 кв. м / Цена: 84000 Евро / 1312 Е на кв.м Имота се намира на възможно най комуникативно място във кв. Възраждане 1. Непосредствена близост до бул. Цар Освободител. Завършването е по БДС. Сграда е на етап пред Акт 14. Като акт 15 се очаква септември 2026 година а Акт 16 декември на 2026 г. В близост има училища, детски градини, болница, спирки на градски транспорт и др.",
+  "price": 84000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fzygx0nit3sv1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/obn2x4divm5n1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/reqweqkpei7f2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6m5qfhs1le61-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/oxn10olhmr5v-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fzygx0nit3sv1-BG/image;s=2000x1500"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:31:23.927661+00:00",
+  "reference_id": "OLX.bg:145849271",
+  "local_image_files": [
+    "data/media/OLX.bg_145849271/0000_eb38b784.webp",
+    "data/media/OLX.bg_145849271/0001_f599a404.webp",
+    "data/media/OLX.bg_145849271/0002_a0298c27.webp",
+    "data/media/OLX.bg_145849271/0003_940800d9.webp",
+    "data/media/OLX.bg_145849271/0004_eef9f9a2.webp",
+    "data/media/OLX.bg_145849271/0005_8ee7a156.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_145849271/0000_eb38b784.webp",
+    "OLX.bg_145849271/0001_f599a404.webp",
+    "OLX.bg_145849271/0002_a0298c27.webp",
+    "OLX.bg_145849271/0003_940800d9.webp",
+    "OLX.bg_145849271/0004_eef9f9a2.webp",
+    "OLX.bg_145849271/0005_8ee7a156.webp"
+  ]
+}

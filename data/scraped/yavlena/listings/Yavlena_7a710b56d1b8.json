@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/152495",
+  "external_id": "7a710b56d1b8",
+  "title": "Жилищна сграда във Варна 24700 кв.м. ID 152495  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://userimages.yavlena.com/4ebc684f-72c5-4a11-83fc-ca4b53e945c1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:55:27.974758+00:00",
+  "reference_id": "Yavlena:7a710b56d1b8",
+  "local_image_files": [
+    "data/media/Yavlena_7a710b56d1b8/0000_92b930f6.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_7a710b56d1b8/0000_92b930f6.jpg"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/tristaen-apartament-v-marasha-CID368-ID9VTsW.html?search_reason=search%7Corganic",
+  "external_id": "147023261",
+  "title": "Тристаен апартамент в Мараша",
+  "description": "Агенция за недвижими имоти Ви представя тристаен апартамент в Мараша. Намира се на много комуникативно място, близо до магазини, училища, детски градини и спирки на градския транспорт. За огледи, можете да се обадите на посочения телефон.",
+  "price": 425.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/oane24zcnwzx2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/75vgf5ux7i7g2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6cqxe7ywq9ix-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/uyhqgh98fo1i2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0e78hjg3fnlz-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/oane24zcnwzx2-BG/image;s=1280x960"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:29:52.407797+00:00",
+  "reference_id": "OLX.bg:147023261",
+  "local_image_files": [
+    "data/media/OLX.bg_147023261/0000_da76ee8d.webp",
+    "data/media/OLX.bg_147023261/0001_7cb12973.webp",
+    "data/media/OLX.bg_147023261/0002_317253d1.webp",
+    "data/media/OLX.bg_147023261/0003_0a802306.webp",
+    "data/media/OLX.bg_147023261/0004_30c73503.webp",
+    "data/media/OLX.bg_147023261/0005_3178560b.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147023261/0000_da76ee8d.webp",
+    "OLX.bg_147023261/0001_7cb12973.webp",
+    "OLX.bg_147023261/0002_317253d1.webp",
+    "OLX.bg_147023261/0003_0a802306.webp",
+    "OLX.bg_147023261/0004_30c73503.webp",
+    "OLX.bg_147023261/0005_3178560b.webp"
+  ]
+}

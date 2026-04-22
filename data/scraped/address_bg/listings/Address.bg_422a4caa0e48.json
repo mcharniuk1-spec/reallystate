@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-centar-tristaen-apartament-offer659201",
+  "external_id": "422a4caa0e48",
+  "title": "Тристаен апартамент в София, Център - код на имота: 659201",
+  "description": "Адрес недвижими имоти предлага Тристаен апартамент в София, Център с код на имота: 659201. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/201/659201/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:21:30.936064+00:00",
+  "reference_id": "Address.bg:422a4caa0e48",
+  "local_image_files": [
+    "data/media/Address.bg_422a4caa0e48/0000_e771f692.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_422a4caa0e48/0000_e771f692.jpg"
+  ]
+}

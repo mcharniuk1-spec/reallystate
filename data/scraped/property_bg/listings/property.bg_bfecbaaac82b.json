@@ -1,0 +1,32 @@
+{
+  "source_name": "property.bg",
+  "listing_url": "https://www.property.bg/property-132801-semi-furnished-two-bedroom-apartment-meters-from-south-park/",
+  "external_id": "bfecbaaac82b",
+  "title": "Property.bg",
+  "description": "Semi-furnished two-bedroom apartment meters from South Park for sale  - Reinforced concrete structure Brick-built  - Air-conditioners Central heating from №",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static4.superimoti.bg/property-images/big/1774676644T132801_1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T13:57:51.481236+00:00",
+  "reference_id": "property.bg:bfecbaaac82b",
+  "local_image_files": [
+    "data/media/property.bg_bfecbaaac82b/0000_a5521436.jpg"
+  ],
+  "local_image_storage_keys": [
+    "property.bg_bfecbaaac82b/0000_a5521436.jpg"
+  ]
+}

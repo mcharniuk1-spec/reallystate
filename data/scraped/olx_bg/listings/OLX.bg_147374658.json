@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/tristaen-apartament-v-yuzhen-11805981-CID368-ID9YmSC.html?search_reason=search%7Corganic",
+  "external_id": "147374658",
+  "title": "Тристаен апартамент в Южен! 11805981",
+  "description": "Компания `Х` представя на Вашето внимание тристаен апартамент в Южен! МЕСТОПОЛОЖЕНИЕ: Квартал Южен е един от най-големите и гъсто населени райони в Пловдив. Той се отличава с разнообразна жилищна среда – от панелни блокове до ново строителство. В квартала има много училища, детски градини, магазини, пазари и спортни площадки, което го прави удобен за ежедневието на жителите. Районът е добре свързан с останалите части на града чрез основни булеварди и градски транспорт. Кварталът предлага добра инфраструктура, много услуги и активен градски живот, което го прави предпочитан за живеене. РАЗПРЕДЕЛЕНИЕ: Жилището разполага с площ от 120 кв.м, разгърната в следното функционално разпределение: входно антре, хол с кухненски бокс, две спални, две бани с тоалетни, две тераси СЪСТОЯНИЕ: За удобство и комфорта на бъдещите наематели жилището се предлага напълно обзаведено. Заповядайте да Ви го покажем. Използвайки нашите услуги Вие ще превърнете наемането на новия си дом в едно приятно изживяване. На Ваше разположение сме всеки ден, от понеделник до неделя от 09:00 до 20:00ч. Възползвайте се от безплатна консултация в наш офис, където ще ви спестим време и ще ви запознаем с всички актуални имоти в България, отговарящи на Вашето търсене. Свържете се с нас на 08******90 или на 08******33 и цитирайте кода към имота: 11805981",
+  "price": 600.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8k5x7upi8pox-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4bob59pvbuxf1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/lklkd40vbnnf1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wtdff8w0q3661-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/phn230g0llgq3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8k5x7upi8pox-BG/image;s=1600x1200"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:30:41.490526+00:00",
+  "reference_id": "OLX.bg:147374658",
+  "local_image_files": [
+    "data/media/OLX.bg_147374658/0000_1e6f8793.webp",
+    "data/media/OLX.bg_147374658/0001_c7e707db.webp",
+    "data/media/OLX.bg_147374658/0002_09c1666e.webp",
+    "data/media/OLX.bg_147374658/0003_9eadf685.webp",
+    "data/media/OLX.bg_147374658/0004_99a02b21.webp",
+    "data/media/OLX.bg_147374658/0005_61f675a7.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147374658/0000_1e6f8793.webp",
+    "OLX.bg_147374658/0001_c7e707db.webp",
+    "OLX.bg_147374658/0002_09c1666e.webp",
+    "OLX.bg_147374658/0003_9eadf685.webp",
+    "OLX.bg_147374658/0004_99a02b21.webp",
+    "OLX.bg_147374658/0005_61f675a7.webp"
+  ]
+}

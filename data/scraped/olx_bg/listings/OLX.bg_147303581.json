@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-v-rayona-na-tsentara-CID368-ID9Y4od.html?search_reason=search%7Cpromoted",
+  "external_id": "147303581",
+  "title": "Двустаен апартамент в района на Центъра",
+  "description": "Референтен номер: 2126201 Революшън Естейт представя двустаен апартамент в Пловдив, Център. В близост до имота ще намерите: - Правителствена служба: Национална търговска гимназия - Банка: УниКредит Булбанк Информация за горепосочения имот, може да получите чрез формата на запитване или чрез директна връзка с нас на посочения телефон.",
+  "price": 400.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2skph3njvukv1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/d553wwldyqbr-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4j1eyisvtq36-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/svmi56c0lr702-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bqhk8fnj44fj3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2skph3njvukv1-BG/image;s=1536x1024"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:18:35.496859+00:00",
+  "reference_id": "OLX.bg:147303581",
+  "local_image_files": [
+    "data/media/OLX.bg_147303581/0000_d068c8da.webp",
+    "data/media/OLX.bg_147303581/0001_0584e481.webp",
+    "data/media/OLX.bg_147303581/0002_baa52419.webp",
+    "data/media/OLX.bg_147303581/0003_b4bea827.webp",
+    "data/media/OLX.bg_147303581/0004_71028f98.webp",
+    "data/media/OLX.bg_147303581/0005_16fafa36.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147303581/0000_d068c8da.webp",
+    "OLX.bg_147303581/0001_0584e481.webp",
+    "OLX.bg_147303581/0002_baa52419.webp",
+    "OLX.bg_147303581/0003_b4bea827.webp",
+    "OLX.bg_147303581/0004_71028f98.webp",
+    "OLX.bg_147303581/0005_16fafa36.webp"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-centar-ofis-offer678457",
+  "external_id": "09e0e1008cf1",
+  "title": "Офис в София, Център - код на имота: 678457",
+  "description": "Адрес недвижими имоти предлага Офис в София, Център с код на имота: 678457. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "office",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/457/678457/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:21:29.069215+00:00",
+  "reference_id": "Address.bg:09e0e1008cf1",
+  "local_image_files": [
+    "data/media/Address.bg_09e0e1008cf1/0000_491cbb37.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_09e0e1008cf1/0000_491cbb37.jpg"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168187",
+  "external_id": "27c6182643c3",
+  "title": "Двустаен апартамент във Варна 50 кв.м. ID 168187  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/a14c6ff4-70f1-4b56-8e69-366977294f9b.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:15:30.203297+00:00",
+  "reference_id": "Yavlena:27c6182643c3",
+  "local_image_files": [
+    "data/media/Yavlena_27c6182643c3/0000_5027c19b.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_27c6182643c3/0000_5027c19b.jpg"
+  ]
+}

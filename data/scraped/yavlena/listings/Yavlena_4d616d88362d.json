@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168102",
+  "external_id": "4d616d88362d",
+  "title": "Тристаен апартамент в София 89 кв.м. ID 168102  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/f73062cd-0542-489b-92ee-125960dd42e5.png"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:16:31.890067+00:00",
+  "reference_id": "Yavlena:4d616d88362d",
+  "local_image_files": [
+    "data/media/Yavlena_4d616d88362d/0000_fbfb26b0.png"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_4d616d88362d/0000_fbfb26b0.png"
+  ]
+}

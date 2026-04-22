@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-s-garazh-v-ovcha-kupel-CID368-ID9Z3Xy.html?search_reason=search%7Corganic",
+  "external_id": "147540256",
+  "title": "Двустаен апартамент с ГАРАЖ в Овча Купел",
+  "description": "Референтен номер: 2221868 Революшън Естейт представя Двустаен в София, Овча купел Светъл двустаен апартамент в нова сграда (2020 г.) в Овча купел. Разполага с просторен хол с кухненски бокс, комфортна спалня, балкон и модерно газово отопление. Предлага удобство близо до градски транспорт и спокоен изглед към запад. Стилно обзавеждане и готов за нанасяне. Информация за горепосочения имот, може да получите чрез формата на запитване или чрез директна връзка с нас на посочения телефон.",
+  "price": 650.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ubc2qhsvmqtq2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8rhdl7kxidnl-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gocsp8jb5hza1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/e52if6ndf5101-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/otmoz6ut27123-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ubc2qhsvmqtq2-BG/image;s=1401x795"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:22:22.057633+00:00",
+  "reference_id": "OLX.bg:147540256",
+  "local_image_files": [
+    "data/media/OLX.bg_147540256/0000_8a30df30.webp",
+    "data/media/OLX.bg_147540256/0001_61cd5f4b.webp",
+    "data/media/OLX.bg_147540256/0002_1870b2e2.webp",
+    "data/media/OLX.bg_147540256/0003_b80022e6.webp",
+    "data/media/OLX.bg_147540256/0004_2bb2c735.webp",
+    "data/media/OLX.bg_147540256/0005_00efab43.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540256/0000_8a30df30.webp",
+    "OLX.bg_147540256/0001_61cd5f4b.webp",
+    "OLX.bg_147540256/0002_1870b2e2.webp",
+    "OLX.bg_147540256/0003_b80022e6.webp",
+    "OLX.bg_147540256/0004_2bb2c735.webp",
+    "OLX.bg_147540256/0005_00efab43.webp"
+  ]
+}

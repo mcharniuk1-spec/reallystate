@@ -1,0 +1,31 @@
+{
+  "source_key": "bazar_bg",
+  "source_name": "Bazar.bg",
+  "discovery_pages_fetched": 4,
+  "listing_urls_discovered": 272,
+  "listing_pages_fetched": 250,
+  "listing_pages_parsed": 250,
+  "listing_pages_failed": 0,
+  "photos_found": 2607,
+  "photos_downloaded": 2487,
+  "photos_failed": 15,
+  "with_price": 250,
+  "with_geo": 0,
+  "with_address": 0,
+  "with_area": 0,
+  "with_rooms": 0,
+  "with_description": 250,
+  "intents": {
+    "sale": 225,
+    "long_term_rent": 25
+  },
+  "categories": {
+    "unknown": 45,
+    "apartment": 204,
+    "office": 1
+  },
+  "errors": [],
+  "start_time": "2026-04-08T16:42:37.972910+00:00",
+  "end_time": "2026-04-08T16:54:12.900549+00:00",
+  "duration_seconds": 694.9
+}

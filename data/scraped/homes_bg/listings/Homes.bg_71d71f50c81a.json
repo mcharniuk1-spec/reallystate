@@ -1,0 +1,28 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-158m2-sofiya-zhk.-mladost-4/as1678983",
+  "external_id": "71d71f50c81a",
+  "title": "Тристаен, 158m² - Жк. Младост 4, София - Апартамент за продажба - ЕКС НВД",
+  "description": "Компания `ЕКС` представя на Вашето внимание тристаен апартамент в жк. Младост 4.МЕСТОПОЛОЖЕНИЕ: Намира се в блзиост до метростанция, множество магазини и всичко...",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2026-04-09_1/118434676o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T10:05:31.863249+00:00",
+  "reference_id": "Homes.bg:71d71f50c81a",
+  "local_image_files": [],
+  "local_image_storage_keys": []
+}

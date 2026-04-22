@@ -1,0 +1,53 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53538257/dawa-pod-naem-3-staen-gr-sofiia-mladost-4",
+  "external_id": "53538257",
+  "title": "Bazar.BG",
+  "description": "Референтен номер: 2087214 Революшън Естейт представя тристаен апартамент  в София, Младост 4 Квадратура: 72 кв.м   Етаж: 5 от 8   Изложение: Запад, Юг   Разпред",
+  "price": 685.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic2.focus.bg/imot/photosimotbg/2/653/big1/2d177151318037653_Ih.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/2/653/big1/2d177151318037653_f7.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/2/653/big1/2d177151318037653_9M.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/2/653/big1/2d177151318037653_y3.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/2/653/big1/2d177151318037653_e3.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/2/653/big1/2d177151318037653_X0.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/2/653/big1/2d177151318037653_ut.jpg",
+    "//imotstatic2.focus.bg/imot/photosimotbg/2/653/big1/2d177151318037653_Ih.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:50:48.467168+00:00",
+  "reference_id": "Bazar.bg:53538257",
+  "local_image_files": [
+    "data/media/Bazar.bg_53538257/0000_7b6bba7c.jpg",
+    "data/media/Bazar.bg_53538257/0001_d8699853.jpg",
+    "data/media/Bazar.bg_53538257/0002_3b3950dc.jpg",
+    "data/media/Bazar.bg_53538257/0003_16faa049.jpg",
+    "data/media/Bazar.bg_53538257/0004_6db44de2.jpg",
+    "data/media/Bazar.bg_53538257/0005_dd48293b.jpg",
+    "data/media/Bazar.bg_53538257/0006_a9dc8ee5.jpg",
+    "data/media/Bazar.bg_53538257/0007_7b6bba7c.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53538257/0000_7b6bba7c.jpg",
+    "Bazar.bg_53538257/0001_d8699853.jpg",
+    "Bazar.bg_53538257/0002_3b3950dc.jpg",
+    "Bazar.bg_53538257/0003_16faa049.jpg",
+    "Bazar.bg_53538257/0004_6db44de2.jpg",
+    "Bazar.bg_53538257/0005_dd48293b.jpg",
+    "Bazar.bg_53538257/0006_a9dc8ee5.jpg",
+    "Bazar.bg_53538257/0007_7b6bba7c.jpg"
+  ]
+}

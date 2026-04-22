@@ -1,0 +1,53 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53983064/dawa-pod-naem-2-staen-gr-sofiia-druzhba-2",
+  "external_id": "53983064",
+  "title": "Bazar.BG",
+  "description": "M Smart Estates предлага под наем двустаен апартамент в кв. Дружба 2, в нова сграда с АКТ 16, с възможност за наем на ПАРКОМЯСТО.Без комисионна за наемателя.66",
+  "price": 680.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://cdn3.focus.bg/imot/photosimotbg/2/222/big1/2c177452013604222_6i.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/222/big1/2c177452013604222_aW.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/222/big1/2c177452013604222_to.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/222/big1/2c177452013604222_my.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/222/big1/2c177452013604222_3S.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/222/big1/2c177452013604222_aX.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/2/222/big1/2c177452013604222_rc.jpg",
+    "//cdn3.focus.bg/imot/photosimotbg/2/222/big1/2c177452013604222_6i.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:46:32.777426+00:00",
+  "reference_id": "Bazar.bg:53983064",
+  "local_image_files": [
+    "data/media/Bazar.bg_53983064/0000_daf29f56.jpg",
+    "data/media/Bazar.bg_53983064/0001_d6b859dc.jpg",
+    "data/media/Bazar.bg_53983064/0002_299b693d.jpg",
+    "data/media/Bazar.bg_53983064/0003_4ec53cd4.jpg",
+    "data/media/Bazar.bg_53983064/0004_7c3b0111.jpg",
+    "data/media/Bazar.bg_53983064/0005_9bac47a3.jpg",
+    "data/media/Bazar.bg_53983064/0006_af5d9308.jpg",
+    "data/media/Bazar.bg_53983064/0007_daf29f56.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53983064/0000_daf29f56.jpg",
+    "Bazar.bg_53983064/0001_d6b859dc.jpg",
+    "Bazar.bg_53983064/0002_299b693d.jpg",
+    "Bazar.bg_53983064/0003_4ec53cd4.jpg",
+    "Bazar.bg_53983064/0004_7c3b0111.jpg",
+    "Bazar.bg_53983064/0005_9bac47a3.jpg",
+    "Bazar.bg_53983064/0006_af5d9308.jpg",
+    "Bazar.bg_53983064/0007_daf29f56.jpg"
+  ]
+}

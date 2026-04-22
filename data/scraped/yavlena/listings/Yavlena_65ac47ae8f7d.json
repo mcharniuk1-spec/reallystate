@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/162685",
+  "external_id": "65ac47ae8f7d",
+  "title": "Парцел във Владая 600 кв.м. ID 162685  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://userimages.yavlena.com/e262c11e-03c9-4e41-b20c-d42ae34fad4c.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:55:02.944277+00:00",
+  "reference_id": "Yavlena:65ac47ae8f7d",
+  "local_image_files": [
+    "data/media/Yavlena_65ac47ae8f7d/0000_7ff0e528.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_65ac47ae8f7d/0000_7ff0e528.jpg"
+  ]
+}

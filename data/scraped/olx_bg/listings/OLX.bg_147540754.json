@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-ap-pod-naem-v-kv-nadezhda-3-CID368-ID9Z45A.html?search_reason=search%7Corganic",
+  "external_id": "147540754",
+  "title": "Двустаен ап. под наем в кв. Надежда 3",
+  "description": "двустаен апартамент под наем в ж.к. Надежда 3, на удобна локация в близост до метростанция, училища и градски транспорт. Жилището е с площ 57 кв.м, разположено на 4-ти етаж от 7 в сграда от 2020 г. Южното изложение осигурява много светлина и уют. Разпределение: хол с кухненски бокс спалня баня с тоалетна тераса Апартаментът е напълно обзаведен и готов за нанасяне, отоплява се на ТЕЦ и разполага с интернет окабеляване, което осигурява комфорт в ежедневието. В близост: 101 СУ Бачо Киро , 74 СУ Гоце Делчев , ДКЦ 8, аптеки, банки и метростанция Бели Дунав . За оглед се свържете с нас и цитирайте реф. номер: 2150232.",
+  "price": 580.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ja6u4fds8imp-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ba10j1wr7q3s2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0f76v4jvtjzg1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/uwcx0pr9y0qr1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/92ae9nezamp93-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ja6u4fds8imp-BG/image;s=1536x2048"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:21:57.276473+00:00",
+  "reference_id": "OLX.bg:147540754",
+  "local_image_files": [
+    "data/media/OLX.bg_147540754/0000_43b6ae7b.webp",
+    "data/media/OLX.bg_147540754/0001_117a639e.webp",
+    "data/media/OLX.bg_147540754/0002_fa2fd33b.webp",
+    "data/media/OLX.bg_147540754/0003_8dc2e52f.webp",
+    "data/media/OLX.bg_147540754/0004_2def735f.webp",
+    "data/media/OLX.bg_147540754/0005_bff2f83a.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540754/0000_43b6ae7b.webp",
+    "OLX.bg_147540754/0001_117a639e.webp",
+    "OLX.bg_147540754/0002_fa2fd33b.webp",
+    "OLX.bg_147540754/0003_8dc2e52f.webp",
+    "OLX.bg_147540754/0004_2def735f.webp",
+    "OLX.bg_147540754/0005_bff2f83a.webp"
+  ]
+}

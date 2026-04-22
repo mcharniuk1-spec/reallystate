@@ -21,6 +21,12 @@
   ],
   "phones": [],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:32:12.603981+00:00",
-  "reference_id": "BulgarianProperties:56b88fc7ab01"
+  "scraped_at": "2026-04-09T09:59:44.774968+00:00",
+  "reference_id": "BulgarianProperties:56b88fc7ab01",
+  "local_image_files": [
+    "data/media/BulgarianProperties_56b88fc7ab01/0000_39d33b5c.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_56b88fc7ab01/0000_39d33b5c.jpg"
+  ]
 }

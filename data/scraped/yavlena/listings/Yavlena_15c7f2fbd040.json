@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/167996",
+  "external_id": "15c7f2fbd040",
+  "title": "Двустаен апартамент в София 70 кв.м. ID 167996  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/7ff9f3a1-300f-47eb-946d-23f195df76d7.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:17:47.748946+00:00",
+  "reference_id": "Yavlena:15c7f2fbd040",
+  "local_image_files": [
+    "data/media/Yavlena_15c7f2fbd040/0000_f40d4fda.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_15c7f2fbd040/0000_f40d4fda.jpg"
+  ]
+}

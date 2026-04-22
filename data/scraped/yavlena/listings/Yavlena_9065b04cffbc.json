@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168453",
+  "external_id": "9065b04cffbc",
+  "title": "Земеделска земя в Добролево 7104 кв.м. ID 168453  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://userimages.yavlena.com/8da60d8f-979d-4113-9346-b67dda9a0e00.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:56:12.469795+00:00",
+  "reference_id": "Yavlena:9065b04cffbc",
+  "local_image_files": [
+    "data/media/Yavlena_9065b04cffbc/0000_63644c15.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_9065b04cffbc/0000_63644c15.jpg"
+  ]
+}

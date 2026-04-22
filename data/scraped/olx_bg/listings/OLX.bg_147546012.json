@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-pod-naem-v-levski-CID368-ID9Z5so.html?search_reason=search%7Cpromoted",
+  "external_id": "147546012",
+  "title": "Двустаен апартамент под наем в Левски",
+  "description": "Предлагаме на Вашето внимание двустаен апартамент под наем в кв. Левски, апартамента е изцяло обзаведен, както се вижда по снимките, с всичко необходимо за едно домакинство и готов за нанасяне. Има и паркомясто в сградата при интерес. Отоплява се на климатици, може да се използва и мазе към имота. Намира се на 4-ти етаж от 7. Условията за наемане са един наем и един депозит. Отдава се СПЕШНО! Възможно е договарянето на домашен любимец.",
+  "price": 420.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qnmc8q6ce3hr3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fbr27hq49bpf-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/o2j7a52bplz43-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/yzuex5xaxeui1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/70qgknz5ys8v3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qnmc8q6ce3hr3-BG/image;s=4032x3024"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:27:29.552303+00:00",
+  "reference_id": "OLX.bg:147546012",
+  "local_image_files": [
+    "data/media/OLX.bg_147546012/0000_109b170f.webp",
+    "data/media/OLX.bg_147546012/0001_d5cbfdc1.webp",
+    "data/media/OLX.bg_147546012/0002_b310054c.webp",
+    "data/media/OLX.bg_147546012/0003_97646fc7.webp",
+    "data/media/OLX.bg_147546012/0004_15161746.webp",
+    "data/media/OLX.bg_147546012/0005_f5047277.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147546012/0000_109b170f.webp",
+    "OLX.bg_147546012/0001_d5cbfdc1.webp",
+    "OLX.bg_147546012/0002_b310054c.webp",
+    "OLX.bg_147546012/0003_97646fc7.webp",
+    "OLX.bg_147546012/0004_15161746.webp",
+    "OLX.bg_147546012/0005_f5047277.webp"
+  ]
+}

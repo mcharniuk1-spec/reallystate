@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/prodava-se-apartament-1-1-v-nesebar-5690-CID368-ID9YKac.html?search_reason=search%7Corganic",
+  "external_id": "147464160",
+  "title": "Продава се апартамент 1+1 в Несебър.#5690",
+  "description": "Предлагаме за продажба апартамент 1+1 в Несебър, на 300 метра от морето и плажа. Комплексът разполага с няколко открити басейна с детски секции, бар и ресторанти, зони за релакс, детска площадка и детски клуб, спа център, тенис корт и голф игрище, зона за барбекю, подземен паркинг, 24-часова охрана и видеонаблюдение. Имотът е напълно обзаведен с висококачествени мебели и оборудван с всички необходими уреди. Акт 16.#5690 Предлагаем на продажу апартамент 1+1, в Несебре, в 300 метрах от моря и пляжа. На территории комплекса: несколько открытых бассейнов с детскими секциями, бар и рестораны, зоны отдыха, детская площадка и детский клуб, спа-центр, теннисный корт и поле для гольфа, зона барбекю, подземный паркинг, 24-часовая охрана и видеонаблюдение. Недвижимость полностью меблирована качественной мебелью, оборудована необходимой бытовой техникой. Акт 16.#5690",
+  "price": 130000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/lme48utkw8bm3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bp3ybsfz8d0r-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ldkozyqb1bra-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/r0zt7l0j5y0a2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gdzfaa1tqq5j3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/lme48utkw8bm3-BG/image;s=1400x1867"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:29:05.551128+00:00",
+  "reference_id": "OLX.bg:147464160",
+  "local_image_files": [
+    "data/media/OLX.bg_147464160/0000_0f0d2126.webp",
+    "data/media/OLX.bg_147464160/0001_cb74b4f4.webp",
+    "data/media/OLX.bg_147464160/0002_ea8c8a8d.webp",
+    "data/media/OLX.bg_147464160/0003_8f0b4330.webp",
+    "data/media/OLX.bg_147464160/0004_44a6612c.webp",
+    "data/media/OLX.bg_147464160/0005_9c7a8b8d.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464160/0000_0f0d2126.webp",
+    "OLX.bg_147464160/0001_cb74b4f4.webp",
+    "OLX.bg_147464160/0002_ea8c8a8d.webp",
+    "OLX.bg_147464160/0003_8f0b4330.webp",
+    "OLX.bg_147464160/0004_44a6612c.webp",
+    "OLX.bg_147464160/0005_9c7a8b8d.webp"
+  ]
+}

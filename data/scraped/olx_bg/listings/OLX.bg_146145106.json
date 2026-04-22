@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/kascha-v-s-sokolovo-16252-CID368-ID9Td18.html?search_reason=search%7Corganic",
+  "external_id": "146145106",
+  "title": "Къща в с. Соколово - 16252",
+  "description": "Регент Хоумс предлага за продажба двуетажна масивна къща в с. Соколово – само на 13 км от Велико Търново. Предлагаме за продажба добре поддържана масивна тухлена къща, построена на плоча, с площ 59 кв.м. на етаж (общо 118 кв.м.) и разположена в равен и озеленен двор 1308 кв.м. Имотът се намира в предпочитаното за живеене село Соколово, известно със спокойна среда, лесен достъп и близост до града. Къщата е на два етажа, със сменена дограма, подновени интериорни врати и обновени санитарни помещения с нови плочки и санитария. Монтирана е инсталация с камина и водна риза, а на втория етаж са предвидени конвектори за отопление. Разпределението е следното: Първи етаж – aнтре, дневна с голяма веранда, кухня, баня/тоалетна, килер, две спални Втори етаж - две спални с тераси, коридор, дрешник/склад, втора баня/тоалетна, Допълнителни предимства: Гараж и голямо помещение за барбекю с изба. Имотът е подходящ както за постоянно живеене, така и за ваканционен дом, като предлага комфорт, пространство и всички необходими модерни удобства. Регент Хоумс предлага пълно съдействие при организиране на оглед и процеса по закупуване. За повече информация и оглед, молим да се свържете с брокер Георги Бакалов. I speak English.",
+  "price": 76700.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/y322v7xsep273-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pak37hm98zcz-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fzvplggrva3q1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/7jjmucsbcm79-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/g62ugu6ru5dh1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/y322v7xsep273-BG/image;s=3264x1836"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:30:28.800910+00:00",
+  "reference_id": "OLX.bg:146145106",
+  "local_image_files": [
+    "data/media/OLX.bg_146145106/0000_4662fa8e.webp",
+    "data/media/OLX.bg_146145106/0001_3b7e64f3.webp",
+    "data/media/OLX.bg_146145106/0002_aee99985.webp",
+    "data/media/OLX.bg_146145106/0003_2d31398c.webp",
+    "data/media/OLX.bg_146145106/0004_e399b566.webp",
+    "data/media/OLX.bg_146145106/0005_a6dd27d7.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_146145106/0000_4662fa8e.webp",
+    "OLX.bg_146145106/0001_3b7e64f3.webp",
+    "OLX.bg_146145106/0002_aee99985.webp",
+    "OLX.bg_146145106/0003_2d31398c.webp",
+    "OLX.bg_146145106/0004_e399b566.webp",
+    "OLX.bg_146145106/0005_a6dd27d7.webp"
+  ]
+}

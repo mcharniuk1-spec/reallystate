@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/sobstvenik-prodava-ednoetazhna-masivna-kascha-s-gradnitsa-oblast-gabrovo-CID368-ID9XBGv.html?search_reason=search%7Corganic",
+  "external_id": "147193240",
+  "title": "Собственик продава едноетажна масивна къща,с Градница,област Габрово",
+  "description": "Собственик продава масивна едноетажна къща със стоманено бетонна плоча и подпокривно пространство от две малки помещения и коридор.Къщата се състои от антре/остъклено/,кухна-трапезария,3 спални,баня и тоалетна по-отделно.В много добро състояние-нов покрив,нови мазилки,цокъл,обновена преди 4 години.Продава се обзаведена.СОТ във всяко помещение.В къщата не се живее.Парцелът е равен.Има селскостопанска постройка.Имотът се намира на главната улица на с Градница В.Левски,на 200 м от градинката и 700 м от завода Идеал Стандарт.Селото е благоустроено,с канализация и газификация,в подножието на Стара Планина,на 12 км от Севлиево и на 15 км от Априлци. За повече информация,моля ,обадете се или ми пишете.",
+  "price": 71400.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/hy350byhnskj1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/unfoba9ank6v1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/eft2a24oe8kk2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ajtfxxb5cxie-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/1lmqcp07vhtm3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/hy350byhnskj1-BG/image;s=1040x780"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:18:41.854929+00:00",
+  "reference_id": "OLX.bg:147193240",
+  "local_image_files": [
+    "data/media/OLX.bg_147193240/0000_c1d1800e.webp",
+    "data/media/OLX.bg_147193240/0001_17790241.webp",
+    "data/media/OLX.bg_147193240/0002_e37d3d7b.webp",
+    "data/media/OLX.bg_147193240/0003_a29a9b4a.webp",
+    "data/media/OLX.bg_147193240/0004_f6dd3646.webp",
+    "data/media/OLX.bg_147193240/0005_d3cd291b.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147193240/0000_c1d1800e.webp",
+    "OLX.bg_147193240/0001_17790241.webp",
+    "OLX.bg_147193240/0002_e37d3d7b.webp",
+    "OLX.bg_147193240/0003_a29a9b4a.webp",
+    "OLX.bg_147193240/0004_f6dd3646.webp",
+    "OLX.bg_147193240/0005_d3cd291b.webp"
+  ]
+}

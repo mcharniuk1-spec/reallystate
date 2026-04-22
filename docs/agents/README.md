@@ -13,6 +13,15 @@ This project uses **6 specialist agents** plus a lead agent. Each agent finds wo
 | **Bugbot review priorities** | `.cursor/BUGBOT.md` |
 | **Skills (acceptance contracts)** | `agent-skills/<name>/SKILL.md` |
 
+## Current execution wave (2026-04-09)
+
+Read **`docs/agents/TASKS.md`** § *Immediate execution priorities (2026-04-09 — operator lock-in)* for the full rules. Summary:
+
+1. **`scraper_1`**: `S1-15` then **`S1-18`** — do **not** stop until **≥100** listings per source across **≥5** tier-1/2 sources in **`canonical_listing`**, or **`BLOCKED`** with cause. Log batches in **`docs/exports/tier12-live-volume-report.md`**.
+2. **`backend_developer`**: **`BD-11`** first for live ingest/counting; **`BD-12`+** after **`S1-18` VERIFIED**.
+3. **`debugger`**: **`DBG-06`** / **`DBG-05`** after **`S1-18`** + live **`BD-11`** proof unless the operator waives.
+4. **`scraper_t3`**, **`scraper_sm`**, **`ux_ui_designer`**: no new large slices until **`S1-18`** is done unless unblocking tier-1/2 ingest.
+
 ## Operator GO command protocol
 
 Use one command per activation:
@@ -26,6 +35,12 @@ Use one command per activation:
 - `GO all`
 
 When `GO` is issued, each selected agent should run its current slice from `TASKS.md`, update JOURNEY, update TASKS status, and hand off for verification in the same execution window.
+
+Debugger handoff rule:
+
+- Every non-debugger agent run ends with a debugger handoff.
+- The producing agent must either mark the slice `DONE_AWAITING_VERIFY` or `BLOCKED`, append its JOURNEY entry, and then queue the corresponding debugger verification task.
+- Treat `debugger` as the default final step after every backend, scraper, and UX run unless the operator explicitly suspends verification.
 
 Non-stop execution rule:
 
@@ -90,6 +105,9 @@ Concrete dependency chains:
 │  4. Agent marks slice "DONE — awaiting verification"    │
 │     in TASKS.md                                         │
 ├─────────────────────────────────────────────────────────┤
+│  4b. Agent queues debugger follow-up for the run end    │
+│      (or documents why verification is deferred)        │
+├─────────────────────────────────────────────────────────┤
 │  5. Verifier agent (usually debugger) runs the          │
 │     acceptance gate commands                            │
 ├─────────────────────────────────────────────────────────┤
@@ -150,8 +168,9 @@ For **verification entries** (debugger or other verifier):
 3. **Backend_developer verifies scraper_1** on DB persistence correctness (does the ingested record round-trip cleanly?).
 4. **Scraper_1 verifies backend_developer** on API contract correctness (does the API return what connectors wrote?).
 5. **Debugger verifies everyone** on safety gates: no live network in tests, legal mode enforcement, consent checklist for social, no secrets in fixtures.
-6. **Blocked slices** must record the blocker in TASKS.md and the agent's JOURNEY.md. The blocker points to another agent's unfinished slice.
-7. **Bugbot priorities** (`.cursor/BUGBOT.md`) apply to all verification: legal gates, SQL injection, auth/RBAC, idempotency, privacy leaks, media in Postgres, live-network tests.
+6. **Each non-debugger run must produce a debugger follow-up**: either a completed verification pass or an explicit deferral reason in `docs/agents/debugger/JOURNEY.md`.
+7. **Blocked slices** must record the blocker in TASKS.md and the agent's JOURNEY.md. The blocker points to another agent's unfinished slice.
+8. **Bugbot priorities** (`.cursor/BUGBOT.md`) apply to all verification: legal gates, SQL injection, auth/RBAC, idempotency, privacy leaks, media in Postgres, live-network tests.
 
 ## Scraping stage ownership and runtime strategy
 
@@ -160,6 +179,12 @@ For **verification entries** (debugger or other verifier):
 - Owns all tier-1 and tier-2 web sources.
 - Runtime policy: HTTP/API parser first, Playwright only where JS rendering or anti-bot behavior blocks reliable extraction.
 - Must keep fixture-first tests and no live-network dependency in tests.
+- Website readiness rule:
+  - `Patterned` means the repo has a saved code path for discovery + detail parsing on that source and at least one saved sample item proves full detail capture with description, core commercial and location fields, at least two structured fields, and the full reachable gallery saved as local image files.
+  - If that proof is incomplete, use an explicit `without ...` status naming the missing capability, for example `without_full_gallery_capture`, `without_live_count_method`, or `without_sample_product_capture`.
+- Incremental runtime rule:
+  - scraper_1 should prefer a repeating incremental cycle over one-off dumps: append newly seen listings, refresh changed ones, and mark missing listings inactive.
+  - The default operator cadence for patterned tier-1/2 sources is every 15 minutes when automation is enabled.
 
 ### scraper_t3 (tier-3)
 
@@ -180,7 +205,7 @@ For **verification entries** (debugger or other verifier):
 
 Whenever TASKS/JOURNEY/docs change in a run, refresh dashboard outputs before closeout:
 
-- `make dashboard-doc`
+- `make dashboard-doc` → writes `docs/dashboard/index.html`, `docs/exports/progress-dashboard.json`, `docs/exports/parallel-execution-timeline.md`, `docs/exports/scraper-activity-snapshot.md`
 
 ## Web and architecture skill usage
 

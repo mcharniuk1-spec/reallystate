@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/tristaen-apartament-krasno-selo-CID368-ID9YK4t.html?search_reason=search%7Corganic",
+  "external_id": "147463805",
+  "title": "Тристаен апартамент - Красно село",
+  "description": "Агенция предлага тристаен апартамент под наем в кв. Красно село. Апартаментът се състои от антре, две спални, кухня с хол, баня с тоалетна и тераса. Намира се в район с удобен транспорт до всички точки на града, в близост до хранителни магазини, заведения, училища и други. Напълно обзаведен и оборудван.",
+  "price": 650.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/twyjy8ivr6gr3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4ocs8dvwm3s7-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/lby4doexp0jx-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/cdx4isgpsb8j-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/o3jbsgd788py2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/twyjy8ivr6gr3-BG/image;s=525x700"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:21:09.094013+00:00",
+  "reference_id": "OLX.bg:147463805",
+  "local_image_files": [
+    "data/media/OLX.bg_147463805/0000_cea47726.webp",
+    "data/media/OLX.bg_147463805/0001_06475932.webp",
+    "data/media/OLX.bg_147463805/0002_90af125c.webp",
+    "data/media/OLX.bg_147463805/0003_55ef365e.webp",
+    "data/media/OLX.bg_147463805/0004_ee37cc5b.webp",
+    "data/media/OLX.bg_147463805/0005_cea47726.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147463805/0000_cea47726.webp",
+    "OLX.bg_147463805/0001_06475932.webp",
+    "OLX.bg_147463805/0002_90af125c.webp",
+    "OLX.bg_147463805/0003_55ef365e.webp",
+    "OLX.bg_147463805/0004_ee37cc5b.webp",
+    "OLX.bg_147463805/0005_cea47726.webp"
+  ]
+}

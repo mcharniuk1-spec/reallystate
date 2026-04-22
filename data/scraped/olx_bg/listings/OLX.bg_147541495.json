@@ -1,0 +1,35 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/partsel-v-regulatsiya-v-s-gornova-mogila-obsch-gabrovo-CID368-ID9Z4hx.html?search_reason=search%7Corganic",
+  "external_id": "147541495",
+  "title": "Парцел в регулация в с. Горнова Могила, общ. Габрово",
+  "description": "Представяме ви за продажба урегулиран поземлен имот с площ 490 кв.м. в село Горнова Могила, общ. Габрово. Имотът граничи с асфалтов път, токът и водата са на уличната регулация. Парцелът е равнинен, но е изоставен и е обрасъл с храсти, има нужда от почистване. Селото е живописно, намира се в полите на Стара планина, в него цари тишината и спокойствието на природата. Ако искате да избягате от градския шум и да си имате своето място на село, само на 15 мин. от града, обадете ни се! Брокер : Павлина Бойновска 08********88",
+  "price": 10000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ab37zigz2znn2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ab37zigz2znn2-BG/image;s=1516x611"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:25:09.180739+00:00",
+  "reference_id": "OLX.bg:147541495",
+  "local_image_files": [
+    "data/media/OLX.bg_147541495/0000_d89e486d.webp",
+    "data/media/OLX.bg_147541495/0001_ba750d64.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147541495/0000_d89e486d.webp",
+    "OLX.bg_147541495/0001_ba750d64.webp"
+  ]
+}

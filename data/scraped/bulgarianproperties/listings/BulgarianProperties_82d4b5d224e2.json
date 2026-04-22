@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD87370BG_House_for_sale_near_Varna.html",
+  "external_id": "82d4b5d224e2",
+  "title": "Bulgarian Properties",
+  "description": "Two-storey house in Northeast Bulgaria",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/87370_4.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:40:57.139615+00:00",
+  "reference_id": "BulgarianProperties:82d4b5d224e2",
+  "local_image_files": [
+    "data/media/BulgarianProperties_82d4b5d224e2/0000_f2715c7d.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_82d4b5d224e2/0000_f2715c7d.jpg"
+  ]
+}

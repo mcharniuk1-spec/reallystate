@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-nov-v-zhk-trakiya-pod-naem-CID368-ID9YK8k.html?search_reason=search%7Corganic",
+  "external_id": "147464044",
+  "title": "Двустаен нов в ЖК Тракия под наем",
+  "description": "FOX ESTATES BULGARIA предлага напълно обзаведен и оборудван апартамент ново строителство в близост до кметството.Жилището има следното функционално разпределение:Просторен хол с трапезария и кухня, отделна спалня, баня, отделна тоалетна, разкошна тераса.Възможност за наемане на паркомясто.За контакт на тел:08******60",
+  "price": 400.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/m1uunwnvglcg1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/otegbgab22ce-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wvu1nzt8oak22-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/43i3h628ah7u3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gy1k0996meqp2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/m1uunwnvglcg1-BG/image;s=800x600"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:22:16.170453+00:00",
+  "reference_id": "OLX.bg:147464044",
+  "local_image_files": [
+    "data/media/OLX.bg_147464044/0000_0c4cc8e0.webp",
+    "data/media/OLX.bg_147464044/0001_3d61375c.webp",
+    "data/media/OLX.bg_147464044/0002_a3463c80.webp",
+    "data/media/OLX.bg_147464044/0003_b20627c2.webp",
+    "data/media/OLX.bg_147464044/0004_b6ae0742.webp",
+    "data/media/OLX.bg_147464044/0005_0c4cc8e0.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464044/0000_0c4cc8e0.webp",
+    "OLX.bg_147464044/0001_3d61375c.webp",
+    "OLX.bg_147464044/0002_a3463c80.webp",
+    "OLX.bg_147464044/0003_b20627c2.webp",
+    "OLX.bg_147464044/0004_b6ae0742.webp",
+    "OLX.bg_147464044/0005_0c4cc8e0.webp"
+  ]
+}

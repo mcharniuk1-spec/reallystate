@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168468",
+  "external_id": "56cf1e0ebb29",
+  "title": "Парцел в Петърч 725 кв.м. ID 168468  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://userimages.yavlena.com/2ee2ad76-44cd-4707-b52c-19a54269f8d5.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:56:05.472727+00:00",
+  "reference_id": "Yavlena:56cf1e0ebb29",
+  "local_image_files": [
+    "data/media/Yavlena_56cf1e0ebb29/0000_98e91605.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_56cf1e0ebb29/0000_98e91605.jpg"
+  ]
+}

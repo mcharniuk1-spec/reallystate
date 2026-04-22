@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/167316",
+  "external_id": "ea487582fec3",
+  "title": "Етаж от къща в София 156 кв.м. ID 167316  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://userimages.yavlena.com/9fdfbb41-fd1c-4577-a616-98fc2131a258.png"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:54:31.448074+00:00",
+  "reference_id": "Yavlena:ea487582fec3",
+  "local_image_files": [
+    "data/media/Yavlena_ea487582fec3/0000_3dacce24.png"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_ea487582fec3/0000_3dacce24.png"
+  ]
+}

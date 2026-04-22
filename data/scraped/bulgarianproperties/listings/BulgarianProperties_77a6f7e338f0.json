@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD89335BG_1-bedroom_apartment_for_sale_in_Sveti_Vlas.html",
+  "external_id": "77a6f7e338f0",
+  "title": "Bulgarian Properties",
+  "description": "Fully furnished apartment with southwest exposure in a quiet resort area",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89335_11.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:37:14.121382+00:00",
+  "reference_id": "BulgarianProperties:77a6f7e338f0",
+  "local_image_files": [
+    "data/media/BulgarianProperties_77a6f7e338f0/0000_1dcf537e.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_77a6f7e338f0/0000_1dcf537e.jpg"
+  ]
+}

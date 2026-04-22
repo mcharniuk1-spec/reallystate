@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/AD88518BG_2-bedroom_apartment_for_sale_in_Nessebar.html",
+  "external_id": "966e51cf31c3",
+  "title": "Bulgarian Properties",
+  "description": "Apartment in a new building with Act 16 in a popular seaside town",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88518_30.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:41:51.474008+00:00",
+  "reference_id": "BulgarianProperties:966e51cf31c3",
+  "local_image_files": [
+    "data/media/BulgarianProperties_966e51cf31c3/0000_ae95b7b3.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_966e51cf31c3/0000_ae95b7b3.jpg"
+  ]
+}

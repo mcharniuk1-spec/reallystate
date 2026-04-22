@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD88854BG_1-bedroom_apartment_for_rent_in_Sunny_Beach.html",
+  "external_id": "abc12e805de8",
+  "title": "Bulgarian Properties",
+  "description": "Apartment for rent in a well-maintained complex with controlled access",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88854_19.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:41:37.951498+00:00",
+  "reference_id": "BulgarianProperties:abc12e805de8",
+  "local_image_files": [
+    "data/media/BulgarianProperties_abc12e805de8/0000_2dc749d7.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_abc12e805de8/0000_2dc749d7.jpg"
+  ]
+}

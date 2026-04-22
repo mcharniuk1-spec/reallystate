@@ -1,0 +1,28 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-212m2-sofiya-zhk.-zona-b18/as1640280",
+  "external_id": "97e4839d1d20",
+  "title": "Тристаен, 212m² - Жк. Зона Б18, София - Апартамент за продажба - АЛДЕС НЕДВИЖИМИ ИМОТИ",
+  "description": "Модерна новострояща се сграда със съвременна визия, подземен и надземен паркинг, 13 жилищни етажа и срок на завършване първото тримесечие на 2028 г. Сградата е ...",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2025-07-24_2/115044241o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T10:05:30.571971+00:00",
+  "reference_id": "Homes.bg:97e4839d1d20",
+  "local_image_files": [],
+  "local_image_storage_keys": []
+}

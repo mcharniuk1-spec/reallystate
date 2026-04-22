@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168196",
+  "external_id": "12e618968061",
+  "title": "Четиристаен апартамент във Варна 203 кв.м. ID 168196  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/544ebc49-9974-42d4-a6f7-96c00d7e5630.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:15:20.545126+00:00",
+  "reference_id": "Yavlena:12e618968061",
+  "local_image_files": [
+    "data/media/Yavlena_12e618968061/0000_ac0d69f9.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_12e618968061/0000_ac0d69f9.jpg"
+  ]
+}

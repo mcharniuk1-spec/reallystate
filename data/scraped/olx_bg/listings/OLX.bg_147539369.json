@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-v-gr-varna-vazrazhdane-CID368-ID9Z3Jf.html?search_reason=search%7Corganic",
+  "external_id": "147539369",
+  "title": "Двустаен апартамент  в гр.Варна, Възраждане !",
+  "description": "Референтен номер: 2103724 Революшън Естейт представя двустаен апартамент в гр.Варна, Възраждане ! Отлична локация в непосредствена близост до търговски обекти, спирки и вскички необходими удобства . Информация за горепосочения имот, може да получите чрез формата на запитване или чрез директна връзка с нас на посочения телефон.",
+  "price": 400.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/eza85b4e17ws-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/w5vrkecioski3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/7vbvat2zs5ld1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gers5d4w5q8s2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/3txu1i38gpx-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/eza85b4e17ws-BG/image;s=2048x1536"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:22:31.591477+00:00",
+  "reference_id": "OLX.bg:147539369",
+  "local_image_files": [
+    "data/media/OLX.bg_147539369/0000_c40ec854.webp",
+    "data/media/OLX.bg_147539369/0001_519357df.webp",
+    "data/media/OLX.bg_147539369/0002_327909a4.webp",
+    "data/media/OLX.bg_147539369/0003_22f792e3.webp",
+    "data/media/OLX.bg_147539369/0004_6ddc40a2.webp",
+    "data/media/OLX.bg_147539369/0005_e2d49449.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539369/0000_c40ec854.webp",
+    "OLX.bg_147539369/0001_519357df.webp",
+    "OLX.bg_147539369/0002_327909a4.webp",
+    "OLX.bg_147539369/0003_22f792e3.webp",
+    "OLX.bg_147539369/0004_6ddc40a2.webp",
+    "OLX.bg_147539369/0005_e2d49449.webp"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/pomeschenie-pod-naem-CID368-ID9SyBP.html?search_reason=search%7Cpromoted",
+  "external_id": "145989777",
+  "title": "Помещение под наем",
+  "description": "Помещение под наем за офис, магазин ,салон или ателие , 15кв.м. самостолятелен WC възел и електромер. На главна улица в кв. Изток. 240 евро/месец",
+  "price": 240.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "office",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ylqsac5n7cee-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/l7delxwpkw8t3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bedr3iuy2y3j3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/83s472z2184a3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/m2tvbuy8gzs63-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ylqsac5n7cee-BG/image;s=1000x750"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:18:31.797133+00:00",
+  "reference_id": "OLX.bg:145989777",
+  "local_image_files": [
+    "data/media/OLX.bg_145989777/0000_80ccebdd.webp",
+    "data/media/OLX.bg_145989777/0001_7b8798e2.webp",
+    "data/media/OLX.bg_145989777/0002_eb873608.webp",
+    "data/media/OLX.bg_145989777/0003_85a9c607.webp",
+    "data/media/OLX.bg_145989777/0004_293fc503.webp",
+    "data/media/OLX.bg_145989777/0005_8dd61a1c.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_145989777/0000_80ccebdd.webp",
+    "OLX.bg_145989777/0001_7b8798e2.webp",
+    "OLX.bg_145989777/0002_eb873608.webp",
+    "OLX.bg_145989777/0003_85a9c607.webp",
+    "OLX.bg_145989777/0004_293fc503.webp",
+    "OLX.bg_145989777/0005_8dd61a1c.webp"
+  ]
+}

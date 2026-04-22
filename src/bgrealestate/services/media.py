@@ -17,6 +17,8 @@ import hashlib
 import logging
 import mimetypes
 import os
+import shlex
+import subprocess
 from io import BytesIO
 from pathlib import Path
 
@@ -61,6 +63,20 @@ def _guess_ext(content_type: str | None, url: str) -> str:
 
 def _sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
+
+
+def _download_with_curl(url: str) -> tuple[bytes, str | None]:
+    """Fallback downloader for environments where httpx DNS resolution is flaky."""
+    cmd = f"curl -L --fail --max-time 20 -sS {shlex.quote(url)}"
+    proc = subprocess.run(
+        ["/bin/zsh", "-lc", cmd],
+        capture_output=True,
+        check=False,
+    )
+    if proc.returncode != 0:
+        raise RuntimeError(proc.stderr.decode("utf-8", errors="ignore").strip() or f"curl exit {proc.returncode}")
+    content_type = mimetypes.guess_type(url.split("?")[0])[0]
+    return proc.stdout, content_type
 
 
 def ensure_media_root() -> Path:
@@ -128,22 +144,29 @@ def download_image(
         resp = http_client.get(url)
         resp.raise_for_status()
     except httpx.HTTPError as exc:
-        result.status = "failed"
-        result.error = f"HTTP error: {exc}"
-        logger.warning("Image download failed for %s: %s", url, exc)
-        return result
+        logger.warning("Image download failed for %s via httpx, trying curl fallback: %s", url, exc)
+        try:
+            data, guessed_content_type = _download_with_curl(url)
+            content_type = guessed_content_type or ""
+        except Exception as curl_exc:
+            result.status = "failed"
+            result.error = f"HTTP error: {exc}; curl fallback: {curl_exc}"
+            logger.warning("Image download failed for %s: %s", url, curl_exc)
+            return result
     finally:
         if own_client:
             http_client.close()
-
-    content_type = resp.headers.get("content-type", "")
-    ct_base = content_type.split(";")[0].strip().lower()
+    if "data" not in locals():
+        content_type = resp.headers.get("content-type", "")
+        data = resp.content
+    ct_base = content_type.split(";")[0].strip().lower() if content_type else ""
+    if not ct_base:
+        ct_base = mimetypes.guess_type(url.split("?")[0])[0] or "image/jpeg"
     if ct_base not in _ALLOWED_CONTENT_TYPES:
         result.status = "failed"
         result.error = f"Unsupported content type: {ct_base}"
         return result
 
-    data = resp.content
     if len(data) > _MAX_FILE_SIZE:
         result.status = "failed"
         result.error = f"File too large: {len(data)} bytes"

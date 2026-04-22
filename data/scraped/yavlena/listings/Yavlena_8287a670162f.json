@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168413",
+  "external_id": "8287a670162f",
+  "title": "Едностаен апартамент в София 44 кв.м. ID 168413  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/77d3b392-a878-4512-bd3c-d8deae69bade.png"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:13:05.408511+00:00",
+  "reference_id": "Yavlena:8287a670162f",
+  "local_image_files": [
+    "data/media/Yavlena_8287a670162f/0000_e5687841.png"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_8287a670162f/0000_e5687841.png"
+  ]
+}

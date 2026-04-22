@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168375",
+  "external_id": "9f067a93640c",
+  "title": "Двустаен апартамент в Бургас 59 кв.м. ID 168375  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/c7cbcfd8-4094-47be-a62f-783685fc82c2.JPG"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:13:25.597378+00:00",
+  "reference_id": "Yavlena:9f067a93640c",
+  "local_image_files": [
+    "data/media/Yavlena_9f067a93640c/0000_4955cb8a.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_9f067a93640c/0000_4955cb8a.jpg"
+  ]
+}

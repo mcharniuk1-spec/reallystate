@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/top-lokatsiya-dvustaen-apartament-1-minuta-yuzhen-plazh-gr-primorsko-CID368-ID9Yi7k.html?search_reason=search%7Cpromoted",
+  "external_id": "147356350",
+  "title": "Топ Локация Двустаен апартамент 1 минута Южен плаж гр. Приморско",
+  "description": "Затворен жилищен комплекс Poseidon Residence гр. Приморско Строителството стартира: МАРТ 2026 г. ТОП ЛОКАЦИЯ Само на 100 м от Южен плаж Приморско Отлична локация за целогодишно живеене, ваканционен имот или сигурна инвестиция Апартаменти: Едностайни, двустайни и тристайни апартаменти, проектирани с функционални разпределения Апартаменти със собствен двор, подходящи за семейства, домашни любимци и повече лично пространство За комплекса: Съвременна и елегантна архитектура Висок клас материали и качествено изпълнение Луксозни общи части | Модерен дизайн | Премиум материали Асансьор Видеонаблюдение 24/7 и контролиран достъп Банкомат (ATM) Паркиране: 100% осигурено паркиране Паркоместа - от 12000 евро Подземни и надземни паркоместа, както и самостоятелни гаражи Удобства в комплекса: Детска площадка Открит фитнес Озеленени площи и зони за отдих Кът за релакс и спокойствие Локация всичко на пешеходно разстояние: Южен плаж 100 м Търговска улица -100м Супермаркети - 100м Ресторанти и заведения - 100м Условия за покупка: Гъвкави схеми на плащане Без такса поддръжка 0% комисионна Poseidon Residence, гр. Приморско Разположен между ул. Съединение и ул. Сирена",
+  "price": 82000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kmv1zyonbi881-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2pbyc7jvep301-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/mkk7qdhcn65i2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/278sqdkfusrf3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wggu91a3fi4p3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kmv1zyonbi881-BG/image;s=1934x1088"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:26:12.084474+00:00",
+  "reference_id": "OLX.bg:147356350",
+  "local_image_files": [
+    "data/media/OLX.bg_147356350/0000_2007a7bf.webp",
+    "data/media/OLX.bg_147356350/0001_50681a31.webp",
+    "data/media/OLX.bg_147356350/0002_a5b7d527.webp",
+    "data/media/OLX.bg_147356350/0003_ef55ee76.webp",
+    "data/media/OLX.bg_147356350/0004_97b3a279.webp",
+    "data/media/OLX.bg_147356350/0005_5a09b361.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147356350/0000_2007a7bf.webp",
+    "OLX.bg_147356350/0001_50681a31.webp",
+    "OLX.bg_147356350/0002_a5b7d527.webp",
+    "OLX.bg_147356350/0003_ef55ee76.webp",
+    "OLX.bg_147356350/0004_97b3a279.webp",
+    "OLX.bg_147356350/0005_5a09b361.webp"
+  ]
+}

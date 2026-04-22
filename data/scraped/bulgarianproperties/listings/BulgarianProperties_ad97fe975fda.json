@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD89969BG_1-bedroom_apartment_for_sale_in_Primorsko.html",
+  "external_id": "ad97fe975fda",
+  "title": "Bulgarian Properties",
+  "description": "Modern property with green views in Primorsko, 450 m from the Beach",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89969_1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:35:26.898856+00:00",
+  "reference_id": "BulgarianProperties:ad97fe975fda",
+  "local_image_files": [
+    "data/media/BulgarianProperties_ad97fe975fda/0000_608f3db0.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_ad97fe975fda/0000_608f3db0.jpg"
+  ]
+}

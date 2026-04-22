@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168163",
+  "external_id": "8cd8e299c5dd",
+  "title": "Тристаен апартамент в Поморие 89 кв.м. ID 168163  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/2412e10f-5efc-4df1-8b67-4ba8daab0d83.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:15:52.437727+00:00",
+  "reference_id": "Yavlena:8cd8e299c5dd",
+  "local_image_files": [
+    "data/media/Yavlena_8cd8e299c5dd/0000_34f38cee.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_8cd8e299c5dd/0000_34f38cee.jpg"
+  ]
+}

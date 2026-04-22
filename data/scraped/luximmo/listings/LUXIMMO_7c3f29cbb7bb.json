@@ -1,0 +1,35 @@
+{
+  "source_name": "LUXIMMO",
+  "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/sofiya/luksozni-imoti-chetiristayni-apartamenti/luksozen-imot-43445-chetiristaen-apartament-za-prodajba-v-sofiya.html",
+  "external_id": "7c3f29cbb7bb",
+  "title": "Луксиммо",
+  "description": "ПОЛУЧЕН АКТ 16! В планински район с чист въздух, сред парк с многогодишна растителност и минерални извори, Gloria Palace Residence е eдинcтвeният пo рода cи жилищен комплекс в София, разполагащ със coбcтвeн SPA цeнтъp c минepaлнa вoдa. Комплексът е на територията на дипломатическия клуб Глория Палас, който е удобно разположен в началото на квартал Горна баня - един от елитните, бързо развиващи се райони в полите на Витоша. Четиристайният апартамент, който представяме за продажба, се намира на 2-ри етаж и има обща площ 207.43 квм Жилището",
+  "price": 745000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.luximmo.org/property-images/big_bg/1768284331T43445_19.jpg",
+    "https://static.luximmo.org/property-images/big_bg/1768284331T43445_19.jpg?v=1775734917"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:41:58.389663+00:00",
+  "reference_id": "LUXIMMO:7c3f29cbb7bb",
+  "local_image_files": [
+    "data/media/LUXIMMO_7c3f29cbb7bb/0000_1fb264c7.jpg",
+    "data/media/LUXIMMO_7c3f29cbb7bb/0001_1fb264c7.jpg"
+  ],
+  "local_image_storage_keys": [
+    "LUXIMMO_7c3f29cbb7bb/0000_1fb264c7.jpg",
+    "LUXIMMO_7c3f29cbb7bb/0001_1fb264c7.jpg"
+  ]
+}

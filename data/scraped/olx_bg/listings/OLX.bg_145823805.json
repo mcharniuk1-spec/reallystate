@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/imot-v-s-seltsi-oblast-plovdiv-ot-sobstvenik-CID368-ID9RRqR.html?search_reason=search%7Cpromoted",
+  "external_id": "145823805",
+  "title": "Имот в с. Селци, област Пловдив . От собственик.",
+  "description": "Продавам имот състоящ се от къща 60 кв.м. с двор 1800 кв.м. В двора има засадени 45 бр плодни дръвчета на възраст 3-4 год., 500кв.м. цветна градина и лозе. Двора е поддържан. Има сонда и изградена капкова система.Гараж с излаз на асфалтов път. Къщата се продава с обзавеждането. Нови електроуреди и мебели. Не се интересувам от агенции, моля не ми пишете.",
+  "price": 70000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kejsauqy3g63-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/x9ybc1x7j1dg3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gkr5marfrje91-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/hcj4hi2efoip-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/k5upq7iyxeqs1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/kejsauqy3g63-BG/image;s=2000x900"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:21:23.503617+00:00",
+  "reference_id": "OLX.bg:145823805",
+  "local_image_files": [
+    "data/media/OLX.bg_145823805/0000_8a692dcd.webp",
+    "data/media/OLX.bg_145823805/0001_b397756a.webp",
+    "data/media/OLX.bg_145823805/0002_454b2461.webp",
+    "data/media/OLX.bg_145823805/0003_fa0e4fa5.webp",
+    "data/media/OLX.bg_145823805/0004_d40175ed.webp",
+    "data/media/OLX.bg_145823805/0005_7bd6211f.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_145823805/0000_8a692dcd.webp",
+    "OLX.bg_145823805/0001_b397756a.webp",
+    "OLX.bg_145823805/0002_454b2461.webp",
+    "OLX.bg_145823805/0003_fa0e4fa5.webp",
+    "OLX.bg_145823805/0004_d40175ed.webp",
+    "OLX.bg_145823805/0005_7bd6211f.webp"
+  ]
+}

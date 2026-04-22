@@ -1,0 +1,41 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-v-gr-varna-m-st-pchelina-CID368-ID9Z3Ll.html?search_reason=search%7Corganic",
+  "external_id": "147539499",
+  "title": "Двустаен апартамент  в гр.Варна, м-ст Пчелина!",
+  "description": "Референтен номер: 2221376 Революшън Естейт представя двустаен апартамент в гр.Варна, м-ст Пчелина! Отлична локация в непосредствена близост до търговски обекти, спирки и вскички необходими удобства . Информация за горепосочения имот, може да получите чрез формата на запитване или чрез директна връзка с нас на посочения телефон.",
+  "price": 500.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/aicw6qb1wfu02-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/r61opadbuwfo2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/39vh1i1nintq3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/aicw6qb1wfu02-BG/image;s=750x1000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:26:02.675545+00:00",
+  "reference_id": "OLX.bg:147539499",
+  "local_image_files": [
+    "data/media/OLX.bg_147539499/0000_8a84d064.webp",
+    "data/media/OLX.bg_147539499/0001_3cc3a179.webp",
+    "data/media/OLX.bg_147539499/0002_112beda4.webp",
+    "data/media/OLX.bg_147539499/0003_794b9a65.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539499/0000_8a84d064.webp",
+    "OLX.bg_147539499/0001_3cc3a179.webp",
+    "OLX.bg_147539499/0002_112beda4.webp",
+    "OLX.bg_147539499/0003_794b9a65.webp"
+  ]
+}

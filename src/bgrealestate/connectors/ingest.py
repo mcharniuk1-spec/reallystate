@@ -81,24 +81,19 @@ def _sync_listing_media(
     return media_ids
 
 
-def ingest_listing_detail_html(
+def persist_listing_bundle(
     *,
     engine: Engine,
     source: SourceRegistryEntry,
-    url: str,
-    html: str,
-    discovered_at: datetime,
+    raw_capture: RawCapture,
+    parsed: ParsedListing,
+    canonical: CanonicalListing,
     status: str = "active",
     unify: bool = True,
     download_images: bool = False,
+    source_payload: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    pipeline = StandardIngestionPipeline(parser=GenericHtmlListingParser())
-    result = pipeline.process_listing_detail(source=source, url=url, html=html, captured_at=discovered_at)
-
-    raw_capture: RawCapture = result.raw_capture
-    parsed: ParsedListing = result.parsed_listing
-    canonical: CanonicalListing = result.canonical_listing
-
+    """Persist an already-parsed listing bundle into the canonical pipeline."""
     with session_scope(engine) as session:
         raw_repo = RawCaptureRepository(session)
         listing_repo = ListingRepository(session)
@@ -108,10 +103,11 @@ def ingest_listing_detail_html(
         source_listing_id = listing_repo.upsert_source_listing(
             source_name=source.source_name,
             external_id=parsed.external_id,
-            canonical_url=url,
+            canonical_url=canonical.listing_url,
             seen_at=raw_capture.fetched_at,
             status=status,
-            source_payload={"seed": parsed.raw_payload.get("seed", {})},
+            source_payload=source_payload or {},
+            source_reference=canonical.reference_id,
         )
         snapshot_id = listing_repo.insert_snapshot(
             source_listing_id=source_listing_id,
@@ -144,3 +140,33 @@ def ingest_listing_detail_html(
         "media_ids": media_ids,
     }
 
+
+def ingest_listing_detail_html(
+    *,
+    engine: Engine,
+    source: SourceRegistryEntry,
+    url: str,
+    html: str,
+    discovered_at: datetime,
+    status: str = "active",
+    unify: bool = True,
+    download_images: bool = False,
+) -> dict[str, Any]:
+    pipeline = StandardIngestionPipeline(parser=GenericHtmlListingParser())
+    result = pipeline.process_listing_detail(source=source, url=url, html=html, captured_at=discovered_at)
+
+    raw_capture: RawCapture = result.raw_capture
+    parsed: ParsedListing = result.parsed_listing
+    canonical: CanonicalListing = result.canonical_listing
+
+    return persist_listing_bundle(
+        engine=engine,
+        source=source,
+        raw_capture=raw_capture,
+        parsed=parsed,
+        canonical=canonical,
+        status=status,
+        unify=unify,
+        download_images=download_images,
+        source_payload={"seed": parsed.raw_payload.get("seed", {})},
+    )

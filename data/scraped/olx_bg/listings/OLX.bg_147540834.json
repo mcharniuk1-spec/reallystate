@@ -1,0 +1,38 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/parkomyasto-v-podzemen-garazh-v-k-s-venera-palas-k-k-slanchev-bryag-CID368-ID9Z46S.html?search_reason=search%7Corganic",
+  "external_id": "147540834",
+  "title": "Паркомясто в подземен гараж в к-с „Венера Палас“, к.к. Слънчев бряг",
+  "description": "Предлагаме просторно паркомясто в подземния гараж на к-с „Венера Палас“(Venera Palace), к.к. Слънчев бряг. Имотът е с площ 22 кв.м и се намира на ниво -1 етаж. Комплекс „Венера Палас“(Venera Palace) разполага с: денонощна охрана, видеонаблюдение, ограничен достъп, техническа поддръжка, поддръжка на общите части, озеленени площи, паркинг, басейн с шезлонги около него и др. Комплексът се намира на 730 м от морето. Около комплекса има добре изградена инфраструктура. Наблизо има: голям супермаркет, магазини, аптека, поликлиника, спирка на автобуса, ресторанти, заведения, бързи хранения, плаж, увеселителен парк и други развлечения. Разполагаме с много и разнообразни имоти по цялото Черноморие. За повече информация, свържете се с нас!",
+  "price": 25000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/br9pgemnbhuf-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/0frgsqz47xi83-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/br9pgemnbhuf-BG/image;s=858x613"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:21:11.961351+00:00",
+  "reference_id": "OLX.bg:147540834",
+  "local_image_files": [
+    "data/media/OLX.bg_147540834/0000_ceaa0999.webp",
+    "data/media/OLX.bg_147540834/0001_5a7a9b3f.webp",
+    "data/media/OLX.bg_147540834/0002_ceaa0999.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540834/0000_ceaa0999.webp",
+    "OLX.bg_147540834/0001_5a7a9b3f.webp",
+    "OLX.bg_147540834/0002_ceaa0999.webp"
+  ]
+}

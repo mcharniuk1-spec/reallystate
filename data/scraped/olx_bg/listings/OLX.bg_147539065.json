@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/biznes-imot-v-zh-k-lyulin-10-CID368-ID9Z3El.html?search_reason=search%7Corganic",
+  "external_id": "147539065",
+  "title": "Бизнес имот в ж.к. Люлин 10",
+  "description": "Революшън Естейт представя на Вашето внимание бизнес имот с ЧУДЕСНА локация в ж.к. Люлин 10. Локация: Намира се на много комуникативно място с директна видимост от бул. д-р Петър Дертлиев, близо до вход на Западен парк, бул. Сливница и ул. Орион, спирки на автобуси и тролеи, банки, магазини, училища, офиси. - Разпределение: първи вход към помещения със статут на цех за производство на хранителна продукция. Отделен вход за зареждане, офис, кухня, склад, помещение за персонал, миялно, отделни WC за персонал и клиенти, 2 търговски салона, мокър бюфет и др. - Площ: 250 кв.м. - Качествена дограма със стъклопакет с нискоемисионно стъкло, инсталации- ВиК, ел.инсталация, аспирация/вентилация, СОТ, интернет, озвучаване. - Имотът е 18 м лице с големи витрини към главен булевард. - Работило е като сладкарница, бистро, bar-diner и др. Подходящо е и за магазин или офис. - Възможност за свободно паркиране. Информация за горепосочения имот, може да получите чрез формата на запитване или чрез директна връзка с нас на телефона посочен в описанието, като ще Ви е необходим следният референтен номер: 2085807.",
+  "price": 430000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "office",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8q2cic095gdn3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2k6nc61ulgjp1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/b0m9lnatvigx2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/9lsbd2cbie1w3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/o4n7yzimticc3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8q2cic095gdn3-BG/image;s=3000x2000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:23:39.498251+00:00",
+  "reference_id": "OLX.bg:147539065",
+  "local_image_files": [
+    "data/media/OLX.bg_147539065/0000_cbdfe666.webp",
+    "data/media/OLX.bg_147539065/0001_440701e6.webp",
+    "data/media/OLX.bg_147539065/0002_fa25e91a.webp",
+    "data/media/OLX.bg_147539065/0003_e2516a9e.webp",
+    "data/media/OLX.bg_147539065/0004_f143c0ca.webp",
+    "data/media/OLX.bg_147539065/0005_af79f1ba.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539065/0000_cbdfe666.webp",
+    "OLX.bg_147539065/0001_440701e6.webp",
+    "OLX.bg_147539065/0002_fa25e91a.webp",
+    "OLX.bg_147539065/0003_e2516a9e.webp",
+    "OLX.bg_147539065/0004_f143c0ca.webp",
+    "OLX.bg_147539065/0005_af79f1ba.webp"
+  ]
+}

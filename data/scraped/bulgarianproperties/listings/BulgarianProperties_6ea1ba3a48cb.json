@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD88775BG_House_for_sale_in_Kosharitsa.html",
+  "external_id": "6ea1ba3a48cb",
+  "title": "Bulgarian Properties",
+  "description": "Eco houses in a picturesque, clean and safe area near Sunny Beach",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88775_13.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:38:11.121750+00:00",
+  "reference_id": "BulgarianProperties:6ea1ba3a48cb",
+  "local_image_files": [
+    "data/media/BulgarianProperties_6ea1ba3a48cb/0000_f2f551de.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_6ea1ba3a48cb/0000_f2f551de.jpg"
+  ]
+}

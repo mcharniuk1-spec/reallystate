@@ -21,6 +21,12 @@ Canonical skill files live under `agent-skills/<skill-name>/SKILL.md`.
 | `db-sync-and-seeding` | Sync `data/source_registry.json` into PostgreSQL |
 | `debugger-golden-path` | Migrate → sync → fixture ingest → stats → XLSX (optional DB) |
 | `skill-discovery` | Discover/create project skills and avoid duplication |
+| `browser-scrape-ops` | Browser tracing, JS pagination mapping, and Playwright recovery planning |
+| `hybrid-scrape-stack` | Layered scraper design from HTTP-first extraction through replay and managed fallback |
+| `image-media-pipeline` | Download, validate, analyze, and compress listing media safely |
+| `managed-scrape-platforms` | Evaluate Browserbase, Firecrawl, and Zyte as escalation layers |
+| `postgres-ops-psql` | Practical `psql` operations for exports, bulk loads, and ingest verification |
+| `universal-agent-scrape-setup` | Shared Codex/Claude scrape runtime, env, and agent-role setup |
 | `fullstack-coding` | End-to-end coding across scraper/backend/API/UI contracts |
 | `backend-data-engineering` | Data pipelines, persistence reliability, and reporting aggregates |
 | `ux-dashboard-design` | Operator dashboard UX for source health and stage progress |

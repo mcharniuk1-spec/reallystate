@@ -1,0 +1,42 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168366",
+  "external_id": "acbef70866cf",
+  "title": "Тристаен апартамент в София 124 кв.м. ID 168366  | Явлена",
+  "description": "Явлена продава апартамент 2Б в бутикова новострояща се жилищна сграда с висок клас изпълнение в кв. Надежда, гр. София. Предлагат се за продажба двустайни и тристайни апартаменти, както и складове, в отлична локация – на крачки от парк, в близост до училища, детски градини, градски транспорт и на 200–300 метра от метростанция, с бърз достъп до централните части на града. Сградата се реализира от доказан инвеститор с богат опит и множество успешно завършени проекти и ще разполага с подземни и надземни паркоместа и гаражи, които могат да бъдат закупени допълнително.",
+  "price": 0.0,
+  "currency": "EUR",
+  "area_sqm": 124.0,
+  "rooms": 3.0,
+  "floor": null,
+  "city": "София",
+  "district": "Надежда",
+  "address_text": "София, Надежда",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://userimages.yavlena.com/91751589-0d79-4cd8-9afa-121c2f1a2875.jpg"
+  ],
+  "phones": [
+    "+359 892 538 721",
+    "+359 888 109 040"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:13:31.094581+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
+  "reference_id": "Yavlena:acbef70866cf",
+  "listing_status": "active",
+  "published_text": "",
+  "local_image_files": [
+    "data/media/Yavlena_acbef70866cf/0000_3f8b072f.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_acbef70866cf/0000_3f8b072f.jpg"
+  ]
+}

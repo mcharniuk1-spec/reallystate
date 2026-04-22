@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/kascha-s-damyanovo-sevlievo-CID368-ID9UAX1.html?search_reason=search%7Corganic",
+  "external_id": "146475435",
+  "title": "Къща с. Дамяново, Севлиево",
+  "description": "Регент Хоумс предлага за продажба имот в село Дамяново, разположен в спокойна и зелена среда, подходящ за хора, търсещи простор, самостоятелност и автентична селска атмосфера. Имотът е разположен в голям двор с площ от 1857 кв.м, равен и удобен за ползване, като в него са изградени няколко постройки. Основната къща е двуетажна, гредоред, с по 74 кв.м на етаж, като разпределението включва четири стаи, механа, маза и един санитарен възел. Къщата предлага възможност за обособяване както на семеен дом, така и на имот за почивка или гости. Към основната сграда има лятна кухня с площ 49 кв.м, както и стопанска постройка и навес, които осигуряват допълнително пространство за съхранение, работилница или други нужди. Имотът разполага с отличен потенциал за развитие и адаптиране според нуждите на новите собственици, като съчетава голям двор, множество постройки и спокойна локация в близост до природата. За повече информация и огледи: Християн Халачев – 08********24",
+  "price": 28000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8n7d9jhyuepz-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/w7ixekfcbkz72-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gyk101vqlhev2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/m4cnabyq4ztf-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pbtima9jgdb9-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8n7d9jhyuepz-BG/image;s=1600x900"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:25:11.487878+00:00",
+  "reference_id": "OLX.bg:146475435",
+  "local_image_files": [
+    "data/media/OLX.bg_146475435/0000_e120c0a4.webp",
+    "data/media/OLX.bg_146475435/0001_0cd06298.webp",
+    "data/media/OLX.bg_146475435/0002_1dc87592.webp",
+    "data/media/OLX.bg_146475435/0003_95e91b8e.webp",
+    "data/media/OLX.bg_146475435/0004_11969e56.webp",
+    "data/media/OLX.bg_146475435/0005_ff23cbcc.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_146475435/0000_e120c0a4.webp",
+    "OLX.bg_146475435/0001_0cd06298.webp",
+    "OLX.bg_146475435/0002_1dc87592.webp",
+    "OLX.bg_146475435/0003_95e91b8e.webp",
+    "OLX.bg_146475435/0004_11969e56.webp",
+    "OLX.bg_146475435/0005_ff23cbcc.webp"
+  ]
+}

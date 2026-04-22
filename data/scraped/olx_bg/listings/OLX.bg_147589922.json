@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/tristaen-apartament-v-yuzhen-CID368-ID9ZgSC.html?search_reason=search%7Cpromoted",
+  "external_id": "147589922",
+  "title": "Тристаен апартамент  в Южен",
+  "description": "Агенция за недвижими имоти Семеен Компас предлага: Ексклузивно предложение! За продажба тристаен апартамент в новострояща се сграда с Акт 14. Разпределението на имота е изключително функционално и включва: Коридор Дневна с кухненска част Две спални Баня с WC Отделна тоалетна Склад Тераса Сградата впечатлява с модерна визия, високо качество на строителството, нисък процент общи части и просторни, практично проектирани жилища. Проектът се реализира от утвърден инвеститор с над 35 години опит и множество напълно завършени обекти на пазара. Възможност за закупуване на гаражи и паркоместа. За огледи и допълнителна информация се свържете на посочения телефонен номер!",
+  "price": 123000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8p0br1ghhrst1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/o6ao6e6zq0sb3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/h0c91kwv3i261-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ezs8iv0l21kk1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bl4qo13s7q5g-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8p0br1ghhrst1-BG/image;s=2000x1500"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:21:27.243432+00:00",
+  "reference_id": "OLX.bg:147589922",
+  "local_image_files": [
+    "data/media/OLX.bg_147589922/0000_52371763.webp",
+    "data/media/OLX.bg_147589922/0001_46c2a54d.webp",
+    "data/media/OLX.bg_147589922/0002_17a4a9d4.webp",
+    "data/media/OLX.bg_147589922/0003_6175b742.webp",
+    "data/media/OLX.bg_147589922/0004_81800c41.webp",
+    "data/media/OLX.bg_147589922/0005_8d057745.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147589922/0000_52371763.webp",
+    "OLX.bg_147589922/0001_46c2a54d.webp",
+    "OLX.bg_147589922/0002_17a4a9d4.webp",
+    "OLX.bg_147589922/0003_6175b742.webp",
+    "OLX.bg_147589922/0004_81800c41.webp",
+    "OLX.bg_147589922/0005_8d057745.webp"
+  ]
+}

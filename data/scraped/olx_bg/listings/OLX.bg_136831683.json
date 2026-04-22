@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/luksozen-tristaen-apartament-v-gratski-kvartal-CID368-ID9g8aD.html?search_reason=search%7Cpromoted",
+  "external_id": "136831683",
+  "title": "Луксозен тристаен апартамент в Гръцки квартал",
+  "description": "Агенция за недвижими имоти Революшън Естейт има удоволствието да Ви представи ТРИСТАЕН апартамент в район Гръцка махала. - в близост до Морската градина - ситуиран е на 4-ти жилищен етаж - с площ 120кв.м. - разпределение: входно антре, хол с кухненски бокс, две спални, баня с тоалетна, голяма тераса. Жилището се предлага обзаведено.",
+  "price": 700.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nhydbq7c6zsc2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/mzge90x4ij1p2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8t8mss4cf00r3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/2q9287o7l5s81-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nlrova03hftc2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nhydbq7c6zsc2-BG/image;s=822x455"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:24:49.547237+00:00",
+  "reference_id": "OLX.bg:136831683",
+  "local_image_files": [
+    "data/media/OLX.bg_136831683/0000_464f32cd.webp",
+    "data/media/OLX.bg_136831683/0001_54b2af3c.webp",
+    "data/media/OLX.bg_136831683/0002_b4d913a3.webp",
+    "data/media/OLX.bg_136831683/0003_f7e33126.webp",
+    "data/media/OLX.bg_136831683/0004_cc5fc40a.webp",
+    "data/media/OLX.bg_136831683/0005_464f32cd.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_136831683/0000_464f32cd.webp",
+    "OLX.bg_136831683/0001_54b2af3c.webp",
+    "OLX.bg_136831683/0002_b4d913a3.webp",
+    "OLX.bg_136831683/0003_f7e33126.webp",
+    "OLX.bg_136831683/0004_cc5fc40a.webp",
+    "OLX.bg_136831683/0005_464f32cd.webp"
+  ]
+}

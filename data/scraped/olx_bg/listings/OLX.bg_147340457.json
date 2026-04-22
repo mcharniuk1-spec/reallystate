@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/luksozno-obzaveden-3staen-geo-milev-CID368-ID9YdYZ.html?search_reason=search%7Corganic",
+  "external_id": "147340457",
+  "title": "Луксозно обзаведен 3стаен Гео Милев",
+  "description": "Отдавам чудесен 3стаен напълно обзаведен в кв.Гео Милев на ул.Голаш, сграда 2023г., ет.2 от 6, обзаведен напълно с нови мебели, вградена кухня с всички необходими електро уреди включително и судомиялна машина, жилището е с 1 преходна спалня от хола и 1 самостоятелна голяма родителска спалня, отоплението е централен ТЕЦ, допълнително разполага с климатици, свободен за ползване без домашни любимци Георгиева с ключ 08********22, сл.02 980-05-12",
+  "price": 650.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/e2n23ofaie0v-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/rsf4wkut8i363-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6rj284scold23-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/btae5510fop33-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/er0gyjq0vohp1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/e2n23ofaie0v-BG/image;s=2252x4000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:24:29.668545+00:00",
+  "reference_id": "OLX.bg:147340457",
+  "local_image_files": [
+    "data/media/OLX.bg_147340457/0000_8313a76d.webp",
+    "data/media/OLX.bg_147340457/0001_2391b556.webp",
+    "data/media/OLX.bg_147340457/0002_c5868d5a.webp",
+    "data/media/OLX.bg_147340457/0003_60747d7a.webp",
+    "data/media/OLX.bg_147340457/0004_dda23dfe.webp",
+    "data/media/OLX.bg_147340457/0005_864b3726.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147340457/0000_8313a76d.webp",
+    "OLX.bg_147340457/0001_2391b556.webp",
+    "OLX.bg_147340457/0002_c5868d5a.webp",
+    "OLX.bg_147340457/0003_60747d7a.webp",
+    "OLX.bg_147340457/0004_dda23dfe.webp",
+    "OLX.bg_147340457/0005_864b3726.webp"
+  ]
+}

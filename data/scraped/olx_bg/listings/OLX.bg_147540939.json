@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-nadezhda-2-na-treti-etazh-ot-chetiri-CID368-ID9Z48z.html?search_reason=search%7Corganic",
+  "external_id": "147540939",
+  "title": "Двустаен апартамент Надежда 2 на трети етаж от четири",
+  "description": "Двустаен апартамент Надежда 2 на трети етаж от четири, състоящ се от две стаи, кухня и обслужващи помещения, със застроена площ от 60 кв.м., заедно с избено помещение. Апартаментът е вътрешен и топъл. Отоплението е с ТЕЦ. Намира се на комуникативно място в близост до спирки, магазини, детски градини и училища. Изложение: изток запад. Настилките са паркет и мозайка, нова ПВЦ дограма. Просторни околоблокови пространства. Поддържан обезопасен вход. Това е първият обновен блок по Национална програма за енергийна ефективност на многофамилни жилищни сгради в район Надежда . В рамките на Обществена поръчка с предмет: Въвеждане на мерки за енергийна ефективност и подобряване на експлоатационните характеристики с цел удължаване на жизнения цикъл на многофамилна жилищна сграда са реализирани следните основни дейности: укрепване на основите на сградата, топлинно изолиране на външни страни, полагане на цветна мозаечна екстериорна мазилка на външни стени, подмяна и монтаж на съществуваща стара дограма и остъклени тераси по етажи и сутерен, топлинно изолиране на покрив, топлинно изолиране на под, ремонт на разпределителна тръбна мрежа, укрепване на съществуващ парапет в стълбищната клетка, подмяна на осветление в общи части, мълниезащитна инсталация, прилагане на мерки за Пожарна безопасност, и други. Само за частни лица.",
+  "price": 129000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/x0ff0xjw2yvb1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/9r2p4fwur23g-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/r8ss7yagv5qp-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/aqe47xwsnqdg-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/3q4zpiwxe5fh3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/x0ff0xjw2yvb1-BG/image;s=836x702"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:20:31.135815+00:00",
+  "reference_id": "OLX.bg:147540939",
+  "local_image_files": [
+    "data/media/OLX.bg_147540939/0000_0e5b892b.webp",
+    "data/media/OLX.bg_147540939/0001_893f00bd.webp",
+    "data/media/OLX.bg_147540939/0002_6cb53fd5.webp",
+    "data/media/OLX.bg_147540939/0003_6919f326.webp",
+    "data/media/OLX.bg_147540939/0004_03312940.webp",
+    "data/media/OLX.bg_147540939/0005_78611c54.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540939/0000_0e5b892b.webp",
+    "OLX.bg_147540939/0001_893f00bd.webp",
+    "OLX.bg_147540939/0002_6cb53fd5.webp",
+    "OLX.bg_147540939/0003_6919f326.webp",
+    "OLX.bg_147540939/0004_03312940.webp",
+    "OLX.bg_147540939/0005_78611c54.webp"
+  ]
+}

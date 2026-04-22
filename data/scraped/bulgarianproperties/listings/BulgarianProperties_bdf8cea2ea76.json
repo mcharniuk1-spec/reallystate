@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Large_apartments_in_Bulgaria/AD77032BG_Large_apartment_for_sale_in_Varna.html",
+  "external_id": "bdf8cea2ea76",
+  "title": "Bulgarian Properties",
+  "description": "Accommodation in a well-maintained building in a communicative place next to everyday amenities ",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/77032_1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:41:57.465101+00:00",
+  "reference_id": "BulgarianProperties:bdf8cea2ea76",
+  "local_image_files": [
+    "data/media/BulgarianProperties_bdf8cea2ea76/0000_83dba731.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_bdf8cea2ea76/0000_83dba731.jpg"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-50794000/prodawa-3-staen-gr-targowishte-tsentar",
+  "external_id": "50794000",
+  "title": "Bazar.BG",
+  "description": "Тристаен апартамент! Апартаменти за инвестиция! ул.  Камчия  12-16, Широк център! ОТ СТРОИТЕЛЯ! ДИРЕКТНО ОТ СТРОИТЕЛЯ! БЕЗ КОМИСИОНА ОТ КУПУВАЧА!  ПЛАЩАНЕ НА ВН",
+  "price": 103000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://cdn3.focus.bg/imot/photosimotbg/1/430/big1/1c174271201172430_HS.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/430/big1/1c174271201172430_9o.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/430/big1/1c174271201172430_Cr.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/430/big1/1c174271201172430_VS.jpg",
+    "//cdn3.focus.bg/imot/photosimotbg/1/430/big1/1c174271201172430_HS.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:54:09.720671+00:00",
+  "reference_id": "Bazar.bg:50794000",
+  "local_image_files": [
+    "data/media/Bazar.bg_50794000/0000_e1f82542.jpg",
+    "data/media/Bazar.bg_50794000/0001_ed3d0aa8.jpg",
+    "data/media/Bazar.bg_50794000/0002_fe1a06f2.jpg",
+    "data/media/Bazar.bg_50794000/0003_06797084.jpg",
+    "data/media/Bazar.bg_50794000/0004_e1f82542.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_50794000/0000_e1f82542.jpg",
+    "Bazar.bg_50794000/0001_ed3d0aa8.jpg",
+    "Bazar.bg_50794000/0002_fe1a06f2.jpg",
+    "Bazar.bg_50794000/0003_06797084.jpg",
+    "Bazar.bg_50794000/0004_e1f82542.jpg"
+  ]
+}

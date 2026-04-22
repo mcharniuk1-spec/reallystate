@@ -1,0 +1,47 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53963379/dawa-pod-naem-1-staen-gr-sofiia-studentski-grad",
+  "external_id": "53963379",
+  "title": "Bazar.BG",
+  "description": "Нова оферта - 2912! Агенция за недвижими имоти Имоушън Пропърти Ви предлага луксозен едностаен апартамент в кв. Студентски град. Апартамента е разположен на ета",
+  "price": 470.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic1.focus.bg/imot/photosimotbg/2/449/big1/2b177436650395449_ji.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/2/449/big1/2b177436650395449_Mc.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/2/449/big1/2b177436650395449_zR.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/2/449/big1/2b177436650395449_zh.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/2/449/big1/2b177436650395449_2Y.jpg",
+    "//imotstatic1.focus.bg/imot/photosimotbg/2/449/big1/2b177436650395449_ji.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:49:01.235137+00:00",
+  "reference_id": "Bazar.bg:53963379",
+  "local_image_files": [
+    "data/media/Bazar.bg_53963379/0000_b6dbfeb6.jpg",
+    "data/media/Bazar.bg_53963379/0001_dddcbb38.jpg",
+    "data/media/Bazar.bg_53963379/0002_e56d7f90.jpg",
+    "data/media/Bazar.bg_53963379/0003_b2ed1db0.jpg",
+    "data/media/Bazar.bg_53963379/0004_7e6ebdf2.jpg",
+    "data/media/Bazar.bg_53963379/0005_b6dbfeb6.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53963379/0000_b6dbfeb6.jpg",
+    "Bazar.bg_53963379/0001_dddcbb38.jpg",
+    "Bazar.bg_53963379/0002_e56d7f90.jpg",
+    "Bazar.bg_53963379/0003_b2ed1db0.jpg",
+    "Bazar.bg_53963379/0004_7e6ebdf2.jpg",
+    "Bazar.bg_53963379/0005_b6dbfeb6.jpg"
+  ]
+}

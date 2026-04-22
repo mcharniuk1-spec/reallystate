@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Apartments_(various_types)_in_Bulgaria/AD89413BG_Apartments_(various_types)_for_sale_in_Aheloy.html",
+  "external_id": "625f7a1582d4",
+  "title": "Bulgarian Properties",
+  "description": "Boutique building with no maintenance fee, Act 15 stage",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89413_21.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:36:43.053242+00:00",
+  "reference_id": "BulgarianProperties:625f7a1582d4",
+  "local_image_files": [
+    "data/media/BulgarianProperties_625f7a1582d4/0000_80d32d35.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_625f7a1582d4/0000_80d32d35.jpg"
+  ]
+}

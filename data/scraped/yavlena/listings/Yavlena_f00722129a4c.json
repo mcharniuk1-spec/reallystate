@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168062",
+  "external_id": "f00722129a4c",
+  "title": "Гараж/Паркомясто в Трявна 195 кв.м. ID 168062  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://userimages.yavlena.com/33a87e43-2060-4c95-b240-2145965ed8ae.png"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:17:09.041041+00:00",
+  "reference_id": "Yavlena:f00722129a4c",
+  "local_image_files": [
+    "data/media/Yavlena_f00722129a4c/0000_cfad3db6.png"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_f00722129a4c/0000_cfad3db6.png"
+  ]
+}

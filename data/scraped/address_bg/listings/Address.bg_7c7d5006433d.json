@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/varna-m-st-sveti-nikola-kashta-vila-offer663784",
+  "external_id": "7c7d5006433d",
+  "title": "Къща/Вила във Варна, м-ст Свети Никола - код на имота: 663784",
+  "description": "Адрес недвижими имоти предлага Къща/Вила във Варна, м-ст Свети Никола с код на имота: 663784. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/784/663784/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:20:43.534181+00:00",
+  "reference_id": "Address.bg:7c7d5006433d",
+  "local_image_files": [
+    "data/media/Address.bg_7c7d5006433d/0000_43e8a055.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_7c7d5006433d/0000_43e8a055.jpg"
+  ]
+}

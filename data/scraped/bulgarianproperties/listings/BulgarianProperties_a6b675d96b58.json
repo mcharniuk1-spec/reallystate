@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/AD89169BG_2-bedroom_apartment_for_sale_in_Plovdiv.html",
+  "external_id": "a6b675d96b58",
+  "title": "Bulgarian Properties",
+  "description": "New-build property near the Rowing Canal with strong investment potential",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89169_1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:37:52.222842+00:00",
+  "reference_id": "BulgarianProperties:a6b675d96b58",
+  "local_image_files": [
+    "data/media/BulgarianProperties_a6b675d96b58/0000_39fa4a45.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_a6b675d96b58/0000_39fa4a45.jpg"
+  ]
+}

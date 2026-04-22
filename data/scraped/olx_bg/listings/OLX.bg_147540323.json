@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/kascha-v-peruschitsa-85256-CID368-ID9Z3YD.html?search_reason=search%7Corganic",
+  "external_id": "147540323",
+  "title": "Къща в Перущица! 85256",
+  "description": "Компания `Х` представя на Вашето внимание къща в град Перущица. МЕСТОПОЛОЖЕНИЕ: На комуникативно място в прекрасният български град, запазил традициите и родолюбието си до днес- Перущица! РАЗПРЕДЕЛЕНИЕ: Къщата разполага с площ от 90кв.м., разпределени в два етажа и двор 500кв.м. с местенце за събиране- беседка и барбекю. Разпределението на етажите е следното: Първи етаж: кухня, трапезария, хол. Втори етаж: две спални, баня и тоалетна Подходяща е и за бизнес с отдаване за нощувки, тъй като прилива на туристи в града е голям. СЪСТОЯНИЕ: Напълно обзаведена и готова за ползване. С много потенциал за бъдещи реновации по желание на новите собственици Заповядайте да Ви го покажем. Използвайки нашите услуги Вие ще превърнете закупуването на новия си дом в едно приятно изживяване, ще получите персонален консултант, съдействие при кандидатстване за кредит от всички банки в България, интериорни дизайнери и екип, който да се погрижи за нужните документи по Вашата сделка. На Ваше разположение сме всеки ден, от понеделник до неделя от 09:00 до 20:00ч. Възползвайте се от безплатна консултация в наш офис, където ще ви спестим време и ще ви запознаем с всички актуални имоти в България, отговарящи на Вашето търсене. Свържете се с нас на 08*********90 или на 08*********90 и цитирайте кода към имота: 85256",
+  "price": 145000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pz4orthyxp6q3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/fkr6yakalh8b2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6cvy2pm78ryn1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gzscow25mcto-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/j20pia7fevea2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pz4orthyxp6q3-BG/image;s=1600x902"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:23:58.704763+00:00",
+  "reference_id": "OLX.bg:147540323",
+  "local_image_files": [
+    "data/media/OLX.bg_147540323/0000_36102bf2.webp",
+    "data/media/OLX.bg_147540323/0001_b2b6b345.webp",
+    "data/media/OLX.bg_147540323/0002_083e21fa.webp",
+    "data/media/OLX.bg_147540323/0003_2686fdc5.webp",
+    "data/media/OLX.bg_147540323/0004_394aa5d0.webp",
+    "data/media/OLX.bg_147540323/0005_dbe6f3f5.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540323/0000_36102bf2.webp",
+    "OLX.bg_147540323/0001_b2b6b345.webp",
+    "OLX.bg_147540323/0002_083e21fa.webp",
+    "OLX.bg_147540323/0003_2686fdc5.webp",
+    "OLX.bg_147540323/0004_394aa5d0.webp",
+    "OLX.bg_147540323/0005_dbe6f3f5.webp"
+  ]
+}

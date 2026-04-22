@@ -1,0 +1,44 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/parkomyasto-pod-naem-gr-sofiya-tsentar-ul-struma-2-CID368-ID9YdJ1.html?search_reason=search%7Corganic",
+  "external_id": "147339467",
+  "title": "Паркомясто под наем - гр.София, Център, ул.Струма 2",
+  "description": "Давам под наем паркомясто в закрит гараж на ул. Струма 2 (пряка на бул. княгиня Мария Луиза). В близост са Централни Хали, ЦУМ, НАГ, НЕК, БЕХ, МОСВ, Министерство на енергетиката, Дирекция Миграция и др. Гаража е след основен ремонт и е с ново осветление, видео наблюдение, автоматична ролетна врата с дистанционно. Отдава се за месечен абонамент - 24 часа. 08******32 или 08******57",
+  "price": 180.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/b98lmleieiyo-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qo6nn6b5j1d33-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ai19h3x5st9t2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/lc3316j4lnm5-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/b98lmleieiyo-BG/image;s=2108x1580"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:20:20.523305+00:00",
+  "reference_id": "OLX.bg:147339467",
+  "local_image_files": [
+    "data/media/OLX.bg_147339467/0000_fe32cdef.webp",
+    "data/media/OLX.bg_147339467/0001_56530764.webp",
+    "data/media/OLX.bg_147339467/0002_9c08ed6b.webp",
+    "data/media/OLX.bg_147339467/0003_e1bb5dd1.webp",
+    "data/media/OLX.bg_147339467/0004_61471008.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147339467/0000_fe32cdef.webp",
+    "OLX.bg_147339467/0001_56530764.webp",
+    "OLX.bg_147339467/0002_9c08ed6b.webp",
+    "OLX.bg_147339467/0003_e1bb5dd1.webp",
+    "OLX.bg_147339467/0004_61471008.webp"
+  ]
+}

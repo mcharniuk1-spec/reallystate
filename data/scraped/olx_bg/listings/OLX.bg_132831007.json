@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/prostoren-dvustaen-apartament-v-zhk-briz-CID368-ID8ZlpB.html?search_reason=search%7Cpromoted",
+  "external_id": "132831007",
+  "title": "Просторен двустаен апартамент в жк. Бриз",
+  "description": "Агенция за недвижими имоти Революшън Естейт има удоволствието да Ви представи двустаен апартамент на перекрасна локация в жк. Бриз. Намира се в непосредствена близост до множество големи и малки търговски обекти, заведения за хранене и развлечение,училища, детски градина, зони за отдих и спорт, спирки на градски транспорт. Ситуиран е на 2-ри жилищен етаж с площ 70 кв.м. разгърната в следното практично разпределение: входно антре, хол с кухненски бокс, спалня, баня с тоалетна, тераса. Жилището се предлага напълно обзаведено с всичко необходимо за едно домакинство. Информация за горепосочения имот, може да получите чрез формата на запитване или чрез директна връзка с нас на телефонът посочен в описанието, като ще Ви е необходим следният референтен номер: 141058.",
+  "price": 350.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pjctv6dmco0d2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/m88ks7u7xk4j3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/7srg0c3cks4n1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/jl0ezm8zjww52-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/goprnloe1i1f3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pjctv6dmco0d2-BG/image;s=791x587"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:22:43.788945+00:00",
+  "reference_id": "OLX.bg:132831007",
+  "local_image_files": [
+    "data/media/OLX.bg_132831007/0000_46802499.webp",
+    "data/media/OLX.bg_132831007/0001_4ee3edcc.webp",
+    "data/media/OLX.bg_132831007/0002_9640866a.webp",
+    "data/media/OLX.bg_132831007/0003_9683bc29.webp",
+    "data/media/OLX.bg_132831007/0004_cbdbad3a.webp",
+    "data/media/OLX.bg_132831007/0005_46802499.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_132831007/0000_46802499.webp",
+    "OLX.bg_132831007/0001_4ee3edcc.webp",
+    "OLX.bg_132831007/0002_9640866a.webp",
+    "OLX.bg_132831007/0003_9683bc29.webp",
+    "OLX.bg_132831007/0004_cbdbad3a.webp",
+    "OLX.bg_132831007/0005_46802499.webp"
+  ]
+}

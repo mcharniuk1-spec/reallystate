@@ -1,0 +1,53 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53886330/prodawa-2-staen-gr-sofiia-owcha-kupel-1",
+  "external_id": "53886330",
+  "title": "Bazar.BG",
+  "description": "Представяме ви новообзаведен, слънчев апартамент, разположен в един от предпочитаните и бързо развиващи се квартали на Овча купел 1.Жилището впечатлява със своя",
+  "price": 198000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/619/big1/1b177383414812619_eg.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/619/big1/1b177383414812619_UP.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/619/big1/1b177383414812619_DZ.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/619/big1/1b177383414812619_bW.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/619/big1/1b177383414812619_fV.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/619/big1/1b177383414812619_tD.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/619/big1/1b177383414812619_CR.jpg",
+    "//imotstatic2.focus.bg/imot/photosimotbg/1/619/big1/1b177383414812619_eg.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:44:53.561417+00:00",
+  "reference_id": "Bazar.bg:53886330",
+  "local_image_files": [
+    "data/media/Bazar.bg_53886330/0000_f5494217.jpg",
+    "data/media/Bazar.bg_53886330/0001_b129a138.jpg",
+    "data/media/Bazar.bg_53886330/0002_11c731e0.jpg",
+    "data/media/Bazar.bg_53886330/0003_8c531889.jpg",
+    "data/media/Bazar.bg_53886330/0004_e69aa84b.jpg",
+    "data/media/Bazar.bg_53886330/0005_d413d032.jpg",
+    "data/media/Bazar.bg_53886330/0006_6c1ba7ee.jpg",
+    "data/media/Bazar.bg_53886330/0007_f5494217.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53886330/0000_f5494217.jpg",
+    "Bazar.bg_53886330/0001_b129a138.jpg",
+    "Bazar.bg_53886330/0002_11c731e0.jpg",
+    "Bazar.bg_53886330/0003_8c531889.jpg",
+    "Bazar.bg_53886330/0004_e69aa84b.jpg",
+    "Bazar.bg_53886330/0005_d413d032.jpg",
+    "Bazar.bg_53886330/0006_6c1ba7ee.jpg",
+    "Bazar.bg_53886330/0007_f5494217.jpg"
+  ]
+}

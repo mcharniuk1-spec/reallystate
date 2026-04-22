@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/AD88029BG_2-bedroom_apartment_for_sale_in_Varna.html",
+  "external_id": "a7cd3ebe54db",
+  "title": "Bulgarian Properties",
+  "description": "Two-level property on the first line of the sea, next to Asparuhovo Park",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88029_3.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:38:18.526565+00:00",
+  "reference_id": "BulgarianProperties:a7cd3ebe54db",
+  "local_image_files": [
+    "data/media/BulgarianProperties_a7cd3ebe54db/0000_78d921e3.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_a7cd3ebe54db/0000_78d921e3.jpg"
+  ]
+}

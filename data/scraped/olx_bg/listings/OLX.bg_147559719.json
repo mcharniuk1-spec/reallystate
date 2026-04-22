@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/sobstvenik-prodava-3-st-apartament-CID368-ID9Z91t.html?search_reason=search%7Cpromoted",
+  "external_id": "147559719",
+  "title": "Собственик продава 3-ст. апартамент",
+  "description": "Продавам собствен апартамент в жк Дружба 1. С две, спални, хол, кухня, две усвоени тераси към кунхнята и хола. Изложение север/юг. Отопление на ТЕЦ. Свободно паркиране около блока. Моля, без посредници.",
+  "price": 175000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/14bz9gx25ano2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/yeor6yg6pzo63-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ma70uwzr0amb2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/peg9vj0at2fc1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/tfj7v6j6xclf-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/14bz9gx25ano2-BG/image;s=4920x2772"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:20:47.068919+00:00",
+  "reference_id": "OLX.bg:147559719",
+  "local_image_files": [
+    "data/media/OLX.bg_147559719/0000_73fe517e.webp",
+    "data/media/OLX.bg_147559719/0001_f20eed1e.webp",
+    "data/media/OLX.bg_147559719/0002_88106c04.webp",
+    "data/media/OLX.bg_147559719/0003_a6797b51.webp",
+    "data/media/OLX.bg_147559719/0004_f8faf0da.webp",
+    "data/media/OLX.bg_147559719/0005_e005c196.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147559719/0000_73fe517e.webp",
+    "OLX.bg_147559719/0001_f20eed1e.webp",
+    "OLX.bg_147559719/0002_88106c04.webp",
+    "OLX.bg_147559719/0003_a6797b51.webp",
+    "OLX.bg_147559719/0004_f8faf0da.webp",
+    "OLX.bg_147559719/0005_e005c196.webp"
+  ]
+}

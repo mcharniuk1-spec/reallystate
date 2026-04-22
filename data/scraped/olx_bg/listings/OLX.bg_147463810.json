@@ -1,0 +1,44 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-apartament-v-ostromila-promo-tsena-CID368-ID9YK4y.html?search_reason=search%7Corganic",
+  "external_id": "147463810",
+  "title": "Двустаен апартамент в Остромила- Промо цена",
+  "description": "Агенция за недвижими имоти Семеен Компас предлага: - Двустаен апартамент в модерна сграда в строеж, разположен в предпочитания квартал Остромила! - Имотът е част от нов жилищен проект, изпълнен с внимание към детайла и съвременни технологии в строителството. - Апартаментът е функционално разпределен и предлага отлична възможност както за живеене, така и за инвестиция. - Възползвайте се от ПРОМОЦИОНАЛНА цена от едва 1126 €/кв.м! - Спокойна и бързо развиваща се локация с удобен достъп до града. - Районът предлага тишина, зелени площи и комфортна жилищна среда. - Лесен достъп до основни пътни артерии. За огледи и допълнителна информация се свържете на посочения телефонен номер!",
+  "price": 68911.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/124r43yikr7k-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/s449z5a3x04x1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/benpf9rh8z723-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/m2hg9b38hsst-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/124r43yikr7k-BG/image;s=1900x900"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:23:18.329878+00:00",
+  "reference_id": "OLX.bg:147463810",
+  "local_image_files": [
+    "data/media/OLX.bg_147463810/0000_b4739944.webp",
+    "data/media/OLX.bg_147463810/0001_6bf1568d.webp",
+    "data/media/OLX.bg_147463810/0002_d1da576e.webp",
+    "data/media/OLX.bg_147463810/0003_7278cfb6.webp",
+    "data/media/OLX.bg_147463810/0004_f717e5db.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147463810/0000_b4739944.webp",
+    "OLX.bg_147463810/0001_6bf1568d.webp",
+    "OLX.bg_147463810/0002_d1da576e.webp",
+    "OLX.bg_147463810/0003_7278cfb6.webp",
+    "OLX.bg_147463810/0004_f717e5db.webp"
+  ]
+}

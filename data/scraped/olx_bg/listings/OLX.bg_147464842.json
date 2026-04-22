@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/dvustaen-ap-pod-naem-zona-b-18-CID368-ID9YKlc.html?search_reason=search%7Corganic",
+  "external_id": "147464842",
+  "title": "Двустаен ап. под наем Зона Б-18",
+  "description": "двустаен апартамент под наем в Зона Б-18, в централен район с отлична инфраструктура и бърз достъп до градски транспорт. Жилището е с площ 38 кв.м, разположено на партерен етаж в тухлена сграда. Изложението е източно. Разпределение: хол кухня спалня баня с тоалетна Апартаментът е обзаведен и готов за нанасяне, отоплява се на ТЕЦ. В близост: училища, детски градини, медицински центрове и метростанция Константин Величков , с удобен достъп до центъра. За оглед се свържете с нас и цитирайте реф. номер: 2207768.",
+  "price": 520.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pl46dkh1hbfc-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/54mkkp128gd22-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/6sd0crq0mll4-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ljra7m6bby8b-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/s4ipbn13aik9-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pl46dkh1hbfc-BG/image;s=800x1066"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:28:30.874105+00:00",
+  "reference_id": "OLX.bg:147464842",
+  "local_image_files": [
+    "data/media/OLX.bg_147464842/0000_864b4a16.webp",
+    "data/media/OLX.bg_147464842/0001_2d8095e8.webp",
+    "data/media/OLX.bg_147464842/0002_ceb0530d.webp",
+    "data/media/OLX.bg_147464842/0003_804cfe45.webp",
+    "data/media/OLX.bg_147464842/0004_d1af1af1.webp",
+    "data/media/OLX.bg_147464842/0005_c94b8748.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147464842/0000_864b4a16.webp",
+    "OLX.bg_147464842/0001_2d8095e8.webp",
+    "OLX.bg_147464842/0002_ceb0530d.webp",
+    "OLX.bg_147464842/0003_804cfe45.webp",
+    "OLX.bg_147464842/0004_d1af1af1.webp",
+    "OLX.bg_147464842/0005_c94b8748.webp"
+  ]
+}

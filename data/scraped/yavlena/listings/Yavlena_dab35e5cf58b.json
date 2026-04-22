@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168416",
+  "external_id": "dab35e5cf58b",
+  "title": "Други бизнес имоти в Никопол 4985 кв.м. ID 168416  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://userimages.yavlena.com/6e239347-a0ac-44af-9d89-9f9c09c6b7fe.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:12:59.105388+00:00",
+  "reference_id": "Yavlena:dab35e5cf58b",
+  "local_image_files": [
+    "data/media/Yavlena_dab35e5cf58b/0000_de41f474.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_dab35e5cf58b/0000_de41f474.jpg"
+  ]
+}

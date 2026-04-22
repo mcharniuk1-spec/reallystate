@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/id-555-apartament-v-tselogodishen-kompleks-na-parva-liniya-na-sveti-vlas-CID368-ID9Z3Ty.html?search_reason=search%7Corganic",
+  "external_id": "147540008",
+  "title": "ID: 555 Апартамент в целогодишен комплекс на първа линия на Свети Влас",
+  "description": "ID: 555 Двустаен апартамент в целогодишен комплекс в Свети Влас. Напълно обзаведен, разполага с всичко необходимо за комфортен престой. Разпределение: хол с кухненски бокс, спалня, коридор, балкон. 7 минути пеша до плажа. Комплексът разполага с контролиран достъп, 24-часова охрана и видеонаблюдение, безплатен паркинг, 17 басейна, детски и спортни площадки, фитнес център, спа център, ресторант, магазин, зона за барбекю и обширна градина. Акт 16. Агенция за недвижими имоти Kristal Property",
+  "price": 94500.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4yu042nnkk932-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ypgnc62bix4d2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/j7boouepy63p3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/44ufcrkgyymi1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qh7v1cr6grk6-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4yu042nnkk932-BG/image;s=1400x1050"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:28:36.940429+00:00",
+  "reference_id": "OLX.bg:147540008",
+  "local_image_files": [
+    "data/media/OLX.bg_147540008/0000_d1dcae49.webp",
+    "data/media/OLX.bg_147540008/0001_6e2ce8b1.webp",
+    "data/media/OLX.bg_147540008/0002_feea50da.webp",
+    "data/media/OLX.bg_147540008/0003_921dcd02.webp",
+    "data/media/OLX.bg_147540008/0004_f56ffb49.webp",
+    "data/media/OLX.bg_147540008/0005_58004e10.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540008/0000_d1dcae49.webp",
+    "OLX.bg_147540008/0001_6e2ce8b1.webp",
+    "OLX.bg_147540008/0002_feea50da.webp",
+    "OLX.bg_147540008/0003_921dcd02.webp",
+    "OLX.bg_147540008/0004_f56ffb49.webp",
+    "OLX.bg_147540008/0005_58004e10.webp"
+  ]
+}

@@ -24,7 +24,7 @@ This digest captures the full operator intent and execution context from the lat
 
 - Build a LUN-style, buyer-oriented marketplace with map + feed + AI chat.
 - Owners are the primary posters; agency participants are represented as owner representatives.
-- MVP geospatial scope remains Varna city + Varna region only until stage-1 quality gate passes.
+- MVP **3D / building-data** focus may remain Varna-first (BD-08 / UX-07); **map + listings browse UX (`UX-04`)** is **nationwide Bulgaria** (all regions/cities), not Varna-only.
 - Scraping/output must feed a continuously updated database with canonical unification and exports.
 
 ### B) Agent governance and runtime behavior
@@ -50,13 +50,25 @@ This digest captures the full operator intent and execution context from the lat
 - Backlog enriched with new backend/frontend/scraper/debugger/lead slices for deployment-ready execution.
 - Dashboard reliability issue fixed (embedded payload support for local `file://` opens) and dashboard regenerated.
 
-### D) Immediate execution priorities to preserve
+### D) Immediate execution priorities (2026-04-09 — operator lock-in)
 
-1. `DBG-06` batch verification of all pending `DONE_AWAITING_VERIFY` slices.
-2. `DBG-05` stage-1 quality gate closure.
-3. Backend critical chain: `BD-11` -> `BD-12` -> `BD-13` -> `BD-14` -> `BD-15`.
-4. Frontend critical chain: `UX-13` -> `UX-08` -> `UX-09` -> `UX-10` -> `UX-11`.
-5. Final launch gates: `DBG-07` smoke test and `DBG-08` security audit.
+**Single focus lane until the volume gate is met:** `scraper_1` tier-1/2 live harvesting. Other specialists **do not start new non-blocking slices** except the narrow backend prerequisite below and recurring `CONST-*` hygiene.
+
+1. **`scraper_1` — non-stop until volume gate (see `S1-18`)**  
+   Implement/complete live HTTP + discovery + detail ingest (`S1-15`), then **continue running harvests without pausing for “slice done”** until **at least 5 distinct tier-1 or tier-2 sources** each have **≥100** persisted listing rows (see `S1-18` for counting rules).
+
+2. **`backend_developer` — prerequisite only until `S1-18` is met**  
+   **`BD-11` is the mandatory prerequisite** so live scrapes can land in `canonical_listing` (and related tables) for auditable counts. **Do not** treat `BD-12`–`BD-16` as in-scope for the same sprint wave as `S1-18` unless they unblock ingest. After `S1-18` is `VERIFIED`, resume the backend chain: `BD-12` → `BD-13` → `BD-14` → `BD-15` → …
+
+3. **`debugger` — planned after backend chain catches up**  
+   - **`DBG-06`**: batch-verify all `DONE_AWAITING_VERIFY` slices **after** `S1-18` is `VERIFIED` and **`BD-11` ingest is proven** on live rows (or operator explicitly waives DB counts — document in JOURNEY).  
+   - **`DBG-05`**: stage-1 quality gate (fixtures + product types per `docs/exports/stage1-product-type-coverage.md`) **after** live volume evidence exists or is explicitly deferred.
+
+4. **Parked (do not expand until `S1-18` VERIFIED):** new `scraper_t3` / `scraper_sm` live work, LUN-style UX expansion (`UX-04`–`UX-12`), and deployment slices — unless they fix a blocker for tier-1/2 ingest.
+
+5. **Recurring:** `CONST-01` / `CONST-02`, `LEAD-05` dashboard refresh after any TASKS/JOURNEY change.
+
+**Fixture / stage-1 analysis (no live DB):** `docs/exports/stage1-product-type-coverage.md` — all required product types (`sale`, `long_term_rent`, `short_term_rent`, `land`, `new_build`) are covered by tier-1/2 fixtures; this is **parser readiness**, not production volume.
 
 ---
 
@@ -67,15 +79,25 @@ This digest captures the full operator intent and execution context from the lat
 - **Read first**: `docs/agents/TASKS.md`, all `docs/agents/*/JOURNEY.md`, `docs/dashboard/index.html`
 - **Do**: on each activation, review progress deltas, update task dependencies/notes, and regenerate dashboard/exports after doc/task changes
 - **Acceptance gate**: latest run updates `TASKS.md` + dashboard JSON/HTML timestamps
-- **Output**: refreshed `docs/exports/progress-dashboard.json`, `docs/dashboard/index.html`, and updated task notes
+- **Output**: refreshed `docs/exports/progress-dashboard.json`, `docs/dashboard/index.html`, `docs/exports/parallel-execution-timeline.md`, `docs/exports/scraper-activity-snapshot.md`, and updated task notes
 - **Verifier**: debugger
 - **Depends on**: —
 
 ### CONST-02: Cross-agent note propagation
 - **Status**: `TODO` (recurring)
 - **Read first**: latest entries in all `JOURNEY.md` files
-- **Do**: convert blockers/findings from one agent into explicit follow-up tasks for impacted agents
-- **Acceptance gate**: each blocker has at least one mapped follow-up slice with dependency
+- **Do**: convert blockers/findings from one agent into explicit follow-up tasks for impacted agents, and preserve recurring scraper evidence rules in the affected task notes
+- **Standing scraper memory**:
+  - for each property item, try to identify the full gallery on the detail page
+  - download all reachable item photos, not only the lead thumbnail or first image
+  - check whether the downloaded photos are readable or decodable, and record partial-gallery failures
+  - treat full item capture as the default target: description, attributes, contacts, and the full reachable media set
+  - store image binaries as local files under `data/media/<reference_id>/...`; keep remote image URLs only as traceability metadata, not as the primary image storage
+  - only call a source `Patterned` when one saved sample item proves local image-file capture for the full reachable gallery and also lands the core item fields (`price` plus `city` or `address`) and at least two structured fields such as `area`, `rooms`, `floor`, or `phones`
+  - for each website, find the reusable parsing pattern for every property/service route and save that pattern as code before calling the source `Patterned`
+  - keep a website-level status split between item-pattern readiness and count-method readiness; do not mark a source fully ready if live counts are still estimate-only
+  - the recurring scraper_1 operating loop is incremental: every 15 minutes append new listings, refresh changed listings, and mark disappeared listings inactive instead of silently dropping them
+- **Acceptance gate**: each blocker has at least one mapped follow-up slice with dependency, and scraper-facing follow-ups keep the full-item/full-gallery requirement visible
 - **Output**: updated `TASKS.md` dependencies and notes
 - **Verifier**: lead agent + debugger
 - **Depends on**: —
@@ -87,6 +109,8 @@ This digest captures the full operator intent and execution context from the lat
 ## ═══════════════════════════════════════════════════════
 
 **Mission**: Create the full backend (DB, APIs, scraper orchestration, auth, user profiles, deployment) that powers the website. Every endpoint must work end-to-end from database to frontend.
+
+**2026-04-09 wave:** Until **`S1-18`** is `VERIFIED`, treat **`BD-11`** (live ingest → `canonical_listing`) as the **only** must-ship backend slice. Defer **`BD-12`–`BD-16`** unless they unblock ingest or the operator reprioritizes.
 
 ### BD-01: DB sync + control plane bootstrap
 - **Status**: `VERIFIED` — hardened 2026-04-08 session 2 (stats query registry-aware, admin dashboard extended, tests added)
@@ -136,11 +160,12 @@ This digest captures the full operator intent and execution context from the lat
 - **Depends on**: BD-01, BD-02
 - **Verifier note**: run live check with Temporal service (`ENABLE_TEMPORAL_RUNTIME=1`) to confirm restart survival and persistent cursor behavior.
 
-### BD-06: Varna-only MVP map/search + chat context APIs
+### BD-06: Map/search + chat context APIs (geo scope configurable)
 - **Status**: `TODO`
 - **Read first**: `PLAN.md` §8, `src/bgrealestate/api/routers/listings.py`, `src/bgrealestate/api/routers/chat.py`, `sql/schema.sql`
-- **Do**: enforce MVP geo scope to Varna city + Varna region for `/listings` + `/map` contracts; expose chat context payload so AI chat can always view current property + map filter state
-- **Acceptance gate**: API contract test proves Varna-only scope when MVP flag is on; chat context endpoint returns selected property + active filters
+- **Do**: expose **configurable** geo scope for `/listings` + map-related contracts: **default = all Bulgaria** (no forced Varna filter). Support optional query params or feature flags for **Varna preset** (city/region bbox) for demos and 3D pilot. Expose chat context payload so AI chat can always view current property + active map filter state.
+- **Acceptance gate**: API contract tests prove (a) default/nationwide listing queries return Bulgaria-wide results when data exists, (b) optional Varna scope filter works when requested, (c) chat context returns selected property + active filters
+- **Coordination**: **`UX-04`** is **nationwide**; do not ship APIs that hard-lock clients to Varna-only unless behind an explicit opt-in flag.
 - **Output**: API contract docs + tests + route updates
 - **Verifier**: debugger + ux_ui_designer
 - **Depends on**: BD-02, BD-03, DBG-05
@@ -185,7 +210,7 @@ This digest captures the full operator intent and execution context from the lat
 
 ### BD-11: Unified listing database — merge scraper outputs into canonical store
 - **Status**: `DONE_AWAITING_VERIFY` (2026-04-08: unification service + /properties endpoints + pipeline wiring implemented)
-- **Priority**: **CRITICAL** — this is the core data pipeline that feeds the entire website
+- **Priority**: **CRITICAL** — core pipeline for the website; **execution order:** verify/promote **`BD-11` immediately after `S1-15` live path exists** so `S1-18` volume counts use PostgreSQL. Remaining backend slices (`BD-12`+) wait until **`S1-18` VERIFIED** unless they unblock ingest.
 - **Read first**: `src/bgrealestate/connectors/ingest.py`, `src/bgrealestate/pipeline.py`, `sql/schema.sql` (source_listing → parsed_listing → canonical_listing → property_entity), `src/bgrealestate/db/models.py`
 - **Do**:
   1. Create `src/bgrealestate/services/unification.py` — takes raw scraper output from any tier-1/2/3 connector and writes into `source_listing` → `parsed_listing` → `canonical_listing` pipeline
@@ -204,7 +229,7 @@ This digest captures the full operator intent and execution context from the lat
 
 ### BD-12: Shop-style filter API for property feed
 - **Status**: `TODO`
-- **Priority**: **CRITICAL** — this powers the main listing/shop view
+- **Priority**: **CRITICAL** — this powers the main listing/shop view (**blocked until `S1-18` VERIFIED** unless operator waives)
 - **Read first**: `docs/business/product-ux-structure.md` (§3.1 Homepage), `src/bgrealestate/api/routers/listings.py`, UX-08
 - **Do**:
   1. Extend `GET /properties` with full filter parameters: `intent` (buy/rent/str/auction), `category` (apartment/house/villa/studio/land/commercial), `price_min`, `price_max`, `area_min`, `area_max`, `rooms_min`, `rooms_max`, `city`, `district`, `bbox` (map viewport), `sort_by` (price_asc, price_desc, newest, area), `page`, `limit`
@@ -300,6 +325,8 @@ This digest captures the full operator intent and execution context from the lat
 
 **Mission**: Get a full, constantly-updating database of ALL properties from tier-1 and tier-2 Bulgarian real estate portals. Every connector must work end-to-end: discover URLs → fetch pages → parse to canonical format → feed into unification pipeline.
 
+**Current operator mandate (2026-04-09):** Do **not** stop for end-of-session idle after `S1-15` code lands — keep executing harvest + ingest iterations until **`S1-18` volume gate** is satisfied (≥100 listings × ≥5 sources), except for real blockers (legal gate, site outage, CAPTCHA) documented in `JOURNEY.md`.
+
 ### S1-01: Homes.bg connector + fixtures
 - **Status**: `VERIFIED`
 - **Read first**: `src/bgrealestate/connectors/homes_bg.py`, `tests/fixtures/homes_bg/*`
@@ -382,8 +409,8 @@ This digest captures the full operator intent and execution context from the lat
 - **Depends on**: S1-01 through S1-10
 
 ### S1-15: Live HTTP integration for tier-1 connectors
-- **Status**: `TODO`
-- **Priority**: **CRITICAL** — must actually hit real websites to populate database
+- **Status**: `IN_PROGRESS` (2026-04-21; strict pattern repairs promoted `Address.bg`, `BulgarianProperties`, `LUXIMMO`, `OLX.bg`, `property.bg`, `SUPRIMMO`, `Bazar.bg`, and `Yavlena` to `Patterned` from saved item evidence; DB proof is still blocked because no PostgreSQL server is running locally and Docker daemon/compose are unavailable in this environment; `alo.bg`/`Domaza`/`Home2U` still remain low-yield or zero-sample)
+- **Priority**: **CRITICAL** — must actually hit real websites to populate database; **feeds `S1-18` volume gate**
 - **Read first**: `src/bgrealestate/connectors/scaffold.py`, `src/bgrealestate/connectors/legal.py`, `src/bgrealestate/connectors/protocol.py`
 - **Do**:
   1. Implement `httpx`-based live fetch in `HtmlPortalConnector.fetch_url()` with:
@@ -403,9 +430,70 @@ This digest captures the full operator intent and execution context from the lat
 - **Verifier**: debugger (legal gate enforcement) + backend_developer (DB storage)
 - **Depends on**: S1-14, BD-01
 
+**Continuation checklist (operator pause 2026-04-08 — resume here)**  
+Bulk live harvesting was started outside the formal S1-15 acceptance gate; do **not** assume it is complete.
+
+1. **Stabilize `scripts/live_scraper.py`**: fix remaining discovery URLs (alo.bg, address.bg, property.bg, home2u, SUPRIMMO/LUXIMMO home-only patterns); prefer each site’s real listing URL regex after a one-page probe; cap `--max-listings` per run to avoid hour-long jobs.
+2. **Normalize media URLs everywhere**: protocol-relative `//cdn...` must become `https:` before `download_image` (partially done in live scraper; align with `ingest` / listing API if URLs are stored raw).
+3. **Homes.bg volume**: use `/api/offers` with validated `city` / `offerType` params; confirm pagination until empty `result`; merge with connector `HomesBgConnector` so one code path owns discovery.
+4. **Wire harvest → DB**: either extend `ingest_listing_detail_html` + crawl job runner or a dedicated “bulk import JSON” path so `data/scraped/*/listings/*.json` round-trips to `canonical_listing` + `listing_media` (not only on disk).
+5. **Regenerate exports**: after a successful harvest, run `make scraping-inventory` and extend `scripts/generate_scraping_inventory.py` to ingest **live** counts from `data/scraped/**/scrape_stats.json` + `scrape_summary.json` (separate columns from fixture stats).
+6. **Agent report MD + DOCX + PDF**: add `docs/exports/scraper-1-tier12-status.md` and a small script (or Makefile target) to render DOCX/PDF from that markdown (reuse `reportlab` / `python-docx` patterns from inventory script).
+7. **Opt-in live tests**: keep `make test` fixture-only; add `ENABLE_LIVE_TESTS=1` smoke that hits **one** URL per source (as in original S1-15 spec).
+8. **Then**: mark `S1-15` `DONE_AWAITING_VERIFY` only when live fetch + parse + **persistence path** (via `BD-11`) works; immediately continue **`S1-18`** until volume gate met → then `S1-16` tier-2 expansion → `S1-17` Playwright for JS-heavy portals.
+
+### S1-18: Tier-1/2 live volume gate (≥100 listings × ≥5 sources) — NON-STOP
+- **Status**: `TODO`
+- **Priority**: **CRITICAL** — primary success metric for the current execution wave
+- **Read first**: `S1-15`, `BD-11`, `data/source_registry.json` (tier 1–2 rows), `docs/exports/stage1-product-type-coverage.md`
+- **Do**:
+  1. After live HTTP + ingest work (`S1-15` + `BD-11`), run **repeated** discovery → detail → persist cycles for tier-1 and tier-2 sources allowed by `legal_mode` / `access_mode`.
+  2. **Stop condition:** at least **5** distinct `source_name` values (from the registry, tier 1 or 2) each have **≥100** rows in **`canonical_listing`** (count distinct `reference_id` or equivalent unique key per source). If Postgres is temporarily unavailable, document **interim** counts from an agreed export under `data/scraped/` in `docs/exports/tier12-live-volume-report.md` and still treat the gate as **not met** until DB counts match.
+  3. **Non-stop rule:** do not mark this slice `DONE_AWAITING_VERIFY` until the numeric gate is hit or **`BLOCKED`** with a concrete reason (e.g. `LegalGateError`, sustained HTTP 403, missing partner contract). Rotate sources if one is blocked; prefer Homes.bg, OLX.bg, imot.bg, alo.bg, property.bg as the default “first five” unless the registry forbids live fetch.
+  4. Update **`docs/exports/tier12-live-volume-report.md`** after each major run: timestamp, per-source counts, sample `reference_id`s, and command lines used.
+- **Current analysis artifact (2026-04-20)**: `docs/dashboard/scrape-status.html` is the operator dashboard for per-source service/property coverage, field capture, image/text readiness, and next steps across all tier-1/2 sources.
+- **Website inventory artifact (2026-04-20)**: `docs/exports/website-inventory-analysis.json` and `docs/exports/website-inventory-analysis.md` now persist website-side totals, category-level count evidence, count method, count gaps, and estimate conflicts for each tier-1/2 source; `scrape-status.html` renders those inside each website block and should be extended after every live counting pass.
+- **Interim evidence (2026-04-09)**: `data/scraped/` already contains ≥100 parsed listings for **5** sources (`Bazar.bg`, `BulgarianProperties`, `imot.bg`, `OLX.bg`, `Yavlena`), and the continuation wave added live on-disk corpus for `Address.bg` (43), `LUXIMMO` (15), `property.bg` (15), and `SUPRIMMO` (12). The gate is still **not met** until those rows land in PostgreSQL `canonical_listing`.
+- **Pattern audit note (2026-04-21)**:
+  1. Current strict `Patterned` set from saved sample evidence is `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `OLX.bg`, `property.bg`, `SUPRIMMO`, `Bazar.bg`, `Yavlena`.
+  2. Current remaining non-patterned tier-1/2 sources split into:
+     - no saved sample proof yet: `alo.bg`, `ApartmentsBulgaria.com`, `Domaza`, `Holding Group Real Estate`, `Home2U`, `Indomio.bg`, `Lions Group`, `Pochivka.bg`, `realestates.bg`, `Realistimo`, `Rentica.bg`, `Svobodni-kvartiri.com`, `Unique Estates`, `Vila.bg`
+     - legal/authorization review required: `imoti.net`, `Imoteka.bg`, `Imoti.info`
+  3. DB persistence proof is currently blocked by environment runtime, not parser code: `psql` and Python DB deps are present, but `localhost:5432` is not running and Docker daemon/socket are unavailable here.
+- **Follow-up planning note (2026-04-14)**:
+  1. Use `docs/exports/tier12-source-analysis.md` and `docs/exports/tier12-source-analysis.xlsx` as the source-by-source runbook for the next tier-1/2 continuation wave.
+  2. Recover the zero-yield or weak-yield set first: `alo.bg`, `Domaza`, `Home2U`, then deepen `Homes.bg` apartment coverage and re-run `imot.bg` media downloads.
+  3. After that, promote remaining tier-2 implementation in this order: `Rentica.bg`, `Svobodni-kvartiri.com`, `Holding Group Real Estate`, `Unique Estates`, `Realistimo`.
+  4. Apply the new local skills when relevant:
+     - `agent-skills/browser-scrape-ops/SKILL.md`
+     - `agent-skills/image-media-pipeline/SKILL.md`
+     - `agent-skills/postgres-ops-psql/SKILL.md`
+- **Research and setup note (2026-04-20)**:
+  1. Use `docs/exports/scraping-tools-market-radar-2026-04-20.md` as the dated tool-market reference before expanding new complex-source strategies.
+  2. Use `docs/exports/universal-agent-scrape-setup-2026-04-20.md` to keep Codex and Claude-agent runs on the same runtime, env-var, and escalation policy.
+  3. Apply the newer local skills when a source becomes expensive or brittle:
+     - `agent-skills/hybrid-scrape-stack/SKILL.md`
+     - `agent-skills/managed-scrape-platforms/SKILL.md`
+     - `agent-skills/universal-agent-scrape-setup/SKILL.md`
+  4. For each property item, treat media completeness as part of completeness:
+     - identify the whole gallery on the detail page where possible
+     - download all reachable listing photos, not only the first image
+     - record readability/decode success for the full set and note partial or broken galleries
+  5. Use `docs/exports/tier12-source-metrics-deep-dive.md` and `docs/exports/tier12-source-metrics-deep-dive.xlsx` as the per-source metric baseline:
+     - declared site offering
+     - estimated site scale
+     - confirmed landed corpus
+     - intent/category splits
+     - progress percentages
+     - method and automation recommendations
+- **Acceptance gate**: report shows ≥5 sources × ≥100 listings in `canonical_listing`; `make test` still passes (fixture-only); rate limits and legal gates respected
+- **Output**: `docs/exports/tier12-live-volume-report.md`, crawl/job logs as needed, JOURNEY entries per run batch
+- **Verifier**: debugger
+- **Depends on**: `S1-15`, `BD-11`
+
 ### S1-16: Remaining tier-2 connectors (full set)
 - **Status**: `TODO`
-- **Priority**: HIGH — more sources = more complete database
+- **Priority**: HIGH — more sources = more complete database (**start only after `S1-18` is `VERIFIED`** unless operator reprioritizes)
 - **Read first**: `data/source_registry.json` (all tier-2 sources), `src/bgrealestate/connectors/tier2_stubs.py`
 - **Do**: Implement fixture-backed connectors for remaining tier-2 sources:
   - Imoti.info, realestates.bg, Indomio.bg, Realistimo
@@ -417,7 +505,7 @@ This digest captures the full operator intent and execution context from the lat
 - **Acceptance gate**: `make test` passes; each source has working parser + fixtures; legal gates enforced where applicable
 - **Output**: expanded tier-2 connectors, fixtures, tests
 - **Verifier**: debugger
-- **Depends on**: S1-12, S1-14
+- **Depends on**: S1-12, S1-14, **S1-18**
 
 ### S1-17: Playwright connectors for headless-required sources
 - **Status**: `TODO`
@@ -431,7 +519,7 @@ This digest captures the full operator intent and execution context from the lat
 - **Acceptance gate**: headless connector parses rendered HTML fixtures correctly; Playwright only runs in live mode; `make test` passes without Playwright installed
 - **Output**: Playwright base connector, source-specific implementations, fixtures, tests
 - **Verifier**: debugger
-- **Depends on**: S1-15
+- **Depends on**: S1-15, **S1-18**
 
 ---
 
@@ -440,6 +528,8 @@ This digest captures the full operator intent and execution context from the lat
 ## ═══════════════════════════════════════════════════════
 
 **Mission**: Get data from licensed vendors (AirDNA/Airbtics for STR analytics), official registers (KAIS/Property Register), and partner feeds (Airbnb/Booking when contracts exist). All tier-3 sources are gated by contracts/licenses — implement the importers so they work the moment a contract is signed.
+
+**2026-04-09:** Do **not** expand **live** tier-3 work until **`S1-18`** is `VERIFIED` (or operator explicitly reprioritizes). Fixture slices awaiting **`DBG-06`** stay in queue behind the tier-1/2 volume wave.
 
 ### T3-01: Tier-3 ingestion policy and integration contracts
 - **Status**: `VERIFIED` (2026-04-08; debugger policy + fixture contract review)
@@ -526,6 +616,8 @@ This digest captures the full operator intent and execution context from the lat
 
 **Mission**: Extract real estate leads from social media channels (Telegram, X, Facebook groups) as intelligence overlays. All data feeds into CRM as leads, not as primary listings. Consent-gated, redaction-enforced.
 
+**2026-04-09:** Pause **new** live social expansion until **`S1-18`** is `VERIFIED` unless it unblocks tier-1/2 ingest or the operator overrides.
+
 ### SM-01: Social ingestion contract (policy + fixtures)
 - **Status**: `VERIFIED` (2026-04-08; debugger consent + fixture review)
 - **Read first**: `data/source_registry.json` (tier-4 sources), `AGENTS.md` (guardrails), `sql/schema.sql` (CRM tables)
@@ -606,6 +698,8 @@ This digest captures the full operator intent and execution context from the lat
 
 **Mission**: Build the complete LUN.ua-style buyer-oriented property marketplace frontend. Map-driven, mobile-responsive, with property shop view, user profiles, and AI chat. Reference: `docs/business/product-ux-structure.md`.
 
+**2026-04-09:** Do **not** start **new** large UX slices (`UX-04`+) until **`S1-18`** is `VERIFIED`; finish **`DBG-06`** promotion for UX-02/03/06 when debugger runs the batch pass.
+
 ### UX-01: Operator dashboard UI plan
 - **Status**: `VERIFIED` (2026-04-08; debugger contract check)
 - **Read first**: `PLAN.md` §8, `src/bgrealestate/api/routers/`, BD-02 API outputs
@@ -633,11 +727,11 @@ This digest captures the full operator intent and execution context from the lat
 - **Verifier**: debugger
 - **Depends on**: UX-02, BD-02, BD-03
 
-### UX-04: Varna-only LUN-style map + listings experience
+### UX-04: Nationwide Bulgaria LUN-style map + listings experience
 - **Status**: `TODO`
 - **Read first**: `PLAN.md` §8, `docs/agents/ux_ui_designer/operator-dashboard-spec.md`, LUN-style reference notes
-- **Do**: shape homepage UX to LUN-like split flow (map + feed + filters), scoped to Varna city/region for MVP
-- **Acceptance gate**: prototype shows Varna-only boundaries, map filters, listing cards, and synchronized selection
+- **Do**: shape homepage UX to LUN-like split flow (map + feed + filters) for **all of Bulgaria**: default viewport and filters are **country-wide**; users can narrow by region/city/bbox. Optional **Varna preset** is allowed for demos or 3D pilot (UX-07) but must not be the only mode. Document mobile/tablet behavior and performance expectations for nationwide tiles/clusters.
+- **Acceptance gate**: prototype demonstrates Bulgaria-wide browse (no hard-coded Varna-only lock), map filters + listing cards + synchronized selection; spec calls out optional Varna shortcut vs default nationwide
 - **Output**: UX spec/update doc + component task breakdown
 - **Verifier**: debugger + backend_developer
 - **Depends on**: UX-03, BD-06, DBG-05
@@ -828,6 +922,8 @@ This digest captures the full operator intent and execution context from the lat
 
 **Mission**: Verify every slice before it's marked complete. Run acceptance gates, check legal compliance, audit security, ensure tests pass. The quality gatekeeper for the entire project.
 
+**2026-04-09:** Prioritize **`DBG-06`** / **`DBG-05`** **after** **`S1-18`** live volume + **`BD-11`** ingest evidence; you may still **spot-check** `S1-14` promotion if asked.
+
 ### DBG-01: Golden path check
 - **Status**: `VERIFIED`
 - **Read first**: `scripts/golden_path_check.py`, `agent-skills/debugger-golden-path/SKILL.md`
@@ -864,18 +960,18 @@ This digest captures the full operator intent and execution context from the lat
 - **Verifier**: self
 - **Depends on**: BD-05
 
-### DBG-05: Verify stage-1 scraping is perfect before Varna 3D map MVP
+### DBG-05: Verify stage-1 scraping before expanding 3D / building-depth geo
 - **Status**: `TODO`
-- **Read first**: `docs/exports/stage1-product-type-coverage.md`, `scripts/golden_path_check.py`, `/admin/source-stats`
-- **Do**: verify stage-1 scrape quality and product-type completeness
-- **Acceptance gate**: all required product types covered and golden path passes
+- **Read first**: `docs/exports/stage1-product-type-coverage.md`, `docs/exports/tier12-live-volume-report.md` (once exists), `scripts/golden_path_check.py`, `/admin/source-stats`
+- **Do**: verify stage-1 **fixture** product-type completeness **and** (when available) **live** volume evidence from `S1-18`; confirm inputs for **Varna 3D / building-mesh pilot** and broader **building-match** rollout. **Note:** nationwide **map + listings browse** (`UX-04`) is not Varna-limited; this gate still matters for data trust before **3D** and **multi-city building** investment.
+- **Acceptance gate**: required product types covered per coverage doc; golden path passes; live volume report meets `S1-18` thresholds or waiver is documented
 - **Output**: verification entry in `docs/agents/debugger/JOURNEY.md`
 - **Verifier**: lead agent
-- **Depends on**: S1-13, BD-01
+- **Depends on**: S1-13, BD-01, **S1-18** (live portion)
 
 ### DBG-06: Verify all pending DONE_AWAITING_VERIFY slices (batch 2)
 - **Status**: `TODO`
-- **Priority**: **CRITICAL** — 10+ slices are awaiting verification, blocking downstream work
+- **Priority**: **CRITICAL** — many slices await verification (**scheduled after `S1-18` + `BD-11` live ingest proof** per 2026-04-09 wave; early spot-checks allowed if operator requests)
 - **Read first**: this file — scan all `DONE_AWAITING_VERIFY` slices
 - **Do**: systematically verify each pending slice:
   1. BD-04 (Auth/RBAC): test 401/403 responses, API key scope enforcement
@@ -895,7 +991,7 @@ This digest captures the full operator intent and execution context from the lat
 - **Acceptance gate**: all slices either promoted to `VERIFIED` or documented as `BLOCKED` with specific failure reason
 - **Output**: batch verification report in `docs/agents/debugger/JOURNEY.md`, updated statuses in TASKS.md
 - **Verifier**: lead agent
-- **Depends on**: —
+- **Depends on**: **S1-18**, **BD-11** (live rows or documented waiver)
 
 ### DBG-07: End-to-end website smoke test
 - **Status**: `TODO`
@@ -933,6 +1029,19 @@ This digest captures the full operator intent and execution context from the lat
 - **Output**: security audit report in `docs/agents/debugger/JOURNEY.md`
 - **Verifier**: lead agent
 - **Depends on**: BD-14, BD-13
+
+### DBG-09: End-of-run verification sweep
+- **Status**: `TODO`
+- **Priority**: HIGH — every non-debugger agent run must end with queued verification
+- **Read first**: `docs/agents/README.md`, latest entries in `docs/agents/*/JOURNEY.md`, all `DONE_AWAITING_VERIFY` slices in this file
+- **Do**:
+  1. After each backend, scraper, or UX run, scan for the latest slice updates and match them to their acceptance gates.
+  2. Execute the relevant verification immediately when the gate is runnable, or record an explicit deferred reason in `docs/agents/debugger/JOURNEY.md`.
+  3. Keep a short pass/fail queue so no agent run ends without a debugger follow-up.
+- **Acceptance gate**: every new non-debugger JOURNEY entry has a corresponding debugger verification note or an explicit deferral reason
+- **Output**: rolling handoff log in `docs/agents/debugger/JOURNEY.md`, status updates here when verification completes
+- **Verifier**: lead agent
+- **Depends on**: —
 
 ---
 
@@ -1006,34 +1115,38 @@ This digest captures the full operator intent and execution context from the lat
 ## PRIORITY EXECUTION ORDER (Critical Path to Working Website)
 ## ═══════════════════════════════════════════════════════
 
-The critical path to a working website, in order:
+The critical path to a working website, in order (**2026-04-09 operator wave**):
 
 ```
-Phase A — Unblock (debugger first):
-  DBG-06  →  Verify all pending slices (unblocks everything downstream)
-  DBG-05  →  Verify stage-1 scraping quality
+Phase A — Tier-1/2 live volume (scraper_1 + minimal backend) — DO FIRST:
+  S1-14   →  Discovery pagination (DONE_AWAITING_VERIFY — debugger promotes when ready)
+  S1-15   →  Live HTTP integration (httpx, rate limits, legal gates)
+  BD-11   →  Unified DB ingest path MUST be live for volume counting
+  S1-18   →  NON-STOP until ≥100 listings × ≥5 tier-1/2 sources in canonical_listing
 
-Phase B — Backend core (backend_developer):
-  BD-11   →  Unified listing database (merge scraper outputs)
+Phase B — Backend core (backend_developer) — AFTER S1-18 VERIFIED:
   BD-12   →  Shop-style filter API
-  BD-13   →  User profile + auth system
+  BD-13   →  User profile + auth system (remaining items)
   BD-14   →  Railway deployment
+  BD-15   →  Scraper orchestration loop (production cadence)
 
-Phase C — Scrapers go live (scraper_1 + scraper_t3):
-  S1-14   →  Discovery pagination for all tier-1
-  S1-15   →  Live HTTP integration
-  BD-15   →  Scraper orchestration loop
+Phase C — Debugger consolidation:
+  DBG-06  →  Batch-verify all pending DONE_AWAITING_VERIFY slices
+  DBG-05  →  Stage-1 + live volume quality gate
+
+Phase D — Other scrapers (parked until S1-18 done unless unblocker):
   T3-07   →  BCPEA live scraper
+  (tier-3/tier-4 expansion per TASKS)
 
-Phase D — Frontend (ux_ui_designer):
+Phase E — Frontend (ux_ui_designer):
   UX-13   →  Design system tokens
   UX-08   →  Shop view with filters
   UX-09   →  Property detail page (LUN-style)
   UX-10   →  User profile cabinet + mode switching
   UX-11   →  Vercel deployment
 
-Phase E — Polish (all agents):
-  UX-04   →  Varna-only LUN experience
+Phase F — Polish (all agents):
+  UX-04   →  Nationwide Bulgaria LUN-style map + listings experience
   UX-07   →  3D map with buildings
   BD-08   →  Varna OSM 3D data
   UX-05   →  AI chat panel
@@ -1042,7 +1155,7 @@ Phase E — Polish (all agents):
   DBG-07  →  End-to-end smoke test
   DBG-08  →  Security audit
 
-Phase F — Growth:
+Phase G — Growth:
   S1-16   →  Remaining tier-2 connectors
   S1-17   →  Playwright connectors
   SM-06   →  Telegram live connector
@@ -1067,10 +1180,10 @@ BD-01 ──► BD-02 ──► BD-03
   │         ├──► BD-08 (Varna OSM buildings)
   │         ├──► BD-09 (property analytics)
   │         ├──► BD-10 (photo classification)
-  │         ├──► BD-11 (unified DB) ──► BD-12 (shop filter API)
+  │         ├──► BD-11 (unified DB) ──► S1-18 (live volume) ──► BD-12 (shop filter API)
   │         │                          ──► UX-08 (shop view)
   │         │                          ──► UX-09 (detail page)
-  │         └���─► UX-01
+  │         └──► UX-01
   │
   ├──► S1-11 (needs DB for ingest)
   ├──► T3-02 (needs DB for STR data)
@@ -1081,15 +1194,16 @@ BD-01 ──► BD-02 ──► BD-03
                                 ──► DBG-07 (E2E smoke test)
 
 S1-01..S1-10 ──► S1-14 (discovery pagination)
-               ──► S1-15 (live HTTP) ──► BD-15 (scraper loop)
+               ──► S1-15 (live HTTP) ──► BD-11 ──► S1-18 (≥100×5 volume) ──► S1-16 (tier-2 expansion)
                ──► S1-12 (tier-2 stubs)
                ──► S1-13 (product-type check)
-               ──► S1-16 (remaining tier-2)
                ──► DBG-03 (audit)
 
+S1-18 ──► DBG-06 (batch verify) / DBG-05 (stage-1 + live gate)
+
 S1-13 ──► DBG-05 (stage-1 quality gate)
-       ──► BD-06 (Varna-only APIs)
-       ──► UX-04 (Varna map/feed)
+       ──► BD-06 (map/search APIs, nationwide default)
+       ──► UX-04 (Bulgaria map/feed)
 
 BD-06 ──► BD-07 (chat API) ──► UX-05 (chat panel)
       ──► BD-12 (shop filter API)

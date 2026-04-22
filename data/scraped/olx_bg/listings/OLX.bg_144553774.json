@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/prodava-se-3-staen-apartament-v-grad-etropole-CID368-ID9Mx2u.html?search_reason=search%7Cpromoted",
+  "external_id": "144553774",
+  "title": "Продава се 3-стаен апартамент в град Етрополе",
+  "description": "Продава се 3-стаен апартамент – гр. Етрополе, 83 кв.м + мазе в квартал 128 блок 4 - Югоизточно изложение -4-ти етаж - Към апартамента има и мазе - Отопление с камина с водна риза и радиатори - За ремонт – възможност за преустройство по ваш вкус Състои се от: хол, 2 спални, кухня, баня и отделно тоалетна, тераса и коридор. Намира се в тих и удобен квартал на Етрополе, близо до магазини и училище. Градът е спокоен, с красива природа и е на около 80 км от София – идеален за живеене или почивка. За повече информация и огледи: 08******77 Имата се продава от собственик и МОЛЯ БЕЗ АГЕНЦИИ и БРОКЕРИ!!!",
+  "price": 70000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/n3zparmg156v1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/wt4ui4peirp22-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/u381gympyo7f-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/8zqz1nvpjlkt1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/95fexvro754z1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/n3zparmg156v1-BG/image;s=1126x2000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:24:43.040931+00:00",
+  "reference_id": "OLX.bg:144553774",
+  "local_image_files": [
+    "data/media/OLX.bg_144553774/0000_79282717.webp",
+    "data/media/OLX.bg_144553774/0001_cae14e32.webp",
+    "data/media/OLX.bg_144553774/0002_69c0d3f1.webp",
+    "data/media/OLX.bg_144553774/0003_56fd4836.webp",
+    "data/media/OLX.bg_144553774/0004_99347ff2.webp",
+    "data/media/OLX.bg_144553774/0005_4aaa269a.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_144553774/0000_79282717.webp",
+    "OLX.bg_144553774/0001_cae14e32.webp",
+    "OLX.bg_144553774/0002_69c0d3f1.webp",
+    "OLX.bg_144553774/0003_56fd4836.webp",
+    "OLX.bg_144553774/0004_99347ff2.webp",
+    "OLX.bg_144553774/0005_4aaa269a.webp"
+  ]
+}

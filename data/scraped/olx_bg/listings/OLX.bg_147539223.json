@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/3-staen-v-kv-buzludzha-CID368-ID9Z3GT.html?search_reason=search%7Corganic",
+  "external_id": "147539223",
+  "title": "3-стаен в кв. Бузлуджа",
+  "description": "Предлагам Ви 3-СТАЕН апартамент в началото на квартал Бузлуджа. Имотът се състои от просторна и светла всекидневна с кухненски бокс, две спални ( едната е с излаз към тераса) голям коридор, баня с тоалетна и една тераса. Жилището се продава на степен БДС с направена замазка и шпакловани стени. Сградата е с енергиен клас А и луксозни общи части. В близост има училище, парк, хранителни магазини, спирка на градския транспорт и др.",
+  "price": 123500.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nfm5d8wc5urk2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/cb30m855pxnl3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/iroec1m30zvq2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ms2zny95dcr73-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/bfqnlqaypayf2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nfm5d8wc5urk2-BG/image;s=4000x3000"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:23:08.073155+00:00",
+  "reference_id": "OLX.bg:147539223",
+  "local_image_files": [
+    "data/media/OLX.bg_147539223/0000_18481374.webp",
+    "data/media/OLX.bg_147539223/0001_0320d92f.webp",
+    "data/media/OLX.bg_147539223/0002_67585bf4.webp",
+    "data/media/OLX.bg_147539223/0003_347b7872.webp",
+    "data/media/OLX.bg_147539223/0004_f87f9ee5.webp",
+    "data/media/OLX.bg_147539223/0005_c0e43912.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147539223/0000_18481374.webp",
+    "OLX.bg_147539223/0001_0320d92f.webp",
+    "OLX.bg_147539223/0002_67585bf4.webp",
+    "OLX.bg_147539223/0003_347b7872.webp",
+    "OLX.bg_147539223/0004_f87f9ee5.webp",
+    "OLX.bg_147539223/0005_c0e43912.webp"
+  ]
+}

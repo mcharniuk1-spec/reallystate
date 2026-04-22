@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/tristaen-apartament-kv-vinitsa-gr-varna-te-CID368-ID9YmMA.html?search_reason=search%7Corganic",
+  "external_id": "147374284",
+  "title": "Тристаен апартамент, кв. Виница, гр.Варна ТЕ",
+  "description": "Предлагаме ви за продажба тристаен апартамент в предстояща за изграждане четириетажна сграда с асансьор и контролиран достъп в кв. Виница - предпочитан и спокоен район с бърз достъп до централната част на града и морето. Жилището се намира на 3-ти етаж, вход Б и е с чиста площ от 82.91 кв.м. Апартаментът е с функционално разпределение и включва: - всекидневна с кухненска част (24.06 кв.м) с излаз към тераса (4.58 кв.м) - спалня (10.18 кв.м) - спалня (13.60 кв.м) - баня с тоалетна в едно помещение (5.29 кв.м) - коридор (10.13 кв.м) Към имота има 9.47 кв.м прилежащи идеални части от общите части на сградата. Има възможност за покупка както на открито така и на закрито паркомясто или гараж. В сградата има свободни други тристайни и двустайни жилища. Имотът е подходящ както за лично ползване, така и за инвестиция. Сградата ще бъде изградена с модерна визия и качествени материали, осигуряващи комфорт и уют на бъдещите собственици.",
+  "price": 142700.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4326dkwjzwu83-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/7xo1ii6b2tua-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nsw4ts284ppx1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/49gljgj3z26t2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/iviqo92zkadb3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/4326dkwjzwu83-BG/image;s=1280x720"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:31:14.073302+00:00",
+  "reference_id": "OLX.bg:147374284",
+  "local_image_files": [
+    "data/media/OLX.bg_147374284/0000_90c776bb.webp",
+    "data/media/OLX.bg_147374284/0001_386c1677.webp",
+    "data/media/OLX.bg_147374284/0002_c62efeed.webp",
+    "data/media/OLX.bg_147374284/0003_68812e4e.webp",
+    "data/media/OLX.bg_147374284/0004_afab6aea.webp",
+    "data/media/OLX.bg_147374284/0005_5f23e1bd.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147374284/0000_90c776bb.webp",
+    "OLX.bg_147374284/0001_386c1677.webp",
+    "OLX.bg_147374284/0002_c62efeed.webp",
+    "OLX.bg_147374284/0003_68812e4e.webp",
+    "OLX.bg_147374284/0004_afab6aea.webp",
+    "OLX.bg_147374284/0005_5f23e1bd.webp"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD88797BG_House_for_sale_in_Sveti_Vlas.html",
+  "external_id": "73731e3f9140",
+  "title": "Bulgarian Properties",
+  "description": "Brand-new property with high-quality construction, ready for furnishing",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88797_50.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:38:20.356231+00:00",
+  "reference_id": "BulgarianProperties:73731e3f9140",
+  "local_image_files": [
+    "data/media/BulgarianProperties_73731e3f9140/0000_6c3e393a.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_73731e3f9140/0000_6c3e393a.jpg"
+  ]
+}

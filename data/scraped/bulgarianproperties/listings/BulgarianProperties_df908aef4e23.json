@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Studios_in_Bulgaria/AD87513BG_Studio_for_rent_in_Bansko.html",
+  "external_id": "df908aef4e23",
+  "title": "Bulgarian Properties",
+  "description": "Fully equipped studio just meters from the ski lift in Bansko",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/87513_1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:35:46.805128+00:00",
+  "reference_id": "BulgarianProperties:df908aef4e23",
+  "local_image_files": [
+    "data/media/BulgarianProperties_df908aef4e23/0000_0fbccc55.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_df908aef4e23/0000_0fbccc55.jpg"
+  ]
+}

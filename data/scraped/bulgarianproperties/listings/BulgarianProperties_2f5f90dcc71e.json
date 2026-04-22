@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Hotels_in_Bulgaria/AD88597BG_Hotel_for_sale_near_Gabrovo.html",
+  "external_id": "2f5f90dcc71e",
+  "title": "Bulgarian Properties",
+  "description": "Tourist property with 20 beds, kitchen and dining room and 5.5 decares of land",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88597_49.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:40:36.052763+00:00",
+  "reference_id": "BulgarianProperties:2f5f90dcc71e",
+  "local_image_files": [
+    "data/media/BulgarianProperties_2f5f90dcc71e/0000_0c00d023.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_2f5f90dcc71e/0000_0c00d023.jpg"
+  ]
+}

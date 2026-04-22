@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD88942BG_1-bedroom_apartment_for_sale_in_Burgas.html",
+  "external_id": "a8141b613af0",
+  "title": "Bulgarian Properties",
+  "description": "Modern home in the fastest-growing area of the city, just 5 minutes from the sea",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88942_4.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:36:27.640738+00:00",
+  "reference_id": "BulgarianProperties:a8141b613af0",
+  "local_image_files": [
+    "data/media/BulgarianProperties_a8141b613af0/0000_16a243a9.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_a8141b613af0/0000_16a243a9.jpg"
+  ]
+}

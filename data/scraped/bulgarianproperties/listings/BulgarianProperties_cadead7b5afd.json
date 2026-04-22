@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/Studios_in_Bulgaria/AD88396BG_Studio_for_sale_near_Sunny_Beach.html",
+  "external_id": "cadead7b5afd",
+  "title": "Bulgarian Properties",
+  "description": "One-room apartment for year-round living 3 km from the beach",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/88396_11.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:36:52.395349+00:00",
+  "reference_id": "BulgarianProperties:cadead7b5afd",
+  "local_image_files": [
+    "data/media/BulgarianProperties_cadead7b5afd/0000_b7c9ff1c.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_cadead7b5afd/0000_b7c9ff1c.jpg"
+  ]
+}

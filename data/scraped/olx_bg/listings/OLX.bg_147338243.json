@@ -1,0 +1,41 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/prodavam-imot-v-selo-slamino-okrag-yambol-CID368-ID9Ydph.html?search_reason=search%7Corganic",
+  "external_id": "147338243",
+  "title": "Продавам имот в село Сламино окръг.Ямбол",
+  "description": "имотат се намира на 28км. от гр.Ямбол в самият център на с. Сламино.къща 3 стаи и приемен етаж.Двор 1155мк,сонда извода визобилие.",
+  "price": 6200.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gywx9ta5g9i2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/lztmd0jf1u9g1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/crfvqar2525u3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gywx9ta5g9i2-BG/image;s=765x1020"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:19:29.093191+00:00",
+  "reference_id": "OLX.bg:147338243",
+  "local_image_files": [
+    "data/media/OLX.bg_147338243/0000_e0fa5a38.webp",
+    "data/media/OLX.bg_147338243/0001_c08e7d4a.webp",
+    "data/media/OLX.bg_147338243/0002_d0bd8deb.webp",
+    "data/media/OLX.bg_147338243/0003_04eb83d4.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147338243/0000_e0fa5a38.webp",
+    "OLX.bg_147338243/0001_c08e7d4a.webp",
+    "OLX.bg_147338243/0002_d0bd8deb.webp",
+    "OLX.bg_147338243/0003_04eb83d4.webp"
+  ]
+}

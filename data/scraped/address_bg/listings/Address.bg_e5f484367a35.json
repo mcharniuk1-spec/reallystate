@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-musagenica-mnogostaen-apartament-offer630695",
+  "external_id": "e5f484367a35",
+  "title": "Многостаен апартамент в София, Мусагеница - код на имота: 630695",
+  "description": "Адрес недвижими имоти предлага Многостаен апартамент в София, Мусагеница с код на имота: 630695. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/695/630695/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:20:45.201390+00:00",
+  "reference_id": "Address.bg:e5f484367a35",
+  "local_image_files": [
+    "data/media/Address.bg_e5f484367a35/0000_5afaa76a.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_e5f484367a35/0000_5afaa76a.jpg"
+  ]
+}

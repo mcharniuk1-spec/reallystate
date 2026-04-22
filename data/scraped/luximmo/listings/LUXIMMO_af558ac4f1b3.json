@@ -1,0 +1,35 @@
+{
+  "source_name": "LUXIMMO",
+  "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/borovets/luksozni-imoti-dvustayni-apartamenti/luksozen-imot-40089-dvustaen-apartament-za-prodajba-v-borovets.html",
+  "external_id": "af558ac4f1b3",
+  "title": "Луксиммо",
+  "description": "Ексклузивно представяме двустаен мезонет за продажба в 7 Angels - луксозен жилищно-ваканционен комплекс, разположен сред вековните борови гори на величествената Рила планина. Проектът ще бъде изпълнен без компромиси и има амбицията да се превърне в една от най-реномираните и престижни резиденции в аристократичния планински курорт на България, основан от цар Фердинанд преди повече от 120 години. Проектът е свързан с цялостно преустройство на двете съществуващи сгради на бившия хотел Зодиак в курорта Боровец и превръщането му луксозна",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.luximmo.org/property-images/big_bg/1773329202T40089_12.jpg",
+    "https://static.luximmo.org/property-images/big_bg/1773329202T40089_12.jpg?v=1775734926"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:42:06.895380+00:00",
+  "reference_id": "LUXIMMO:af558ac4f1b3",
+  "local_image_files": [
+    "data/media/LUXIMMO_af558ac4f1b3/0000_89a67ccb.jpg",
+    "data/media/LUXIMMO_af558ac4f1b3/0001_89a67ccb.jpg"
+  ],
+  "local_image_storage_keys": [
+    "LUXIMMO_af558ac4f1b3/0000_89a67ccb.jpg",
+    "LUXIMMO_af558ac4f1b3/0001_89a67ccb.jpg"
+  ]
+}

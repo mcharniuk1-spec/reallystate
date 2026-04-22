@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/varna-hei-tristaen-apartament-offer690726",
+  "external_id": "30e252315c19",
+  "title": "Тристаен апартамент във Варна, ХЕИ - код на имота: 690726",
+  "description": "Адрес недвижими имоти предлага Тристаен апартамент във Варна, ХЕИ с код на имота: 690726. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/726/690726/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:20:20.209941+00:00",
+  "reference_id": "Address.bg:30e252315c19",
+  "local_image_files": [
+    "data/media/Address.bg_30e252315c19/0000_5d785725.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_30e252315c19/0000_5d785725.jpg"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/zavedenie-v-rayona-na-zimno-kino-trakiya-102590-CID368-ID9Z46j.html?search_reason=search%7Corganic",
+  "external_id": "147540799",
+  "title": "Заведение в района на Зимно кино Тракия- 102590",
+  "description": "Компания `ЕКС НВД` представя на Вашето внимание търговски обект - заведение в района на Зимно кино Тракия - предпочитан и комуникативен квартал в сърцето на морската столица. МЕСТОПОЛОЖЕНИЕ: В близост до спирки на градски транспорт, училища, детски градини, търговски обекти от всякакъв тип, заведения и аптеки. СТРОИТЕЛСТВО: Заведението е ситуирано на партерен етаж в тухлена сграда от 2002 г. РАЗПРЕДЕЛЕНИЕ: Имотът разполага с площ от 67 кв.м. разпределена в две нива: Първо ниво - търговско помещение. Второ ниво - търговско помещение, склад и санитарен възел. СЪСТОЯНИЕ: Предлага се обзаведено и оборудвано с всичко необходимо. ОСОБЕНОСТИ: Подходящо за кафе-бар, ресторант, бар или клуб. Заповядайте да Ви го покажем. Използвайки нашите услуги Вие ще превърнете закупуването на новия си дом в едно приятно изживяване, ще получите персонален консултант, съдействие при кандидатстване за кредит от всички банки в България, интериорни дизайнери и екип, който да се погрижи за нужните документи по Вашата сделка. На Ваше разположение сме всеки ден, от понеделник до неделя от 09:00 до 20:00ч. Възползвайте се от безплатна консултация в наш офис, където ще ви спестим време и ще ви запознаем с всички актуални имоти в България, отговарящи на Вашето търсене. Свържете се с нас на 08******90 или на 08******11 и цитирайте кода към имота: 102590.",
+  "price": 105000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "office",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/v3ksomlcq4f33-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/7glmndywtu3f3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/1fkajvvzae4q3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/u08dz97rxkr03-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/v4d110mbyr2x2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/v3ksomlcq4f33-BG/image;s=780x1040"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:23:49.143959+00:00",
+  "reference_id": "OLX.bg:147540799",
+  "local_image_files": [
+    "data/media/OLX.bg_147540799/0000_e42758af.webp",
+    "data/media/OLX.bg_147540799/0001_7f728a2b.webp",
+    "data/media/OLX.bg_147540799/0002_4197f33e.webp",
+    "data/media/OLX.bg_147540799/0003_a91c5feb.webp",
+    "data/media/OLX.bg_147540799/0004_969d4c3d.webp",
+    "data/media/OLX.bg_147540799/0005_063fdb3c.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147540799/0000_e42758af.webp",
+    "OLX.bg_147540799/0001_7f728a2b.webp",
+    "OLX.bg_147540799/0002_4197f33e.webp",
+    "OLX.bg_147540799/0003_a91c5feb.webp",
+    "OLX.bg_147540799/0004_969d4c3d.webp",
+    "OLX.bg_147540799/0005_063fdb3c.webp"
+  ]
+}

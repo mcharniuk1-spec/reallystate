@@ -1,0 +1,47 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/apartament-s-edna-spalnya-na-brega-na-moreto-v-kurorta-sveti-vlas-4878-CID368-ID9Z4o7.html?search_reason=search%7Corganic",
+  "external_id": "147541903",
+  "title": "Апартамент с една спалня на брега на морето в курорта Свети Влас #4878",
+  "description": "Готов за закупуване апартамент с една спалня на брега на морето в курорта Свети Влас. Апартаментът е просторен и готов за нанасяне: включва кухня, мебели и електроуреди. Разпределение: хол с кухненски бокс, спалня, коридор, баня и просторна тераса. Комплексът предлага следните удобства: ресторанти, басейни, футболно игрище, множество детски площадки, детски клуб, паркинг и охрана. Акт 16.#4878 К покупке готова квартира формата 1+1 на первой линии курорта Святой Влас. Апартамент имеет большую площадь и готов для жизни: есть кухня и мебель, бытовая техника. Планировка: гостиная с кухонной зоной, спальня, коридор, санузел и просторная терраса. Комплекс предлагает следующие услуги: рестораны, бассейны, футбольное поле, много детских игровых площадок, детский клуб, парковка, охрана. Акт 16.#4878",
+  "price": 94500.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qzknzicovngl3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/oilleal3b8wq2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/g4q5tx9vynpc2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/gnnruk9kr5ks3-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pol9ut0qjzdg1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qzknzicovngl3-BG/image;s=1400x1050"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:24:55.983864+00:00",
+  "reference_id": "OLX.bg:147541903",
+  "local_image_files": [
+    "data/media/OLX.bg_147541903/0000_bb497061.webp",
+    "data/media/OLX.bg_147541903/0001_c183c26f.webp",
+    "data/media/OLX.bg_147541903/0002_d07e18ce.webp",
+    "data/media/OLX.bg_147541903/0003_0c276459.webp",
+    "data/media/OLX.bg_147541903/0004_f0a5b736.webp",
+    "data/media/OLX.bg_147541903/0005_1e7c0ca6.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147541903/0000_bb497061.webp",
+    "OLX.bg_147541903/0001_c183c26f.webp",
+    "OLX.bg_147541903/0002_d07e18ce.webp",
+    "OLX.bg_147541903/0003_0c276459.webp",
+    "OLX.bg_147541903/0004_f0a5b736.webp",
+    "OLX.bg_147541903/0005_1e7c0ca6.webp"
+  ]
+}

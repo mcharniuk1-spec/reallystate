@@ -1,0 +1,41 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/4dka-zemedelska-zemya-3ta-kat-na-glaven-pat-varna-ruse-ot-sobstvenik-CID368-ID9iudW.html?search_reason=search%7Cpromoted",
+  "external_id": "137393111",
+  "title": "4дка земеделска земя 3та/кат на главен път Варна-Русе от собственик",
+  "description": "ВАЖНО! ОБЯВЕНАТА ЦЕНА Е НА ДЕКАР! Продавам земеделска земя разделена на няколко парцела с обща площ от 3380 м2 в Североизточна България, в близост до главен път Варна-Русе(Шумен-Разград). Силно развита селскостопанска зона с много благоприятен климат, изключително плодородна почва подходяща за всички видове култури. Директно от собственик и без комисионна!",
+  "price": 3990.0,
+  "currency": "BGN",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/seaxoz4rk7ud1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/pg5o4jicscte-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/e3penm5nyu9t2-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/seaxoz4rk7ud1-BG/image;s=436x265"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:22:00.522406+00:00",
+  "reference_id": "OLX.bg:137393111",
+  "local_image_files": [
+    "data/media/OLX.bg_137393111/0000_025b95d4.webp",
+    "data/media/OLX.bg_137393111/0001_980e4815.webp",
+    "data/media/OLX.bg_137393111/0002_04d1ae1d.webp",
+    "data/media/OLX.bg_137393111/0003_025b95d4.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_137393111/0000_025b95d4.webp",
+    "OLX.bg_137393111/0001_980e4815.webp",
+    "OLX.bg_137393111/0002_04d1ae1d.webp",
+    "OLX.bg_137393111/0003_025b95d4.webp"
+  ]
+}

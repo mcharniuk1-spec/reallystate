@@ -1,0 +1,32 @@
+{
+  "source_name": "Yavlena",
+  "listing_url": "https://www.yavlena.com/bg/168420",
+  "external_id": "4926ae0e8282",
+  "title": "Къща в Рибарица 130 кв.м. ID 168420  | Явлена",
+  "description": "",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://userimages.yavlena.com/2a444252-535d-4193-9e07-7939a1aac235.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:12:57.459903+00:00",
+  "reference_id": "Yavlena:4926ae0e8282",
+  "local_image_files": [
+    "data/media/Yavlena_4926ae0e8282/0000_066a6218.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Yavlena_4926ae0e8282/0000_066a6218.jpg"
+  ]
+}

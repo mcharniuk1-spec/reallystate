@@ -1,0 +1,32 @@
+{
+  "source_name": "BulgarianProperties",
+  "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD89990BG_1-bedroom_apartment_for_sale_in_Varna.html",
+  "external_id": "1ce37552b482",
+  "title": "Bulgarian Properties",
+  "description": "Furnished property in a gated complex in Varna",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://static.bulgarianproperties.com/property-images/big/89990_29.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:42:37.625155+00:00",
+  "reference_id": "BulgarianProperties:1ce37552b482",
+  "local_image_files": [
+    "data/media/BulgarianProperties_1ce37552b482/0000_eba1ddae.jpg"
+  ],
+  "local_image_storage_keys": [
+    "BulgarianProperties_1ce37552b482/0000_eba1ddae.jpg"
+  ]
+}

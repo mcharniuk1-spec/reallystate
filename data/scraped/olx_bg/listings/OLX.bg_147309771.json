@@ -1,0 +1,44 @@
+{
+  "source_name": "OLX.bg",
+  "listing_url": "https://www.olx.bg/d/ad/mezonet-na-300-m-ot-moreto-nov-kompleks-v-stavros-gartsiya-CID368-ID9Y603.html?search_reason=search%7Corganic",
+  "external_id": "147309771",
+  "title": "Мезонет на 300 м от морето – нов комплекс в Ставрос, Гърция",
+  "description": "Предлагаме мезонети в новия жилищен комплекс OLIVE, разположен в курортния град Ставрос, Северна Гърция, само на 300 метра от морето. Комплексът е проектиран като бутиков проект с модерна архитектура и ограничен брой жилища, подходящ както за ваканционен имот, така и за инвестиция с отдаване под наем. Мезонетите са с площ 61 кв.м и са на два етажа. Разпределение: Първи етаж хол с кухня баня с тоалетна две просторни тераси по около 8 кв.м Втори етаж две спални баня с тоалетна Всяко жилище разполага със собствено паркомясто. Жилищата се предават напълно завършени „до ключ“, включително оборудвана кухня, електроуреди, климатици и соларен бойлер. Строителството започва през март 2026 г., а срокът за завършване е 18 месеца. Комплексът се намира в тих район на Ставрос, на пешеходно разстояние от плажа, ресторанти и магазини. Разстоянието до Солун е около 80 км, а до международното летище – приблизително един час. Имотът се продава директно от строителя без комисионна.",
+  "price": 145000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "long_term_rent",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nang0e429vqo-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/qrapj9uc9fkx-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/ifylswtx9asl1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/24eq7pb6a5gf1-BG/image",
+    "https://frankfurt.apollo.olxcdn.com:443/v1/files/nang0e429vqo-BG/image;s=1536x1024"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T17:19:34.106227+00:00",
+  "reference_id": "OLX.bg:147309771",
+  "local_image_files": [
+    "data/media/OLX.bg_147309771/0000_7315198b.webp",
+    "data/media/OLX.bg_147309771/0001_055ebe5c.webp",
+    "data/media/OLX.bg_147309771/0002_3c8671d7.webp",
+    "data/media/OLX.bg_147309771/0003_d8a97338.webp",
+    "data/media/OLX.bg_147309771/0004_058cd23f.webp"
+  ],
+  "local_image_storage_keys": [
+    "OLX.bg_147309771/0000_7315198b.webp",
+    "OLX.bg_147309771/0001_055ebe5c.webp",
+    "OLX.bg_147309771/0002_3c8671d7.webp",
+    "OLX.bg_147309771/0003_d8a97338.webp",
+    "OLX.bg_147309771/0004_058cd23f.webp"
+  ]
+}

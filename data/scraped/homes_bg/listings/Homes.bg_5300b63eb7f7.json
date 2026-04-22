@@ -1,0 +1,28 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-70m2-sofiya-centyr/as1629013",
+  "external_id": "5300b63eb7f7",
+  "title": "Тристаен, 70m² -  Център, София - Апартамент за продажба - АЛДЕС НЕДВИЖИМИ ИМОТИ",
+  "description": "ОТЛИЧЕН, ПРОСТОРЕН, ВЪТРЕШЕН ап. на ТОП място в идеалния център на града, на метри от НДК, до метростанция и множество спирки на градския транспорт, много магаз...",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2025-05-22_2/114241019o.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T10:05:26.620020+00:00",
+  "reference_id": "Homes.bg:5300b63eb7f7",
+  "local_image_files": [],
+  "local_image_storage_keys": []
+}

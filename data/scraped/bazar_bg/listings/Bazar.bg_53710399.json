@@ -1,0 +1,38 @@
+{
+  "source_name": "Bazar.bg",
+  "listing_url": "https://bazar.bg/obiava-53710399/prodawa-2-staen-gr-sofiia-gorna-bania",
+  "external_id": "53710399",
+  "title": "Bazar.BG",
+  "description": "Представяме на вашето внимание двустаен апартамент в кв. Горна Баня. Апартаментът се намира в новострояща се сграда с издаден акт 14. Състои се от антре, дневна",
+  "price": 152000.0,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/496/big1/1b177263902215496_T5.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/496/big1/1b177263902215496_IW.jpg",
+    "//imotstatic1.focus.bg/imot/photosimotbg/1/496/big1/1b177263902215496_T5.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-08T16:47:39.642513+00:00",
+  "reference_id": "Bazar.bg:53710399",
+  "local_image_files": [
+    "data/media/Bazar.bg_53710399/0000_5f9fabe0.jpg",
+    "data/media/Bazar.bg_53710399/0001_f66ee68c.jpg",
+    "data/media/Bazar.bg_53710399/0002_5f9fabe0.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Bazar.bg_53710399/0000_5f9fabe0.jpg",
+    "Bazar.bg_53710399/0001_f66ee68c.jpg",
+    "Bazar.bg_53710399/0002_5f9fabe0.jpg"
+  ]
+}

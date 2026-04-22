@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-lozenec-dvustaen-apartament-offer689797",
+  "external_id": "b33ce9b01c25",
+  "title": "Двустаен апартамент в София, Лозенец - код на имота: 689797",
+  "description": "Адрес недвижими имоти предлага Двустаен апартамент в София, Лозенец с код на имота: 689797. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/797/689797/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:20:30.477141+00:00",
+  "reference_id": "Address.bg:b33ce9b01c25",
+  "local_image_files": [
+    "data/media/Address.bg_b33ce9b01c25/0000_c3a35e2f.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_b33ce9b01c25/0000_c3a35e2f.jpg"
+  ]
+}

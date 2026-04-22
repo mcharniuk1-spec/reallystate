@@ -1,0 +1,32 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/stara-zagora-tri-chuchura-centar-tristaen-apartament-offer671715",
+  "external_id": "8588ccad3064",
+  "title": "Тристаен апартамент в Стара Загора, Три чучура- център - код на имота: 671715",
+  "description": "Адрес недвижими имоти предлага Тристаен апартамент в Стара Загора, Три чучура- център с код на имота: 671715. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": null,
+  "currency": "EUR",
+  "area_sqm": null,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/715/671715/764x510/1.jpg"
+  ],
+  "phones": [],
+  "amenities": [],
+  "scraped_at": "2026-04-09T11:21:15.370099+00:00",
+  "reference_id": "Address.bg:8588ccad3064",
+  "local_image_files": [
+    "data/media/Address.bg_8588ccad3064/0000_14b22288.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_8588ccad3064/0000_14b22288.jpg"
+  ]
+}
