@@ -2,7 +2,7 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-8160-zhilishten-kompleks-grad-sofiya-manastirski-livadi",
   "external_id": "21ab9c89e0fb",
-  "title": "Imot.bg",
+  "title": "������� �������� � ���� ����� ����������� ������ ����� 8160",
   "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
   "price": null,
   "currency": "EUR",
@@ -17,12 +17,34 @@
   "listing_intent": "sale",
   "property_category": "unknown",
   "image_urls": [
-    "//cdn3.focus.bg/imot/photosnb/160//big/8160_Ut.jpg"
+    "https://cdn3.focus.bg/imot/photosnb/160//big1/8160_Ut.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/160//big1/8160_3C.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/160//big1/8160_o6.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/160//big1/8160_fD.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/160//big1/8160_cD.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/160//big1/8160_HR.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/160//big1/8160_oi.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/160//big1/8160_Bq.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/160//big1/8160_MV.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/160//big1/8160_B1.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/160//big1/8160_y.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/160//big1/8160_6k.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/160//big1/8160_lM.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/160//big/8160_Ut.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "0899800300"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T10:06:57.826625+00:00",
+  "scraped_at": "2026-04-24T07:52:29.418840+00:00",
   "reference_id": "imot.bg:21ab9c89e0fb",
+  "source_attributes": {},
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_21ab9c89e0fb",
+  "photo_count_remote": 14,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/168003",
   "external_id": "7b7b8837d06f",
   "title": "Къща в Граф Игнатиево 250 кв.м. ID 168003  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "$5b",
+  "price": 250000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 250.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Граф Игнатиево",
   "district": "",
-  "address_text": "",
+  "address_text": "Граф Игнатиево",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/18f523e8-47b0-4901-aa5d-4addd2ce47c8.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 895 506 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:38.645895+00:00",
+  "scraped_at": "2026-04-24T07:53:22.087712+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:7b7b8837d06f",
   "local_image_files": [
     "data/media/Yavlena_7b7b8837d06f/0000_ceadaed0.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_7b7b8837d06f/0000_ceadaed0.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_7b7b8837d06f",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

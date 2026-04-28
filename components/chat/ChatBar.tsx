@@ -102,7 +102,7 @@ export function ChatBar() {
   return (
     <div
       className={`fixed bottom-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
-        expanded ? "h-[420px] sm:h-[480px]" : "h-auto"
+        expanded ? "h-[42vh] sm:h-[24vh]" : "h-auto"
       }`}
     >
       {/* Backdrop when expanded */}

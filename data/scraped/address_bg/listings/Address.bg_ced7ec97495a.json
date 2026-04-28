@@ -4,14 +4,14 @@
   "external_id": "ced7ec97495a",
   "title": "Къща/Вила в Петко Славейков - код на имота: 664795",
   "description": "Адрес недвижими имоти предлага Къща/Вила в Петко Славейков с код на имота: 664795. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 13294.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 800.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Петко Славейков",
   "district": "",
-  "address_text": "",
+  "address_text": "Петко Славейков",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,39 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/795/664795/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-01-31",
+    "025-08-15",
+    "018-05-09",
+    "018-07-06",
+    "0440 800",
+    "0886247408",
+    "026-01-21",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:20:41.941495+00:00",
+  "scraped_at": "2026-04-24T07:52:44.221933+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Петко Славейков Къща/Вила"
+  },
   "reference_id": "Address.bg:ced7ec97495a",
   "local_image_files": [
     "data/media/Address.bg_ced7ec97495a/0000_26b098ea.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_ced7ec97495a/0000_26b098ea.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_ced7ec97495a",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

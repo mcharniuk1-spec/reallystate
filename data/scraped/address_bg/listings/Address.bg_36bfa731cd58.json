@@ -1,0 +1,57 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/plovdiv-trakiya-dvustaen-apartament-offer674227",
+  "external_id": "36bfa731cd58",
+  "title": "Двустаен апартамент в Пловдив, Тракия - код на имота: 674227",
+  "description": "Адрес недвижими имоти предлага Двустаен апартамент в Пловдив, Тракия с код на имота: 674227. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 85000.0,
+  "currency": "EUR",
+  "area_sqm": 78.0,
+  "rooms": null,
+  "floor": null,
+  "city": "Пловдив",
+  "district": "Тракия",
+  "address_text": "Пловдив, Тракия",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/227/674227/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-03-09",
+    "025-11-04",
+    "018-05-09",
+    "018-07-06",
+    "0888667370",
+    "025-11-06",
+    "026-03-27",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:10:45.497997+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Пловдив Двустаен апартамент Тракия"
+  },
+  "reference_id": "Address.bg:36bfa731cd58",
+  "local_image_files": [
+    "data/media/Address.bg_36bfa731cd58/0000_1ef3b003.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_36bfa731cd58/0000_1ef3b003.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_36bfa731cd58",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

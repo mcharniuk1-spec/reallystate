@@ -4,14 +4,14 @@
   "external_id": "b74703414c43",
   "title": "Парцел/Терен в Лиляново - код на имота: 616605",
   "description": "Адрес недвижими имоти предлага Парцел/Терен в Лиляново с код на имота: 616605. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 26490.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 186000.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Лиляново",
   "district": "",
-  "address_text": "",
+  "address_text": "Лиляново",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,44 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/605/616605/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "024-11-19",
+    "05582722",
+    "024-04-14",
+    "018-05-09",
+    "018-07-06",
+    "0442 - 500",
+    "0442 497",
+    "0442 26320",
+    "0430 1500",
+    "0884186724",
+    "025-07-17",
+    "0565665444141574056560",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:21:13.764743+00:00",
+  "scraped_at": "2026-04-24T07:52:44.155945+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Лиляново Парцел/Терен"
+  },
   "reference_id": "Address.bg:b74703414c43",
   "local_image_files": [
     "data/media/Address.bg_b74703414c43/0000_d79de65c.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_b74703414c43/0000_d79de65c.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_b74703414c43",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

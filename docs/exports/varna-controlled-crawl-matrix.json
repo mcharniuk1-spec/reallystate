@@ -1,0 +1,2066 @@
+{
+  "generated_at": "2026-04-23T15:39:17.883957+00:00",
+  "region_key": "varna",
+  "bucket_count": 108,
+  "active_bucket_count": 18,
+  "rows": [
+    {
+      "section_id": "address_bg__varna__buy_personal__all",
+      "source_name": "Address.bg",
+      "segment_key": "buy_personal",
+      "active": true,
+      "source_key": "address_bg",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "land",
+        "new_build"
+      ],
+      "entry_scope": "varna_only_url",
+      "entry_urls": [
+        "https://address.bg/sale/varna/l4694"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "address_bg__varna__buy_commercial__all",
+      "source_name": "Address.bg",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": "address_bg",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial route split on Address.bg is not yet expressed as a reusable Varna bucket.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "address_bg__varna__rent_personal__all",
+      "source_name": "Address.bg",
+      "segment_key": "rent_personal",
+      "active": true,
+      "source_key": "address_bg",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [
+        "https://address.bg/rent"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "address_bg__varna__rent_commercial__all",
+      "source_name": "Address.bg",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": "address_bg",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial rental route split on Address.bg is not yet saved as a reusable Varna bucket.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "apartmentsbulgariacom__varna__buy_personal__all",
+      "source_name": "ApartmentsBulgaria.com",
+      "segment_key": "buy_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "unsupported",
+      "activation_ready": false,
+      "skip_reason": "Source registry does not declare sale/new-build/land support for this source.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "apartmentsbulgariacom__varna__buy_commercial__all",
+      "source_name": "ApartmentsBulgaria.com",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "unsupported",
+      "activation_ready": false,
+      "skip_reason": "Source registry does not declare sale/new-build/land support for this source.",
+      "supported_verticals": [
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "apartmentsbulgariacom__varna__rent_personal__all",
+      "source_name": "ApartmentsBulgaria.com",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "unsupported",
+      "activation_ready": false,
+      "skip_reason": "Source registry does not declare long-term rent support for this source.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "apartmentsbulgariacom__varna__rent_commercial__all",
+      "source_name": "ApartmentsBulgaria.com",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "unsupported",
+      "activation_ready": false,
+      "skip_reason": "Source registry does not declare long-term rent support for this source.",
+      "supported_verticals": [
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "bazar_bg__varna__buy_personal__all",
+      "source_name": "Bazar.bg",
+      "segment_key": "buy_personal",
+      "active": true,
+      "source_key": "bazar_bg",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "land",
+        "garages"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [
+        "https://bazar.bg/obiavi/apartamenti",
+        "https://bazar.bg/obiavi/kashti-i-vili",
+        "https://bazar.bg/obiavi/zemya",
+        "https://bazar.bg/obiavi/garazhi-i-parkoingi"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "bazar_bg__varna__buy_commercial__all",
+      "source_name": "Bazar.bg",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": "bazar_bg",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial verticals are not yet persisted as reusable Bazar.bg buckets.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "bazar_bg__varna__rent_personal__all",
+      "source_name": "Bazar.bg",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": "bazar_bg",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Saved Bazar.bg runtime currently proves sale-side discovery only.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "bazar_bg__varna__rent_commercial__all",
+      "source_name": "Bazar.bg",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": "bazar_bg",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial rental routes are not yet mapped for Bazar.bg.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "bulgarianproperties__varna__buy_personal__all",
+      "source_name": "BulgarianProperties",
+      "segment_key": "buy_personal",
+      "active": true,
+      "source_key": "bulgarianproperties",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "land",
+        "new_build"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [
+        "https://www.bulgarianproperties.com/properties_for_sale_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/3-bedroom_apartments_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/houses_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/land_for_sale_in_Bulgaria/index.html"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "bulgarianproperties__varna__buy_commercial__all",
+      "source_name": "BulgarianProperties",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": "bulgarianproperties",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial routes are not yet separated in the saved BulgarianProperties pattern set.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "bulgarianproperties__varna__rent_personal__all",
+      "source_name": "BulgarianProperties",
+      "segment_key": "rent_personal",
+      "active": true,
+      "source_key": "bulgarianproperties",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [
+        "https://www.bulgarianproperties.com/properties_for_rent_in_Bulgaria/index.html"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "bulgarianproperties__varna__rent_commercial__all",
+      "source_name": "BulgarianProperties",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": "bulgarianproperties",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial rental routes are not yet separated in the saved BulgarianProperties pattern set.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "domaza__varna__buy_personal__all",
+      "source_name": "Domaza",
+      "segment_key": "buy_personal",
+      "active": false,
+      "source_key": "domaza",
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Search routes are known, but source is not yet patterned enough for controlled activation.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "land",
+        "new_build"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [
+        "https://www.domaza.bg/property/index/search/1/s/572da6146f10beb4bf6333d75039731a4d2b9902",
+        "https://www.domaza.bg/property/index/search/1/s/c8a3ad4db8f37d4e8b31fe9db66bc4d1f537ba5a"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "domaza__varna__buy_commercial__all",
+      "source_name": "Domaza",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": "domaza",
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial routes are not yet saved as reusable Domaza buckets.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "domaza__varna__rent_personal__all",
+      "source_name": "Domaza",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": "domaza",
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Rent route exists but reusable detail/media proof is not yet complete.",
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [
+        "https://www.domaza.bg/property/index/search/1/s/e8780bcda8fa201940f1ce87e404f870d0c5c3fc"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "domaza__varna__rent_commercial__all",
+      "source_name": "Domaza",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": "domaza",
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial rental routes are not yet saved for Domaza.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "holding_group_real_estate__varna__buy_personal__all",
+      "source_name": "Holding Group Real Estate",
+      "segment_key": "buy_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "new_build",
+        "land"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "holding_group_real_estate__varna__buy_commercial__all",
+      "source_name": "Holding Group Real Estate",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "new_build",
+        "land",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "holding_group_real_estate__varna__rent_personal__all",
+      "source_name": "Holding Group Real Estate",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "holding_group_real_estate__varna__rent_commercial__all",
+      "source_name": "Holding Group Real Estate",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "home2u__varna__buy_personal__all",
+      "source_name": "Home2U",
+      "segment_key": "buy_personal",
+      "active": false,
+      "source_key": "home2u",
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Varna route exists but source is not yet patterned enough for activation.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "land",
+        "new_build"
+      ],
+      "entry_scope": "varna_only_url",
+      "entry_urls": [
+        "https://home2u.bg/nedvizhimi-imoti-varna/"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "home2u__varna__buy_commercial__all",
+      "source_name": "Home2U",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": "home2u",
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial Home2U routes are not yet saved as reusable buckets.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "home2u__varna__rent_personal__all",
+      "source_name": "Home2U",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": "home2u",
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Varna rental route exists but detail/media pattern is not yet complete.",
+      "supported_verticals": [
+        "apartments"
+      ],
+      "entry_scope": "varna_only_url",
+      "entry_urls": [
+        "https://home2u.bg/apartamenti-pod-naem-varna/"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "home2u__varna__rent_commercial__all",
+      "source_name": "Home2U",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": "home2u",
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial rental Home2U routes are not yet saved.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "homes_bg__varna__buy_personal__all",
+      "source_name": "Homes.bg",
+      "segment_key": "buy_personal",
+      "active": true,
+      "source_key": "homes_bg",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "land",
+        "new_build"
+      ],
+      "entry_scope": "varna_only_api_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "homes_bg__varna__buy_commercial__all",
+      "source_name": "Homes.bg",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": "homes_bg",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial category filter is not yet locked for the Homes Varna API path.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "homes_bg__varna__rent_personal__all",
+      "source_name": "Homes.bg",
+      "segment_key": "rent_personal",
+      "active": true,
+      "source_key": "homes_bg",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "varna_only_api_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "homes_bg__varna__rent_commercial__all",
+      "source_name": "Homes.bg",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": "homes_bg",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial rental filter is not yet locked for the Homes Varna API path.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "imotekabg__varna__buy_personal__all",
+      "source_name": "Imoteka.bg",
+      "segment_key": "buy_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_authorized_pattern",
+      "support_status": "legal_blocked",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "new_build",
+        "land"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "legal_review_required"
+    },
+    {
+      "section_id": "imotekabg__varna__buy_commercial__all",
+      "source_name": "Imoteka.bg",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_authorized_pattern",
+      "support_status": "legal_blocked",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "new_build",
+        "land",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "legal_review_required"
+    },
+    {
+      "section_id": "imotekabg__varna__rent_personal__all",
+      "source_name": "Imoteka.bg",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_authorized_pattern",
+      "support_status": "legal_blocked",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "legal_review_required"
+    },
+    {
+      "section_id": "imotekabg__varna__rent_commercial__all",
+      "source_name": "Imoteka.bg",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_authorized_pattern",
+      "support_status": "legal_blocked",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "legal_review_required"
+    },
+    {
+      "section_id": "imotiinfo__varna__buy_personal__all",
+      "source_name": "Imoti.info",
+      "segment_key": "buy_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_authorized_pattern",
+      "support_status": "legal_blocked",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "new_build",
+        "land"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "licensing_required"
+    },
+    {
+      "section_id": "imotiinfo__varna__buy_commercial__all",
+      "source_name": "Imoti.info",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_authorized_pattern",
+      "support_status": "legal_blocked",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "new_build",
+        "land",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "licensing_required"
+    },
+    {
+      "section_id": "imotiinfo__varna__rent_personal__all",
+      "source_name": "Imoti.info",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_authorized_pattern",
+      "support_status": "legal_blocked",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "licensing_required"
+    },
+    {
+      "section_id": "imotiinfo__varna__rent_commercial__all",
+      "source_name": "Imoti.info",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_authorized_pattern",
+      "support_status": "legal_blocked",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "licensing_required"
+    },
+    {
+      "section_id": "indomiobg__varna__buy_personal__all",
+      "source_name": "Indomio.bg",
+      "segment_key": "buy_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "land"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "indomiobg__varna__buy_commercial__all",
+      "source_name": "Indomio.bg",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "land",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "indomiobg__varna__rent_personal__all",
+      "source_name": "Indomio.bg",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "indomiobg__varna__rent_commercial__all",
+      "source_name": "Indomio.bg",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "luximmo__varna__buy_personal__all",
+      "source_name": "LUXIMMO",
+      "segment_key": "buy_personal",
+      "active": true,
+      "source_key": "luximmo",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "new_build"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [
+        "https://www.luximmo.bg/apartamenti/"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "luximmo__varna__buy_commercial__all",
+      "source_name": "LUXIMMO",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": "luximmo",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial LUXIMMO routes are not yet persisted in the reusable bucket catalog.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "luximmo__varna__rent_personal__all",
+      "source_name": "LUXIMMO",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": "luximmo",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Saved LUXIMMO runtime currently proves sale detail capture, not reusable rent discovery.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "luximmo__varna__rent_commercial__all",
+      "source_name": "LUXIMMO",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": "luximmo",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial rental routes are not yet mapped for LUXIMMO.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "lions_group__varna__buy_personal__all",
+      "source_name": "Lions Group",
+      "segment_key": "buy_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "new_build",
+        "land"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "lions_group__varna__buy_commercial__all",
+      "source_name": "Lions Group",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "new_build",
+        "land",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "lions_group__varna__rent_personal__all",
+      "source_name": "Lions Group",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "lions_group__varna__rent_commercial__all",
+      "source_name": "Lions Group",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "olx_bg__varna__buy_personal__all",
+      "source_name": "OLX.bg",
+      "segment_key": "buy_personal",
+      "active": true,
+      "source_key": "olx_bg",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "land",
+        "garages"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [
+        "https://www.olx.bg/nedvizhimi-imoti/"
+      ],
+      "legal_mode": "official_api_allowed"
+    },
+    {
+      "section_id": "olx_bg__varna__buy_commercial__all",
+      "source_name": "OLX.bg",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": "olx_bg",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial OLX route split is not yet locked in the saved pattern set.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "official_api_allowed"
+    },
+    {
+      "section_id": "olx_bg__varna__rent_personal__all",
+      "source_name": "OLX.bg",
+      "segment_key": "rent_personal",
+      "active": true,
+      "source_key": "olx_bg",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [
+        "https://www.olx.bg/nedvizhimi-imoti/"
+      ],
+      "legal_mode": "official_api_allowed"
+    },
+    {
+      "section_id": "olx_bg__varna__rent_commercial__all",
+      "source_name": "OLX.bg",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": "olx_bg",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial OLX split is not yet locked in reusable filters.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "official_api_allowed"
+    },
+    {
+      "section_id": "pochivkabg__varna__buy_personal__all",
+      "source_name": "Pochivka.bg",
+      "segment_key": "buy_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "unsupported",
+      "activation_ready": false,
+      "skip_reason": "Source registry does not declare sale/new-build/land support for this source.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "pochivkabg__varna__buy_commercial__all",
+      "source_name": "Pochivka.bg",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "unsupported",
+      "activation_ready": false,
+      "skip_reason": "Source registry does not declare sale/new-build/land support for this source.",
+      "supported_verticals": [
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "pochivkabg__varna__rent_personal__all",
+      "source_name": "Pochivka.bg",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "unsupported",
+      "activation_ready": false,
+      "skip_reason": "Source registry does not declare long-term rent support for this source.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "pochivkabg__varna__rent_commercial__all",
+      "source_name": "Pochivka.bg",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "unsupported",
+      "activation_ready": false,
+      "skip_reason": "Source registry does not declare long-term rent support for this source.",
+      "supported_verticals": [
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "realistimo__varna__buy_personal__all",
+      "source_name": "Realistimo",
+      "segment_key": "buy_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "new_build",
+        "land"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "realistimo__varna__buy_commercial__all",
+      "source_name": "Realistimo",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "new_build",
+        "land",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "realistimo__varna__rent_personal__all",
+      "source_name": "Realistimo",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "realistimo__varna__rent_commercial__all",
+      "source_name": "Realistimo",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "renticabg__varna__buy_personal__all",
+      "source_name": "Rentica.bg",
+      "segment_key": "buy_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "unsupported",
+      "activation_ready": false,
+      "skip_reason": "Source registry does not declare sale/new-build/land support for this source.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "renticabg__varna__buy_commercial__all",
+      "source_name": "Rentica.bg",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "unsupported",
+      "activation_ready": false,
+      "skip_reason": "Source registry does not declare sale/new-build/land support for this source.",
+      "supported_verticals": [
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "renticabg__varna__rent_personal__all",
+      "source_name": "Rentica.bg",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "renticabg__varna__rent_commercial__all",
+      "source_name": "Rentica.bg",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "suprimmo__varna__buy_personal__all",
+      "source_name": "SUPRIMMO",
+      "segment_key": "buy_personal",
+      "active": true,
+      "source_key": "suprimmo",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "land",
+        "new_build"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [
+        "https://www.suprimmo.bg/bulgaria/apartamenti/",
+        "https://www.suprimmo.bg/bulgaria/kushti-vili/",
+        "https://www.suprimmo.bg/bulgaria/partseli/"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "suprimmo__varna__buy_commercial__all",
+      "source_name": "SUPRIMMO",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": "suprimmo",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial category routes are not yet saved as reusable SUPRIMMO Varna sections.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "suprimmo__varna__rent_personal__all",
+      "source_name": "SUPRIMMO",
+      "segment_key": "rent_personal",
+      "active": true,
+      "source_key": "suprimmo",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [
+        "https://www.suprimmo.bg/naem/bulgaria/selectsya/"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "suprimmo__varna__rent_commercial__all",
+      "source_name": "SUPRIMMO",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": "suprimmo",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial rental route split is not yet mapped for SUPRIMMO.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "svobodni_kvartiricom__varna__buy_personal__all",
+      "source_name": "Svobodni-kvartiri.com",
+      "segment_key": "buy_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "unsupported",
+      "activation_ready": false,
+      "skip_reason": "Source registry does not declare sale/new-build/land support for this source.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "svobodni_kvartiricom__varna__buy_commercial__all",
+      "source_name": "Svobodni-kvartiri.com",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "unsupported",
+      "activation_ready": false,
+      "skip_reason": "Source registry does not declare sale/new-build/land support for this source.",
+      "supported_verticals": [
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "svobodni_kvartiricom__varna__rent_personal__all",
+      "source_name": "Svobodni-kvartiri.com",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "svobodni_kvartiricom__varna__rent_commercial__all",
+      "source_name": "Svobodni-kvartiri.com",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "unique_estates__varna__buy_personal__all",
+      "source_name": "Unique Estates",
+      "segment_key": "buy_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "new_build"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "unique_estates__varna__buy_commercial__all",
+      "source_name": "Unique Estates",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "new_build",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "unique_estates__varna__rent_personal__all",
+      "source_name": "Unique Estates",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "unique_estates__varna__rent_commercial__all",
+      "source_name": "Unique Estates",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "vilabg__varna__buy_personal__all",
+      "source_name": "Vila.bg",
+      "segment_key": "buy_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "unsupported",
+      "activation_ready": false,
+      "skip_reason": "Source registry does not declare sale/new-build/land support for this source.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "vilabg__varna__buy_commercial__all",
+      "source_name": "Vila.bg",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "unsupported",
+      "activation_ready": false,
+      "skip_reason": "Source registry does not declare sale/new-build/land support for this source.",
+      "supported_verticals": [
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "vilabg__varna__rent_personal__all",
+      "source_name": "Vila.bg",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "unsupported",
+      "activation_ready": false,
+      "skip_reason": "Source registry does not declare long-term rent support for this source.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "vilabg__varna__rent_commercial__all",
+      "source_name": "Vila.bg",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "unsupported",
+      "activation_ready": false,
+      "skip_reason": "Source registry does not declare long-term rent support for this source.",
+      "supported_verticals": [
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "yavlena__varna__buy_personal__all",
+      "source_name": "Yavlena",
+      "segment_key": "buy_personal",
+      "active": true,
+      "source_key": "yavlena",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "land"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [
+        "https://www.yavlena.com/bg/sales"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "yavlena__varna__buy_commercial__all",
+      "source_name": "Yavlena",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": "yavlena",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial Yavlena route split is not yet saved in reusable patterns.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "yavlena__varna__rent_personal__all",
+      "source_name": "Yavlena",
+      "segment_key": "rent_personal",
+      "active": true,
+      "source_key": "yavlena",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [
+        "https://www.yavlena.com/bg/rentals"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "yavlena__varna__rent_commercial__all",
+      "source_name": "Yavlena",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": "yavlena",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial rental Yavlena routes are not yet saved separately.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "alo_bg__varna__buy_personal__all",
+      "source_name": "alo.bg",
+      "segment_key": "buy_personal",
+      "active": false,
+      "source_key": "alo_bg",
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "supported",
+      "activation_ready": false,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "land"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [
+        "https://www.alo.bg/obiavi/imoti-prodajbi/apartamenti-stai/",
+        "https://www.alo.bg/obiavi/imoti-prodajbi/kashti-vili/",
+        "https://www.alo.bg/obiavi/imoti-prodajbi/parzeli-za-zastroiavane-investicionni-proekti/",
+        "https://www.alo.bg/obiavi/imoti-prodajbi/zemedelska-zemia-gradini-lozia-gora/"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "alo_bg__varna__buy_commercial__all",
+      "source_name": "alo.bg",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": "alo_bg",
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial sale routes are not yet saved as reusable ALO buckets.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "alo_bg__varna__rent_personal__all",
+      "source_name": "alo.bg",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": "alo_bg",
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "supported",
+      "activation_ready": false,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [
+        "https://www.alo.bg/obiavi/imoti-naemi/apartamenti-stai/"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "alo_bg__varna__rent_commercial__all",
+      "source_name": "alo.bg",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": "alo_bg",
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial rental routes are not yet saved as reusable ALO buckets.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "imot_bg__varna__buy_personal__all",
+      "source_name": "imot.bg",
+      "segment_key": "buy_personal",
+      "active": true,
+      "source_key": "imot_bg",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "land",
+        "new_build"
+      ],
+      "entry_scope": "varna_only_url",
+      "entry_urls": [
+        "https://www.imot.bg/obiavi/prodazhbi/grad-varna"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "imot_bg__varna__buy_commercial__all",
+      "source_name": "imot.bg",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": "imot_bg",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial-specific Varna discovery routes are not yet persisted separately.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "imot_bg__varna__rent_personal__all",
+      "source_name": "imot.bg",
+      "segment_key": "rent_personal",
+      "active": true,
+      "source_key": "imot_bg",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "varna_only_url",
+      "entry_urls": [
+        "https://www.imot.bg/obiavi/naemi/grad-varna"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "imot_bg__varna__rent_commercial__all",
+      "source_name": "imot.bg",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": "imot_bg",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial rental routes for Varna are not yet persisted as reusable patterns.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "imotinet__varna__buy_personal__all",
+      "source_name": "imoti.net",
+      "segment_key": "buy_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_authorized_pattern",
+      "support_status": "legal_blocked",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "new_build",
+        "land"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "legal_review_required"
+    },
+    {
+      "section_id": "imotinet__varna__buy_commercial__all",
+      "source_name": "imoti.net",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_authorized_pattern",
+      "support_status": "legal_blocked",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "new_build",
+        "land",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "legal_review_required"
+    },
+    {
+      "section_id": "imotinet__varna__rent_personal__all",
+      "source_name": "imoti.net",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_authorized_pattern",
+      "support_status": "legal_blocked",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "legal_review_required"
+    },
+    {
+      "section_id": "imotinet__varna__rent_commercial__all",
+      "source_name": "imoti.net",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_authorized_pattern",
+      "support_status": "legal_blocked",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "legal_review_required"
+    },
+    {
+      "section_id": "property_bg__varna__buy_personal__all",
+      "source_name": "property.bg",
+      "segment_key": "buy_personal",
+      "active": true,
+      "source_key": "property_bg",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "land",
+        "new_build"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [
+        "https://www.property.bg/bulgaria/apartments/",
+        "https://www.property.bg/sales/bulgaria/selection/"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "property_bg__varna__buy_commercial__all",
+      "source_name": "property.bg",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": "property_bg",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial-specific property.bg routes are not yet saved as reusable Varna buckets.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "property_bg__varna__rent_personal__all",
+      "source_name": "property.bg",
+      "segment_key": "rent_personal",
+      "active": true,
+      "source_key": "property_bg",
+      "pattern_status": "Patterned",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [
+        "https://www.property.bg/rentals/bulgaria/selection/"
+      ],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "property_bg__varna__rent_commercial__all",
+      "source_name": "property.bg",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": "property_bg",
+      "pattern_status": "Patterned",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Commercial rental property.bg routes are not yet saved as reusable Varna buckets.",
+      "supported_verticals": [
+        "all"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "realestatesbg__varna__buy_personal__all",
+      "source_name": "realestates.bg",
+      "segment_key": "buy_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "land"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "realestatesbg__varna__buy_commercial__all",
+      "source_name": "realestates.bg",
+      "segment_key": "buy_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "land",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "realestatesbg__varna__rent_personal__all",
+      "source_name": "realestates.bg",
+      "segment_key": "rent_personal",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    },
+    {
+      "section_id": "realestatesbg__varna__rent_commercial__all",
+      "source_name": "realestates.bg",
+      "segment_key": "rent_commercial",
+      "active": false,
+      "source_key": null,
+      "pattern_status": "without_sample_product_capture",
+      "support_status": "pattern_incomplete",
+      "activation_ready": false,
+      "skip_reason": "Source/segment route is not yet saved as a production-ready reusable pattern.",
+      "supported_verticals": [
+        "apartments",
+        "houses",
+        "commercial_properties",
+        "offices"
+      ],
+      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_urls": [],
+      "legal_mode": "public_crawl_with_review"
+    }
+  ]
+}

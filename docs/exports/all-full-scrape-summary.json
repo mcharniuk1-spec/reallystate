@@ -1,0 +1,105 @@
+{
+  "generated_at": "2026-04-24T15:40:15.148626+00:00",
+  "geo_scope": "all_bulgaria",
+  "target_per_source": 100,
+  "max_pages": 8,
+  "download_photos": true,
+  "require_full_gallery": true,
+  "patterned_only": true,
+  "dry_run": true,
+  "parallel_sources": 4,
+  "max_waves": 3,
+  "source_count": 10,
+  "results": [
+    {
+      "source_key": "address_bg",
+      "source_name": "Address.bg",
+      "before_count": 98,
+      "target_per_source": 100,
+      "planned_max_listings": 27,
+      "status": "planned",
+      "waves": []
+    },
+    {
+      "source_key": "bazar_bg",
+      "source_name": "Bazar.bg",
+      "before_count": 181,
+      "target_per_source": 100,
+      "planned_max_listings": 0,
+      "status": "skipped_threshold_reached",
+      "waves": []
+    },
+    {
+      "source_key": "bulgarianproperties",
+      "source_name": "BulgarianProperties",
+      "before_count": 1,
+      "target_per_source": 100,
+      "planned_max_listings": 297,
+      "status": "planned",
+      "waves": []
+    },
+    {
+      "source_key": "homes_bg",
+      "source_name": "Homes.bg",
+      "before_count": 32,
+      "target_per_source": 100,
+      "planned_max_listings": 204,
+      "status": "planned",
+      "waves": []
+    },
+    {
+      "source_key": "imot_bg",
+      "source_name": "imot.bg",
+      "before_count": 9,
+      "target_per_source": 100,
+      "planned_max_listings": 273,
+      "status": "planned",
+      "waves": []
+    },
+    {
+      "source_key": "luximmo",
+      "source_name": "LUXIMMO",
+      "before_count": 10,
+      "target_per_source": 100,
+      "planned_max_listings": 270,
+      "status": "planned",
+      "waves": []
+    },
+    {
+      "source_key": "olx_bg",
+      "source_name": "OLX.bg",
+      "before_count": 208,
+      "target_per_source": 100,
+      "planned_max_listings": 0,
+      "status": "skipped_threshold_reached",
+      "waves": []
+    },
+    {
+      "source_key": "property_bg",
+      "source_name": "property.bg",
+      "before_count": 1,
+      "target_per_source": 100,
+      "planned_max_listings": 297,
+      "status": "planned",
+      "waves": []
+    },
+    {
+      "source_key": "suprimmo",
+      "source_name": "SUPRIMMO",
+      "before_count": 1,
+      "target_per_source": 100,
+      "planned_max_listings": 297,
+      "status": "planned",
+      "waves": []
+    },
+    {
+      "source_key": "yavlena",
+      "source_name": "Yavlena",
+      "before_count": 57,
+      "target_per_source": 100,
+      "planned_max_listings": 129,
+      "status": "planned",
+      "waves": []
+    }
+  ]
+}

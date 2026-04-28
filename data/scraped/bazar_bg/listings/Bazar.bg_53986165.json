@@ -2,19 +2,19 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-53986165/dawa-pod-naem-2-staen-gr-sofiia-tolstoy",
   "external_id": "53986165",
-  "title": "Bazar.BG",
+  "title": "Дава под наем 2-СТАЕН, гр. София, Толстой → Обява 53986165",
   "description": "Ексклузивно дизайнерски двустаен с адрес Ж.К ЛЕВ ТОЛСТОЙ БЛОК 6. След основен ремонт напълно оборудван и готов за настаняване.Нови уреди . За повече информация",
   "price": 650.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 60.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Толстой",
+  "address_text": "София, Толстой",
   "latitude": null,
   "longitude": null,
-  "listing_intent": "sale",
+  "listing_intent": "long_term_rent",
   "property_category": "unknown",
   "image_urls": [
     "https://imotstatic1.focus.bg/imot/photosimotbg/2/102/big1/2c177453365450102_GZ.jpg",
@@ -33,11 +33,26 @@
     "https://imotstatic1.focus.bg/imot/photosimotbg/2/102/big1/2c177453365450102_XG.jpg",
     "https://imotstatic1.focus.bg/imot/photosimotbg/2/102/big1/2c177453365450102_2W.jpg",
     "https://imotstatic1.focus.bg/imot/photosimotbg/2/102/big1/2c177453365450102_pg.jpg",
-    "//imotstatic1.focus.bg/imot/photosimotbg/2/102/big1/2c177453365450102_GZ.jpg"
+    "https://imotstatic1.focus.bg/imot/photosimotbg/2/102/big1/2c177453365450102_GZ.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "0174900000000",
+    "092863323",
+    "06602102",
+    "03328155",
+    "01521740",
+    "00912214133",
+    "0653462107360",
+    "01160250",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:50:13.033266+00:00",
+  "scraped_at": "2026-04-24T07:53:16.198960+00:00",
   "reference_id": "Bazar.bg:53986165",
   "local_image_files": [
     "data/media/Bazar.bg_53986165/0000_4d6efd89.jpg",
@@ -72,5 +87,10 @@
     "Bazar.bg_53986165/0012_b81e156c.jpg",
     "Bazar.bg_53986165/0013_1fdf391f.jpg",
     "Bazar.bg_53986165/0014_afebc405.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_53986165",
+  "photo_count_remote": 17,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "partial_gallery"
 }

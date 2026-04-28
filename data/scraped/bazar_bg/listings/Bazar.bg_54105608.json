@@ -2,19 +2,19 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54105608/3-staen-pod-naem-w-zh-k-lagera-649-ewro",
   "external_id": "54105608",
-  "title": "Bazar.BG",
+  "title": "3-стаен под наем в ж.к.Лагера - 649 евро → Обява 54105608",
   "description": "Апартаментът е с 2 спални (спалня и детска) и хол с кухня. Има мокро помещение и баня с тоалетна. И 3те стаи имат излаз на обща остъклена тераса (10 кв.м.). Сгр",
   "price": 649.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 82.0,
+  "rooms": 3.0,
   "floor": null,
   "city": "",
   "district": "",
   "address_text": "",
   "latitude": null,
   "longitude": null,
-  "listing_intent": "sale",
+  "listing_intent": "long_term_rent",
   "property_category": "apartment",
   "image_urls": [
     "https://cdn7.focus.bg/bazar/11/original/118dda56b7d093aca44584f755e9526d.webp",
@@ -32,11 +32,28 @@
     "https://cdn8.focus.bg/bazar/c4/original/c4b95886a379e9d1b9f9e541e600937b.webp",
     "https://cdn5.focus.bg/bazar/40/original/406577e3cf3b01894ce902f569651114.webp",
     "https://cdn5.focus.bg/bazar/e2/original/e209b837bdf1caeba1c2d02daad364bf.webp",
-    "//cdn7.focus.bg/bazar/11/pics/118dda56b7d093aca44584f755e9526d.webp"
+    "https://cdn7.focus.bg/bazar/11/pics/118dda56b7d093aca44584f755e9526d.webp"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "033077582",
+    "0430 - 649",
+    "076598300000000",
+    "092863124",
+    "09430724",
+    "03451775874",
+    "020089250",
+    "071008533",
+    "028705851400",
+    "06605874",
+    "0430 (10",
+    "026-05-08",
+    "000-2014",
+    "01112551"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:47:11.087649+00:00",
+  "scraped_at": "2026-04-24T07:53:17.113979+00:00",
   "reference_id": "Bazar.bg:54105608",
   "local_image_files": [
     "data/media/Bazar.bg_54105608/0000_aa0fbff1.webp",
@@ -71,5 +88,10 @@
     "Bazar.bg_54105608/0012_4f1dfad2.webp",
     "Bazar.bg_54105608/0013_0501813b.webp",
     "Bazar.bg_54105608/0014_198ce671.webp"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54105608",
+  "photo_count_remote": 16,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "partial_gallery"
 }

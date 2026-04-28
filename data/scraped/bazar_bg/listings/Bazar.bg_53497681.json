@@ -2,12 +2,12 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-53497681/ednostaen-apartament-w-studentski-grad",
   "external_id": "53497681",
-  "title": "Bazar.BG",
+  "title": "Едностаен апартамент в студентски град! → Обява 53497681",
   "description": "Отдавам под наем напълно обзаведен, едностаен апартамент в студентски град. Отопление на климатик Фуджицу 12. Свободен след 05.4",
   "price": 435.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 40.0,
+  "rooms": 1.0,
   "floor": null,
   "city": "",
   "district": "",
@@ -22,11 +22,28 @@
     "https://cdn1.focus.bg/bazar/e2/original/e2b598e144854a9cf759950c7fe0b9ce.webp",
     "https://cdn6.focus.bg/bazar/02/original/02091a8367b4c5041b2011b4cd680b36.webp",
     "https://cdn6.focus.bg/bazar/0b/original/0bb7e3600d3ce3fb75e27cb9cd911e09.webp",
-    "//cdn7.focus.bg/bazar/65/pics/65f92e0c61ec065263f4cbd840df322d.webp"
+    "https://cdn7.focus.bg/bazar/65/pics/65f92e0c61ec065263f4cbd840df322d.webp"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "081261467",
+    "00000000",
+    "063110237",
+    "08974097",
+    "058588693",
+    "07938466",
+    "095250900",
+    "04947495",
+    "0674384153",
+    "080318941",
+    "03123385",
+    "026-05-09",
+    "000-2014",
+    "01112551"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:42:52.144332+00:00",
+  "scraped_at": "2026-04-24T07:53:15.108750+00:00",
   "reference_id": "Bazar.bg:53497681",
   "local_image_files": [
     "data/media/Bazar.bg_53497681/0000_616beff7.webp",
@@ -43,5 +60,10 @@
     "Bazar.bg_53497681/0003_75ecca79.webp",
     "Bazar.bg_53497681/0004_cc3c8553.webp",
     "Bazar.bg_53497681/0005_6bc5bd46.webp"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_53497681",
+  "photo_count_remote": 6,
+  "photo_count_local": 6,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

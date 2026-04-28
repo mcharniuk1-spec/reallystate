@@ -4,14 +4,14 @@
   "external_id": "76f320732b17",
   "title": "Тристаен апартамент в София 128 кв.м. ID 168111  | Явлена",
   "description": "",
-  "price": null,
+  "price": 371200.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 128.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/f73062cd-0542-489b-92ee-125960dd42e5.png"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 515 448",
+    "+359 882 222 321"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:18.340927+00:00",
+  "scraped_at": "2026-04-24T07:53:21.808518+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:76f320732b17",
   "local_image_files": [
     "data/media/Yavlena_76f320732b17/0000_fbfb26b0.png"
   ],
   "local_image_storage_keys": [
     "Yavlena_76f320732b17/0000_fbfb26b0.png"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_76f320732b17",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

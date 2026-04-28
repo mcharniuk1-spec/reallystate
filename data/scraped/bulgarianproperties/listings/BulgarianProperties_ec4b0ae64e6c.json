@@ -70,7 +70,7 @@
     "003-2026"
   ],
   "amenities": [],
-  "scraped_at": "2026-04-21T15:06:34.502783+00:00",
+  "scraped_at": "2026-04-24T07:53:02.592535+00:00",
   "region": "Burgas",
   "source_attributes": {
     "town": "Sozopol",
@@ -79,8 +79,6 @@
     "refno": ""
   },
   "reference_id": "BulgarianProperties:ec4b0ae64e6c",
-  "listing_status": "active",
-  "published_text": "",
   "local_image_files": [
     "data/media/BulgarianProperties_ec4b0ae64e6c/0000_30b1485f.jpg",
     "data/media/BulgarianProperties_ec4b0ae64e6c/0001_30b1485f.jpg",
@@ -160,5 +158,10 @@
     "BulgarianProperties_ec4b0ae64e6c/0038_ac751c2b.jpg",
     "BulgarianProperties_ec4b0ae64e6c/0039_1bdef767.jpg",
     "BulgarianProperties_ec4b0ae64e6c/0040_997e8a1e.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/BulgarianProperties_ec4b0ae64e6c",
+  "photo_count_remote": 16,
+  "photo_count_local": 38,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -4,14 +4,14 @@
   "external_id": "1852edd59d51",
   "title": "Парцел в Кошарица 8800 кв.м. ID 168075  | Явлена",
   "description": "",
-  "price": null,
+  "price": 308000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 8800.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Кошарица",
   "district": "",
-  "address_text": "",
+  "address_text": "Кошарица",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/24f424f1-da99-4c4c-8aca-78c1c891d97d.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 547 042",
+    "+359 895 506 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:58.700671+00:00",
+  "scraped_at": "2026-04-24T07:53:18.360157+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:1852edd59d51",
   "local_image_files": [
     "data/media/Yavlena_1852edd59d51/0000_aaa250fd.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_1852edd59d51/0000_aaa250fd.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_1852edd59d51",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

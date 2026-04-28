@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54114176/prodawa-3-staen-gr-sofiia-hipodruma",
   "external_id": "54114176",
-  "title": "Bazar.BG",
+  "title": "Продава 3-СТАЕН, гр. София, Хиподрума → Обява 54114176",
   "description": "Продава се 3-стаен апартамент 100 кв.м в ж.к. Хиподрума/от собственик/, до парка на Ритуална зала. Намира се в 5-етажна тухлена сграда.Жилището е след основен р",
   "price": 357000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 115.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Хиподрума",
+  "address_text": "София, Хиподрума",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -33,11 +33,25 @@
     "https://imotstatic4.focus.bg/imot/photosimotbg/1/077/big1/1c177549513489077_K4.jpg",
     "https://imotstatic4.focus.bg/imot/photosimotbg/1/077/big1/1c177549513489077_UE.jpg",
     "https://imotstatic4.focus.bg/imot/photosimotbg/1/077/big1/1c177549513489077_sj.jpg",
-    "//imotstatic4.focus.bg/imot/photosimotbg/1/077/big1/1c177549513489077_EC.jpg"
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/077/big1/1c177549513489077_EC.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "03953900000000",
+    "092853030",
+    "0297175608",
+    "02799302",
+    "081811165653",
+    "014058821",
+    "0442 100",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:43:13.558510+00:00",
+  "scraped_at": "2026-04-24T07:53:17.300018+00:00",
   "reference_id": "Bazar.bg:54114176",
   "local_image_files": [
     "data/media/Bazar.bg_54114176/0000_87d07bef.jpg",
@@ -72,5 +86,10 @@
     "Bazar.bg_54114176/0012_7f18bbb8.jpg",
     "Bazar.bg_54114176/0013_2978445c.jpg",
     "Bazar.bg_54114176/0014_89087578.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54114176",
+  "photo_count_remote": 17,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "partial_gallery"
 }

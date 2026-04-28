@@ -4,14 +4,14 @@
   "external_id": "65ac47ae8f7d",
   "title": "Парцел във Владая 600 кв.м. ID 162685  | Явлена",
   "description": "",
-  "price": null,
+  "price": 90000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 600.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Владая",
   "district": "",
-  "address_text": "",
+  "address_text": "Владая",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/e262c11e-03c9-4e41-b20c-d42ae34fad4c.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 889 26 26 06"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:02.944277+00:00",
+  "scraped_at": "2026-04-24T07:53:21.236421+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:65ac47ae8f7d",
   "local_image_files": [
     "data/media/Yavlena_65ac47ae8f7d/0000_7ff0e528.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_65ac47ae8f7d/0000_7ff0e528.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_65ac47ae8f7d",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

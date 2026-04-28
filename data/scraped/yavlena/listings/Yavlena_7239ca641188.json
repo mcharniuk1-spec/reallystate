@@ -4,14 +4,14 @@
   "external_id": "7239ca641188",
   "title": "Парцел в Марица 3167 кв.м. ID 168213  | Явлена",
   "description": "",
-  "price": null,
+  "price": 74243.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 3167.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Марица",
   "district": "",
-  "address_text": "",
+  "address_text": "Марица",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/68fbada8-aa8b-4c2b-bf3f-19b87412b85c.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 540 187",
+    "+359 2 810 50 70"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:14:55.515665+00:00",
+  "scraped_at": "2026-04-24T07:53:21.633346+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:7239ca641188",
   "local_image_files": [
     "data/media/Yavlena_7239ca641188/0000_f42b6dcf.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_7239ca641188/0000_f42b6dcf.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_7239ca641188",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

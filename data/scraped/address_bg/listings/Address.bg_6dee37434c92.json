@@ -4,14 +4,14 @@
   "external_id": "6dee37434c92",
   "title": "Къща/Вила в Църква - код на имота: 664701",
   "description": "Адрес недвижими имоти предлага Къща/Вила в Църква с код на имота: 664701. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 97000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 25000.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Църква",
   "district": "",
-  "address_text": "",
+  "address_text": "Църква",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,44 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/701/664701/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "0160716757",
+    "082859302",
+    "025-08-14",
+    "018-05-09",
+    "018-07-06",
+    "0435 7-8",
+    "0439 2025",
+    "0887 314 081",
+    "0887693069",
+    "052604554",
+    "07387614916",
+    "015054118908",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:20:37.055476+00:00",
+  "scraped_at": "2026-04-24T07:52:43.860754+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Църква Къща/Вила"
+  },
   "reference_id": "Address.bg:6dee37434c92",
   "local_image_files": [
     "data/media/Address.bg_6dee37434c92/0000_2855a5c4.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_6dee37434c92/0000_2855a5c4.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_6dee37434c92",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

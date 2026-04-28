@@ -4,14 +4,14 @@
   "external_id": "ac29bdc9d07b",
   "title": "Тристаен апартамент в София 140 кв.м. ID 158388  | Явлена",
   "description": "",
-  "price": null,
+  "price": 385000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 140.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/9311a276-0f1b-49f9-b94d-f52c54dd7e56.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 882 230 300"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:18.631656+00:00",
+  "scraped_at": "2026-04-24T07:53:23.524904+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:ac29bdc9d07b",
   "local_image_files": [
     "data/media/Yavlena_ac29bdc9d07b/0000_3479da82.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_ac29bdc9d07b/0000_3479da82.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_ac29bdc9d07b",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

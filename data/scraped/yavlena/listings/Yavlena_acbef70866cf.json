@@ -24,19 +24,22 @@
     "+359 888 109 040"
   ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:31.094581+00:00",
+  "scraped_at": "2026-04-24T07:53:23.639417+00:00",
   "source_attributes": {
     "broker_name": "",
     "broker_email": "",
     "inner_number": ""
   },
   "reference_id": "Yavlena:acbef70866cf",
-  "listing_status": "active",
-  "published_text": "",
   "local_image_files": [
     "data/media/Yavlena_acbef70866cf/0000_3f8b072f.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_acbef70866cf/0000_3f8b072f.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_acbef70866cf",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

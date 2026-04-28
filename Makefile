@@ -1,4 +1,4 @@
-.PHONY: doctor install install-scrape-agents dev-up dev-down dev-ready dev-logs db-shell db-init migrate test test-docker golden-path lint typecheck validate docs-refresh run-api run-worker run-scheduler run-frontend export-docs source-report status-report linear-export architecture-doc dashboard-doc connector-fixtures list-sources list-skills ingest-fixture ingest-fixture-dry sync-registry sync-social-registry export-tier4-data seed-social-fixtures export-source-stats tier4-plan scraping-inventory tier12-metrics download-images import-scraped scrape-bcpea
+.PHONY: doctor install install-scrape-agents dev-up dev-down dev-ready dev-logs db-shell db-init migrate test test-docker golden-path lint typecheck validate docs-refresh run-api run-worker run-scheduler run-frontend export-docs source-report status-report linear-export architecture-doc dashboard-doc connector-fixtures list-sources list-skills ingest-fixture ingest-fixture-dry sync-registry sync-social-registry export-tier4-data seed-social-fixtures export-source-stats tier4-plan scraping-inventory tier12-metrics download-images import-scraped scrape-bcpea scrape-validate-manifest scrape-sync-sections scrape-sync-sections-dry scrape-threshold-summary scrape-queue-status scrape-control-worker-once scrape-runner-once scrape-runner-pause scrape-runner-unpause scrape-generate-varna-manifest scrape-varna-full
 
 # Prefer 3.13/3.12 when unset so install/lint match pyproject.toml requires-python >=3.12
 PYENV_PYTHON := $(shell ls "$$HOME"/.pyenv/versions/3.13*/bin/python3.13 "$$HOME"/.pyenv/versions/3.12*/bin/python3.12 2>/dev/null | sed -n '1p')
@@ -132,6 +132,7 @@ architecture-doc:
 dashboard-doc:
 	$(PYTHON) scripts/generate_progress_dashboard.py
 	$(PYTHON) scripts/generate_website_inventory_analysis.py
+	$(PYTHON) scripts/generate_source_item_photo_coverage.py
 	$(PYTHON) scripts/generate_tier12_pattern_status.py
 	$(PYTHON) scripts/generate_scrape_status_dashboard.py
 
@@ -189,3 +190,36 @@ download-images:
 
 import-scraped:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) scripts/import_scraped_listings.py $(EXTRA_ARGS)
+
+scrape-generate-varna-manifest:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate scrape-generate-varna-manifest
+
+scrape-validate-manifest:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate scrape-validate-manifest
+
+scrape-sync-sections-dry:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate scrape-sync-sections --dry-run
+
+scrape-sync-sections:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate scrape-sync-sections
+
+scrape-threshold-summary:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate scrape-threshold-summary
+
+scrape-queue-status:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate scrape-queue-status
+
+scrape-control-worker-once:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate scrape-control-worker-once
+
+scrape-runner-once:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate scrape-runner-once
+
+scrape-runner-pause:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate scrape-set-runner-pause --paused true --note "Paused by operator"
+
+scrape-runner-unpause:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate scrape-set-runner-pause --paused false --note "Unpaused by operator"
+
+scrape-varna-full:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate scrape-varna-full $(EXTRA_ARGS)

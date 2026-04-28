@@ -3,30 +3,43 @@
   "listing_url": "https://www.yavlena.com/bg/152495",
   "external_id": "7a710b56d1b8",
   "title": "Жилищна сграда във Варна 24700 кв.м. ID 152495  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Elysia Green е нов жилищен комплекс, чието местоположение осигурява редица удобства: простор, зелени площи, прекрасна морска панорама, слънчево изложение, чист въздух, отлична пътна инфраструктура, близост до автобусна спирка на градски транспорт и хипермаркет LIDL, близост до плажа и парка, с бърз и удобен пешеходен достъп, тишина, спокойна атмосфера и всичко това в комбинация, осигурява една здравословна среда на живот.Разположен е на парцел с площ от 9 000 кв.м. и се състои от 4 сгради с по 10 жилищни етажа. В първи етап се изграждат сграда 1 и сграда 2. Комплексът е разположен сред просторна паркова среда, гарантираща максимални отстояния и подчертаваща комплексната архитектурна концепция. Архитектурната линия е изчистена, като цветовата палитра на фасадата е решена в топли земни тонове. В комплекса са проектирани удобни и просторни апартаменти, с идеално разположение и различна квадратура. Към всеки апартамент има възможност да се закупи открито или закрито паркомясто.",
+  "price": 0.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 24700.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Варна",
+  "district": "м",
+  "address_text": "Варна, м",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
     "https://userimages.yavlena.com/4ebc684f-72c5-4a11-83fc-ca4b53e945c1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 524 105",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:27.974758+00:00",
+  "scraped_at": "2026-04-24T07:53:22.061168+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:7a710b56d1b8",
   "local_image_files": [
     "data/media/Yavlena_7a710b56d1b8/0000_92b930f6.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_7a710b56d1b8/0000_92b930f6.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_7a710b56d1b8",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

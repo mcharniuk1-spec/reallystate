@@ -4,14 +4,14 @@
   "external_id": "e33150103d1e",
   "title": "Земеделска земя в Цалапица 9900 кв.м. ID 168158  | Явлена",
   "description": "",
-  "price": null,
+  "price": 145000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 9900.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Цалапица",
   "district": "",
-  "address_text": "",
+  "address_text": "Цалапица",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/3f800464-9b54-4469-91f9-0655a065fee4.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 542 167",
+    "+359 898 498 449"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:15:57.284712+00:00",
+  "scraped_at": "2026-04-24T07:53:25.131733+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:e33150103d1e",
   "local_image_files": [
     "data/media/Yavlena_e33150103d1e/0000_90023106.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_e33150103d1e/0000_90023106.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_e33150103d1e",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

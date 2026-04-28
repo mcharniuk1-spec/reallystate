@@ -4,14 +4,14 @@
   "external_id": "3b98baefbc1c",
   "title": "Къща в Дъбравино 80 кв.м. ID 168193  | Явлена",
   "description": "",
-  "price": null,
+  "price": 91900.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 80.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Дъбравино",
   "district": "",
-  "address_text": "",
+  "address_text": "Дъбравино",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/1f94b520-ac6b-41df-9907-6fdbc4baa5ed.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 558 497",
+    "+359 888 088 788"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:15:24.451433+00:00",
+  "scraped_at": "2026-04-24T07:53:19.520891+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:3b98baefbc1c",
   "local_image_files": [
     "data/media/Yavlena_3b98baefbc1c/0000_61c385fe.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_3b98baefbc1c/0000_61c385fe.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_3b98baefbc1c",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

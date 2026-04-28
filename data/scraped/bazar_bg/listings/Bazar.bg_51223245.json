@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-51223245/prodawa-3-staen-gr-targowishte-warosha",
   "external_id": "51223245",
-  "title": "Bazar.BG",
+  "title": "Продава 3-СТАЕН, гр. Търговище, Вароша → Обява 51223245",
   "description": "101 кв.м.! Тристаен апартамент! ул. 'Любен Каравелов' 56, кв. Вароша! ПЛАЩАНЕ НА ВНОСКИ!ДИРЕКТНО ОТ СТРОИТЕЛЯ! БЕЗ КОМИСИОНА ОТ КУПУВАЧА!  АКТИВ ИМОТИ представя",
   "price": 115000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 101.43,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Търговище",
+  "district": "Вароша",
+  "address_text": "Търговище, Вароша",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,11 +19,30 @@
   "image_urls": [
     "https://imotstatic2.focus.bg/imot/photosimotbg/1/650/big1/1b169777406386650_6v.jpg",
     "https://imotstatic2.focus.bg/imot/photosimotbg/1/650/big1/1b169777406386650_EH.jpg",
-    "//imotstatic2.focus.bg/imot/photosimotbg/1/650/big1/1b169777406386650_6v.jpg"
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/650/big1/1b169777406386650_6v.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "06386650",
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "00000000",
+    "092878017",
+    "049298429",
+    "065656404",
+    "02881748",
+    "05560918",
+    "09017688920",
+    "013258062449",
+    "03080458984",
+    "0307851017",
+    "05842407225",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:53:36.831314+00:00",
+  "scraped_at": "2026-04-24T07:53:14.389471+00:00",
   "reference_id": "Bazar.bg:51223245",
   "local_image_files": [
     "data/media/Bazar.bg_51223245/0000_340716cc.jpg",
@@ -34,5 +53,10 @@
     "Bazar.bg_51223245/0000_340716cc.jpg",
     "Bazar.bg_51223245/0001_05862c76.jpg",
     "Bazar.bg_51223245/0002_340716cc.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_51223245",
+  "photo_count_remote": 3,
+  "photo_count_local": 3,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

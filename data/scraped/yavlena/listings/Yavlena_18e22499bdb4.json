@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/168429",
   "external_id": "18e22499bdb4",
   "title": "Тристаен апартамент в София 74 кв.м. ID 168429  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "$5b",
+  "price": 329000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 74.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/6424771a-0bad-41b7-a852-92cb4a2eb04e.png"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 515 662",
+    "+359 882 222 321"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:56:30.411800+00:00",
+  "scraped_at": "2026-04-24T07:53:18.440809+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:18e22499bdb4",
   "local_image_files": [
     "data/media/Yavlena_18e22499bdb4/0000_73996308.png"
   ],
   "local_image_storage_keys": [
     "Yavlena_18e22499bdb4/0000_73996308.png"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_18e22499bdb4",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

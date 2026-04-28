@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54078914/prodawa-3-staen-gr-gorna-oriahowitsa-oblast-weliko-tarnowo",
   "external_id": "54078914",
-  "title": "Bazar.BG",
+  "title": "Продава 3-СТАЕН, гр. Горна Оряховица, област Велико Търново → Обява 54078914",
   "description": "48064 апартамент; ЕКСКЛУЗИВНО! Агенция за недвижими имоти SUNNY HOMES Ви представя един наистина уютен и функционален тристаен апартамент, разположен в един от",
   "price": 95000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 78.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Горна Оряховица",
+  "district": "област Велико Търново",
+  "address_text": "Горна Оряховица, област Велико Търново",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -30,11 +30,25 @@
     "https://cdn3.focus.bg/imot/photosimotbg/1/310/big/1c177521582330310_C6.jpg",
     "https://cdn3.focus.bg/imot/photosimotbg/1/310/big/1c177521582330310_uZ.jpg",
     "https://cdn3.focus.bg/imot/photosimotbg/1/310/big/1c177521582330310_7u.jpg",
-    "//cdn3.focus.bg/imot/photosimotbg/1/310/big1/1c177521582330310_54.jpg"
+    "https://cdn3.focus.bg/imot/photosimotbg/1/310/big1/1c177521582330310_54.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "0848123800000000",
+    "092865560",
+    "0317881729",
+    "065820125330",
+    "08237551",
+    "049827517",
+    "08688740",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:52:09.027423+00:00",
+  "scraped_at": "2026-04-24T07:53:16.891769+00:00",
   "reference_id": "Bazar.bg:54078914",
   "local_image_files": [
     "data/media/Bazar.bg_54078914/0000_89d6ce2f.jpg",
@@ -67,5 +81,10 @@
     "Bazar.bg_54078914/0011_2278e8b0.jpg",
     "Bazar.bg_54078914/0012_e1002e9e.jpg",
     "Bazar.bg_54078914/0013_89d6ce2f.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54078914",
+  "photo_count_remote": 14,
+  "photo_count_local": 14,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

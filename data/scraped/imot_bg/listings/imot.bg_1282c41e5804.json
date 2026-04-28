@@ -2,7 +2,7 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-8612-zhilishtna-sgrada-grad-sofiya-obelya-1",
   "external_id": "1282c41e5804",
-  "title": "Imot.bg",
+  "title": "������� ������ � ���� ����� ����� 1 ����� 8612",
   "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
   "price": null,
   "currency": "EUR",
@@ -17,12 +17,29 @@
   "listing_intent": "sale",
   "property_category": "unknown",
   "image_urls": [
-    "//cdn3.focus.bg/imot/photosnb/612//big/8612_23.jpg"
+    "https://cdn3.focus.bg/imot/photosnb/612//big1/8612_23.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/612//big1/8612_Bs.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/612//big1/8612_KH.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/612//big1/8612_Ix.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/612//big1/8612_Pg.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/612//big1/8612_GZ.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/612//big1/8612_gj.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/612//big1/8612_lP.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/612//big/8612_23.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "0893538477"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:28:04.329603+00:00",
+  "scraped_at": "2026-04-24T07:52:28.506904+00:00",
   "reference_id": "imot.bg:1282c41e5804",
+  "source_attributes": {},
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_1282c41e5804",
+  "photo_count_remote": 9,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54126174/prodawa-2-staen-gr-prawets-oblast-sofiia-oblast",
   "external_id": "54126174",
-  "title": "Bazar.BG",
+  "title": "Продава 2-СТАЕН, гр. Правец, област София област → Обява 54126174",
   "description": "Продава 2-СТАЕН, гр. Правец, област София област",
   "price": 129050.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 89.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Правец",
+  "district": "област София област",
+  "address_text": "Правец, област София област",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -32,11 +32,19 @@
     "https://imotstatic4.focus.bg/imot/photosimotbg/1/440/big1/1c177462512403440_Je.jpg",
     "https://imotstatic4.focus.bg/imot/photosimotbg/1/440/big1/1c177462512403440_Hx.jpg",
     "https://imotstatic4.focus.bg/imot/photosimotbg/1/440/big1/1c177462512403440_zB.jpg",
-    "//imotstatic4.focus.bg/imot/photosimotbg/1/440/big1/1c177462512403440_ej.jpg"
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/440/big1/1c177462512403440_ej.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "092869549",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:49:44.853853+00:00",
+  "scraped_at": "2026-04-24T07:53:17.516219+00:00",
   "reference_id": "Bazar.bg:54126174",
   "local_image_files": [
     "data/media/Bazar.bg_54126174/0000_d41c0ad6.jpg",
@@ -71,5 +79,10 @@
     "Bazar.bg_54126174/0012_d3ec13c1.jpg",
     "Bazar.bg_54126174/0013_3d638184.jpg",
     "Bazar.bg_54126174/0014_c4139d07.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54126174",
+  "photo_count_remote": 16,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "partial_gallery"
 }

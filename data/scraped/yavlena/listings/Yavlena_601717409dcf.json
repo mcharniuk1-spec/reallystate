@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/168082",
   "external_id": "601717409dcf",
   "title": "Двустаен апартамент в София 43 кв.м. ID 168082  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Ексклузивно! Представям ви прекрасна гарсониера на 6 минути пешеходно разстояние от метростанция \\\\\\\"Константин Величков\\\\\\\"!\\\\r\\\\nИмотът се намира на първи етаж от осем в панелна сграда от 80-те години и е със западно изложение. Разпределението е както следва - просторно антре, хол, баня с тоалетна, кухня и тераса тип лоджия.\\\\r\\\\nАпартаментът е среден, добре поддържан - сменена дограма, пренареден и лакиран естествен паркет в хола, боядисани стени. Отоплението е на ТЕЦ, като в кухнята е поставен климатик.\\\\r\\\\nПред блока е \\\\\\\"зелена зона\\\\\\\" и има възможност за паркиране с винетен стикер.\\\\r\\\\nРайонът е с отлична инфраструктура, има множество търговски обекти в близост, както и удобен градски транспорт! \\\\r\\\\nСвържете се с Надежда Вълова за повече информация и оглед.",
+  "price": 128000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 43.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/c695bd33-845f-4313-bc3d-aec4254ab4a2.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 546 351",
+    "+359 888 109 040"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:51.496597+00:00",
+  "scraped_at": "2026-04-24T07:53:21.081807+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:601717409dcf",
   "local_image_files": [
     "data/media/Yavlena_601717409dcf/0000_fe04cb42.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_601717409dcf/0000_fe04cb42.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_601717409dcf",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -4,14 +4,14 @@
   "external_id": "2abd09cf35b7",
   "title": "Къща в Аксаково 192 кв.м. ID 168440  | Явлена",
   "description": "",
-  "price": null,
+  "price": 207000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 192.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Аксаково",
   "district": "",
-  "address_text": "",
+  "address_text": "Аксаково",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/9569275b-49d6-4b52-9a2e-b6248ab85cb8.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 517 472",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:56:10.671752+00:00",
+  "scraped_at": "2026-04-24T07:53:19.182434+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:2abd09cf35b7",
   "local_image_files": [
     "data/media/Yavlena_2abd09cf35b7/0000_0f1a30c8.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_2abd09cf35b7/0000_0f1a30c8.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_2abd09cf35b7",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

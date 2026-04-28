@@ -2,27 +2,54 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1b176294722105923-prodava-dvustaen-apartament-grad-sofiya-boyana-ul-kumata",
   "external_id": "ea7de208461a",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 2-����� ���� �����, ����� ��. ������ �����: 1b176294722105923",
+  "description": "🏡 FOHAR   ������� ����� � ������ �� ������! 📍 �������: FOHAR � ���������� ������� ��������, ���������� �� ��. ������ 77   ��������� ������ ����� ��. ����� � ��. ����������. ������� �������� ������������� � ������ ������ �� ��������� � ���������� �� ������ ������ �� ������� �� �����. ���������� �������� ������ ��������� ������������, ������ ��������, ���� �� �����, ������, ���������, ����������� ������ � 24-������ ���������   ������ ���������� �� ��������� � ������� �����. ✔️​ ������ � ����������� �� ���������� ����, ������� �� �������� �� ����������, ��� ����������. 🏘️ �������� �� �����: ������� �� �������� ���������� � ���� ���� 76,34 ��.� ��������� ����: 63,74 ��.� ������: ������ ����: 3 ���������: �����/����� ������: �������� � ������������, � ������� ��� 16 📐 �������������: �������� �� ������ �� ����������, ����, ������ � ��������� ����, ������ � ������ ��� ������ � ����� �� ����� ����. ������������ � ������ �������������, ����������� �������� � �������. 🌡️​ ���������: ��������� / ����� �� ��� 🔑 ���������: ������������ �� ������ �� ��������� � �������, ����� �� ��������������� ������ ����� �� ����� ����������. 📱 ���� ������: ����������� � Smart Home Ready �������, ����� ��������� ���������� �� ������������, ����������� � ����������� �������� �� ������� ����������. 💶 ����: 247 342 EUR � ��� 🚗 ����������: ���������� �� ���������� �� ���������� �� ���� �� 27 000 EUR ��� ���. 📞 �������: ������� �������� 0879 45 86 90",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
-  "city": "�����",
-  "district": "",
-  "address_text": "",
+  "city": "����� ��. ������",
+  "district": "���� �����",
+  "address_text": "���� �����, ����� ��. ������",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "//imotstatic4.focus.bg/imot/photosimotbg/1/923//big/1b176294722105923_zT.jpg"
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/923//big1/1b176294722105923_zT.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/923//big1/1b176294722105923_NG.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/923//big1/1b176294722105923_1A.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/923//big/1b176294722105923_ds.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/923//big1/1b176294722105923_Jm.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/923//big1/1b176294722105923_Yz.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/923//big1/1b176294722105923_Uj.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/923//big1/1b176294722105923_pz.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/923//big/1b176294722105923_zT.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-08T16:27:57.478363+00:00",
+  "phones": [
+    "0879458690"
+  ],
+  "amenities": [
+    "����: 3-�� �� 4",
+    "���: ��",
+    "�E�: ��",
+    "������������: �����, ������� � ������������ 2025 �."
+  ],
+  "scraped_at": "2026-04-24T07:52:42.141465+00:00",
   "reference_id": "imot.bg:ea7de208461a",
+  "source_attributes": {
+    "����": "3-�� �� 4",
+    "���": "��",
+    "�E�": "��",
+    "������������": "�����, ������� � ������������ 2025 �."
+  },
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_ea7de208461a",
+  "photo_count_remote": 9,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

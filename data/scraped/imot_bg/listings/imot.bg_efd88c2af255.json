@@ -2,27 +2,56 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1b177421202741730-prodava-dvustaen-apartament-grad-sofiya-dragalevtsi-ul-okolovrasten-pat",
   "external_id": "efd88c2af255",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 2-����� ���� �����, ���������� ��. ������������ ��� �����: 1b177421202741730",
+  "description": "��������� ���������� �� ����������, � �������� ������! 90 ��.�. ��� ������ �����. �������� ������� � ����� ����� �� �� �������  ����������. �������� ��������. �������� ��������� � ������������ - ��� 16. � �������� ��� ������� ����������� ������. ������ ���������. 5 ��������� ����� � 1 ������ �� ������� �� ����������. ����� �� ������ �� ������� �� 400 � �� ����������������. �� ���������� , 0897777570, 0888321128",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
-  "city": "�����",
-  "district": "",
-  "address_text": "",
+  "city": "���������� ��. ������������ ���",
+  "district": "���� �����",
+  "address_text": "���� �����, ���������� ��. ������������ ���",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "//cdn3.focus.bg/imot/photosimotbg/1/730//big/1b177421202741730_iA.jpg"
+    "https://cdn3.focus.bg/imot/photosimotbg/1/730//big1/1b177421202741730_iA.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/730//big1/1b177421202741730_8g.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/730//big1/1b177421202741730_Iu.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/730//big1/1b177421202741730_9v.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/730//big1/1b177421202741730_5x.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/730//big1/1b177421202741730_K9.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/730//big1/1b177421202741730_Qm.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/730//big1/1b177421202741730_NP.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/730//big1/1b177421202741730_SS.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/730//big1/1b177421202741730_kN.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/730//big/1b177421202741730_iA.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-08T16:29:31.483465+00:00",
+  "phones": [
+    "0888321128"
+  ],
+  "amenities": [
+    "����: 5-�� �� 5",
+    "���: ��",
+    "�E�: ��",
+    "������������: ���, ������� � ������������ 2025 �."
+  ],
+  "scraped_at": "2026-04-24T07:52:42.485953+00:00",
   "reference_id": "imot.bg:efd88c2af255",
+  "source_attributes": {
+    "����": "5-�� �� 5",
+    "���": "��",
+    "�E�": "��",
+    "������������": "���, ������� � ������������ 2025 �."
+  },
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_efd88c2af255",
+  "photo_count_remote": 11,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

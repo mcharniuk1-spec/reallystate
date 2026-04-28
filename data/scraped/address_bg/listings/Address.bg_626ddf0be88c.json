@@ -1,0 +1,61 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/bliznaci-belite-polyani-kashta-vila-offer644161",
+  "external_id": "626ddf0be88c",
+  "title": "Къща/Вила в Близнаци, Белите Поляни - код на имота: 644161",
+  "description": "Адрес недвижими имоти предлага Къща/Вила в Близнаци, Белите Поляни с код на имота: 644161. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 130000.0,
+  "currency": "EUR",
+  "area_sqm": 46000.0,
+  "rooms": null,
+  "floor": null,
+  "city": "Близнаци",
+  "district": "Белите Поляни",
+  "address_text": "Близнаци, Белите Поляни",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/161/644161/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-04-17",
+    "0609686193",
+    "025-02-03",
+    "018-05-09",
+    "018-07-06",
+    "0887 314 081",
+    "0882547411",
+    "052605805",
+    "025-04-15",
+    "060070304016",
+    "0095918567",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:10:29.594925+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Близнаци Къща/Вила Белите Поляни"
+  },
+  "reference_id": "Address.bg:626ddf0be88c",
+  "local_image_files": [
+    "data/media/Address.bg_626ddf0be88c/0000_ead618cd.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_626ddf0be88c/0000_ead618cd.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_626ddf0be88c",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

@@ -3,30 +3,42 @@
   "listing_url": "https://www.yavlena.com/bg/162666",
   "external_id": "876004f7f109",
   "title": "Магазин в Пловдив 1120 кв.м. ID 162666  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Явлена продава представително търговско помещение тип шоурум/магазин, позиционирано на Пазарджишко шосе с 21 метра лице към булеварда и изцяло остъклена фасада – витрини на двете нива за максимална видимост и бранд експозиция.\\\\r\\\\nОбща площ: 1120 кв.м., разпределени по 560 кв.м. на всяко ниво, с Open Space конфигурация и височина на таваните над 4 метра – идеално за представителни дейности, автомобилен, мебелен или технологичен шоурум, спортен/моден бранд, офис с витрина или комбинирана търговско-офисна концепция.\\\\r\\\\nРазпределение:\\\\r\\\\nНиво 1 – Партер (560 кв.м.)\\\\r\\\\n•\\\\tПросторно търговско помещение с директен достъп от улицата\\\\r\\\\n•\\\\tСкладова зона с TIR достъп за удобна логистика\\\\r\\\\n•\\\\tСанитарен възел\\\\r\\\\nНиво 2 – Представително (560 кв.м.)\\\\r\\\\n•\\\\tЗала за бизнес срещи / офис / шоурум зона\\\\r\\\\n•\\\\tСъблекалня за персонал\\\\r\\\\n•\\\\tДва санитарни възела\\\\r\\\\nКлиматизация – отопление и охлаждане на двете нива\\\\r\\\\nПаркиране:\\\\r\\\\n•\\\\t8 паркоместа отпред – за клиенти\\\\r\\\\n•\\\\t20 паркоместа отзад – за персонал / доставки\\\\r\\\\n\\\\r\\\\nЦената е без ДДС",
+  "price": 1599000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 1120.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Пловдив",
+  "district": "м",
+  "address_text": "Пловдив, м",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "office",
   "image_urls": [
     "https://userimages.yavlena.com/18f523e8-47b0-4901-aa5d-4addd2ce47c8.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 895 506 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:04.820290+00:00",
+  "scraped_at": "2026-04-24T07:53:22.575703+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:876004f7f109",
   "local_image_files": [
     "data/media/Yavlena_876004f7f109/0000_ceadaed0.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_876004f7f109/0000_ceadaed0.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_876004f7f109",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

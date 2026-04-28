@@ -2,27 +2,53 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1b177556226361352-prodava-dvustaen-apartament-grad-sofiya-ivan-vazov",
   "external_id": "d61908e8772e",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 2-����� ���� �����, ���� ����� �����: 1b177556226361352",
+  "description": "ARCO REAL ESTATE ����������� ������� ��������� �������� ���������� � ������� ������ �� ������� �������- ���.������148! �������� �� ������ �� 8-�� ������� ���� � ���� �� 70, 5��.�, � ��� �������� �������������: -������� -��������� ������, � ����� �� ������, �� ����� �� ������� ���������� ������ ��� ����� �������� -������������� ����� � ������ ��� ��������� ���� � ����� �� ����� ������ -���� � �������� ��������� -����� �������� � �� ������! ����������� �� �������� �������������! ���������� ���� �����, ��� ���������! � �������������� ������� �� ���, ������������, ������ �� ������� ���������! ARCO REAL ESTATE � ���������� �������� ��������� � ��������, ���������� ���������� �� �������� �����������! ����� ������ �� �������� -���� ��������� 0876 728425",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
-  "city": "�����",
-  "district": "",
-  "address_text": "",
+  "city": "���� �����",
+  "district": "���� �����",
+  "address_text": "���� �����, ���� �����",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "//imotstatic4.focus.bg/imot/photosimotbg/1/352//big/1b177556226361352_Kr.jpg"
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/352//big1/1b177556226361352_Kr.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/352//big1/1b177556226361352_Xb.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/352//big1/1b177556226361352_50.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/352//big1/1b177556226361352_Ha.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/352//big1/1b177556226361352_Xh.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/352//big1/1b177556226361352_8q.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/352//big1/1b177556226361352_R8.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/352//big1/1b177556226361352_QH.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/352//big/1b177556226361352_Kr.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-08T16:30:50.094184+00:00",
+  "phones": [
+    "0876728425"
+  ],
+  "amenities": [
+    "����: 10-�� �� 12",
+    "�E�: ��",
+    "������������: �����, ������� � ������������ 1970 - 1979 �."
+  ],
+  "scraped_at": "2026-04-24T07:52:40.659960+00:00",
   "reference_id": "imot.bg:d61908e8772e",
+  "source_attributes": {
+    "����": "10-�� �� 12",
+    "�E�": "��",
+    "������������": "�����, ������� � ������������ 1970 - 1979 �."
+  },
+  "listing_status": "active",
+  "contact_name": "����  ���������",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_d61908e8772e",
+  "photo_count_remote": 9,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

@@ -3,30 +3,43 @@
   "listing_url": "https://www.yavlena.com/bg/168416",
   "external_id": "dab35e5cf58b",
   "title": "Други бизнес имоти в Никопол 4985 кв.м. ID 168416  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Агенция Явлена, офис Оборище – гр. София, предлага за продажба поземлен имот в с. Дебово общ. Никопол обл. Плевен с площ 4985 кв.м. ведно с изградените в имота: БЕНЗИНОСТАНЦИЯ със съораженията към нея, със застроена площ от 16 кв.м. и МАСИВНА ЕДНОЕТАЖНА СГРАДА със застроена площ от 10 кв. м.\\\\r\\\\n         За повече информация и огледи, моля свържете се отговорния брокер Татяна Костова на посочения телефон - 359892506287.                                                                                               \\\\r\\\\n.",
+  "price": 19100.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 4985.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Никопол",
+  "district": "м",
+  "address_text": "Никопол, м",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "office",
   "image_urls": [
     "https://userimages.yavlena.com/6e239347-a0ac-44af-9d89-9f9c09c6b7fe.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 507 166",
+    "+359 2 810 50 70"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:12:59.105388+00:00",
+  "scraped_at": "2026-04-24T07:53:24.874679+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:dab35e5cf58b",
   "local_image_files": [
     "data/media/Yavlena_dab35e5cf58b/0000_de41f474.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_dab35e5cf58b/0000_de41f474.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_dab35e5cf58b",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

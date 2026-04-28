@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54028214/prodawa-2-staen-gr-pomorie-oblast-burgas",
   "external_id": "54028214",
-  "title": "Bazar.BG",
+  "title": "Продава 2-СТАЕН, гр. Поморие, област Бургас → Обява 54028214",
   "description": "ЕКСКЛУЗИВНО: Обзаведен двустаен апартамент в Поморие   ул. Княз Борис I, готов за нанасянеИмоти Премиер представя напълно обзаведен двустаен апартамент в новопо",
   "price": 142000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 75.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Поморие",
+  "district": "област Бургас",
+  "address_text": "Поморие, област Бургас",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -27,11 +27,23 @@
     "https://imotstatic4.focus.bg/imot/photosimotbg/1/686/big1/1b177487546730686_vG.jpg",
     "https://imotstatic4.focus.bg/imot/photosimotbg/1/686/big/1b177487546730686_aH.jpg",
     "https://imotstatic4.focus.bg/imot/photosimotbg/1/686/big1/1b177487546730686_jO.jpg",
-    "//imotstatic4.focus.bg/imot/photosimotbg/1/686/big/1b177487546730686_DJ.jpg"
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/686/big/1b177487546730686_DJ.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "025323046200000000",
+    "092868578",
+    "069292384442",
+    "03699581234",
+    "0271625883",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:49:22.899659+00:00",
+  "scraped_at": "2026-04-24T07:53:16.301055+00:00",
   "reference_id": "Bazar.bg:54028214",
   "local_image_files": [
     "data/media/Bazar.bg_54028214/0000_bded9189.jpg",
@@ -58,5 +70,10 @@
     "Bazar.bg_54028214/0008_e57108ca.jpg",
     "Bazar.bg_54028214/0009_e490cdcc.jpg",
     "Bazar.bg_54028214/0010_bded9189.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54028214",
+  "photo_count_remote": 11,
+  "photo_count_local": 11,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

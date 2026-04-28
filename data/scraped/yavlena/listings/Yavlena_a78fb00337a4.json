@@ -4,14 +4,14 @@
   "external_id": "a78fb00337a4",
   "title": "Земеделска земя в Тутраканци 9999 кв.м. ID 168431  | Явлена",
   "description": "",
-  "price": null,
+  "price": 17000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 9999.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Тутраканци",
   "district": "",
-  "address_text": "",
+  "address_text": "Тутраканци",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/5dcc4435-f050-4af1-b5fe-7aa493a36371.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 522 772",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:56:28.648438+00:00",
+  "scraped_at": "2026-04-24T07:53:23.369099+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:a78fb00337a4",
   "local_image_files": [
     "data/media/Yavlena_a78fb00337a4/0000_eb9fa3b5.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_a78fb00337a4/0000_eb9fa3b5.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_a78fb00337a4",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

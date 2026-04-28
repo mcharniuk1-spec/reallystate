@@ -4,14 +4,14 @@
   "external_id": "fb0fea033007",
   "title": "Къща в София 164 кв.м. ID 168083  | Явлена",
   "description": "",
-  "price": null,
+  "price": 450000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 164.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/7924b875-f2f2-4614-b1b4-28f30f1828d7.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 503 488",
+    "+359 889 26 26 06"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:49.824592+00:00",
+  "scraped_at": "2026-04-24T07:53:26.076892+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:fb0fea033007",
   "local_image_files": [
     "data/media/Yavlena_fb0fea033007/0000_c23a6dbe.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_fb0fea033007/0000_c23a6dbe.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_fb0fea033007",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -2,31 +2,54 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1a177462639089611-prodava-ednostaen-apartament-grad-sofiya-studentski-grad",
   "external_id": "2b84cb573597",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 1-����� ���� �����, ���������� ���� �����: 1a177462639089611",
+  "description": "����� �� ������: 4665! ������� �� ��������� ����� ������� �������� �� �������� ��������� ���������� � ��. ���������� ����. ���������� � �� ���� �����. ���������: �����, ������ ����������, ����� � ������. �������������: �����, ������ � ��������� ���� � ������ ���, ���� � ��������. ������ �� �� ������� ������� � ������� �� ������ �� ������� ���������, ����, ������������, ���������� �������� �������� � ����������, ������. �� ������ ���������� � ������ �� ������� �� ���: 0878482731!",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
-  "city": "�����",
-  "district": "",
-  "address_text": "",
+  "city": "���������� ����",
+  "district": "���� �����",
+  "address_text": "���� �����, ���������� ����",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "https://www.imot.bg/images/picturess/nophoto_660x495.svg"
+    "https://www.imot.bg/images/logos/big/emotionproperty.pic",
+    "https://www.imot.bg/images/picturess/plus.svg",
+    "https://www.imot.bg/images/picturess/nophoto_660x495.svg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/676/1a177520264319676_kR.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/516/1a176071950114516_p2.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/237/1a176168485678237_FT.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/819/1a176590052679819_yU.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-08T16:26:48.828820+00:00",
+  "phones": [
+    "0878482731",
+    "0889262075"
+  ],
+  "amenities": [
+    "����: 6-�� �� 8",
+    "������������: �����, ������� � ������������"
+  ],
+  "scraped_at": "2026-04-24T07:52:30.084814+00:00",
   "reference_id": "imot.bg:2b84cb573597",
+  "source_attributes": {
+    "����": "6-�� �� 8",
+    "������������": "�����, ������� � ������������"
+  },
+  "listing_status": "active",
+  "contact_name": "�������� ��������",
   "local_image_files": [
     "data/media/imot.bg_2b84cb573597/0000_5c3fdcb0.svg"
   ],
   "local_image_storage_keys": [
     "imot.bg_2b84cb573597/0000_5c3fdcb0.svg"
-  ]
+  ],
+  "local_media_dir": "data/media/imot.bg_2b84cb573597",
+  "photo_count_remote": 7,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "partial_gallery"
 }

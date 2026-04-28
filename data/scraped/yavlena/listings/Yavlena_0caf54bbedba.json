@@ -4,14 +4,14 @@
   "external_id": "0caf54bbedba",
   "title": "Земеделска земя в Батово 33000 кв.м. ID 168374  | Явлена",
   "description": "",
-  "price": null,
+  "price": 38800.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 33000.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Батово",
   "district": "",
-  "address_text": "",
+  "address_text": "Батово",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/6fd8ddd8-1ee0-488e-b4e7-4fe27a9d357e.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 504 047",
+    "+359 2 810 50 70"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:27.325688+00:00",
+  "scraped_at": "2026-04-24T07:53:18.091705+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:0caf54bbedba",
   "local_image_files": [
     "data/media/Yavlena_0caf54bbedba/0000_8d1f5fb0.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_0caf54bbedba/0000_8d1f5fb0.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_0caf54bbedba",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

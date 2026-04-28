@@ -4,14 +4,14 @@
   "external_id": "0ab1bff72e19",
   "title": "Двустаен апартамент в Бургас 88 кв.м. ID 156472  | Явлена",
   "description": "",
-  "price": null,
+  "price": 167000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 88.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Бургас",
   "district": "",
-  "address_text": "",
+  "address_text": "Бургас",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/5e7f7504-6e7a-4b44-8c4a-0d0cfa468efd.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 885 777 730"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:22.818419+00:00",
+  "scraped_at": "2026-04-24T07:53:17.828204+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:0ab1bff72e19",
   "local_image_files": [
     "data/media/Yavlena_0ab1bff72e19/0000_ce57efb9.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_0ab1bff72e19/0000_ce57efb9.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_0ab1bff72e19",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

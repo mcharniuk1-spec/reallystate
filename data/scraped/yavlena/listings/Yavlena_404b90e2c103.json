@@ -4,14 +4,14 @@
   "external_id": "404b90e2c103",
   "title": "Двустаен апартамент във Варна 87 кв.м. ID 168255  | Явлена",
   "description": "",
-  "price": null,
+  "price": 229000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 87.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/53324802-874e-4104-92ef-a8a4f11e1e4a.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 520 120",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:14:32.799551+00:00",
+  "scraped_at": "2026-04-24T07:53:19.664732+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:404b90e2c103",
   "local_image_files": [
     "data/media/Yavlena_404b90e2c103/0000_af2ea377.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_404b90e2c103/0000_af2ea377.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_404b90e2c103",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -4,14 +4,14 @@
   "external_id": "56cf1e0ebb29",
   "title": "Парцел в Петърч 725 кв.м. ID 168468  | Явлена",
   "description": "",
-  "price": null,
+  "price": 100000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 725.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Петърч",
   "district": "",
-  "address_text": "",
+  "address_text": "Петърч",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/2ee2ad76-44cd-4707-b52c-19a54269f8d5.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 543 237",
+    "+359 2 810 50 50"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:56:05.472727+00:00",
+  "scraped_at": "2026-04-24T07:53:20.654088+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:56cf1e0ebb29",
   "local_image_files": [
     "data/media/Yavlena_56cf1e0ebb29/0000_98e91605.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_56cf1e0ebb29/0000_98e91605.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_56cf1e0ebb29",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -481,3 +481,18 @@ Chat expands on input focus, collapses on close button or clicking backdrop. Mes
 ### 2026-04-09 — UX-04 scope: nationwide Bulgaria
 
 Operator request: **`UX-04` is whole Bulgaria**, not Varna-only MVP. Updated `docs/agents/TASKS.md` (`UX-04`, `BD-06`, `DBG-05`, dependency graph), `PLAN.md` §8 / geospatial gate / session digest, `docs/exports/platform-mvp-plan.md` (synced from `PLAN.md`), this file, and `product-ux-structure-refined.md`. **Varna-first** remains only for **3D OSM / building extrusion** (`UX-07`, `BD-08`). Regenerated `make dashboard-doc`.
+
+### 2026-04-27 — Scraped property evidence surfaced in website seed
+
+- **Action**: Updated the frontend fallback data path so the website can show representative scraped listings instead of only hand-written demo rows when the backend API is unavailable.
+- **Changed files**: `lib/mock/scraped-listings.ts`, `scripts/generate_frontend_scraped_listings.py`, `app/api/local-media/[...path]/route.ts`, `lib/types/listing.ts`, `lib/hooks/useListings.ts`, `components/listings/ListingCard.tsx`, `app/(main)/properties/[id]/detail-client.tsx`, `components/map/FullScreenMap.tsx`.
+- **Visible fields added**: local/remote photo counts, full-gallery flag, photo download status, description character count and quality, scrape quality score, image-report status.
+- **Runtime note**: Next.js starts with Turbopack on `http://127.0.0.1:3000`, but the homepage compile/request timed out during this run. Treat this as a frontend runtime blocker to verify before UX promotion.
+
+### 2026-04-27 — Homepage OSM map QA repair
+
+Lead/frontend QA pass converted the homepage placeholder map into a MapLibre surface using a local OpenStreetMap raster style, deterministic nationwide coordinate fallback for scraped listings, selectable price pins, a selected-property right panel, and an internally scrollable property list. Browser verification confirmed 1,259 active-filter markers, no detail-page open link before selection, and one open link after marker selection. Remaining UX-07 gap: current 3D extrusions are temporary property/building volumes, not PMTiles OSM building footprints from BD-08.
+
+### 2026-04-27 — Product source-link buttons
+
+Lead/moderator-planner pass added source provenance buttons to the property detail surface. Product pages now show a full `Marketed by sources` section and a compact right-side `Source links` panel. The matching policy is deliberately conservative: the current source URL is always shown, cross-source candidates require strong same-property evidence, and neighboring units from the same source are excluded to avoid misleading users.

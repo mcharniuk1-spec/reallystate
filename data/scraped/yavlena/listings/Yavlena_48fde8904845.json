@@ -4,14 +4,14 @@
   "external_id": "48fde8904845",
   "title": "Двустаен апартамент в Царево 72 кв.м. ID 150623  | Явлена",
   "description": "",
-  "price": null,
+  "price": 89000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 72.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Царево",
   "district": "",
-  "address_text": "",
+  "address_text": "Царево",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/614bf3e5-2efb-4eee-ad43-7c5307c04da6.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 530 796",
+    "+359 888 660 532"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:38.776876+00:00",
+  "scraped_at": "2026-04-24T07:53:19.986462+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:48fde8904845",
   "local_image_files": [
     "data/media/Yavlena_48fde8904845/0000_9e228dc8.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_48fde8904845/0000_9e228dc8.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_48fde8904845",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

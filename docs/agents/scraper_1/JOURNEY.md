@@ -894,3 +894,81 @@ Modified files:
   - INTERPRETATION: the remaining non-patterned sources are now mostly blocked by missing saved live samples or legal review, not by parser weaknesses in the already-landed corpus.
   - GAP: PostgreSQL persistence is still not proven in this environment because no local Postgres server is running and Docker daemon/compose are unavailable here.
   - NEXT: verify this repair wave with `debugger`, then either start a local PostgreSQL runtime or move the import proof to an environment where the repo DB stack can actually run.
+
+### Task 21: Stage 1 Varna-only scrape control plane (S1-20)
+- **Started**: 2026-04-23
+- **Action**: Added Alembic migration `20260423_0003` for `scrape_region`, `source_section`, `source_section_pattern`, `crawl_run`, `crawl_queue_task`, `crawl_error`, `segment_fulfillment`, `scrape_runner_state`, `canonical_listing_version`, and extended `canonical_listing` with region-first + full-detail pipeline columns. Implemented `src/bgrealestate/scraping/` (manifest validate, sync to DB, orchestrator threshold planning, `runner_once` dry-run default). Fixed `default_manifest_path` repo root (`parents[3]`). Wired CLI + Makefile targets; regenerated `data/scrape_patterns/regions/varna/sections.json`; updated `sql/schema.sql` and `docker-compose.yml` PostGIS image comment + `16-3.4` tag for better multi-arch odds.
+- **Result**: Operator can validate/sync section patterns and run a single orchestration tick without HTTP; global pause defaults to on. Next stage is explicit operator-run collection toward 100 valid listings per Varna section bucket (not executed here).
+- **Status**: `DONE_AWAITING_VERIFY`
+
+### 2026-04-23 — S1-20 follow-up: all tier-1/2 source-segment matrix + threshold planning runbook
+
+- **Action**: Expanded the Stage 1 control plane from a tier-1 placeholder into a tier-1/2 operator-ready planning layer. Added a durable `section_catalog` covering every tier-1/2 source across `buy_personal`, `buy_commercial`, `rent_personal`, `rent_commercial`; generated a 108-bucket Varna manifest + control matrix; codified valid-listing threshold rules; upgraded the runner to return per-bucket actions (`backfill_required`, `threshold_reached`, `paused_pending_backfill`, `skipped_*`) and to seed `discover` + `threshold_check` queue tasks only after manual unpause; added pause/unpause and threshold-summary CLI commands; wrote the operator runbook in `docs/stage1-controlled-production-architecture.md`.
+- **Changed files**:
+  - `src/bgrealestate/scraping/section_catalog.py`
+  - `src/bgrealestate/scraping/validity.py`
+  - `src/bgrealestate/scraping/orchestrator.py`
+  - `src/bgrealestate/scraping/runner.py`
+  - `src/bgrealestate/scraping/manifest.py`
+  - `src/bgrealestate/scraping/sync_sections.py`
+  - `src/bgrealestate/cli.py`
+  - `scripts/generate_varna_sections_manifest.py`
+  - `tests/test_scrape_stage1.py`
+  - `docs/stage1-controlled-production-architecture.md`
+  - `docs/exports/varna-controlled-crawl-matrix.json`
+  - `docs/exports/varna-controlled-crawl-matrix.md`
+  - `agent-skills/stage1-scrape-control-plane/SKILL.md`
+  - `Makefile`
+  - `sql/schema.sql`
+  - `src/bgrealestate/db/models.py`
+  - `migrations/versions/20260423_0003_stage1_scrape_control_plane.py`
+- **Commands run**:
+  - `python3 scripts/generate_varna_sections_manifest.py`
+  - `python3 -m py_compile scripts/generate_varna_sections_manifest.py src/bgrealestate/scraping/section_catalog.py src/bgrealestate/scraping/validity.py src/bgrealestate/scraping/orchestrator.py src/bgrealestate/scraping/runner.py src/bgrealestate/scraping/manifest.py src/bgrealestate/scraping/sync_sections.py src/bgrealestate/cli.py tests/test_scrape_stage1.py`
+  - `PYTHONPATH=src python3 -m unittest tests.test_scrape_stage1 -v`
+  - `make dashboard-doc`
+- **Tests run**:
+  - stage-control manifest/unit tests: `8 passed`
+  - `py_compile`: pass
+  - `make dashboard-doc`: pass
+- **Status**: `DONE_AWAITING_VERIFY`
+- **Review comments**:
+  - FACT: the manifest now covers all tier-1/2 sources with four source-segment buckets each; `18` buckets are currently activation-ready and `60` are explicitly `pattern_incomplete`.
+  - FACT: threshold counting is now codified and media is treated as optional for threshold counting but mandatory for strict pattern quality.
+  - GAP: DB-backed `scrape-threshold-summary` / `scrape-runner-once --apply` still require a live PostgreSQL runtime and were not executed in this environment.
+  - NEXT: debugger should verify the new runbook/manifest/matrix, then the operator can run migrations locally and decide when to unpause + enqueue the first controlled Varna activation wave.
+
+### 2026-04-23 — S1-20 follow-up: manual control worker + queue status path
+
+- **Action**: Completed the next control-plane gap after the initial runbook wave. Added queue introspection and a manual one-step control worker so the operator can inspect or process queued `discover` / `threshold_check` work without auto-starting HTTP scraping. The new worker expands `discover` tasks into concrete `fetch_list` tasks with preserved source/segment/Varna metadata, while keeping fetch/detail/media execution explicitly operator-controlled in this stage.
+- **Changed files**:
+  - `src/bgrealestate/scraping/control_queue.py`
+  - `src/bgrealestate/scraping/control_worker.py`
+  - `src/bgrealestate/cli.py`
+  - `Makefile`
+  - `tests/test_scrape_stage1.py`
+  - `docs/stage1-controlled-production-architecture.md`
+  - `agent-skills/stage1-scrape-control-plane/SKILL.md`
+  - `docs/agents/TASKS.md`
+- **Commands run**:
+  - `python3 -m py_compile src/bgrealestate/scraping/control_queue.py src/bgrealestate/scraping/control_worker.py src/bgrealestate/cli.py tests/test_scrape_stage1.py`
+  - `PYTHONPATH=src python3 -m unittest tests.test_scrape_stage1 -v`
+  - `make dashboard-doc` (main progress dashboard refreshed; later scrape-status regeneration stalled and the stale generator processes were killed)
+- **Tests run**:
+  - `py_compile`: pass
+  - `tests.test_scrape_stage1`: `10 passed`
+- **Status**: `DONE_AWAITING_VERIFY`
+- **Review comments**:
+  - FACT: the operator command surface now includes `scrape-queue-status` and `scrape-control-worker-once` in addition to the scheduler/planner commands.
+  - FACT: `scrape-control-worker-once` is read-only by default and only mutates queue state when `--apply` is passed, matching the no-auto-start requirement.
+  - FACT: `discover` queue tasks now expand into concrete `fetch_list` tasks with runtime source key and list-target metadata preserved for later execution.
+  - GAP: the unified HTTP/detail/media executor is still not wired into these queued `fetch_list` / `fetch_detail` / `fetch_media` tasks; those runtime steps remain manual/operator-controlled in this stage.
+  - NEXT: debugger should verify the queue-status/control-worker behavior and the runbook updates, then the operator can use the new commands in the first controlled local activation wave.
+
+### 2026-04-27 — S1-21 queued: post-Gemma tier-1/2 quality audit and pattern repair
+
+- **Action**: Analyzed the current OpenClaw/Gemma handoff state and queued the next Codex tier-1/2 work. The repository has substantial file-backed scrape output but no completed apartment image-description report set.
+- **Evidence snapshot**: 1,549 saved tier-1/2 listing JSON files across 10 sources; 18,707 remote photo references; 5,376 local downloaded photos; no `docs/exports/apartment-image-reports/` output found.
+- **Next Codex owner task**: `S1-21` in `docs/agents/TASKS.md`.
+- **Priority fixes**: `imot_bg` price/area extraction; `yavlena` description extraction; `address_bg` city extraction; media backfill patterns for `bulgarianproperties`, `property_bg`, `suprimmo`, and `homes_bg`.
+- **Status**: `S1-21` queued; `S1-22` queued for Gemma after Codex repair.

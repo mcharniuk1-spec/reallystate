@@ -2,27 +2,56 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1b174134741149832-prodava-dvustaen-apartament-grad-sofiya-dragalevtsi",
   "external_id": "4cfa16849911",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 2-����� ���� �����, ���������� �����: 1b174134741149832",
+  "description": "‼️ ��� ����������! 🏗️ ���� ��� 16 🏡 ������ ����� �� �������� �������� ���� � ���������� �� �����e� ĸo���eĸc, ������� �� � ��. ����������, �� ����� �� ���. ����� ����, ������������ 🛒 ���������� � ����. 📍 ��. 7� 📐 �������������: 🏠 ����� 🛋️ ������ � ��������� ���� 🛏️ ������ 🚿 ���� � �������� 🌅 ��� ������� 📏 ���� ����: 79.59 ��.�. 🏠 ��������� ����: 65.71 ��.�. 🌳 ���������� �� ������ �� 4 ������������ ������   ������ �, �, � � �, ������������ ����� ��������� � �������� ���� ���� ������������ ������������. 🏢 ����� ������ �� ���� ��������� � ���� ����� ������������ �� �����. 📊 ����: 120 �����������, ���������� � �������� � ��������. 🗓️ ���� �� ����������: �������� 2025 �. 🏗️ ���������� �� �������: ��������������� �� 🏢 ���������� ��������������: 🧱 �����: Winerberger Porotherm   25 �� (������), 12 �� (��������) 🏗️ ������: ������������, � 15 �� �������� (������� ���� + EPS) 🪟 �������: ����������, ����� �����������, ��������� ��������� 📞 �� ������ ���������� � ������: 0885600523 📌 ���. �����: 2352 🧑‍💼 ���������� �� ��������: ��� �����",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
-  "city": "�����",
-  "district": "",
-  "address_text": "",
+  "city": "����������",
+  "district": "���� �����",
+  "address_text": "���� �����, ����������",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "//imotstatic3.focus.bg/imot/photosimotbg/1/832//big/1b174134741149832_Vq.jpg"
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/832//big1/1b174134741149832_Vq.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/832//big1/1b174134741149832_3G.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/832//big1/1b174134741149832_oX.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/832//big1/1b174134741149832_6L.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/832//big1/1b174134741149832_FE.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/832//big1/1b174134741149832_ex.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/832//big1/1b174134741149832_mm.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/832//big1/1b174134741149832_K5.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/832//big1/1b174134741149832_pB.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/832//big1/1b174134741149832_qx.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/832//big/1b174134741149832_ih.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/832//big/1b174134741149832_Vq.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-08T16:29:32.835769+00:00",
+  "phones": [
+    "0885600523",
+    "4048888"
+  ],
+  "amenities": [
+    "����: 2-�� �� 5",
+    "���: ��",
+    "������������: �����, �� ���� ������� � ������������ 2026 �."
+  ],
+  "scraped_at": "2026-04-24T07:52:31.950771+00:00",
   "reference_id": "imot.bg:4cfa16849911",
+  "source_attributes": {
+    "����": "2-�� �� 5",
+    "���": "��",
+    "������������": "�����, �� ���� ������� � ������������ 2026 �."
+  },
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_4cfa16849911",
+  "photo_count_remote": 12,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

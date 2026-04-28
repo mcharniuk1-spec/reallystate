@@ -4,14 +4,14 @@
   "external_id": "2cecb454e427",
   "title": "Парцел във Варна 595 кв.м. ID 168092  | Явлена",
   "description": "",
-  "price": null,
+  "price": 65000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 595.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/84215e58-a946-4633-b9ab-d3a3b31405d5.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 519 885",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:44.495859+00:00",
+  "scraped_at": "2026-04-24T07:53:19.249358+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:2cecb454e427",
   "local_image_files": [
     "data/media/Yavlena_2cecb454e427/0000_a54c6745.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_2cecb454e427/0000_a54c6745.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_2cecb454e427",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

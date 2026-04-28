@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/164727",
   "external_id": "e92ff3119d6e",
   "title": "Тристаен апартамент в Пловдив 128 кв.м. ID 164727  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Явлена представя на Вашето внимание апартамент с 2 спални и възможност за трета в центъра на гр. Пловдив, в непосредствена близост до Второ РПУ.\\\\r\\\\nИмотът е след основен ремонт- стилно обзаведен и оборудван, с много светлина и три изложения-изток, запад и юг.\\\\r\\\\nКъм всяка стая има тераса. Жилището разполага с три санитерни помещения- баня с тоалетна, отделно тоалетна и перално помещение. Изключително удобно е за голямо семейство.  Всекидневната е просторна и светла и е с площ от 36 кв.м..\\\\r\\\\nДвете спални са оставени без обзавеждане, за да имат възможност новите собственици да  изберат мебели по свой вкус.",
+  "price": 295999.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 128.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Пловдив",
+  "district": "м",
+  "address_text": "Пловдив, м",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/661696f7-180a-4403-80e2-09633d1928b9.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 542 168",
+    "+359 898 498 449"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:49.505302+00:00",
+  "scraped_at": "2026-04-24T07:53:25.480822+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:e92ff3119d6e",
   "local_image_files": [
     "data/media/Yavlena_e92ff3119d6e/0000_c57220fd.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_e92ff3119d6e/0000_c57220fd.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_e92ff3119d6e",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -1,15 +1,56 @@
 {
-  "generated_at": "2026-04-21T10:27:13.161231+00:00",
-  "sources_scraped": 1,
-  "total_discovered": 0,
-  "total_fetched": 0,
-  "total_parsed": 0,
-  "total_photos_found": 0,
-  "total_photos_downloaded": 0,
+  "generated_at": "2026-04-24T08:26:40.897096+00:00",
+  "sources_scraped": 3,
+  "total_discovered": 120,
+  "total_fetched": 13,
+  "total_parsed": 13,
+  "total_photos_found": 102,
+  "total_photos_downloaded": 102,
   "per_source": [
     {
-      "source_key": "homes_bg",
-      "source_name": "Homes.bg",
+      "source_key": "luximmo",
+      "source_name": "LUXIMMO",
+      "discovery_pages_fetched": 5,
+      "listing_urls_discovered": 120,
+      "listing_pages_fetched": 13,
+      "listing_pages_parsed": 13,
+      "listing_pages_failed": 107,
+      "photos_found": 102,
+      "photos_downloaded": 102,
+      "photos_failed": 0,
+      "with_price": 11,
+      "with_geo": 0,
+      "with_address": 13,
+      "with_area": 11,
+      "with_rooms": 11,
+      "with_description": 10,
+      "intents": {
+        "sale": 13
+      },
+      "categories": {
+        "apartment": 13
+      },
+      "product_breakdown": {
+        "sale_apartments": 13
+      },
+      "sample_reference_ids": [
+        "LUXIMMO:fab8ca7ae4d8",
+        "LUXIMMO:994cf46e76c7",
+        "LUXIMMO:7c3f29cbb7bb",
+        "LUXIMMO:6792fbd8a3d6",
+        "LUXIMMO:b5abaf0485b3",
+        "LUXIMMO:af558ac4f1b3",
+        "LUXIMMO:0c9fd22cfdbb",
+        "LUXIMMO:abde580fb01d"
+      ],
+      "errors": [],
+      "start_time": "2026-04-24T08:13:15.368001+00:00",
+      "end_time": "2026-04-24T08:26:02.304877+00:00",
+      "duration_seconds": 766.9
+    },
+    {
+      "source_key": "property_bg",
+      "source_name": "property.bg",
       "discovery_pages_fetched": 0,
       "listing_urls_discovered": 0,
       "listing_pages_fetched": 0,
@@ -29,9 +70,35 @@
       "product_breakdown": {},
       "sample_reference_ids": [],
       "errors": [],
-      "start_time": "2026-04-21T10:27:13.067763+00:00",
-      "end_time": "2026-04-21T10:27:13.160764+00:00",
-      "duration_seconds": 0.1
+      "start_time": "2026-04-24T08:26:02.306990+00:00",
+      "end_time": "2026-04-24T08:26:16.784767+00:00",
+      "duration_seconds": 14.5
+    },
+    {
+      "source_key": "suprimmo",
+      "source_name": "SUPRIMMO",
+      "discovery_pages_fetched": 0,
+      "listing_urls_discovered": 0,
+      "listing_pages_fetched": 0,
+      "listing_pages_parsed": 0,
+      "listing_pages_failed": 0,
+      "photos_found": 0,
+      "photos_downloaded": 0,
+      "photos_failed": 0,
+      "with_price": 0,
+      "with_geo": 0,
+      "with_address": 0,
+      "with_area": 0,
+      "with_rooms": 0,
+      "with_description": 0,
+      "intents": {},
+      "categories": {},
+      "product_breakdown": {},
+      "sample_reference_ids": [],
+      "errors": [],
+      "start_time": "2026-04-24T08:26:16.786826+00:00",
+      "end_time": "2026-04-24T08:26:40.895232+00:00",
+      "duration_seconds": 24.1
     }
   ]
 }

@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/168107",
   "external_id": "a091d5e8a3d6",
   "title": "Магазин във Варна 500 кв.м. ID 168107  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Агенция Явлена предлага за продажба атрактивен търговски имот,разположен в к.к. Чайка-район с отлична локация и постоянен човекопоток.Имотът е с обща площ от 500 кв.м. и включва:\\\\r\\\\n-търговска част/магазин/ с площ от 200 кв. м.\\\\r\\\\n-заведение с площ от 300 кв.м\\\\r\\\\n-функционални складови и обслужващи помещения\\\\r\\\\n-паркоместа\\\\r\\\\nРазпределението позволява гъвкаво използване според нуждите на бъдещия собственик.\\\\r\\\\nИмотът е подходящ за ресторант,супермаркет,фитнес,медицински център или друг тип търговска дейност.\\\\r\\\\nЗа повече информация и огледи се свържете с нас.",
+  "price": 660000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 500.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Варна",
+  "district": "м",
+  "address_text": "Варна, м",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/67b5bbe2-cebe-4d77-916f-6558b166d23f.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 523 412",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:25.143344+00:00",
+  "scraped_at": "2026-04-24T07:53:23.215716+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:a091d5e8a3d6",
   "local_image_files": [
     "data/media/Yavlena_a091d5e8a3d6/0000_5ba89232.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_a091d5e8a3d6/0000_5ba89232.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_a091d5e8a3d6",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -4,14 +4,14 @@
   "external_id": "711447bd59c6",
   "title": "Двустаен апартамент в Лозенец 48 кв.м. ID 163109  | Явлена",
   "description": "",
-  "price": null,
+  "price": 78000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 48.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Лозенец",
   "district": "",
-  "address_text": "",
+  "address_text": "Лозенец",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/614bf3e5-2efb-4eee-ad43-7c5307c04da6.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 527 890",
+    "+359 888 660 532"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:54:59.145978+00:00",
+  "scraped_at": "2026-04-24T07:53:21.549725+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:711447bd59c6",
   "local_image_files": [
     "data/media/Yavlena_711447bd59c6/0000_9e228dc8.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_711447bd59c6/0000_9e228dc8.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_711447bd59c6",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

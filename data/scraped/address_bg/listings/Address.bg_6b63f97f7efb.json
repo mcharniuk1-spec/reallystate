@@ -1,0 +1,65 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/varna-vladislav-varnenchik-dvustaen-apartament-offer679540",
+  "external_id": "6b63f97f7efb",
+  "title": "Двустаен апартамент във Варна, Владислав Варненчик - код на имота: 679540",
+  "description": "Адрес недвижими имоти предлага Двустаен апартамент във Варна, Владислав Варненчик с код на имота: 679540. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 95000.0,
+  "currency": "EUR",
+  "area_sqm": 64.0,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/540/679540/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-04-01",
+    "026-01-06",
+    "018-05-09",
+    "018-07-06",
+    "0430 100",
+    "0438 209",
+    "0442 2008",
+    "0887 314 081",
+    "0887872832",
+    "052605805",
+    "026-03-18",
+    "026-01-13",
+    "026-03-05",
+    "09058784",
+    "03134342235232310313434223523237",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:11:40.572370+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Варна Двустаен апартамент Владислав Варненчик"
+  },
+  "reference_id": "Address.bg:6b63f97f7efb",
+  "local_image_files": [
+    "data/media/Address.bg_6b63f97f7efb/0000_1094c37a.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_6b63f97f7efb/0000_1094c37a.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_6b63f97f7efb",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

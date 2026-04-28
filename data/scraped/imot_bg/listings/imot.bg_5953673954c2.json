@@ -2,27 +2,57 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1b177252941844689-prodava-dvustaen-apartament-grad-sofiya-dianabad-ul-buenos-ayres",
   "external_id": "5953673954c2",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 2-����� ���� �����, �������� ��. ������ ����� �����: 1b177252941844689",
+  "description": "��� ����� !!! ��� ���� !!! ���� �� ������ ���� !!! ������� �� �������� ��������� 2-����� ���������� � ������� ����� � ������� ��������. ����������� � ���� ������� ������ � ����� ���� ������������ ������ � �������, ��� ���������� ���������, ��� ����������, ����� �������, ��������� � ���� �����. ����������� � � ��������� ����� ���� � � � ����� ����� ������� ������� ������ ������ ����������� � ����, �� � ��������. ����� � � ������� ���������� ������ ���� ���� 2025 �. �� ����� ��� ������ ������� � ������� � ������� � ������� � ������������. ��� �������� ������ ��� ���������� ������� � ������. ����� ����� ������ ��� �������� ����� �� ��������� �� ���������. ��� ����� ��� � ����. �� ������ ����������: 02/8667799 ; 0877557799 �������� �������.",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
-  "city": "�����",
-  "district": "",
-  "address_text": "",
+  "city": "�������� ��. ������ �����",
+  "district": "���� �����",
+  "address_text": "���� �����, �������� ��. ������ �����",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "//imotstatic3.focus.bg/imot/photosimotbg/1/689//big/1b177252941844689_5u.jpg"
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/689//big1/1b177252941844689_5u.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/689//big1/1b177252941844689_gX.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/689//big1/1b177252941844689_Ly.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/689//big1/1b177252941844689_GR.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/689//big1/1b177252941844689_ai.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/689//big1/1b177252941844689_pG.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/689//big1/1b177252941844689_7x.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/689//big1/1b177252941844689_ty.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/689//big1/1b177252941844689_Ee.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/689//big1/1b177252941844689_Jm.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/689//big1/1b177252941844689_B7.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/689//big1/1b177252941844689_Xm.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/689//big/1b177252941844689_5u.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-08T16:29:22.903621+00:00",
+  "phones": [
+    "0877557799",
+    "8667799"
+  ],
+  "amenities": [
+    "����: 8-�� �� 8",
+    "���: ��",
+    "������������: �����, ������� � ������������ 1980 - 1989 �."
+  ],
+  "scraped_at": "2026-04-24T07:52:32.866047+00:00",
   "reference_id": "imot.bg:5953673954c2",
+  "source_attributes": {
+    "����": "8-�� �� 8",
+    "���": "��",
+    "������������": "�����, ������� � ������������ 1980 - 1989 �."
+  },
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_5953673954c2",
+  "photo_count_remote": 13,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

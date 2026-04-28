@@ -1,0 +1,61 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/markovo-dvustaen-apartament-offer655951",
+  "external_id": "7e886156316b",
+  "title": "Двустаен апартамент в Марково - код на имота: 655951",
+  "description": "Адрес недвижими имоти предлага Двустаен апартамент в Марково с код на имота: 655951. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 109800.0,
+  "currency": "EUR",
+  "area_sqm": 1722.0,
+  "rooms": null,
+  "floor": null,
+  "city": "Марково",
+  "district": "",
+  "address_text": "Марково",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/951/655951/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "025-11-06",
+    "095067801",
+    "0699420713",
+    "025-05-27",
+    "018-05-09",
+    "018-07-06",
+    "0886021844",
+    "025-06-02",
+    "069043756016",
+    "08517923994",
+    "045455344525261404545534452520",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:10:18.599968+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Марково Двустаен апартамент"
+  },
+  "reference_id": "Address.bg:7e886156316b",
+  "local_image_files": [
+    "data/media/Address.bg_7e886156316b/0000_567c473c.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_7e886156316b/0000_567c473c.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_7e886156316b",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

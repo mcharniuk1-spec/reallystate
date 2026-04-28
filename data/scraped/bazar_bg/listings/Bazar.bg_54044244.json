@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54044244/prodawa-3-staen-gr-sofiia-lyulin-6",
   "external_id": "54044244",
-  "title": "Bazar.BG",
+  "title": "Продава 3-СТАЕН, гр. София, Люлин 6 → Обява 54044244",
   "description": "Предлагаме на вниманието последен тристаен апартамент в затворен комплекс  Елит 6 БЕЗ КОМИСИОННА! ДИРЕКТНО ОТ ИНВЕСТИТОРА! БЕЗ ТАКСИ И УВЕЛИЧЕНИЕ НА ЦЕНАТА !Нач",
   "price": 192000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 120.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Люлин 6",
+  "address_text": "София, Люлин 6",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -23,11 +23,24 @@
     "https://imotstatic1.focus.bg/imot/photosimotbg/1/693/big1/1c177497392387693_Af.jpg",
     "https://imotstatic1.focus.bg/imot/photosimotbg/1/693/big1/1c177497392387693_uW.jpg",
     "https://imotstatic1.focus.bg/imot/photosimotbg/1/693/big1/1c177497392387693_Jg.jpg",
-    "//imotstatic1.focus.bg/imot/photosimotbg/1/693/big1/1c177497392387693_Jh.jpg"
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/693/big1/1c177497392387693_Jh.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "02186661800000000",
+    "092863508",
+    "096840725809",
+    "00787105175",
+    "029661657611",
+    "029779371692",
+    "026-05-08",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:47:19.619855+00:00",
+  "scraped_at": "2026-04-24T07:53:16.595880+00:00",
   "reference_id": "Bazar.bg:54044244",
   "local_image_files": [
     "data/media/Bazar.bg_54044244/0000_d6c24384.jpg",
@@ -46,5 +59,10 @@
     "Bazar.bg_54044244/0004_8aaa8b8c.jpg",
     "Bazar.bg_54044244/0005_9b2501fd.jpg",
     "Bazar.bg_54044244/0006_d6c24384.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54044244",
+  "photo_count_remote": 7,
+  "photo_count_local": 7,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

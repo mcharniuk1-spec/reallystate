@@ -1,6 +1,10 @@
+# PostGIS image tags vary by CPU architecture. `postgis/postgis:17-3.5` may lack linux/arm64
+# manifests on some hosts (Apple Silicon). Prefer a multi-arch tag such as 16-3.4, or set:
+#   export DOCKER_DEFAULT_PLATFORM=linux/amd64
+# before `docker compose up` if you must run an amd64-only image via emulation.
 services:
   postgres:
-    image: postgis/postgis:17-3.5
+    image: postgis/postgis:16-3.4
     container_name: bgrealestate-postgres
     environment:
       POSTGRES_USER: bgrealestate

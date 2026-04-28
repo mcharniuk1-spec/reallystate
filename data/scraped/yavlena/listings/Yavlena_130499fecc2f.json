@@ -4,14 +4,14 @@
   "external_id": "130499fecc2f",
   "title": "Земеделска земя в Чернодъб 28592 кв.м. ID 168166  | Явлена",
   "description": "",
-  "price": null,
+  "price": 34500.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 28592.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Чернодъб",
   "district": "",
-  "address_text": "",
+  "address_text": "Чернодъб",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/6fd4fac3-bfea-471a-a599-f2625673a6c7.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 540 341",
+    "+359 28 10 50 70"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:15:48.795559+00:00",
+  "scraped_at": "2026-04-24T07:53:18.190253+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:130499fecc2f",
   "local_image_files": [
     "data/media/Yavlena_130499fecc2f/0000_1644ec86.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_130499fecc2f/0000_1644ec86.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_130499fecc2f",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

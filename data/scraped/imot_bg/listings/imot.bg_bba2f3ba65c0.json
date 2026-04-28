@@ -6,7 +6,7 @@
   "description": "Imot.bg - №1 сайт за имоти от собственици и брокери",
   "price": null,
   "currency": "EUR",
-  "area_sqm": 6.0,
+  "area_sqm": null,
   "rooms": null,
   "floor": null,
   "city": "София",
@@ -45,7 +45,7 @@
     "0879176767"
   ],
   "amenities": [],
-  "scraped_at": "2026-04-21T08:07:31.621924+00:00",
+  "scraped_at": "2026-04-24T07:52:38.837363+00:00",
   "reference_id": "imot.bg:bba2f3ba65c0",
   "source_attributes": {},
   "listing_status": "active",
@@ -98,5 +98,10 @@
     "imot.bg_bba2f3ba65c0/0020_7693f82d.jpg",
     "imot.bg_bba2f3ba65c0/0021_c5fbc0f4.jpg",
     "imot.bg_bba2f3ba65c0/0022_5574f2df.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/imot.bg_bba2f3ba65c0",
+  "photo_count_remote": 23,
+  "photo_count_local": 23,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -1,0 +1,60 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/varna-operata-dvustaen-apartament-offer663331",
+  "external_id": "029e15edbeb9",
+  "title": "Двустаен апартамент във Варна, Операта - код на имота: 663331",
+  "description": "Адрес недвижими имоти предлага Двустаен апартамент във Варна, Операта с код на имота: 663331. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 117000.0,
+  "currency": "EUR",
+  "area_sqm": 189.0,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/331/663331/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-03-19",
+    "025-08-01",
+    "018-05-09",
+    "018-07-06",
+    "0887 314 081",
+    "0882546684",
+    "025-08-04",
+    "026-02-11",
+    "01445784716",
+    "0795225766",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:10:23.392209+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Варна Двустаен апартамент Операта"
+  },
+  "reference_id": "Address.bg:029e15edbeb9",
+  "local_image_files": [
+    "data/media/Address.bg_029e15edbeb9/0000_8250583d.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_029e15edbeb9/0000_8250583d.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_029e15edbeb9",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

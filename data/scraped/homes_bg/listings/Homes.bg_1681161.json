@@ -1,0 +1,165 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-63m2-sofiya-zhk.-nadezhda-1/as1681161",
+  "external_id": "1681161",
+  "reference_id": "Homes.bg:1681161",
+  "title": "Двустаен, 63m² - жк. Надежда 1, София",
+  "description": "Южен, слънчев и просторен апартамент- в непосредствена близост до училище, две детски градини. Намира се на 8 мин пешеходно разстояние от метростанция Надежда. На 3 минути пешеходно разстояние от автобусни спирки на градски транспорт. 0888720101",
+  "price": 160000.0,
+  "currency": "EUR",
+  "area_sqm": 0.63,
+  "rooms": 2.0,
+  "floor": 7.0,
+  "city": "София",
+  "district": "жк. Надежда 1",
+  "address_text": "жк. Надежда 1, София",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2026-04-24_1/118697190o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118697191o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118697192o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118697193o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118697194o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118697195o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118697196o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118697197o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118697198o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118697199o.jpg"
+  ],
+  "phones": [
+    "0888720101"
+  ],
+  "amenities": [
+    "Асансьор"
+  ],
+  "scraped_at": "2026-04-24T08:09:27.374283+00:00",
+  "listing_status": "active",
+  "published_text": "днес",
+  "agency_name": "Азмар имоти",
+  "agency_type": "Агенция",
+  "agency_address": "София София, Патриарх Евтимий - 56",
+  "source_attributes": {
+    "Обзавеждане": "Полуобзаведен",
+    "Етаж": "7-ми",
+    "Етажи": "8",
+    "Отопление": "ТЕЦ",
+    "Състояние": "",
+    "Строителство": "Панел",
+    "Спални": "",
+    "Бани": "",
+    "Двор": "",
+    "Площ на парцела": "",
+    "В регулация": "",
+    "Предназначение": "",
+    "Виза": "",
+    "Разрешение за строеж": "",
+    "Категория": "",
+    "Тип": ""
+  },
+  "photo_metadata": [
+    {
+      "id": 118697190,
+      "name": "118697190",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 172
+    },
+    {
+      "id": 118697191,
+      "name": "118697191",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 175
+    },
+    {
+      "id": 118697192,
+      "name": "118697192",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 168
+    },
+    {
+      "id": 118697193,
+      "name": "118697193",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 171
+    },
+    {
+      "id": 118697194,
+      "name": "118697194",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 172
+    },
+    {
+      "id": 118697195,
+      "name": "118697195",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 189
+    },
+    {
+      "id": 118697196,
+      "name": "118697196",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 174
+    },
+    {
+      "id": 118697197,
+      "name": "118697197",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 181
+    },
+    {
+      "id": 118697198,
+      "name": "118697198",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 179
+    },
+    {
+      "id": 118697199,
+      "name": "118697199",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 174
+    }
+  ],
+  "raw_offer_type": "as",
+  "view_count": 1,
+  "local_image_files": [
+    "data/media/Homes.bg_1681161/0000_4da0413a.jpg",
+    "data/media/Homes.bg_1681161/0001_e1ed0f29.jpg",
+    "data/media/Homes.bg_1681161/0002_6af00c43.jpg",
+    "data/media/Homes.bg_1681161/0003_854d5126.jpg",
+    "data/media/Homes.bg_1681161/0004_6642dc7e.jpg",
+    "data/media/Homes.bg_1681161/0005_21f775f1.jpg",
+    "data/media/Homes.bg_1681161/0006_42ba647f.jpg",
+    "data/media/Homes.bg_1681161/0007_2bd6bdc9.jpg",
+    "data/media/Homes.bg_1681161/0008_726143e2.jpg",
+    "data/media/Homes.bg_1681161/0009_0ca8345f.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Homes.bg_1681161/0000_4da0413a.jpg",
+    "Homes.bg_1681161/0001_e1ed0f29.jpg",
+    "Homes.bg_1681161/0002_6af00c43.jpg",
+    "Homes.bg_1681161/0003_854d5126.jpg",
+    "Homes.bg_1681161/0004_6642dc7e.jpg",
+    "Homes.bg_1681161/0005_21f775f1.jpg",
+    "Homes.bg_1681161/0006_42ba647f.jpg",
+    "Homes.bg_1681161/0007_2bd6bdc9.jpg",
+    "Homes.bg_1681161/0008_726143e2.jpg",
+    "Homes.bg_1681161/0009_0ca8345f.jpg"
+  ],
+  "local_media_dir": "data/media/Homes.bg_1681161",
+  "photo_count_remote": 10,
+  "photo_count_local": 10,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

@@ -4,14 +4,14 @@
   "external_id": "a12900f9199c",
   "title": "Двустаен апартамент в София 56 кв.м. ID 168393  | Явлена",
   "description": "",
-  "price": null,
+  "price": 115000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 56.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/a22bfdc1-590f-4c04-b80b-ad3184d25f7e.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 511 183",
+    "+359 889 26 26 06"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:15.258591+00:00",
+  "scraped_at": "2026-04-24T07:53:23.243602+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:a12900f9199c",
   "local_image_files": [
     "data/media/Yavlena_a12900f9199c/0000_01a5246d.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_a12900f9199c/0000_01a5246d.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_a12900f9199c",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

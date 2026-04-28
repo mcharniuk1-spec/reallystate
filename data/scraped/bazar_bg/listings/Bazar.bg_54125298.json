@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54125298/prodawa-2-staen-gr-burgas-zornitsa",
   "external_id": "54125298",
-  "title": "Bazar.BG",
+  "title": "Продава 2-СТАЕН, гр. Бургас, Зорница → Обява 54125298",
   "description": "🏡 Агенция Positive Service предлага ЕКСКЛУЗИВНО за директни клиенти двустаен апартамент в ж.к. Зорница, комплекс  Перла ✨ Представяме Ви стилен, изцяло южен и и",
   "price": 169999.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 56.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Бургас",
+  "district": "Зорница",
+  "address_text": "Бургас, Зорница",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -33,11 +33,25 @@
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/772/big1/1b177557158693772_3e.jpg",
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/772/big1/1b177557158693772_WD.jpg",
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/772/big1/1b177557158693772_56.jpg",
-    "//imotstatic3.focus.bg/imot/photosimotbg/1/772/big1/1b177557158693772_JW.jpg"
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/772/big1/1b177557158693772_JW.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "019423551700000000",
+    "092876243",
+    "037421459",
+    "04459115836",
+    "038927845",
+    "008212201841",
+    "06236763",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:52:50.583569+00:00",
+  "scraped_at": "2026-04-24T07:53:17.420945+00:00",
   "reference_id": "Bazar.bg:54125298",
   "local_image_files": [
     "data/media/Bazar.bg_54125298/0000_fab95771.jpg",
@@ -72,5 +86,10 @@
     "Bazar.bg_54125298/0012_16ec443d.jpg",
     "Bazar.bg_54125298/0013_d29e9069.jpg",
     "Bazar.bg_54125298/0014_86b0fbae.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54125298",
+  "photo_count_remote": 17,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "partial_gallery"
 }

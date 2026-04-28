@@ -4,9 +4,9 @@
   "external_id": "e766797e8cdb",
   "title": "Двустаен апартамент във Варна, Възраждане 1 - код на имота: 683410",
   "description": "Адрес недвижими имоти предлага Двустаен апартамент във Варна, Възраждане 1 с код на имота: 683410. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 129900.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 65.0,
   "rooms": null,
   "floor": null,
   "city": "",
@@ -19,14 +19,40 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/410/683410/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-02-10",
+    "026-02-09",
+    "018-05-09",
+    "018-07-06",
+    "0887 314 081",
+    "0887652653",
+    "026-02-11",
+    "026-02-17",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:20:40.358787+00:00",
+  "scraped_at": "2026-04-24T07:52:44.409411+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Варна Двустаен апартамент Възраждане 1"
+  },
   "reference_id": "Address.bg:e766797e8cdb",
   "local_image_files": [
     "data/media/Address.bg_e766797e8cdb/0000_183bc8e6.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_e766797e8cdb/0000_183bc8e6.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_e766797e8cdb",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

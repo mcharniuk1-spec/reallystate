@@ -4,14 +4,14 @@
   "external_id": "1f89b8117d63",
   "title": "Парцел в Медово 1659 кв.м. ID 168624  | Явлена",
   "description": "",
-  "price": null,
+  "price": 63000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 1659.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Медово",
   "district": "",
-  "address_text": "",
+  "address_text": "Медово",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/c62d748b-864e-478b-8edf-ce922c2b9feb.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 529 276",
+    "+359 884 60 7 088"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:42.125191+00:00",
+  "scraped_at": "2026-04-24T07:53:18.769703+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:1f89b8117d63",
   "local_image_files": [
     "data/media/Yavlena_1f89b8117d63/0000_64eb0afd.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_1f89b8117d63/0000_64eb0afd.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_1f89b8117d63",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

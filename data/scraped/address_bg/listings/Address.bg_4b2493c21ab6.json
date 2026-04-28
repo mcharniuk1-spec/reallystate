@@ -1,0 +1,56 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/veselinovo-kashta-vila-offer691922",
+  "external_id": "4b2493c21ab6",
+  "title": "Къща/Вила във Веселиново - код на имота: 691922",
+  "description": "Адрес недвижими имоти предлага Къща/Вила във Веселиново с код на имота: 691922. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 26000.0,
+  "currency": "EUR",
+  "area_sqm": 7897.0,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/922/691922/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-04-17",
+    "018-05-09",
+    "018-07-06",
+    "0885150011",
+    "0893314443",
+    "09086918787",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:11:10.597854+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Веселиново Къща/Вила"
+  },
+  "reference_id": "Address.bg:4b2493c21ab6",
+  "local_image_files": [
+    "data/media/Address.bg_4b2493c21ab6/0000_892ff4b5.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_4b2493c21ab6/0000_892ff4b5.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_4b2493c21ab6",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

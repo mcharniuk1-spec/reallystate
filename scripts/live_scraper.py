@@ -22,7 +22,7 @@ from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from html import unescape
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 from urllib.parse import urljoin
 
 import httpx
@@ -1172,9 +1172,11 @@ class ScrapeStats:
 
 def _save_listing(stats: ScrapeStats, parsed: dict, html: str, source_key: str,
                   *, download_photos: bool = False, photo_client: httpx.Client | None = None,
-                  product_label: str | None = None):
+                  product_label: str | None = None, extra_fields: dict[str, Any] | None = None):
     ref_id = parsed["reference_id"]
     safe_ref = re.sub(r'[/:*?"<>|\\]', '_', ref_id)
+    if extra_fields:
+        parsed.update(extra_fields)
 
     listing_dir = SCRAPED_ROOT / source_key / "listings"
     raw_dir = SCRAPED_ROOT / source_key / "raw"
@@ -1196,6 +1198,11 @@ def _save_listing(stats: ScrapeStats, parsed: dict, html: str, source_key: str,
     else:
         parsed["local_image_files"] = []
         parsed["local_image_storage_keys"] = []
+    try:
+        parsed["local_media_dir"] = str(media_dir.resolve().relative_to(REPO))
+    except Exception:
+        parsed["local_media_dir"] = str(media_dir.resolve())
+    parsed["photo_count_remote"] = len(imgs)
 
     stats.listing_pages_parsed += 1
     if parsed.get("price") is not None:
@@ -1237,6 +1244,18 @@ def _save_listing(stats: ScrapeStats, parsed: dict, html: str, source_key: str,
             stored_files = sorted(p for p in media_dir.iterdir() if p.is_file())
             parsed["local_image_files"] = [str(path.relative_to(REPO)) for path in stored_files]
             parsed["local_image_storage_keys"] = [f"{safe_ref}/{path.name}" for path in stored_files]
+    parsed["photo_count_local"] = len(parsed.get("local_image_files") or [])
+    parsed["full_gallery_downloaded"] = bool(
+        parsed["photo_count_remote"] > 0 and parsed["photo_count_local"] >= parsed["photo_count_remote"]
+    )
+    if parsed["photo_count_remote"] <= 0:
+        parsed["photo_download_status"] = "no_remote_gallery"
+    elif parsed["photo_count_local"] <= 0:
+        parsed["photo_download_status"] = "no_local_files"
+    elif parsed["photo_count_local"] >= parsed["photo_count_remote"]:
+        parsed["photo_download_status"] = "full_gallery"
+    else:
+        parsed["photo_download_status"] = "partial_gallery"
 
     (listing_dir / f"{safe_ref}.json").write_text(json.dumps(parsed, ensure_ascii=False, indent=2), encoding="utf-8")
     (raw_dir / f"{safe_ref}.html").write_text(html, encoding="utf-8")
@@ -1247,7 +1266,10 @@ def _save_listing(stats: ScrapeStats, parsed: dict, html: str, source_key: str,
 # ──────────────────────────────────────────────────────────────
 
 def _scrape_homes_bg(stats: ScrapeStats, client: httpx.Client, max_pages: int, max_listings: int,
-                     download_photos: bool, photo_client: httpx.Client | None):
+                     download_photos: bool, photo_client: httpx.Client | None,
+                     *, api_templates: list[tuple[str, str]] | None = None,
+                     accept_parsed: Callable[[dict[str, Any], str, str, str], bool] | None = None,
+                     save_context_builder: Callable[[dict[str, Any], str, str, str], dict[str, Any] | None] | None = None):
     """Homes.bg: uses JSON API for discovery, HTML for detail."""
     search_types = [
         ("sale-sofia", "1", "sofia"),
@@ -1261,14 +1283,23 @@ def _scrape_homes_bg(stats: ScrapeStats, client: httpx.Client, max_pages: int, m
     ]
     all_urls: list[str] = []
     seen: set[str] = set()
+    url_to_bucket: dict[str, str] = {}
 
-    for intent_label, offer_type, city in search_types:
+    if api_templates:
+        template_defs: list[tuple[str, str]] = api_templates
+    else:
+        template_defs = []
+        for intent_label, offer_type, city in search_types:
+            template = f"https://www.homes.bg/api/offers?currPage={{page}}&lang=bg&offerType={offer_type}"
+            if city:
+                template += f"&city={city}"
+            template_defs.append((intent_label, template))
+
+    for intent_label, api_template in template_defs:
         for page in range(1, max_pages + 1):
             if len(all_urls) >= max_listings:
                 break
-            api_url = f"https://www.homes.bg/api/offers?currPage={page}&lang=bg&offerType={offer_type}"
-            if city:
-                api_url += f"&city={city}"
+            api_url = api_template.format(page=page)
             data = fetch_json(client, api_url)
             if not data or not isinstance(data, dict):
                 break
@@ -1284,6 +1315,7 @@ def _scrape_homes_bg(stats: ScrapeStats, client: httpx.Client, max_pages: int, m
                     if full not in seen:
                         seen.add(full)
                         all_urls.append(full)
+                        url_to_bucket[full] = intent_label
             logger.info("[homes_bg] API page %d (%s): %d items, total: %d", page, intent_label, len(results), len(all_urls))
             time.sleep(DELAY * 0.5)
 
@@ -1301,6 +1333,9 @@ def _scrape_homes_bg(stats: ScrapeStats, client: httpx.Client, max_pages: int, m
         stats.listing_pages_fetched += 1
         parsed = parse_homes_detail(html, url)
         if parsed:
+            bucket_label = url_to_bucket.get(url, "default")
+            if accept_parsed and not accept_parsed(parsed, url, html, bucket_label):
+                continue
             _save_listing(
                 stats,
                 parsed,
@@ -1308,14 +1343,18 @@ def _scrape_homes_bg(stats: ScrapeStats, client: httpx.Client, max_pages: int, m
                 "homes_bg",
                 download_photos=download_photos,
                 photo_client=photo_client,
-                product_label=f"{parsed.get('listing_intent', 'unknown')}:{parsed.get('property_category', 'unknown')}",
+                product_label=bucket_label or f"{parsed.get('listing_intent', 'unknown')}:{parsed.get('property_category', 'unknown')}",
+                extra_fields=save_context_builder(parsed, url, html, bucket_label) if save_context_builder else None,
             )
         else:
             stats.listing_pages_failed += 1
 
 
 def _scrape_imot_bg(stats: ScrapeStats, client: httpx.Client, max_pages: int, max_listings: int,
-                    download_photos: bool, photo_client: httpx.Client | None):
+                    download_photos: bool, photo_client: httpx.Client | None,
+                    *, search_routes: list[tuple[str, str]] | None = None,
+                    accept_parsed: Callable[[dict[str, Any], str, str, str], bool] | None = None,
+                    save_context_builder: Callable[[dict[str, Any], str, str, str], dict[str, Any] | None] | None = None):
     """imot.bg: server-rendered search with /obiava-... URLs."""
     search_urls = [
         "https://www.imot.bg/obiavi/prodazhbi/grad-sofiya",
@@ -1329,9 +1368,12 @@ def _scrape_imot_bg(stats: ScrapeStats, client: httpx.Client, max_pages: int, ma
     ]
     all_urls: list[str] = []
     seen: set[str] = set()
+    url_to_bucket: dict[str, str] = {}
     obiava_re = re.compile(r'href="(//www\.imot\.bg/obiava-[^"]+)"')
 
-    for search_url in search_urls:
+    route_defs = search_routes or [(url.split("/")[-1], url) for url in search_urls]
+
+    for bucket_label, search_url in route_defs:
         for page in range(1, max_pages + 1):
             if len(all_urls) >= max_listings:
                 break
@@ -1351,8 +1393,9 @@ def _scrape_imot_bg(stats: ScrapeStats, client: httpx.Client, max_pages: int, ma
                 if full not in seen:
                     seen.add(full)
                     all_urls.append(full)
+                    url_to_bucket[full] = bucket_label
                     new_count += 1
-            logger.info("[imot_bg] %s p%d: %d URLs (%d new), total: %d", search_url.split("/")[-1], page, len(matches), new_count, len(all_urls))
+            logger.info("[imot_bg] %s p%d: %d URLs (%d new), total: %d", bucket_label, page, len(matches), new_count, len(all_urls))
             if not new_count:
                 break
             time.sleep(DELAY)
@@ -1371,6 +1414,9 @@ def _scrape_imot_bg(stats: ScrapeStats, client: httpx.Client, max_pages: int, ma
         stats.listing_pages_fetched += 1
         parsed = parse_imot_detail(html, url)
         if parsed:
+            bucket_label = url_to_bucket.get(url, "default")
+            if accept_parsed and not accept_parsed(parsed, url, html, bucket_label):
+                continue
             _save_listing(
                 stats,
                 parsed,
@@ -1378,7 +1424,8 @@ def _scrape_imot_bg(stats: ScrapeStats, client: httpx.Client, max_pages: int, ma
                 "imot_bg",
                 download_photos=download_photos,
                 photo_client=photo_client,
-                product_label=f"{parsed.get('listing_intent', 'unknown')}:{parsed.get('property_category', 'unknown')}",
+                product_label=bucket_label or f"{parsed.get('listing_intent', 'unknown')}:{parsed.get('property_category', 'unknown')}",
+                extra_fields=save_context_builder(parsed, url, html, bucket_label) if save_context_builder else None,
             )
         else:
             stats.listing_pages_failed += 1
@@ -1387,7 +1434,9 @@ def _scrape_imot_bg(stats: ScrapeStats, client: httpx.Client, max_pages: int, ma
 def _scrape_generic_html(stats: ScrapeStats, client: httpx.Client, source_key: str, source_name: str,
                          search_urls: list[str], listing_pattern: re.Pattern, base_url: str,
                          max_pages: int, max_listings: int, download_photos: bool, photo_client: httpx.Client | None,
-                         *, page_suffix: str = "?page={}", buckets: list[dict[str, Any]] | None = None):
+                         *, page_suffix: str = "?page={}", buckets: list[dict[str, Any]] | None = None,
+                         accept_parsed: Callable[[dict[str, Any], str, str, str], bool] | None = None,
+                         save_context_builder: Callable[[dict[str, Any], str, str, str], dict[str, Any] | None] | None = None):
     """Generic HTML scraper for sources with standard pagination."""
     all_urls: list[str] = []
     seen: set[str] = set()
@@ -1451,6 +1500,9 @@ def _scrape_generic_html(stats: ScrapeStats, client: httpx.Client, source_key: s
         stats.listing_pages_fetched += 1
         parsed = parse_listing_html(html, url, source_name)
         if parsed:
+            bucket_label = url_to_bucket.get(url, "default")
+            if accept_parsed and not accept_parsed(parsed, url, html, bucket_label):
+                continue
             _save_listing(
                 stats,
                 parsed,
@@ -1458,7 +1510,8 @@ def _scrape_generic_html(stats: ScrapeStats, client: httpx.Client, source_key: s
                 source_key,
                 download_photos=download_photos,
                 photo_client=photo_client,
-                product_label=url_to_bucket.get(url),
+                product_label=bucket_label,
+                extra_fields=save_context_builder(parsed, url, html, bucket_label) if save_context_builder else None,
             )
         else:
             stats.listing_pages_failed += 1
@@ -1697,8 +1750,11 @@ SOURCE_CONFIGS: dict[str, dict[str, Any]] = {
 
 
 def scrape_source(key: str, *, download_photos: bool = False,
-                  max_pages: int = 12, max_listings: int = 500) -> ScrapeStats:
-    cfg = SOURCE_CONFIGS[key]
+                  max_pages: int = 12, max_listings: int = 500,
+                  config_override: dict[str, Any] | None = None,
+                  accept_parsed: Callable[[dict[str, Any], str, str, str], bool] | None = None,
+                  save_context_builder: Callable[[dict[str, Any], str, str, str], dict[str, Any] | None] | None = None) -> ScrapeStats:
+    cfg = {**SOURCE_CONFIGS[key], **(config_override or {})}
     stats = ScrapeStats(source_key=key, source_name=cfg["name"])
     stats.start_time = datetime.now(tz=timezone.utc).isoformat()
     t0 = time.time()
@@ -1711,9 +1767,19 @@ def scrape_source(key: str, *, download_photos: bool = False,
     try:
         func_name = cfg["func"]
         if func_name == "_scrape_homes_bg":
-            _scrape_homes_bg(stats, client, max_pages, max_listings, download_photos, photo_client)
+            _scrape_homes_bg(
+                stats, client, max_pages, max_listings, download_photos, photo_client,
+                api_templates=cfg.get("api_templates"),
+                accept_parsed=accept_parsed,
+                save_context_builder=save_context_builder,
+            )
         elif func_name == "_scrape_imot_bg":
-            _scrape_imot_bg(stats, client, max_pages, max_listings, download_photos, photo_client)
+            _scrape_imot_bg(
+                stats, client, max_pages, max_listings, download_photos, photo_client,
+                search_routes=cfg.get("search_routes"),
+                accept_parsed=accept_parsed,
+                save_context_builder=save_context_builder,
+            )
         elif func_name == "generic":
             _scrape_generic_html(
                 stats, client, key, cfg["name"],
@@ -1721,6 +1787,8 @@ def scrape_source(key: str, *, download_photos: bool = False,
                 max_pages, max_listings, download_photos, photo_client,
                 page_suffix=cfg.get("page_suffix", "?page={}"),
                 buckets=cfg.get("buckets"),
+                accept_parsed=accept_parsed,
+                save_context_builder=save_context_builder,
             )
     except Exception:
         logger.exception("Error scraping %s", key)

@@ -1,0 +1,57 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/perushtica-kashta-vila-offer688877",
+  "external_id": "3c238b88dbb7",
+  "title": "Къща/Вила в Перущица - код на имота: 688877",
+  "description": "Адрес недвижими имоти предлага Къща/Вила в Перущица с код на имота: 688877. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 120000.0,
+  "currency": "EUR",
+  "area_sqm": 4945.0,
+  "rooms": null,
+  "floor": null,
+  "city": "Перущица",
+  "district": "",
+  "address_text": "Перущица",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/877/688877/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-03-25",
+    "026-03-23",
+    "018-05-09",
+    "018-07-06",
+    "0432 (15",
+    "0887780535",
+    "054051084716",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:12:15.938070+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Перущица Къща/Вила"
+  },
+  "reference_id": "Address.bg:3c238b88dbb7",
+  "local_image_files": [
+    "data/media/Address.bg_3c238b88dbb7/0000_34c273c3.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_3c238b88dbb7/0000_34c273c3.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_3c238b88dbb7",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

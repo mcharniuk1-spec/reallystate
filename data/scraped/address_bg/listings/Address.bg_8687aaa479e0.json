@@ -1,0 +1,60 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-krastova-vada-dvustaen-apartament-offer690865",
+  "external_id": "8687aaa479e0",
+  "title": "Двустаен апартамент в София, Кръстова вада - код на имота: 690865",
+  "description": "Адрес недвижими имоти предлага Двустаен апартамент в София, Кръстова вада с код на имота: 690865. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 195000.0,
+  "currency": "EUR",
+  "area_sqm": 100.0,
+  "rooms": null,
+  "floor": null,
+  "city": "София",
+  "district": "Кръстова вада",
+  "address_text": "София, Кръстова вада",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/865/690865/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-04-08",
+    "018-05-09",
+    "018-07-06",
+    "0430 200",
+    "0442 45000",
+    "0439 2025",
+    "0438 2026",
+    "0888 81 89 21",
+    "0885608640",
+    "09142144218",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:11:42.156760+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Двустаен апартамент Кръстова вада"
+  },
+  "reference_id": "Address.bg:8687aaa479e0",
+  "local_image_files": [
+    "data/media/Address.bg_8687aaa479e0/0000_fa0c26f2.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_8687aaa479e0/0000_fa0c26f2.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_8687aaa479e0",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

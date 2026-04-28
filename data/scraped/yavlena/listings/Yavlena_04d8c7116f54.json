@@ -4,14 +4,14 @@
   "external_id": "04d8c7116f54",
   "title": "Парцел в Мулдава 4500 кв.м. ID 168326  | Явлена",
   "description": "",
-  "price": null,
+  "price": 67500.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 4500.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Мулдава",
   "district": "",
-  "address_text": "",
+  "address_text": "Мулдава",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/661696f7-180a-4403-80e2-09633d1928b9.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 542 097",
+    "+359 898 498 449"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:56.419511+00:00",
+  "scraped_at": "2026-04-24T07:53:17.703816+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:04d8c7116f54",
   "local_image_files": [
     "data/media/Yavlena_04d8c7116f54/0000_c57220fd.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_04d8c7116f54/0000_c57220fd.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_04d8c7116f54",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

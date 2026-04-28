@@ -1,0 +1,60 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/varna-m-st-manastirski-rid-kashta-vila-offer679991",
+  "external_id": "48fe200860cd",
+  "title": "Къща/Вила във Варна, м-ст Манастирски рид - код на имота: 679991",
+  "description": "Адрес недвижими имоти предлага Къща/Вила във Варна, м-ст Манастирски рид с код на имота: 679991. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 74900.0,
+  "currency": "EUR",
+  "area_sqm": 600.0,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/991/679991/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-04-17",
+    "026-01-09",
+    "018-05-09",
+    "018-07-06",
+    "0440 600",
+    "0435 483",
+    "0887 314 081",
+    "0882547411",
+    "052605805",
+    "026-03-16",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:12:51.252792+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Варна Къща/Вила м-ст Манастирски рид"
+  },
+  "reference_id": "Address.bg:48fe200860cd",
+  "local_image_files": [
+    "data/media/Address.bg_48fe200860cd/0000_32070c4d.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_48fe200860cd/0000_32070c4d.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_48fe200860cd",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

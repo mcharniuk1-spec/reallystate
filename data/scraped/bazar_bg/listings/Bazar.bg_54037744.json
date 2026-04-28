@@ -2,27 +2,38 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54037744/prodawa-2-staen-gr-sweti-wlas-oblast-burgas",
   "external_id": "54037744",
-  "title": "Bazar.BG",
+  "title": "Продава 2-СТАЕН, гр. Свети Влас, област Бургас → Обява 54037744",
   "description": "Предлага се за продажба стилен двустаен апартамент в един от най-предпочитаните комплекси в Свети Влас -  Етъра 4 .📐 Обща площ: 69.12 кв.м🏢 Апартамент  2.13✨ Ос",
   "price": 145000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 69.12,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Свети Влас",
+  "district": "област Бургас",
+  "address_text": "Свети Влас, област Бургас",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
   "property_category": "apartment",
   "image_urls": [
     "https://imotstatic2.focus.bg/imot/photosimotbg/1/648/big1/1b177494586318648_h4.jpg",
-    "//imotstatic2.focus.bg/imot/photosimotbg/1/648/big1/1b177494586318648_h4.jpg"
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/648/big1/1b177494586318648_h4.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "03200000000",
+    "+359 89 208 07 27",
+    "+359 89 301 03 34",
+    "092859885",
+    "026-05-08",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:45:57.254398+00:00",
+  "scraped_at": "2026-04-24T07:53:16.375051+00:00",
   "reference_id": "Bazar.bg:54037744",
   "local_image_files": [
     "data/media/Bazar.bg_54037744/0000_e28f143e.jpg",
@@ -31,5 +42,10 @@
   "local_image_storage_keys": [
     "Bazar.bg_54037744/0000_e28f143e.jpg",
     "Bazar.bg_54037744/0001_e28f143e.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54037744",
+  "photo_count_remote": 2,
+  "photo_count_local": 2,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

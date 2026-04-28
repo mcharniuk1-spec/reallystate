@@ -4,14 +4,14 @@
   "external_id": "1f75abe5c61f",
   "title": "Едностаен апартамент в София, Суха река - код на имота: 658374",
   "description": "Адрес недвижими имоти предлага Едностаен апартамент в София, Суха река с код на имота: 658374. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 117100.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 111.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Суха река",
+  "address_text": "София, Суха река",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,40 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/374/658374/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "025-11-26",
+    "025-06-16",
+    "018-05-09",
+    "018-07-06",
+    "0888 81 89 21",
+    "0888495476",
+    "025-11-27",
+    "03104846",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:20:23.829169+00:00",
+  "scraped_at": "2026-04-24T07:52:43.497154+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Едностаен апартамент Суха река"
+  },
   "reference_id": "Address.bg:1f75abe5c61f",
   "local_image_files": [
     "data/media/Address.bg_1f75abe5c61f/0000_a41a2858.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_1f75abe5c61f/0000_a41a2858.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_1f75abe5c61f",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

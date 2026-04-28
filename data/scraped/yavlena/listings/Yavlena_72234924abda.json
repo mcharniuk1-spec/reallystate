@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/168441",
   "external_id": "72234924abda",
   "title": "Студио в Царево 54 кв.м. ID 168441  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Агенция Явлена продава просторно студио в новопостроена сграда с Акт16, в атрактивния квартал ”Василико” на град Царево. Сградата се намира на 5 минути пеша от плаж ”Нестинарка”. Студиото е разположено на пети, последен етаж и се състои от антре, просторна дневна с кухненски бокс, санитарен възел, и два балкона. Жилището се предлага на тапа- на шпакловка и замазка, с монтирана входна врата. Към жилището има складово помещение в подземния етаж . Сградата е модерна и красива, разполага с асансьор. Изпълнението е луксозно.. Прекрасна инвестиция на морето.",
+  "price": 67300.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 54.0,
+  "rooms": 1.0,
   "floor": null,
-  "city": "",
+  "city": "Царево",
   "district": "",
-  "address_text": "",
+  "address_text": "Царево",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/3a0e2ddc-8be6-479e-990b-16c14a60fa7f.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 530 635",
+    "+359 888 660 532"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:56:25.273602+00:00",
+  "scraped_at": "2026-04-24T07:53:21.601791+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:72234924abda",
   "local_image_files": [
     "data/media/Yavlena_72234924abda/0000_c28bf43a.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_72234924abda/0000_c28bf43a.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_72234924abda",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

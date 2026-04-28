@@ -39,6 +39,13 @@ function pricePerSqm(price: number | null, area: number | null, currency: string
   return `${sym}${new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(perSqm)}/m\u00B2`;
 }
 
+function qualityStyle(score: number | null | undefined): string {
+  if (score == null) return "bg-line/30 text-mist";
+  if (score >= 85) return "bg-sea/10 text-sea";
+  if (score >= 65) return "bg-sand/20 text-ink";
+  return "bg-amber-50 text-amber-700";
+}
+
 function relativeTime(iso: string | null): string {
   if (!iso) return "";
   const diff = Math.max(0, Date.now() - new Date(iso).getTime());
@@ -79,6 +86,8 @@ export function ListingCard({
 }) {
   const l = listing;
   const ppsqm = pricePerSqm(l.price, l.area_sqm, l.currency);
+  const remotePhotos = l.photo_count_remote ?? l.image_urls.length;
+  const localPhotos = l.photo_count_local ?? l.local_image_files?.length ?? 0;
 
   return (
     <Link
@@ -97,6 +106,9 @@ export function ListingCard({
 
       <div className="mt-3 flex items-start justify-between gap-2">
         <div className="min-w-0 flex-1">
+          {l.title && (
+            <p className="mb-1 truncate text-xs font-semibold text-ink">{l.title}</p>
+          )}
           <p className={`font-display text-ink leading-tight ${compact ? "text-base" : "text-lg"}`}>
             {formatPrice(l.price, l.currency, l.listing_intent)}
           </p>
@@ -166,6 +178,20 @@ export function ListingCard({
 
       {!compact && l.description && (
         <p className="mt-2 text-xs text-mist line-clamp-2 leading-relaxed">{l.description}</p>
+      )}
+
+      {!compact && (
+        <div className="mt-2 grid grid-cols-3 gap-1 text-[10px]">
+          <span className="rounded-md border border-line bg-paper px-1.5 py-1 text-mist">
+            {localPhotos}/{remotePhotos} local photos
+          </span>
+          <span className={`rounded-md px-1.5 py-1 font-medium ${l.full_gallery_downloaded ? "bg-sea/10 text-sea" : "bg-amber-50 text-amber-700"}`}>
+            {l.full_gallery_downloaded ? "Full gallery" : "Partial gallery"}
+          </span>
+          <span className={`rounded-md px-1.5 py-1 font-medium ${qualityStyle(l.scrape_quality_score)}`}>
+            Q {l.scrape_quality_score ?? "n/a"}
+          </span>
+        </div>
       )}
 
       {/* Footer: source + freshness */}

@@ -4,9 +4,9 @@
   "external_id": "7c7d5006433d",
   "title": "Къща/Вила във Варна, м-ст Свети Никола - код на имота: 663784",
   "description": "Адрес недвижими имоти предлага Къща/Вила във Варна, м-ст Свети Никола с код на имота: 663784. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 790000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 640.0,
   "rooms": null,
   "floor": null,
   "city": "",
@@ -19,14 +19,39 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/784/663784/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "025-08-06",
+    "018-05-09",
+    "018-07-06",
+    "0442 550",
+    "0887 314 081",
+    "0893501111",
+    "026-01-30",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:20:43.534181+00:00",
+  "scraped_at": "2026-04-24T07:52:43.895856+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Варна Къща/Вила м-ст Свети Никола"
+  },
   "reference_id": "Address.bg:7c7d5006433d",
   "local_image_files": [
     "data/media/Address.bg_7c7d5006433d/0000_43e8a055.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_7c7d5006433d/0000_43e8a055.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_7c7d5006433d",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

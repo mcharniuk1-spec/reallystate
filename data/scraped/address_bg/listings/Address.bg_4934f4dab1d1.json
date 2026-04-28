@@ -1,0 +1,62 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-centar-dvustaen-apartament-offer683270",
+  "external_id": "4934f4dab1d1",
+  "title": "Двустаен апартамент в София, Център - код на имота: 683270",
+  "description": "Адрес недвижими имоти предлага Двустаен апартамент в София, Център с код на имота: 683270. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 240000.0,
+  "currency": "EUR",
+  "area_sqm": 79.0,
+  "rooms": null,
+  "floor": null,
+  "city": "София",
+  "district": "Център",
+  "address_text": "София, Център",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/270/683270/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-02-07",
+    "018-05-09",
+    "018-07-06",
+    "0442 2016",
+    "0888 81 89 21",
+    "0884640324",
+    "026-02-10",
+    "026-03-10",
+    "026-03-16",
+    "02360994091",
+    "091949482958383",
+    "07666363756274744766636375627474296560",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:12:12.748308+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Двустаен апартамент Център"
+  },
+  "reference_id": "Address.bg:4934f4dab1d1",
+  "local_image_files": [
+    "data/media/Address.bg_4934f4dab1d1/0000_bc9c5ff6.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_4934f4dab1d1/0000_bc9c5ff6.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_4934f4dab1d1",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/168116",
   "external_id": "7f64dc9f17a5",
   "title": "Къща във Варна 91 кв.м. ID 168116  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "\\\\\\\"Явлена\\\\\\\" ви предлага за продажба равен парцел с площ от 1071 кв.м. и жилищна сграда с акт-14 със застроена площ от 91 кв.м.\\\\r\\\\nИмотът се намира на тихо и спокойно място на 150 м. от автобусна спирка. В него има партиди за ток и вода, както и отделно хидрофор. Има жилищна сграда - 91 кв.м. с акт-14, която може всеки да си е обособи по свой начин,вкус и стил.\\\\r\\\\nПарцелът е без денивелация и с голямо \\\\\\\"лице\\\\\\\".\\\\r\\\\nНаблизо живеят целогодишно хора.\\\\r\\\\nПродава се без обзавеждането.\\\\r\\\\nГолямата площ на имота го прави атрактивен,защото може да се построи друга жилищна сграда или да се раздели.",
+  "price": 220000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 91.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Варна",
+  "district": "м",
+  "address_text": "Варна, м",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/5dcc4435-f050-4af1-b5fe-7aa493a36371.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 522 780",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:10.071440+00:00",
+  "scraped_at": "2026-04-24T07:53:22.204212+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:7f64dc9f17a5",
   "local_image_files": [
     "data/media/Yavlena_7f64dc9f17a5/0000_eb9fa3b5.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_7f64dc9f17a5/0000_eb9fa3b5.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_7f64dc9f17a5",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

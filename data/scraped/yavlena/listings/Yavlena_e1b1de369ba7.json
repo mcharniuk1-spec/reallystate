@@ -4,14 +4,14 @@
   "external_id": "e1b1de369ba7",
   "title": "Многостаен апартамент в София 157 кв.м. ID 168615  | Явлена",
   "description": "",
-  "price": null,
+  "price": 850000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 157.0,
+  "rooms": 5.0,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/0191b0ff-37e3-45ca-b9c1-5e8a3395a947.png"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 516 522",
+    "+359 882 222 321"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:49.890780+00:00",
+  "scraped_at": "2026-04-24T07:53:25.056304+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:e1b1de369ba7",
   "local_image_files": [
     "data/media/Yavlena_e1b1de369ba7/0000_e30a9b54.png"
   ],
   "local_image_storage_keys": [
     "Yavlena_e1b1de369ba7/0000_e30a9b54.png"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_e1b1de369ba7",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

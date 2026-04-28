@@ -4,14 +4,14 @@
   "external_id": "3b03172a3368",
   "title": "Двустаен апартамент в Свети Влас 63 кв.м. ID 168372  | Явлена",
   "description": "",
-  "price": null,
+  "price": 92900.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 63.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Свети Влас",
   "district": "",
-  "address_text": "",
+  "address_text": "Свети Влас",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/1f94b520-ac6b-41df-9907-6fdbc4baa5ed.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 530 245",
+    "+359 888 088 788"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:29.146912+00:00",
+  "scraped_at": "2026-04-24T07:53:19.483503+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:3b03172a3368",
   "local_image_files": [
     "data/media/Yavlena_3b03172a3368/0000_61c385fe.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_3b03172a3368/0000_61c385fe.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_3b03172a3368",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/168364",
   "external_id": "9224b6c827b8",
   "title": "Двустаен апартамент в София 64 кв.м. ID 168364  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Бутикова новострояща се жилищна сграда с висок клас изпълнение в кв. Надежда, гр. София. Предлагат се за продажба двустайни и тристайни апартаменти, както и складове, в отлична локация – на крачки от парк, в близост до училища, детски градини, градски транспорт и на 200–300 метра от метростанция, с бърз достъп до централните части на града. Сградата се реализира от доказан инвеститор с богат опит и множество успешно завършени проекти и ще разполага с подземни и надземни паркоместа и гаражи, които могат да бъдат закупени допълнително.",
+  "price": 0.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 64.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Надежда",
+  "address_text": "София, Надежда",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/91751589-0d79-4cd8-9afa-121c2f1a2875.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 538 684",
+    "+359 888 109 040"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:34.585062+00:00",
+  "scraped_at": "2026-04-24T07:53:22.851393+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:9224b6c827b8",
   "local_image_files": [
     "data/media/Yavlena_9224b6c827b8/0000_3f8b072f.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_9224b6c827b8/0000_3f8b072f.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_9224b6c827b8",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

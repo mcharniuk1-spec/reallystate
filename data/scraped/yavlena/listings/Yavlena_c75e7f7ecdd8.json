@@ -4,14 +4,14 @@
   "external_id": "c75e7f7ecdd8",
   "title": "Тристаен апартамент във Варна 104 кв.м. ID 168055  | Явлена",
   "description": "",
-  "price": null,
+  "price": 290000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 104.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/1adda534-dd23-4908-814b-2f761ab1b133.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 521 859",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:10.779931+00:00",
+  "scraped_at": "2026-04-24T07:53:24.357775+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:c75e7f7ecdd8",
   "local_image_files": [
     "data/media/Yavlena_c75e7f7ecdd8/0000_cf19f025.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_c75e7f7ecdd8/0000_cf19f025.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_c75e7f7ecdd8",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

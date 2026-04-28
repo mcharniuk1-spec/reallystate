@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/150508",
   "external_id": "acbdb07a06a7",
   "title": "Заведение в Бургас 125 кв.м. ID 150508  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Агенция \\\\\\\"Явлена\\\\\\\" продава заведение със статут на кафе . Помещението се намира в Меден Рудник, зона А и е разположено до оживена улица . Площта на кафето е 71 квадратни метра затворена част и 54 - отворена , тераса . Заведението разполага със склад и санитарен възел . Може да се преустрои и за друг вид дейност като пекарна , сладкарница , бистро и други . Цената на заведението е 90 000 евро. \\\\r\\\\nЗа повече информация , снимки и оглед , не се колебайте да се свържете с мен .\\\\r\\\\nID: 150508\\\\r\\\\nБрокер : Даниела Йорданова",
+  "price": 90000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 125.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Бургас",
   "district": "",
-  "address_text": "",
+  "address_text": "Бургас",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/d37f5554-8eef-41f9-aaf9-e6c3b8c0557b.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 885 777 730"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:21.769901+00:00",
+  "scraped_at": "2026-04-24T07:53:23.613931+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:acbdb07a06a7",
   "local_image_files": [
     "data/media/Yavlena_acbdb07a06a7/0000_01bea75d.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_acbdb07a06a7/0000_01bea75d.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_acbdb07a06a7",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

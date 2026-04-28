@@ -1,0 +1,60 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-centar-tristaen-apartament-offer689745",
+  "external_id": "b7fc8727deeb",
+  "title": "Тристаен апартамент в София, Център - код на имота: 689745",
+  "description": "Адрес недвижими имоти предлага Тристаен апартамент в София, Център с код на имота: 689745. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 680000.0,
+  "currency": "EUR",
+  "area_sqm": 136.0,
+  "rooms": null,
+  "floor": null,
+  "city": "София",
+  "district": "Център",
+  "address_text": "София, Център",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/745/689745/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-04-05",
+    "026-03-30",
+    "018-05-09",
+    "018-07-06",
+    "0888 81 89 21",
+    "0885922421",
+    "026-04-16",
+    "026-04-20",
+    "0851884716",
+    "037212112333636203721217",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:12:06.365653+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Тристаен апартамент Център"
+  },
+  "reference_id": "Address.bg:b7fc8727deeb",
+  "local_image_files": [
+    "data/media/Address.bg_b7fc8727deeb/0000_5c3fd96a.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_b7fc8727deeb/0000_5c3fd96a.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_b7fc8727deeb",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

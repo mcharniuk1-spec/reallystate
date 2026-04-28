@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-51338206/prodawa-2-staen-gr-kostinbrod-oblast-sofiia-oblast",
   "external_id": "51338206",
-  "title": "Bazar.BG",
+  "title": "Продава 2-СТАЕН, гр. Костинброд, област София област → Обява 51338206",
   "description": "За повече информация обадете ни се на тел: 0882 817 458 или 02 425 68 20 и цитирайте референтния номер на имота: Sfa 82112. Отговорен брокер: Магдалена Тошева А",
   "price": 109026.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 4817.15,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Костинброд",
+  "district": "област София област",
+  "address_text": "Костинброд, област София област",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -31,11 +31,22 @@
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/938/big1/1b175498960726938_A5.jpg",
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/938/big1/1b175498960726938_pN.jpg",
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/938/big1/1b175498960726938_Md.jpg",
-    "//imotstatic3.focus.bg/imot/photosimotbg/1/938/big1/1b175498960726938_fT.jpg"
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/938/big1/1b175498960726938_fT.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "0882 817 458",
+    "02 425 68 20",
+    "092867585",
+    "0438 02 425 68 20",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:48:53.845208+00:00",
+  "scraped_at": "2026-04-24T07:53:14.471516+00:00",
   "reference_id": "Bazar.bg:51338206",
   "local_image_files": [
     "data/media/Bazar.bg_51338206/0000_c93c5a2d.jpg",
@@ -70,5 +81,10 @@
     "Bazar.bg_51338206/0012_e0d4ba47.jpg",
     "Bazar.bg_51338206/0013_ad6a77c5.jpg",
     "Bazar.bg_51338206/0014_c93c5a2d.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_51338206",
+  "photo_count_remote": 15,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

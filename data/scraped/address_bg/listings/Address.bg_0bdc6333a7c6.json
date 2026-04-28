@@ -4,14 +4,14 @@
   "external_id": "0bdc6333a7c6",
   "title": "Многостаен апартамент в София, Люлин 4 - код на имота: 687937",
   "description": "Адрес недвижими имоти предлага Многостаен апартамент в София, Люлин 4 с код на имота: 687937. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 189000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 176.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Люлин 4",
+  "address_text": "София, Люлин 4",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,41 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/937/687937/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-04-04",
+    "026-03-16",
+    "018-05-09",
+    "018-07-06",
+    "0888 81 89 21",
+    "0884802882",
+    "026-04-02",
+    "09884716",
+    "0889257778",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:20:58.514922+00:00",
+  "scraped_at": "2026-04-24T07:52:43.457086+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Многостаен апартамент Люлин 4"
+  },
   "reference_id": "Address.bg:0bdc6333a7c6",
   "local_image_files": [
     "data/media/Address.bg_0bdc6333a7c6/0000_6015cdab.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_0bdc6333a7c6/0000_6015cdab.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_0bdc6333a7c6",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -2,7 +2,7 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-8464-zhilishten-kompleks-grad-sofiya-s-pancharevo",
   "external_id": "1be87f5d98b6",
-  "title": "Imot.bg",
+  "title": "Жилищен комплекс в град София с. Панчарево обява 8464",
   "description": "Imot.bg - №1 сайт за имоти от собственици и брокери",
   "price": null,
   "currency": "EUR",
@@ -38,7 +38,7 @@
     "0886002233"
   ],
   "amenities": [],
-  "scraped_at": "2026-04-21T07:47:13.167579+00:00",
+  "scraped_at": "2026-04-24T07:52:29.085281+00:00",
   "reference_id": "imot.bg:1be87f5d98b6",
   "source_attributes": {},
   "listing_status": "active",
@@ -77,5 +77,10 @@
     "imot.bg_1be87f5d98b6/0013_181361f8.jpg",
     "imot.bg_1be87f5d98b6/0014_bb15e94d.jpg",
     "imot.bg_1be87f5d98b6/0015_664ea457.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/imot.bg_1be87f5d98b6",
+  "photo_count_remote": 16,
+  "photo_count_local": 16,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

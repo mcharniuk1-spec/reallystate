@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-04-24T15:16:53.415984+00:00",
+  "dry_run": true,
+  "source": null,
+  "limit": 5,
+  "max_images_per_listing": 0,
+  "totals": {
+    "Yavlena": {
+      "listings": 5,
+      "attempted": 0,
+      "downloaded": 0,
+      "failed": 0,
+      "missing_before": 0
+    }
+  },
+  "items": [
+    {
+      "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/listings/Yavlena_026fab1f7ac0.json",
+      "source_key": "yavlena",
+      "source_name": "Yavlena",
+      "reference_id": "Yavlena:026fab1f7ac0",
+      "remote_photos": 1,
+      "local_photos_before": 1,
+      "missing_before": 0,
+      "attempted": 0,
+      "downloaded": 0,
+      "failed": 0,
+      "status": "complete"
+    },
+    {
+      "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/listings/Yavlena_0381ae4d9137.json",
+      "source_key": "yavlena",
+      "source_name": "Yavlena",
+      "reference_id": "Yavlena:0381ae4d9137",
+      "remote_photos": 1,
+      "local_photos_before": 1,
+      "missing_before": 0,
+      "attempted": 0,
+      "downloaded": 0,
+      "failed": 0,
+      "status": "complete"
+    },
+    {
+      "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/listings/Yavlena_04cfa486dd77.json",
+      "source_key": "yavlena",
+      "source_name": "Yavlena",
+      "reference_id": "Yavlena:04cfa486dd77",
+      "remote_photos": 1,
+      "local_photos_before": 1,
+      "missing_before": 0,
+      "attempted": 0,
+      "downloaded": 0,
+      "failed": 0,
+      "status": "complete"
+    },
+    {
+      "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/listings/Yavlena_04d8c7116f54.json",
+      "source_key": "yavlena",
+      "source_name": "Yavlena",
+      "reference_id": "Yavlena:04d8c7116f54",
+      "remote_photos": 1,
+      "local_photos_before": 1,
+      "missing_before": 0,
+      "attempted": 0,
+      "downloaded": 0,
+      "failed": 0,
+      "status": "complete"
+    },
+    {
+      "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/listings/Yavlena_060cce20e081.json",
+      "source_key": "yavlena",
+      "source_name": "Yavlena",
+      "reference_id": "Yavlena:060cce20e081",
+      "remote_photos": 1,
+      "local_photos_before": 1,
+      "missing_before": 0,
+      "attempted": 0,
+      "downloaded": 0,
+      "failed": 0,
+      "status": "complete"
+    }
+  ]
+}

@@ -4,14 +4,14 @@
   "external_id": "20a58d1ccb94",
   "title": "Тристаен апартамент в София, Красна поляна 3 - код на имота: 689156",
   "description": "Адрес недвижими имоти предлага Тристаен апартамент в София, Красна поляна 3 с код на имота: 689156. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 335000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 112.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Красна поляна 3",
+  "address_text": "София, Красна поляна 3",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,40 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/156/689156/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-04-01",
+    "026-03-25",
+    "018-05-09",
+    "018-07-06",
+    "0888 81 89 21",
+    "0885922642",
+    "026-04-02",
+    "0574084716",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:21:01.794144+00:00",
+  "scraped_at": "2026-04-24T07:52:43.522732+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Тристаен апартамент Красна поляна 3"
+  },
   "reference_id": "Address.bg:20a58d1ccb94",
   "local_image_files": [
     "data/media/Address.bg_20a58d1ccb94/0000_0274a9bc.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_20a58d1ccb94/0000_0274a9bc.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_20a58d1ccb94",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

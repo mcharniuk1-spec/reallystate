@@ -1,0 +1,158 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-109m2-sofiya-centyr/as1643554",
+  "external_id": "1643554",
+  "reference_id": "Homes.bg:1643554",
+  "title": "Тристаен, 109m² - Център, София",
+  "description": "АСГАРД ПРОПЪРТИС\" продава просторен 3-стаен апартамент с чиста площ 109 кв.м.,  разположен в масивна санирана сграда в стария център на София. Жилището се намира на 4-ти етаж с асансьор, като в момента е разделено на два по-малки апартамента. PVC дограма, сменени ВиК и ел. инсталации. Отлична инвестиция, подходящ за отдаване под наем както дългосрочно, така и чрез AirBnB или Booking.com. Отоплението е на ток. Продава се с мазе и 7 % идеални части от двора. За контакти: 0899/032-036, 02/465-19-50.",
+  "price": 290000.0,
+  "currency": "EUR",
+  "area_sqm": 0.109,
+  "rooms": 3.0,
+  "floor": 4.0,
+  "city": "София",
+  "district": "Център",
+  "address_text": "Център, София Цар Симеон",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2025-08-12_2/115282459o.jpg",
+    "https://g1.homes.bg/2025-08-12_2/115282460o.jpg",
+    "https://g1.homes.bg/2025-08-12_2/115282463o.jpg",
+    "https://g1.homes.bg/2025-08-12_2/115282464o.jpg",
+    "https://g1.homes.bg/2025-08-12_2/115282467o.jpg",
+    "https://g1.homes.bg/2025-08-12_2/115282466o.jpg",
+    "https://g1.homes.bg/2025-08-12_2/115282465o.jpg",
+    "https://g1.homes.bg/2025-08-12_2/115282462o.jpg",
+    "https://g1.homes.bg/2025-08-12_2/115282461o.jpg"
+  ],
+  "phones": [
+    "02",
+    "465-19-50",
+    "0899-032-036"
+  ],
+  "amenities": [
+    "Асансьор",
+    "Саниран"
+  ],
+  "scraped_at": "2026-04-24T08:09:21.660917+00:00",
+  "listing_status": "active",
+  "published_text": "днес",
+  "agency_name": "АСГАРД ПРОПЪРТИС",
+  "agency_type": "Агенция",
+  "agency_address": "София гр.София, ул.Дякон Игнатий 21",
+  "source_attributes": {
+    "Обзавеждане": "Полуобзаведен",
+    "Етаж": "4-ти",
+    "Етажи": "6",
+    "Отопление": "Електричество",
+    "Състояние": "",
+    "Строителство": "Тухла",
+    "Спални": "",
+    "Бани": "",
+    "Двор": "",
+    "Площ на парцела": "",
+    "В регулация": "",
+    "Предназначение": "",
+    "Виза": "",
+    "Разрешение за строеж": "",
+    "Категория": "",
+    "Тип": ""
+  },
+  "photo_metadata": [
+    {
+      "id": 115282459,
+      "name": "115282459",
+      "path": "2025-08-12_2/",
+      "height": 252,
+      "width": 448
+    },
+    {
+      "id": 115282460,
+      "name": "115282460",
+      "path": "2025-08-12_2/",
+      "height": 252,
+      "width": 448
+    },
+    {
+      "id": 115282463,
+      "name": "115282463",
+      "path": "2025-08-12_2/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 115282464,
+      "name": "115282464",
+      "path": "2025-08-12_2/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 115282467,
+      "name": "115282467",
+      "path": "2025-08-12_2/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 115282466,
+      "name": "115282466",
+      "path": "2025-08-12_2/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 115282465,
+      "name": "115282465",
+      "path": "2025-08-12_2/",
+      "height": 336,
+      "width": 252
+    },
+    {
+      "id": 115282462,
+      "name": "115282462",
+      "path": "2025-08-12_2/",
+      "height": 336,
+      "width": 252
+    },
+    {
+      "id": 115282461,
+      "name": "115282461",
+      "path": "2025-08-12_2/",
+      "height": 336,
+      "width": 189
+    }
+  ],
+  "raw_offer_type": "as",
+  "view_count": 1843,
+  "local_image_files": [
+    "data/media/Homes.bg_1643554/0000_3a1afbb9.jpg",
+    "data/media/Homes.bg_1643554/0001_b327f442.jpg",
+    "data/media/Homes.bg_1643554/0002_7dc8a3a1.jpg",
+    "data/media/Homes.bg_1643554/0003_4cd659aa.jpg",
+    "data/media/Homes.bg_1643554/0004_ed346da0.jpg",
+    "data/media/Homes.bg_1643554/0005_49452f86.jpg",
+    "data/media/Homes.bg_1643554/0006_4dfdee12.jpg",
+    "data/media/Homes.bg_1643554/0007_cab687ac.jpg",
+    "data/media/Homes.bg_1643554/0008_e506e5f6.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Homes.bg_1643554/0000_3a1afbb9.jpg",
+    "Homes.bg_1643554/0001_b327f442.jpg",
+    "Homes.bg_1643554/0002_7dc8a3a1.jpg",
+    "Homes.bg_1643554/0003_4cd659aa.jpg",
+    "Homes.bg_1643554/0004_ed346da0.jpg",
+    "Homes.bg_1643554/0005_49452f86.jpg",
+    "Homes.bg_1643554/0006_4dfdee12.jpg",
+    "Homes.bg_1643554/0007_cab687ac.jpg",
+    "Homes.bg_1643554/0008_e506e5f6.jpg"
+  ],
+  "local_media_dir": "data/media/Homes.bg_1643554",
+  "photo_count_remote": 9,
+  "photo_count_local": 9,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

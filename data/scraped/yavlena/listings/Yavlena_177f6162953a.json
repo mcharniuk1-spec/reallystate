@@ -4,14 +4,14 @@
   "external_id": "177f6162953a",
   "title": "Двустаен апартамент в Благоевград 75 кв.м. ID 168340  | Явлена",
   "description": "",
-  "price": null,
+  "price": 77000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 75.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Благоевград",
   "district": "",
-  "address_text": "",
+  "address_text": "Благоевград",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/a03bd40b-0fe7-44f8-86a6-eaaa40ea24c8.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 536 212",
+    "+359 886 880 290"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:54.780719+00:00",
+  "scraped_at": "2026-04-24T07:53:18.330631+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:177f6162953a",
   "local_image_files": [
     "data/media/Yavlena_177f6162953a/0000_47280f76.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_177f6162953a/0000_47280f76.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_177f6162953a",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

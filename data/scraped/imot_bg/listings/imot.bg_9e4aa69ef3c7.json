@@ -2,27 +2,56 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1b177495829315076-prodava-dvustaen-apartament-grad-sofiya-boyana",
   "external_id": "9e4aa69ef3c7",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 2-����� ���� �����, ����� �����: 1b177495829315076",
+  "description": "���� ��������� ����� ��� ������������� �� �� ��������� ��������� ������ � ��. �����. �������� �� ������ �� �������� ����. ������ �� �� ������ � ��������� ����, ������, ���� � �������� � ������ ������. ������ �� �������� ����������� ���. �������� � � ���������� ��������� � � ������������ ����� � �����. ��� ���� ��� �������� ��������� �� ����� ����. �������� �� ������ � �������� �������� ��� ������ �����, ���� � ������. �������� ���� �� ������������ ��������, ���������, ��������� �������, ���� �� ,,�����'. �������������� �� �������� ��� ������ �� ������� ���������. �� ���� ��������� ��������� ����� � ��������������� �� �����. �� ������ ���������� � �� �� �������� ��� �� �����, ����, ������� �� � ��������� ������� ��� : 462.",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
   "city": "�����",
-  "district": "",
-  "address_text": "",
+  "district": "���� �����",
+  "address_text": "���� �����, �����",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "//imotstatic2.focus.bg/imot/photosimotbg/1/076//big/1b177495829315076_Mc.jpg"
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/076//big1/1b177495829315076_Mc.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/076//big1/1b177495829315076_aY.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/076//big1/1b177495829315076_5n.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/076//big1/1b177495829315076_S9.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/076//big1/1b177495829315076_sU.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/076//big1/1b177495829315076_3s.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/076//big/1b177495829315076_Ai.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/076//big/1b177495829315076_O0.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/076//big1/1b177495829315076_T7.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/076//big1/1b177495829315076_jx.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/076//big1/1b177495829315076_Jz.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/076//big1/1b177495829315076_4P.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/076//big/1b177495829315076_Mc.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-08T16:27:50.329615+00:00",
+  "phones": [
+    "0887833800"
+  ],
+  "amenities": [
+    "����: 1-�� �� 6",
+    "���: ��",
+    "������������: �����, ������� � ������������ 2008 �."
+  ],
+  "scraped_at": "2026-04-24T07:52:37.459387+00:00",
   "reference_id": "imot.bg:9e4aa69ef3c7",
+  "source_attributes": {
+    "����": "1-�� �� 6",
+    "���": "��",
+    "������������": "�����, ������� � ������������ 2008 �."
+  },
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_9e4aa69ef3c7",
+  "photo_count_remote": 13,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

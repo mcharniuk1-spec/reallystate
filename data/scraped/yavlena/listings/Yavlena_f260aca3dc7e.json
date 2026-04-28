@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/160462",
   "external_id": "f260aca3dc7e",
   "title": "Жилищна сграда във Варна 30000 кв.м. ID 160462  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "$5b",
+  "price": 0.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 30000.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/4ebc684f-72c5-4a11-83fc-ca4b53e945c1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 523 962",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:14.916743+00:00",
+  "scraped_at": "2026-04-24T07:53:25.692573+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:f260aca3dc7e",
   "local_image_files": [
     "data/media/Yavlena_f260aca3dc7e/0000_92b930f6.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_f260aca3dc7e/0000_92b930f6.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_f260aca3dc7e",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

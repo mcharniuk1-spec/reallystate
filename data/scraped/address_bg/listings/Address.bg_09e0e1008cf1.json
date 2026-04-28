@@ -4,14 +4,14 @@
   "external_id": "09e0e1008cf1",
   "title": "Офис в София, Център - код на имота: 678457",
   "description": "Адрес недвижими имоти предлага Офис в София, Център с код на имота: 678457. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 390000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 117.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Център",
+  "address_text": "София, Център",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,43 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/457/678457/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-03-18",
+    "025-12-12",
+    "018-05-09",
+    "018-07-06",
+    "0888 81 89 21",
+    "0885922435",
+    "026-01-06",
+    "026-04-09",
+    "00098684716",
+    "01526000231",
+    "0203621373704252020362137376",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:21:29.069215+00:00",
+  "scraped_at": "2026-04-24T07:52:43.433197+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Офис Център"
+  },
   "reference_id": "Address.bg:09e0e1008cf1",
   "local_image_files": [
     "data/media/Address.bg_09e0e1008cf1/0000_491cbb37.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_09e0e1008cf1/0000_491cbb37.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_09e0e1008cf1",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

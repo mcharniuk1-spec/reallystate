@@ -4,14 +4,14 @@
   "external_id": "ae49ed330938",
   "title": "Тристаен апартамент в София 95 кв.м. ID 167998  | Явлена",
   "description": "",
-  "price": null,
+  "price": 220000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 95.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/38fa8edf-fab0-4011-b8a4-91c13f3e74f8.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 28 10 50 70"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:45.952191+00:00",
+  "scraped_at": "2026-04-24T07:53:23.710866+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:ae49ed330938",
   "local_image_files": [
     "data/media/Yavlena_ae49ed330938/0000_fb1bee46.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_ae49ed330938/0000_fb1bee46.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_ae49ed330938",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

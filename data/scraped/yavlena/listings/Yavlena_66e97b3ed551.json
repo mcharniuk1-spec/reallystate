@@ -4,14 +4,14 @@
   "external_id": "66e97b3ed551",
   "title": "Двустаен апартамент във Варна 60 кв.м. ID 167976  | Явлена",
   "description": "",
-  "price": null,
+  "price": 165800.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 60.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/7b9411ef-8082-4552-af4f-8c1714616bb3.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 521 504",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:36.706378+00:00",
+  "scraped_at": "2026-04-24T07:53:21.339451+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:66e97b3ed551",
   "local_image_files": [
     "data/media/Yavlena_66e97b3ed551/0000_68dbcedc.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_66e97b3ed551/0000_68dbcedc.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_66e97b3ed551",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

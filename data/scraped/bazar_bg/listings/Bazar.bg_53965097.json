@@ -2,27 +2,44 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-53965097/prodawa-mezonet-gr-sofiia-manastirski-liwadi",
   "external_id": "53965097",
-  "title": "Bazar.BG",
+  "title": "Продава МЕЗОНЕТ, гр. София, Манастирски ливади → Обява 53965097",
   "description": "Обектът е разположен в жилищен комплекс Бокар, който е с бърз и лесен достъп до центъра на столицата по ключовия бул. България. Комплексът включва отделни сград",
   "price": 545000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 251.3,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Манастирски ливади",
+  "address_text": "София, Манастирски ливади",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
   "property_category": "unknown",
   "image_urls": [
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/253/big1/1f176552454594253_Nz.jpg",
-    "//imotstatic3.focus.bg/imot/photosimotbg/1/253/big1/1f176552454594253_Nz.jpg"
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/253/big1/1f176552454594253_Nz.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "00000000",
+    "092853709",
+    "01904630047",
+    "022589381",
+    "024460111",
+    "0049251429",
+    "062860168466",
+    "04420961132",
+    "0553695622",
+    "01203703",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:43:28.365384+00:00",
+  "scraped_at": "2026-04-24T07:53:16.134578+00:00",
   "reference_id": "Bazar.bg:53965097",
   "local_image_files": [
     "data/media/Bazar.bg_53965097/0000_a737fed9.jpg",
@@ -31,5 +48,10 @@
   "local_image_storage_keys": [
     "Bazar.bg_53965097/0000_a737fed9.jpg",
     "Bazar.bg_53965097/0001_a737fed9.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_53965097",
+  "photo_count_remote": 2,
+  "photo_count_local": 2,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

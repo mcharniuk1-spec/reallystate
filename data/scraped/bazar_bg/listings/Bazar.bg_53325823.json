@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-53325823/goliam-4-staen-w-top-lokatsiia-pomorie-star-grad",
   "external_id": "53325823",
-  "title": "Bazar.BG",
+  "title": "Голям 4-стаен в Топ Локация!!! Поморие, Стар Град → Обява 53325823",
   "description": "Ексклузивна оферта! Топ локация!!!Голям, уютен апартамент за продажба в стария град на Поморие, на пешеходно разстояние от плажа!Детайли:- апартаментът е 98 кв.",
   "price": 165000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 98.0,
+  "rooms": 4.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Топ Локация!!! Поморие",
+  "district": "Стар Град",
+  "address_text": "Топ Локация!!! Поморие, Стар Град",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -32,11 +32,21 @@
     "https://cdn7.focus.bg/bazar/5e/original/5e04ae91cdc182e4a6a21d88f07ff93a.webp",
     "https://cdn5.focus.bg/bazar/f8/original/f88fc04a95a29f00df4eb268df34d9ae.webp",
     "https://cdn5.focus.bg/bazar/5b/original/5b5e0ea5d0f13813721f7859a0ba1805.webp",
-    "//cdn5.focus.bg/bazar/bf/pics/bfc09e91d6c163a1ced11f28566e2ef1.webp"
+    "https://cdn5.focus.bg/bazar/bf/pics/bfc09e91d6c163a1ced11f28566e2ef1.webp"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "038971269",
+    "025323046200000000",
+    "09860994",
+    "092862381",
+    "026-05-08",
+    "000-2014",
+    "01112551"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:46:53.189699+00:00",
+  "scraped_at": "2026-04-24T07:53:14.933033+00:00",
   "reference_id": "Bazar.bg:53325823",
   "local_image_files": [
     "data/media/Bazar.bg_53325823/0000_9fe76e7f.webp",
@@ -71,5 +81,10 @@
     "Bazar.bg_53325823/0012_d2f339c5.webp",
     "Bazar.bg_53325823/0013_2f9b29a8.webp",
     "Bazar.bg_53325823/0014_9918a837.webp"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_53325823",
+  "photo_count_remote": 16,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "partial_gallery"
 }

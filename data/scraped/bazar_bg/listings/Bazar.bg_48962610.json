@@ -2,11 +2,11 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-48962610/gotow-biznes-2-apartamenta-i-garazh-s-naemateli-do-gradskiia-park",
   "external_id": "48962610",
-  "title": "Bazar.BG",
+  "title": "Готов бизнес - 2 апартамента и гараж с наематели до Градския парк → Обява 48962610",
   "description": "Имот с отлична инвестиционна стойност, разположен непосредствено до Градския парк в тиха и предпочитана зона.Предлагат се за продажба два напълно завършени двус",
   "price": 155000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 125.0,
   "rooms": null,
   "floor": null,
   "city": "",
@@ -14,8 +14,8 @@
   "address_text": "",
   "latitude": null,
   "longitude": null,
-  "listing_intent": "sale",
-  "property_category": "unknown",
+  "listing_intent": "long_term_rent",
+  "property_category": "apartment",
   "image_urls": [
     "https://cdn7.focus.bg/bazar/ad/original/ade932ef4e4dbfa9b5ab94b142995dac.webp",
     "https://cdn7.focus.bg/bazar/58/original/589691b0bfbb7772a616047daccb635b.webp",
@@ -35,11 +35,23 @@
     "https://cdn5.focus.bg/bazar/0e/original/0e76cad9b5bf104ec8b2659e01ab7c26.webp",
     "https://cdn5.focus.bg/bazar/ab/original/abc1c6317e4cd23e02f2f10f6a62a467.webp",
     "https://cdn7.focus.bg/bazar/61/original/61d454a8865959f14cabfd7f122c02ea.webp",
-    "//cdn7.focus.bg/bazar/ad/pics/ade932ef4e4dbfa9b5ab94b142995dac.webp"
+    "https://cdn7.focus.bg/bazar/ad/pics/ade932ef4e4dbfa9b5ab94b142995dac.webp"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01442785999",
+    "086559423",
+    "0441 - 2",
+    "0614600000000",
+    "0899 00 78 79",
+    "092861728",
+    "026-05-08",
+    "000-2014",
+    "01112551"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:46:38.461857+00:00",
+  "scraped_at": "2026-04-24T07:53:13.820524+00:00",
   "reference_id": "Bazar.bg:48962610",
   "local_image_files": [
     "data/media/Bazar.bg_48962610/0000_a91fc448.webp",
@@ -74,5 +86,10 @@
     "Bazar.bg_48962610/0012_12c0f20e.webp",
     "Bazar.bg_48962610/0013_1f7fcbca.webp",
     "Bazar.bg_48962610/0014_c4208e40.webp"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_48962610",
+  "photo_count_remote": 19,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "partial_gallery"
 }

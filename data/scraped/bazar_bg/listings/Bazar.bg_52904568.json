@@ -2,12 +2,12 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-52904568/dwustaen-apartament-tsentar",
   "external_id": "52904568",
-  "title": "Bazar.BG",
+  "title": "Двустаен апартамент, център → Обява 52904568",
   "description": "Двустаен апартамент близо до площад Шахбазян. Пети етаж, асансьор. Кухня с всички уреди: хладилник, фурна, микровълнова, пералня, съдомиялна. Спалня с двойно ле",
   "price": 620.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 60.0,
+  "rooms": 2.0,
   "floor": null,
   "city": "",
   "district": "",
@@ -33,11 +33,27 @@
     "https://cdn6.focus.bg/bazar/6a/original/6a57ea2426fc8d598659d5547b15addc.webp",
     "https://cdn7.focus.bg/bazar/a8/original/a83a664518876d5c12f584363f672474.webp",
     "https://cdn7.focus.bg/bazar/fd/original/fd96f3aa6ec44e78e5406b377d6bac87.webp",
-    "//cdn1.focus.bg/bazar/2f/pics/2f47981186800edcc0edfd146fa24be5.webp"
+    "https://cdn1.focus.bg/bazar/2f/pics/2f47981186800edcc0edfd146fa24be5.webp"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "09600000000",
+    "0590064318",
+    "07702364",
+    "09888693",
+    "020846881",
+    "0008138481",
+    "05024212",
+    "08767227404",
+    "056901603",
+    "0705482915",
+    "026-05-09",
+    "000-2014",
+    "01112551"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:44:03.769936+00:00",
+  "scraped_at": "2026-04-24T07:53:14.731001+00:00",
   "reference_id": "Bazar.bg:52904568",
   "local_image_files": [
     "data/media/Bazar.bg_52904568/0000_a7404c57.webp",
@@ -72,5 +88,10 @@
     "Bazar.bg_52904568/0012_066ac57a.webp",
     "Bazar.bg_52904568/0013_b67a95ea.webp",
     "Bazar.bg_52904568/0014_e692f1e8.webp"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_52904568",
+  "photo_count_remote": 17,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "partial_gallery"
 }

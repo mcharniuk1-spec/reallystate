@@ -4,14 +4,14 @@
   "external_id": "0381ae4d9137",
   "title": "Двустаен апартамент в Поморие 97 кв.м. ID 168399  | Явлена",
   "description": "",
-  "price": null,
+  "price": 119000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 97.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Поморие",
   "district": "",
-  "address_text": "",
+  "address_text": "Поморие",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/c82b65f2-6f4a-48eb-8674-00b9ab76f9ee.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 528 626",
+    "+359 889 198 833"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:11.505113+00:00",
+  "scraped_at": "2026-04-24T07:53:17.612889+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:0381ae4d9137",
   "local_image_files": [
     "data/media/Yavlena_0381ae4d9137/0000_d76d0748.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_0381ae4d9137/0000_d76d0748.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_0381ae4d9137",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

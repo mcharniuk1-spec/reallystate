@@ -4,14 +4,14 @@
   "external_id": "a94c9d85a9ca",
   "title": "Студио в Поморие 33 кв.м. ID 168112  | Явлена",
   "description": "",
-  "price": null,
+  "price": 62000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 33.0,
+  "rooms": 1.0,
   "floor": null,
-  "city": "",
+  "city": "Поморие",
   "district": "",
-  "address_text": "",
+  "address_text": "Поморие",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/6f48220b-4e46-4d75-b88b-17f09e3e2984.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 889 493 333"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:15.893990+00:00",
+  "scraped_at": "2026-04-24T07:53:23.429625+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:a94c9d85a9ca",
   "local_image_files": [
     "data/media/Yavlena_a94c9d85a9ca/0000_6f1b6aa4.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_a94c9d85a9ca/0000_6f1b6aa4.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_a94c9d85a9ca",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

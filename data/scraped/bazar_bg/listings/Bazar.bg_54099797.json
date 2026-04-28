@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54099797/prodawa-2-staen-gr-warna-oblast-warna",
   "external_id": "54099797",
-  "title": "Bazar.BG",
+  "title": "Продава 2-СТАЕН, гр. Варна, област Варна → Обява 54099797",
   "description": "✅ МЕЧТАНИЯТ ИМОТ НА МОРЕТО Е ТУК 📍!  🏖️ 200 МЕТРА ОТ ПЛАЖА !  ✅ С ЕКСКЛУЗИВНИ ПРАВА ЗА ПРОДАЖБА - 🔑 КЛЮЧ В ОФИСА !  🥇 М. Г. ПРОПЪРТИС имаме удоволствието да Ви",
   "price": 120000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 72.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Варна",
+  "district": "област Варна",
+  "address_text": "Варна, област Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -32,11 +32,24 @@
     "https://imotstatic2.focus.bg/imot/photosimotbg/1/364/big1/1b177540215034364_8k.jpg",
     "https://imotstatic2.focus.bg/imot/photosimotbg/1/364/big1/1b177540215034364_qM.jpg",
     "https://imotstatic2.focus.bg/imot/photosimotbg/1/364/big1/1b177540215034364_3E.jpg",
-    "//imotstatic2.focus.bg/imot/photosimotbg/1/364/big1/1b177540215034364_mS.jpg"
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/364/big1/1b177540215034364_mS.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "0215034364",
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "0651193500000000",
+    "0899 966 021",
+    "0897 737 117",
+    "092869420",
+    "02303588",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:49:42.149978+00:00",
+  "scraped_at": "2026-04-24T07:53:17.048728+00:00",
   "reference_id": "Bazar.bg:54099797",
   "local_image_files": [
     "data/media/Bazar.bg_54099797/0000_d88a3b5c.jpg",
@@ -71,5 +84,10 @@
     "Bazar.bg_54099797/0012_d7abb9b3.jpg",
     "Bazar.bg_54099797/0013_59ab958d.jpg",
     "Bazar.bg_54099797/0014_964f83eb.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54099797",
+  "photo_count_remote": 16,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "partial_gallery"
 }

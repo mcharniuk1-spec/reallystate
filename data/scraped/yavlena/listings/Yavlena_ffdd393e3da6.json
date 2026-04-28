@@ -4,14 +4,14 @@
   "external_id": "ffdd393e3da6",
   "title": "Тристаен апартамент в София 123 кв.м. ID 160757  | Явлена",
   "description": "",
-  "price": null,
+  "price": 235000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 123.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/91515c13-eadd-4aa6-800c-14b2371a7838.jpeg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 888 109 040"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:53.355607+00:00",
+  "scraped_at": "2026-04-24T07:53:26.155734+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:ffdd393e3da6",
   "local_image_files": [
     "data/media/Yavlena_ffdd393e3da6/0000_1911f6bc.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_ffdd393e3da6/0000_1911f6bc.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_ffdd393e3da6",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

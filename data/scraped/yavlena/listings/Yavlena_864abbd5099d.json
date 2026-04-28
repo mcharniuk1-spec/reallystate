@@ -4,14 +4,14 @@
   "external_id": "864abbd5099d",
   "title": "Къща във Велико Търново 148 кв.м. ID 168068  | Явлена",
   "description": "",
-  "price": null,
+  "price": 250000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 148.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Велико Търново",
   "district": "",
-  "address_text": "",
+  "address_text": "Велико Търново",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/ea20436c-dde2-4d41-80b8-22d3b3e847b4.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 540 125",
+    "+359 28 10 50 70"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:07.188923+00:00",
+  "scraped_at": "2026-04-24T07:53:22.550523+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:864abbd5099d",
   "local_image_files": [
     "data/media/Yavlena_864abbd5099d/0000_5666c928.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_864abbd5099d/0000_5666c928.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_864abbd5099d",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

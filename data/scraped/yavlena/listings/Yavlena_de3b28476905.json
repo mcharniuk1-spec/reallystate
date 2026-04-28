@@ -4,14 +4,14 @@
   "external_id": "de3b28476905",
   "title": "Магазин в Граф Игнатиево 2119 кв.м. ID 168162  | Явлена",
   "description": "",
-  "price": null,
+  "price": 2500000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 2119.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Граф Игнатиево",
   "district": "",
-  "address_text": "",
+  "address_text": "Граф Игнатиево",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/5948078e-b536-4e3e-aa28-f6a2e7c1fc3e.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 534 479",
+    "+359 898 498 449"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:15:54.032906+00:00",
+  "scraped_at": "2026-04-24T07:53:24.998679+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:de3b28476905",
   "local_image_files": [
     "data/media/Yavlena_de3b28476905/0000_55483f63.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_de3b28476905/0000_55483f63.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_de3b28476905",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

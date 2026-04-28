@@ -1,0 +1,59 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-zona-b-5-tristaen-apartament-offer690569",
+  "external_id": "d4aa5ff7c712",
+  "title": "Тристаен апартамент в София, Зона Б 5 - код на имота: 690569",
+  "description": "Адрес недвижими имоти предлага Тристаен апартамент в София, Зона Б 5 с код на имота: 690569. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 285000.0,
+  "currency": "EUR",
+  "area_sqm": 110.0,
+  "rooms": null,
+  "floor": null,
+  "city": "София",
+  "district": "Зона Б 5",
+  "address_text": "София, Зона Б 5",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/569/690569/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "030812725",
+    "026-04-06",
+    "018-05-09",
+    "018-07-06",
+    "0888 81 89 21",
+    "0885922644",
+    "026-04-10",
+    "06189716",
+    "02103168487",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:12:27.303205+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Тристаен апартамент Зона Б 5"
+  },
+  "reference_id": "Address.bg:d4aa5ff7c712",
+  "local_image_files": [
+    "data/media/Address.bg_d4aa5ff7c712/0000_58ff8ea8.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_d4aa5ff7c712/0000_58ff8ea8.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_d4aa5ff7c712",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

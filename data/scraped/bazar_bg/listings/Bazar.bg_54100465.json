@@ -2,11 +2,11 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54100465/imot",
   "external_id": "54100465",
-  "title": "Bazar.BG",
+  "title": "Имот → Обява 54100465",
   "description": "Напълно обновен едностаен.Моля да не се обаждат брокери",
   "price": 92000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 50.0,
   "rooms": null,
   "floor": null,
   "city": "",
@@ -33,11 +33,24 @@
     "https://cdn7.focus.bg/bazar/09/original/09054ecfa356c3e666470028f0089d4b.webp",
     "https://cdn7.focus.bg/bazar/9d/original/9d5d4c8ddee7c9e82e983155f9fa46e4.webp",
     "https://cdn8.focus.bg/bazar/fb/original/fbbb0f58c48c7e14d6ece7b5d8abe48f.webp",
-    "//cdn5.focus.bg/bazar/67/pics/67c407deff793b2904fed8e72c308413.webp"
+    "https://cdn5.focus.bg/bazar/67/pics/67c407deff793b2904fed8e72c308413.webp"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "004500000000",
+    "092840020",
+    "055936737",
+    "020642402675",
+    "0370879893",
+    "08039677",
+    "07126322812",
+    "026-05-09",
+    "000-2014",
+    "01112551"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:42:46.062558+00:00",
+  "scraped_at": "2026-04-24T07:53:17.073398+00:00",
   "reference_id": "Bazar.bg:54100465",
   "local_image_files": [
     "data/media/Bazar.bg_54100465/0000_bb67ec14.webp",
@@ -72,5 +85,10 @@
     "Bazar.bg_54100465/0012_f047df01.webp",
     "Bazar.bg_54100465/0013_16f4921e.webp",
     "Bazar.bg_54100465/0014_b618b66c.webp"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54100465",
+  "photo_count_remote": 17,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "partial_gallery"
 }

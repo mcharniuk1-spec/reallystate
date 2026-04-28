@@ -1,0 +1,59 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/rogachevo-kashta-vila-offer621367",
+  "external_id": "2c451283de46",
+  "title": "Къща/Вила в Рогачево - код на имота: 621367",
+  "description": "Адрес недвижими имоти предлага Къща/Вила в Рогачево с код на имота: 621367. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 82535.0,
+  "currency": "EUR",
+  "area_sqm": 7000.0,
+  "rooms": null,
+  "floor": null,
+  "city": "Рогачево",
+  "district": "",
+  "address_text": "Рогачево",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/367/621367/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-01-04",
+    "0247803247",
+    "024-06-04",
+    "018-05-09",
+    "018-07-06",
+    "0887 314 081",
+    "0885838377",
+    "025-07-17",
+    "023762685598",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:12:04.717238+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Рогачево Къща/Вила"
+  },
+  "reference_id": "Address.bg:2c451283de46",
+  "local_image_files": [
+    "data/media/Address.bg_2c451283de46/0000_ab6dfd00.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_2c451283de46/0000_ab6dfd00.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_2c451283de46",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

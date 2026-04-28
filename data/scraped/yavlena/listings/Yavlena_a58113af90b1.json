@@ -4,14 +4,14 @@
   "external_id": "a58113af90b1",
   "title": "Едностаен апартамент в Слънчев бряг 40 кв.м. ID 168410  | Явлена",
   "description": "",
-  "price": null,
+  "price": 64000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 40.0,
+  "rooms": 1.0,
   "floor": null,
-  "city": "",
+  "city": "Слънчев бряг",
   "district": "",
-  "address_text": "",
+  "address_text": "Слънчев бряг",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/f4767758-3c91-45b1-adf2-e0d05f80f1e0.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 530 169",
+    "+359 885 444 222"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:09.045846+00:00",
+  "scraped_at": "2026-04-24T07:53:23.340930+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:a58113af90b1",
   "local_image_files": [
     "data/media/Yavlena_a58113af90b1/0000_bcd8380c.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_a58113af90b1/0000_bcd8380c.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_a58113af90b1",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

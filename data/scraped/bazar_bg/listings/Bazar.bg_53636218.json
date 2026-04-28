@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-53636218/prodawa-1-staen-gr-targowishte-zapad-2",
   "external_id": "53636218",
-  "title": "Bazar.BG",
+  "title": "Продава 1-СТАЕН, гр. Търговище, Запад 2 → Обява 53636218",
   "description": "Старт на строителството на Жилищен комплекс 'АЛГАРА'Започваме изграждането на поредния ни жилищен проект!Жилищен комплекс 'АЛГАРА' - перлата в кв. Запад 2, гр.",
   "price": 47000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 45.0,
+  "rooms": 1.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Търговище",
+  "district": "Запад 2",
+  "address_text": "Търговище, Запад 2",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -21,11 +21,24 @@
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/404/big1/1a177212065656404_GZ.jpg",
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/404/big1/1a177212065656404_uY.jpg",
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/404/big1/1a177212065656404_Sa.jpg",
-    "//imotstatic3.focus.bg/imot/photosimotbg/1/404/big/1a177212065656404_gI.jpg"
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/404/big/1a177212065656404_gI.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "065656404",
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "083800000000",
+    "092874968",
+    "02881748",
+    "05560918",
+    "09017688920",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:52:13.491727+00:00",
+  "scraped_at": "2026-04-24T07:53:15.184556+00:00",
   "reference_id": "Bazar.bg:53636218",
   "local_image_files": [
     "data/media/Bazar.bg_53636218/0000_93c965ff.jpg",
@@ -40,5 +53,10 @@
     "Bazar.bg_53636218/0002_68b1d6d5.jpg",
     "Bazar.bg_53636218/0003_6f378917.jpg",
     "Bazar.bg_53636218/0004_93c965ff.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_53636218",
+  "photo_count_remote": 5,
+  "photo_count_local": 5,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

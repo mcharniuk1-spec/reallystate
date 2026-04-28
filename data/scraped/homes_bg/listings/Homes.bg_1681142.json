@@ -1,0 +1,105 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-56m2-sofiya-zhk.-ovcha-kupel/as1681142",
+  "external_id": "1681142",
+  "reference_id": "Homes.bg:1681142",
+  "title": "Двустаен, 56m² - жк. Овча Купел, София",
+  "description": "Двустаен апартамент с югозападно изложение и с чиста площ 45,68 кв.м. Състои се от  хол, трапезария и кухненски бокс - 20 кв.м., спалня - 9,75 кв.м. и мазе 1,68 кв.м.\n\nИма възможност за покупка на гараж - 25000 евро.\n Обади се сега и цитирай този код 650574",
+  "price": 122700.0,
+  "currency": "EUR",
+  "area_sqm": 0.56,
+  "rooms": 2.0,
+  "floor": 1.0,
+  "city": "София",
+  "district": "жк. Овча Купел",
+  "address_text": "жк. Овча Купел, София",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2026-04-24_1/118689007o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689008o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689009o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689010o.jpg"
+  ],
+  "phones": [
+    "0883224935"
+  ],
+  "amenities": [
+    "Асансьор"
+  ],
+  "scraped_at": "2026-04-24T08:09:40.092825+00:00",
+  "listing_status": "active",
+  "published_text": "днес",
+  "agency_name": "ИМОТЕКА АД",
+  "agency_type": "Агенция",
+  "agency_address": "София пл. Света Неделя No 4, ет. 1",
+  "source_attributes": {
+    "Обзавеждане": "",
+    "Етаж": "1-ви",
+    "Етажи": "8",
+    "Отопление": "Прокарва се",
+    "Състояние": "",
+    "Строителство": "Тухла",
+    "Спални": "",
+    "Бани": "",
+    "Двор": "",
+    "Площ на парцела": "",
+    "В регулация": "",
+    "Предназначение": "",
+    "Виза": "",
+    "Разрешение за строеж": "",
+    "Категория": "",
+    "Тип": ""
+  },
+  "photo_metadata": [
+    {
+      "id": 118689007,
+      "name": "118689007",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689008,
+      "name": "118689008",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689009,
+      "name": "118689009",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689010,
+      "name": "118689010",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    }
+  ],
+  "raw_offer_type": "as",
+  "view_count": 0,
+  "local_image_files": [
+    "data/media/Homes.bg_1681142/0000_7bb1fce5.jpg",
+    "data/media/Homes.bg_1681142/0001_9db37895.jpg",
+    "data/media/Homes.bg_1681142/0002_d16a865d.jpg",
+    "data/media/Homes.bg_1681142/0003_72678a4f.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Homes.bg_1681142/0000_7bb1fce5.jpg",
+    "Homes.bg_1681142/0001_9db37895.jpg",
+    "Homes.bg_1681142/0002_d16a865d.jpg",
+    "Homes.bg_1681142/0003_72678a4f.jpg"
+  ],
+  "local_media_dir": "data/media/Homes.bg_1681142",
+  "photo_count_remote": 4,
+  "photo_count_local": 4,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

@@ -4,14 +4,14 @@
   "external_id": "e3ce8c4eabf3",
   "title": "Къща в Бобов дол 250 кв.м. ID 168032  | Явлена",
   "description": "",
-  "price": null,
+  "price": 158000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 250.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Бобов дол",
   "district": "",
-  "address_text": "",
+  "address_text": "Бобов дол",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/1deacdd5-d38a-4684-898c-5e77e73bbea3.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 886 560 055"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:27.319797+00:00",
+  "scraped_at": "2026-04-24T07:53:25.213431+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:e3ce8c4eabf3",
   "local_image_files": [
     "data/media/Yavlena_e3ce8c4eabf3/0000_1bb0648c.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_e3ce8c4eabf3/0000_1bb0648c.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_e3ce8c4eabf3",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

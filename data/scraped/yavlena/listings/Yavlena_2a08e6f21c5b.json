@@ -4,14 +4,14 @@
   "external_id": "2a08e6f21c5b",
   "title": "Къща в Крушари 93 кв.м. ID 167977  | Явлена",
   "description": "",
-  "price": null,
+  "price": 12000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 93.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Крушари",
   "district": "",
-  "address_text": "",
+  "address_text": "Крушари",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/269a64c4-ccaa-4444-9792-85846cf6a547.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 536 972",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:18:10.410429+00:00",
+  "scraped_at": "2026-04-24T07:53:19.156767+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:2a08e6f21c5b",
   "local_image_files": [
     "data/media/Yavlena_2a08e6f21c5b/0000_289c8a39.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_2a08e6f21c5b/0000_289c8a39.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_2a08e6f21c5b",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

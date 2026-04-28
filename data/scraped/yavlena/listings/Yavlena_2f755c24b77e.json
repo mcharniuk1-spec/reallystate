@@ -4,14 +4,14 @@
   "external_id": "2f755c24b77e",
   "title": "Двустаен апартамент във Варна 107 кв.м. ID 168211  | Явлена",
   "description": "",
-  "price": null,
+  "price": 309000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 107.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/1adda534-dd23-4908-814b-2f761ab1b133.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 520 751",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:14:57.095544+00:00",
+  "scraped_at": "2026-04-24T07:53:19.317272+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:2f755c24b77e",
   "local_image_files": [
     "data/media/Yavlena_2f755c24b77e/0000_cf19f025.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_2f755c24b77e/0000_cf19f025.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_2f755c24b77e",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

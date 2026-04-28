@@ -1,0 +1,60 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-druzhba-2-garazh-offer632458",
+  "external_id": "8bb7dfa294cf",
+  "title": "Гараж в София, Дружба 2 - код на имота: 632458",
+  "description": "Адрес недвижими имоти предлага Гараж в София, Дружба 2 с код на имота: 632458. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 71000.0,
+  "currency": "EUR",
+  "area_sqm": 2510.0,
+  "rooms": null,
+  "floor": null,
+  "city": "София",
+  "district": "Дружба 2",
+  "address_text": "София, Дружба 2",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "unknown",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/458/632458/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "024-11-25",
+    "024-09-25",
+    "018-05-09",
+    "018-07-06",
+    "0888 81 89 21",
+    "0882556640",
+    "00033868240709",
+    "025-01-23",
+    "03284716",
+    "0464675545151475046461",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:10:32.830812+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Гараж Дружба 2"
+  },
+  "reference_id": "Address.bg:8bb7dfa294cf",
+  "local_image_files": [
+    "data/media/Address.bg_8bb7dfa294cf/0000_ad9f79d2.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_8bb7dfa294cf/0000_ad9f79d2.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_8bb7dfa294cf",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

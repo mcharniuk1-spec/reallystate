@@ -4,14 +4,14 @@
   "external_id": "e3dec353f2ea",
   "title": "Двустаен апартамент в София 67 кв.м. ID 163492  | Явлена",
   "description": "",
-  "price": null,
+  "price": 198900.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 67.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/32437f4a-cb38-4bf0-97ab-5846422c628d.png"
   ],
-  "phones": [],
+  "phones": [
+    "+359 882 222 321"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:54:57.494346+00:00",
+  "scraped_at": "2026-04-24T07:53:25.239023+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:e3dec353f2ea",
   "local_image_files": [
     "data/media/Yavlena_e3dec353f2ea/0000_c1a8fbeb.png"
   ],
   "local_image_storage_keys": [
     "Yavlena_e3dec353f2ea/0000_c1a8fbeb.png"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_e3dec353f2ea",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

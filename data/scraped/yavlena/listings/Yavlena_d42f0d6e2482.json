@@ -4,14 +4,14 @@
   "external_id": "d42f0d6e2482",
   "title": "Етаж от къща във Варна 100 кв.м. ID 168048  | Явлена",
   "description": "",
-  "price": null,
+  "price": 198000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 100.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/83c3c340-37c5-45cb-ab58-70dd69cdb11e.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 518 418",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:18.801434+00:00",
+  "scraped_at": "2026-04-24T07:53:24.742404+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:d42f0d6e2482",
   "local_image_files": [
     "data/media/Yavlena_d42f0d6e2482/0000_5f95e9d8.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_d42f0d6e2482/0000_5f95e9d8.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_d42f0d6e2482",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

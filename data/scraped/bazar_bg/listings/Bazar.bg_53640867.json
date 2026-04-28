@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-53640867/prodawa-1-staen-gr-targowishte-warosha",
   "external_id": "53640867",
-  "title": "Bazar.BG",
+  "title": "Продава 1-СТАЕН, гр. Търговище, Вароша → Обява 53640867",
   "description": "Старт на строителството на Жилищна сграда РаковскаЗапочваме изграждането на поредния ни жилищен проект!ДИРЕКТНО ОТ СТРОИТЕЛЯ! БЕЗ КОМИСИОНА ОТ КУПУВАЧА!  ПЛАЩАН",
   "price": 0.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 50.0,
+  "rooms": 1.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Търговище",
+  "district": "Вароша",
+  "address_text": "Търговище, Вароша",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -22,11 +22,23 @@
     "https://imotstatic4.focus.bg/imot/photosimotbg/1/349/big1/1d176769573828349_pt.jpg",
     "https://imotstatic4.focus.bg/imot/photosimotbg/1/349/big1/1d176769573828349_Du.jpg",
     "https://imotstatic4.focus.bg/imot/photosimotbg/1/349/big1/1d176769573828349_pb.jpg",
-    "//imotstatic4.focus.bg/imot/photosimotbg/1/349/big1/1d176769573828349_rr.jpg"
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/349/big1/1d176769573828349_rr.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "00000000",
+    "092875578",
+    "065656404",
+    "02881748",
+    "05560918",
+    "09017688920",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:52:32.994612+00:00",
+  "scraped_at": "2026-04-24T07:53:15.257246+00:00",
   "reference_id": "Bazar.bg:53640867",
   "local_image_files": [
     "data/media/Bazar.bg_53640867/0000_0e393282.jpg",
@@ -43,5 +55,10 @@
     "Bazar.bg_53640867/0003_8ebff7e0.jpg",
     "Bazar.bg_53640867/0004_562d813b.jpg",
     "Bazar.bg_53640867/0005_0e393282.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_53640867",
+  "photo_count_remote": 6,
+  "photo_count_local": 6,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

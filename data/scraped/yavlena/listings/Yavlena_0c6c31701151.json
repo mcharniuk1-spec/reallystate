@@ -4,14 +4,14 @@
   "external_id": "0c6c31701151",
   "title": "Къща в Българи 100 кв.м. ID 161080  | Явлена",
   "description": "",
-  "price": null,
+  "price": 89000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 100.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Българи",
   "district": "",
-  "address_text": "",
+  "address_text": "Българи",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/d172f0ab-16fa-41fe-b232-0be750a13a88.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 550 241",
+    "+359 893 858 589"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:09.797780+00:00",
+  "scraped_at": "2026-04-24T07:53:18.067045+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:0c6c31701151",
   "local_image_files": [
     "data/media/Yavlena_0c6c31701151/0000_3e591d24.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_0c6c31701151/0000_3e591d24.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_0c6c31701151",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

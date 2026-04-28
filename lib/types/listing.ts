@@ -29,7 +29,9 @@ export type Amenity =
 
 export type Listing = {
   reference_id: string;
+  title?: string | null;
   source_name: string;
+  source_key?: string | null;
   owner_group: string | null;
   listing_url: string;
   external_id: string;
@@ -53,6 +55,17 @@ export type Listing = {
   currency: string | null;
   description: string | null;
   image_urls: string[];
+  local_image_files?: string[];
+  photo_count_remote?: number | null;
+  photo_count_local?: number | null;
+  full_gallery_downloaded?: boolean | null;
+  photo_download_status?: string | null;
+  description_chars?: number | null;
+  description_quality?: "missing" | "thin" | "ok" | "rich" | null;
+  scrape_quality_score?: number | null;
+  image_report_status?: "missing" | "partial" | "complete" | null;
+  image_report_md?: string | null;
+  image_report_json?: string | null;
   first_seen: string | null;
   last_seen: string | null;
   last_changed_at: string | null;
@@ -64,6 +77,22 @@ export type Listing = {
 export type ListingsPayload = {
   count: number;
   items: Listing[];
+};
+
+export type ListingSourceLink = {
+  reference_id: string;
+  source_name: string;
+  source_key?: string | null;
+  listing_url: string;
+  external_id: string;
+  listing_intent: ListingIntent;
+  price: number | null;
+  currency: string | null;
+  photo_count_remote?: number | null;
+  photo_count_local?: number | null;
+  full_gallery_downloaded?: boolean | null;
+  evidence: string[];
+  is_current: boolean;
 };
 
 export const CATEGORIES: { value: PropertyCategory; label: string }[] = [

@@ -4,14 +4,14 @@
   "external_id": "46ad69a74725",
   "title": "Парцел в Белащица 700 кв.м. ID 168204  | Явлена",
   "description": "",
-  "price": null,
+  "price": 99000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 700.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Белащица",
   "district": "",
-  "address_text": "",
+  "address_text": "Белащица",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/7f37738e-20ce-4fc5-8305-4fe9298f9f05.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 542 226",
+    "+359 898 498 449"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:40.439719+00:00",
+  "scraped_at": "2026-04-24T07:53:19.858403+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:46ad69a74725",
   "local_image_files": [
     "data/media/Yavlena_46ad69a74725/0000_9cd64108.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_46ad69a74725/0000_9cd64108.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_46ad69a74725",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

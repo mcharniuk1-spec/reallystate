@@ -4,14 +4,14 @@
   "external_id": "687fb7ce75b5",
   "title": "Къща в София 180 кв.м. ID 168043  | Явлена",
   "description": "",
-  "price": null,
+  "price": 399900.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 180.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/5cdc821a-f3bb-4815-8222-17663fb69dee.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 541 039",
+    "+359 884 26 26 06"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:25.680835+00:00",
+  "scraped_at": "2026-04-24T07:53:21.453752+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:687fb7ce75b5",
   "local_image_files": [
     "data/media/Yavlena_687fb7ce75b5/0000_d5c4a2b3.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_687fb7ce75b5/0000_d5c4a2b3.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_687fb7ce75b5",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

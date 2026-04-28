@@ -6,7 +6,7 @@
   "description": "Imot.bg - №1 сайт за имоти от собственици и брокери",
   "price": null,
   "currency": "EUR",
-  "area_sqm": 7234.0,
+  "area_sqm": null,
   "rooms": null,
   "floor": null,
   "city": "София",
@@ -33,7 +33,7 @@
     "0887597532"
   ],
   "amenities": [],
-  "scraped_at": "2026-04-21T08:07:28.991185+00:00",
+  "scraped_at": "2026-04-24T07:52:31.786681+00:00",
   "reference_id": "imot.bg:4a4878e3b371",
   "source_attributes": {},
   "listing_status": "active",
@@ -62,5 +62,10 @@
     "imot.bg_4a4878e3b371/0008_39a58c93.jpg",
     "imot.bg_4a4878e3b371/0009_629e00a9.jpg",
     "imot.bg_4a4878e3b371/0010_e9e51513.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/imot.bg_4a4878e3b371",
+  "photo_count_remote": 11,
+  "photo_count_local": 11,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

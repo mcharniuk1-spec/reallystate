@@ -1,0 +1,58 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/plovdiv-gagarin-dvustaen-apartament-offer679050",
+  "external_id": "4ae95239b83f",
+  "title": "Двустаен апартамент в Пловдив, Гагарин - код на имота: 679050",
+  "description": "Адрес недвижими имоти предлага Двустаен апартамент в Пловдив, Гагарин с код на имота: 679050. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 68000.0,
+  "currency": "EUR",
+  "area_sqm": 79.0,
+  "rooms": null,
+  "floor": null,
+  "city": "Пловдив",
+  "district": "Гагарин",
+  "address_text": "Пловдив, Гагарин",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/050/679050/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-03-31",
+    "025-12-19",
+    "018-05-09",
+    "018-07-06",
+    "0886699204",
+    "026-01-05",
+    "026-03-11",
+    "026-03-09",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:10:24.914891+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Пловдив Двустаен апартамент Гагарин"
+  },
+  "reference_id": "Address.bg:4ae95239b83f",
+  "local_image_files": [
+    "data/media/Address.bg_4ae95239b83f/0000_bb6b562d.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_4ae95239b83f/0000_bb6b562d.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_4ae95239b83f",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

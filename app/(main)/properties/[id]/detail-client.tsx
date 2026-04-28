@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import type { Listing } from "@/lib/types/listing";
+import type { Listing, ListingSourceLink } from "@/lib/types/listing";
 import { PhotoGallery } from "@/components/listings/PhotoCarousel";
 import { ListingCard } from "@/components/listings/ListingCard";
 
@@ -29,9 +29,11 @@ function FactRow({ label, value }: { label: string; value: string | number | nul
 export function PropertyDetailClient({
   listing,
   similar,
+  sourceLinks,
 }: {
   listing: Listing;
   similar: Listing[];
+  sourceLinks: ListingSourceLink[];
 }) {
   const l = listing;
   const location = [l.district, l.city].filter(Boolean).join(", ") || l.region || "Bulgaria";
@@ -39,6 +41,8 @@ export function PropertyDetailClient({
     l.price != null && l.area_sqm != null && l.area_sqm > 0
       ? Math.round(l.price / l.area_sqm)
       : null;
+  const remotePhotos = l.photo_count_remote ?? l.image_urls.length;
+  const localPhotos = l.photo_count_local ?? l.local_image_files?.length ?? 0;
 
   return (
     <div className="min-h-screen flex flex-col bg-paper">
@@ -113,22 +117,58 @@ export function PropertyDetailClient({
               </div>
             )}
 
+            {/* Scrape evidence */}
+            <div className="rounded-2xl border border-line bg-panel p-6 shadow-lift">
+              <h2 className="text-xs font-semibold uppercase tracking-wide text-mist">Scrape evidence</h2>
+              <div className="mt-3 grid gap-3 sm:grid-cols-4">
+                <div className="rounded-xl border border-line bg-paper p-3">
+                  <p className="text-[10px] uppercase tracking-wide text-mist">Local photos</p>
+                  <p className="mt-1 text-lg font-semibold text-ink">{localPhotos}</p>
+                </div>
+                <div className="rounded-xl border border-line bg-paper p-3">
+                  <p className="text-[10px] uppercase tracking-wide text-mist">Remote photos</p>
+                  <p className="mt-1 text-lg font-semibold text-ink">{remotePhotos}</p>
+                </div>
+                <div className="rounded-xl border border-line bg-paper p-3">
+                  <p className="text-[10px] uppercase tracking-wide text-mist">Description</p>
+                  <p className="mt-1 text-lg font-semibold text-ink">{l.description_chars ?? l.description?.length ?? 0}</p>
+                </div>
+                <div className="rounded-xl border border-line bg-paper p-3">
+                  <p className="text-[10px] uppercase tracking-wide text-mist">Quality score</p>
+                  <p className="mt-1 text-lg font-semibold text-ink">{l.scrape_quality_score ?? "n/a"}</p>
+                </div>
+              </div>
+              <dl className="mt-3 grid gap-2 text-xs sm:grid-cols-2">
+                <div className="rounded-lg bg-paper px-3 py-2">
+                  <dt className="text-mist">Gallery status</dt>
+                  <dd className="mt-0.5 font-medium text-ink">
+                    {l.full_gallery_downloaded ? "Full local gallery downloaded" : l.photo_download_status || "Partial or unknown"}
+                  </dd>
+                </div>
+                <div className="rounded-lg bg-paper px-3 py-2">
+                  <dt className="text-mist">Image report status</dt>
+                  <dd className="mt-0.5 font-medium text-ink">
+                    {l.image_report_status || "missing"}
+                  </dd>
+                </div>
+              </dl>
+            </div>
+
             {/* Source provenance */}
             <div className="rounded-2xl border border-line bg-panel p-6 shadow-lift">
-              <h2 className="text-xs font-semibold uppercase tracking-wide text-mist">Listed on</h2>
-              <div className="mt-3 flex items-center gap-3">
-                <span className="inline-flex items-center gap-2 rounded-xl border border-line bg-paper px-3 py-2">
-                  <span className="h-2 w-2 rounded-full bg-sea" />
-                  <span className="text-sm font-medium text-ink">{l.source_name}</span>
+              <div className="flex items-center justify-between gap-3">
+                <h2 className="text-xs font-semibold uppercase tracking-wide text-mist">Marketed by sources</h2>
+                <span className="rounded-full border border-line bg-paper px-2 py-1 text-[10px] font-semibold text-mist">
+                  {sourceLinks.length} link{sourceLinks.length === 1 ? "" : "s"}
                 </span>
-                <a
-                  href={l.listing_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-sea hover:text-sea-bright font-medium"
-                >
-                  View original listing ↗
-                </a>
+              </div>
+              <p className="mt-2 text-xs leading-relaxed text-mist">
+                Original marketplace pages found for this property. Same-property matches are conservative until the canonical dedupe service is promoted.
+              </p>
+              <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                {sourceLinks.map((source) => (
+                  <SourceButton key={`${source.source_name}:${source.listing_url}`} source={source} />
+                ))}
               </div>
               <dl className="mt-3 grid grid-cols-2 gap-3 text-xs">
                 <div>
@@ -229,6 +269,18 @@ export function PropertyDetailClient({
                   <span>12 months ago</span>
                   <span>Now</span>
                 </div>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-line bg-panel p-5 shadow-lift">
+              <div className="flex items-center justify-between gap-3">
+                <h2 className="text-xs font-semibold uppercase tracking-wide text-mist">Source links</h2>
+                <span className="text-xs font-semibold text-ink">{sourceLinks.length}</span>
+              </div>
+              <div className="mt-3 space-y-2">
+                {sourceLinks.map((source) => (
+                  <SourceButton key={`aside:${source.source_name}:${source.listing_url}`} source={source} compact />
+                ))}
               </div>
             </div>
 
@@ -366,5 +418,54 @@ export function PropertyDetailClient({
         </div>
       </main>
     </div>
+  );
+}
+
+function SourceButton({ source, compact = false }: { source: ListingSourceLink; compact?: boolean }) {
+  const localPhotos = source.photo_count_local ?? 0;
+  const remotePhotos = source.photo_count_remote ?? 0;
+  return (
+    <a
+      href={source.listing_url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`group block rounded-xl border border-line bg-paper transition hover:border-sea/40 hover:shadow-lift ${
+        compact ? "p-3" : "p-3.5"
+      }`}
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <div className="flex items-center gap-2">
+            <span className="h-2 w-2 shrink-0 rounded-full bg-sea" />
+            <span className="truncate text-sm font-semibold text-ink">{source.source_name}</span>
+            {source.is_current && (
+              <span className="rounded-full bg-sea/10 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-sea">
+                current
+              </span>
+            )}
+          </div>
+          {!compact && (
+            <p className="mt-1 line-clamp-1 font-mono text-[10px] text-mist">{source.external_id}</p>
+          )}
+        </div>
+        <span className="shrink-0 text-xs font-semibold text-sea group-hover:text-sea-bright">Open ↗</span>
+      </div>
+      <div className="mt-2 flex flex-wrap gap-1.5 text-[10px] text-mist">
+        <span className="rounded-full bg-panel px-2 py-0.5">
+          {fmt(source.price, source.currency, source.listing_intent)}
+        </span>
+        <span className="rounded-full bg-panel px-2 py-0.5">
+          {localPhotos}/{remotePhotos} photos
+        </span>
+        <span className={`rounded-full px-2 py-0.5 ${source.full_gallery_downloaded ? "bg-sea/10 text-sea" : "bg-warn/10 text-warn"}`}>
+          {source.full_gallery_downloaded ? "full gallery" : "partial gallery"}
+        </span>
+      </div>
+      {!compact && source.evidence.length > 0 && (
+        <p className="mt-2 text-[10px] leading-relaxed text-mist">
+          Evidence: {source.evidence.join(", ")}
+        </p>
+      )}
+    </a>
   );
 }

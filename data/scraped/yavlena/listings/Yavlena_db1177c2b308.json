@@ -4,14 +4,14 @@
   "external_id": "db1177c2b308",
   "title": "Други бизнес имоти във Велика 715 кв.м. ID 168144  | Явлена",
   "description": "",
-  "price": null,
+  "price": 319000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 715.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Велика",
   "district": "",
-  "address_text": "",
+  "address_text": "Велика",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/a40c99ee-9734-4d1e-a40e-766679cc5e03.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 530 669",
+    "+359 888 660 532"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:08.150681+00:00",
+  "scraped_at": "2026-04-24T07:53:24.900939+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:db1177c2b308",
   "local_image_files": [
     "data/media/Yavlena_db1177c2b308/0000_5f1f2954.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_db1177c2b308/0000_5f1f2954.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_db1177c2b308",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

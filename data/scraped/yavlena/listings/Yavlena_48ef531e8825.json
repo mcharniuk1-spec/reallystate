@@ -3,30 +3,43 @@
   "listing_url": "https://www.yavlena.com/bg/168261",
   "external_id": "48ef531e8825",
   "title": "Жилищна сграда във Варна 1500 кв.м. ID 168261  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Представяме ви нов проект от висок клас, разположен в една от най-предпочитаните и престижни зони на Траката – място, което съчетава спокойствието на природата с бърз и удобен достъп до града.\\\\r\\\\nСградата впечатлява със своята модерна архитектура, изчистени линии и усещане за простор. Проектирана с внимание към детайла, тя предлага комфортна жилищна среда, съобразена с нуждите на съвременния човек.\\\\r\\\\nАпартаментите са с функционални разпределения, просторни дневни зони и големи френски прозорци, които осигуряват естествена светлина и връзка с околната зеленина. Предвидени са тераси с приятни гледки, създаващи усещане за спокойствие и уединение.\\\\r\\\\nЛокацията е сред най-големите предимства на проекта – тиха и озеленена среда, съчетана с близост до главни пътни артерии, централната част на града и морския бряг. Разполага с двустайни и тристайни апартаменти както и просторни мезонети.\\\\r\\\\nСградата е подходяща както за собствено ползване, така и за инвестиция с отличен потенциал за доходност.",
+  "price": 0.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 1500.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
     "https://userimages.yavlena.com/392a6156-0acb-401a-b7a2-7d0b6a3d49fc.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 544 481",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:14:29.241247+00:00",
+  "scraped_at": "2026-04-24T07:53:19.953732+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:48ef531e8825",
   "local_image_files": [
     "data/media/Yavlena_48ef531e8825/0000_3d2c6df2.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_48ef531e8825/0000_3d2c6df2.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_48ef531e8825",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

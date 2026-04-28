@@ -2,7 +2,7 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-8332-zhilishtna-sgrada-grad-sofiya-vitosha",
   "external_id": "0b9a08a47949",
-  "title": "Imot.bg",
+  "title": "������� ������ � ���� ����� ������ ����� 8332",
   "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
   "price": null,
   "currency": "EUR",
@@ -17,12 +17,27 @@
   "listing_intent": "sale",
   "property_category": "unknown",
   "image_urls": [
-    "//cdn3.focus.bg/imot/photosnb/332//big/8332_Qf.jpg"
+    "https://cdn3.focus.bg/imot/photosnb/332//big1/8332_Qf.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/332//big1/8332_2Y.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/332//big1/8332_Dz.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/332//big1/8332_W3.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/332//big1/8332_kB.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/332//big1/8332_w4.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/332//big/8332_Qf.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "0889007010"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T10:07:00.466903+00:00",
+  "scraped_at": "2026-04-24T07:52:28.259146+00:00",
   "reference_id": "imot.bg:0b9a08a47949",
+  "source_attributes": {},
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_0b9a08a47949",
+  "photo_count_remote": 7,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

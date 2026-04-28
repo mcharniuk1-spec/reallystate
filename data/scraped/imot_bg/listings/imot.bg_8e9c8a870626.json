@@ -2,27 +2,53 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1a177427749753494-prodava-ednostaen-apartament-grad-sofiya-tsentar",
   "external_id": "8e9c8a870626",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 1-����� ���� �����, ������ �����: 1a177427749753494",
+  "description": "��� ���� �� ����������! ����� �� �����,  ������ �� ������� ���������, � ���� ������ � �16 �� 2023�, � �������� ���� �����. ������������������ ���������, � ����� ���� �� 33 ��.�,  � ������� ��������� �����, ��������� ������ � ��������� �����! ���������: �����. ����� �� ���������� �� �������� ��! �� ������ �����������: 0883 278 000, ������� ���������",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
-  "city": "�����",
-  "district": "",
-  "address_text": "",
+  "city": "������",
+  "district": "���� �����",
+  "address_text": "���� �����, ������",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "//imotstatic1.focus.bg/imot/photosimotbg/1/494//big/1a177427749753494_BT.jpg"
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/494//big1/1a177427749753494_BT.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/494//big1/1a177427749753494_1y.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/494//big1/1a177427749753494_bi.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/494//big1/1a177427749753494_W.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/494//big1/1a177427749753494_8d.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/494//big1/1a177427749753494_L6.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/494//big1/1a177427749753494_CD.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/494//big1/1a177427749753494_oB.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/494//big1/1a177427749753494_MB.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/494//big/1a177427749753494_z2.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/494//big/1a177427749753494_BT.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-08T16:26:58.658935+00:00",
+  "phones": [
+    "0883278000",
+    "9663887"
+  ],
+  "amenities": [
+    "����: 7-�� �� 8",
+    "������������: �����, ������� � ������������ 2024 �."
+  ],
+  "scraped_at": "2026-04-24T07:52:36.316445+00:00",
   "reference_id": "imot.bg:8e9c8a870626",
+  "source_attributes": {
+    "����": "7-�� �� 8",
+    "������������": "�����, ������� � ������������ 2024 �."
+  },
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_8e9c8a870626",
+  "photo_count_remote": 11,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

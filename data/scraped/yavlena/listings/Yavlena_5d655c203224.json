@@ -4,14 +4,14 @@
   "external_id": "5d655c203224",
   "title": "Двустаен апартамент в София 57 кв.м. ID 168097  | Явлена",
   "description": "",
-  "price": null,
+  "price": 189500.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 57.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/6fd8ddd8-1ee0-488e-b4e7-4fe27a9d357e.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 545 090",
+    "+359 2 810 50 70"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:39.283517+00:00",
+  "scraped_at": "2026-04-24T07:53:20.918613+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:5d655c203224",
   "local_image_files": [
     "data/media/Yavlena_5d655c203224/0000_8d1f5fb0.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_5d655c203224/0000_8d1f5fb0.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_5d655c203224",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

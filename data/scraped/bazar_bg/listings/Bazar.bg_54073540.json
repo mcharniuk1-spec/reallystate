@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54073540/prodawa-2-staen-gr-bozhurishte-oblast-sofiia-oblast",
   "external_id": "54073540",
-  "title": "Bazar.BG",
+  "title": "Продава 2-СТАЕН, гр. Божурище, област София област → Обява 54073540",
   "description": "Новострояща се сграда в много добре инфраструктурно  уреден район. Изложението е източно. Етаж 4. Очаква се АКТ-15 до месец август! Без комисионна!",
   "price": 171840.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 96.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Божурище",
+  "district": "област София област",
+  "address_text": "Божурище, област София област",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -20,11 +20,20 @@
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/857/big1/1b177438501909857_cI.jpg",
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/857/big1/1b177438501909857_ET.jpg",
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/857/big1/1b177438501909857_pk.jpg",
-    "//imotstatic3.focus.bg/imot/photosimotbg/1/857/big1/1b177438501909857_cI.jpg"
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/857/big1/1b177438501909857_cI.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "01909857",
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "092857141",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:44:51.255735+00:00",
+  "scraped_at": "2026-04-24T07:53:16.858170+00:00",
   "reference_id": "Bazar.bg:54073540",
   "local_image_files": [
     "data/media/Bazar.bg_54073540/0000_9c4aec37.jpg",
@@ -37,5 +46,10 @@
     "Bazar.bg_54073540/0001_a1f66878.jpg",
     "Bazar.bg_54073540/0002_cbb99aba.jpg",
     "Bazar.bg_54073540/0003_9c4aec37.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54073540",
+  "photo_count_remote": 4,
+  "photo_count_local": 4,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

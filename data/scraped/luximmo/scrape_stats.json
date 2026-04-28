@@ -1,24 +1,41 @@
 {
   "source_key": "luximmo",
   "source_name": "LUXIMMO",
-  "discovery_pages_fetched": 0,
-  "listing_urls_discovered": 0,
-  "listing_pages_fetched": 0,
-  "listing_pages_parsed": 0,
-  "listing_pages_failed": 0,
-  "photos_found": 0,
-  "photos_downloaded": 0,
+  "discovery_pages_fetched": 5,
+  "listing_urls_discovered": 120,
+  "listing_pages_fetched": 13,
+  "listing_pages_parsed": 13,
+  "listing_pages_failed": 107,
+  "photos_found": 102,
+  "photos_downloaded": 102,
   "photos_failed": 0,
-  "with_price": 0,
+  "with_price": 11,
   "with_geo": 0,
-  "with_address": 0,
-  "with_area": 0,
-  "with_rooms": 0,
-  "with_description": 0,
-  "intents": {},
-  "categories": {},
+  "with_address": 13,
+  "with_area": 11,
+  "with_rooms": 11,
+  "with_description": 10,
+  "intents": {
+    "sale": 13
+  },
+  "categories": {
+    "apartment": 13
+  },
+  "product_breakdown": {
+    "sale_apartments": 13
+  },
+  "sample_reference_ids": [
+    "LUXIMMO:fab8ca7ae4d8",
+    "LUXIMMO:994cf46e76c7",
+    "LUXIMMO:7c3f29cbb7bb",
+    "LUXIMMO:6792fbd8a3d6",
+    "LUXIMMO:b5abaf0485b3",
+    "LUXIMMO:af558ac4f1b3",
+    "LUXIMMO:0c9fd22cfdbb",
+    "LUXIMMO:abde580fb01d"
+  ],
   "errors": [],
-  "start_time": "2026-04-08T16:32:14.139734+00:00",
-  "end_time": "2026-04-08T16:32:16.250052+00:00",
-  "duration_seconds": 2.1
+  "start_time": "2026-04-24T08:13:15.368001+00:00",
+  "end_time": "2026-04-24T08:26:02.304877+00:00",
+  "duration_seconds": 766.9
 }

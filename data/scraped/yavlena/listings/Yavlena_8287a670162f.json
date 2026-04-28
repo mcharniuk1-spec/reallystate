@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/168413",
   "external_id": "8287a670162f",
   "title": "Едностаен апартамент в София 44 кв.м. ID 168413  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Явлена – Изток продава едностаен апартамент с отделна кухня в Зона Б-19 на ул. Зайчар №177 с площ – 44 кв.м. Състоящ се от: дневна с кът за спане, кухня, балкон, антре и баня с тоалетна. Отоплението и топлата вода са на ток. Имотът се намира на втори етаж и гледа към вътрешен двор, посока изток. Метростанция - „Константин Величков“ се намира на четири минути пешеходно разстояние. Районът в който е разположена сградата е бързо развиващ се и в момента има строителство на няколко нови сгради. Инфраструктурата е много добре развита.  От блока има лесен и бърз достъп с кола до центъра на града. За повече информация и огледи позвънете на посочения телефон. Водещ брокер - Людмил Таков.",
+  "price": 129500.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 44.0,
+  "rooms": 1.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "м",
+  "address_text": "София, м",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/77d3b392-a878-4512-bd3c-d8deae69bade.png"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 515 521",
+    "+359 882 222 321"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:05.408511+00:00",
+  "scraped_at": "2026-04-24T07:53:22.442004+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:8287a670162f",
   "local_image_files": [
     "data/media/Yavlena_8287a670162f/0000_e5687841.png"
   ],
   "local_image_storage_keys": [
     "Yavlena_8287a670162f/0000_e5687841.png"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_8287a670162f",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

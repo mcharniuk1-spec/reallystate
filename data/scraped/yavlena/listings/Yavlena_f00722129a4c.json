@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/168062",
   "external_id": "f00722129a4c",
   "title": "Гараж/Паркомясто в Трявна 195 кв.м. ID 168062  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Едноетажна масивна сграда - гаражи в краен район, в южната част  на град Трявна. Градът е разположен в северното подножие на Тревненска планина, на 20 km източно от град Габрово, на 226 km от столицата София, на 152 km от Пловдив, на 259 km от Варна и на 207 km от Бургас.   \\\\r\\\\nСградата  е  със застроена площ 194,60 кв.м, на ниво терен, с добър транспортен достъп, с лице и вход от улица. Нуждае се от ремонт.  \\\\r\\\\nГрад Трявна се намира на 20 км от гр.Габрово, на 40 км от гр.В.Търново, 226 км от София.",
+  "price": 31400.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 195.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Трявна",
+  "district": "м",
+  "address_text": "Трявна, м",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/33a87e43-2060-4c95-b240-2145965ed8ae.png"
   ],
-  "phones": [],
+  "phones": [
+    "+359 899 498 066"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:09.041041+00:00",
+  "scraped_at": "2026-04-24T07:53:25.638739+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:f00722129a4c",
   "local_image_files": [
     "data/media/Yavlena_f00722129a4c/0000_cfad3db6.png"
   ],
   "local_image_storage_keys": [
     "Yavlena_f00722129a4c/0000_cfad3db6.png"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_f00722129a4c",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

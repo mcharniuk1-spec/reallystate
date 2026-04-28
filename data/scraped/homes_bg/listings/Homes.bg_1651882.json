@@ -1,0 +1,102 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/ednostaen-44m2-sofiya-zhk.-ovcha-kupel-1/as1651882",
+  "external_id": "1651882",
+  "reference_id": "Homes.bg:1651882",
+  "title": "Едностаен, 44m² - жк. Овча Купел 1, София",
+  "description": "Aпартаментът се намира на комуникативно място, на ул.Президент Линкълн ,до ул.Монтевидео  ,до спирки ,магазини ,югоизточен ,панел , подържан вход и общи части   ,светъл,топъл ,  състои се от хол , кухня , тераса ,ЗА РЕМОНТ , ТЕЦ, топла вода централно  ,изрядни документи , АТРАКТИВНО ПРЕДЛОЖЕНИЕ НА РАЗУМНА ЦЕНА В ЕДИН БЪРЗОРАЗВИВАЩИ СЕ РАЙОНИ НА СТОЛИЦАТА С ОТЛИЧНО РАЗВИТА ИНФРАСТРУТУРА, ПРОФЕСИОНАЛНО СЪДЕЙСТВИЕ ЗА КРЕДИТИРАНЕ ,чудесен инвестиционен имот,ЕКСКЛУЗИВНИ ПРАВА НА АГЕНЦИЯТА, ...... Оферта 10037...Ч.Л",
+  "price": 114990.0,
+  "currency": "EUR",
+  "area_sqm": 0.44,
+  "rooms": 1.0,
+  "floor": 5.0,
+  "city": "София",
+  "district": "жк. Овча Купел 1",
+  "address_text": "жк. Овча Купел 1, София",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2025-10-02_2/115884201o.jpg",
+    "https://g1.homes.bg/2025-10-02_2/115884202o.jpg",
+    "https://g1.homes.bg/2025-10-02_2/115884203o.jpg",
+    "https://g1.homes.bg/2025-10-02_2/115884200o.jpg",
+    "https://g1.homes.bg/2025-10-02_2/115884199o.jpg"
+  ],
+  "phones": [
+    "+359878817386",
+    "+359878817381"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T07:52:27.594423+00:00",
+  "listing_status": "active",
+  "published_text": "днес",
+  "agency_name": "KREATIV 2005",
+  "agency_type": "Агенция",
+  "agency_address": "София ул.Кракра 19",
+  "source_attributes": {
+    "Обзавеждане": "Полуобзаведен",
+    "Етаж": "5-ти",
+    "Етажи": "9",
+    "Отопление": "ТЕЦ",
+    "Състояние": "",
+    "Строителство": "Панел",
+    "Спални": "",
+    "Бани": "",
+    "Двор": "",
+    "Площ на парцела": "",
+    "В регулация": "",
+    "Предназначение": "",
+    "Виза": "",
+    "Разрешение за строеж": "",
+    "Категория": "",
+    "Тип": ""
+  },
+  "photo_metadata": [
+    {
+      "id": 115884201,
+      "name": "115884201",
+      "path": "2025-10-02_2/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 115884202,
+      "name": "115884202",
+      "path": "2025-10-02_2/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 115884203,
+      "name": "115884203",
+      "path": "2025-10-02_2/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 115884200,
+      "name": "115884200",
+      "path": "2025-10-02_2/",
+      "height": 336,
+      "width": 252
+    },
+    {
+      "id": 115884199,
+      "name": "115884199",
+      "path": "2025-10-02_2/",
+      "height": 336,
+      "width": 252
+    }
+  ],
+  "raw_offer_type": "as",
+  "view_count": 412,
+  "local_image_files": [],
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/Homes.bg_1651882",
+  "photo_count_remote": 5,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
+}

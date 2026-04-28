@@ -4,14 +4,14 @@
   "external_id": "45650a1fdd08",
   "title": "Четиристаен апартамент в Пловдив 105 кв.м. ID 168282  | Явлена",
   "description": "",
-  "price": null,
+  "price": 225000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 105.0,
+  "rooms": 4.0,
   "floor": null,
-  "city": "",
+  "city": "Пловдив",
   "district": "",
-  "address_text": "",
+  "address_text": "Пловдив",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/3f800464-9b54-4469-91f9-0655a065fee4.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 541 783",
+    "+359 898 498 449"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:14:11.569604+00:00",
+  "scraped_at": "2026-04-24T07:53:19.771236+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:45650a1fdd08",
   "local_image_files": [
     "data/media/Yavlena_45650a1fdd08/0000_90023106.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_45650a1fdd08/0000_90023106.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_45650a1fdd08",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

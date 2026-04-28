@@ -1,0 +1,170 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/ednostaen-50m2-sofiya-zhk.-lozenec/as1659480",
+  "external_id": "1659480",
+  "reference_id": "Homes.bg:1659480",
+  "title": "Едностаен, 50m² - жк. Лозенец, София",
+  "description": "'АСГАРД ПРОПЪРТИС' продава луксозно ремонтиран, напълно обзаведен апартамент, разположен на втори етаж в нова сграда на метри от Южния парк и Paradise Mall. Жилището е с чиста площ 50 кв.м. и се състои от еднопространствено помещение с обособена кухненска част и хол, работен кът, баня с тоалетна и голяма зимна градина с кът за почивка и трапезарна част. Практични интериорни решениям, висок клас обзавеждане. Прекрасен имот в отлично уреден район с множество магазини, заведения, парк... Метростанция на 100 метра. Отоплението е на газ + климатик. За контакти: 0899/032-036, 02/465-19-50.",
+  "price": 234900.0,
+  "currency": "EUR",
+  "area_sqm": 0.5,
+  "rooms": 1.0,
+  "floor": 2.0,
+  "city": "София",
+  "district": "жк. Лозенец",
+  "address_text": "жк. Лозенец, София Кишинев",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2025-11-12_2/116414691o.jpg",
+    "https://g1.homes.bg/2025-11-12_2/116414690o.jpg",
+    "https://g1.homes.bg/2025-11-12_2/116414687o.jpg",
+    "https://g1.homes.bg/2025-11-12_2/116414692o.jpg",
+    "https://g1.homes.bg/2025-11-12_2/116414689o.jpg",
+    "https://g1.homes.bg/2025-11-12_2/116414685o.jpg",
+    "https://g1.homes.bg/2025-11-12_2/116414693o.jpg",
+    "https://g1.homes.bg/2025-11-12_2/116414686o.jpg",
+    "https://g1.homes.bg/2025-11-12_2/116414688o.jpg",
+    "https://g1.homes.bg/2025-11-12_2/116414684o.jpg"
+  ],
+  "phones": [
+    "02",
+    "465-19-50",
+    "0899-032-036"
+  ],
+  "amenities": [
+    "Асансьор",
+    "Луксозен имот",
+    "Саниран",
+    "Климатик"
+  ],
+  "scraped_at": "2026-04-24T08:09:25.411676+00:00",
+  "listing_status": "active",
+  "published_text": "днес",
+  "agency_name": "АСГАРД ПРОПЪРТИС",
+  "agency_type": "Агенция",
+  "agency_address": "София гр.София, ул.Дякон Игнатий 21",
+  "source_attributes": {
+    "Обзавеждане": "Обзаведен",
+    "Етаж": "2-ри",
+    "Етажи": "6",
+    "Отопление": "Локално отопление",
+    "Състояние": "",
+    "Строителство": "Тухла",
+    "Спални": "",
+    "Бани": "",
+    "Двор": "",
+    "Площ на парцела": "",
+    "В регулация": "",
+    "Предназначение": "",
+    "Виза": "",
+    "Разрешение за строеж": "",
+    "Категория": "",
+    "Тип": ""
+  },
+  "photo_metadata": [
+    {
+      "id": 116414691,
+      "name": "116414691",
+      "path": "2025-11-12_2/",
+      "height": 252,
+      "width": 448
+    },
+    {
+      "id": 116414690,
+      "name": "116414690",
+      "path": "2025-11-12_2/",
+      "height": 252,
+      "width": 448
+    },
+    {
+      "id": 116414687,
+      "name": "116414687",
+      "path": "2025-11-12_2/",
+      "height": 336,
+      "width": 252
+    },
+    {
+      "id": 116414692,
+      "name": "116414692",
+      "path": "2025-11-12_2/",
+      "height": 252,
+      "width": 448
+    },
+    {
+      "id": 116414689,
+      "name": "116414689",
+      "path": "2025-11-12_2/",
+      "height": 252,
+      "width": 448
+    },
+    {
+      "id": 116414685,
+      "name": "116414685",
+      "path": "2025-11-12_2/",
+      "height": 336,
+      "width": 219
+    },
+    {
+      "id": 116414693,
+      "name": "116414693",
+      "path": "2025-11-12_2/",
+      "height": 252,
+      "width": 448
+    },
+    {
+      "id": 116414686,
+      "name": "116414686",
+      "path": "2025-11-12_2/",
+      "height": 336,
+      "width": 224
+    },
+    {
+      "id": 116414688,
+      "name": "116414688",
+      "path": "2025-11-12_2/",
+      "height": 336,
+      "width": 189
+    },
+    {
+      "id": 116414684,
+      "name": "116414684",
+      "path": "2025-11-12_2/",
+      "height": 336,
+      "width": 216
+    }
+  ],
+  "raw_offer_type": "as",
+  "view_count": 820,
+  "local_image_files": [
+    "data/media/Homes.bg_1659480/0000_97e58ba1.jpg",
+    "data/media/Homes.bg_1659480/0001_d29da702.jpg",
+    "data/media/Homes.bg_1659480/0002_d5d95699.jpg",
+    "data/media/Homes.bg_1659480/0003_6b340bec.jpg",
+    "data/media/Homes.bg_1659480/0004_66fc7d29.jpg",
+    "data/media/Homes.bg_1659480/0005_89e2eb65.jpg",
+    "data/media/Homes.bg_1659480/0006_02065b7a.jpg",
+    "data/media/Homes.bg_1659480/0007_068711f6.jpg",
+    "data/media/Homes.bg_1659480/0008_9dfe71d6.jpg",
+    "data/media/Homes.bg_1659480/0009_bc237dc6.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Homes.bg_1659480/0000_97e58ba1.jpg",
+    "Homes.bg_1659480/0001_d29da702.jpg",
+    "Homes.bg_1659480/0002_d5d95699.jpg",
+    "Homes.bg_1659480/0003_6b340bec.jpg",
+    "Homes.bg_1659480/0004_66fc7d29.jpg",
+    "Homes.bg_1659480/0005_89e2eb65.jpg",
+    "Homes.bg_1659480/0006_02065b7a.jpg",
+    "Homes.bg_1659480/0007_068711f6.jpg",
+    "Homes.bg_1659480/0008_9dfe71d6.jpg",
+    "Homes.bg_1659480/0009_bc237dc6.jpg"
+  ],
+  "local_media_dir": "data/media/Homes.bg_1659480",
+  "photo_count_remote": 10,
+  "photo_count_local": 10,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

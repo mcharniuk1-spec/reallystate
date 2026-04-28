@@ -44,7 +44,7 @@
     "Газ: НЕ",
     "Строителство: Тухла, Въведен в експлоатация 2022 г."
   ],
-  "scraped_at": "2026-04-21T08:08:58.835821+00:00",
+  "scraped_at": "2026-04-24T07:52:41.851405+00:00",
   "reference_id": "imot.bg:e42f7bff1005",
   "source_attributes": {
     "Площ": "60 m 2",
@@ -90,5 +90,10 @@
     "imot.bg_e42f7bff1005/0014_95b14f2e.jpg",
     "imot.bg_e42f7bff1005/0015_170f2a83.jpg",
     "imot.bg_e42f7bff1005/0016_975aa48b.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/imot.bg_e42f7bff1005",
+  "photo_count_remote": 17,
+  "photo_count_local": 17,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

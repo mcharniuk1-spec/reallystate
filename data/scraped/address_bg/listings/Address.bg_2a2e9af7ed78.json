@@ -4,14 +4,14 @@
   "external_id": "2a2e9af7ed78",
   "title": "Магазин в Поморие, Свобода - код на имота: 582545",
   "description": "Адрес недвижими имоти предлага Магазин в Поморие, Свобода с код на имота: 582545. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 82000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 122.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Поморие",
+  "district": "Свобода",
+  "address_text": "Поморие, Свобода",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,41 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/545/582545/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "025-08-06",
+    "03503841",
+    "023-05-11",
+    "018-05-09",
+    "018-07-06",
+    "0889728105",
+    "023-11-30",
+    "02490141634",
+    "026366667067717142636666706771712",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:21:05.073627+00:00",
+  "scraped_at": "2026-04-24T07:52:43.599037+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Поморие Магазин Свобода"
+  },
   "reference_id": "Address.bg:2a2e9af7ed78",
   "local_image_files": [
     "data/media/Address.bg_2a2e9af7ed78/0000_f4b7d0a2.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_2a2e9af7ed78/0000_f4b7d0a2.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_2a2e9af7ed78",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -4,14 +4,14 @@
   "external_id": "68344e7911b6",
   "title": "Къща в Добрич 240 кв.м. ID 168199  | Явлена",
   "description": "",
-  "price": null,
+  "price": 0.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 240.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Добрич",
   "district": "",
-  "address_text": "",
+  "address_text": "Добрич",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/fd1bd567-c285-4aeb-a029-1fe81e77cb46.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 502 583",
+    "+359 882 230 300"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:15:15.454995+00:00",
+  "scraped_at": "2026-04-24T07:53:21.427113+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:68344e7911b6",
   "local_image_files": [
     "data/media/Yavlena_68344e7911b6/0000_3c60dad0.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_68344e7911b6/0000_3c60dad0.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_68344e7911b6",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

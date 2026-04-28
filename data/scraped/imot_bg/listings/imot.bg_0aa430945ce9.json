@@ -2,27 +2,49 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1a177531834210867-prodava-ednostaen-apartament-grad-sofiya-borovo",
   "external_id": "0aa430945ce9",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 1-����� ���� �����, ������ �����: 1a177531834210867",
+  "description": "������  ��   ������ �� ������������   ������������� ����� , � ������� �� ��� ��������  � �����  ������   ��������� ��������.������ ��  ��  ������  � ��������� ����,���� , ����   � �������� � �������� ������.���  �  ���������  ����.�����������  � ����.���������  ���  �����������  ����� ��  ����������  ��  ����� �  ����!������  ��  ��������� � � ���������  ���.�� ������  ���������� - 0988 75 73 90 , 0889 11 25 46",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
-  "city": "�����",
-  "district": "",
-  "address_text": "",
+  "city": "������",
+  "district": "���� �����",
+  "address_text": "���� �����, ������",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "//imotstatic2.focus.bg/imot/photosimotbg/1/867//big/1a177531834210867_GW.jpg"
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/867//big1/1a177531834210867_GW.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/867//big1/1a177531834210867_9H.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/867//big1/1a177531834210867_tF.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/867//big1/1a177531834210867_GH.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/867//big1/1a177531834210867_rW.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/867//big/1a177531834210867_GW.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-09T10:06:15.687142+00:00",
+  "phones": [
+    "0988757390"
+  ],
+  "amenities": [
+    "����: 8-�� �� 8",
+    "�E�: ��",
+    "������������: �����, ������� � ������������"
+  ],
+  "scraped_at": "2026-04-24T07:52:28.167087+00:00",
   "reference_id": "imot.bg:0aa430945ce9",
+  "source_attributes": {
+    "����": "8-�� �� 8",
+    "�E�": "��",
+    "������������": "�����, ������� � ������������"
+  },
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_0aa430945ce9",
+  "photo_count_remote": 6,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

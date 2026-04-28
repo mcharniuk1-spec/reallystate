@@ -2,15 +2,15 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1b173165873385044-prodava-dvustaen-apartament-grad-sofiya-ovcha-kupel-2",
   "external_id": "d00e35c50e54",
-  "title": "Imot.bg",
+  "title": "Продава 2-СТАЕН град София, Овча купел 2 Обява: 1b173165873385044",
   "description": "Директно от Строителя. БЕЗ КОМИСИОН ОТ КУПОВАЧА! Продава двустаен апартамент в новопостоящ се затворен комплекс Александрия Резиденс, разположен в тих и удобен район в кв Овча Купел на бул Линкълн. Предимства на комплекса са: Луксозни общи части Контролиран достъп Тераси с красив изглед Детска площадка и 10 дка вътрешен двор Близост до Метростанция Горна Баня (300 м) магазини, училища и автобусни спирки. ЗА ПОВЕЧЕ ИНФОРМАЦИЯ РАЗГЛЕДАЙТЕ САЙТА ИЛИ ПОЗЪНЕТЕ НЕ ТЕЛ: 0884594706 ЛИНК КЪМ САЙТА: https://deadesignbg.com",
   "price": 113000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
-  "floor": null,
-  "city": "Овча купел 2",
-  "district": "град София",
+  "area_sqm": 63.0,
+  "rooms": 2.0,
+  "floor": 2.0,
+  "city": "София",
+  "district": "Овча купел 2",
   "address_text": "град София, Овча купел 2",
   "latitude": null,
   "longitude": null,
@@ -24,14 +24,22 @@
     "https://cdn3.focus.bg/imot/photosimotbg/1/044//big/1b173165873385044_yr.jpg"
   ],
   "phones": [
-    "0884594706",
-    "Вашия телефон:",
-    "0884594706 Изпрати E-mail до продавача"
+    "0884594706"
   ],
-  "amenities": [],
-  "scraped_at": "2026-04-21T07:47:23.119583+00:00",
+  "amenities": [
+    "Площ: 63 m 2",
+    "Етаж: 2-ри от 6",
+    "ТEЦ: ДА",
+    "Строителство: Тухла, Ще бъде въведен в експлоатация 2027 г."
+  ],
+  "scraped_at": "2026-04-24T07:52:40.421636+00:00",
   "reference_id": "imot.bg:d00e35c50e54",
-  "source_attributes": {},
+  "source_attributes": {
+    "Площ": "63 m 2",
+    "Етаж": "2-ри от 6",
+    "ТEЦ": "ДА",
+    "Строителство": "Тухла, Ще бъде въведен в експлоатация 2027 г."
+  },
   "listing_status": "active",
   "local_image_files": [
     "data/media/imot.bg_d00e35c50e54/0000_9d0b4bdd.jpg",
@@ -46,5 +54,10 @@
     "imot.bg_d00e35c50e54/0002_f9cad423.jpg",
     "imot.bg_d00e35c50e54/0003_3b3213e6.jpg",
     "imot.bg_d00e35c50e54/0004_94926363.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/imot.bg_d00e35c50e54",
+  "photo_count_remote": 5,
+  "photo_count_local": 5,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -22,6 +22,7 @@ OUTPUT_HTML = DASHBOARD_DIR / "scrape-status.html"
 OUTPUT_JSON = EXPORTS / "scrape-status-dashboard.json"
 WEBSITE_INVENTORY_JSON = EXPORTS / "website-inventory-analysis.json"
 PATTERN_STATUS_JSON = EXPORTS / "tier12-pattern-status.json"
+PHOTO_COVERAGE_JSON = EXPORTS / "source-item-photo-coverage.json"
 
 COMBO_FIELDS = [
     ("price", "price"),
@@ -103,6 +104,13 @@ def load_pattern_status() -> dict[str, dict]:
     if not PATTERN_STATUS_JSON.exists():
         return {}
     payload = json.loads(PATTERN_STATUS_JSON.read_text(encoding="utf-8"))
+    return {row["source_name"]: row for row in payload.get("sources", [])}
+
+
+def load_photo_coverage() -> dict[str, dict]:
+    if not PHOTO_COVERAGE_JSON.exists():
+        return {}
+    payload = json.loads(PHOTO_COVERAGE_JSON.read_text(encoding="utf-8"))
     return {row["source_name"]: row for row in payload.get("sources", [])}
 
 
@@ -249,6 +257,7 @@ def build_rows() -> tuple[list[dict], dict]:
     source_stats = build_source_stats()
     inventory_analysis = load_inventory_analysis()
     pattern_analysis = load_pattern_status()
+    coverage_analysis = load_photo_coverage()
     rows: list[dict] = []
     totals = {
         "tier_counts": Counter(),
@@ -265,6 +274,7 @@ def build_rows() -> tuple[list[dict], dict]:
         source_name = row["source_name"]
         cfg = configs.get(source_name)
         stats = source_stats.get(source_name, {})
+        coverage_row = coverage_analysis.get(source_name, {})
         discovery_links, apartment_links = flatten_search_urls(cfg) if cfg else ([], [])
         state = classify_state(row, stats)
         next_actions = next_step(row, stats, cfg)
@@ -272,7 +282,12 @@ def build_rows() -> tuple[list[dict], dict]:
         pattern = pattern_analysis.get(source_name, {})
 
         combo_rows: list[dict] = []
-        raw_combos = stats.get("combo_rows") or {}
+        raw_combos = coverage_row.get("combo_rows") or stats.get("combo_rows") or {}
+        if isinstance(raw_combos, list):
+            raw_combos = {
+                (str(item.get("intent") or "unknown"), str(item.get("category") or "unknown")): item
+                for item in raw_combos
+            }
         ordered_seen = set()
         for combo_key in COMBO_ORDER:
             combo = raw_combos.get(combo_key)
@@ -283,6 +298,11 @@ def build_rows() -> tuple[list[dict], dict]:
             if combo_key in ordered_seen or not combo["count"]:
                 continue
             combo_rows.append({"intent": combo_key[0], "category": combo_key[1], **combo})
+
+        saved_listings = coverage_row.get("saved_listings", stats.get("saved_listings", 0))
+        with_description = coverage_row.get("items_with_description", stats.get("with_description", 0))
+        with_photo_urls = coverage_row.get("items_with_remote_photos", stats.get("with_photo_urls", 0))
+        with_readable_local_photos = coverage_row.get("items_with_local_media", stats.get("with_readable_local_photos", 0))
 
         source_entry = {
             "tier": row["tier"],
@@ -295,13 +315,17 @@ def build_rows() -> tuple[list[dict], dict]:
             "listing_types": row.get("listing_types") or [],
             "best_extraction_method": row.get("best_extraction_method", ""),
             "notes": row.get("notes", ""),
-            "saved_listings": stats.get("saved_listings", 0),
-            "with_description": stats.get("with_description", 0),
-            "with_photo_urls": stats.get("with_photo_urls", 0),
-            "with_readable_local_photos": stats.get("with_readable_local_photos", 0),
-            "service_counts": dict(stats.get("service_counts") or {}),
-            "category_counts": dict(stats.get("category_counts") or {}),
-            "field_counts": dict(stats.get("fields") or {}),
+            "saved_listings": saved_listings,
+            "with_description": with_description,
+            "with_photo_urls": with_photo_urls,
+            "with_readable_local_photos": with_readable_local_photos,
+            "service_counts": dict(coverage_row.get("service_counts") or stats.get("service_counts") or {}),
+            "category_counts": dict(coverage_row.get("category_counts") or stats.get("category_counts") or {}),
+            "field_counts": dict(coverage_row.get("field_counts") or stats.get("fields") or {}),
+            "full_gallery_items": coverage_row.get("full_gallery_items", 0),
+            "total_remote_photos": coverage_row.get("total_remote_photos", 0),
+            "total_local_photos": coverage_row.get("total_local_photos", 0),
+            "item_rows": coverage_row.get("items") or [],
             "state": state,
             "next_step": next_actions,
             "discovery_links": discovery_links,
@@ -402,7 +426,7 @@ def combo_table(rows: list[dict]) -> str:
         return '<div class="empty">No landed corpus yet for this source.</div>'
     body: list[str] = []
     for row in rows:
-        fields = row["fields"]
+        fields = row.get("fields") or row.get("field_counts") or {}
         attr_bits = [f"{label} {fields.get(key, 0)}/{row['count']}" for key, label in COMBO_FIELDS if fields.get(key, 0)]
         attr_text = ", ".join(attr_bits) if attr_bits else "No secondary fields captured yet"
         body.append(
@@ -411,8 +435,11 @@ def combo_table(rows: list[dict]) -> str:
             f"<td>{esc(PROPERTY_LABELS.get(row['category'], row['category']))}</td>"
             f"<td>{row['count']}</td>"
             f"<td>{row['description']}</td>"
-            f"<td>{row['photo_urls']}</td>"
-            f"<td>{row['readable_photos']}</td>"
+            f"<td>{row.get('photo_urls', row.get('photo_url_items', 0))}</td>"
+            f"<td>{row.get('readable_photos', row.get('local_photo_items', 0))}</td>"
+            f"<td>{row.get('full_gallery_items', 0)}</td>"
+            f"<td>{row.get('remote_photos', 0)}</td>"
+            f"<td>{row.get('local_photos', 0)}</td>"
             f"<td>{fields.get('price', 0)}</td>"
             f"<td>{fields.get('area_sqm', 0)}</td>"
             f"<td>{fields.get('rooms', 0)}</td>"
@@ -430,7 +457,56 @@ def combo_table(rows: list[dict]) -> str:
         '<div class="table-wrap"><table>'
         "<thead><tr>"
         "<th>Service</th><th>Property</th><th>Listings</th><th>Description</th><th>Photo URLs</th><th>Readable photos</th>"
-        "<th>Price</th><th>Size</th><th>Rooms</th><th>Floor</th><th>City</th><th>District</th><th>Address</th><th>Geo</th><th>Phones</th><th>Amenities</th><th>Attributes captured</th>"
+        "<th>Full gallery</th><th>Remote photos</th><th>Local photos</th><th>Price</th><th>Size</th><th>Rooms</th><th>Floor</th><th>City</th><th>District</th><th>Address</th><th>Geo</th><th>Phones</th><th>Amenities</th><th>Attributes captured</th>"
+        "</tr></thead><tbody>"
+        + "".join(body)
+        + "</tbody></table></div>"
+    )
+
+
+def item_table(items: list[dict]) -> str:
+    if not items:
+        return '<div class="empty">No per-item rows are saved yet for this source.</div>'
+    body: list[str] = []
+    for item in items:
+        title = item.get("title") or item.get("reference_id") or "listing"
+        title_html = (
+            f'<a href="{esc(item.get("listing_url") or "")}" target="_blank" rel="noreferrer">{esc(title)}</a>'
+            if item.get("listing_url") else esc(title)
+        )
+        parsed_fields = ", ".join(item.get("parsed_fields") or []) or "none"
+        missing_fields = ", ".join(item.get("missing_core_fields") or []) or "none"
+        body.append(
+            "<tr>"
+            f"<td>{esc(SERVICE_LABELS.get(item.get('listing_intent'), item.get('listing_intent')))}</td>"
+            f"<td>{esc(PROPERTY_LABELS.get(item.get('property_category'), item.get('property_category')))}</td>"
+            f"<td>{title_html}</td>"
+            f"<td>{esc(item.get('reference_id', ''))}</td>"
+            f"<td>{esc(item.get('source_section_id', ''))}</td>"
+            f"<td>{item.get('description_chars', 0)}</td>"
+            f"<td>{'' if item.get('price') is None else esc(item.get('price'))}</td>"
+            f"<td>{'' if item.get('area_sqm') is None else esc(item.get('area_sqm'))}</td>"
+            f"<td>{'' if item.get('rooms') is None else esc(item.get('rooms'))}</td>"
+            f"<td>{'' if item.get('floor') is None else esc(item.get('floor'))}</td>"
+            f"<td>{esc(item.get('city', '') or '')}</td>"
+            f"<td>{esc(item.get('district', '') or '')}</td>"
+            f"<td>{esc(item.get('address_text', '') or '')}</td>"
+            f"<td>{item.get('phones_count', 0)}</td>"
+            f"<td>{item.get('photo_count_remote', 0)}</td>"
+            f"<td>{item.get('photo_count_local', 0)}</td>"
+            f"<td>{'yes' if item.get('full_gallery_downloaded') else 'no'}</td>"
+            f"<td>{esc(item.get('photo_download_status', ''))}</td>"
+            f"<td>{esc(parsed_fields)}</td>"
+            f"<td>{esc(missing_fields)}</td>"
+            f"<td>{esc(item.get('media_dir', '') or '')}</td>"
+            "</tr>"
+        )
+    return (
+        '<div class="table-wrap"><table>'
+        "<thead><tr>"
+        "<th>Service</th><th>Property</th><th>Listing</th><th>Reference</th><th>Section</th><th>Description chars</th>"
+        "<th>Price</th><th>Size</th><th>Rooms</th><th>Floor</th><th>City</th><th>District</th><th>Address</th><th>Phones</th>"
+        "<th>Remote photos</th><th>Local photos</th><th>Full gallery</th><th>Photo status</th><th>Parsed fields</th><th>Missing core fields</th><th>Media dir</th>"
         "</tr></thead><tbody>"
         + "".join(body)
         + "</tbody></table></div>"
@@ -456,6 +532,8 @@ def summary_table(rows: list[dict]) -> str:
             f"<td>{row['with_description']}</td>"
             f"<td>{row['with_photo_urls']}</td>"
             f"<td>{row['with_readable_local_photos']}</td>"
+            f"<td>{row['full_gallery_items']}</td>"
+            f"<td>{row['total_local_photos']}</td>"
             f"<td>{esc(website_total_text(row))}</td>"
             f"<td>{esc(str(row['recent_under_2m'].get('value', 'n/a')))}</td>"
             f"<td>{esc(row['varna_split'].get('text', 'n/a+n/a'))}</td>"
@@ -469,7 +547,7 @@ def summary_table(rows: list[dict]) -> str:
     return (
         '<div class="table-wrap"><table>'
         "<thead><tr>"
-        "<th>Tier</th><th>Source</th><th>Primary link</th><th>State</th><th>Pattern</th><th>Count</th><th>Recent</th><th>Varna</th><th>Saved listings</th><th>Descriptions</th><th>Photo URLs</th><th>Readable photos</th><th>Website total</th><th>&lt;2m</th><th>Varna city+region</th><th>Coverage vs website</th><th>Declared scope</th><th>Access</th><th>Legal</th><th>Further steps</th>"
+        "<th>Tier</th><th>Source</th><th>Primary link</th><th>State</th><th>Pattern</th><th>Count</th><th>Recent</th><th>Varna</th><th>Saved listings</th><th>Descriptions</th><th>Photo URLs</th><th>Readable photos</th><th>Full-gallery items</th><th>Total local photos</th><th>Website total</th><th>&lt;2m</th><th>Varna city+region</th><th>Coverage vs website</th><th>Declared scope</th><th>Access</th><th>Legal</th><th>Further steps</th>"
         "</tr></thead><tbody>"
         + "".join(body)
         + "</tbody></table></div>"
@@ -513,6 +591,9 @@ def source_cards(rows: list[dict]) -> str:
             f'<div class="stat"><span>Description coverage</span><strong>{percent(row["with_description"], row["saved_listings"])}</strong></div>'
             f'<div class="stat"><span>Photo URL coverage</span><strong>{percent(row["with_photo_urls"], row["saved_listings"])}</strong></div>'
             f'<div class="stat"><span>Readable photo coverage</span><strong>{percent(row["with_readable_local_photos"], row["saved_listings"])}</strong></div>'
+            f'<div class="stat"><span>Full-gallery items</span><strong>{row["full_gallery_items"]}</strong></div>'
+            f'<div class="stat"><span>Total remote photos</span><strong>{row["total_remote_photos"]}</strong></div>'
+            f'<div class="stat"><span>Total local photos</span><strong>{row["total_local_photos"]}</strong></div>'
             "</div>"
             '<div class="details-grid">'
             f'<div><h3>Links</h3><div class="stack"><a href="{esc(row["primary_url"])}" target="_blank" rel="noreferrer">{esc(row["primary_url"])}</a>{link_list(row["related_urls"])}</div></div>'
@@ -535,11 +616,14 @@ def source_cards(rows: list[dict]) -> str:
             + f"<p><strong>Services scraped:</strong> {esc(service_counts)}</p>"
             f"<p><strong>Property categories scraped:</strong> {esc(category_counts)}</p>"
             f"<p><strong>Other captured variables:</strong> {esc(field_summary)}</p>"
+            f"<p><strong>Photo totals:</strong> remote={row['total_remote_photos']}, local={row['total_local_photos']}, full_gallery_items={row['full_gallery_items']}/{row['saved_listings']}</p>"
             f"<p><strong>Next step:</strong> {esc(row['next_step'])}</p>"
             '<h3>Website Inventory Evidence</h3>'
             + inventory_table(row["website_inventory_rows"])
             + '<h3>Landed Corpus Matrix</h3>'
             + combo_table(row["combo_rows"])
+            + '<h3>Per-item Photo And Field Coverage</h3>'
+            + item_table(row["item_rows"])
             + "</section>"
         )
     return "".join(cards)

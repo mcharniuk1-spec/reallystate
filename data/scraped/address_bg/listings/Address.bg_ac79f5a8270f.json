@@ -1,0 +1,60 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/varna-m-st-evksinograd-tristaen-apartament-offer688126",
+  "external_id": "ac79f5a8270f",
+  "title": "Тристаен апартамент във Варна, м-ст Евксиноград - код на имота: 688126",
+  "description": "Адрес недвижими имоти предлага Тристаен апартамент във Варна, м-ст Евксиноград с код на имота: 688126. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 257000.0,
+  "currency": "EUR",
+  "area_sqm": 107.0,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/126/688126/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-03-17",
+    "018-05-09",
+    "018-07-06",
+    "0442 2008",
+    "0888242937",
+    "00029932293587",
+    "0422 2016",
+    "0422 2015",
+    "0422 2018",
+    "00284716",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:12:48.051945+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Варна Тристаен апартамент м-ст Евксиноград"
+  },
+  "reference_id": "Address.bg:ac79f5a8270f",
+  "local_image_files": [
+    "data/media/Address.bg_ac79f5a8270f/0000_04ccf21d.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_ac79f5a8270f/0000_04ccf21d.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_ac79f5a8270f",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

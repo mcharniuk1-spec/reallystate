@@ -3,30 +3,42 @@
   "listing_url": "https://www.yavlena.com/bg/131445",
   "external_id": "1c0b05c23cc7",
   "title": "Двустаен апартамент в София 83 кв.м. ID 131445  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Изключително слънчев и голям двустаен със източна тераса в тухлена сграда от 2008г с отлична Централна локация/Зона Б-5 район Възраждане. Близост до метро станция Опълченска, Мол София и бул. Тодор Александров., парк Свети Никола и много други - ул. Овче поле !!!\\\\r\\\\nРазпределение: антре, хол с кухненски бокс, спалня, баня с тоалетна, спалня и тераса. \\\\r\\\\nСтатут на Апартамент с чиста площ: 70,88кв.м + 12,41 общи части + 4% земя \\\\r\\\\nОбзавеждането е ново, кухнята модерна напълно обзаведена, след освежителен ремонт. Вътрешен покрит със изложение изток-юг с големи прозорци и най-изгодното отопление на ток с чисто нови модерни климатици. Добра възможност за инвестиция - очакван наем 650-700Евро. Голям платен паркинг до сградата, както и възможност за годишен талон за зелена зона. \\\\r\\\\nЗа информация и огледи брокер Иван Горанов ИД: 131445",
+  "price": 220000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 83.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "м",
+  "address_text": "София, м",
   "latitude": null,
   "longitude": null,
-  "listing_intent": "sale",
+  "listing_intent": "long_term_rent",
   "property_category": "apartment",
   "image_urls": [
     "https://userimages.yavlena.com/89995d41-5ea7-49ab-8eda-38febe01c327.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 882 230 300"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:54:40.057489+00:00",
+  "scraped_at": "2026-04-24T07:53:18.580774+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:1c0b05c23cc7",
   "local_image_files": [
     "data/media/Yavlena_1c0b05c23cc7/0000_c9844e66.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_1c0b05c23cc7/0000_c9844e66.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_1c0b05c23cc7",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

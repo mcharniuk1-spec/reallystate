@@ -1,0 +1,61 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/german-parcel-teren-offer562085",
+  "external_id": "cbd6a39ae4ad",
+  "title": "Парцел/Терен в Герман - код на имота: 562085",
+  "description": "Адрес недвижими имоти предлага Парцел/Терен в Герман с код на имота: 562085. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 3700000.0,
+  "currency": "EUR",
+  "area_sqm": 9440.0,
+  "rooms": null,
+  "floor": null,
+  "city": "Герман",
+  "district": "",
+  "address_text": "Герман",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "land",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/085/562085/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-01-18",
+    "022-10-13",
+    "018-05-09",
+    "018-07-06",
+    "04429440",
+    "0442 1624",
+    "0888 81 89 21",
+    "0889253362",
+    "025-05-13",
+    "0463562716",
+    "006871084",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:12:14.378790+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Герман Парцел/Терен"
+  },
+  "reference_id": "Address.bg:cbd6a39ae4ad",
+  "local_image_files": [
+    "data/media/Address.bg_cbd6a39ae4ad/0000_d21574f6.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_cbd6a39ae4ad/0000_d21574f6.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_cbd6a39ae4ad",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

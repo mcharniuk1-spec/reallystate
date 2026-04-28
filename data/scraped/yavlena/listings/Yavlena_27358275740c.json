@@ -4,14 +4,14 @@
   "external_id": "27358275740c",
   "title": "Двустаен апартамент в Бургас 95 кв.м. ID 168415  | Явлена",
   "description": "",
-  "price": null,
+  "price": 87282.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 95.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Бургас",
   "district": "",
-  "address_text": "",
+  "address_text": "Бургас",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/d37f5554-8eef-41f9-aaf9-e6c3b8c0557b.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 885 777 730"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:00.880370+00:00",
+  "scraped_at": "2026-04-24T07:53:18.980524+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:27358275740c",
   "local_image_files": [
     "data/media/Yavlena_27358275740c/0000_01bea75d.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_27358275740c/0000_01bea75d.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_27358275740c",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -4,14 +4,14 @@
   "external_id": "4453dc43c86c",
   "title": "Къща в Писменово 968 кв.м. ID 136377  | Явлена",
   "description": "",
-  "price": null,
+  "price": 590000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 968.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Писменово",
   "district": "",
-  "address_text": "",
+  "address_text": "Писменово",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/4ec55983-8d44-42b5-b1fd-40694ddbd6c2.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359888660532"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:36.674126+00:00",
+  "scraped_at": "2026-04-24T07:53:19.745186+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:4453dc43c86c",
   "local_image_files": [
     "data/media/Yavlena_4453dc43c86c/0000_102cb669.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_4453dc43c86c/0000_102cb669.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_4453dc43c86c",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

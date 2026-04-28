@@ -4,14 +4,14 @@
   "external_id": "8ada24e3159a",
   "title": "Парцел в Костинброд 708 кв.м. ID 168288  | Явлена",
   "description": "",
-  "price": null,
+  "price": 98412.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 708.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Костинброд",
   "district": "",
-  "address_text": "",
+  "address_text": "Костинброд",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/527c9ec2-a966-4e48-8666-f1930071c48f.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 502 947",
+    "+359 889 26 26 06"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:14:08.342085+00:00",
+  "scraped_at": "2026-04-24T07:53:22.651593+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:8ada24e3159a",
   "local_image_files": [
     "data/media/Yavlena_8ada24e3159a/0000_26d3be5d.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_8ada24e3159a/0000_26d3be5d.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_8ada24e3159a",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

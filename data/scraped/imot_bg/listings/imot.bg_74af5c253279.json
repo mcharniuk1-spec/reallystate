@@ -2,27 +2,57 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1b177450856920421-prodava-dvustaen-apartament-grad-sofiya-druzhba-2",
   "external_id": "74af5c253279",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 2-����� ���� �����, ������ 2 �����: 1b177450856920421",
+  "description": "��� 16 !!! ������������ 200�. !!! ��� !!! ������ !!! ����������� ��, �������� ���������� � ������������� ������ � ��� 16 �� �������� 2026�, �������� �� �� 200 ����� �� ������������ '������', ����� ��������� �������������� � ��. ������ 2 ������ ����������� �� ���� ������. ������ � ������ � ������ ����, ����� � ��������� ������. �� �� �������� ��� �� �����, ������� �� � ��������� ���� ���: 236091",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
-  "city": "�����",
-  "district": "",
-  "address_text": "",
+  "city": "������ 2",
+  "district": "���� �����",
+  "address_text": "���� �����, ������ 2",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "//cdn3.focus.bg/imot/photosimotbg/1/421//big/1b177450856920421_8g.jpg"
+    "https://cdn3.focus.bg/imot/photosimotbg/1/421//big1/1b177450856920421_8g.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/421//big1/1b177450856920421_B4.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/421//big1/1b177450856920421_oS.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/421//big1/1b177450856920421_yx.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/421//big1/1b177450856920421_AZ.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/421//big/1b177450856920421_3u.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/421//big/1b177450856920421_JL.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/421//big1/1b177450856920421_WL.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/421//big/1b177450856920421_Ed.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/421//big/1b177450856920421_IS.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/421//big/1b177450856920421_dS.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/421//big/1b177450856920421_Hb.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/421//big/1b177450856920421_rT.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/421//big1/1b177450856920421_Km.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/421//big/1b177450856920421_w.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/421//big/1b177450856920421_8g.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-08T16:30:03.419118+00:00",
+  "phones": [
+    "0875363330"
+  ],
+  "amenities": [
+    "����: 7-�� �� 9",
+    "������������: �����, ������� � ������������ 2026 �."
+  ],
+  "scraped_at": "2026-04-24T07:52:34.735840+00:00",
   "reference_id": "imot.bg:74af5c253279",
+  "source_attributes": {
+    "����": "7-�� �� 9",
+    "������������": "�����, ������� � ������������ 2026 �."
+  },
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_74af5c253279",
+  "photo_count_remote": 16,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

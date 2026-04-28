@@ -4,14 +4,14 @@
   "external_id": "c8cae747508e",
   "title": "Заведение в Равда 212 кв.м. ID 168053  | Явлена",
   "description": "",
-  "price": null,
+  "price": 110000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 212.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Равда",
   "district": "",
-  "address_text": "",
+  "address_text": "Равда",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/77ed361e-785a-4e0d-8f2a-3d7b972b30c1.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 530 355",
+    "+359 885 444 222"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:12.380615+00:00",
+  "scraped_at": "2026-04-24T07:53:24.438048+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:c8cae747508e",
   "local_image_files": [
     "data/media/Yavlena_c8cae747508e/0000_759f2161.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_c8cae747508e/0000_759f2161.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_c8cae747508e",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

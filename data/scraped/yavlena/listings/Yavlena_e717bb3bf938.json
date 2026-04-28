@@ -4,14 +4,14 @@
   "external_id": "e717bb3bf938",
   "title": "Къща във Варна 202 кв.м. ID 168046  | Явлена",
   "description": "",
-  "price": null,
+  "price": 371000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 202.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/48b3442d-38e8-4eb9-9c3b-4d4811b39421.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 544 516",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:22.121883+00:00",
+  "scraped_at": "2026-04-24T07:53:25.396635+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:e717bb3bf938",
   "local_image_files": [
     "data/media/Yavlena_e717bb3bf938/0000_4dbde806.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_e717bb3bf938/0000_4dbde806.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_e717bb3bf938",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -1,0 +1,60 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/varna-vazrazhdane-2-dvustaen-apartament-offer682691",
+  "external_id": "796595b76ac7",
+  "title": "Двустаен апартамент във Варна, Възраждане 2 - код на имота: 682691",
+  "description": "Адрес недвижими имоти предлага Двустаен апартамент във Варна, Възраждане 2 с код на имота: 682691. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 101999.0,
+  "currency": "EUR",
+  "area_sqm": 75.0,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/691/682691/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-04-21",
+    "026-02-02",
+    "018-05-09",
+    "018-07-06",
+    "0887 314 081",
+    "0884169264",
+    "026-02-26",
+    "09394928927",
+    "035352334222211303535233422227",
+    "077616152737676607761613",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:11:15.541265+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Варна Двустаен апартамент Възраждане 2"
+  },
+  "reference_id": "Address.bg:796595b76ac7",
+  "local_image_files": [
+    "data/media/Address.bg_796595b76ac7/0000_d82bc1ad.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_796595b76ac7/0000_d82bc1ad.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_796595b76ac7",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

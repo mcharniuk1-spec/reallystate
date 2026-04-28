@@ -59,12 +59,15 @@ Current workspace already contains a foundation implementation:
 - [x] Source matrix artifact in [artifacts/source-matrix.md](/Users/getapple/Documents/Real Estate Bulg/artifacts/source-matrix.md)
 - [x] Legal risk artifact in [artifacts/legal-risk-matrix.md](/Users/getapple/Documents/Real Estate Bulg/artifacts/legal-risk-matrix.md)
 - [x] Unit tests passing
+- [x] Docker Compose stack available (Postgres/PostGIS, Redis, MinIO, Temporal, Temporal UI)
+- [x] Alembic migrations wire initial schema from `sql/schema.sql` (`make db-init`)
+- [x] Next.js app shell present at repo root (`npm run dev`)
+- [x] In-repo operator docs for Docker + DB + media: `docs/docker-and-database.md`
 
 Known current limitation:
 
 - [ ] No live tier-1 source connectors yet
-- [ ] No persistent DB runtime yet
-- [ ] No job queue/scheduler yet
+- [ ] Live volume gate not yet proven in PostgreSQL `canonical_listing` (S1-18 proof path)
 - [ ] No real fixture corpus yet
 - [ ] No geocoder/cadastre integration yet
 - [ ] No publishing adapters yet
@@ -192,6 +195,17 @@ The agent should execute the following tasks in order.
 ### Objective
 
 Turn the current framework into a runnable ingestion system with persistent storage and scheduled jobs.
+
+### Operator fast-path (current repo)
+
+This repository already includes a local Docker Compose runtime and migrations. For OpenClaw runs, treat these as the default:
+
+- Start dependencies: `make dev-up` (requires Docker Desktop / Engine on the host)
+- Wait for DB: `make dev-ready`
+- Apply schema: `export DATABASE_URL=... && make db-init`
+- See docs: `docs/docker-and-database.md`
+
+Do not “recreate persistence from scratch” unless a specific missing dependency is proven.
 
 ### Tasks
 

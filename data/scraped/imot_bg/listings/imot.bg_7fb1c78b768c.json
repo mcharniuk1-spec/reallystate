@@ -2,27 +2,52 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1a176407640389210-prodava-ednostaen-apartament-grad-sofiya-studentski-grad",
   "external_id": "7fb1c78b768c",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 1-����� ���� �����, ���������� ���� �����: 1a176407640389210",
+  "description": "ARCO REAL ESTATE �� ��������� ��������� ���������� � ���������� ����. ������������ �� ������ � ������� �� ������� ������ �� ���-��������������� ������� �� ��������. � ���� �� 42 ��.�., ���� 34.38 ��.�. �� ��� � ����� �������. ������ � ���� ����������� ������ ���� ���������, ����� �� ��������. ��������� �� ����������, � ������ ����� �� ������� ����� � �� 400-500���� �� ����� � ����� �������������, ����� � ��������� ������� �� ��������. ���������, ����� �� ��������. ��������� ������ �� ������������ �� ��� EN 15733. ���������� ���������� �� ������������ �������� ��� ������� �� ������ �����������, ��������� �������� ����������� � ��������� �� ������� ������ �� �����. �� ������ ���������� � ������: ����� ������ - ���� ��������� �������: 0876 728425",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
-  "city": "�����",
-  "district": "",
-  "address_text": "",
+  "city": "���������� ����",
+  "district": "���� �����",
+  "address_text": "���� �����, ���������� ����",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "//imotstatic1.focus.bg/imot/photosimotbg/1/210//big/1a176407640389210_MA.jpg"
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/210//big1/1a176407640389210_MA.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/210//big/1a176407640389210_Av.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/210//big/1a176407640389210_Oy.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/210//big1/1a176407640389210_wW.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/210//big/1a176407640389210_K8.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/210//big/1a176407640389210_54.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/210//big/1a176407640389210_RM.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/210//big/1a176407640389210_A5.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/210//big/1a176407640389210_MA.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-08T16:26:46.092123+00:00",
+  "phones": [
+    "0878999555",
+    "0876728425"
+  ],
+  "amenities": [
+    "����: 17-�� �� 17",
+    "������������: �����, ������� � ������������ 2019 �."
+  ],
+  "scraped_at": "2026-04-24T07:52:35.332788+00:00",
   "reference_id": "imot.bg:7fb1c78b768c",
+  "source_attributes": {
+    "����": "17-�� �� 17",
+    "������������": "�����, ������� � ������������ 2019 �."
+  },
+  "listing_status": "active",
+  "contact_name": "����  ���������",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_7fb1c78b768c",
+  "photo_count_remote": 9,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

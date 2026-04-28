@@ -1,0 +1,59 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/varna-kolhozen-pazar-dvustaen-apartament-offer647567",
+  "external_id": "c4d707c1536d",
+  "title": "Двустаен апартамент във Варна, Колхозен пазар - код на имота: 647567",
+  "description": "Адрес недвижими имоти предлага Двустаен апартамент във Варна, Колхозен пазар с код на имота: 647567. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 135000.0,
+  "currency": "EUR",
+  "area_sqm": 84.0,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/567/647567/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-02-24",
+    "025-03-03",
+    "018-05-09",
+    "018-07-06",
+    "0884679805",
+    "026-03-31",
+    "026-04-01",
+    "09137284716",
+    "075756374626251707575637462623",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:11:27.716598+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Варна Двустаен апартамент Колхозен пазар"
+  },
+  "reference_id": "Address.bg:c4d707c1536d",
+  "local_image_files": [
+    "data/media/Address.bg_c4d707c1536d/0000_ca3e3a16.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_c4d707c1536d/0000_ca3e3a16.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_c4d707c1536d",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

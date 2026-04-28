@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54041748/prodawa-3-staen-gr-sofiia-poligona",
   "external_id": "54041748",
-  "title": "Bazar.BG",
+  "title": "Продава 3-СТАЕН, гр. София, Полигона → Обява 54041748",
   "description": "Топъл, просторен, слънчев и тих, с нескриваема гледка към 'Черни връх'. Необзаведен, но с готови бани. Добре поддържани общи части. На 7 мин. пешеходно разтояни",
   "price": 350000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 130.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Полигона",
+  "address_text": "София, Полигона",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,11 +19,25 @@
   "image_urls": [
     "https://imotstatic4.focus.bg/imot/photosimotbg/1/050/big1/1c177235666445050_WD.jpg",
     "https://imotstatic4.focus.bg/imot/photosimotbg/1/050/big1/1c177235666445050_xs.jpg",
-    "//imotstatic4.focus.bg/imot/photosimotbg/1/050/big1/1c177235666445050_WD.jpg"
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/050/big1/1c177235666445050_WD.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "075235900000000",
+    "092854964",
+    "086173059",
+    "023987898",
+    "01390064",
+    "3594435865",
+    "02316412",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:44:01.444558+00:00",
+  "scraped_at": "2026-04-24T07:53:16.480350+00:00",
   "reference_id": "Bazar.bg:54041748",
   "local_image_files": [
     "data/media/Bazar.bg_54041748/0000_9076a17d.jpg",
@@ -34,5 +48,10 @@
     "Bazar.bg_54041748/0000_9076a17d.jpg",
     "Bazar.bg_54041748/0001_e08f2ed7.jpg",
     "Bazar.bg_54041748/0002_9076a17d.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54041748",
+  "photo_count_remote": 3,
+  "photo_count_local": 3,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -4,14 +4,14 @@
   "external_id": "45b77a81c1d5",
   "title": "Къща в София 149 кв.м. ID 168205  | Явлена",
   "description": "",
-  "price": null,
+  "price": 420000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 149.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/c1e2df2d-32f6-4a51-a500-21be970b4dc1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 502 956",
+    "+359 889 26 26 06"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:15:06.693147+00:00",
+  "scraped_at": "2026-04-24T07:53:19.798894+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:45b77a81c1d5",
   "local_image_files": [
     "data/media/Yavlena_45b77a81c1d5/0000_a0973403.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_45b77a81c1d5/0000_a0973403.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_45b77a81c1d5",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

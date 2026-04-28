@@ -2,12 +2,12 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-53325877/uyuten-2-staen-top-lokatsiia-pomorie-star-grad",
   "external_id": "53325877",
-  "title": "Bazar.BG",
+  "title": "Уютен 2-стаен, Топ Локация, Поморие, Стар Град! → Обява 53325877",
   "description": "Ексклузивна оферта! Топ локация!!!Уютен двустаен апартамент за продажба в стария град на Поморие, на пешеходно разстояние от плажа и центъра!Детайли:- апартамен",
   "price": 77000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 46.0,
+  "rooms": 2.0,
   "floor": null,
   "city": "",
   "district": "",
@@ -26,11 +26,19 @@
     "https://cdn7.focus.bg/bazar/a3/original/a3edc9b61936830440eca6a6e4a74410.webp",
     "https://cdn5.focus.bg/bazar/27/original/27894318ec4135dc7af7ea2a030e575f.webp",
     "https://cdn5.focus.bg/bazar/ce/original/ceb6d744de91bf1a9a4ce115c1efdcbf.webp",
-    "//cdn7.focus.bg/bazar/91/pics/910b41b9be25362ff3212b951a9876d6.webp"
+    "https://cdn7.focus.bg/bazar/91/pics/910b41b9be25362ff3212b951a9876d6.webp"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "025323046200000000",
+    "092862554",
+    "026-05-08",
+    "000-2014",
+    "01112551"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:46:57.940965+00:00",
+  "scraped_at": "2026-04-24T07:53:14.944481+00:00",
   "reference_id": "Bazar.bg:53325877",
   "local_image_files": [
     "data/media/Bazar.bg_53325877/0000_973d291a.webp",
@@ -55,5 +63,10 @@
     "Bazar.bg_53325877/0007_da4f4f59.webp",
     "Bazar.bg_53325877/0008_9155a21e.webp",
     "Bazar.bg_53325877/0009_a4291917.webp"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_53325877",
+  "photo_count_remote": 10,
+  "photo_count_local": 10,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

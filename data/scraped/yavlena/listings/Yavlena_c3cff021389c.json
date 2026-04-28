@@ -4,14 +4,14 @@
   "external_id": "c3cff021389c",
   "title": "Двустаен апартамент в Пловдив 63 кв.м. ID 165773  | Явлена",
   "description": "",
-  "price": null,
+  "price": 128000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 63.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Пловдив",
   "district": "",
-  "address_text": "",
+  "address_text": "Пловдив",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/eb913cd2-d7cc-466e-ab17-c7c35a1f2af9.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 548 651",
+    "+359 895 506 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:54:43.480805+00:00",
+  "scraped_at": "2026-04-24T07:53:24.273142+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:c3cff021389c",
   "local_image_files": [
     "data/media/Yavlena_c3cff021389c/0000_adc634c2.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_c3cff021389c/0000_adc634c2.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_c3cff021389c",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

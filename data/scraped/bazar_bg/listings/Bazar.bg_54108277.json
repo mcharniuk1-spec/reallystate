@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54108277/dwustaen-apartament-w-slanchew-briag-parter-s-dwor-i-parkomiasto-kw-chayka",
   "external_id": "54108277",
-  "title": "Bazar.BG",
+  "title": "Двустаен апартамент в Слънчев бряг - партер с двор и паркомясто кв Чайка → Обява 54108277",
   "description": "Предлагаме под наем слънчев и просторен двустаен апартамент, подходящ за летния сезон. Намира се в тиха и спокойна част на Слънчев бряг, на пешеходно разстояние",
   "price": 450.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 50.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Слънчев бряг",
   "district": "",
-  "address_text": "",
+  "address_text": "Слънчев бряг",
   "latitude": null,
   "longitude": null,
   "listing_intent": "long_term_rent",
@@ -28,11 +28,21 @@
     "https://cdn5.focus.bg/bazar/3d/original/3d2b31cb84623f44ae8c2c191b44dca5.webp",
     "https://cdn5.focus.bg/bazar/ff/original/ff28b70745e6891449abd304f9c21cc7.webp",
     "https://cdn5.focus.bg/bazar/2f/original/2fe78450ad19be76e8dc160e2f2037b8.webp",
-    "//cdn7.focus.bg/bazar/06/pics/06009617f3d18ae2b02fcbbf6f1a0de5.webp"
+    "https://cdn7.focus.bg/bazar/06/pics/06009617f3d18ae2b02fcbbf6f1a0de5.webp"
   ],
-  "phones": [],
+  "phones": [
+    "06009617",
+    "006135400",
+    "0123456789",
+    "093600000000",
+    "088 780 2555",
+    "092861193",
+    "026-05-08",
+    "000-2014",
+    "01112551"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:46:26.565117+00:00",
+  "scraped_at": "2026-04-24T07:53:17.217880+00:00",
   "reference_id": "Bazar.bg:54108277",
   "local_image_files": [
     "data/media/Bazar.bg_54108277/0000_94ea3320.webp",
@@ -61,5 +71,10 @@
     "Bazar.bg_54108277/0009_3aa40b93.webp",
     "Bazar.bg_54108277/0010_5ce3c53e.webp",
     "Bazar.bg_54108277/0011_a56a1849.webp"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54108277",
+  "photo_count_remote": 12,
+  "photo_count_local": 12,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

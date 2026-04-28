@@ -1,0 +1,63 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-krasna-polyana-2-tristaen-apartament-offer691690",
+  "external_id": "6fd305db46f9",
+  "title": "Тристаен апартамент в София, Красна поляна 2 - код на имота: 691690",
+  "description": "Адрес недвижими имоти предлага Тристаен апартамент в София, Красна поляна 2 с код на имота: 691690. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 170000.0,
+  "currency": "EUR",
+  "area_sqm": 110.0,
+  "rooms": null,
+  "floor": null,
+  "city": "София",
+  "district": "Красна поляна 2",
+  "address_text": "София, Красна поляна 2",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/690/691690/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-04-18",
+    "026-04-16",
+    "018-05-09",
+    "018-07-06",
+    "0413 187",
+    "0438 123",
+    "0442 1984",
+    "02 424 12 00",
+    "0888 81 89 21",
+    "0885922432",
+    "026-04-21",
+    "026-04-23",
+    "023184716",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:11:25.860407+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Тристаен апартамент Красна поляна 2"
+  },
+  "reference_id": "Address.bg:6fd305db46f9",
+  "local_image_files": [
+    "data/media/Address.bg_6fd305db46f9/0000_ce87b541.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_6fd305db46f9/0000_ce87b541.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_6fd305db46f9",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

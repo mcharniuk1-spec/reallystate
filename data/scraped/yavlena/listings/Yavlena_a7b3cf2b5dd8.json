@@ -4,14 +4,14 @@
   "external_id": "a7b3cf2b5dd8",
   "title": "Къща във Варна 220 кв.м. ID 168044  | Явлена",
   "description": "",
-  "price": null,
+  "price": 411000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 220.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/48b3442d-38e8-4eb9-9c3b-4d4811b39421.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 544 766",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:24.062796+00:00",
+  "scraped_at": "2026-04-24T07:53:23.395058+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:a7b3cf2b5dd8",
   "local_image_files": [
     "data/media/Yavlena_a7b3cf2b5dd8/0000_4dbde806.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_a7b3cf2b5dd8/0000_4dbde806.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_a7b3cf2b5dd8",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

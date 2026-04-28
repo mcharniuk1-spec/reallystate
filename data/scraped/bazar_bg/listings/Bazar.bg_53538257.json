@@ -2,19 +2,19 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-53538257/dawa-pod-naem-3-staen-gr-sofiia-mladost-4",
   "external_id": "53538257",
-  "title": "Bazar.BG",
+  "title": "Дава под наем 3-СТАЕН, гр. София, Младост 4 → Обява 53538257",
   "description": "Референтен номер: 2087214 Революшън Естейт представя тристаен апартамент  в София, Младост 4 Квадратура: 72 кв.м   Етаж: 5 от 8   Изложение: Запад, Юг   Разпред",
   "price": 685.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 72.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Младост 4",
+  "address_text": "София, Младост 4",
   "latitude": null,
   "longitude": null,
-  "listing_intent": "sale",
+  "listing_intent": "long_term_rent",
   "property_category": "apartment",
   "image_urls": [
     "https://imotstatic2.focus.bg/imot/photosimotbg/2/653/big1/2d177151318037653_Ih.jpg",
@@ -24,11 +24,26 @@
     "https://imotstatic2.focus.bg/imot/photosimotbg/2/653/big1/2d177151318037653_e3.jpg",
     "https://imotstatic2.focus.bg/imot/photosimotbg/2/653/big1/2d177151318037653_X0.jpg",
     "https://imotstatic2.focus.bg/imot/photosimotbg/2/653/big1/2d177151318037653_ut.jpg",
-    "//imotstatic2.focus.bg/imot/photosimotbg/2/653/big1/2d177151318037653_Ih.jpg"
+    "https://imotstatic2.focus.bg/imot/photosimotbg/2/653/big1/2d177151318037653_Ih.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "0400000000",
+    "092863597",
+    "079558177874",
+    "35986921094",
+    "050889373",
+    "01705985",
+    "00592838426",
+    "06118641512",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:50:48.467168+00:00",
+  "scraped_at": "2026-04-24T07:53:15.145468+00:00",
   "reference_id": "Bazar.bg:53538257",
   "local_image_files": [
     "data/media/Bazar.bg_53538257/0000_7b6bba7c.jpg",
@@ -49,5 +64,10 @@
     "Bazar.bg_53538257/0005_dd48293b.jpg",
     "Bazar.bg_53538257/0006_a9dc8ee5.jpg",
     "Bazar.bg_53538257/0007_7b6bba7c.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_53538257",
+  "photo_count_remote": 8,
+  "photo_count_local": 8,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

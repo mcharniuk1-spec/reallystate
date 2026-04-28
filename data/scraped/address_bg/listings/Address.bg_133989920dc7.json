@@ -1,0 +1,60 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/govedarci-kashta-vila-offer671942",
+  "external_id": "133989920dc7",
+  "title": "Къща/Вила в Говедарци - код на имота: 671942",
+  "description": "Адрес недвижими имоти предлага Къща/Вила в Говедарци с код на имота: 671942. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 95500.0,
+  "currency": "EUR",
+  "area_sqm": 43000.0,
+  "rooms": null,
+  "floor": null,
+  "city": "Говедарци",
+  "district": "",
+  "address_text": "Говедарци",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/942/671942/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-01-27",
+    "025-10-15",
+    "018-05-09",
+    "018-07-06",
+    "0442 120",
+    "0442 785",
+    "0888 81 89 21",
+    "0882899917",
+    "026-01-28",
+    "0662486016",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:12:46.471199+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Говедарци Къща/Вила"
+  },
+  "reference_id": "Address.bg:133989920dc7",
+  "local_image_files": [
+    "data/media/Address.bg_133989920dc7/0000_0fab3571.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_133989920dc7/0000_0fab3571.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_133989920dc7",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

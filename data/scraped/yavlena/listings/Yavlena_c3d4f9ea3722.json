@@ -4,14 +4,14 @@
   "external_id": "c3d4f9ea3722",
   "title": "Четиристаен апартамент във Варна 204 кв.м. ID 152438  | Явлена",
   "description": "",
-  "price": null,
+  "price": 490000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 204.0,
+  "rooms": 4.0,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/c9e0820f-ceb5-4109-bbcf-abd5e687f7d5.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:29.936023+00:00",
+  "scraped_at": "2026-04-24T07:53:24.303575+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:c3d4f9ea3722",
   "local_image_files": [
     "data/media/Yavlena_c3d4f9ea3722/0000_173934b4.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_c3d4f9ea3722/0000_173934b4.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_c3d4f9ea3722",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

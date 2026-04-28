@@ -4,14 +4,14 @@
   "external_id": "67a455b16c39",
   "title": "Тристаен апартамент в Пловдив 117 кв.м. ID 167957  | Явлена",
   "description": "",
-  "price": null,
+  "price": 232900.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 117.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "Пловдив",
   "district": "",
-  "address_text": "",
+  "address_text": "Пловдив",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/18f523e8-47b0-4901-aa5d-4addd2ce47c8.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 547 186",
+    "+359 895 506 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:14:48.650330+00:00",
+  "scraped_at": "2026-04-24T07:53:21.394519+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:67a455b16c39",
   "local_image_files": [
     "data/media/Yavlena_67a455b16c39/0000_ceadaed0.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_67a455b16c39/0000_ceadaed0.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_67a455b16c39",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

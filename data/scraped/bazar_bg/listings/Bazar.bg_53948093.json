@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-53948093/prodawa-2-staen-gr-ahtopol-oblast-burgas",
   "external_id": "53948093",
-  "title": "Bazar.BG",
+  "title": "Продава 2-СТАЕН, гр. Ахтопол, област Бургас → Обява 53948093",
   "description": "Агенция 'Доминита' предлага за продажба едно изключително нестандартно и интересно жилище в сграда, разположена на самия морски бряг в гр. Ахтопол. Апартаментът",
   "price": 105000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 70.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Ахтопол",
+  "district": "област Бургас",
+  "address_text": "Ахтопол, област Бургас",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -33,11 +33,20 @@
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/270/big1/1b177427469825270_FI.jpg",
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/270/big1/1b177427469825270_O9.jpg",
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/270/big1/1b177427469825270_Rg.jpg",
-    "//imotstatic3.focus.bg/imot/photosimotbg/1/270/big1/1b177427469825270_OA.jpg"
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/270/big1/1b177427469825270_OA.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "08547294400000000",
+    "092865526",
+    "026-05-06",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:48:06.035208+00:00",
+  "scraped_at": "2026-04-24T07:53:16.040787+00:00",
   "reference_id": "Bazar.bg:53948093",
   "local_image_files": [
     "data/media/Bazar.bg_53948093/0000_9086917c.jpg",
@@ -72,5 +81,10 @@
     "Bazar.bg_53948093/0012_fd7c069c.jpg",
     "Bazar.bg_53948093/0013_60474e9d.jpg",
     "Bazar.bg_53948093/0014_14cb9d63.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_53948093",
+  "photo_count_remote": 17,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "partial_gallery"
 }

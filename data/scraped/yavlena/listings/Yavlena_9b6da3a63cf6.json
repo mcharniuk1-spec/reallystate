@@ -4,14 +4,14 @@
   "external_id": "9b6da3a63cf6",
   "title": "Тристаен апартамент в Лозенец 135 кв.м. ID 147603  | Явлена",
   "description": "",
-  "price": null,
+  "price": 169000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 135.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "Лозенец",
   "district": "",
-  "address_text": "",
+  "address_text": "Лозенец",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/a40c99ee-9734-4d1e-a40e-766679cc5e03.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 530 829",
+    "+359 888 660 532"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:31.565457+00:00",
+  "scraped_at": "2026-04-24T07:53:23.082497+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:9b6da3a63cf6",
   "local_image_files": [
     "data/media/Yavlena_9b6da3a63cf6/0000_5f1f2954.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_9b6da3a63cf6/0000_5f1f2954.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_9b6da3a63cf6",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

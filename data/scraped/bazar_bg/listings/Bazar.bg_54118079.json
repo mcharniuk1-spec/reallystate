@@ -2,12 +2,12 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54118079/ednostaen-apartament-pod-naem-do-balgariia-mol-manastirski-liwadi-zapad",
   "external_id": "54118079",
-  "title": "Bazar.BG",
+  "title": "Едностаен апартамент под наем до България мол - Манастирски ливади-запад → Обява 54118079",
   "description": "Собственик дава под наем БЕЗ комисионна , едностаен малък апартамент, нов, ново обзаведен, отоплява се на климатик. Отдава се дългосрочно за сам човек.Намира се",
   "price": 490.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 43.0,
+  "rooms": 1.0,
   "floor": null,
   "city": "",
   "district": "",
@@ -22,11 +22,24 @@
     "https://cdn8.focus.bg/bazar/93/original/9372071090784360ed944f0bb37a4ed7.webp",
     "https://cdn8.focus.bg/bazar/76/original/76df7f3eaa658502096ffc473d8e051d.webp",
     "https://cdn7.focus.bg/bazar/ad/original/ad869a715b82d867da4612913bec521c.webp",
-    "//cdn8.focus.bg/bazar/8f/pics/8f75fe701ed85bf8b161c0fc7c420383.webp"
+    "https://cdn8.focus.bg/bazar/8f/pics/8f75fe701ed85bf8b161c0fc7c420383.webp"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "071090784360",
+    "00000000",
+    "092856651",
+    "0226011220",
+    "001788690956",
+    "085608565",
+    "06687750",
+    "026-05-09",
+    "000-2014",
+    "01112551"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:44:40.659049+00:00",
+  "scraped_at": "2026-04-24T07:53:17.338947+00:00",
   "reference_id": "Bazar.bg:54118079",
   "local_image_files": [
     "data/media/Bazar.bg_54118079/0000_c651d9ca.webp",
@@ -43,5 +56,10 @@
     "Bazar.bg_54118079/0003_8c96c3bd.webp",
     "Bazar.bg_54118079/0004_53455ecb.webp",
     "Bazar.bg_54118079/0005_2bc0527e.webp"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54118079",
+  "photo_count_remote": 6,
+  "photo_count_local": 6,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

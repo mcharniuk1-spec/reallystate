@@ -4,14 +4,14 @@
   "external_id": "be071f926a2f",
   "title": "Къща в София 540 кв.м. ID 155451  | Явлена",
   "description": "",
-  "price": null,
+  "price": 795000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 540.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/39879737-7f8b-4285-b3bf-9d10778e8898.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 505 590",
+    "+359 889 26 26 06"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:26.287552+00:00",
+  "scraped_at": "2026-04-24T07:53:24.093792+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:be071f926a2f",
   "local_image_files": [
     "data/media/Yavlena_be071f926a2f/0000_ce4f041e.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_be071f926a2f/0000_ce4f041e.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_be071f926a2f",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

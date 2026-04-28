@@ -4,14 +4,14 @@
   "external_id": "0f9256cfa99b",
   "title": "Къща в Мерданя 1119 кв.м. ID 168241  | Явлена",
   "description": "",
-  "price": null,
+  "price": 112000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 1119.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Мерданя",
   "district": "",
-  "address_text": "",
+  "address_text": "Мерданя",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/ea20436c-dde2-4d41-80b8-22d3b3e847b4.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 544 838",
+    "+359 28 10 50 70"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:14:42.964627+00:00",
+  "scraped_at": "2026-04-24T07:53:18.114287+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:0f9256cfa99b",
   "local_image_files": [
     "data/media/Yavlena_0f9256cfa99b/0000_5666c928.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_0f9256cfa99b/0000_5666c928.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_0f9256cfa99b",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

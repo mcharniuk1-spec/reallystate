@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-53960158/dwustaen-panelen-apartament-w-gr-burgas-zh-k-meden-rudnik",
   "external_id": "53960158",
-  "title": "Bazar.BG",
+  "title": "Двустаен панелен апартамент в гр. Бургас,  ж.к. Меден рудник  → Обява 53960158",
   "description": "Предлагаме ви двустаен панелен апартамент в гр. Бургас,  ж.к. Меден рудник! Апартамента е на първи висок етаж, напълно обзаведен , изложение - юг ! Хол, спалня,",
   "price": 105000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 64.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Бургас",
+  "district": "ж.к. Меден рудник",
+  "address_text": "Бургас, ж.к. Меден рудник",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -28,11 +28,21 @@
     "https://cdn8.focus.bg/bazar/bc/original/bcfaf900bdb8babb946d62f5b5b313ed.webp",
     "https://cdn5.focus.bg/bazar/ef/original/ef9a0a9da29502b36a501ca0b94e3492.webp",
     "https://cdn5.focus.bg/bazar/e6/original/e6182765e8aba5a272ed6c64d392197a.webp",
-    "//cdn7.focus.bg/bazar/b2/pics/b2630cde326f8c85c7a7e94a3762efda.webp"
+    "https://cdn7.focus.bg/bazar/b2/pics/b2630cde326f8c85c7a7e94a3762efda.webp"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "05264307051208",
+    "060817100000000",
+    "092860923",
+    "026-05-08",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:46:20.715162+00:00",
+  "scraped_at": "2026-04-24T07:53:16.098079+00:00",
   "reference_id": "Bazar.bg:53960158",
   "local_image_files": [
     "data/media/Bazar.bg_53960158/0000_2ee557b8.webp",
@@ -61,5 +71,10 @@
     "Bazar.bg_53960158/0009_fd01a0d0.webp",
     "Bazar.bg_53960158/0010_04502b67.webp",
     "Bazar.bg_53960158/0011_85c84046.webp"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_53960158",
+  "photo_count_remote": 12,
+  "photo_count_local": 12,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

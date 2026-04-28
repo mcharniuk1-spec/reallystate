@@ -4,14 +4,14 @@
   "external_id": "814034d8d68d",
   "title": "Земеделска земя във Вършец 12000 кв.м. ID 168471  | Явлена",
   "description": "",
-  "price": null,
+  "price": 8400.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 12000.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Вършец",
   "district": "",
-  "address_text": "",
+  "address_text": "Вършец",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/8da60d8f-979d-4113-9346-b67dda9a0e00.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 544 834",
+    "+359 2 8 10 50 70"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:56.854057+00:00",
+  "scraped_at": "2026-04-24T07:53:22.362979+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:814034d8d68d",
   "local_image_files": [
     "data/media/Yavlena_814034d8d68d/0000_63644c15.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_814034d8d68d/0000_63644c15.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_814034d8d68d",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

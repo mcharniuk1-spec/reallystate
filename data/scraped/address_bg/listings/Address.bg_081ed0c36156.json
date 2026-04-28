@@ -1,0 +1,61 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/chernyovo-kashta-vila-offer687861",
+  "external_id": "081ed0c36156",
+  "title": "Къща/Вила в Черньово - код на имота: 687861",
+  "description": "Адрес недвижими имоти предлага Къща/Вила в Черньово с код на имота: 687861. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 160000.0,
+  "currency": "EUR",
+  "area_sqm": 43000.0,
+  "rooms": null,
+  "floor": null,
+  "city": "Черньово",
+  "district": "",
+  "address_text": "Черньово",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "house",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/861/687861/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-03-22",
+    "026-03-16",
+    "018-05-09",
+    "018-07-06",
+    "0442 730",
+    "0888 81 89 21",
+    "0882794376",
+    "026-04-02",
+    "06984716",
+    "033578167",
+    "0959583948282",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:12:41.607081+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Черньово Къща/Вила"
+  },
+  "reference_id": "Address.bg:081ed0c36156",
+  "local_image_files": [
+    "data/media/Address.bg_081ed0c36156/0000_c5200c78.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_081ed0c36156/0000_c5200c78.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_081ed0c36156",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

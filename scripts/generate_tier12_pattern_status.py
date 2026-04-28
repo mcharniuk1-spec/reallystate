@@ -108,6 +108,8 @@ def sample_score(payload: dict[str, Any], local_photo_count: int, listing_path: 
         if payload.get(key) is not None
     ) + (1 if payload.get("phones") else 0)
     return (
+        1 if remote and local_photo_count >= remote else 0,
+        1 if local_photo_count > 0 else 0,
         1 if payload.get("description") else 0,
         1 if payload.get("price") is not None else 0,
         1 if payload.get("address_text") else 0,
@@ -118,7 +120,6 @@ def sample_score(payload: dict[str, Any], local_photo_count: int, listing_path: 
         1 if payload.get("floor") is not None else 0,
         1 if payload.get("phones") else 0,
         len(payload.get("source_attributes") or {}),
-        1 if remote and local_photo_count >= remote else 0,
         min(local_photo_count, remote),
         remote,
         listing_path.stat().st_mtime,

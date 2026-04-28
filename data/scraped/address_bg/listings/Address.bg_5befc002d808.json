@@ -1,0 +1,59 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/varna-lyatno-kino-trakiya-dvustaen-apartament-offer646435",
+  "external_id": "5befc002d808",
+  "title": "Двустаен апартамент във Варна, Лятно кино Тракия - код на имота: 646435",
+  "description": "Адрес недвижими имоти предлага Двустаен апартамент във Варна, Лятно кино Тракия с код на имота: 646435. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 135000.0,
+  "currency": "EUR",
+  "area_sqm": 68.0,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/435/646435/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "025-03-17",
+    "025-02-18",
+    "018-05-09",
+    "018-07-06",
+    "0430 2008",
+    "0888707433",
+    "025-03-04",
+    "025-05-15",
+    "089335757",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:10:07.410201+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Варна Двустаен апартамент Лятно кино Тракия"
+  },
+  "reference_id": "Address.bg:5befc002d808",
+  "local_image_files": [
+    "data/media/Address.bg_5befc002d808/0000_3b79f28d.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_5befc002d808/0000_3b79f28d.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_5befc002d808",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

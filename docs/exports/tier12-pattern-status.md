@@ -1,6 +1,6 @@
 # Tier 1-2 Pattern Status
 
-Generated: 2026-04-21 15:22 UTC
+Generated: 2026-04-28 04:10 UTC
 
 Media storage mode: image binaries are stored as local files under `data/media/<reference_id>/...`; remote `image_urls` remain only as source traceability, while listing JSON artifacts now also store `local_image_files` and `local_image_storage_keys`.
 
@@ -27,14 +27,14 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 - DB status: `without_database_target`
 - Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/listings
 - Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/raw
-- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/listings/Address.bg_45556d0cad2d.json
-- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/raw/Address.bg_45556d0cad2d.html
-- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/Address.bg_45556d0cad2d
-- Sample listing URL: https://address.bg/sofia-bistrica-parcel-teren-offer626861
-- Sample title: Парцел/Терен в София, Бистрица - код на имота: 626861
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/listings/Address.bg_46c9d4cb568d.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/raw/Address.bg_46c9d4cb568d.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/Address.bg_46c9d4cb568d
+- Sample listing URL: https://address.bg/varna-m-st-zelenika-parcel-teren-offer686997
+- Sample title: Парцел/Терен във Варна, м-ст Зеленика - код на имота: 686997
 - Sample gallery: 1/1 saved locally (100.0%)
 - Local image files saved: 1
-- Local image file preview: data/media/Address.bg_45556d0cad2d/0000_6ae4210c.jpg
+- Local image file preview: data/media/Address.bg_46c9d4cb568d/0000_f6185c81.jpg
 - Sample completeness: description=True, price=True, area=True, rooms=False, floor=False, phones=True, city=True, address=True
 - Structured fields count: 2
 - Source attributes count: 1
@@ -96,14 +96,14 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 - DB status: `without_database_target`
 - Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/listings
 - Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/raw
-- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/listings/Homes.bg_1680493.json
-- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/raw/Homes.bg_1680493.html
-- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/Homes.bg_1680493
-- Sample listing URL: https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-57m2-sofiya-zhk.-suhata-reka/as1680493
-- Sample title: Двустаен, 57m² - жк. Сухата Река, София
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/listings/Homes.bg_1681133.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/raw/Homes.bg_1681133.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/Homes.bg_1681133
+- Sample listing URL: https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-68m2-sofiya-centyr/as1681133
+- Sample title: Двустаен, 68m² - Център, София
 - Sample gallery: 10/10 saved locally (100.0%)
 - Local image files saved: 10
-- Local image file preview: data/media/Homes.bg_1680493/0000_69f4c0fe.jpg, data/media/Homes.bg_1680493/0001_007b8f52.jpg, data/media/Homes.bg_1680493/0002_accd0edf.jpg, data/media/Homes.bg_1680493/0003_f7b19633.jpg, data/media/Homes.bg_1680493/0004_3cd7c7c8.jpg
+- Local image file preview: data/media/Homes.bg_1681133/0000_cfd05ac9.jpg, data/media/Homes.bg_1681133/0001_82a16b1e.jpg, data/media/Homes.bg_1681133/0002_a8ddfae7.jpg, data/media/Homes.bg_1681133/0003_159b1b96.jpg, data/media/Homes.bg_1681133/0004_29c16c6d.jpg
 - Sample completeness: description=True, price=True, area=True, rooms=True, floor=True, phones=True, city=True, address=True
 - Structured fields count: 4
 - Source attributes count: 16
@@ -123,17 +123,17 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 - DB status: `without_database_target`
 - Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/listings
 - Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/raw
-- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/listings/imot.bg_e42f7bff1005.json
-- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/raw/imot.bg_e42f7bff1005.html
-- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/imot.bg_e42f7bff1005
-- Sample listing URL: https://www.imot.bg/obiava-1b177261786459012-prodava-dvustaen-apartament-grad-sofiya-levski-g
-- Sample title: Продава 2-СТАЕН град София, Левски Г Обява: 1b177261786459012
-- Sample gallery: 17/17 saved locally (100.0%)
-- Local image files saved: 17
-- Local image file preview: data/media/imot.bg_e42f7bff1005/0000_6c35fb32.jpg, data/media/imot.bg_e42f7bff1005/0001_64b2cc01.jpg, data/media/imot.bg_e42f7bff1005/0002_e84e83dd.jpg, data/media/imot.bg_e42f7bff1005/0003_981cf594.jpg, data/media/imot.bg_e42f7bff1005/0004_bae4aa5b.jpg
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/listings/imot.bg_3f93a31d3f1b.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/raw/imot.bg_3f93a31d3f1b.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/imot.bg_3f93a31d3f1b
+- Sample listing URL: https://www.imot.bg/obiava-1a176959443896121-prodava-ednostaen-apartament-grad-sofiya-boyana
+- Sample title: Продава 1-СТАЕН град София, Бояна Обява: 1a176959443896121
+- Sample gallery: 15/15 saved locally (100.0%)
+- Local image files saved: 15
+- Local image file preview: data/media/imot.bg_3f93a31d3f1b/0000_147f45d8.jpg, data/media/imot.bg_3f93a31d3f1b/0001_27706677.jpg, data/media/imot.bg_3f93a31d3f1b/0002_5755e343.jpg, data/media/imot.bg_3f93a31d3f1b/0003_4cf28098.jpg, data/media/imot.bg_3f93a31d3f1b/0004_7ad69903.jpg
 - Sample completeness: description=True, price=True, area=True, rooms=True, floor=True, phones=True, city=True, address=True
 - Structured fields count: 4
-- Source attributes count: 4
+- Source attributes count: 5
 
 ## imoti.net (Tier 1)
 
@@ -165,14 +165,14 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 - DB status: `without_database_target`
 - Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/listings
 - Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/raw
-- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/listings/LUXIMMO_0c9fd22cfdbb.json
-- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/raw/LUXIMMO_0c9fd22cfdbb.html
-- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/LUXIMMO_0c9fd22cfdbb
-- Sample listing URL: https://www.luximmo.bg/bulgaria/oblast-sofia/borovets/luksozni-imoti-dvustayni-apartamenti/luksozen-imot-40091-dvustaen-apartament-za-prodajba-v-borovets.html
-- Sample title: Двустаен апартамент "до ключ" в престижния комплекс 7 Angels
-- Sample gallery: 30/30 saved locally (100.0%)
-- Local image files saved: 30
-- Local image file preview: data/media/LUXIMMO_0c9fd22cfdbb/0000_02293170.jpg, data/media/LUXIMMO_0c9fd22cfdbb/0001_02293170.jpg, data/media/LUXIMMO_0c9fd22cfdbb/0002_196babe3.jpg, data/media/LUXIMMO_0c9fd22cfdbb/0003_dc0063d4.jpg, data/media/LUXIMMO_0c9fd22cfdbb/0004_a719601f.jpg
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/listings/LUXIMMO_50928a486328.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/raw/LUXIMMO_50928a486328.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/LUXIMMO_50928a486328
+- Sample listing URL: https://www.luximmo.bg/bulgaria/oblast-sofia/borovets/luksozni-imoti-tristayni-apartamenti/luksozen-imot-40084-tristaen-apartament-za-prodajba-v-borovets.html
+- Sample title: Тристаен мезонет "до ключ" в престижния комплекс 7 Angels
+- Sample gallery: 6/6 saved locally (100.0%)
+- Local image files saved: 6
+- Local image file preview: data/media/LUXIMMO_50928a486328/0000_46fe386d.jpg, data/media/LUXIMMO_50928a486328/0001_46fe386d.jpg, data/media/LUXIMMO_50928a486328/0002_890b9c0d.jpg, data/media/LUXIMMO_50928a486328/0003_196babe3.jpg, data/media/LUXIMMO_50928a486328/0004_dc0063d4.jpg
 - Sample completeness: description=True, price=True, area=True, rooms=True, floor=False, phones=True, city=True, address=True
 - Structured fields count: 3
 - Source attributes count: 3
@@ -192,14 +192,14 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 - DB status: `without_database_target`
 - Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/olx_bg/listings
 - Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/olx_bg/raw
-- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/olx_bg/listings/OLX.bg_147540772.json
-- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/olx_bg/raw/OLX.bg_147540772.html
-- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/OLX.bg_147540772
-- Sample listing URL: https://www.olx.bg/d/ad/dvustaen-ap-pod-naem-v-kv-lyulin-5-CID368-ID9Z45S.html
-- Sample title: Двустаен ап. под наем в кв. Люлин 5
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/olx_bg/listings/OLX.bg_147593402.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/olx_bg/raw/OLX.bg_147593402.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/OLX.bg_147593402
+- Sample listing URL: https://www.olx.bg/d/ad/predstavyame-vi-prekrasna-oferta-koyato-nyama-analog-na-pazara-CID368-ID9ZhMK.html?search_reason=search%7Corganic
+- Sample title: Представяме Ви прекрасна оферта, която няма АНАЛОГ на пазара!
 - Sample gallery: 6/6 saved locally (100.0%)
 - Local image files saved: 6
-- Local image file preview: data/media/OLX.bg_147540772/0000_9dfd850b.webp, data/media/OLX.bg_147540772/0001_708b71ff.webp, data/media/OLX.bg_147540772/0002_fc2c1682.webp, data/media/OLX.bg_147540772/0003_7553e5a4.webp, data/media/OLX.bg_147540772/0004_e49a3bae.webp
+- Local image file preview: data/media/OLX.bg_147593402/0000_81ed1c35.webp, data/media/OLX.bg_147593402/0001_0af518c5.webp, data/media/OLX.bg_147593402/0002_ea675f00.webp, data/media/OLX.bg_147593402/0003_c238bd3a.webp, data/media/OLX.bg_147593402/0004_cfdb72dc.webp
 - Sample completeness: description=True, price=True, area=True, rooms=True, floor=False, phones=True, city=True, address=True
 - Structured fields count: 3
 - Source attributes count: 0
@@ -288,14 +288,14 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 - DB status: `without_database_target`
 - Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/bazar_bg/listings
 - Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/bazar_bg/raw
-- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/bazar_bg/listings/Bazar.bg_53706749.json
-- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/bazar_bg/raw/Bazar.bg_53706749.html
-- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/Bazar.bg_53706749
-- Sample listing URL: https://bazar.bg/obiava-53706749/prodava-4-staen-gr-sofiya-krastova-vada
-- Sample title: Продава 4-СТАЕН, гр. София, Кръстова вада → Обява 53706749
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/bazar_bg/listings/Bazar.bg_54105310.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/bazar_bg/raw/Bazar.bg_54105310.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/Bazar.bg_54105310
+- Sample listing URL: https://bazar.bg/obiava-54105310/dawa-pod-naem-3-staen-gr-sofiia-lagera
+- Sample title: Дава под наем 3-СТАЕН, гр. София, Лагера → Обява 54105310
 - Sample gallery: 15/15 saved locally (100.0%)
 - Local image files saved: 15
-- Local image file preview: data/media/Bazar.bg_53706749/0000_de4ef8a5.jpg, data/media/Bazar.bg_53706749/0001_b614c18e.jpg, data/media/Bazar.bg_53706749/0002_5b16c2c8.jpg, data/media/Bazar.bg_53706749/0003_3276c5ee.jpg, data/media/Bazar.bg_53706749/0004_eb4e6ab9.jpg
+- Local image file preview: data/media/Bazar.bg_54105310/0000_fbce90af.jpg, data/media/Bazar.bg_54105310/0001_cce79a98.jpg, data/media/Bazar.bg_54105310/0002_afedac9c.jpg, data/media/Bazar.bg_54105310/0003_2978b0fa.jpg, data/media/Bazar.bg_54105310/0004_84ca4ddb.jpg
 - Sample completeness: description=True, price=True, area=True, rooms=True, floor=False, phones=True, city=True, address=True
 - Structured fields count: 3
 - Source attributes count: 0
@@ -525,14 +525,14 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 - DB status: `without_database_target`
 - Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/listings
 - Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/raw
-- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/listings/Yavlena_acbef70866cf.json
-- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/raw/Yavlena_acbef70866cf.html
-- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/Yavlena_acbef70866cf
-- Sample listing URL: https://www.yavlena.com/bg/168366
-- Sample title: Тристаен апартамент в София 124 кв.м. ID 168366  | Явлена
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/listings/Yavlena_f7a1a1631995.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/raw/Yavlena_f7a1a1631995.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/Yavlena_f7a1a1631995
+- Sample listing URL: https://www.yavlena.com/bg/168194
+- Sample title: Тристаен апартамент във Варна 102 кв.м. ID 168194  | Явлена
 - Sample gallery: 1/1 saved locally (100.0%)
 - Local image files saved: 1
-- Local image file preview: data/media/Yavlena_acbef70866cf/0000_3f8b072f.jpg
+- Local image file preview: data/media/Yavlena_f7a1a1631995/0000_3d2c6df2.jpg
 - Sample completeness: description=True, price=True, area=True, rooms=True, floor=False, phones=True, city=True, address=True
 - Structured fields count: 3
 - Source attributes count: 3

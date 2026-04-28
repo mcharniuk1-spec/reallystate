@@ -2,19 +2,19 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-53965225/dawa-pod-naem-3-staen-gr-plowdiw-kamenitsa-1",
   "external_id": "53965225",
-  "title": "Bazar.BG",
+  "title": "Дава под наем 3-СТАЕН, гр. Пловдив, Каменица 1 → Обява 53965225",
   "description": "🌿 Апартамент Градина   вашият зелен оазис в сърцето на Пловдив 🌿Представете си утро, в което отваряте вратата  и не излизате на шумна улица, а влизате в собстве",
   "price": 720.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 100.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Пловдив",
+  "district": "Каменица 1",
+  "address_text": "Пловдив, Каменица 1",
   "latitude": null,
   "longitude": null,
-  "listing_intent": "sale",
+  "listing_intent": "long_term_rent",
   "property_category": "apartment",
   "image_urls": [
     "https://imotstatic4.focus.bg/imot/photosimotbg/2/452/big1/2d177433712832452_AB.jpg",
@@ -26,11 +26,26 @@
     "https://imotstatic4.focus.bg/imot/photosimotbg/2/452/big1/2d177433712832452_hf.jpg",
     "https://imotstatic4.focus.bg/imot/photosimotbg/2/452/big1/2d177433712832452_wZ.jpg",
     "https://imotstatic4.focus.bg/imot/photosimotbg/2/452/big1/2d177433712832452_JX.jpg",
-    "//imotstatic4.focus.bg/imot/photosimotbg/2/452/big1/2d177433712832452_AB.jpg"
+    "https://imotstatic4.focus.bg/imot/photosimotbg/2/452/big1/2d177433712832452_AB.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "00000000",
+    "092859961",
+    "08146312",
+    "0850822965",
+    "02144501464",
+    "0689767818",
+    "032820951",
+    "02116229688",
+    "026-05-08",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:45:59.171339+00:00",
+  "scraped_at": "2026-04-24T07:53:16.145782+00:00",
   "reference_id": "Bazar.bg:53965225",
   "local_image_files": [
     "data/media/Bazar.bg_53965225/0000_94f28130.jpg",
@@ -55,5 +70,10 @@
     "Bazar.bg_53965225/0007_39b90f68.jpg",
     "Bazar.bg_53965225/0008_d542e2e5.jpg",
     "Bazar.bg_53965225/0009_94f28130.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_53965225",
+  "photo_count_remote": 10,
+  "photo_count_local": 10,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -4,14 +4,14 @@
   "external_id": "7849fcabb2dd",
   "title": "Четиристаен апартамент в Пловдив 128 кв.м. ID 166434  | Явлена",
   "description": "",
-  "price": null,
+  "price": 350000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 128.0,
+  "rooms": 4.0,
   "floor": null,
-  "city": "",
+  "city": "Пловдив",
   "district": "",
-  "address_text": "",
+  "address_text": "Пловдив",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/5948078e-b536-4e3e-aa28-f6a2e7c1fc3e.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 550 325",
+    "+359 898 498 449"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:54:41.679507+00:00",
+  "scraped_at": "2026-04-24T07:53:21.848542+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:7849fcabb2dd",
   "local_image_files": [
     "data/media/Yavlena_7849fcabb2dd/0000_55483f63.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_7849fcabb2dd/0000_55483f63.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_7849fcabb2dd",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/167106",
   "external_id": "bfda3375154f",
   "title": "Магазин в София 500 кв.м. ID 167106  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "$5b",
+  "price": 649999.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 500.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/afeaf341-654f-43b0-ad51-9d8b10447214.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 508 153",
+    "+359 884 608 700"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:15:11.889640+00:00",
+  "scraped_at": "2026-04-24T07:53:24.179630+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:bfda3375154f",
   "local_image_files": [
     "data/media/Yavlena_bfda3375154f/0000_883263dd.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_bfda3375154f/0000_883263dd.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_bfda3375154f",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -4,14 +4,14 @@
   "external_id": "595bbdc7a38d",
   "title": "Двустаен апартамент във Варна 68 кв.м. ID 168095  | Явлена",
   "description": "",
-  "price": null,
+  "price": 248000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 68.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/8898305a-50f0-43ff-8a49-874d85fc89aa.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 517 024",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:42.600492+00:00",
+  "scraped_at": "2026-04-24T07:53:20.780886+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:595bbdc7a38d",
   "local_image_files": [
     "data/media/Yavlena_595bbdc7a38d/0000_ee784ad9.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_595bbdc7a38d/0000_ee784ad9.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_595bbdc7a38d",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

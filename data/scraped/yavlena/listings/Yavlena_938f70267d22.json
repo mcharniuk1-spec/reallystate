@@ -4,14 +4,14 @@
   "external_id": "938f70267d22",
   "title": "Тристаен апартамент в София 145 кв.м. ID 168081  | Явлена",
   "description": "",
-  "price": null,
+  "price": 525000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 145.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/b2b6223f-b673-4683-be92-f1b2f811ac9b.png"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 515 807",
+    "+359 882 222 321"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:53.094731+00:00",
+  "scraped_at": "2026-04-24T07:53:22.996970+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:938f70267d22",
   "local_image_files": [
     "data/media/Yavlena_938f70267d22/0000_b8304099.png"
   ],
   "local_image_storage_keys": [
     "Yavlena_938f70267d22/0000_b8304099.png"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_938f70267d22",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

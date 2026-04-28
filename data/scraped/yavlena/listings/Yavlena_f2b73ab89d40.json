@@ -4,14 +4,14 @@
   "external_id": "f2b73ab89d40",
   "title": "Двустаен апартамент в Царево 74 кв.м. ID 156445  | Явлена",
   "description": "",
-  "price": null,
+  "price": 96000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 74.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Царево",
   "district": "",
-  "address_text": "",
+  "address_text": "Царево",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/614bf3e5-2efb-4eee-ad43-7c5307c04da6.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 888 660 532"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:24.618202+00:00",
+  "scraped_at": "2026-04-24T07:53:25.735979+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:f2b73ab89d40",
   "local_image_files": [
     "data/media/Yavlena_f2b73ab89d40/0000_9e228dc8.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_f2b73ab89d40/0000_9e228dc8.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_f2b73ab89d40",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

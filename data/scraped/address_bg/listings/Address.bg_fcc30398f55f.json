@@ -4,14 +4,14 @@
   "external_id": "fcc30398f55f",
   "title": "Парцел/Терен в Гела - код на имота: 660015",
   "description": "Адрес недвижими имоти предлага Парцел/Терен в Гела с код на имота: 660015. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 79625.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 2275.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Гела",
   "district": "",
-  "address_text": "",
+  "address_text": "Гела",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,42 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/015/660015/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "025-07-02",
+    "018-05-09",
+    "018-07-06",
+    "0449 2275",
+    "0430 1400-1500",
+    "0439 (2188",
+    "0888202380",
+    "025-07-21",
+    "0401011700161625040101170016164",
+    "06676262746375754667626274637575286461",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:20:21.904599+00:00",
+  "scraped_at": "2026-04-24T07:52:44.458283+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Гела Парцел/Терен"
+  },
   "reference_id": "Address.bg:fcc30398f55f",
   "local_image_files": [
     "data/media/Address.bg_fcc30398f55f/0000_119a8e33.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_fcc30398f55f/0000_119a8e33.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_fcc30398f55f",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

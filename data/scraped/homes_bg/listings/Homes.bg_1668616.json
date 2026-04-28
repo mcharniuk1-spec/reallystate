@@ -1,0 +1,155 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-65m2-sofiya-zhk.-suhata-reka/as1668616",
+  "external_id": "1668616",
+  "reference_id": "Homes.bg:1668616",
+  "title": "Двустаен, 65m² - жк. Сухата Река, София",
+  "description": "АСГАРД ПРОПЪРТИС\" продава непреходен, основно ремонтиран апартамент, разположен на 5-ти непоследен етаж в отлично поддържан блок. Жилището е с чиста площ 65,27 кв.м. и  се състои от дневна, спалня, самостоятелна кухня, баня с тоалетна и два балкона. Сменени ВиК и ел. инсталации, PVC дограма, нови настилки, изцяло ремонтирана баня. Има опция да остане цялото обзавеждане, показано на снимките. Тих и спокоен район в близост до магазини и спирка на градски транспорт, безпроблемно паркиране. Отоплението е на ТЕЦ. В цената е включено мазе с площ 3,65 кв.м. За контакти: 0899/032-036, 02/465-19-50.",
+  "price": 179000.0,
+  "currency": "EUR",
+  "area_sqm": 0.65,
+  "rooms": 2.0,
+  "floor": 5.0,
+  "city": "София",
+  "district": "жк. Сухата Река",
+  "address_text": "жк. Сухата Река, София Иван Шонев",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2026-01-27_1/117401826o.jpg",
+    "https://g1.homes.bg/2026-01-27_1/117401831o.jpg",
+    "https://g1.homes.bg/2026-01-27_1/117401830o.jpg",
+    "https://g1.homes.bg/2026-01-27_1/117401828o.jpg",
+    "https://g1.homes.bg/2026-01-27_1/117401824o.jpg",
+    "https://g1.homes.bg/2026-01-27_1/117401829o.jpg",
+    "https://g1.homes.bg/2026-01-27_1/117401825o.jpg",
+    "https://g1.homes.bg/2026-01-27_1/117401827o.jpg",
+    "https://g1.homes.bg/2026-01-27_1/117401832o.jpg"
+  ],
+  "phones": [
+    "02",
+    "465-19-50",
+    "0899-032-036"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:09:11.735035+00:00",
+  "listing_status": "active",
+  "published_text": "днес",
+  "agency_name": "АСГАРД ПРОПЪРТИС",
+  "agency_type": "Агенция",
+  "agency_address": "София гр.София, ул.Дякон Игнатий 21",
+  "source_attributes": {
+    "Обзавеждане": "Обзаведен",
+    "Етаж": "5-ти",
+    "Етажи": "8",
+    "Отопление": "ТЕЦ",
+    "Състояние": "",
+    "Строителство": "Панел",
+    "Спални": "",
+    "Бани": "",
+    "Двор": "",
+    "Площ на парцела": "",
+    "В регулация": "",
+    "Предназначение": "",
+    "Виза": "",
+    "Разрешение за строеж": "",
+    "Категория": "",
+    "Тип": ""
+  },
+  "photo_metadata": [
+    {
+      "id": 117401826,
+      "name": "117401826",
+      "path": "2026-01-27_1/",
+      "height": 252,
+      "width": 448
+    },
+    {
+      "id": 117401831,
+      "name": "117401831",
+      "path": "2026-01-27_1/",
+      "height": 252,
+      "width": 448
+    },
+    {
+      "id": 117401830,
+      "name": "117401830",
+      "path": "2026-01-27_1/",
+      "height": 252,
+      "width": 448
+    },
+    {
+      "id": 117401828,
+      "name": "117401828",
+      "path": "2026-01-27_1/",
+      "height": 252,
+      "width": 448
+    },
+    {
+      "id": 117401824,
+      "name": "117401824",
+      "path": "2026-01-27_1/",
+      "height": 252,
+      "width": 448
+    },
+    {
+      "id": 117401829,
+      "name": "117401829",
+      "path": "2026-01-27_1/",
+      "height": 252,
+      "width": 448
+    },
+    {
+      "id": 117401825,
+      "name": "117401825",
+      "path": "2026-01-27_1/",
+      "height": 252,
+      "width": 448
+    },
+    {
+      "id": 117401827,
+      "name": "117401827",
+      "path": "2026-01-27_1/",
+      "height": 336,
+      "width": 189
+    },
+    {
+      "id": 117401832,
+      "name": "117401832",
+      "path": "2026-01-27_1/",
+      "height": 252,
+      "width": 448
+    }
+  ],
+  "raw_offer_type": "as",
+  "view_count": 484,
+  "local_image_files": [
+    "data/media/Homes.bg_1668616/0000_c1ca17a9.jpg",
+    "data/media/Homes.bg_1668616/0001_fc0ffe1f.jpg",
+    "data/media/Homes.bg_1668616/0002_90b14616.jpg",
+    "data/media/Homes.bg_1668616/0003_68bcb2ba.jpg",
+    "data/media/Homes.bg_1668616/0004_5f9e8734.jpg",
+    "data/media/Homes.bg_1668616/0005_f1e7190b.jpg",
+    "data/media/Homes.bg_1668616/0006_7e2b1d4d.jpg",
+    "data/media/Homes.bg_1668616/0007_0ffebaf6.jpg",
+    "data/media/Homes.bg_1668616/0008_fa59e8ba.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Homes.bg_1668616/0000_c1ca17a9.jpg",
+    "Homes.bg_1668616/0001_fc0ffe1f.jpg",
+    "Homes.bg_1668616/0002_90b14616.jpg",
+    "Homes.bg_1668616/0003_68bcb2ba.jpg",
+    "Homes.bg_1668616/0004_5f9e8734.jpg",
+    "Homes.bg_1668616/0005_f1e7190b.jpg",
+    "Homes.bg_1668616/0006_7e2b1d4d.jpg",
+    "Homes.bg_1668616/0007_0ffebaf6.jpg",
+    "Homes.bg_1668616/0008_fa59e8ba.jpg"
+  ],
+  "local_media_dir": "data/media/Homes.bg_1668616",
+  "photo_count_remote": 9,
+  "photo_count_local": 9,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

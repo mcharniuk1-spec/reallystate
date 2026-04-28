@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54105677/prodawa-4-staen-gr-shumen-dobrudzhanski",
   "external_id": "54105677",
-  "title": "Bazar.BG",
+  "title": "Продава 4-СТАЕН, гр. Шумен, Добруджански → Обява 54105677",
   "description": "Продавам тухлен апартамент на тихо и спокойно място. Жилището е с много добър потенциал и възможност за бързо преустройство според нуждите на новия собственик.",
   "price": 142500.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 82.0,
+  "rooms": 4.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Шумен",
+  "district": "Добруджански",
+  "address_text": "Шумен, Добруджански",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -28,11 +28,24 @@
     "https://imotstatic1.focus.bg/imot/photosimotbg/1/083/big/1d177545984829083_EX.jpg",
     "https://imotstatic1.focus.bg/imot/photosimotbg/1/083/big/1d177545984829083_NL.jpg",
     "https://imotstatic1.focus.bg/imot/photosimotbg/1/083/big/1d177545984829083_tu.jpg",
-    "//imotstatic1.focus.bg/imot/photosimotbg/1/083/big1/1d177545984829083_5C.jpg"
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/083/big1/1d177545984829083_5C.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "087510295600000000",
+    "092859761",
+    "03244290757",
+    "02580105659",
+    "0223394205208",
+    "0223441494353",
+    "026-05-08",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:45:54.968560+00:00",
+  "scraped_at": "2026-04-24T07:53:17.129814+00:00",
   "reference_id": "Bazar.bg:54105677",
   "local_image_files": [
     "data/media/Bazar.bg_54105677/0000_ca6045dc.jpg",
@@ -61,5 +74,10 @@
     "Bazar.bg_54105677/0009_0412e189.jpg",
     "Bazar.bg_54105677/0010_44c2f111.jpg",
     "Bazar.bg_54105677/0011_ca6045dc.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54105677",
+  "photo_count_remote": 12,
+  "photo_count_local": 12,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

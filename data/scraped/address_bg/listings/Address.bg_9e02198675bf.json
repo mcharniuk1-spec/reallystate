@@ -1,0 +1,58 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/yambol-centar-tristaen-apartament-offer683902",
+  "external_id": "9e02198675bf",
+  "title": "Тристаен апартамент в Ямбол, Център - код на имота: 683902",
+  "description": "Адрес недвижими имоти предлага Тристаен апартамент в Ямбол, Център с код на имота: 683902. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 125000.0,
+  "currency": "EUR",
+  "area_sqm": 98.0,
+  "rooms": null,
+  "floor": null,
+  "city": "Ямбол",
+  "district": "Център",
+  "address_text": "Ямбол, Център",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/902/683902/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-02-18",
+    "026-02-12",
+    "018-05-09",
+    "018-07-06",
+    "0888001926",
+    "046620518",
+    "026-02-19",
+    "02484716",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:12:31.978887+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Ямбол Тристаен апартамент Център"
+  },
+  "reference_id": "Address.bg:9e02198675bf",
+  "local_image_files": [
+    "data/media/Address.bg_9e02198675bf/0000_b8ebf30a.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_9e02198675bf/0000_b8ebf30a.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_9e02198675bf",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

@@ -4,14 +4,14 @@
   "external_id": "83b2e9b1166c",
   "title": "Двустаен апартамент във Варна 85 кв.м. ID 162014  | Явлена",
   "description": "",
-  "price": null,
+  "price": 0.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 85.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/9b877cb9-50b8-4613-b3e2-aa0ba4caa98d.png"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 559 235",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:06.535950+00:00",
+  "scraped_at": "2026-04-24T07:53:22.496173+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:83b2e9b1166c",
   "local_image_files": [
     "data/media/Yavlena_83b2e9b1166c/0000_9b8b52b1.png"
   ],
   "local_image_storage_keys": [
     "Yavlena_83b2e9b1166c/0000_9b8b52b1.png"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_83b2e9b1166c",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

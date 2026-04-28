@@ -4,14 +4,14 @@
   "external_id": "92a4b9704773",
   "title": "Двустаен апартамент във Варна 57 кв.м. ID 168349  | Явлена",
   "description": "",
-  "price": null,
+  "price": 100000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 57.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/135281cc-5e98-4663-988c-14fc96431f27.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 518 166",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:45.907969+00:00",
+  "scraped_at": "2026-04-24T07:53:22.920909+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:92a4b9704773",
   "local_image_files": [
     "data/media/Yavlena_92a4b9704773/0000_0b0474f1.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_92a4b9704773/0000_0b0474f1.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_92a4b9704773",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -4,14 +4,14 @@
   "external_id": "466f400aeb6d",
   "title": "Тристаен апартамент в София 67 кв.м. ID 168303  | Явлена",
   "description": "",
-  "price": null,
+  "price": 155000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 67.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/3d2657c9-c8bf-4590-b3b0-b24ef04e700d.png"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 557 320",
+    "+359 882 222 321"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:14:06.669439+00:00",
+  "scraped_at": "2026-04-24T07:53:19.829570+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:466f400aeb6d",
   "local_image_files": [
     "data/media/Yavlena_466f400aeb6d/0000_3298db73.png"
   ],
   "local_image_storage_keys": [
     "Yavlena_466f400aeb6d/0000_3298db73.png"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_466f400aeb6d",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

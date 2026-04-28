@@ -4,14 +4,14 @@
   "external_id": "5d6b866e8a4e",
   "title": "Тристаен апартамент в Стара Загора, Център - код на имота: 686703",
   "description": "Адрес недвижими имоти предлага Тристаен апартамент в Стара Загора, Център с код на имота: 686703. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 125000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 97.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Стара Загора",
+  "district": "Център",
+  "address_text": "Стара Загора, Център",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,40 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/703/686703/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-03-05",
+    "018-05-09",
+    "018-07-06",
+    "0885722018",
+    "026-03-06",
+    "026-03-10",
+    "026-03-26",
+    "087662016",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:21:23.688103+00:00",
+  "scraped_at": "2026-04-24T07:52:43.812402+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Стара Загора Тристаен апартамент Център"
+  },
   "reference_id": "Address.bg:5d6b866e8a4e",
   "local_image_files": [
     "data/media/Address.bg_5d6b866e8a4e/0000_56bb0d43.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_5d6b866e8a4e/0000_56bb0d43.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_5d6b866e8a4e",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

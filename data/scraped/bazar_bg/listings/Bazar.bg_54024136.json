@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54024136/prodawa-3-staen-gr-sofiia-reduta",
   "external_id": "54024136",
-  "title": "Bazar.BG",
+  "title": "Продава 3-СТАЕН, гр. София, Редута → Обява 54024136",
   "description": "Инвест Пропъртис предлага екслузивно апартамент на ТОП ЛОКАЦИЯ,  в сърцето на престижния и озеленен кавартал Редута, на границата с кв. Гео Милев, с включено в",
   "price": 263000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 72.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Редута",
+  "address_text": "София, Редута",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -33,11 +33,25 @@
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/747/big1/1c177485986037747_6J.jpg",
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/747/big1/1c177485986037747_PK.jpg",
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/747/big/1c177485986037747_KE.jpg",
-    "//imotstatic3.focus.bg/imot/photosimotbg/1/747/big1/1c177485986037747_1t.jpg"
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/747/big1/1c177485986037747_1t.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "00000000",
+    "0894 419037",
+    "092867729",
+    "00350443036",
+    "070737058",
+    "088616235",
+    "04549574",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:48:56.707796+00:00",
+  "scraped_at": "2026-04-24T07:53:16.240970+00:00",
   "reference_id": "Bazar.bg:54024136",
   "local_image_files": [
     "data/media/Bazar.bg_54024136/0000_bb96222b.jpg",
@@ -72,5 +86,10 @@
     "Bazar.bg_54024136/0012_df1c371e.jpg",
     "Bazar.bg_54024136/0013_6040ec60.jpg",
     "Bazar.bg_54024136/0014_d017922b.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54024136",
+  "photo_count_remote": 17,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "partial_gallery"
 }

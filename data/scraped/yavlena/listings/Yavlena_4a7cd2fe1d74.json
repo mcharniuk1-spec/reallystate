@@ -4,14 +4,14 @@
   "external_id": "4a7cd2fe1d74",
   "title": "Офис в София 400 кв.м. ID 168148  | Явлена",
   "description": "",
-  "price": null,
+  "price": 790000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 400.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/6e7a0c62-6785-41e0-ba6c-2ecf09490d4a.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 542 950",
+    "359 2 810 50 50"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:02.940373+00:00",
+  "scraped_at": "2026-04-24T07:53:20.147275+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:4a7cd2fe1d74",
   "local_image_files": [
     "data/media/Yavlena_4a7cd2fe1d74/0000_b9e6c766.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_4a7cd2fe1d74/0000_b9e6c766.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_4a7cd2fe1d74",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

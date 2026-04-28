@@ -4,14 +4,14 @@
   "external_id": "4c9bf409a1f2",
   "title": "Къща/Вила в София, Нови Искър - код на имота: 655592",
   "description": "Адрес недвижими имоти предлага Къща/Вила в София, Нови Искър с код на имота: 655592. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 33000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 2040.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Нови Искър",
+  "address_text": "София, Нови Искър",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,40 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/592/655592/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "025-10-23",
+    "025-05-22",
+    "025-11-13",
+    "018-05-09",
+    "018-07-06",
+    "0435 400-500",
+    "0888 81 89 21",
+    "0885701312",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:21:03.466235+00:00",
+  "scraped_at": "2026-04-24T08:10:35.881987+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Къща/Вила Нови Искър"
+  },
   "reference_id": "Address.bg:4c9bf409a1f2",
   "local_image_files": [
     "data/media/Address.bg_4c9bf409a1f2/0000_e722aaf4.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_4c9bf409a1f2/0000_e722aaf4.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_4c9bf409a1f2",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

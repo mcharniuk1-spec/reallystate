@@ -16,8 +16,8 @@ const config: Config = {
         warn: "#b45309",
       },
       fontFamily: {
-        sans: ["var(--font-outfit)", "system-ui", "sans-serif"],
-        display: ["var(--font-newsreader)", "Georgia", "serif"],
+        sans: ["Arial", "system-ui", "sans-serif"],
+        display: ["Georgia", "Times New Roman", "serif"],
       },
       boxShadow: {
         lift: "0 18px 50px rgb(15 20 25 / 8%)",

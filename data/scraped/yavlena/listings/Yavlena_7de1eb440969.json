@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/167985",
   "external_id": "7de1eb440969",
   "title": "Къща във Варна 152 кв.м. ID 167985  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "$5b",
+  "price": 456000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 152.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/ee3adc30-add6-42d2-8986-839dc1d647a1.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 544 654",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:18:05.309612+00:00",
+  "scraped_at": "2026-04-24T07:53:22.148388+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:7de1eb440969",
   "local_image_files": [
     "data/media/Yavlena_7de1eb440969/0000_8653e62d.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_7de1eb440969/0000_8653e62d.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_7de1eb440969",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

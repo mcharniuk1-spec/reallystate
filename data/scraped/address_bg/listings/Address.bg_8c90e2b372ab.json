@@ -4,14 +4,14 @@
   "external_id": "8c90e2b372ab",
   "title": "Двустаен апартамент в София, Толстой - код на имота: 681418",
   "description": "Адрес недвижими имоти предлага Двустаен апартамент в София, Толстой с код на имота: 681418. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 145000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 71.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Толстой",
+  "address_text": "София, Толстой",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,45 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/418/681418/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-04-07",
+    "026-01-20",
+    "018-05-09",
+    "018-07-06",
+    "0888 81 89 21",
+    "0885922505",
+    "026-02-13",
+    "026-04-08",
+    "026-01-22",
+    "026-03-10",
+    "09884716",
+    "0889257778",
+    "015150314020231101515031402025",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:21:11.758032+00:00",
+  "scraped_at": "2026-04-24T07:52:43.967265+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Двустаен апартамент Толстой"
+  },
   "reference_id": "Address.bg:8c90e2b372ab",
   "local_image_files": [
     "data/media/Address.bg_8c90e2b372ab/0000_4d789735.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_8c90e2b372ab/0000_4d789735.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_8c90e2b372ab",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

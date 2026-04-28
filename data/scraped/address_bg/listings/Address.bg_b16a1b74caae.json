@@ -4,14 +4,14 @@
   "external_id": "b16a1b74caae",
   "title": "Двустаен апартамент в София, Люлин 2 - код на имота: 686248",
   "description": "Адрес недвижими имоти предлага Двустаен апартамент в София, Люлин 2 с код на имота: 686248. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 122206.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 74.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Люлин 2",
+  "address_text": "София, Люлин 2",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,42 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/248/686248/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "03825983",
+    "026-03-02",
+    "018-05-09",
+    "018-07-06",
+    "0441 -20",
+    "0888 81 89 21",
+    "0887406320",
+    "026-03-10",
+    "026-03-11",
+    "04881218",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:21:22.118574+00:00",
+  "scraped_at": "2026-04-24T07:52:44.111343+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Двустаен апартамент Люлин 2"
+  },
   "reference_id": "Address.bg:b16a1b74caae",
   "local_image_files": [
     "data/media/Address.bg_b16a1b74caae/0000_762d107d.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_b16a1b74caae/0000_762d107d.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_b16a1b74caae",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

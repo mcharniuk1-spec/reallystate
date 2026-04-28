@@ -2,11 +2,11 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54087603/otdawam-appartament-pod-naem",
   "external_id": "54087603",
-  "title": "Bazar.BG",
+  "title": "ОТДАВАМ АППАРТАМЕНТ ПОД НАЕМ  → Обява 54087603",
   "description": "Отдавам под наем собствен аппартамент от частно лице!!!Апартамент 65 кв.м. ж.к.Връбница 2. 200 метра на метростанция Бели Дунав. супермаркет Билла. 50 м. на Сев",
   "price": 600.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 65.0,
   "rooms": null,
   "floor": null,
   "city": "",
@@ -25,11 +25,24 @@
     "https://cdn8.focus.bg/bazar/c7/original/c773321e9551f9a805dc9fa6e1948d4f.webp",
     "https://cdn7.focus.bg/bazar/4f/original/4fc7c5987858c690c2c8ff514e1fa078.webp",
     "https://cdn8.focus.bg/bazar/ce/original/cede28f737dad3509ae8838017d5c32e.webp",
-    "//cdn8.focus.bg/bazar/34/pics/341865a664551c9a660dc26be126e45d.webp"
+    "https://cdn8.focus.bg/bazar/34/pics/341865a664551c9a660dc26be126e45d.webp"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "00000000",
+    "092861563",
+    "057678117",
+    "0871822662",
+    "04823297",
+    "05926669",
+    "0685348453",
+    "026-05-08",
+    "000-2014",
+    "01112551"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:46:35.084874+00:00",
+  "scraped_at": "2026-04-24T07:53:17.003906+00:00",
   "reference_id": "Bazar.bg:54087603",
   "local_image_files": [
     "data/media/Bazar.bg_54087603/0000_6888420c.webp",
@@ -52,5 +65,10 @@
     "Bazar.bg_54087603/0006_8c93f6f2.webp",
     "Bazar.bg_54087603/0007_68ba6402.webp",
     "Bazar.bg_54087603/0008_953d7497.webp"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54087603",
+  "photo_count_remote": 9,
+  "photo_count_local": 9,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

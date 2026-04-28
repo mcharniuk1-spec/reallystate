@@ -4,14 +4,14 @@
   "external_id": "e862cf047af4",
   "title": "Тристаен апартамент във Варна 105 кв.м. ID 168115  | Явлена",
   "description": "",
-  "price": null,
+  "price": 319900.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 105.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/1adda534-dd23-4908-814b-2f761ab1b133.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 521 638",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:12.370285+00:00",
+  "scraped_at": "2026-04-24T07:53:25.438691+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:e862cf047af4",
   "local_image_files": [
     "data/media/Yavlena_e862cf047af4/0000_cf19f025.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_e862cf047af4/0000_cf19f025.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_e862cf047af4",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

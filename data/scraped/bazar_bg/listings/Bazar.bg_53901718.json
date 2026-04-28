@@ -2,12 +2,12 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-53901718/prekrasen-dwustaen-apartament-s-morska-panorama-w-k-k-slanchew-briag",
   "external_id": "53901718",
-  "title": "Bazar.BG",
+  "title": "Прекрасен  двустаен апартамент с морска панорама в к.к. Слънчев бряг → Обява 53901718",
   "description": "Предлагам просторен обзаведен двустаен апартамент с ФРОНТАЛНА ГЛЕДКА МОРЕ в к-с „Нирвана“(Nirvana), к.к. Слънчев бряг.  Апартаментът е подходящ, както за лично",
   "price": 130000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 98.0,
+  "rooms": 2.0,
   "floor": null,
   "city": "",
   "district": "",
@@ -30,11 +30,20 @@
     "https://cdn7.focus.bg/bazar/3a/original/3a7750d57f55d0bbf245fe6fe6e5d468.webp",
     "https://cdn7.focus.bg/bazar/11/original/119871434d08690ba855f44e6e886457.webp",
     "https://cdn5.focus.bg/bazar/d5/original/d55421e2610ed96d97dc39b4457f7ade.webp",
-    "//cdn7.focus.bg/bazar/0b/pics/0b0583d192fbcd74ef675bddb2d81826.webp"
+    "https://cdn7.focus.bg/bazar/0b/pics/0b0583d192fbcd74ef675bddb2d81826.webp"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "093600000000",
+    "+359898575436",
+    "092864289",
+    "026-05-08",
+    "000-2014",
+    "01112551"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:47:36.665211+00:00",
+  "scraped_at": "2026-04-24T07:53:15.924881+00:00",
   "reference_id": "Bazar.bg:53901718",
   "local_image_files": [
     "data/media/Bazar.bg_53901718/0000_c88aafac.webp",
@@ -67,5 +76,10 @@
     "Bazar.bg_53901718/0011_32c17b73.webp",
     "Bazar.bg_53901718/0012_c2282b98.webp",
     "Bazar.bg_53901718/0013_3f5d899b.webp"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_53901718",
+  "photo_count_remote": 14,
+  "photo_count_local": 14,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

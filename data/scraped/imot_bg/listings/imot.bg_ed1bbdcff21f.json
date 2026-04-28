@@ -2,27 +2,48 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1b176917750338763-prodava-dvustaen-apartament-grad-sofiya-banishora",
   "external_id": "ed1bbdcff21f",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 2-����� ���� �����, �������� �����: 1b176917750338763",
+  "description": "��������� ������ � ������ | � ������ �� ������������ | ��� ���������� ��������� ����: 56,31 ��.�; ���� ����: 72,07 ��.�; ���������: ��-�����; ����: 5-�� �� 16; ����: �������� �����. 🔹 ���������� �� ���������� �� ����� ��� ����������. 🔹 ������� ��� 16: ���� �� 2028 �. 🔹 �������� �������� �� �������� ��� ����������. 🔹 ���� 25% ����������� ��� ������� � ������! ��������-����������: INFINITY ������ AMARU � ������� 16-������ ������, ����������� �� ��������� � ������������� �������! �������: ���.  ����� �����  126 ������� ���������� �� ������� �� ������������ ���������� ����. ���������� �� ������� �� ��������: \t����� �� ������������  ������� ����� ����� ; \t��� 7, ������ �������  ����� ���� , 100 ��  ������ ����� ; \t������� ��������  ����� ����� ; \t������ ��������� ������ � �����. �������� � ����������-������������� �������� � ��� 22 ������ ���� � ��������� ������������! ��������� ������ � ������������ ������, ���������������� ��������� � ��������� �� ������������ ���������� �������� ��� ������� ������� �����. 📞 ������ ����������� �� �� ������������ �� ���������� � ������. �������� �� � ��� ��� ���������! https://infinityproperty.bg/ [email protected] 0700 700 95 �������� ��!",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
-  "city": "�����",
-  "district": "",
-  "address_text": "",
+  "city": "��������",
+  "district": "���� �����",
+  "address_text": "���� �����, ��������",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "//imotstatic4.focus.bg/imot/photosimotbg/1/763//big/1b176917750338763_HX.jpg"
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/763//big1/1b176917750338763_HX.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/763//big1/1b176917750338763_LL.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/763//big1/1b176917750338763_IU.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/763//big1/1b176917750338763_kt.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/763//big1/1b176917750338763_hT.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/763//big1/1b176917750338763_II.jpg",
+    "https://imotstatic4.focus.bg/imot/photosimotbg/1/763//big/1b176917750338763_HX.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-08T16:27:14.995525+00:00",
+  "phones": [
+    "070070095"
+  ],
+  "amenities": [
+    "����: 5-�� �� 16",
+    "������������: �����, �� ���� ������� � ������������ 2028 �."
+  ],
+  "scraped_at": "2026-04-24T07:52:42.323166+00:00",
   "reference_id": "imot.bg:ed1bbdcff21f",
+  "source_attributes": {
+    "����": "5-�� �� 16",
+    "������������": "�����, �� ���� ������� � ������������ 2028 �."
+  },
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_ed1bbdcff21f",
+  "photo_count_remote": 7,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

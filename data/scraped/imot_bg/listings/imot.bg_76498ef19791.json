@@ -2,7 +2,7 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-8437-zhilishtna-sgrada-grad-sofiya-krastova-vada-ul-asen-yordanov",
   "external_id": "76498ef19791",
-  "title": "Imot.bg",
+  "title": "Жилищна сграда в град София Кръстова вада, ул. Асен Йорданов обява 8437",
   "description": "Imot.bg - №1 сайт за имоти от собственици и брокери",
   "price": null,
   "currency": "EUR",
@@ -28,7 +28,7 @@
     "0883200300"
   ],
   "amenities": [],
-  "scraped_at": "2026-04-21T07:47:15.983205+00:00",
+  "scraped_at": "2026-04-24T07:52:34.827085+00:00",
   "reference_id": "imot.bg:76498ef19791",
   "source_attributes": {},
   "listing_status": "active",
@@ -47,5 +47,10 @@
     "imot.bg_76498ef19791/0003_7de5f64c.jpg",
     "imot.bg_76498ef19791/0004_f89bd5e0.jpg",
     "imot.bg_76498ef19791/0005_9e3c9862.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/imot.bg_76498ef19791",
+  "photo_count_remote": 6,
+  "photo_count_local": 6,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

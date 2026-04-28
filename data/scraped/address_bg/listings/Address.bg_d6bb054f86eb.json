@@ -4,9 +4,9 @@
   "external_id": "d6bb054f86eb",
   "title": "Многостаен апартамент във Варна, Младост 2 - код на имота: 688032",
   "description": "Адрес недвижими имоти предлага Многостаен апартамент във Варна, Младост 2 с код на имота: 688032. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 185000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 94.0,
   "rooms": null,
   "floor": null,
   "city": "",
@@ -19,14 +19,40 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/032/688032/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-03-17",
+    "026-03-16",
+    "018-05-09",
+    "018-07-06",
+    "0442 - 94",
+    "0885922555",
+    "0435 600",
+    "0959583948282",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:20:25.427072+00:00",
+  "scraped_at": "2026-04-24T07:52:44.306837+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Варна Многостаен апартамент Младост 2"
+  },
   "reference_id": "Address.bg:d6bb054f86eb",
   "local_image_files": [
     "data/media/Address.bg_d6bb054f86eb/0000_f50c96af.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_d6bb054f86eb/0000_f50c96af.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_d6bb054f86eb",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/167958",
   "external_id": "b52acc32cbfe",
   "title": "Тристаен апартамент в Нареченски бани 140 кв.м. ID 167958  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "$5b",
+  "price": 84900.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 140.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "Нареченски бани",
   "district": "",
-  "address_text": "",
+  "address_text": "Нареченски бани",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/18f523e8-47b0-4901-aa5d-4addd2ce47c8.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 547 048",
+    "+359 895 506 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:18:17.083115+00:00",
+  "scraped_at": "2026-04-24T07:53:23.926146+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:b52acc32cbfe",
   "local_image_files": [
     "data/media/Yavlena_b52acc32cbfe/0000_ceadaed0.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_b52acc32cbfe/0000_ceadaed0.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_b52acc32cbfe",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

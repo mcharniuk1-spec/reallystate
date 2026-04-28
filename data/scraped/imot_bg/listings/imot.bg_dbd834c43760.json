@@ -2,27 +2,55 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1a177374046315730-prodava-ednostaen-apartament-grad-sofiya-studentski-grad",
   "external_id": "dbd834c43760",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 1-����� ���� �����, ���������� ���� �����: 1a177374046315730",
+  "description": "📌 ���������� �����: 2107662 ❗ ��������� ������ ��������� ��������� � �����, ���������� ����❗ ��������� � �������� � ����� ��������, � ������ ������ �� ������� ��������� � ������� ����� ������. � ������� ��� ��������, �������, ������ ������� � ������ �����, ����� ��������� ��������� ����� �� �������. 📞 ���������� �� ������������� ����, ���� �� �������� ���� ������� �� ��������� ��� ���� �������� ������ � ��� �� ��������� �������.",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
-  "city": "�����",
-  "district": "",
-  "address_text": "",
+  "city": "���������� ����",
+  "district": "���� �����",
+  "address_text": "���� �����, ���������� ����",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "//imotstatic1.focus.bg/imot/photosimotbg/1/730//big/1a177374046315730_ce.jpg"
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/730//big1/1a177374046315730_ce.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/730//big1/1a177374046315730_Ni.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/730//big1/1a177374046315730_E4.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/730//big1/1a177374046315730_uI.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/730//big1/1a177374046315730_Mq.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/730//big1/1a177374046315730_s6.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/730//big1/1a177374046315730_hf.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/730//big/1a177374046315730_ce.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-08T16:26:53.080610+00:00",
+  "phones": [
+    "0882445206",
+    "0899500900"
+  ],
+  "amenities": [
+    "����: 2-�� �� 6",
+    "���: ��",
+    "�E�: ��",
+    "������������: �����, ������� � ������������ 2012 �."
+  ],
+  "scraped_at": "2026-04-24T07:52:41.020108+00:00",
   "reference_id": "imot.bg:dbd834c43760",
+  "source_attributes": {
+    "����": "2-�� �� 6",
+    "���": "��",
+    "�E�": "��",
+    "������������": "�����, ������� � ������������ 2012 �."
+  },
+  "listing_status": "active",
+  "contact_name": "���� ����������",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_dbd834c43760",
+  "photo_count_remote": 8,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

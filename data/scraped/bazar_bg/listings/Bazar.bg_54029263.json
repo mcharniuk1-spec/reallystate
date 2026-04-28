@@ -2,19 +2,19 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54029263/dawa-pod-naem-2-staen-gr-sofiia-witosha",
   "external_id": "54029263",
-  "title": "Bazar.BG",
+  "title": "Дава под наем 2-СТАЕН, гр. София, Витоша → Обява 54029263",
   "description": "Assesston|Realty предлага на вниманието ви един прекрасен, чисто нов, двустаен апартамент, очакващ своите първи обитатели. На метри от Софийска Зоологическа гра",
   "price": 800.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 80.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Витоша",
+  "address_text": "София, Витоша",
   "latitude": null,
   "longitude": null,
-  "listing_intent": "sale",
+  "listing_intent": "long_term_rent",
   "property_category": "apartment",
   "image_urls": [
     "https://imotstatic1.focus.bg/imot/photosimotbg/2/146/big1/2c177487973653146_LX.jpg",
@@ -30,11 +30,25 @@
     "https://imotstatic1.focus.bg/imot/photosimotbg/2/146/big1/2c177487973653146_Nx.jpg",
     "https://imotstatic1.focus.bg/imot/photosimotbg/2/146/big1/2c177487973653146_QK.jpg",
     "https://imotstatic1.focus.bg/imot/photosimotbg/2/146/big1/2c177487973653146_F4.jpg",
-    "//imotstatic1.focus.bg/imot/photosimotbg/2/146/big1/2c177487973653146_LX.jpg"
+    "https://imotstatic1.focus.bg/imot/photosimotbg/2/146/big1/2c177487973653146_LX.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "00000000",
+    "092863367",
+    "01151788581",
+    "09075659545",
+    "083264201",
+    "010840622267",
+    "03717721",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:51:41.689652+00:00",
+  "scraped_at": "2026-04-24T07:53:16.313934+00:00",
   "reference_id": "Bazar.bg:54029263",
   "local_image_files": [
     "data/media/Bazar.bg_54029263/0000_9d778df6.jpg",
@@ -67,5 +81,10 @@
     "Bazar.bg_54029263/0011_e02e867f.jpg",
     "Bazar.bg_54029263/0012_1abcff44.jpg",
     "Bazar.bg_54029263/0013_9d778df6.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54029263",
+  "photo_count_remote": 14,
+  "photo_count_local": 14,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/168421",
   "external_id": "f5a0990b61a1",
   "title": "Тристаен апартамент в София 97 кв.м. ID 168421  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Явлена Изток , Ви предлага тристаен апартамент на Сан Стефано, в близост до БНТ.  Състои се от хол с кухненски бокс, две спални, антре, баня с тоалетна, две тераси. Имотът е след основен ремонт и обзаведен с всички необходими електроуреди . Отоплението е на ТЕЦ, сменени радиатори - италиански, нова дървена дограма. Холът е с френски прозорци . Към апартамента имаме прилежащо мазе - 5,6 кв.м., таванско помещение - 12 кв.м. , 12 % от идеалните части от земята  и възможност за паркиране във вътрешен двор. Сградата е с контролиран достъп, добре поддържани общи части.",
+  "price": 780000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 97.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "м",
+  "address_text": "София, м",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/9e8a9d4e-eb03-47ea-b0ab-8d358a2f0a02.png"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 515 759",
+    "+359 882 222 321"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:54:26.129160+00:00",
+  "scraped_at": "2026-04-24T07:53:25.897785+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:f5a0990b61a1",
   "local_image_files": [
     "data/media/Yavlena_f5a0990b61a1/0000_a89ab4e4.png"
   ],
   "local_image_storage_keys": [
     "Yavlena_f5a0990b61a1/0000_a89ab4e4.png"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_f5a0990b61a1",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

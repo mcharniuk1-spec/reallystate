@@ -2,12 +2,12 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-40857836/prodawa-2-staen-bez-komisionna-za-kupuwacha-ne-se-nachisliawa-dds",
   "external_id": "40857836",
-  "title": "Bazar.BG",
+  "title": "Продава 2-СТАЕН без комисионна за купувача, не се начислява ДДС  → Обява 40857836",
   "description": "Продава Апартамент в гр. Обзор БЕЗ КОМИСИОННА ЗА КУПУВАЧА и без начисляване на ДДС.  Апартаментът се намира само на 100м отморския бряг, а близостта на Стара пл",
   "price": 88000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 71.0,
+  "rooms": 2.0,
   "floor": null,
   "city": "",
   "district": "",
@@ -35,11 +35,19 @@
     "https://cdn6.focus.bg/bazar/89/original/89f546e2a58d034db0f0cb5b4dfad055.jpg",
     "https://cdn6.focus.bg/bazar/96/original/9646c0b1fb36c40900261a57e6159df1.jpg",
     "https://cdn7.focus.bg/bazar/40/original/40ed2303ec41e5ed24f8e758f0854a6d.jpg",
-    "//cdn5.focus.bg/bazar/38/pics/384356ee2c3931b8c727a17ee92b76dc.webp"
+    "https://cdn5.focus.bg/bazar/38/pics/384356ee2c3931b8c727a17ee92b76dc.webp"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "09800000000",
+    "0430 100",
+    "026-05-09",
+    "000-2014",
+    "01112551"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:43:39.122024+00:00",
+  "scraped_at": "2026-04-24T07:53:13.640579+00:00",
   "reference_id": "Bazar.bg:40857836",
   "local_image_files": [
     "data/media/Bazar.bg_40857836/0000_f0357168.webp",
@@ -74,5 +82,10 @@
     "Bazar.bg_40857836/0012_9f483706.jpg",
     "Bazar.bg_40857836/0013_7e10a89b.jpg",
     "Bazar.bg_40857836/0014_65c94ed6.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_40857836",
+  "photo_count_remote": 19,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "partial_gallery"
 }

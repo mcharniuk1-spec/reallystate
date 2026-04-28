@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-51338203/prodawa-3-staen-gr-kostinbrod-oblast-sofiia-oblast",
   "external_id": "51338203",
-  "title": "Bazar.BG",
+  "title": "Продава 3-СТАЕН, гр. Костинброд, област София област → Обява 51338203",
   "description": "За повече информация обадете ни се на тел: 0882 817 458 или 02 425 68 20 и цитирайте референтния номер на имота: Sfa 82112. Отговорен брокер: Магдалена Тошева А",
   "price": 179461.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 4817.15,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Костинброд",
+  "district": "област София област",
+  "address_text": "Костинброд, област София област",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -33,11 +33,22 @@
     "https://imotstatic2.focus.bg/imot/photosimotbg/1/582/big1/1c175498951993582_VV.jpg",
     "https://cdn3.focus.bg/imot/photosimotbg/1/582/big1/1c175498951993582_CK.jpg",
     "https://cdn3.focus.bg/imot/photosimotbg/1/582/big1/1c175498951993582_Il.jpg",
-    "//imotstatic2.focus.bg/imot/photosimotbg/1/582/big1/1c175498951993582_8g.jpg"
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/582/big1/1c175498951993582_8g.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "0882 817 458",
+    "02 425 68 20",
+    "092867468",
+    "0438 02 425 68 20",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:48:50.954906+00:00",
+  "scraped_at": "2026-04-24T07:53:14.458146+00:00",
   "reference_id": "Bazar.bg:51338203",
   "local_image_files": [
     "data/media/Bazar.bg_51338203/0000_d06b42cc.jpg",
@@ -72,5 +83,10 @@
     "Bazar.bg_51338203/0012_0d160d3f.jpg",
     "Bazar.bg_51338203/0013_dd76e630.jpg",
     "Bazar.bg_51338203/0014_b1d6529c.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_51338203",
+  "photo_count_remote": 17,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "partial_gallery"
 }

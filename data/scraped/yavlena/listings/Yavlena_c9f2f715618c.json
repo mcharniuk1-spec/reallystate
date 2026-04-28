@@ -4,14 +4,14 @@
   "external_id": "c9f2f715618c",
   "title": "Тристаен апартамент във Варна 67 кв.м. ID 168200  | Явлена",
   "description": "",
-  "price": null,
+  "price": 183000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 67.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/07ac21a2-26e7-4465-b5b1-8d3fd5527629.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 523 080",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:15:13.796762+00:00",
+  "scraped_at": "2026-04-24T07:53:24.518026+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:c9f2f715618c",
   "local_image_files": [
     "data/media/Yavlena_c9f2f715618c/0000_51d395e8.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_c9f2f715618c/0000_51d395e8.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_c9f2f715618c",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

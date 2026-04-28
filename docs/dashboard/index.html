@@ -311,7 +311,7 @@
   </div>
 
     <script id="dashboard-data" type="application/json">{
-  "generated_at": "2026-04-22T08:44:32.898985+00:00",
+  "generated_at": "2026-04-28T04:10:17.773283+00:00",
   "roadmap": {
     "done": 46,
     "total": 128,
@@ -340,6 +340,7 @@
     "investor-pitch-yc",
     "managed-scrape-platforms",
     "multi-agent-patterns",
+    "openclaw-ollama-gemma4",
     "parser-fixture-qa",
     "postgres-analysis",
     "postgres-ops-psql",
@@ -357,6 +358,7 @@
     "security-audit",
     "skill-discovery",
     "software-architecture",
+    "stage1-scrape-control-plane",
     "subagent-driven-development",
     "test-generator",
     "universal-agent-scrape-setup",
@@ -517,6 +519,33 @@
           "commands": "deferred formal verification until the refreshed strict pattern artifacts and the environment-runtime checks are preserved in",
           "status": "DEFERRED",
           "review": "Verify that the promoted sources now have sample evidence matching the saved report entries in, Verify that the DB proof is correctly marked as blocked by runtime availability rather than misreported as a parser or ingest-code failure."
+        },
+        {
+          "title": "2026-04-23 — debugger follow-up queued: Stage 1/2 controlled Varna activation layer (agent: scraper_1)",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "deferred formal verification until the new control-plane artifacts are spot-checked together: manifest, runbook, matrix, and threshold planner outputs",
+          "status": "DEFERRED",
+          "review": "Verify that, Verify that, Verify that"
+        },
+        {
+          "title": "2026-04-23 — debugger follow-up queued: manual control worker + queue status layer (agent: scraper_1)",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "deferred formal verification until the new manual queue/status commands are spot-checked together with the updated Stage 2 runbook",
+          "status": "DEFERRED",
+          "review": "Verify that, Verify that, Verify that"
+        },
+        {
+          "title": "2026-04-27 — debugger follow-up queued: Codex quality audit and Gemma image-report readiness",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "deferred formal verification until `S1-21` is executed.",
+          "status": "DEFERRED",
+          "review": "verify `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`; verify the next Codex run produces per-source/per-property gaps; verify parser fixes are code-backed and fixture-tested; verify Gemma receives only Codex-confirmed apartment rows with complete local galleries."
         }
       ],
       "tasks": {
@@ -555,6 +584,12 @@
             "details": "TODO"
           },
           {
+            "id": "DBG-08",
+            "title": "Verify Codex tier-1/2 quality audit and Gemma readiness",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
             "id": "DBG-06",
             "title": "Verify all pending DONE_AWAITING_VERIFY slices (batch 2)",
             "status": "TODO",
@@ -584,11 +619,11 @@
       "counts": {
         "verified": 4,
         "in_progress": 0,
-        "todo": 5,
+        "todo": 6,
         "blocked": 0,
-        "total": 9,
-        "journal_entries": 15,
-        "efficiency_pct": 44
+        "total": 10,
+        "journal_entries": 18,
+        "efficiency_pct": 40
       }
     },
     {
@@ -1017,6 +1052,33 @@
           "commands": "",
           "status": "",
           "review": ""
+        },
+        {
+          "title": "2026-04-27 — Scraped property evidence surfaced in website seed",
+          "summary": "",
+          "action": "Updated the frontend fallback data path so the website can show representative scraped listings instead of only hand-written demo rows when the backend API is unavailable.",
+          "changed_files": "`lib/mock/scraped-listings.ts`, `scripts/generate_frontend_scraped_listings.py`, `app/api/local-media/[...path]/route.ts`, `lib/types/listing.ts`, `lib/hooks/useListings.ts`, `components/listings/ListingCard.tsx`, `app/(main)/properties/[id]/detail-client.tsx`, `components/map/FullScreenMap.tsx`.",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "2026-04-27 — Homepage OSM map QA repair",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
+        },
+        {
+          "title": "2026-04-27 — Product source-link buttons",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "",
+          "status": "",
+          "review": ""
         }
       ],
       "tasks": {
@@ -1053,7 +1115,7 @@
             "id": "UX-04",
             "title": "Nationwide Bulgaria LUN-style map + listings experience",
             "status": "TODO",
-            "details": "TODO"
+            "details": "TODO` (website seed updated 2026-04-27 with scraped property evidence; full UX-04 still waits on backend/filter gates)"
           },
           {
             "id": "UX-05",
@@ -1112,7 +1174,7 @@
         "todo": 9,
         "blocked": 0,
         "total": 13,
-        "journal_entries": 14,
+        "journal_entries": 17,
         "efficiency_pct": 19
       }
     },
@@ -1453,6 +1515,42 @@
           "commands": "python3 -m py_compile scripts/live_scraper.py scripts/reparse_saved_listings.py tests/test_live_scraper_source_parsers.py, PYTHONPATH=src python3 -m unittest tests.test_live_scraper_source_parsers -v, repaired sample reparse/download runs for, python3 scripts/generate_tier12_pattern_status.py, make dashboard-doc, psql \"postgresql://bgrealestate:bgrealestate@localhost:5432/bgrealestate\" -c 'select 1 as ok', docker ps -a, python3 -m py_compile scripts/live_scraper.py scripts/reparse_saved_listings",
           "status": "`DONE_AWAITING_VERIFY`",
           "review": "FACT: the saved strict, FACT:, FACT:, INTERPRETATION: the remaining non-patterned sources are now mostly blocked by missing saved live samples or legal review, not by parser weaknesses in the already-landed corpus., GAP: PostgreSQL persistence is still not proven in this environment because no local Postgres server is running and Docker daemon/compose are unavailable here., NEXT: verify this repair wave with"
+        },
+        {
+          "title": "Task 21: Stage 1 Varna-only scrape control plane (S1-20)",
+          "summary": "",
+          "action": "Added Alembic migration `20260423_0003` for `scrape_region`, `source_section`, `source_section_pattern`, `crawl_run`, `crawl_queue_task`, `crawl_error`, `segment_fulfillment`, `scrape_runner_state`, `canonical_listing_version`, and extended `canonical_listing` with region-first + full-detail pipeline columns. Implemented `src/bgrealestate/scraping/` (manifest validate, sync to DB, orchestrator threshold planning, `runner_once` dry-run default). Fixed `default_manifest_path` repo root (`parents[3]`). Wired CLI + Makefile targets; regenerated `data/scrape_patterns/regions/varna/sections.json`; updated `sql/schema.sql` and `docker-compose.yml` PostGIS image comment + `16-3.4` tag for better multi-arch odds.",
+          "changed_files": "",
+          "commands": "",
+          "status": "`DONE_AWAITING_VERIFY`",
+          "review": ""
+        },
+        {
+          "title": "2026-04-23 — S1-20 follow-up: all tier-1/2 source-segment matrix + threshold planning runbook",
+          "summary": "",
+          "action": "Expanded the Stage 1 control plane from a tier-1 placeholder into a tier-1/2 operator-ready planning layer. Added a durable `section_catalog` covering every tier-1/2 source across `buy_personal`, `buy_commercial`, `rent_personal`, `rent_commercial`; generated a 108-bucket Varna manifest + control matrix; codified valid-listing threshold rules; upgraded the runner to return per-bucket actions (`backfill_required`, `threshold_reached`, `paused_pending_backfill`, `skipped_*`) and to seed `discover` + `threshold_check` queue tasks only after manual unpause; added pause/unpause and threshold-summary CLI commands; wrote the operator runbook in `docs/stage1-controlled-production-architecture.md`.",
+          "changed_files": "src/bgrealestate/scraping/section_catalog.py, src/bgrealestate/scraping/validity.py, src/bgrealestate/scraping/orchestrator.py, src/bgrealestate/scraping/runner.py, src/bgrealestate/scraping/manifest.py, src/bgrealestate/scraping/sync_sections.py, src/bgrealestate/cli.py, scripts/generate_varna_sections_manifest.py, tests/test_scrape_stage1.py, docs/stage1-controlled-production-architecture.md, docs/exports/varna-controlled-crawl-matrix.json, docs/exports/varna-controlled-crawl-matrix.md, agent-",
+          "commands": "python3 scripts/generate_varna_sections_manifest.py, python3 -m py_compile scripts/generate_varna_sections_manifest.py src/bgrealestate/scraping/section_catalog.py src/bgrealestate/scraping/validity.py src/bgrealestate/scraping/orchestrator.py src/bgrealestate/scraping/runner.py src/bgrealestate/scraping/manifest.py src/bgrealestate/scraping/sync_sections.py src/bgrealestate/cli.py tests/test_scrape_stage1.py, PYTHONPATH=src python3 -m unittest tests.test_scrape_stage1 -v, make dashboard-doc, st",
+          "status": "`DONE_AWAITING_VERIFY`",
+          "review": "FACT: the manifest now covers all tier-1/2 sources with four source-segment buckets each;, FACT: threshold counting is now codified and media is treated as optional for threshold counting but mandatory for strict pattern quality., GAP: DB-backed, NEXT: debugger should verify the new runbook/manifest/matrix, then the operator can run migrations locally and decide when to unpause + enqueue the first controlled Varna activation wave."
+        },
+        {
+          "title": "2026-04-23 — S1-20 follow-up: manual control worker + queue status path",
+          "summary": "",
+          "action": "Completed the next control-plane gap after the initial runbook wave. Added queue introspection and a manual one-step control worker so the operator can inspect or process queued `discover` / `threshold_check` work without auto-starting HTTP scraping. The new worker expands `discover` tasks into concrete `fetch_list` tasks with preserved source/segment/Varna metadata, while keeping fetch/detail/media execution explicitly operator-controlled in this stage.",
+          "changed_files": "src/bgrealestate/scraping/control_queue.py, src/bgrealestate/scraping/control_worker.py, src/bgrealestate/cli.py, Makefile, tests/test_scrape_stage1.py, docs/stage1-controlled-production-architecture.md, agent-skills/stage1-scrape-control-plane/SKILL.md, docs/agents/TASKS.md",
+          "commands": "python3 -m py_compile src/bgrealestate/scraping/control_queue.py src/bgrealestate/scraping/control_worker.py src/bgrealestate/cli.py tests/test_scrape_stage1.py, PYTHONPATH=src python3 -m unittest tests.test_scrape_stage1 -v, make dashboard-doc, py_compile, tests.test_scrape_stage1",
+          "status": "`DONE_AWAITING_VERIFY`",
+          "review": "FACT: the operator command surface now includes, FACT:, FACT:, GAP: the unified HTTP/detail/media executor is still not wired into these queued, NEXT: debugger should verify the queue-status/control-worker behavior and the runbook updates, then the operator can use the new commands in the first controlled local activation wave."
+        },
+        {
+          "title": "2026-04-27 — S1-21 queued: post-Gemma tier-1/2 quality audit and pattern repair",
+          "summary": "",
+          "action": "Analyzed the current OpenClaw/Gemma handoff state and queued the next Codex tier-1/2 work. The repository has substantial file-backed scrape output but no completed apartment image-description report set. 1,549 saved tier-1/2 listing JSON files across 10 sources; 18,707 remote photo references; 5,376 local downloaded photos; no `docs/exports/apartment-image-reports/` output found.",
+          "changed_files": "",
+          "commands": "",
+          "status": "`S1-21` queued; `S1-22` queued for Gemma after Codex repair.",
+          "review": ""
         }
       ],
       "tasks": {
@@ -1506,12 +1604,30 @@
             "title": "Live HTTP integration for tier-1 connectors",
             "status": "IN_PROGRESS",
             "details": "IN_PROGRESS` (2026-04-21; strict pattern repairs promoted `Address.bg`, `BulgarianProperties`, `LUXIMMO`, `OLX.bg`, `property.bg`, `SUPRIMMO`, `Bazar.bg`, and `Yavlena` to `Patterned` from saved item evidence; DB proof is still blocked because no PostgreSQL server is running locally and Docker daemon/compose are unavailable in this environment; `alo.bg`/`Domaza`/`Home2U` still remain low-yield or zero-sample)"
+          },
+          {
+            "id": "S1-20",
+            "title": "Stage 1 controlled production prep — Varna-only region-first control plane (no live crawl)",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-23; control-plane widened to all tier-1/2 sources, per-source/segment readiness matrix, threshold summary, queue status, manual control worker, pause/unpause command, and manual activation runbook; operator must still run migrations locally and decide when to enqueue)"
           }
         ],
         "todo": [
           {
             "id": "S1-18",
             "title": "Tier-1/2 live volume gate (≥100 listings × ≥5 sources) — NON-STOP",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "S1-21",
+            "title": "Codex tier-1/2 scrape quality audit + pattern repair prep",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "S1-22",
+            "title": "Gemma/OpenClaw apartment image-report generation handoff",
             "status": "TODO",
             "details": "TODO"
           },
@@ -1532,12 +1648,12 @@
       },
       "counts": {
         "verified": 3,
-        "in_progress": 5,
-        "todo": 3,
+        "in_progress": 6,
+        "todo": 5,
         "blocked": 0,
-        "total": 11,
-        "journal_entries": 36,
-        "efficiency_pct": 50
+        "total": 14,
+        "journal_entries": 40,
+        "efficiency_pct": 43
       }
     },
     {
@@ -1897,7 +2013,14 @@
             "details": "VERIFIED` (2026-04-08; plan complete)"
           }
         ],
-        "in_progress": [],
+        "in_progress": [
+          {
+            "id": "LEAD-07",
+            "title": "OpenClaw/Gemma run analysis and next-run preparation",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-27)"
+          }
+        ],
         "todo": [
           {
             "id": "LEAD-05",
@@ -1916,12 +2039,12 @@
       },
       "counts": {
         "verified": 4,
-        "in_progress": 0,
+        "in_progress": 1,
         "todo": 2,
         "blocked": 0,
-        "total": 6,
+        "total": 7,
         "journal_entries": 0,
-        "efficiency_pct": 67
+        "efficiency_pct": 64
       }
     }
   ],
@@ -2043,12 +2166,12 @@
     {
       "key": "scraper_1",
       "label": "Tier-1/2 Scraping",
-      "total": 11,
+      "total": 14,
       "done_count": 3,
-      "current_count": 5,
-      "next_count": 3,
+      "current_count": 6,
+      "next_count": 5,
       "blocked_count": 0,
-      "progress_percent": 50,
+      "progress_percent": 43,
       "done_tasks": [
         {
           "id": "S1-01",
@@ -2099,12 +2222,30 @@
           "title": "Live HTTP integration for tier-1 connectors",
           "status": "IN_PROGRESS",
           "details": "IN_PROGRESS` (2026-04-21; strict pattern repairs promoted `Address.bg`, `BulgarianProperties`, `LUXIMMO`, `OLX.bg`, `property.bg`, `SUPRIMMO`, `Bazar.bg`, and `Yavlena` to `Patterned` from saved item evidence; DB proof is still blocked because no PostgreSQL server is running locally and Docker daemon/compose are unavailable in this environment; `alo.bg`/`Domaza`/`Home2U` still remain low-yield or zero-sample)"
+        },
+        {
+          "id": "S1-20",
+          "title": "Stage 1 controlled production prep — Varna-only region-first control plane (no live crawl)",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-23; control-plane widened to all tier-1/2 sources, per-source/segment readiness matrix, threshold summary, queue status, manual control worker, pause/unpause command, and manual activation runbook; operator must still run migrations locally and decide when to enqueue)"
         }
       ],
       "next_tasks": [
         {
           "id": "S1-18",
           "title": "Tier-1/2 live volume gate (≥100 listings × ≥5 sources) — NON-STOP",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "S1-21",
+          "title": "Codex tier-1/2 scrape quality audit + pattern repair prep",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "S1-22",
+          "title": "Gemma/OpenClaw apartment image-report generation handoff",
           "status": "TODO",
           "details": "TODO"
         },
@@ -2122,7 +2263,7 @@
         }
       ],
       "blocked_tasks": [],
-      "comment": "3 done, 5 current, 3 next"
+      "comment": "3 done, 6 current, 5 next"
     },
     {
       "key": "scraper_t3",
@@ -2292,7 +2433,7 @@
           "id": "UX-04",
           "title": "Nationwide Bulgaria LUN-style map + listings experience",
           "status": "TODO",
-          "details": "TODO"
+          "details": "TODO` (website seed updated 2026-04-27 with scraped property evidence; full UX-04 still waits on backend/filter gates)"
         },
         {
           "id": "UX-05",
@@ -2349,12 +2490,12 @@
     {
       "key": "debugger",
       "label": "Verification/Safety",
-      "total": 9,
+      "total": 10,
       "done_count": 4,
       "current_count": 0,
-      "next_count": 5,
+      "next_count": 6,
       "blocked_count": 0,
-      "progress_percent": 44,
+      "progress_percent": 40,
       "done_tasks": [
         {
           "id": "DBG-01",
@@ -2390,6 +2531,12 @@
           "details": "TODO"
         },
         {
+          "id": "DBG-08",
+          "title": "Verify Codex tier-1/2 quality audit and Gemma readiness",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
           "id": "DBG-06",
           "title": "Verify all pending DONE_AWAITING_VERIFY slices (batch 2)",
           "status": "TODO",
@@ -2415,17 +2562,17 @@
         }
       ],
       "blocked_tasks": [],
-      "comment": "4 done, 0 current, 5 next"
+      "comment": "4 done, 0 current, 6 next"
     },
     {
       "key": "lead_agent",
       "label": "Lead/Orchestration",
-      "total": 6,
+      "total": 7,
       "done_count": 4,
-      "current_count": 0,
+      "current_count": 1,
       "next_count": 2,
       "blocked_count": 0,
-      "progress_percent": 67,
+      "progress_percent": 64,
       "done_tasks": [
         {
           "id": "LEAD-01",
@@ -2452,7 +2599,14 @@
           "details": "VERIFIED` (2026-04-08; plan complete)"
         }
       ],
-      "current_tasks": [],
+      "current_tasks": [
+        {
+          "id": "LEAD-07",
+          "title": "OpenClaw/Gemma run analysis and next-run preparation",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-27)"
+        }
+      ],
       "next_tasks": [
         {
           "id": "LEAD-05",
@@ -2468,7 +2622,7 @@
         }
       ],
       "blocked_tasks": [],
-      "comment": "4 done, 0 current, 2 next"
+      "comment": "4 done, 1 current, 2 next"
     }
   ],
   "all_tasks": [
@@ -2529,6 +2683,14 @@
       "details": "DONE_AWAITING_VERIFY` (2026-04-08: registration, login, profile, saved properties, dashboard implemented)"
     },
     {
+      "owner_key": "lead_agent",
+      "owner": "Lead Agent",
+      "id": "LEAD-07",
+      "title": "OpenClaw/Gemma run analysis and next-run preparation",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-27)"
+    },
+    {
       "owner_key": "scraper_1",
       "owner": "Scraper 1",
       "id": "S1-11",
@@ -2559,6 +2721,14 @@
       "title": "Discovery pagination for ALL tier-1 sources",
       "status": "DONE_AWAITING_VERIFY",
       "details": "DONE_AWAITING_VERIFY` (2026-04-08; discovery parsers + fixtures + tests added for all tier-1 sources)"
+    },
+    {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-20",
+      "title": "Stage 1 controlled production prep — Varna-only region-first control plane (no live crawl)",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-23; control-plane widened to all tier-1/2 sources, per-source/segment readiness matrix, threshold summary, queue status, manual control worker, pause/unpause command, and manual activation runbook; operator must still run migrations locally and decide when to enqueue)"
     },
     {
       "owner_key": "scraper_sm",
@@ -2740,6 +2910,14 @@
       "owner_key": "debugger",
       "owner": "Debugger",
       "id": "DBG-08",
+      "title": "Verify Codex tier-1/2 quality audit and Gemma readiness",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-08",
       "title": "Security audit — auth, injection, XSS, CORS",
       "status": "TODO",
       "details": "TODO"
@@ -2793,6 +2971,22 @@
       "details": "TODO"
     },
     {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-21",
+      "title": "Codex tier-1/2 scrape quality audit + pattern repair prep",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-22",
+      "title": "Gemma/OpenClaw apartment image-report generation handoff",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
       "owner_key": "scraper_sm",
       "owner": "Scraper SM",
       "id": "SM-04",
@@ -2822,7 +3016,7 @@
       "id": "UX-04",
       "title": "Nationwide Bulgaria LUN-style map + listings experience",
       "status": "TODO",
-      "details": "TODO"
+      "details": "TODO` (website seed updated 2026-04-27 with scraped property evidence; full UX-04 still waits on backend/filter gates)"
     },
     {
       "owner_key": "ux_ui_designer",

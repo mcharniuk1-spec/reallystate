@@ -27,6 +27,7 @@ Canonical skill files live under `agent-skills/<skill-name>/SKILL.md`.
 | `managed-scrape-platforms` | Evaluate Browserbase, Firecrawl, and Zyte as escalation layers |
 | `postgres-ops-psql` | Practical `psql` operations for exports, bulk loads, and ingest verification |
 | `universal-agent-scrape-setup` | Shared Codex/Claude scrape runtime, env, and agent-role setup |
+| `openclaw-ollama-gemma4` | OpenClaw local-model role: offline QA, SQL drafting, and report drafting via Ollama |
 | `fullstack-coding` | End-to-end coding across scraper/backend/API/UI contracts |
 | `backend-data-engineering` | Data pipelines, persistence reliability, and reporting aggregates |
 | `ux-dashboard-design` | Operator dashboard UX for source health and stage progress |

@@ -3,30 +3,43 @@
   "listing_url": "https://www.yavlena.com/bg/167995",
   "external_id": "3fde3f6e478b",
   "title": "Гараж/Паркомясто във Варна 94 кв.м. ID 167995  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Предлагаме за продажба 5 паркоместа, разположени в сграда на ул. „Гладстон“ в гр. Варна – отлична локация с бърз достъп до централната част на града. Всяко паркомясто е с площ около 18 кв.м., осигуряваща практично и удобно решение за паркиране.\\\\r\\\\n\\\\r\\\\nПоради спецификата на достъпа, местата са най-подходящи за малки автомобили, което ги прави идеални за градска среда. Налична е възможност за използване от електромобили, като е предвидено изграждане на зарядна станция.\\\\r\\\\n\\\\r\\\\nИмотите се намират в район със зелена зона, което гарантира по-добра организация на паркирането и допълнително удобство.\\\\r\\\\n\\\\r\\\\nПодходящи както за лично ползване, така и като инвестиция с цел отдаване под наем!",
+  "price": 125000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 94.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Варна",
+  "district": "м",
+  "address_text": "Варна, м",
   "latitude": null,
   "longitude": null,
-  "listing_intent": "sale",
+  "listing_intent": "long_term_rent",
   "property_category": "unknown",
   "image_urls": [
     "https://userimages.yavlena.com/135281cc-5e98-4663-988c-14fc96431f27.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 517 701",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:51.191442+00:00",
+  "scraped_at": "2026-04-24T07:53:19.609173+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:3fde3f6e478b",
   "local_image_files": [
     "data/media/Yavlena_3fde3f6e478b/0000_0b0474f1.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_3fde3f6e478b/0000_0b0474f1.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_3fde3f6e478b",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

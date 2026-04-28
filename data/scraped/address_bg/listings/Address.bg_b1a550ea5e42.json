@@ -1,0 +1,62 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/burgas-vazrazhdane-mnogostaen-apartament-offer655716",
+  "external_id": "b1a550ea5e42",
+  "title": "Многостаен апартамент в Бургас, Възраждане - код на имота: 655716",
+  "description": "Адрес недвижими имоти предлага Многостаен апартамент в Бургас, Възраждане с код на имота: 655716. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 243000.0,
+  "currency": "EUR",
+  "area_sqm": 209.0,
+  "rooms": null,
+  "floor": null,
+  "city": "Бургас",
+  "district": "Възраждане",
+  "address_text": "Бургас, Възраждане",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/716/655716/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "025-09-10",
+    "025-05-23",
+    "018-05-09",
+    "018-07-06",
+    "0430 500",
+    "0430 600",
+    "0449 209",
+    "0885383205",
+    "025-09-11",
+    "025-05-27",
+    "025-08-08",
+    "060303150214142706030315021414490500",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:10:47.287521+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Бургас Многостаен апартамент Възраждане"
+  },
+  "reference_id": "Address.bg:b1a550ea5e42",
+  "local_image_files": [
+    "data/media/Address.bg_b1a550ea5e42/0000_35b62c66.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_b1a550ea5e42/0000_35b62c66.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_b1a550ea5e42",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

@@ -2,27 +2,50 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1a177565328983398-prodava-ednostaen-apartament-grad-sofiya-lyulin-6",
   "external_id": "57c881a9981e",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 1-����� ���� �����, ����� 6 �����: 1a177565328983398",
+  "description": "������ ���� ! ! ! ������� ! ! ! ��������� ! ! ! ����������� �� ������ �������� ��������� ���������� � ����������� ���� ���������  ����� ����� ���� �� �� ��������� �� ��������, ��� �������� ������������ �������������: ������ �����, ������ � ����� �� ������, ����� � ����� �� ������ � ���� � ��������  . �������� � ��� �������� ����������: ��������� � PVC, �������������� ������� � ��������� � ����. ������ � ����� ��������� � ����������� ������. ������ �� ������ � �������������� ������� �� 27-�� ������ ������� ������ ����������, 122 - �� ������ ������� '' ������',  ���� ' ����� ', '�aufland' �  ������ �� ������� ��������� . ����� �� ���� � ������� ���� ���:237907",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
-  "city": "�����",
-  "district": "",
-  "address_text": "",
+  "city": "����� 6",
+  "district": "���� �����",
+  "address_text": "���� �����, ����� 6",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "//imotstatic1.focus.bg/imot/photosimotbg/1/398//big/1a177565328983398_7I.jpg"
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/398//big1/1a177565328983398_7I.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/398//big1/1a177565328983398_Pi.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/398//big1/1a177565328983398_Hy.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/398//big1/1a177565328983398_8G.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/398//big1/1a177565328983398_ch.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/398//big1/1a177565328983398_QA.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/398//big1/1a177565328983398_9b.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/398//big1/1a177565328983398_PJ.jpg",
+    "https://imotstatic1.focus.bg/imot/photosimotbg/1/398//big/1a177565328983398_7I.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-09T10:06:43.634058+00:00",
+  "phones": [
+    "0875363330"
+  ],
+  "amenities": [
+    "����: 7-�� �� 8",
+    "������������: �����, ������� � ������������ 1980 - 1989 �."
+  ],
+  "scraped_at": "2026-04-24T07:52:32.685487+00:00",
   "reference_id": "imot.bg:57c881a9981e",
+  "source_attributes": {
+    "����": "7-�� �� 8",
+    "������������": "�����, ������� � ������������ 1980 - 1989 �."
+  },
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_57c881a9981e",
+  "photo_count_remote": 9,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

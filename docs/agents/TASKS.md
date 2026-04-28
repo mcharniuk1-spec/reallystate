@@ -454,6 +454,7 @@ Bulk live harvesting was started outside the formal S1-15 acceptance gate; do **
 - **Current analysis artifact (2026-04-20)**: `docs/dashboard/scrape-status.html` is the operator dashboard for per-source service/property coverage, field capture, image/text readiness, and next steps across all tier-1/2 sources.
 - **Website inventory artifact (2026-04-20)**: `docs/exports/website-inventory-analysis.json` and `docs/exports/website-inventory-analysis.md` now persist website-side totals, category-level count evidence, count method, count gaps, and estimate conflicts for each tier-1/2 source; `scrape-status.html` renders those inside each website block and should be extended after every live counting pass.
 - **Interim evidence (2026-04-09)**: `data/scraped/` already contains ≥100 parsed listings for **5** sources (`Bazar.bg`, `BulgarianProperties`, `imot.bg`, `OLX.bg`, `Yavlena`), and the continuation wave added live on-disk corpus for `Address.bg` (43), `LUXIMMO` (15), `property.bg` (15), and `SUPRIMMO` (12). The gate is still **not met** until those rows land in PostgreSQL `canonical_listing`.
+- **Gemma/OpenClaw analysis note (2026-04-27)**: `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md` shows 1,549 file-backed tier-1/2 items, 18,707 remote photo references, 5,376 local photos, and no completed apartment image-description reports. Treat this as the handoff baseline for `S1-21` and `S1-22`.
 - **Pattern audit note (2026-04-21)**:
   1. Current strict `Patterned` set from saved sample evidence is `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `OLX.bg`, `property.bg`, `SUPRIMMO`, `Bazar.bg`, `Yavlena`.
   2. Current remaining non-patterned tier-1/2 sources split into:
@@ -490,6 +491,51 @@ Bulk live harvesting was started outside the formal S1-15 acceptance gate; do **
 - **Output**: `docs/exports/tier12-live-volume-report.md`, crawl/job logs as needed, JOURNEY entries per run batch
 - **Verifier**: debugger
 - **Depends on**: `S1-15`, `BD-11`
+
+### S1-21: Codex tier-1/2 scrape quality audit + pattern repair prep
+- **Status**: `TODO`
+- **Priority**: **CRITICAL** — next operator-requested tier-1/2 run before Gemma resumes
+- **Read first**: `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`, `docs/exports/source-item-photo-coverage.json`, `docs/exports/tier12-pattern-status.md`, `docs/dashboard/scrape-status.html`, `scripts/live_scraper.py`, `data/scraped/*/listings/*.json`
+- **Do**:
+  1. Audit every tier-1/2 source with saved rows for: item count, `photo_count_remote`, `photo_count_local`, `full_gallery_downloaded`, local file existence/decodability, description length, price, area, city, property type, rooms/floor/phones.
+  2. Produce per-source and per-property failure tables: missing images, partial galleries, thin descriptions, missing price/area/city/type, suspicious one-photo galleries, and missing image-description reports.
+  3. Improve source-specific parsing patterns in code, not only generated JSON. Current priority repairs: `imot_bg` price/area extraction, `yavlena` description extraction, `address_bg` city extraction, and media backfill patterns for `bulgarianproperties`, `property_bg`, `suprimmo`, `homes_bg`.
+  4. Regenerate all affected listing JSON, photo coverage exports, pattern-status exports, `docs/dashboard/scrape-status.html`, and frontend scraped-listing seed data.
+  5. Keep legal gates intact and keep tests fixture-only.
+- **Acceptance gate**: parser regression tests pass; dashboards show source-by-source and item-by-item media/field completeness; every source gap is mapped to either fixed, legal/runtime blocked, or queued for Gemma image reporting.
+- **Output**: updated parser code/tests, refreshed dashboards/exports, `docs/exports/tier12-quality-audit-2026-04-27.md`, updated `docs/agents/scraper_1/JOURNEY.md`
+- **Verifier**: debugger
+- **Depends on**: S1-18 file-backed corpus evidence, S1-20 all-Bulgaria runner
+
+### S1-22: Gemma/OpenClaw apartment image-report generation handoff
+- **Status**: `TODO`
+- **Priority**: **HIGH** — starts after `S1-21` repairs media/field completeness
+- **Read first**: `docs/exports/taskforgema.md`, `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`, `docs/exports/source-item-photo-coverage.json`, `data/scraped/*/listings/*.json`, `data/media/`
+- **Do**:
+  1. Run only after Codex confirms which apartment listings have complete local galleries.
+  2. Generate one Markdown and one JSON visual report per apartment under `docs/exports/apartment-image-reports/<source_key>/`.
+  3. Describe every local image in order with scene type, style, layout clues, visible objects/equipment/tools, colors/materials, condition, defects/risks, confidence, and uncertainty.
+  4. Write global `index.md` and `index.json` with per-source counts: apartments eligible, reports created, images described, skipped rows, and skip reasons.
+  5. Do not invent unseen rooms or unavailable media; use `unclear` and confidence values.
+- **Acceptance gate**: every apartment with `full_gallery_downloaded=true` has report paths or a documented skip reason; dashboard/export artifacts include image-report status.
+- **Output**: `docs/exports/apartment-image-reports/`, refreshed dashboards, updated `docs/agents/scraper_1/JOURNEY.md`
+- **Verifier**: debugger
+- **Depends on**: S1-21
+
+### S1-20: Stage 1 controlled production prep — Varna-only region-first control plane (no live crawl)
+- **Status**: `DONE_AWAITING_VERIFY` (2026-04-23; control-plane widened to all tier-1/2 sources, per-source/segment readiness matrix, threshold summary, queue status, manual control worker, pause/unpause command, and manual activation runbook; operator must still run migrations locally and decide when to enqueue)
+- **Priority**: **HIGH** — prerequisite for passive background scraping and per-segment “100 valid listings” gates without auto-starting crawls
+- **Read first**: `migrations/versions/20260423_0003_stage1_scrape_control_plane.py`, `docs/stage1-controlled-production-architecture.md`, `data/scrape_patterns/regions/varna/sections.json`, `src/bgrealestate/scraping/*`
+- **Do**:
+  1. Keep **only** `region_key = varna` in schema, manifests, and CHECK constraints; do not add other regions in implementation until an explicit schema/policy change.
+  2. Persist layered patterns per **source → section → list_page → detail_page → media_gallery** in `source_section` + `source_section_pattern`; segment keys must include `buy_personal`, `buy_commercial`, `rent_personal`, `rent_commercial` where applicable.
+  3. Wire operator commands: `make scrape-validate-manifest`, `make scrape-sync-sections-dry`, `make scrape-sync-sections` (needs `DATABASE_URL`), `make scrape-threshold-summary`, `make scrape-queue-status`, `make scrape-control-worker-once`, `make scrape-runner-unpause`, and `make scrape-runner-once` (enqueue only after manual unpause).
+  4. Provide a manual control-worker path that can process queued `discover` and `threshold_check` tasks without auto-starting HTTP scraping; keep fetch/detail/media execution operator-controlled in this stage.
+  5. **Do not** start live HTTP collection as part of this slice; Stage 2 activates “100 valid listings per Varna source/segment bucket” after operator approval.
+- **Acceptance gate**: `make test` passes; `alembic upgrade head` applies `20260423_0003` on Postgres; manifest validates; architecture doc + operator checklist exist; `scrape_runner_state.global_pause` remains default **true** until operator clears it; queue status + control-worker preview commands stay read-only unless `--apply` is passed
+- **Output**: migration, ORM models, `src/bgrealestate/scraping/`, manifest generator, threshold planner, queue status + control worker, Makefile/CLI targets, `docs/stage1-controlled-production-architecture.md`, `docs/exports/varna-controlled-crawl-matrix.{json,md}`, `agent-skills/stage1-scrape-control-plane/SKILL.md`
+- **Verifier**: debugger + backend_developer
+- **Depends on**: BD-01 (migrations baseline)
 
 ### S1-16: Remaining tier-2 connectors (full set)
 - **Status**: `TODO`
@@ -728,9 +774,11 @@ Bulk live harvesting was started outside the formal S1-15 acceptance gate; do **
 - **Depends on**: UX-02, BD-02, BD-03
 
 ### UX-04: Nationwide Bulgaria LUN-style map + listings experience
-- **Status**: `TODO`
+- **Status**: `TODO` (website seed updated 2026-04-27 with scraped property evidence; full UX-04 still waits on backend/filter gates)
 - **Read first**: `PLAN.md` §8, `docs/agents/ux_ui_designer/operator-dashboard-spec.md`, LUN-style reference notes
-- **Do**: shape homepage UX to LUN-like split flow (map + feed + filters) for **all of Bulgaria**: default viewport and filters are **country-wide**; users can narrow by region/city/bbox. Optional **Varna preset** is allowed for demos or 3D pilot (UX-07) but must not be the only mode. Document mobile/tablet behavior and performance expectations for nationwide tiles/clusters.
+- **Do**: shape homepage UX to LUN-like split flow (map + feed + filters) for **all of Bulgaria**: default viewport and filters are **country-wide**; users can narrow by region/city/bbox. Optional **Varna preset** is allowed for demos or 3D pilot (UX-07) but must not be the only mode. Keep the scraped-property evidence fields visible where useful: local/remote photo counts, full-gallery flag, description quality, scrape quality score, and image-report status.
+- **2026-04-27 lead note**: homepage seed now has MapLibre + OpenStreetMap raster base, deterministic nationwide coordinates for scraped rows without lat/lon, synchronized map/list selection, selected-property right panel, and scrollable right-side list. Full UX-04 still needs backend filter contracts and real geocoding before verification.
+- **2026-04-27 product note**: property detail pages now expose `Marketed by sources` / `Source links` buttons using conservative source-link matching. Current source is always shown; cross-source links are only added when same-property evidence is strong enough and never inferred from neighboring listings on the same source.
 - **Acceptance gate**: prototype demonstrates Bulgaria-wide browse (no hard-coded Varna-only lock), map filters + listing cards + synchronized selection; spec calls out optional Varna shortcut vs default nationwide
 - **Output**: UX spec/update doc + component task breakdown
 - **Verifier**: debugger + backend_developer
@@ -758,6 +806,7 @@ Bulk live harvesting was started outside the formal S1-15 acceptance gate; do **
 - **Status**: `TODO`
 - **Read first**: `docs/business/varna-3d-osm-integration.md`, `components/map/MapCanvas.tsx`
 - **Do**: implement MapLibre 3D building extrusion layer using PMTiles from BD-08; building click shows listing drawer; 2D/3D toggle
+- **2026-04-27 lead note**: temporary 3D property/building extrusions exist over the OSM raster map for homepage QA. Replace them with PMTiles/OSM building footprints when BD-08 lands.
 - **Acceptance gate**: 3D buildings render in Varna viewport; building click opens drawer; 2D fallback works
 - **Output**: updated MapCanvas component + BuildingLayer + BuildingSummaryDrawer
 - **Verifier**: debugger + backend_developer
@@ -969,6 +1018,16 @@ Bulk live harvesting was started outside the formal S1-15 acceptance gate; do **
 - **Verifier**: lead agent
 - **Depends on**: S1-13, BD-01, **S1-18** (live portion)
 
+### DBG-08: Verify Codex tier-1/2 quality audit and Gemma readiness
+- **Status**: `TODO`
+- **Priority**: **CRITICAL** — verifier for the next two operator-requested runs
+- **Read first**: `S1-21`, `S1-22`, `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`, `docs/dashboard/scrape-status.html`
+- **Do**: after the next Codex run, verify source-by-source completeness tables, parser tests, local image file evidence, frontend scraped-listing seed generation, and readiness for Gemma image-report generation.
+- **Acceptance gate**: every high-priority source gap has a fix, test, or blocker; Gemma receives a clean eligible-listing set with local galleries and no ambiguous Varna-only instruction.
+- **Output**: verification entry in `docs/agents/debugger/JOURNEY.md`, updated TASKS statuses
+- **Verifier**: lead agent
+- **Depends on**: S1-21
+
 ### DBG-06: Verify all pending DONE_AWAITING_VERIFY slices (batch 2)
 - **Status**: `TODO`
 - **Priority**: **CRITICAL** — many slices await verification (**scheduled after `S1-18` + `BD-11` live ingest proof** per 2026-04-09 wave; early spot-checks allowed if operator requests)
@@ -1090,6 +1149,14 @@ Bulk live harvesting was started outside the formal S1-15 acceptance gate; do **
   7. Report: % complete toward working website, estimated remaining slices, top blockers
 - **Acceptance gate**: dashboard is current; no agent has been stuck on same slice for >2 activations without blocker documented
 - **Output**: updated dashboard, blocker notes, progress report
+
+### LEAD-07: OpenClaw/Gemma run analysis and next-run preparation
+- **Status**: `DONE_AWAITING_VERIFY` (2026-04-27)
+- **Priority**: HIGH
+- **Read first**: `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`, `docs/openclaw/gemma4-agent.md`, `docs/exports/taskforgema.md`
+- **Do**: analyze what Gemma/OpenClaw produced, update only relevant agent tasks, prepare the next Codex quality-audit prompt path and the following Gemma image-report path, update website seed data with scraped property evidence, refresh dashboards, and run the website locally.
+- **Acceptance gate**: analysis doc exists; `S1-21`, `S1-22`, and `DBG-08` are queued; website can show scraped items with media/quality metadata; dashboards are regenerated.
+- **Output**: updated task queue, dashboards, frontend scraped-listing seed, run notes
 - **Verifier**: self
 - **Depends on**: —
 

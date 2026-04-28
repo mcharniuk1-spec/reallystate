@@ -2,12 +2,12 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-53990218/obzaweden-4-staen-apartament-w-predpochitan-rayon",
   "external_id": "53990218",
-  "title": "Bazar.BG",
+  "title": "Обзаведен 4-стаен апартамент в предпочитан район → Обява 53990218",
   "description": "Продавам 4-стаен реновиран и обзаведен апартамент на две нива (етаж от къща) с чиста площ от 90 кв.м., директно от собственик!\nАпартамента се намира в близост д",
   "price": 140000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 90.0,
+  "rooms": 4.0,
   "floor": null,
   "city": "",
   "district": "",
@@ -30,11 +30,30 @@
     "https://cdn7.focus.bg/bazar/de/original/de9ab1506f2e852351afead2bd50f645.webp",
     "https://cdn7.focus.bg/bazar/f0/original/f06db4d084c65ef8c267b34b66a9d3b4.webp",
     "https://cdn7.focus.bg/bazar/1c/original/1c0b059173c50fd6ed84fc6455907ed2.webp",
-    "//cdn8.focus.bg/bazar/e1/pics/e157a9b182f63a5abcc832d30260ddbe.webp"
+    "https://cdn8.focus.bg/bazar/e1/pics/e157a9b182f63a5abcc832d30260ddbe.webp"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "098205052203511",
+    "00000000",
+    "092858130",
+    "07978695",
+    "068179400542",
+    "08283803",
+    "0923465973",
+    "02103355678",
+    "040137349",
+    "096102486612",
+    "0208973142",
+    "073536812894",
+    "359240208998",
+    "026-05-08",
+    "000-2014",
+    "01112551"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:45:17.722832+00:00",
+  "scraped_at": "2026-04-24T07:53:16.226414+00:00",
   "reference_id": "Bazar.bg:53990218",
   "local_image_files": [
     "data/media/Bazar.bg_53990218/0000_28b499df.webp",
@@ -67,5 +86,10 @@
     "Bazar.bg_53990218/0011_80744b12.webp",
     "Bazar.bg_53990218/0012_ca675378.webp",
     "Bazar.bg_53990218/0013_d5af7bcb.webp"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_53990218",
+  "photo_count_remote": 14,
+  "photo_count_local": 14,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

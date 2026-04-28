@@ -226,3 +226,36 @@
 - **Review comments**:
   - Verify that the promoted sources now have sample evidence matching the saved report entries in `docs/exports/tier12-pattern-status.md`.
   - Verify that the DB proof is correctly marked as blocked by runtime availability rather than misreported as a parser or ingest-code failure.
+
+### 2026-04-23 — debugger follow-up queued: Stage 1/2 controlled Varna activation layer (agent: scraper_1)
+
+- **Gate commands run**:
+  - deferred formal verification until the new control-plane artifacts are spot-checked together: manifest, runbook, matrix, and threshold planner outputs
+- **Result**: DEFERRED
+- **Failure details**:
+  - No failure is implied here; this is a verification handoff note after a non-debugger run.
+  - DB-backed summary/enqueue commands still depend on a live PostgreSQL runtime that was not available in this environment.
+- **Review comments**:
+  - Verify that `data/scrape_patterns/regions/varna/sections.json` covers all tier-1/2 sources and keeps `region_key = varna` everywhere.
+  - Verify that `docs/exports/varna-controlled-crawl-matrix.md` matches the generated manifest and that unsupported/pattern-incomplete buckets are explicit.
+  - Verify that `scrape-runner-once` now reports threshold actions and only seeds queue tasks after manual unpause, never automatically.
+
+### 2026-04-23 — debugger follow-up queued: manual control worker + queue status layer (agent: scraper_1)
+
+- **Gate commands run**:
+  - deferred formal verification until the new manual queue/status commands are spot-checked together with the updated Stage 2 runbook
+- **Result**: DEFERRED
+- **Failure details**:
+  - No failure is implied here; this is a standard verifier handoff after a non-debugger run.
+  - DB-backed command execution still depends on a live PostgreSQL runtime outside this environment.
+- **Review comments**:
+  - Verify that `scrape-queue-status` is read-only and reports task counts plus next eligible tasks.
+  - Verify that `scrape-control-worker-once` is read-only by default and only mutates queue state when `--apply` is provided.
+  - Verify that `discover` tasks expand into `fetch_list` tasks with preserved section/source metadata and without triggering HTTP work automatically.
+
+### 2026-04-27 — debugger follow-up queued: Codex quality audit and Gemma image-report readiness
+
+- **Gate commands run**: deferred formal verification until `S1-21` is executed.
+- **Result**: DEFERRED
+- **Failure details**: no verifier failure is implied; current analysis found no completed apartment image-description report output.
+- **Review comments**: verify `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`; verify the next Codex run produces per-source/per-property gaps; verify parser fixes are code-backed and fixture-tested; verify Gemma receives only Codex-confirmed apartment rows with complete local galleries.

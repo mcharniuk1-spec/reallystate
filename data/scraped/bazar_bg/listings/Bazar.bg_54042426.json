@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54042426/dawa-pod-naem-2-staen-gr-sofiia-krastowa-wada",
   "external_id": "54042426",
-  "title": "Bazar.BG",
+  "title": "Дава под наем 2-СТАЕН, гр. София, Кръстова вада → Обява 54042426",
   "description": "Чисто нов дом, обзаведен с внимание,очаква своя първи наемател. Разпределение: Хол и трапезария с кухненски бокс, коридор, спалня, баня с тоалетна ,тераса. Хара",
   "price": 695.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 68.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Кръстова вада",
+  "address_text": "София, Кръстова вада",
   "latitude": null,
   "longitude": null,
   "listing_intent": "long_term_rent",
@@ -32,11 +32,25 @@
     "https://imotstatic2.focus.bg/imot/photosimotbg/2/239/big1/2c177496575101239_VT.jpg",
     "https://imotstatic2.focus.bg/imot/photosimotbg/2/239/big1/2c177496575101239_xB.jpg",
     "https://imotstatic2.focus.bg/imot/photosimotbg/2/239/big1/2c177496575101239_Lu.jpg",
-    "//imotstatic2.focus.bg/imot/photosimotbg/2/239/big1/2c177496575101239_bo.jpg"
+    "https://imotstatic2.focus.bg/imot/photosimotbg/2/239/big1/2c177496575101239_bo.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "000000000",
+    "+359897220330",
+    "092858361",
+    "0897599081509",
+    "0228293775",
+    "0633462804",
+    "06437236",
+    "026-05-08",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:45:22.227385+00:00",
+  "scraped_at": "2026-04-24T07:53:16.571163+00:00",
   "reference_id": "Bazar.bg:54042426",
   "local_image_files": [
     "data/media/Bazar.bg_54042426/0000_cdb38474.jpg",
@@ -71,5 +85,10 @@
     "Bazar.bg_54042426/0012_3c966237.jpg",
     "Bazar.bg_54042426/0013_57ea0004.jpg",
     "Bazar.bg_54042426/0014_45733621.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54042426",
+  "photo_count_remote": 16,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "partial_gallery"
 }

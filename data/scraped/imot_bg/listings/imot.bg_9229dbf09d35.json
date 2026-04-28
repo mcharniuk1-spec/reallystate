@@ -2,27 +2,56 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1a177377336814032-prodava-ednostaen-apartament-grad-sofiya-reduta-ul-georgi-minchev",
   "external_id": "9229dbf09d35",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 1-����� ���� �����, ������ ��. ������ ������ �����: 1a177377336814032",
+  "description": "Colliers �������� ������������ � ������� ���������� ������ �� ��� ���� ��� ��������� ���� �� 76 ��.�, ����������� � �������� � ������ �������, ��������� ����� �� �������, ���� � �� ����������. �������������: ����� ����: �����, ����������, ��� � ������ ����� ����: ������ � ���� � �������� ������� ��������������: ������� �� ������� ���������� ��������� � ��������� �� ��� ������������: ���������� �� ������� �� �����   17 ��.� ������ � ��� ������ �� ������, � ��������� �� ����� �� �������������� �� ������ ���������� ��� ��������� �� �����, �� �� ��������� �� �� �������� � ���. Colliers offers for sale a functional and fully furnished duplex studio apartment with a built-up area of 76 sq.m, located in a quiet and convenient area, suitable both for personal use and investment. Layout: First level: kitchen, dining area, living room, and terrace Second level: bedroom and bathroom with toilet Key features: Fully furnished Electric heating and cooling Additional: Option to purchase a garage   17 sq.m The property is currently registered as a studio (atelier) and is in the process of change of use For more information or to arrange a viewing, please do not hesitate to contact us.",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
-  "city": "�����",
-  "district": "",
-  "address_text": "",
+  "city": "������ ��. ������ ������",
+  "district": "���� �����",
+  "address_text": "���� �����, ������ ��. ������ ������",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "//imotstatic2.focus.bg/imot/photosimotbg/1/032//big/1a177377336814032_QK.jpg"
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/032//big1/1a177377336814032_QK.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/032//big1/1a177377336814032_G0.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/032//big1/1a177377336814032_RI.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/032//big1/1a177377336814032_Zl.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/032//big1/1a177377336814032_zG.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/032//big1/1a177377336814032_ST.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/032//big1/1a177377336814032_t8.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/032//big1/1a177377336814032_dV.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/032//big1/1a177377336814032_vc.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/032//big1/1a177377336814032_dK.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/032//big/1a177377336814032_QK.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-08T16:26:40.588646+00:00",
+  "phones": [
+    "029769976"
+  ],
+  "amenities": [
+    "����: 5-�� �� 5",
+    "���: ��",
+    "�E�: ��",
+    "������������: �����, ������� � ������������"
+  ],
+  "scraped_at": "2026-04-24T07:52:36.538323+00:00",
   "reference_id": "imot.bg:9229dbf09d35",
+  "source_attributes": {
+    "����": "5-�� �� 5",
+    "���": "��",
+    "�E�": "��",
+    "������������": "�����, ������� � ������������"
+  },
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_9229dbf09d35",
+  "photo_count_remote": 11,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

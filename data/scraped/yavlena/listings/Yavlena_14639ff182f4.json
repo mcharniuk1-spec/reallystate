@@ -4,14 +4,14 @@
   "external_id": "14639ff182f4",
   "title": "Двустаен апартамент във Варна 62 кв.м. ID 168178  | Явлена",
   "description": "",
-  "price": null,
+  "price": 190000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 62.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/67b5bbe2-cebe-4d77-916f-6558b166d23f.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 522 505",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:15:38.257778+00:00",
+  "scraped_at": "2026-04-24T07:53:18.243334+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:14639ff182f4",
   "local_image_files": [
     "data/media/Yavlena_14639ff182f4/0000_5ba89232.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_14639ff182f4/0000_5ba89232.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_14639ff182f4",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

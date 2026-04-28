@@ -2,27 +2,55 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1a177003254401011-prodava-ednostaen-apartament-grad-sofiya-krasno-selo",
   "external_id": "68845b83f28f",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 1-����� ���� �����, ������ ���� �����: 1a177003254401011",
+  "description": "������� �� ��������� ����� Peak Real Estate �������� ����������, ������� �� � ���� �� �������������� � ����� ������� ������ �� ���������   ��. ������ ����. 📍 ������ �� ������ �� ���. �������� � ������� ������ � ������ ������ � �������� �����. ✨ ������� ��������������: 📍 �������: ��. �����, ���. �������� 🏢 ����: 5-�� 📐 ��������� ����: 48,07 ��.�. 🧱 ������ �� ��: ���� ���� 🛋️ ����� 🍽️ �������� ��������� 🚿 ������������: 🏚️ ���� 🏢 1,12% ������� ����� �� ������ ����� �� �������� 📍 �� ������   ��. ������ ���� 🌳🏙️ ������ ���� � ���� �� ���-��������� �������� � �����, ������������ �� ��������� �� �������������� � ��������: 🚇 ������������  ������ ����  � ������� 🛍️ ��������, ������������ � ��������� ������ 🏫 ������� � ������ ������� 🌳 ������� � ������ ����� �� �������� 🚗 ���� ������ �� ������� � ������� ��������� ✨ ������ � �������� ����� �� ����� ��������, ���� � �� ���������� � ����� ��������� �� ���� 📈 ☎️�� ������ � ���������� �� ���� � ����� ����� ���������� ����� �� �� ��������� �� �� ��������� �� �������: 0882988975. ☎️",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
-  "city": "�����",
-  "district": "",
-  "address_text": "",
+  "city": "������ ����",
+  "district": "���� �����",
+  "address_text": "���� �����, ������ ����",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "//imotstatic3.focus.bg/imot/photosimotbg/1/011//big/1a177003254401011_4P.jpg"
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/011//big1/1a177003254401011_4P.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/011//big1/1a177003254401011_IQ.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/011//big1/1a177003254401011_4r.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/011//big1/1a177003254401011_Fu.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/011//big1/1a177003254401011_K4.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/011//big1/1a177003254401011_hQ.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/011//big1/1a177003254401011_7K.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/011//big1/1a177003254401011_uG.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/011//big1/1a177003254401011_A.jpg",
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/011//big/1a177003254401011_4P.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-09T10:06:33.874042+00:00",
+  "phones": [
+    "0882988975"
+  ],
+  "amenities": [
+    "����: 5-�� �� 5",
+    "���: ��",
+    "�E�: ��",
+    "������������: �����, ������� � ������������ 1980 - 1989 �."
+  ],
+  "scraped_at": "2026-04-24T07:52:33.915858+00:00",
   "reference_id": "imot.bg:68845b83f28f",
+  "source_attributes": {
+    "����": "5-�� �� 5",
+    "���": "��",
+    "�E�": "��",
+    "������������": "�����, ������� � ������������ 1980 - 1989 �."
+  },
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_68845b83f28f",
+  "photo_count_remote": 10,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

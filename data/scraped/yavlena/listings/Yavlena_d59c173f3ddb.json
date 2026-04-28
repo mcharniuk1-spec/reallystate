@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/162891",
   "external_id": "d59c173f3ddb",
   "title": "Двустаен апартамент в София 82 кв.м. ID 162891  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Явлена-Изток продава двустаен апартамент с площ – 82 кв.м. разположен на трети жилищен етаж в Младост 4“. Предстоящ АКТ-16. Разпределението е както следва: входно антре, дневна с кухненски бокс, спалня, баня с тоалетна, мокро помещение и балкон. Имотът се намира в бързо развиващ се район в близост до „Бизнес парк София“ и на няколко минути от метростанция „Бизнес парк“. Апартамента е с изцяло южно изложение. Местоположението на комплекса в който е разположен имота дава възможност бързо да напуснем с автомобил София, както и бързо да влезнем в Столицата. Обявената цена е валидна до 30.04.26г. За повече информация и огледи позвънете на посочения телефон. Водещ брокер – Людмил Таков",
+  "price": 174640.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 82.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "м",
+  "address_text": "София, м",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/77d3b392-a878-4512-bd3c-d8deae69bade.png"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 515 585",
+    "+359 882 222 321"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:15:08.455885+00:00",
+  "scraped_at": "2026-04-24T07:53:24.774230+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:d59c173f3ddb",
   "local_image_files": [
     "data/media/Yavlena_d59c173f3ddb/0000_e5687841.png"
   ],
   "local_image_storage_keys": [
     "Yavlena_d59c173f3ddb/0000_e5687841.png"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_d59c173f3ddb",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

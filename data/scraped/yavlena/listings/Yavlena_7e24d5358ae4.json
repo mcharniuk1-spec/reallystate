@@ -4,14 +4,14 @@
   "external_id": "7e24d5358ae4",
   "title": "Къща в Костинброд 64 кв.м. ID 168105  | Явлена",
   "description": "",
-  "price": null,
+  "price": 240000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 64.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Костинброд",
   "district": "",
-  "address_text": "",
+  "address_text": "Костинброд",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/2cfdd7c5-4386-47c0-a5a6-42dd7271c2a4.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 502 211",
+    "+359 882 230 300"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:26.708884+00:00",
+  "scraped_at": "2026-04-24T07:53:22.176333+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:7e24d5358ae4",
   "local_image_files": [
     "data/media/Yavlena_7e24d5358ae4/0000_5744ba6b.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_7e24d5358ae4/0000_5744ba6b.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_7e24d5358ae4",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

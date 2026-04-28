@@ -4,14 +4,14 @@
   "external_id": "2539c031ffbf",
   "title": "Земеделска земя в Градина 9283 кв.м. ID 168186  | Явлена",
   "description": "",
-  "price": null,
+  "price": 186000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 9283.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Градина",
   "district": "",
-  "address_text": "",
+  "address_text": "Градина",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/3f800464-9b54-4469-91f9-0655a065fee4.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 541 950",
+    "+359 898 498 449"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:15:31.856367+00:00",
+  "scraped_at": "2026-04-24T07:53:18.930037+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:2539c031ffbf",
   "local_image_files": [
     "data/media/Yavlena_2539c031ffbf/0000_90023106.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_2539c031ffbf/0000_90023106.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_2539c031ffbf",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

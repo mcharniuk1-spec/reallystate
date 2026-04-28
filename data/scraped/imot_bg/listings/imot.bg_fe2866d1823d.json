@@ -2,27 +2,53 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1a177270433712230-prodava-ednostaen-apartament-grad-sofiya-obelya-2",
   "external_id": "fe2866d1823d",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 1-����� ���� �����, ����� 2 �����: 1a177270433712230",
+  "description": "���� �� ������ ����, �� ������ 1 �� ���������� �� ������, ����� ������� ����� �� 5-7 ��� ���������. ����������� �� ������ �� �����, ��� ,, ���� � ��������,  ���� ������ ��� ������, ����� � ���������. � ������� ��� ������ �������, ������� � ��������. ����������� � � ���� ���������. ������� � ���������� ������� �����3-4 ������ � � � ��������� ���������. ���� � �������� �� �� �� ����� ������� �������",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
-  "city": "�����",
-  "district": "",
-  "address_text": "",
+  "city": "����� 2",
+  "district": "���� �����",
+  "address_text": "���� �����, ����� 2",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "//imotstatic2.focus.bg/imot/photosimotbg/1/230//big/1a177270433712230_OG.jpg"
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/230//big1/1a177270433712230_OG.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/230//big1/1a177270433712230_te.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/230//big1/1a177270433712230_bt.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/230//big1/1a177270433712230_Yd.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/230//big1/1a177270433712230_F9.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/230//big1/1a177270433712230_Gj.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/230//big1/1a177270433712230_21.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/230//big1/1a177270433712230_Jb.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/230//big1/1a177270433712230_9D.jpg",
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/230//big/1a177270433712230_OG.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-08T16:26:28.202920+00:00",
+  "phones": [
+    "0896079596"
+  ],
+  "amenities": [
+    "����: 8-�� �� 8",
+    "�E�: ��",
+    "������������: �����, ������� � ������������ 1980 - 1989 �."
+  ],
+  "scraped_at": "2026-04-24T07:52:43.311808+00:00",
   "reference_id": "imot.bg:fe2866d1823d",
+  "source_attributes": {
+    "����": "8-�� �� 8",
+    "�E�": "��",
+    "������������": "�����, ������� � ������������ 1980 - 1989 �."
+  },
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_fe2866d1823d",
+  "photo_count_remote": 10,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

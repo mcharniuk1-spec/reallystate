@@ -4,14 +4,14 @@
   "external_id": "a373d6c77c52",
   "title": "Двустаен апартамент в Бургас, Меден рудник - зона В - код на имота: 668404",
   "description": "Адрес недвижими имоти предлага Двустаен апартамент в Бургас, Меден рудник - зона В с код на имота: 668404. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 63800.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 63.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Бургас",
+  "district": "Меден рудник - зона В",
+  "address_text": "Бургас, Меден рудник - зона В",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,39 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/404/668404/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "025-09-18",
+    "018-05-09",
+    "018-07-06",
+    "0886700142",
+    "025-09-19",
+    "025-10-14",
+    "014535726",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:20:56.908054+00:00",
+  "scraped_at": "2026-04-24T07:52:44.018685+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Бургас Двустаен апартамент Меден рудник - зона В"
+  },
   "reference_id": "Address.bg:a373d6c77c52",
   "local_image_files": [
     "data/media/Address.bg_a373d6c77c52/0000_ff2208d9.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_a373d6c77c52/0000_ff2208d9.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_a373d6c77c52",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

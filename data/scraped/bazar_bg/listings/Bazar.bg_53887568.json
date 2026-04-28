@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-53887568/dawa-pod-naem-1-staen-gr-sofiia-manastirski-liwadi",
   "external_id": "53887568",
-  "title": "Bazar.BG",
+  "title": "Дава под наем 1-СТАЕН, гр. София, Манастирски ливади → Обява 53887568",
   "description": "Собственик дава под наем БЕЗ комисионна , едностаен малък апартамент, нов, ново обзаведен, отоплява се на климатик. Отдава се дългосрочно за сам човек.Намира се",
   "price": 490.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 44.0,
+  "rooms": 1.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Манастирски ливади",
+  "address_text": "София, Манастирски ливади",
   "latitude": null,
   "longitude": null,
   "listing_intent": "long_term_rent",
@@ -21,11 +21,24 @@
     "https://cdn3.focus.bg/imot/photosimotbg/2/801/big1/2b177383974295801_Lr.jpg",
     "https://cdn3.focus.bg/imot/photosimotbg/2/801/big1/2b177383974295801_pj.jpg",
     "https://cdn3.focus.bg/imot/photosimotbg/2/801/big1/2b177383974295801_WE.jpg",
-    "//cdn3.focus.bg/imot/photosimotbg/2/801/big/2b177383974295801_6Q.jpg"
+    "https://cdn3.focus.bg/imot/photosimotbg/2/801/big/2b177383974295801_6Q.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "00000000",
+    "092864002",
+    "0226011220",
+    "001788690956",
+    "085608565",
+    "06687750",
+    "026-05-08",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:47:30.855217+00:00",
+  "scraped_at": "2026-04-24T07:53:15.871448+00:00",
   "reference_id": "Bazar.bg:53887568",
   "local_image_files": [
     "data/media/Bazar.bg_53887568/0000_5bd67c4b.jpg",
@@ -40,5 +53,10 @@
     "Bazar.bg_53887568/0002_525d8df4.jpg",
     "Bazar.bg_53887568/0003_9dc09b1f.jpg",
     "Bazar.bg_53887568/0004_5bd67c4b.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_53887568",
+  "photo_count_remote": 5,
+  "photo_count_local": 5,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

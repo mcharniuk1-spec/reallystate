@@ -4,14 +4,14 @@
   "external_id": "dc5de758f16a",
   "title": "Парцел в Батак 554 кв.м. ID 167962  | Явлена",
   "description": "",
-  "price": null,
+  "price": 16620.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 554.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Батак",
   "district": "",
-  "address_text": "",
+  "address_text": "Батак",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/24f424f1-da99-4c4c-8aca-78c1c891d97d.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 547 339",
+    "+359 895 506 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:13.985644+00:00",
+  "scraped_at": "2026-04-24T07:53:24.971642+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:dc5de758f16a",
   "local_image_files": [
     "data/media/Yavlena_dc5de758f16a/0000_aaa250fd.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_dc5de758f16a/0000_aaa250fd.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_dc5de758f16a",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

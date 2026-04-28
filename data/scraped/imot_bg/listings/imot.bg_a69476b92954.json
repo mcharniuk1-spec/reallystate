@@ -2,27 +2,55 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-1a177486512074839-prodava-ednostaen-apartament-grad-sofiya-druzhba-2-ul-obikolna",
   "external_id": "a69476b92954",
-  "title": "Imot.bg",
-  "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
+  "title": "������� 1-����� ���� �����, ������ 2 ��. �������� �����: 1a177486512074839",
+  "description": "������� �� ���������� � �������� �� �.�. ������ 2, � ������� �� ������������. ������ � �� ����� ����, � ���� 44.75  ��.�. � ���� ���������. ��������������� �: �������; ������ � ������ ���� ���; ����� � ����� �� ��������; ������ ���� ��� ��������� �����. ����������� �� ����� � ��� �������� � ��� ������ ��������. ���� ���� ���������� ��� ����� �� ������� � �������� �� �� ������� ����� ������ �� ����������. ���� ������ � �����. ����������� � �� ���. ������� �� ������ �����������. ������ � � ����������� �������������� � ������� �� ������������ � ������ �� ������� ���������, �����������, ������� � ������ �������. ����� � �� ��. ����� �������.",
   "price": null,
   "currency": "EUR",
   "area_sqm": null,
   "rooms": null,
   "floor": null,
-  "city": "�����",
-  "district": "",
-  "address_text": "",
+  "city": "������ 2 ��. ��������",
+  "district": "���� �����",
+  "address_text": "���� �����, ������ 2 ��. ��������",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "apartment",
   "image_urls": [
-    "//cdn3.focus.bg/imot/photosimotbg/1/839//big/1a177486512074839_IO.jpg"
+    "https://cdn3.focus.bg/imot/photosimotbg/1/839//big1/1a177486512074839_IO.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/839//big1/1a177486512074839_AS.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/839//big1/1a177486512074839_5x.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/839//big1/1a177486512074839_QK.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/839//big1/1a177486512074839_OW.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/839//big1/1a177486512074839_ja.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/839//big1/1a177486512074839_sp.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/839//big1/1a177486512074839_yX.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/839//big1/1a177486512074839_5p.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/839//big1/1a177486512074839_ms.jpg",
+    "https://cdn3.focus.bg/imot/photosimotbg/1/839//big/1a177486512074839_IO.jpg"
   ],
-  "phones": [],
-  "amenities": [],
-  "scraped_at": "2026-04-09T10:06:31.052938+00:00",
+  "phones": [
+    "0888430295",
+    "0885549519"
+  ],
+  "amenities": [
+    "����: 2-�� �� 8",
+    "�E�: ��",
+    "������������: �����, ������� � ������������ 1980 - 1989 �."
+  ],
+  "scraped_at": "2026-04-24T07:52:37.905262+00:00",
   "reference_id": "imot.bg:a69476b92954",
+  "source_attributes": {
+    "����": "2-�� �� 8",
+    "�E�": "��",
+    "������������": "�����, ������� � ������������ 1980 - 1989 �."
+  },
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_a69476b92954",
+  "photo_count_remote": 11,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

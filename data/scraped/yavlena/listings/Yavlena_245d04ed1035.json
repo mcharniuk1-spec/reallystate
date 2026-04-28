@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/115852",
   "external_id": "245d04ed1035",
   "title": "Жилищна сграда в Осеново 1000 кв.м. ID 115852  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "$5b",
+  "price": 450000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 1000.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Осеново",
   "district": "",
-  "address_text": "",
+  "address_text": "Осеново",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/7cb95ca5-05ce-4fc9-9e7d-b0fe0eff42c2.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 523 697",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:14:58.774746+00:00",
+  "scraped_at": "2026-04-24T07:53:18.882084+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:245d04ed1035",
   "local_image_files": [
     "data/media/Yavlena_245d04ed1035/0000_e685d548.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_245d04ed1035/0000_e685d548.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_245d04ed1035",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

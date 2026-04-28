@@ -4,14 +4,14 @@
   "external_id": "8313d2e72214",
   "title": "Студио в Слънчев бряг 22 кв.м. ID 168198  | Явлена",
   "description": "",
-  "price": null,
+  "price": 39990.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 22.0,
+  "rooms": 1.0,
   "floor": null,
-  "city": "",
+  "city": "Слънчев бряг",
   "district": "",
-  "address_text": "",
+  "address_text": "Слънчев бряг",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/83f89389-aa87-45e6-b20b-b8f7ddd3ebef.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 527 403",
+    "+359 885 444 222"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:15:17.249912+00:00",
+  "scraped_at": "2026-04-24T07:53:22.466928+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:8313d2e72214",
   "local_image_files": [
     "data/media/Yavlena_8313d2e72214/0000_9b157777.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_8313d2e72214/0000_9b157777.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_8313d2e72214",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

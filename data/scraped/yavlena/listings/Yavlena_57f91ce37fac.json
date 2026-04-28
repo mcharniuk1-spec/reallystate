@@ -3,30 +3,43 @@
   "listing_url": "https://www.yavlena.com/bg/168202",
   "external_id": "57f91ce37fac",
   "title": "Магазин във Варна 505 кв.м. ID 168202  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Предлагаме ви за продажба самостоятелна нова сграда (с Акт 16 от 2020 г.), подходяща за организиране на всякакъв вид бизнес дейност. Търговският обект е с площ от 500 кв. м и притежава отличен потенциал за супермаркет, шоурум, спортна зала, център за красота и здраве, игрална зала, място за събития или друг тип дейност по ваш избор.\\\\r\\\\n​Имотът е с перфектна локация, характеризираща се с интензивен човекопоток през летния сезон, което гарантира постоянна клиентела. Функционалното разпределение осигурява простор, голяма светла височина и отлична организация на работния процес. На разположение са складови помещения, административни офиси и санитарни възли за персонала и клиентите, рампа за зареждане и обслужване и др.\\\\r\\\\n​Входът към основната търговска зала е стратегически разположен, с големи френски прозорци, място за реклама и отлична видимост. Ако имате идея за развитие на собствен бизнес, ние разполагаме с перфектното място за нейното реализиране.",
+  "price": 900000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 505.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Варна",
+  "district": "м и притежава отличен потенциал за супермаркет",
+  "address_text": "Варна, м и притежава отличен потенциал за супермаркет",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "office",
   "image_urls": [
     "https://userimages.yavlena.com/ee3adc30-add6-42d2-8986-839dc1d647a1.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 544 447",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:15:10.104165+00:00",
+  "scraped_at": "2026-04-24T07:53:20.695127+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:57f91ce37fac",
   "local_image_files": [
     "data/media/Yavlena_57f91ce37fac/0000_8653e62d.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_57f91ce37fac/0000_8653e62d.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_57f91ce37fac",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -4,14 +4,14 @@
   "external_id": "026fab1f7ac0",
   "title": "Къща в Созопол 207 кв.м. ID 131660  | Явлена",
   "description": "",
-  "price": null,
+  "price": 629000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 207.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Созопол",
   "district": "",
-  "address_text": "",
+  "address_text": "Созопол",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/52d742bc-4d87-49cd-b435-1e712f35f856.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 885 777 730"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:38.476064+00:00",
+  "scraped_at": "2026-04-24T07:53:17.578782+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:026fab1f7ac0",
   "local_image_files": [
     "data/media/Yavlena_026fab1f7ac0/0000_d0c2545f.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_026fab1f7ac0/0000_d0c2545f.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_026fab1f7ac0",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

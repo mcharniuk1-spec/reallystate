@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/168084",
   "external_id": "af631ba832b3",
   "title": "Двустаен апартамент във Варна 60 кв.м. ID 168084  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "ЕКСКЛУЗИВНО само от ЯВЛЕНА !\\\\r\\\\nПредлагам ви за продажба двустаен обзаведен тухлен апартамент ново строителство на реномиран строител.\\\\r\\\\nИмотът се състои от слънчева всекидневна с кухненска част с достъп до терасата и обширна спалня с излаз на тераса със западно изложение, комбиниран санитарен възел и коридор. Отделно има и избено помещение.\\\\r\\\\nЖилището се продава напълно обзаведен във вида от снимките.\\\\r\\\\nПаркирането е лесно и достъпно като точно пред самото жилище има безплатен паркинг.\\\\r\\\\nИмотът е подходящ както за лично ползване, така и с инвестиционно предназначение. :)",
+  "price": 130000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 60.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/5dcc4435-f050-4af1-b5fe-7aa493a36371.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 522 360",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:48.119285+00:00",
+  "scraped_at": "2026-04-24T07:53:23.813410+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:af631ba832b3",
   "local_image_files": [
     "data/media/Yavlena_af631ba832b3/0000_eb9fa3b5.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_af631ba832b3/0000_eb9fa3b5.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_af631ba832b3",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

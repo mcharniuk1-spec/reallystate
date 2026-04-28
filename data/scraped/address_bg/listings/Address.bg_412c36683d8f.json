@@ -4,14 +4,14 @@
   "external_id": "412c36683d8f",
   "title": "Тристаен апартамент в София, Кръстова вада - код на имота: 624105",
   "description": "Адрес недвижими имоти предлага Тристаен апартамент в София, Кръстова вада с код на имота: 624105. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 333000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 111.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Кръстова вада",
+  "address_text": "София, Кръстова вада",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,39 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/105/624105/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "025-09-29",
+    "024-07-01",
+    "018-05-09",
+    "018-07-06",
+    "0885306946",
+    "025-10-09",
+    "0186036539",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:20:51.964613+00:00",
+  "scraped_at": "2026-04-24T07:52:43.700462+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Тристаен апартамент Кръстова вада"
+  },
   "reference_id": "Address.bg:412c36683d8f",
   "local_image_files": [
     "data/media/Address.bg_412c36683d8f/0000_1fac8bc5.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_412c36683d8f/0000_1fac8bc5.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_412c36683d8f",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

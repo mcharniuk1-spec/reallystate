@@ -4,14 +4,14 @@
   "external_id": "719ded3aec0e",
   "title": "Парцел в Манолско Конаре 101 кв.м. ID 160546  | Явлена",
   "description": "",
-  "price": null,
+  "price": 99000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 101.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Манолско Конаре",
   "district": "",
-  "address_text": "",
+  "address_text": "Манолско Конаре",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/d172f0ab-16fa-41fe-b232-0be750a13a88.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 547 392",
+    "+359 893 858 589"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:13.118591+00:00",
+  "scraped_at": "2026-04-24T07:53:21.576326+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:719ded3aec0e",
   "local_image_files": [
     "data/media/Yavlena_719ded3aec0e/0000_3e591d24.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_719ded3aec0e/0000_3e591d24.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_719ded3aec0e",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

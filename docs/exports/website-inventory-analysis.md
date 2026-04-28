@@ -1,6 +1,6 @@
 # Website Inventory Analysis
 
-Generated at: `2026-04-21T15:22:11.425853+00:00`
+Generated at: `2026-04-28T04:10:17.835006+00:00`
 
 This artifact separates website-side inventory evidence from landed scraper corpus counts.
 
@@ -8,7 +8,7 @@ This artifact separates website-side inventory evidence from landed scraper corp
 
 - Tier: `1`
 - Website total: `18701` (Exact)
-- Coverage vs landed corpus: `43` saved / `0.2%`
+- Coverage vs landed corpus: `140` saved / `0.7%`
 - Total basis: `live_embedded_json`
 - Total notes: Computed as sale total 16935 plus rent total 1766 from live `offers-object` payloads.
 - Counting method: Read the live search page and extract `offers-object.total` from the embedded JSON payload.
@@ -54,7 +54,7 @@ No category-level website counts are saved yet for this source.
 
 - Tier: `1`
 - Website total: `120000` (Estimate)
-- Coverage vs landed corpus: `49` saved / `0.0%`
+- Coverage vs landed corpus: `97` saved / `0.1%`
 - Total basis: `analysis_estimate`
 - Total notes: Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run.
 - Counting method: Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.

@@ -1,0 +1,66 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-zona-b-19-mnogostaen-apartament-offer684279",
+  "external_id": "249c72dcad48",
+  "title": "Многостаен апартамент в София, Зона Б 19 - код на имота: 684279",
+  "description": "Адрес недвижими имоти предлага Многостаен апартамент в София, Зона Б 19 с код на имота: 684279. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 355000.0,
+  "currency": "EUR",
+  "area_sqm": 156.0,
+  "rooms": null,
+  "floor": null,
+  "city": "София",
+  "district": "Зона Б 19",
+  "address_text": "София, Зона Б 19",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/279/684279/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-02-16",
+    "018-05-09",
+    "018-07-06",
+    "0438 2026",
+    "0430 30 000",
+    "0430 200",
+    "0430 25000",
+    "0884014032",
+    "029592105",
+    "0422 2018",
+    "0422 2017",
+    "0422 2015",
+    "0422 2019",
+    "0422 2020",
+    "06831985",
+    "0710060635141111071006065",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:10:57.207723+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Многостаен апартамент Зона Б 19"
+  },
+  "reference_id": "Address.bg:249c72dcad48",
+  "local_image_files": [
+    "data/media/Address.bg_249c72dcad48/0000_d5a7cacf.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_249c72dcad48/0000_d5a7cacf.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_249c72dcad48",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

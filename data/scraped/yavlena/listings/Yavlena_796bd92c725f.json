@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/168236",
   "external_id": "796bd92c725f",
   "title": "Тристаен апартамент в София 54 кв.м. ID 168236  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Агенция Явлена ви представя за продажба светъл и функционален тристаен апартамент, разположен в една от най-предпочитаните части на София. Жилището съчетава градско удобство с простор и невероятна гледка.\\\\r\\\\nРазпределение:\\\\r\\\\nАпартаментът е оптимизиран и уютен, състоящ се от:\\\\r\\\\nВходно антре ,мокро помещение\\\\r\\\\nДве спални;\\\\r\\\\nКухненски бокс / отделна кухня;\\\\r\\\\nБаня с тоалетна;\\\\r\\\\nБалкон, от който се разкрива страхотна гледка. В непосредствена близост до спирки на тролеи, автобуси и на пешеходно разстояние от метростанция „Бул. България“.\\\\r\\\\n Близо до парк „Хиподрума“ и недалеч от Южен парк.\\\\r\\\\n В района има множество училища, детски градини, супермаркети , пазар „Красно село“ и медицински центрове.",
+  "price": 249000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 54.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/4baa3281-9869-41ba-a126-69ae85638f55.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 884 608 700"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:14:44.648575+00:00",
+  "scraped_at": "2026-04-24T07:53:21.997223+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:796bd92c725f",
   "local_image_files": [
     "data/media/Yavlena_796bd92c725f/0000_c1d9bfc2.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_796bd92c725f/0000_c1d9bfc2.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_796bd92c725f",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

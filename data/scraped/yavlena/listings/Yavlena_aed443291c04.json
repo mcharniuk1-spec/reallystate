@@ -4,14 +4,14 @@
   "external_id": "aed443291c04",
   "title": "Многостаен апартамент във Варна 139 кв.м. ID 167988  | Явлена",
   "description": "",
-  "price": null,
+  "price": 240000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 139.0,
+  "rooms": 5.0,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/544ebc49-9974-42d4-a6f7-96c00d7e5630.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 523 945",
+    "0893858312"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:18:03.352255+00:00",
+  "scraped_at": "2026-04-24T07:53:23.782929+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:aed443291c04",
   "local_image_files": [
     "data/media/Yavlena_aed443291c04/0000_ac0d69f9.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_aed443291c04/0000_ac0d69f9.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_aed443291c04",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

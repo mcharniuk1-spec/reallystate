@@ -3,6 +3,7 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import type { Listing, ListingsPayload, ListingIntent, PropertyCategory } from "@/lib/types/listing";
 import { MOCK_LISTINGS } from "@/lib/mock/listings";
+import { SCRAPED_LISTINGS } from "@/lib/mock/scraped-listings";
 
 const PAGE_SIZE = 50;
 
@@ -86,7 +87,8 @@ export function useListings(filters: ListingFilters) {
   const isApiDown = query.isError;
 
   if (isApiDown) {
-    const mockFiltered = applyClientFilters(MOCK_LISTINGS, filters);
+    const fallbackListings = SCRAPED_LISTINGS.length > 0 ? SCRAPED_LISTINGS : MOCK_LISTINGS;
+    const mockFiltered = applyClientFilters(fallbackListings, filters);
     return {
       listings: mockFiltered,
       isLoading: false,

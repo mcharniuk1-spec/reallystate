@@ -4,14 +4,14 @@
   "external_id": "28b1fad0ea7f",
   "title": "Парцел във Варна 1699 кв.м. ID 167973  | Явлена",
   "description": "",
-  "price": null,
+  "price": 255000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 1699.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/c9e0820f-ceb5-4109-bbcf-abd5e687f7d5.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 522 123",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:18:12.029278+00:00",
+  "scraped_at": "2026-04-24T07:53:19.131808+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:28b1fad0ea7f",
   "local_image_files": [
     "data/media/Yavlena_28b1fad0ea7f/0000_173934b4.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_28b1fad0ea7f/0000_173934b4.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_28b1fad0ea7f",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

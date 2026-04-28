@@ -1,0 +1,334 @@
+{
+  "generated_at": "2026-04-24T15:20:49.009162+00:00",
+  "manifest_path": "/Users/getapple/Documents/Real Estate Bulg/data/scrape_patterns/regions/varna/sections.json",
+  "target_per_section": 100,
+  "max_pages": 8,
+  "download_photos": true,
+  "require_full_gallery": true,
+  "patterned_only": true,
+  "dry_run": true,
+  "parallel_sources": 4,
+  "max_waves": 3,
+  "source_count": 10,
+  "results": [
+    {
+      "source_key": "address_bg",
+      "source_name": "Address.bg",
+      "sections": [
+        {
+          "section_id": "address_bg__varna__buy_personal__all",
+          "source_name": "Address.bg",
+          "source_key": "address_bg",
+          "segment_key": "buy_personal",
+          "before_count": 98,
+          "target_per_section": 100,
+          "planned_max_listings": 27,
+          "entry_urls": [
+            "https://address.bg/sale/varna/l4694"
+          ],
+          "status": "planned",
+          "waves": []
+        },
+        {
+          "section_id": "address_bg__varna__rent_personal__all",
+          "source_name": "Address.bg",
+          "source_key": "address_bg",
+          "segment_key": "rent_personal",
+          "before_count": 0,
+          "target_per_section": 100,
+          "planned_max_listings": 300,
+          "entry_urls": [
+            "https://address.bg/rent"
+          ],
+          "status": "planned",
+          "waves": []
+        }
+      ]
+    },
+    {
+      "source_key": "bazar_bg",
+      "source_name": "Bazar.bg",
+      "sections": [
+        {
+          "section_id": "bazar_bg__varna__buy_personal__all",
+          "source_name": "Bazar.bg",
+          "source_key": "bazar_bg",
+          "segment_key": "buy_personal",
+          "before_count": 142,
+          "target_per_section": 100,
+          "planned_max_listings": 0,
+          "entry_urls": [
+            "https://bazar.bg/obiavi/apartamenti",
+            "https://bazar.bg/obiavi/kashti-i-vili",
+            "https://bazar.bg/obiavi/zemya",
+            "https://bazar.bg/obiavi/garazhi-i-parkoingi"
+          ],
+          "status": "skipped_threshold_reached",
+          "waves": []
+        }
+      ]
+    },
+    {
+      "source_key": "bulgarianproperties",
+      "source_name": "BulgarianProperties",
+      "sections": [
+        {
+          "section_id": "bulgarianproperties__varna__buy_personal__all",
+          "source_name": "BulgarianProperties",
+          "source_key": "bulgarianproperties",
+          "segment_key": "buy_personal",
+          "before_count": 1,
+          "target_per_section": 100,
+          "planned_max_listings": 297,
+          "entry_urls": [
+            "https://www.bulgarianproperties.com/properties_for_sale_in_Bulgaria/index.html",
+            "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/index.html",
+            "https://www.bulgarianproperties.com/2-bedroom_apartments_in_Bulgaria/index.html",
+            "https://www.bulgarianproperties.com/3-bedroom_apartments_in_Bulgaria/index.html",
+            "https://www.bulgarianproperties.com/houses_in_Bulgaria/index.html",
+            "https://www.bulgarianproperties.com/land_for_sale_in_Bulgaria/index.html"
+          ],
+          "status": "planned",
+          "waves": []
+        },
+        {
+          "section_id": "bulgarianproperties__varna__rent_personal__all",
+          "source_name": "BulgarianProperties",
+          "source_key": "bulgarianproperties",
+          "segment_key": "rent_personal",
+          "before_count": 0,
+          "target_per_section": 100,
+          "planned_max_listings": 300,
+          "entry_urls": [
+            "https://www.bulgarianproperties.com/properties_for_rent_in_Bulgaria/index.html"
+          ],
+          "status": "planned",
+          "waves": []
+        }
+      ]
+    },
+    {
+      "source_key": "homes_bg",
+      "source_name": "Homes.bg",
+      "sections": [
+        {
+          "section_id": "homes_bg__varna__buy_personal__all",
+          "source_name": "Homes.bg",
+          "source_key": "homes_bg",
+          "segment_key": "buy_personal",
+          "before_count": 32,
+          "target_per_section": 100,
+          "planned_max_listings": 204,
+          "entry_urls": [],
+          "status": "planned",
+          "waves": []
+        },
+        {
+          "section_id": "homes_bg__varna__rent_personal__all",
+          "source_name": "Homes.bg",
+          "source_key": "homes_bg",
+          "segment_key": "rent_personal",
+          "before_count": 0,
+          "target_per_section": 100,
+          "planned_max_listings": 300,
+          "entry_urls": [],
+          "status": "planned",
+          "waves": []
+        }
+      ]
+    },
+    {
+      "source_key": "imot_bg",
+      "source_name": "imot.bg",
+      "sections": [
+        {
+          "section_id": "imot_bg__varna__buy_personal__all",
+          "source_name": "imot.bg",
+          "source_key": "imot_bg",
+          "segment_key": "buy_personal",
+          "before_count": 9,
+          "target_per_section": 100,
+          "planned_max_listings": 273,
+          "entry_urls": [
+            "https://www.imot.bg/obiavi/prodazhbi/grad-varna"
+          ],
+          "status": "planned",
+          "waves": []
+        },
+        {
+          "section_id": "imot_bg__varna__rent_personal__all",
+          "source_name": "imot.bg",
+          "source_key": "imot_bg",
+          "segment_key": "rent_personal",
+          "before_count": 0,
+          "target_per_section": 100,
+          "planned_max_listings": 300,
+          "entry_urls": [
+            "https://www.imot.bg/obiavi/naemi/grad-varna"
+          ],
+          "status": "planned",
+          "waves": []
+        }
+      ]
+    },
+    {
+      "source_key": "luximmo",
+      "source_name": "LUXIMMO",
+      "sections": [
+        {
+          "section_id": "luximmo__varna__buy_personal__all",
+          "source_name": "LUXIMMO",
+          "source_key": "luximmo",
+          "segment_key": "buy_personal",
+          "before_count": 10,
+          "target_per_section": 100,
+          "planned_max_listings": 270,
+          "entry_urls": [
+            "https://www.luximmo.bg/apartamenti/"
+          ],
+          "status": "planned",
+          "waves": []
+        }
+      ]
+    },
+    {
+      "source_key": "olx_bg",
+      "source_name": "OLX.bg",
+      "sections": [
+        {
+          "section_id": "olx_bg__varna__buy_personal__all",
+          "source_name": "OLX.bg",
+          "source_key": "olx_bg",
+          "segment_key": "buy_personal",
+          "before_count": 99,
+          "target_per_section": 100,
+          "planned_max_listings": 26,
+          "entry_urls": [
+            "https://www.olx.bg/nedvizhimi-imoti/"
+          ],
+          "status": "planned",
+          "waves": []
+        },
+        {
+          "section_id": "olx_bg__varna__rent_personal__all",
+          "source_name": "OLX.bg",
+          "source_key": "olx_bg",
+          "segment_key": "rent_personal",
+          "before_count": 109,
+          "target_per_section": 100,
+          "planned_max_listings": 0,
+          "entry_urls": [
+            "https://www.olx.bg/nedvizhimi-imoti/"
+          ],
+          "status": "skipped_threshold_reached",
+          "waves": []
+        }
+      ]
+    },
+    {
+      "source_key": "property_bg",
+      "source_name": "property.bg",
+      "sections": [
+        {
+          "section_id": "property_bg__varna__buy_personal__all",
+          "source_name": "property.bg",
+          "source_key": "property_bg",
+          "segment_key": "buy_personal",
+          "before_count": 1,
+          "target_per_section": 100,
+          "planned_max_listings": 297,
+          "entry_urls": [
+            "https://www.property.bg/bulgaria/apartments/",
+            "https://www.property.bg/sales/bulgaria/selection/"
+          ],
+          "status": "planned",
+          "waves": []
+        },
+        {
+          "section_id": "property_bg__varna__rent_personal__all",
+          "source_name": "property.bg",
+          "source_key": "property_bg",
+          "segment_key": "rent_personal",
+          "before_count": 0,
+          "target_per_section": 100,
+          "planned_max_listings": 300,
+          "entry_urls": [
+            "https://www.property.bg/rentals/bulgaria/selection/"
+          ],
+          "status": "planned",
+          "waves": []
+        }
+      ]
+    },
+    {
+      "source_key": "suprimmo",
+      "source_name": "SUPRIMMO",
+      "sections": [
+        {
+          "section_id": "suprimmo__varna__buy_personal__all",
+          "source_name": "SUPRIMMO",
+          "source_key": "suprimmo",
+          "segment_key": "buy_personal",
+          "before_count": 1,
+          "target_per_section": 100,
+          "planned_max_listings": 297,
+          "entry_urls": [
+            "https://www.suprimmo.bg/bulgaria/apartamenti/",
+            "https://www.suprimmo.bg/bulgaria/kushti-vili/",
+            "https://www.suprimmo.bg/bulgaria/partseli/"
+          ],
+          "status": "planned",
+          "waves": []
+        },
+        {
+          "section_id": "suprimmo__varna__rent_personal__all",
+          "source_name": "SUPRIMMO",
+          "source_key": "suprimmo",
+          "segment_key": "rent_personal",
+          "before_count": 0,
+          "target_per_section": 100,
+          "planned_max_listings": 300,
+          "entry_urls": [
+            "https://www.suprimmo.bg/naem/bulgaria/selectsya/"
+          ],
+          "status": "planned",
+          "waves": []
+        }
+      ]
+    },
+    {
+      "source_key": "yavlena",
+      "source_name": "Yavlena",
+      "sections": [
+        {
+          "section_id": "yavlena__varna__buy_personal__all",
+          "source_name": "Yavlena",
+          "source_key": "yavlena",
+          "segment_key": "buy_personal",
+          "before_count": 53,
+          "target_per_section": 100,
+          "planned_max_listings": 141,
+          "entry_urls": [
+            "https://www.yavlena.com/bg/sales"
+          ],
+          "status": "planned",
+          "waves": []
+        },
+        {
+          "section_id": "yavlena__varna__rent_personal__all",
+          "source_name": "Yavlena",
+          "source_key": "yavlena",
+          "segment_key": "rent_personal",
+          "before_count": 4,
+          "target_per_section": 100,
+          "planned_max_listings": 288,
+          "entry_urls": [
+            "https://www.yavlena.com/bg/rentals"
+          ],
+          "status": "planned",
+          "waves": []
+        }
+      ]
+    }
+  ]
+}

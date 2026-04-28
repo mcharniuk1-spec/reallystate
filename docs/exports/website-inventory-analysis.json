@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-21T15:22:11.425853+00:00",
+  "generated_at": "2026-04-28T04:10:17.835006+00:00",
   "totals": {
     "sources": 27,
     "with_live_total": 6,
@@ -17,8 +17,8 @@
         "url": "https://address.bg/sale",
         "notes": "Computed as sale total 16935 plus rent total 1766 from live `offers-object` payloads."
       },
-      "saved_listings": 43,
-      "coverage_pct": 0.2299342281161435,
+      "saved_listings": 140,
+      "coverage_pct": 0.7486230682851185,
       "inventory_rows": [
         {
           "service": "sale",
@@ -43,7 +43,7 @@
       "counting_gap": "Property-type split still needs category-specific entry pages or in-payload estate-type aggregation.",
       "analysis_estimate": 18000,
       "best_extraction_method": "crawl listings with ref-id normalization",
-      "state": "Partial corpus on disk",
+      "state": "High-volume corpus on disk",
       "next_step": "Continue category-by-category refreshes and push the file-backed corpus into PostgreSQL for `S1-18` evidence.",
       "estimate_conflict": "Saved analysis estimate 18000 is below the confirmed/lower-bound live count 18701."
     },
@@ -139,8 +139,8 @@
         "url": "https://www.homes.bg/",
         "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
       },
-      "saved_listings": 49,
-      "coverage_pct": 0.04083333333333333,
+      "saved_listings": 97,
+      "coverage_pct": 0.08083333333333333,
       "inventory_rows": [],
       "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
       "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",

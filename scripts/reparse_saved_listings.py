@@ -18,11 +18,15 @@ from scripts.live_scraper import (  # noqa: E402
     ScrapeStats,
     _save_listing,
     make_client,
+    parse_homes_detail,
+    parse_imot_detail,
     parse_listing_html,
 )
 
 
 DEFAULT_SOURCE_KEYS = [
+    "homes_bg",
+    "imot_bg",
     "address_bg",
     "bulgarianproperties",
     "luximmo",
@@ -34,6 +38,8 @@ DEFAULT_SOURCE_KEYS = [
 ]
 
 SOURCE_NAMES = {
+    "homes_bg": "Homes.bg",
+    "imot_bg": "imot.bg",
     "address_bg": "Address.bg",
     "bulgarianproperties": "BulgarianProperties",
     "luximmo": "LUXIMMO",
@@ -48,6 +54,32 @@ SOURCE_NAMES = {
 def iter_listing_files(source_key: str) -> list[Path]:
     listings_dir = SCRAPED_ROOT / source_key / "listings"
     return sorted(listings_dir.glob("*.json")) if listings_dir.exists() else []
+
+
+def parse_saved_html(source_name: str, html: str, url: str) -> dict | None:
+    if source_name == "Homes.bg":
+        return parse_homes_detail(html, url)
+    if source_name == "imot.bg":
+        return parse_imot_detail(html, url)
+    return parse_listing_html(html, url, source_name)
+
+
+def merge_existing_metadata(parsed: dict, existing: dict) -> dict:
+    for key in (
+        "scraped_at",
+        "source_section_id",
+        "region_key",
+        "segment_key",
+        "vertical_key",
+        "section_label",
+        "pattern_bucket_label",
+        "varna_entry_scope",
+        "list_page_url",
+        "detail_url_canonical",
+    ):
+        if existing.get(key) and not parsed.get(key):
+            parsed[key] = existing[key]
+    return parsed
 
 
 def main() -> int:
@@ -74,11 +106,10 @@ def main() -> int:
                     continue
                 html = raw_path.read_text(encoding="utf-8", errors="ignore")
                 url = str(listing.get("listing_url") or "")
-                parsed = parse_listing_html(html, url, source_name)
+                parsed = parse_saved_html(source_name, html, url)
                 if not parsed:
                     continue
-                if listing.get("scraped_at") and not parsed.get("scraped_at"):
-                    parsed["scraped_at"] = listing["scraped_at"]
+                parsed = merge_existing_metadata(parsed, listing)
                 _save_listing(
                     stats,
                     parsed,

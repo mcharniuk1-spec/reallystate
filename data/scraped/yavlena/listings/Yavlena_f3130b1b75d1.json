@@ -4,14 +4,14 @@
   "external_id": "f3130b1b75d1",
   "title": "Къща в Боснек 120 кв.м. ID 168103  | Явлена",
   "description": "",
-  "price": null,
+  "price": 190000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 120.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Боснек",
   "district": "",
-  "address_text": "",
+  "address_text": "Боснек",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/64e2db2e-3654-4c96-ac35-f1e3a4c7fd60.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 506 318",
+    "+359 889 26 26 06"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:16:30.000455+00:00",
+  "scraped_at": "2026-04-24T07:53:25.773461+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:f3130b1b75d1",
   "local_image_files": [
     "data/media/Yavlena_f3130b1b75d1/0000_8406e521.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_f3130b1b75d1/0000_8406e521.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_f3130b1b75d1",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

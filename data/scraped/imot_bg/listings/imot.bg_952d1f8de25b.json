@@ -2,7 +2,7 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-8287-zhilishten-kompleks-grad-sofiya-vitosha-ul-georgi-raychev",
   "external_id": "952d1f8de25b",
-  "title": "Imot.bg",
+  "title": "������� �������� � ���� ����� ������, ��. ������ ������ ����� 8287",
   "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
   "price": null,
   "currency": "EUR",
@@ -17,12 +17,27 @@
   "listing_intent": "sale",
   "property_category": "unknown",
   "image_urls": [
-    "//cdn3.focus.bg/imot/photosnb/287//big/8287_BB.jpg"
+    "https://cdn3.focus.bg/imot/photosnb/287//big1/8287_BB.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/287//big1/8287_pV.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/287//big1/8287_Pk.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/287//big1/8287_J6.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/287//big1/8287_8C.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/287//big1/8287_o2.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/287//big/8287_BB.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "0899773610"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:25:05.508861+00:00",
+  "scraped_at": "2026-04-24T07:52:36.728632+00:00",
   "reference_id": "imot.bg:952d1f8de25b",
+  "source_attributes": {},
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_952d1f8de25b",
+  "photo_count_remote": 7,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

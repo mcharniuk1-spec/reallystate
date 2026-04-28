@@ -4,14 +4,14 @@
   "external_id": "be215fed28b5",
   "title": "Двустаен апартамент в София 60 кв.м. ID 168285  | Явлена",
   "description": "",
-  "price": null,
+  "price": 88000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 60.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/527c9ec2-a966-4e48-8666-f1930071c48f.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 503 851",
+    "+359 889 26 26 06"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:14:09.950002+00:00",
+  "scraped_at": "2026-04-24T07:53:24.125994+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:be215fed28b5",
   "local_image_files": [
     "data/media/Yavlena_be215fed28b5/0000_26d3be5d.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_be215fed28b5/0000_26d3be5d.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_be215fed28b5",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

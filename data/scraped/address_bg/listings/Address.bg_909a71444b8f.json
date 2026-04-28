@@ -1,0 +1,62 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-manastirski-livadi-zapad-tristaen-apartament-offer635164",
+  "external_id": "909a71444b8f",
+  "title": "Тристаен апартамент в София, Манастирски ливади - запад - код на имота: 635164",
+  "description": "Адрес недвижими имоти предлага Тристаен апартамент в София, Манастирски ливади - запад с код на имота: 635164. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 346000.0,
+  "currency": "EUR",
+  "area_sqm": 200.0,
+  "rooms": null,
+  "floor": null,
+  "city": "София",
+  "district": "Манастирски ливади - запад",
+  "address_text": "София, Манастирски ливади - запад",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/164/635164/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-04-20",
+    "024-10-22",
+    "018-05-09",
+    "018-07-06",
+    "0888 81 89 21",
+    "0885922547",
+    "028183939",
+    "00010688013914",
+    "025-05-16",
+    "026-04-21",
+    "025-05-29",
+    "0306061007111122030606100711114",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:11:02.131966+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Тристаен апартамент Манастирски ливади - запад"
+  },
+  "reference_id": "Address.bg:909a71444b8f",
+  "local_image_files": [
+    "data/media/Address.bg_909a71444b8f/0000_406a1587.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_909a71444b8f/0000_406a1587.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_909a71444b8f",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

@@ -4,9 +4,9 @@
   "external_id": "836f2adf0a0e",
   "title": "Тристаен апартамент във Варна, Младост 1 - код на имота: 646447",
   "description": "Адрес недвижими имоти предлага Тристаен апартамент във Варна, Младост 1 с код на имота: 646447. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 164990.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 114.0,
   "rooms": null,
   "floor": null,
   "city": "",
@@ -19,14 +19,43 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/447/646447/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "025-09-08",
+    "025-02-18",
+    "018-05-09",
+    "018-07-06",
+    "0887 314 081",
+    "0885922490",
+    "052505591",
+    "00004740696387",
+    "025-02-27",
+    "026-02-05",
+    "025-02-24",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:21:10.045535+00:00",
+  "scraped_at": "2026-04-24T07:52:43.920875+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Варна Тристаен апартамент Младост 1"
+  },
   "reference_id": "Address.bg:836f2adf0a0e",
   "local_image_files": [
     "data/media/Address.bg_836f2adf0a0e/0000_3a234445.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_836f2adf0a0e/0000_3a234445.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_836f2adf0a0e",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

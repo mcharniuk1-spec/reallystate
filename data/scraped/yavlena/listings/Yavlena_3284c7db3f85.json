@@ -4,14 +4,14 @@
   "external_id": "3284c7db3f85",
   "title": "Къща в Гълъбец 330 кв.м. ID 128720  | Явлена",
   "description": "",
-  "price": null,
+  "price": 219000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 330.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Гълъбец",
   "district": "",
-  "address_text": "",
+  "address_text": "Гълъбец",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/c82b65f2-6f4a-48eb-8674-00b9ab76f9ee.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 528 937",
+    "+359 889 198 833"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:33.258233+00:00",
+  "scraped_at": "2026-04-24T07:53:19.344918+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:3284c7db3f85",
   "local_image_files": [
     "data/media/Yavlena_3284c7db3f85/0000_d76d0748.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_3284c7db3f85/0000_d76d0748.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_3284c7db3f85",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

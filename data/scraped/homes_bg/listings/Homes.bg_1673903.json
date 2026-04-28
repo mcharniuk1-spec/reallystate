@@ -1,0 +1,167 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-90m2-sofiya-zhk.-ovcha-kupel-1/as1673903",
+  "external_id": "1673903",
+  "reference_id": "Homes.bg:1673903",
+  "title": "Тристаен, 90m² - жк. Овча Купел 1, София",
+  "description": "АСГАРД ПРОПЪРТИС\" продава непреходен 3-стаен апартамент с чиста площ (без терасите) 89,75 кв.м., разположен на 4-ти етаж в добре поддържан панелен блок. Жилището се състои от дневна, две спални, самостоятелна кухня, баня с тоалетна, втора тоалетна, мокро помнещение и три тераси. Възможно е в дневната да се обособи кухненски бокс, а кухнята да стане трета спалня. Отлично уреден район с множество магазини, заведения, клонове на банки и др. Отоплението е на ТЕЦ. За контакти: 0899/032-036, 02/465-19-50.",
+  "price": 199000.0,
+  "currency": "EUR",
+  "area_sqm": 0.9,
+  "rooms": 3.0,
+  "floor": 4.0,
+  "city": "София",
+  "district": "жк. Овча Купел 1",
+  "address_text": "жк. Овча Купел 1, София Президент Линкълн",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2026-04-15_2/118490196o.jpg",
+    "https://g1.homes.bg/2026-04-15_2/118490197o.jpg",
+    "https://g1.homes.bg/2026-03-04_2/117951673o.jpg",
+    "https://g1.homes.bg/2026-03-04_2/117951676o.jpg",
+    "https://g1.homes.bg/2026-03-04_2/117951674o.jpg",
+    "https://g1.homes.bg/2026-03-04_2/117951671o.jpg",
+    "https://g1.homes.bg/2026-03-04_2/117951675o.jpg",
+    "https://g1.homes.bg/2026-03-04_2/117951672o.jpg",
+    "https://g1.homes.bg/2026-03-04_2/117951677o.jpg",
+    "https://g1.homes.bg/2026-03-04_2/117951680o.jpg"
+  ],
+  "phones": [
+    "02",
+    "465-19-50",
+    "0899-032-036"
+  ],
+  "amenities": [
+    "Асансьор"
+  ],
+  "scraped_at": "2026-04-24T08:09:13.725397+00:00",
+  "listing_status": "active",
+  "published_text": "днес",
+  "agency_name": "АСГАРД ПРОПЪРТИС",
+  "agency_type": "Агенция",
+  "agency_address": "София гр.София, ул.Дякон Игнатий 21",
+  "source_attributes": {
+    "Обзавеждане": "Необзаведен",
+    "Етаж": "4-ти",
+    "Етажи": "9",
+    "Отопление": "ТЕЦ",
+    "Състояние": "",
+    "Строителство": "Панел",
+    "Спални": "",
+    "Бани": "",
+    "Двор": "",
+    "Площ на парцела": "",
+    "В регулация": "",
+    "Предназначение": "",
+    "Виза": "",
+    "Разрешение за строеж": "",
+    "Категория": "",
+    "Тип": ""
+  },
+  "photo_metadata": [
+    {
+      "id": 118490196,
+      "name": "118490196",
+      "path": "2026-04-15_2/",
+      "height": 252,
+      "width": 448
+    },
+    {
+      "id": 118490197,
+      "name": "118490197",
+      "path": "2026-04-15_2/",
+      "height": 252,
+      "width": 448
+    },
+    {
+      "id": 117951673,
+      "name": "117951673",
+      "path": "2026-03-04_2/",
+      "height": 336,
+      "width": 252
+    },
+    {
+      "id": 117951676,
+      "name": "117951676",
+      "path": "2026-03-04_2/",
+      "height": 336,
+      "width": 252
+    },
+    {
+      "id": 117951674,
+      "name": "117951674",
+      "path": "2026-03-04_2/",
+      "height": 336,
+      "width": 252
+    },
+    {
+      "id": 117951671,
+      "name": "117951671",
+      "path": "2026-03-04_2/",
+      "height": 336,
+      "width": 252
+    },
+    {
+      "id": 117951675,
+      "name": "117951675",
+      "path": "2026-03-04_2/",
+      "height": 336,
+      "width": 252
+    },
+    {
+      "id": 117951672,
+      "name": "117951672",
+      "path": "2026-03-04_2/",
+      "height": 336,
+      "width": 252
+    },
+    {
+      "id": 117951677,
+      "name": "117951677",
+      "path": "2026-03-04_2/",
+      "height": 336,
+      "width": 252
+    },
+    {
+      "id": 117951680,
+      "name": "117951680",
+      "path": "2026-03-04_2/",
+      "height": 336,
+      "width": 252
+    }
+  ],
+  "raw_offer_type": "as",
+  "view_count": 283,
+  "local_image_files": [
+    "data/media/Homes.bg_1673903/0000_4159e89c.jpg",
+    "data/media/Homes.bg_1673903/0001_999905ae.jpg",
+    "data/media/Homes.bg_1673903/0002_e7af92c1.jpg",
+    "data/media/Homes.bg_1673903/0003_346fc992.jpg",
+    "data/media/Homes.bg_1673903/0004_eb0d7323.jpg",
+    "data/media/Homes.bg_1673903/0005_188cf3ef.jpg",
+    "data/media/Homes.bg_1673903/0006_a026b1cf.jpg",
+    "data/media/Homes.bg_1673903/0007_efbee996.jpg",
+    "data/media/Homes.bg_1673903/0008_a2668a39.jpg",
+    "data/media/Homes.bg_1673903/0009_8fae17c6.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Homes.bg_1673903/0000_4159e89c.jpg",
+    "Homes.bg_1673903/0001_999905ae.jpg",
+    "Homes.bg_1673903/0002_e7af92c1.jpg",
+    "Homes.bg_1673903/0003_346fc992.jpg",
+    "Homes.bg_1673903/0004_eb0d7323.jpg",
+    "Homes.bg_1673903/0005_188cf3ef.jpg",
+    "Homes.bg_1673903/0006_a026b1cf.jpg",
+    "Homes.bg_1673903/0007_efbee996.jpg",
+    "Homes.bg_1673903/0008_a2668a39.jpg",
+    "Homes.bg_1673903/0009_8fae17c6.jpg"
+  ],
+  "local_media_dir": "data/media/Homes.bg_1673903",
+  "photo_count_remote": 10,
+  "photo_count_local": 10,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-53325924/2-staen-w-top-lokatsiia-pomorie-star-grad",
   "external_id": "53325924",
-  "title": "Bazar.BG",
+  "title": "2-стаен в Топ Локация! Поморие, Стар Град → Обява 53325924",
   "description": "Ексклузивна оферта! Топ локация!!!Уютен двустаен апартамент за продажба в стария град на Поморие, на пешеходно разстояние от плажа и центъра!Детайли:- апартамен",
   "price": 92000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 55.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Топ Локация! Поморие",
+  "district": "Стар Град",
+  "address_text": "Топ Локация! Поморие, Стар Град",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -26,11 +26,19 @@
     "https://cdn1.focus.bg/bazar/77/original/7789104da2dc12979e6d0410e9430773.webp",
     "https://cdn7.focus.bg/bazar/4b/original/4bbae4079697a0ad76a6a38bd15e9476.webp",
     "https://cdn5.focus.bg/bazar/a9/original/a9490ac3655fe3a5720cbba1156edd1b.webp",
-    "//cdn1.focus.bg/bazar/6b/pics/6b4dd3f9c6a4c9fdc90cb860a228c811.webp"
+    "https://cdn1.focus.bg/bazar/6b/pics/6b4dd3f9c6a4c9fdc90cb860a228c811.webp"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "025323046200000000",
+    "092862676",
+    "026-05-08",
+    "000-2014",
+    "01112551"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:47:01.121100+00:00",
+  "scraped_at": "2026-04-24T07:53:14.953824+00:00",
   "reference_id": "Bazar.bg:53325924",
   "local_image_files": [
     "data/media/Bazar.bg_53325924/0000_92acee18.webp",
@@ -55,5 +63,10 @@
     "Bazar.bg_53325924/0007_8fa6893b.webp",
     "Bazar.bg_53325924/0008_c10dc1af.webp",
     "Bazar.bg_53325924/0009_96673d01.webp"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_53325924",
+  "photo_count_remote": 10,
+  "photo_count_local": 10,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

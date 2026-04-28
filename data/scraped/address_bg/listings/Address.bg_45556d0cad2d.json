@@ -41,7 +41,7 @@
     " 0888 11 22 00"
   ],
   "amenities": [],
-  "scraped_at": "2026-04-21T15:06:34.222974+00:00",
+  "scraped_at": "2026-04-24T07:52:43.748876+00:00",
   "source_attributes": {
     "breadcrumb_text": "Начало София Парцел/Терен Бистрица"
   },
@@ -51,5 +51,10 @@
   ],
   "local_image_storage_keys": [
     "Address.bg_45556d0cad2d/0000_6ae4210c.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_45556d0cad2d",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

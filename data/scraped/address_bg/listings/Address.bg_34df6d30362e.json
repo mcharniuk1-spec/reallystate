@@ -4,14 +4,14 @@
   "external_id": "34df6d30362e",
   "title": "Тристаен апартамент в София, Център - код на имота: 662517",
   "description": "Адрес недвижими имоти предлага Тристаен апартамент в София, Център с код на имота: 662517. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 270000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 123.27,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Център",
+  "address_text": "София, Център",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,46 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/517/662517/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "025-07-24",
+    "018-05-09",
+    "018-07-06",
+    "0435 - 4",
+    "0430 - 40",
+    "0430 7- 8",
+    "0442 2000",
+    "0888 81 89 21",
+    "0884608836",
+    "025-08-03",
+    "026-01-27",
+    "025-08-04",
+    "025-07-30",
+    "05383884716",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:20:55.302810+00:00",
+  "scraped_at": "2026-04-24T08:12:49.677407+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Тристаен апартамент Център"
+  },
   "reference_id": "Address.bg:34df6d30362e",
   "local_image_files": [
     "data/media/Address.bg_34df6d30362e/0000_1f269896.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_34df6d30362e/0000_1f269896.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_34df6d30362e",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

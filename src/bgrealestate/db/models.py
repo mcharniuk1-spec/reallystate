@@ -176,6 +176,18 @@ class CanonicalListingModel(Base):
     removed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     parser_version: Mapped[str] = mapped_column(Text, nullable=False)
     crawl_provenance: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+    # Stage 1 region-first (Varna-only) + full-detail pipeline fields (nullable for legacy rows)
+    region_key: Mapped[str | None] = mapped_column(Text)
+    segment_key: Mapped[str | None] = mapped_column(Text)
+    vertical_key: Mapped[str | None] = mapped_column(Text)
+    source_section_id: Mapped[str | None] = mapped_column(Text)
+    list_page_url: Mapped[str | None] = mapped_column(Text)
+    detail_url_canonical: Mapped[str | None] = mapped_column(Text)
+    combined_text: Mapped[str | None] = mapped_column(Text)
+    normalized_text: Mapped[str | None] = mapped_column(Text)
+    structured_extra: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+    raw_text_fallback: Mapped[str | None] = mapped_column(Text)
+    raw_detail_storage_key: Mapped[str | None] = mapped_column(Text)
 
 
 class PropertyEntityModel(Base):
@@ -362,4 +374,126 @@ class PublishAttemptModel(Base):
     error_code: Mapped[str | None] = mapped_column(Text)
     error_message: Mapped[str | None] = mapped_column(Text)
     duration_ms: Mapped[int | None] = mapped_column(Integer)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+# --- Stage 1 scrape control plane (Varna-only, region-first) ---
+
+
+class ScrapeRegionModel(Base):
+    __tablename__ = "scrape_region"
+
+    region_key: Mapped[str] = mapped_column(Text, primary_key=True)
+    display_name: Mapped[str] = mapped_column(Text, nullable=False)
+    country_code: Mapped[str] = mapped_column(Text, nullable=False, default="BG")
+    notes: Mapped[str | None] = mapped_column(Text)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class SourceSectionModel(Base):
+    __tablename__ = "source_section"
+    __table_args__ = (UniqueConstraint("source_name", "region_key", "segment_key", "vertical_key"),)
+
+    section_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    source_name: Mapped[str] = mapped_column(ForeignKey("source_registry.source_name"), nullable=False)
+    region_key: Mapped[str] = mapped_column(ForeignKey("scrape_region.region_key"), nullable=False)
+    segment_key: Mapped[str] = mapped_column(Text, nullable=False)
+    vertical_key: Mapped[str] = mapped_column(Text, nullable=False)
+    section_label: Mapped[str] = mapped_column(Text, nullable=False)
+    entry_urls: Mapped[list[Any]] = mapped_column(JSONB, nullable=False, default=list)
+    active: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    legal_notes: Mapped[str | None] = mapped_column(Text)
+    varna_filter: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class SourceSectionPatternModel(Base):
+    __tablename__ = "source_section_pattern"
+    __table_args__ = (UniqueConstraint("section_id", "pattern_layer", "schema_version"),)
+
+    pattern_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    section_id: Mapped[str] = mapped_column(ForeignKey("source_section.section_id"), nullable=False)
+    pattern_layer: Mapped[str] = mapped_column(Text, nullable=False)
+    schema_version: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
+    parser_profile: Mapped[str] = mapped_column(Text, nullable=False, default="generic_html_v1")
+    spec_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class CrawlRunModel(Base):
+    __tablename__ = "crawl_run"
+
+    run_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    region_key: Mapped[str] = mapped_column(ForeignKey("scrape_region.region_key"), nullable=False)
+    mode: Mapped[str] = mapped_column(Text, nullable=False, default="planned")
+    status: Mapped[str] = mapped_column(Text, nullable=False, default="created")
+    initiated_by: Mapped[str | None] = mapped_column(Text)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    closed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    metadata_jsonb: Mapped[dict[str, Any]] = mapped_column("metadata", JSONB, nullable=False, default=dict)
+
+
+class CrawlQueueTaskModel(Base):
+    __tablename__ = "crawl_queue_task"
+
+    task_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    run_id: Mapped[str | None] = mapped_column(ForeignKey("crawl_run.run_id"))
+    section_id: Mapped[str] = mapped_column(ForeignKey("source_section.section_id"), nullable=False)
+    task_type: Mapped[str] = mapped_column(Text, nullable=False)
+    idempotency_key: Mapped[str] = mapped_column(Text, nullable=False, unique=True)
+    status: Mapped[str] = mapped_column(Text, nullable=False, default="pending")
+    priority: Mapped[int] = mapped_column(Integer, nullable=False, default=100)
+    payload_jsonb: Mapped[dict[str, Any]] = mapped_column("payload", JSONB, nullable=False, default=dict)
+    attempt_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    max_attempts: Mapped[int] = mapped_column(Integer, nullable=False, default=5)
+    next_attempt_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    lease_until: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class CrawlErrorModel(Base):
+    __tablename__ = "crawl_error"
+
+    error_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    task_id: Mapped[str | None] = mapped_column(ForeignKey("crawl_queue_task.task_id"))
+    phase: Mapped[str] = mapped_column(Text, nullable=False)
+    error_code: Mapped[str | None] = mapped_column(Text)
+    message: Mapped[str] = mapped_column(Text, nullable=False)
+    detail_jsonb: Mapped[dict[str, Any]] = mapped_column("detail", JSONB, nullable=False, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class SegmentFulfillmentModel(Base):
+    __tablename__ = "segment_fulfillment"
+
+    fulfillment_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    section_id: Mapped[str] = mapped_column(ForeignKey("source_section.section_id"), nullable=False, unique=True)
+    target_valid_listings: Mapped[int] = mapped_column(Integer, nullable=False, default=100)
+    current_valid_listings: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    current_total_listings: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    last_counted_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    last_status: Mapped[str] = mapped_column(Text, nullable=False, default="unknown")
+    threshold_reached_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    incremental_ready: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    notes: Mapped[str | None] = mapped_column(Text)
+
+
+class ScrapeRunnerStateModel(Base):
+    __tablename__ = "scrape_runner_state"
+
+    singleton_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    global_pause: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True)
+    notes: Mapped[str | None] = mapped_column(Text)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class CanonicalListingVersionModel(Base):
+    __tablename__ = "canonical_listing_version"
+
+    version_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    reference_id: Mapped[str] = mapped_column(ForeignKey("canonical_listing.reference_id"), nullable=False)
+    snapshot_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False)
+    reason: Mapped[str | None] = mapped_column(Text)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)

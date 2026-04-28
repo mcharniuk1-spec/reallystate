@@ -4,14 +4,14 @@
   "external_id": "6037ec3c7340",
   "title": "Едностаен апартамент във Варна 48 кв.м. ID 168157  | Явлена",
   "description": "",
-  "price": null,
+  "price": 120300.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 48.0,
+  "rooms": 1.0,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/34a6bf5c-98a8-4bb8-aa05-b6f5c1c0b620.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 559 205",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:15:58.915098+00:00",
+  "scraped_at": "2026-04-24T07:53:21.127023+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:6037ec3c7340",
   "local_image_files": [
     "data/media/Yavlena_6037ec3c7340/0000_0814e842.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_6037ec3c7340/0000_0814e842.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_6037ec3c7340",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -1,0 +1,60 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/varna-troshevo-dvustaen-apartament-offer684058",
+  "external_id": "30c9e6e30cdb",
+  "title": "Двустаен апартамент във Варна, Трошево - код на имота: 684058",
+  "description": "Адрес недвижими имоти предлага Двустаен апартамент във Варна, Трошево с код на имота: 684058. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 178700.0,
+  "currency": "EUR",
+  "area_sqm": 79.0,
+  "rooms": null,
+  "floor": null,
+  "city": "",
+  "district": "",
+  "address_text": "",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/058/684058/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-03-03",
+    "086546899998",
+    "08331523",
+    "026-02-13",
+    "018-05-09",
+    "018-07-06",
+    "0889218306",
+    "026-03-16",
+    "070279989",
+    "091949482958383",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:10:17.091491+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Варна Двустаен апартамент Трошево"
+  },
+  "reference_id": "Address.bg:30c9e6e30cdb",
+  "local_image_files": [
+    "data/media/Address.bg_30c9e6e30cdb/0000_28129418.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_30c9e6e30cdb/0000_28129418.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_30c9e6e30cdb",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

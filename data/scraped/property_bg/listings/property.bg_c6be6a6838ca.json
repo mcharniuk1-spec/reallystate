@@ -117,7 +117,7 @@
     "04775702"
   ],
   "amenities": [],
-  "scraped_at": "2026-04-21T15:06:52.483627+00:00",
+  "scraped_at": "2026-04-24T07:53:12.574261+00:00",
   "region": "Sofia",
   "source_attributes": {
     "town": "Borovets",
@@ -302,5 +302,10 @@
     "property.bg_c6be6a6838ca/0084_e01562d0.jpg",
     "property.bg_c6be6a6838ca/0085_6e89d513.jpg",
     "property.bg_c6be6a6838ca/0086_0b0effa5.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/property.bg_c6be6a6838ca",
+  "photo_count_remote": 87,
+  "photo_count_local": 87,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

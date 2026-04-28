@@ -2,19 +2,19 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54089772/dawa-pod-naem-2-staen-gr-sofiia-malinowa-dolina",
   "external_id": "54089772",
-  "title": "Bazar.BG",
+  "title": "Дава под наем 2-СТАЕН, гр. София, Малинова долина → Обява 54089772",
   "description": "Апартаментът ще е актуален и свободен от 01.07.2026: 2-стаен, стилно обзаведен апартамент в кв. Малинова долина, ул.  Еньо Вълчев  (зад Фантастико); площ 66 кв.",
   "price": 700.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 66.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Малинова долина",
+  "address_text": "София, Малинова долина",
   "latitude": null,
   "longitude": null,
-  "listing_intent": "sale",
+  "listing_intent": "long_term_rent",
   "property_category": "apartment",
   "image_urls": [
     "https://imotstatic1.focus.bg/imot/photosimotbg/2/537/big1/2c177530520019537_rv.jpg",
@@ -33,11 +33,24 @@
     "https://imotstatic1.focus.bg/imot/photosimotbg/2/537/big1/2c177530520019537_NC.jpg",
     "https://imotstatic1.focus.bg/imot/photosimotbg/2/537/big1/2c177530520019537_M7.jpg",
     "https://imotstatic1.focus.bg/imot/photosimotbg/2/537/big1/2c177530520019537_Ms.jpg",
-    "//imotstatic1.focus.bg/imot/photosimotbg/2/537/big1/2c177530520019537_rv.jpg"
+    "https://imotstatic1.focus.bg/imot/photosimotbg/2/537/big1/2c177530520019537_rv.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "0520019537",
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "08212860000000000",
+    "092854294",
+    "09631120228",
+    "04399018133",
+    "05554604839",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:43:43.181369+00:00",
+  "scraped_at": "2026-04-24T07:53:17.015832+00:00",
   "reference_id": "Bazar.bg:54089772",
   "local_image_files": [
     "data/media/Bazar.bg_54089772/0000_a41e24b0.jpg",
@@ -72,5 +85,10 @@
     "Bazar.bg_54089772/0012_41af4d6e.jpg",
     "Bazar.bg_54089772/0013_dc9757e4.jpg",
     "Bazar.bg_54089772/0014_86b2d1f6.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54089772",
+  "photo_count_remote": 17,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "partial_gallery"
 }

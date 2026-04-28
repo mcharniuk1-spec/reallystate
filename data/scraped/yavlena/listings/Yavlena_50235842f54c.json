@@ -4,14 +4,14 @@
   "external_id": "50235842f54c",
   "title": "Тристаен апартамент в София 80 кв.м. ID 167999  | Явлена",
   "description": "",
-  "price": null,
+  "price": 207000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 80.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/70a2451d-5d07-4ef4-9e0f-70f49205df39.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 507 744",
+    "+359 884 608 700"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:43.947700+00:00",
+  "scraped_at": "2026-04-24T07:53:20.292758+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:50235842f54c",
   "local_image_files": [
     "data/media/Yavlena_50235842f54c/0000_1d843d82.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_50235842f54c/0000_1d843d82.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_50235842f54c",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

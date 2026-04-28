@@ -1,0 +1,59 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-strelbishte-dvustaen-apartament-offer668875",
+  "external_id": "34aedfe4c571",
+  "title": "Двустаен апартамент в София, Стрелбище - код на имота: 668875",
+  "description": "Адрес недвижими имоти предлага Двустаен апартамент в София, Стрелбище с код на имота: 668875. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 195600.0,
+  "currency": "EUR",
+  "area_sqm": 98.0,
+  "rooms": null,
+  "floor": null,
+  "city": "София",
+  "district": "Стрелбище",
+  "address_text": "София, Стрелбище",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/875/668875/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "025-09-22",
+    "018-05-09",
+    "018-07-06",
+    "0442 1984",
+    "0888 81 89 21",
+    "0889880100",
+    "025-09-30",
+    "025-11-10",
+    "0565665444141574056560",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:12:09.546236+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Двустаен апартамент Стрелбище"
+  },
+  "reference_id": "Address.bg:34aedfe4c571",
+  "local_image_files": [
+    "data/media/Address.bg_34aedfe4c571/0000_0d35a620.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_34aedfe4c571/0000_0d35a620.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_34aedfe4c571",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

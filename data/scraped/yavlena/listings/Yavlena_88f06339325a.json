@@ -4,14 +4,14 @@
   "external_id": "88f06339325a",
   "title": "Парцел в Джурово 4548 кв.м. ID 168019  | Явлена",
   "description": "",
-  "price": null,
+  "price": 0.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 4548.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Джурово",
   "district": "",
-  "address_text": "",
+  "address_text": "Джурово",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/cb416789-a5cd-4056-9019-893998b48f2d.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 543 042",
+    "+359 28 10 50 50"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:32.867019+00:00",
+  "scraped_at": "2026-04-24T07:53:22.600883+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:88f06339325a",
   "local_image_files": [
     "data/media/Yavlena_88f06339325a/0000_47380ff0.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_88f06339325a/0000_47380ff0.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_88f06339325a",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

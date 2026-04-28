@@ -1,0 +1,71 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-hladilnika-tristaen-apartament-offer648946",
+  "external_id": "5cb1624881c5",
+  "title": "Тристаен апартамент в София, Хладилника - код на имота: 648946",
+  "description": "Адрес недвижими имоти предлага Тристаен апартамент в София, Хладилника с код на имота: 648946. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 608000.0,
+  "currency": "EUR",
+  "area_sqm": 158.0,
+  "rooms": null,
+  "floor": null,
+  "city": "София",
+  "district": "Хладилника",
+  "address_text": "София, Хладилника",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/946/648946/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "025-04-23",
+    "025-03-14",
+    "018-05-09",
+    "018-07-06",
+    "0435 103",
+    "0430 124",
+    "0438 2023",
+    "0430 50000",
+    "0430 2022",
+    "0442 2022",
+    "0430 50 000",
+    "0885922414",
+    "0422 2014",
+    "0422 2013",
+    "0422 2012",
+    "0422 2018",
+    "0422 2017",
+    "0422 2016",
+    "0422 2015",
+    "025-03-18",
+    "025-04-04",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:11:55.099542+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Тристаен апартамент Хладилника"
+  },
+  "reference_id": "Address.bg:5cb1624881c5",
+  "local_image_files": [
+    "data/media/Address.bg_5cb1624881c5/0000_b45b35e8.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_5cb1624881c5/0000_b45b35e8.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_5cb1624881c5",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

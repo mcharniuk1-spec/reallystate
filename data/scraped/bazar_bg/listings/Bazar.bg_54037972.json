@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54037972/prodawa-3-staen-gr-nesebar-oblast-burgas",
   "external_id": "54037972",
-  "title": "Bazar.BG",
+  "title": "Продава 3-СТАЕН, гр. Несебър, област Бургас → Обява 54037972",
   "description": "Ексклузивен апартамент на първа линия море в Несебър!гр. Несебър, комплекс за целогодишно живеене BelvedereПредлагаме за продажба просторен апартамент с площ от",
   "price": 310000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 130.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Несебър",
+  "district": "област Бургас",
+  "address_text": "Несебър, област Бургас",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -26,11 +26,22 @@
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/734/big1/1c177494794961734_Uv.jpg",
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/734/big1/1c177494794961734_7O.jpg",
     "https://imotstatic3.focus.bg/imot/photosimotbg/1/734/big1/1c177494794961734_oE.jpg",
-    "//imotstatic3.focus.bg/imot/photosimotbg/1/734/big1/1c177494794961734_nI.jpg"
+    "https://imotstatic3.focus.bg/imot/photosimotbg/1/734/big1/1c177494794961734_nI.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "00000000",
+    "+359 89 208 07 27",
+    "+359 89 301 03 34",
+    "092859599",
+    "026-05-08",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:45:51.829060+00:00",
+  "scraped_at": "2026-04-24T07:53:16.383646+00:00",
   "reference_id": "Bazar.bg:54037972",
   "local_image_files": [
     "data/media/Bazar.bg_54037972/0000_d7db2490.jpg",
@@ -55,5 +66,10 @@
     "Bazar.bg_54037972/0007_934fd0dd.jpg",
     "Bazar.bg_54037972/0008_5b781b86.jpg",
     "Bazar.bg_54037972/0009_d7db2490.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54037972",
+  "photo_count_remote": 10,
+  "photo_count_local": 10,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

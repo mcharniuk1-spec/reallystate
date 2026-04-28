@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/168023",
   "external_id": "e42fc4c88a15",
   "title": "Къща в Панчарево 360 кв.м. ID 168023  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "$5b",
+  "price": 935000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 360.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Панчарево",
   "district": "",
-  "address_text": "",
+  "address_text": "Панчарево",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/eccd0d12-bbb9-4388-b775-d36d748782e4.png"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 515 623",
+    "+359 882 222 321"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:30.994672+00:00",
+  "scraped_at": "2026-04-24T07:53:25.312120+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:e42fc4c88a15",
   "local_image_files": [
     "data/media/Yavlena_e42fc4c88a15/0000_fc71d2f7.png"
   ],
   "local_image_storage_keys": [
     "Yavlena_e42fc4c88a15/0000_fc71d2f7.png"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_e42fc4c88a15",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

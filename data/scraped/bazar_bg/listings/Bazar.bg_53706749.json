@@ -51,7 +51,7 @@
     "000-2014"
   ],
   "amenities": [],
-  "scraped_at": "2026-04-21T15:07:16.236895+00:00",
+  "scraped_at": "2026-04-24T07:53:15.416878+00:00",
   "reference_id": "Bazar.bg:53706749",
   "local_image_files": [
     "data/media/Bazar.bg_53706749/0000_de4ef8a5.jpg",
@@ -86,5 +86,10 @@
     "Bazar.bg_53706749/0012_63801fd7.jpg",
     "Bazar.bg_53706749/0013_a60de239.jpg",
     "Bazar.bg_53706749/0014_de4ef8a5.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_53706749",
+  "photo_count_remote": 15,
+  "photo_count_local": 15,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -2,7 +2,7 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-8424-zhilishten-kompleks-grad-sofiya-obelya-2",
   "external_id": "9243abc32c8b",
-  "title": "Imot.bg",
+  "title": "Жилищен комплекс в град София Обеля 2 обява 8424",
   "description": "Imot.bg - №1 сайт за имоти от собственици и брокери",
   "price": null,
   "currency": "EUR",
@@ -27,11 +27,9 @@
     "https://cdn3.focus.bg/imot/photosnb/424//big1/8424_xw.jpg",
     "https://cdn3.focus.bg/imot/photosnb/424//big/8424_lM.jpg"
   ],
-  "phones": [
-    "0882 838 886"
-  ],
+  "phones": [],
   "amenities": [],
-  "scraped_at": "2026-04-21T07:47:17.613968+00:00",
+  "scraped_at": "2026-04-24T07:52:36.576836+00:00",
   "reference_id": "imot.bg:9243abc32c8b",
   "source_attributes": {},
   "listing_status": "active",
@@ -56,5 +54,10 @@
     "imot.bg_9243abc32c8b/0006_7d36093d.jpg",
     "imot.bg_9243abc32c8b/0007_cbdc2c9d.jpg",
     "imot.bg_9243abc32c8b/0008_f69ffe85.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/imot.bg_9243abc32c8b",
+  "photo_count_remote": 9,
+  "photo_count_local": 9,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

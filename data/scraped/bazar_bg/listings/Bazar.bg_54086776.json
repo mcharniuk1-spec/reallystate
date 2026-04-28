@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54086776/prodawa-4-staen-gr-petrich-oblast-blagoewgrad",
   "external_id": "54086776",
-  "title": "Bazar.BG",
+  "title": "Продава 4-СТАЕН, гр. Петрич, област Благоевград → Обява 54086776",
   "description": "Това градско бижу може да бъде твое още днес!  Търсите ли място, което да не е просто апартамент, а истинско съкровище? Представяме ви имот, който съчетава несъ",
   "price": 110000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 106.0,
+  "rooms": 4.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Петрич",
+  "district": "област Благоевград",
+  "address_text": "Петрич, област Благоевград",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -20,11 +20,21 @@
     "https://cdn3.focus.bg/imot/photosimotbg/1/580/big1/1d177339479464580_8w.jpg",
     "https://cdn3.focus.bg/imot/photosimotbg/1/580/big1/1d177339479464580_l2.jpg",
     "https://cdn3.focus.bg/imot/photosimotbg/1/580/big1/1d177339479464580_td.jpg",
-    "//cdn3.focus.bg/imot/photosimotbg/1/580/big1/1d177339479464580_8w.jpg"
+    "https://cdn3.focus.bg/imot/photosimotbg/1/580/big1/1d177339479464580_8w.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "0142571800000000",
+    "+359887097224",
+    "092852470",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:42:57.045407+00:00",
+  "scraped_at": "2026-04-24T07:53:16.994059+00:00",
   "reference_id": "Bazar.bg:54086776",
   "local_image_files": [
     "data/media/Bazar.bg_54086776/0000_b5227cd5.jpg",
@@ -37,5 +47,10 @@
     "Bazar.bg_54086776/0001_d4c231cc.jpg",
     "Bazar.bg_54086776/0002_31ac4176.jpg",
     "Bazar.bg_54086776/0003_b5227cd5.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54086776",
+  "photo_count_remote": 4,
+  "photo_count_local": 4,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

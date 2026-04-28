@@ -4,14 +4,14 @@
   "external_id": "ec207bdc4298",
   "title": "Къща във Варна 305 кв.м. ID 168348  | Явлена",
   "description": "",
-  "price": null,
+  "price": 320000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 305.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/ee3adc30-add6-42d2-8986-839dc1d647a1.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 544 460",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:47.586041+00:00",
+  "scraped_at": "2026-04-24T07:53:25.540314+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:ec207bdc4298",
   "local_image_files": [
     "data/media/Yavlena_ec207bdc4298/0000_8653e62d.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_ec207bdc4298/0000_8653e62d.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_ec207bdc4298",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

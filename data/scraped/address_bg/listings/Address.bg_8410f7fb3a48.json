@@ -1,0 +1,60 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-iztok-mnogostaen-apartament-offer683139",
+  "external_id": "8410f7fb3a48",
+  "title": "Многостаен апартамент в София, Изток - код на имота: 683139",
+  "description": "Адрес недвижими имоти предлага Многостаен апартамент в София, Изток с код на имота: 683139. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 450000.0,
+  "currency": "EUR",
+  "area_sqm": 300.0,
+  "rooms": null,
+  "floor": null,
+  "city": "София",
+  "district": "Изток",
+  "address_text": "София, Изток",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/139/683139/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-02-05",
+    "018-05-09",
+    "018-07-06",
+    "0442 60 000",
+    "0888 81 89 21",
+    "0884856924",
+    "026-02-15",
+    "026-02-17",
+    "026-02-09",
+    "0005051304121221000505130412124",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:12:56.124890+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Многостаен апартамент Изток"
+  },
+  "reference_id": "Address.bg:8410f7fb3a48",
+  "local_image_files": [
+    "data/media/Address.bg_8410f7fb3a48/0000_ea544296.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_8410f7fb3a48/0000_ea544296.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_8410f7fb3a48",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

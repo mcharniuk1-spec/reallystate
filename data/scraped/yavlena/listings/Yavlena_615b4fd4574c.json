@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/168267",
   "external_id": "615b4fd4574c",
   "title": "Тристаен апартамент във Варна 126 кв.м. ID 168267  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "$5b",
+  "price": 213210.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 126.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/392a6156-0acb-401a-b7a2-7d0b6a3d49fc.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 544 533",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:14:23.925924+00:00",
+  "scraped_at": "2026-04-24T07:53:21.168878+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:615b4fd4574c",
   "local_image_files": [
     "data/media/Yavlena_615b4fd4574c/0000_3d2c6df2.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_615b4fd4574c/0000_3d2c6df2.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_615b4fd4574c",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

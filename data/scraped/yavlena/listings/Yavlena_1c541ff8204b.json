@@ -4,14 +4,14 @@
   "external_id": "1c541ff8204b",
   "title": "Двустаен апартамент в Несебър 92 кв.м. ID 168363  | Явлена",
   "description": "",
-  "price": null,
+  "price": 92000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 92.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Несебър",
   "district": "",
-  "address_text": "",
+  "address_text": "Несебър",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/77ed361e-785a-4e0d-8f2a-3d7b972b30c1.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 527 347",
+    "+359 885 444 222"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:36.689325+00:00",
+  "scraped_at": "2026-04-24T07:53:18.632245+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:1c541ff8204b",
   "local_image_files": [
     "data/media/Yavlena_1c541ff8204b/0000_759f2161.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_1c541ff8204b/0000_759f2161.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_1c541ff8204b",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

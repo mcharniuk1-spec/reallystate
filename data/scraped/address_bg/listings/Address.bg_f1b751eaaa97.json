@@ -4,14 +4,14 @@
   "external_id": "f1b751eaaa97",
   "title": "Етаж от къща в София, Княжево - код на имота: 683079",
   "description": "Адрес недвижими имоти предлага Етаж от къща в София, Княжево с код на имота: 683079. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 253000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 760.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Княжево",
+  "address_text": "София, Княжево",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,45 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/079/683079/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-03-04",
+    "026-02-04",
+    "018-05-09",
+    "018-07-06",
+    "0430 100",
+    "0888 81 89 21",
+    "0882595539",
+    "0422 2015",
+    "026-03-05",
+    "026-02-12",
+    "026-02-11",
+    "00506063",
+    "0959583948282",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:21:17.057349+00:00",
+  "scraped_at": "2026-04-24T07:52:44.435151+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Етаж от къща Княжево"
+  },
   "reference_id": "Address.bg:f1b751eaaa97",
   "local_image_files": [
     "data/media/Address.bg_f1b751eaaa97/0000_adc77247.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_f1b751eaaa97/0000_adc77247.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_f1b751eaaa97",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -1,0 +1,60 @@
+{
+  "source_name": "Address.bg",
+  "listing_url": "https://address.bg/sofia-nadezhda-4-tristaen-apartament-offer687477",
+  "external_id": "4378c113eed9",
+  "title": "Тристаен апартамент в София, Надежда 4 - код на имота: 687477",
+  "description": "Адрес недвижими имоти предлага Тристаен апартамент в София, Надежда 4 с код на имота: 687477. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
+  "price": 240000.0,
+  "currency": "EUR",
+  "area_sqm": 88.0,
+  "rooms": null,
+  "floor": null,
+  "city": "София",
+  "district": "Надежда 4",
+  "address_text": "София, Надежда 4",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://address.bg/storage/uploads/offers/477/687477/764x510/1.jpg"
+  ],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-03-12",
+    "018-05-09",
+    "018-07-06",
+    "0442 40 000",
+    "0888 81 89 21",
+    "0882750253",
+    "026-03-17",
+    "026-03-26",
+    "026-04-01",
+    "04654788",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
+  "amenities": [],
+  "scraped_at": "2026-04-24T08:10:31.235437+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Тристаен апартамент Надежда 4"
+  },
+  "reference_id": "Address.bg:4378c113eed9",
+  "local_image_files": [
+    "data/media/Address.bg_4378c113eed9/0000_3fc2fa35.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Address.bg_4378c113eed9/0000_3fc2fa35.jpg"
+  ],
+  "local_media_dir": "data/media/Address.bg_4378c113eed9",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

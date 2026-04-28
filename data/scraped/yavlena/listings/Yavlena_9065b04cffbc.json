@@ -4,14 +4,14 @@
   "external_id": "9065b04cffbc",
   "title": "Земеделска земя в Добролево 7104 кв.м. ID 168453  | Явлена",
   "description": "",
-  "price": null,
+  "price": 12600.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 7104.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Добролево",
   "district": "",
-  "address_text": "",
+  "address_text": "Добролево",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/8da60d8f-979d-4113-9346-b67dda9a0e00.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 504 053",
+    "+359 2 8 10 50 70"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:56:12.469795+00:00",
+  "scraped_at": "2026-04-24T07:53:22.741029+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:9065b04cffbc",
   "local_image_files": [
     "data/media/Yavlena_9065b04cffbc/0000_63644c15.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_9065b04cffbc/0000_63644c15.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_9065b04cffbc",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

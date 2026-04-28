@@ -2,12 +2,12 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54106072/prodawa-2-staen-apartament-kw-krastowa-wada",
   "external_id": "54106072",
-  "title": "Bazar.BG",
+  "title": "ПРОДАВА 2-стаен апартамент - кв.Кръстова Вада → Обява 54106072",
   "description": "ЧАСТНА ОБЯВА!\n\nАпартаментът се предлага напълно обзаведен и оборудван с висок клас електроуреди.\n\nПаркирането е осигурено с подземно паркомясто  - 37000 EUR",
   "price": 234000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 67.0,
+  "rooms": 2.0,
   "floor": null,
   "city": "",
   "district": "",
@@ -26,11 +26,28 @@
     "https://cdn8.focus.bg/bazar/7c/original/7c4c93d90cd84dc9c0f11907462df25c.webp",
     "https://cdn7.focus.bg/bazar/03/original/03993c214ebe3b5b0b9dbc889394292a.webp",
     "https://cdn7.focus.bg/bazar/c7/original/c7c2ddf179d170e7e6d74354c6ae1f8d.webp",
-    "//cdn5.focus.bg/bazar/c4/pics/c48742311813387ab56b11e9e8de1bd9.webp"
+    "https://cdn5.focus.bg/bazar/c4/pics/c48742311813387ab56b11e9e8de1bd9.webp"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "04999183",
+    "000000000",
+    "092862226",
+    "081011624734",
+    "01364280326",
+    "03521241711",
+    "03521767244",
+    "041079762",
+    "044500027",
+    "041678561",
+    "039261555459",
+    "026-05-08",
+    "000-2014",
+    "01112551"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:46:50.191165+00:00",
+  "scraped_at": "2026-04-24T07:53:17.191022+00:00",
   "reference_id": "Bazar.bg:54106072",
   "local_image_files": [
     "data/media/Bazar.bg_54106072/0000_9241e472.webp",
@@ -55,5 +72,10 @@
     "Bazar.bg_54106072/0007_3611d03b.webp",
     "Bazar.bg_54106072/0008_b5f5d272.webp",
     "Bazar.bg_54106072/0009_a4db4ac2.webp"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54106072",
+  "photo_count_remote": 10,
+  "photo_count_local": 10,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

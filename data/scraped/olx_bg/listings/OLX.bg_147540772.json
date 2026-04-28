@@ -142,7 +142,7 @@
     "00123456"
   ],
   "amenities": [],
-  "scraped_at": "2026-04-21T15:06:43.943364+00:00",
+  "scraped_at": "2026-04-24T07:53:11.065565+00:00",
   "reference_id": "OLX.bg:147540772",
   "local_image_files": [
     "data/media/OLX.bg_147540772/0000_9dfd850b.webp",
@@ -159,5 +159,10 @@
     "OLX.bg_147540772/0003_7553e5a4.webp",
     "OLX.bg_147540772/0004_e49a3bae.webp",
     "OLX.bg_147540772/0005_9dfd850b.webp"
-  ]
+  ],
+  "local_media_dir": "data/media/OLX.bg_147540772",
+  "photo_count_remote": 6,
+  "photo_count_local": 6,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

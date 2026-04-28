@@ -4,14 +4,14 @@
   "external_id": "9f067a93640c",
   "title": "Двустаен апартамент в Бургас 59 кв.м. ID 168375  | Явлена",
   "description": "",
-  "price": null,
+  "price": 105000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 59.0,
+  "rooms": 2.0,
   "floor": null,
-  "city": "",
+  "city": "Бургас",
   "district": "",
-  "address_text": "",
+  "address_text": "Бургас",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,26 @@
   "image_urls": [
     "https://userimages.yavlena.com/c7cbcfd8-4094-47be-a62f-783685fc82c2.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 885 777 730"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:25.597378+00:00",
+  "scraped_at": "2026-04-24T07:53:23.179679+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:9f067a93640c",
   "local_image_files": [
     "data/media/Yavlena_9f067a93640c/0000_4955cb8a.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_9f067a93640c/0000_4955cb8a.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_9f067a93640c",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

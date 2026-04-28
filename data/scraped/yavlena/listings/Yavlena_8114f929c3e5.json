@@ -4,14 +4,14 @@
   "external_id": "8114f929c3e5",
   "title": "Къща във Варна 141 кв.м. ID 168383  | Явлена",
   "description": "",
-  "price": null,
+  "price": 388000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 141.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/9bf1afc8-e3ad-4bf0-94c6-043ae43d86cc.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 526 472",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:21.909837+00:00",
+  "scraped_at": "2026-04-24T07:53:22.331331+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:8114f929c3e5",
   "local_image_files": [
     "data/media/Yavlena_8114f929c3e5/0000_99dd14a3.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_8114f929c3e5/0000_99dd14a3.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_8114f929c3e5",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -4,14 +4,14 @@
   "external_id": "06897e788b3c",
   "title": "Магазин в Пловдив 74 кв.м. ID 166493  | Явлена",
   "description": "",
-  "price": null,
+  "price": 118400.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 74.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Пловдив",
   "district": "",
-  "address_text": "",
+  "address_text": "Пловдив",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/f1a6c703-48ec-4328-b9ed-3cb1dbbd645b.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 541 943",
+    "+359 898 498 449"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:54:38.204348+00:00",
+  "scraped_at": "2026-04-24T07:53:17.761057+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:06897e788b3c",
   "local_image_files": [
     "data/media/Yavlena_06897e788b3c/0000_2c46c436.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_06897e788b3c/0000_2c46c436.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_06897e788b3c",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

@@ -2,12 +2,12 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-51267270/ot-sobstwenik-2-staen-grad-plowdiw-hristo-smirnenski-bez-komisionna",
   "external_id": "51267270",
-  "title": "Bazar.BG",
+  "title": "От собственик 2-СТАЕН град Пловдив, Христо Смирненски, без комисионна! → Обява 51267270",
   "description": "📢 Продава се 2-стаен апартамент – Христо Смирненски, гр. Пловдив\n\n📢 Частно лице, без комисионна ! Агенции да не ми звънят !!! \n\n📍 В тиха улица между болници Пъл",
   "price": 129000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 75.0,
+  "rooms": 2.0,
   "floor": null,
   "city": "",
   "district": "",
@@ -24,11 +24,25 @@
     "https://cdn7.focus.bg/bazar/98/original/98f6b70d4cf0e0e770cbe09fba1f54fb.webp",
     "https://cdn1.focus.bg/bazar/79/original/791c697f63cd899df983c6641ae73023.webp",
     "https://cdn1.focus.bg/bazar/9b/original/9bbd6f8163053d01752a53e590af6555.webp",
-    "//cdn5.focus.bg/bazar/1c/pics/1c79dbcdf1476457babd12e740a93ec7.webp"
+    "https://cdn5.focus.bg/bazar/1c/pics/1c79dbcdf1476457babd12e740a93ec7.webp"
   ],
-  "phones": [],
+  "phones": [
+    "0931172-2",
+    "006135400",
+    "0123456789",
+    "00000000",
+    "092857988",
+    "04667216790",
+    "0271417081",
+    "0267034483",
+    "003173526844",
+    "099975006",
+    "026-05-08",
+    "000-2014",
+    "01112551"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:45:14.986341+00:00",
+  "scraped_at": "2026-04-24T07:53:14.443899+00:00",
   "reference_id": "Bazar.bg:51267270",
   "local_image_files": [
     "data/media/Bazar.bg_51267270/0000_7cc3e29f.webp",
@@ -49,5 +63,10 @@
     "Bazar.bg_51267270/0005_5f9e7c6b.webp",
     "Bazar.bg_51267270/0006_93ad532e.webp",
     "Bazar.bg_51267270/0007_a57f2a1b.webp"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_51267270",
+  "photo_count_remote": 8,
+  "photo_count_local": 8,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

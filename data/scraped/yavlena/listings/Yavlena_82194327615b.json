@@ -4,14 +4,14 @@
   "external_id": "82194327615b",
   "title": "Парцел в Бургас 640 кв.м. ID 168387  | Явлена",
   "description": "",
-  "price": null,
+  "price": 80000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 640.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Бургас",
   "district": "",
-  "address_text": "",
+  "address_text": "Бургас",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/0aa2f6e7-1038-45bc-8af7-9674ab528c9a.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 530 013",
+    "+359 885 777 730"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:18.532524+00:00",
+  "scraped_at": "2026-04-24T07:53:22.418116+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:82194327615b",
   "local_image_files": [
     "data/media/Yavlena_82194327615b/0000_9f13e581.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_82194327615b/0000_9f13e581.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_82194327615b",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

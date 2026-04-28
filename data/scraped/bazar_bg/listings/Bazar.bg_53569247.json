@@ -2,19 +2,19 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-53569247/dawa-pod-naem-3-staen-gr-sofiia-reduta",
   "external_id": "53569247",
-  "title": "Bazar.BG",
+  "title": "Дава под наем 3-СТАЕН, гр. София, Редута → Обява 53569247",
   "description": "Предлагаме просторен тристаен апартамент в затворен комплекс в паркова среда в квартал Редута. В комплекса има детска площадка ,която се ползва само от живущите",
   "price": 750.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 100.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Редута",
+  "address_text": "София, Редута",
   "latitude": null,
   "longitude": null,
-  "listing_intent": "sale",
+  "listing_intent": "long_term_rent",
   "property_category": "apartment",
   "image_urls": [
     "https://imotstatic3.focus.bg/imot/photosimotbg/2/352/big1/2d175273231660352_Wd.jpg",
@@ -27,11 +27,25 @@
     "https://imotstatic3.focus.bg/imot/photosimotbg/2/352/big1/2d175273231660352_xC.jpg",
     "https://imotstatic3.focus.bg/imot/photosimotbg/2/352/big1/2d175273231660352_A7.jpg",
     "https://imotstatic3.focus.bg/imot/photosimotbg/2/352/big1/2d175273231660352_6o.jpg",
-    "//imotstatic3.focus.bg/imot/photosimotbg/2/352/big1/2d175273231660352_Wd.jpg"
+    "https://imotstatic3.focus.bg/imot/photosimotbg/2/352/big1/2d175273231660352_Wd.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "00000000",
+    "092860150",
+    "0965785836",
+    "0470078371",
+    "044190854",
+    "03387224597",
+    "04374617884",
+    "026-05-08",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:46:03.890852+00:00",
+  "scraped_at": "2026-04-24T07:53:15.158286+00:00",
   "reference_id": "Bazar.bg:53569247",
   "local_image_files": [
     "data/media/Bazar.bg_53569247/0000_6960780a.jpg",
@@ -58,5 +72,10 @@
     "Bazar.bg_53569247/0008_949c69b6.jpg",
     "Bazar.bg_53569247/0009_cc4ff78b.jpg",
     "Bazar.bg_53569247/0010_6960780a.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_53569247",
+  "photo_count_remote": 11,
+  "photo_count_local": 11,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

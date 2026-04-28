@@ -83,7 +83,7 @@
     "0001523081340"
   ],
   "amenities": [],
-  "scraped_at": "2026-04-21T15:06:57.954529+00:00",
+  "scraped_at": "2026-04-24T07:53:13.607711+00:00",
   "region": "София",
   "source_attributes": {
     "town": "София",
@@ -180,5 +180,10 @@
     "SUPRIMMO_STO-132154/0040_51f06b55.jpg",
     "SUPRIMMO_STO-132154/0041_37aca7ca.jpg",
     "SUPRIMMO_STO-132154/0042_cbfdeb60.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/SUPRIMMO_STO-132154",
+  "photo_count_remote": 43,
+  "photo_count_local": 43,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

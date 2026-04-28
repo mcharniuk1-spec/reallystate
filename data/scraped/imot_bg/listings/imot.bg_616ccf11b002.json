@@ -29,7 +29,7 @@
     "ТEЦ: ДА",
     "Строителство: Тухла, Въведен в експлоатация 2026 г."
   ],
-  "scraped_at": "2026-04-21T08:09:01.763263+00:00",
+  "scraped_at": "2026-04-24T07:52:33.272284+00:00",
   "reference_id": "imot.bg:616ccf11b002",
   "source_attributes": {
     "Площ": "105 m 2",
@@ -45,5 +45,10 @@
   "local_image_storage_keys": [
     "imot.bg_616ccf11b002/0000_69367a27.jpg",
     "imot.bg_616ccf11b002/0001_54b78d8d.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/imot.bg_616ccf11b002",
+  "photo_count_remote": 2,
+  "photo_count_local": 2,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

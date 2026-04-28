@@ -4,14 +4,14 @@
   "external_id": "a9ee9d04444d",
   "title": "Тристаен апартамент в София 111 кв.м. ID 167232  | Явлена",
   "description": "",
-  "price": null,
+  "price": 425000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 111.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/b2b6223f-b673-4683-be92-f1b2f811ac9b.png"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 514 345",
+    "+359 882 222 321"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:54:33.093717+00:00",
+  "scraped_at": "2026-04-24T07:53:23.459889+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:a9ee9d04444d",
   "local_image_files": [
     "data/media/Yavlena_a9ee9d04444d/0000_b8304099.png"
   ],
   "local_image_storage_keys": [
     "Yavlena_a9ee9d04444d/0000_b8304099.png"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_a9ee9d04444d",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

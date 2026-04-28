@@ -2,7 +2,7 @@
   "source_name": "imot.bg",
   "listing_url": "https://www.imot.bg/obiava-7499-zhilishtna-sgrada-grad-sofiya-mladost-4",
   "external_id": "830f70c2c182",
-  "title": "Imot.bg",
+  "title": "������� ������ � ���� ����� ������� 4 ����� 7499",
   "description": "Imot.bg - �1 ���� �� ����� �� ����������� � �������",
   "price": null,
   "currency": "EUR",
@@ -17,12 +17,25 @@
   "listing_intent": "sale",
   "property_category": "unknown",
   "image_urls": [
-    "//cdn3.focus.bg/imot/photosnb/499//big/7499_Eq.jpg"
+    "https://cdn3.focus.bg/imot/photosnb/499//big1/7499_Eq.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/499//big1/7499_Ff.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/499//big1/7499_M5.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/499//big1/7499_BK.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/499//big1/7499_70.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/499//big1/7499_AN.jpg",
+    "https://cdn3.focus.bg/imot/photosnb/499//big/7499_Eq.jpg"
   ],
   "phones": [],
   "amenities": [],
-  "scraped_at": "2026-04-09T10:05:57.670731+00:00",
+  "scraped_at": "2026-04-24T07:52:35.423653+00:00",
   "reference_id": "imot.bg:830f70c2c182",
+  "source_attributes": {},
+  "listing_status": "active",
   "local_image_files": [],
-  "local_image_storage_keys": []
+  "local_image_storage_keys": [],
+  "local_media_dir": "data/media/imot.bg_830f70c2c182",
+  "photo_count_remote": 7,
+  "photo_count_local": 0,
+  "full_gallery_downloaded": false,
+  "photo_download_status": "no_local_files"
 }

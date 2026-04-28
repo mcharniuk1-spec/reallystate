@@ -4,14 +4,14 @@
   "external_id": "6a23e1920afa",
   "title": "Едностаен апартамент в Банско 34 кв.м. ID 168467  | Явлена",
   "description": "",
-  "price": null,
+  "price": 46343.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 34.0,
+  "rooms": 1.0,
   "floor": null,
-  "city": "",
+  "city": "Банско",
   "district": "",
-  "address_text": "",
+  "address_text": "Банско",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/b4f71d41-9e24-43b9-a2b1-8084ebf63067.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 539 314",
+    "+359 888 109 040"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:56:07.254659+00:00",
+  "scraped_at": "2026-04-24T07:53:21.486586+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:6a23e1920afa",
   "local_image_files": [
     "data/media/Yavlena_6a23e1920afa/0000_e1a87045.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_6a23e1920afa/0000_e1a87045.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_6a23e1920afa",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

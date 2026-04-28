@@ -1,0 +1,165 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-113m2-sofiya-zhk.-mladost-4/as1681158",
+  "external_id": "1681158",
+  "reference_id": "Homes.bg:1681158",
+  "title": "Тристаен, 113m² - жк. Младост 4, София",
+  "description": "Функционален тристаен апартаментвече с АКТ 14. Разположен е на втори етаж. Състои се от: хол с трапезария и кухненски бокс с площ 34.34 кв.м., две спални по 15.52 кв.м. и 11.32 кв.м., две санитарни помещения, балкон и склад. Изложението е северно. Има възможност за покупка на гараж или паркомясто.\n Обади се сега и цитирай този код 692376",
+  "price": 264775.0,
+  "currency": "EUR",
+  "area_sqm": 0.113,
+  "rooms": 3.0,
+  "floor": 2.0,
+  "city": "София",
+  "district": "жк. Младост 4",
+  "address_text": "жк. Младост 4, София",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2026-04-24_1/118689098o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689099o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689100o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689101o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689102o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689103o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689104o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689105o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689106o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689107o.jpg"
+  ],
+  "phones": [
+    "0883224935"
+  ],
+  "amenities": [
+    "Асансьор"
+  ],
+  "scraped_at": "2026-04-24T08:09:33.430862+00:00",
+  "listing_status": "active",
+  "published_text": "днес",
+  "agency_name": "ИМОТЕКА АД",
+  "agency_type": "Агенция",
+  "agency_address": "София пл. Света Неделя No 4, ет. 1",
+  "source_attributes": {
+    "Обзавеждане": "",
+    "Етаж": "2-ри",
+    "Етажи": "10",
+    "Отопление": "Прокарва се",
+    "Състояние": "",
+    "Строителство": "Тухла",
+    "Спални": "",
+    "Бани": "",
+    "Двор": "",
+    "Площ на парцела": "",
+    "В регулация": "",
+    "Предназначение": "",
+    "Виза": "",
+    "Разрешение за строеж": "",
+    "Категория": "",
+    "Тип": ""
+  },
+  "photo_metadata": [
+    {
+      "id": 118689098,
+      "name": "118689098",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689099,
+      "name": "118689099",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689100,
+      "name": "118689100",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689101,
+      "name": "118689101",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689102,
+      "name": "118689102",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689103,
+      "name": "118689103",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689104,
+      "name": "118689104",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689105,
+      "name": "118689105",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689106,
+      "name": "118689106",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689107,
+      "name": "118689107",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    }
+  ],
+  "raw_offer_type": "as",
+  "view_count": 2,
+  "local_image_files": [
+    "data/media/Homes.bg_1681158/0000_0b0e82dd.jpg",
+    "data/media/Homes.bg_1681158/0001_97ffee6e.jpg",
+    "data/media/Homes.bg_1681158/0002_d9f627dc.jpg",
+    "data/media/Homes.bg_1681158/0003_8e4e5de6.jpg",
+    "data/media/Homes.bg_1681158/0004_341fee6a.jpg",
+    "data/media/Homes.bg_1681158/0005_66a7dfa3.jpg",
+    "data/media/Homes.bg_1681158/0006_a84133e6.jpg",
+    "data/media/Homes.bg_1681158/0007_fcc6893a.jpg",
+    "data/media/Homes.bg_1681158/0008_52144b01.jpg",
+    "data/media/Homes.bg_1681158/0009_c73be556.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Homes.bg_1681158/0000_0b0e82dd.jpg",
+    "Homes.bg_1681158/0001_97ffee6e.jpg",
+    "Homes.bg_1681158/0002_d9f627dc.jpg",
+    "Homes.bg_1681158/0003_8e4e5de6.jpg",
+    "Homes.bg_1681158/0004_341fee6a.jpg",
+    "Homes.bg_1681158/0005_66a7dfa3.jpg",
+    "Homes.bg_1681158/0006_a84133e6.jpg",
+    "Homes.bg_1681158/0007_fcc6893a.jpg",
+    "Homes.bg_1681158/0008_52144b01.jpg",
+    "Homes.bg_1681158/0009_c73be556.jpg"
+  ],
+  "local_media_dir": "data/media/Homes.bg_1681158",
+  "photo_count_remote": 10,
+  "photo_count_local": 10,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

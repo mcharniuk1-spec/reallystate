@@ -4,14 +4,14 @@
   "external_id": "24bafda8d420",
   "title": "Парцел в Белчин 4500 кв.м. ID 168314  | Явлена",
   "description": "",
-  "price": null,
+  "price": 113250.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 4500.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Белчин",
   "district": "",
-  "address_text": "",
+  "address_text": "Белчин",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/0191b0ff-37e3-45ca-b9c1-5e8a3395a947.png"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 516 038",
+    "+359 882 222 321"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:14:03.304185+00:00",
+  "scraped_at": "2026-04-24T07:53:18.906073+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:24bafda8d420",
   "local_image_files": [
     "data/media/Yavlena_24bafda8d420/0000_e30a9b54.png"
   ],
   "local_image_storage_keys": [
     "Yavlena_24bafda8d420/0000_e30a9b54.png"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_24bafda8d420",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

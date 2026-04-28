@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/168194",
   "external_id": "f7a1a1631995",
   "title": "Тристаен апартамент във Варна 102 кв.м. ID 168194  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "$5b",
+  "price": 229500.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 102.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/392a6156-0acb-401a-b7a2-7d0b6a3d49fc.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 544 598",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:15:22.852306+00:00",
+  "scraped_at": "2026-04-24T07:53:25.990676+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:f7a1a1631995",
   "local_image_files": [
     "data/media/Yavlena_f7a1a1631995/0000_3d2c6df2.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_f7a1a1631995/0000_3d2c6df2.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_f7a1a1631995",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

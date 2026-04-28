@@ -4,14 +4,14 @@
   "external_id": "422a4caa0e48",
   "title": "Тристаен апартамент в София, Център - код на имота: 659201",
   "description": "Адрес недвижими имоти предлага Тристаен апартамент в София, Център с код на имота: 659201. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 335000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 123.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Център",
+  "address_text": "София, Център",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,44 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/201/659201/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "025-06-24",
+    "018-05-09",
+    "018-07-06",
+    "0442 2024",
+    "0430 25 000",
+    "0888 81 89 21",
+    "0885922642",
+    "026-04-22",
+    "0983584716",
+    "078447631",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-24 11",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:21:30.936064+00:00",
+  "scraped_at": "2026-04-24T08:10:03.656830+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало София Тристаен апартамент Център"
+  },
   "reference_id": "Address.bg:422a4caa0e48",
   "local_image_files": [
+    "data/media/Address.bg_422a4caa0e48/0000_69d981f0.jpg",
     "data/media/Address.bg_422a4caa0e48/0000_e771f692.jpg"
   ],
   "local_image_storage_keys": [
+    "Address.bg_422a4caa0e48/0000_69d981f0.jpg",
     "Address.bg_422a4caa0e48/0000_e771f692.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_422a4caa0e48",
+  "photo_count_remote": 1,
+  "photo_count_local": 2,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

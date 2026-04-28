@@ -4,14 +4,14 @@
   "external_id": "ea487582fec3",
   "title": "Етаж от къща в София 156 кв.м. ID 167316  | Явлена",
   "description": "",
-  "price": null,
+  "price": 800000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 156.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "София",
   "district": "",
-  "address_text": "",
+  "address_text": "София",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/9fdfbb41-fd1c-4577-a616-98fc2131a258.png"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 514 976",
+    "+359 882 222 321"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:54:31.448074+00:00",
+  "scraped_at": "2026-04-24T07:53:25.511857+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:ea487582fec3",
   "local_image_files": [
     "data/media/Yavlena_ea487582fec3/0000_3dacce24.png"
   ],
   "local_image_storage_keys": [
     "Yavlena_ea487582fec3/0000_3dacce24.png"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_ea487582fec3",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

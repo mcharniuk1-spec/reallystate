@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/168185",
   "external_id": "2f0422d1abd7",
   "title": "Къща в Гложене 160 кв.м. ID 168185  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Агенция „Явлена“ продава двуетажна масивна жилищна сграда в центъра на село Гложене, община Тетевен, с изрядни документи за собственост. Селото е на ок. 100 км. от гр. София и на ок. 10 км. от гр. Тетевен, в непосредствена близост до автомагистрала Хемус . Имотът е с РЗП от 160 кв.м. Разпределение: първи етаж 80 кв.м.(бивш хранителен магазин със склад).Втори етаж 80 кв.м жилищен със санитарен възел.Имотът разполага и с голямо мазе.                                                                  .",
+  "price": 41500.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 160.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Гложене",
+  "district": "м",
+  "address_text": "Гложене, м",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/38fa8edf-fab0-4011-b8a4-91c13f3e74f8.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 545 168",
+    "+359 28 10 50 70"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:15:33.780334+00:00",
+  "scraped_at": "2026-04-24T07:53:19.274712+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:2f0422d1abd7",
   "local_image_files": [
     "data/media/Yavlena_2f0422d1abd7/0000_fb1bee46.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_2f0422d1abd7/0000_fb1bee46.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_2f0422d1abd7",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

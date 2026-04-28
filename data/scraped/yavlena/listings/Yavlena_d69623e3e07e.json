@@ -4,14 +4,14 @@
   "external_id": "d69623e3e07e",
   "title": "Многостаен апартамент във Варна 277 кв.м. ID 168235  | Явлена",
   "description": "",
-  "price": null,
+  "price": 381700.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 277.0,
+  "rooms": 5.0,
   "floor": null,
-  "city": "",
+  "city": "Варна",
   "district": "",
-  "address_text": "",
+  "address_text": "Варна",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/7b9411ef-8082-4552-af4f-8c1714616bb3.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 520 915",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:14:46.667685+00:00",
+  "scraped_at": "2026-04-24T07:53:24.807936+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:d69623e3e07e",
   "local_image_files": [
     "data/media/Yavlena_d69623e3e07e/0000_68dbcedc.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_d69623e3e07e/0000_68dbcedc.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_d69623e3e07e",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

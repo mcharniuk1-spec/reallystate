@@ -1,0 +1,155 @@
+{
+  "source_name": "Homes.bg",
+  "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-86m2-sofiya-zhk.-sveta-troica/as1681156",
+  "external_id": "1681156",
+  "reference_id": "Homes.bg:1681156",
+  "title": "Тристаен, 86m² - жк. Света Троица, София",
+  "description": "Изцяло ремонтиран и обзаведен тристаен апартамент в тухнел блок. След ремонта в жилището не е живяно. \n\nЖилището разполага с хол с кухненски бокс, тоалетна, баня с тоалетна, две спални и един балкон. \n Обади се сега и цитирай този код 692169",
+  "price": 338000.0,
+  "currency": "EUR",
+  "area_sqm": 0.86,
+  "rooms": 3.0,
+  "floor": 8.0,
+  "city": "София",
+  "district": "жк. Света Троица",
+  "address_text": "жк. Света Троица, София",
+  "latitude": null,
+  "longitude": null,
+  "listing_intent": "sale",
+  "property_category": "apartment",
+  "image_urls": [
+    "https://g1.homes.bg/2026-04-24_1/118689085o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689086o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689087o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689088o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689089o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689090o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689091o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689092o.jpg",
+    "https://g1.homes.bg/2026-04-24_1/118689093o.jpg"
+  ],
+  "phones": [
+    "0883224935"
+  ],
+  "amenities": [
+    "Асансьор"
+  ],
+  "scraped_at": "2026-04-24T08:09:35.608684+00:00",
+  "listing_status": "active",
+  "published_text": "днес",
+  "agency_name": "ИМОТЕКА АД",
+  "agency_type": "Агенция",
+  "agency_address": "София пл. Света Неделя No 4, ет. 1",
+  "source_attributes": {
+    "Обзавеждане": "Обзаведен",
+    "Етаж": "8-ми",
+    "Етажи": "9",
+    "Отопление": "ТЕЦ",
+    "Състояние": "",
+    "Строителство": "Тухла",
+    "Спални": "",
+    "Бани": "",
+    "Двор": "",
+    "Площ на парцела": "",
+    "В регулация": "",
+    "Предназначение": "",
+    "Виза": "",
+    "Разрешение за строеж": "",
+    "Категория": "",
+    "Тип": ""
+  },
+  "photo_metadata": [
+    {
+      "id": 118689085,
+      "name": "118689085",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689086,
+      "name": "118689086",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689087,
+      "name": "118689087",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689088,
+      "name": "118689088",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689089,
+      "name": "118689089",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689090,
+      "name": "118689090",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689091,
+      "name": "118689091",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689092,
+      "name": "118689092",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    },
+    {
+      "id": 118689093,
+      "name": "118689093",
+      "path": "2026-04-24_1/",
+      "height": 336,
+      "width": 448
+    }
+  ],
+  "raw_offer_type": "as",
+  "view_count": 3,
+  "local_image_files": [
+    "data/media/Homes.bg_1681156/0000_5a8c5c0f.jpg",
+    "data/media/Homes.bg_1681156/0001_ae36ce17.jpg",
+    "data/media/Homes.bg_1681156/0002_2515db40.jpg",
+    "data/media/Homes.bg_1681156/0003_a578ad09.jpg",
+    "data/media/Homes.bg_1681156/0004_e6f8423c.jpg",
+    "data/media/Homes.bg_1681156/0005_f8634913.jpg",
+    "data/media/Homes.bg_1681156/0006_7239809d.jpg",
+    "data/media/Homes.bg_1681156/0007_deeb5192.jpg",
+    "data/media/Homes.bg_1681156/0008_345bc249.jpg"
+  ],
+  "local_image_storage_keys": [
+    "Homes.bg_1681156/0000_5a8c5c0f.jpg",
+    "Homes.bg_1681156/0001_ae36ce17.jpg",
+    "Homes.bg_1681156/0002_2515db40.jpg",
+    "Homes.bg_1681156/0003_a578ad09.jpg",
+    "Homes.bg_1681156/0004_e6f8423c.jpg",
+    "Homes.bg_1681156/0005_f8634913.jpg",
+    "Homes.bg_1681156/0006_7239809d.jpg",
+    "Homes.bg_1681156/0007_deeb5192.jpg",
+    "Homes.bg_1681156/0008_345bc249.jpg"
+  ],
+  "local_media_dir": "data/media/Homes.bg_1681156",
+  "photo_count_remote": 9,
+  "photo_count_local": 9,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
+}

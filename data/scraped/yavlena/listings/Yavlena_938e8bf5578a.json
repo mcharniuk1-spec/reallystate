@@ -4,14 +4,14 @@
   "external_id": "938e8bf5578a",
   "title": "Къща в Църква 108 кв.м. ID 168354  | Явлена",
   "description": "",
-  "price": null,
+  "price": 170000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 108.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Църква",
   "district": "",
-  "address_text": "",
+  "address_text": "Църква",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/6d153688-d380-4307-a639-142990dab543.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 517 245",
+    "+359 899 680 006"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:42.106491+00:00",
+  "scraped_at": "2026-04-24T07:53:22.966514+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:938e8bf5578a",
   "local_image_files": [
     "data/media/Yavlena_938e8bf5578a/0000_b3b2109f.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_938e8bf5578a/0000_b3b2109f.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_938e8bf5578a",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

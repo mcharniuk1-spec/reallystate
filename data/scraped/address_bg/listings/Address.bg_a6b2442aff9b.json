@@ -4,9 +4,9 @@
   "external_id": "a6b2442aff9b",
   "title": "Многостаен апартамент във Варна, Цветен квартал - код на имота: 690953",
   "description": "Адрес недвижими имоти предлага Многостаен апартамент във Варна, Цветен квартал с код на имота: 690953. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 189000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 129.0,
   "rooms": null,
   "floor": null,
   "city": "",
@@ -19,14 +19,40 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/953/690953/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-04-09",
+    "018-05-09",
+    "018-07-06",
+    "0437 1980",
+    "0887 314 081",
+    "0885922558",
+    "0363605242121372036366",
+    "080855191",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:21:20.512270+00:00",
+  "scraped_at": "2026-04-24T07:52:44.066912+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Варна Многостаен апартамент Цветен квартал"
+  },
   "reference_id": "Address.bg:a6b2442aff9b",
   "local_image_files": [
     "data/media/Address.bg_a6b2442aff9b/0000_4ff1ab1d.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_a6b2442aff9b/0000_4ff1ab1d.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_a6b2442aff9b",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

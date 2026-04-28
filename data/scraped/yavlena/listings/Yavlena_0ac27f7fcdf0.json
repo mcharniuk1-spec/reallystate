@@ -4,14 +4,14 @@
   "external_id": "0ac27f7fcdf0",
   "title": "Тристаен апартамент в Лозенец 222 кв.м. ID 168047  | Явлена",
   "description": "",
-  "price": null,
+  "price": 220000.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 222.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
+  "city": "Лозенец",
   "district": "",
-  "address_text": "",
+  "address_text": "Лозенец",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/3a0e2ddc-8be6-479e-990b-16c14a60fa7f.JPG"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 528 161",
+    "+359 888 660 532"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:17:20.433323+00:00",
+  "scraped_at": "2026-04-24T07:53:17.865874+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:0ac27f7fcdf0",
   "local_image_files": [
     "data/media/Yavlena_0ac27f7fcdf0/0000_c28bf43a.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_0ac27f7fcdf0/0000_c28bf43a.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_0ac27f7fcdf0",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

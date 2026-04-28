@@ -3,30 +3,43 @@
   "listing_url": "https://www.yavlena.com/bg/168476",
   "external_id": "f5723c9f6ec4",
   "title": "Други бизнес имоти в Плевен 1020 кв.м. ID 168476  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Агенция Явлена, офис Оборище – гр. София, предлага за продажба поземлен имот находящ се в гр. Плевен, местност Табакова чешма с площ 1020 кв.м. ведно с построената в имота СГРАДА със застроена площ 18 кв.м.\\\\r\\\\n        За повече информация и огледи, моля свържете се отговорния брокер Татяна Костова на посочения телефон.                                                       \\\\r\\\\n                                                                                               \\\\r\\\\n                                                                                      \\\\r\\\\n.",
+  "price": 45500.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 1020.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Плевен",
+  "district": "м",
+  "address_text": "Плевен, м",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
-  "property_category": "unknown",
+  "property_category": "office",
   "image_urls": [
     "https://userimages.yavlena.com/6e239347-a0ac-44af-9d89-9f9c09c6b7fe.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 544 839",
+    "+359 2 810 50 70"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:55:55.098199+00:00",
+  "scraped_at": "2026-04-24T07:53:25.873291+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:f5723c9f6ec4",
   "local_image_files": [
     "data/media/Yavlena_f5723c9f6ec4/0000_de41f474.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_f5723c9f6ec4/0000_de41f474.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_f5723c9f6ec4",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

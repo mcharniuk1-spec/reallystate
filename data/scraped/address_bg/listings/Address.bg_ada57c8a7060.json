@@ -4,9 +4,9 @@
   "external_id": "ada57c8a7060",
   "title": "Двустаен апартамент във Варна, Колхозен пазар - код на имота: 688328",
   "description": "Адрес недвижими имоти предлага Двустаен апартамент във Варна, Колхозен пазар с код на имота: 688328. Обадете се или изпратете запитване за информация и оглед на избраният от Вас недвижим имот.",
-  "price": null,
+  "price": 107000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 68.0,
   "rooms": null,
   "floor": null,
   "city": "",
@@ -19,14 +19,40 @@
   "image_urls": [
     "https://address.bg/storage/uploads/offers/328/688328/764x510/1.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "034006913",
+    "0888 11 22 00",
+    "0888112200",
+    "026-03-18",
+    "018-05-09",
+    "018-07-06",
+    "0887 314 081",
+    "0882546944",
+    "026-03-23",
+    "026-03-30",
+    "0727784716",
+    "+359888112200",
+    "022851832342",
+    "026-01-01",
+    "026-12-31",
+    "026-10-09 14",
+    " 0888 11 22 00"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-09T11:20:33.804668+00:00",
+  "scraped_at": "2026-04-24T07:52:44.090755+00:00",
+  "source_attributes": {
+    "breadcrumb_text": "Начало Варна Двустаен апартамент Колхозен пазар"
+  },
   "reference_id": "Address.bg:ada57c8a7060",
   "local_image_files": [
     "data/media/Address.bg_ada57c8a7060/0000_ae98ef23.jpg"
   ],
   "local_image_storage_keys": [
     "Address.bg_ada57c8a7060/0000_ae98ef23.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Address.bg_ada57c8a7060",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

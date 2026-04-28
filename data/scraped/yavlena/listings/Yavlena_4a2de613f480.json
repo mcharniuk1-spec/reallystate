@@ -3,15 +3,15 @@
   "listing_url": "https://www.yavlena.com/bg/168379",
   "external_id": "4a2de613f480",
   "title": "Офис в Ловеч 373 кв.м. ID 168379  | Явлена",
-  "description": "",
-  "price": null,
+  "description": "Агенция Явлена, офис Оборище – гр. София, предлага за продажба имот в гр. Ловеч:\\\\r\\\\nЕтаж от АДМИНИСТРАТИВНА СГРАДА находящ се в центъра на града със застроена площ 372,40 кв.м., без сутерен на ет. 4. с предназначение за търговска дейност.\\\\r\\\\nПредставлява самостоятелен обект на едно ниво с 10 бр. офиси, коридори, стълбищна площадка и санитарни възли. \\\\r\\\\n      За повече информация и огледи, моля свържете се отговорния брокер Татяна Костова на посочения телефон - 359892540195.                                          .",
+  "price": 165000.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 373.0,
   "rooms": null,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "Ловеч",
+  "district": "м",
+  "address_text": "Ловеч, м",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/6e239347-a0ac-44af-9d89-9f9c09c6b7fe.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 506 519",
+    "+359 2 810 50 70"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:13:23.686601+00:00",
+  "scraped_at": "2026-04-24T07:53:20.123016+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:4a2de613f480",
   "local_image_files": [
     "data/media/Yavlena_4a2de613f480/0000_de41f474.jpg"
   ],
   "local_image_storage_keys": [
     "Yavlena_4a2de613f480/0000_de41f474.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_4a2de613f480",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

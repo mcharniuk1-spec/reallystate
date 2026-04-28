@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { ListingFeed } from "@/components/listings/ListingFeed";
+import { MainExplorer } from "@/components/listings/MainExplorer";
 import { SiteHeader } from "@/components/shell/SiteHeader";
 
 export const metadata: Metadata = {
@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
-      <ListingFeed />
+      <MainExplorer />
     </div>
   );
 }

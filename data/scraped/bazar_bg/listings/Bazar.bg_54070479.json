@@ -2,16 +2,16 @@
   "source_name": "Bazar.bg",
   "listing_url": "https://bazar.bg/obiava-54070479/prodawa-3-staen-gr-sofiia-lyulin-5",
   "external_id": "54070479",
-  "title": "Bazar.BG",
+  "title": "Продава 3-СТАЕН, гр. София, Люлин 5 → Обява 54070479",
   "description": "От собственик.Етаж: партер С акт 16Изложение: Юг / Югозапад (среден, топъл)Тип: ТристаенПлощ: обща 133м? | чиста 85,40 м? | общи части 9,75 м?|двор тераса 38,08",
   "price": 217560.0,
   "currency": "EUR",
-  "area_sqm": null,
-  "rooms": null,
+  "area_sqm": 133.0,
+  "rooms": 3.0,
   "floor": null,
-  "city": "",
-  "district": "",
-  "address_text": "",
+  "city": "София",
+  "district": "Люлин 5",
+  "address_text": "София, Люлин 5",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -24,11 +24,24 @@
     "https://imotstatic2.focus.bg/imot/photosimotbg/1/461/big1/1c177514846246461_mh.jpg",
     "https://imotstatic2.focus.bg/imot/photosimotbg/1/461/big1/1c177514846246461_qQ.jpg",
     "https://imotstatic2.focus.bg/imot/photosimotbg/1/461/big1/1c177514846246461_Up.jpg",
-    "//imotstatic2.focus.bg/imot/photosimotbg/1/461/big1/1c177514846246461_q0.jpg"
+    "https://imotstatic2.focus.bg/imot/photosimotbg/1/461/big1/1c177514846246461_q0.jpg"
   ],
-  "phones": [],
+  "phones": [
+    "006135400",
+    "0123456789",
+    "01112551",
+    "003-2014",
+    "000000000",
+    "032137052",
+    "092854072",
+    "089202631",
+    "01811296",
+    "0430 133",
+    "026-05-09",
+    "000-2014"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T16:43:36.742370+00:00",
+  "scraped_at": "2026-04-24T07:53:16.796042+00:00",
   "reference_id": "Bazar.bg:54070479",
   "local_image_files": [
     "data/media/Bazar.bg_54070479/0000_11cba7fb.jpg",
@@ -49,5 +62,10 @@
     "Bazar.bg_54070479/0005_00fce387.jpg",
     "Bazar.bg_54070479/0006_665e0abb.jpg",
     "Bazar.bg_54070479/0007_11cba7fb.jpg"
-  ]
+  ],
+  "local_media_dir": "data/media/Bazar.bg_54070479",
+  "photo_count_remote": 8,
+  "photo_count_local": 8,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }

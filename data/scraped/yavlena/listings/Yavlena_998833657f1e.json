@@ -4,14 +4,14 @@
   "external_id": "998833657f1e",
   "title": "Земеделска земя в Бистрица 2752 кв.м. ID 168428  | Явлена",
   "description": "",
-  "price": null,
+  "price": 34800.0,
   "currency": "EUR",
-  "area_sqm": null,
+  "area_sqm": 2752.0,
   "rooms": null,
   "floor": null,
-  "city": "",
+  "city": "Бистрица",
   "district": "",
-  "address_text": "",
+  "address_text": "Бистрица",
   "latitude": null,
   "longitude": null,
   "listing_intent": "sale",
@@ -19,14 +19,27 @@
   "image_urls": [
     "https://userimages.yavlena.com/db06ea97-bf85-42e3-83cb-e4dbd9809c26.png"
   ],
-  "phones": [],
+  "phones": [
+    "+359 892 557 189",
+    "+359 882 222 321"
+  ],
   "amenities": [],
-  "scraped_at": "2026-04-08T17:12:52.863294+00:00",
+  "scraped_at": "2026-04-24T07:53:23.028166+00:00",
+  "source_attributes": {
+    "broker_name": "",
+    "broker_email": "",
+    "inner_number": ""
+  },
   "reference_id": "Yavlena:998833657f1e",
   "local_image_files": [
     "data/media/Yavlena_998833657f1e/0000_180b3931.png"
   ],
   "local_image_storage_keys": [
     "Yavlena_998833657f1e/0000_180b3931.png"
-  ]
+  ],
+  "local_media_dir": "data/media/Yavlena_998833657f1e",
+  "photo_count_remote": 1,
+  "photo_count_local": 1,
+  "full_gallery_downloaded": true,
+  "photo_download_status": "full_gallery"
 }
