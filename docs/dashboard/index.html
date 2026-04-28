@@ -311,7 +311,7 @@
   </div>
 
     <script id="dashboard-data" type="application/json">{
-  "generated_at": "2026-04-28T04:10:17.773283+00:00",
+  "generated_at": "2026-04-28T08:38:23.887343+00:00",
   "roadmap": {
     "done": 46,
     "total": 128,
@@ -1115,7 +1115,7 @@
             "id": "UX-04",
             "title": "Nationwide Bulgaria LUN-style map + listings experience",
             "status": "TODO",
-            "details": "TODO` (website seed updated 2026-04-27 with scraped property evidence; full UX-04 still waits on backend/filter gates)"
+            "details": "TODO` (website seed updated 2026-04-28 with grouped map markers, aggregate filter, search-mode toggle, scrollable all-card list, and foldable descriptions; full UX-04 still waits on backend/filter gates)"
           },
           {
             "id": "UX-05",
@@ -1551,6 +1551,33 @@
           "commands": "",
           "status": "`S1-21` queued; `S1-22` queued for Gemma after Codex repair.",
           "review": ""
+        },
+        {
+          "title": "2026-04-28 — Root source-links operator artifact",
+          "summary": "",
+          "action": "Generated a root-level operator HTML page listing all tier-1 to tier-4 platforms with direct website links grouped into `buy residential`, `buy commercial`, `rent residential`, and `rent commercial`.",
+          "changed_files": "scripts/generate_source_links_page.py, source-links-tier1-4.html",
+          "commands": "python3 scripts/generate_source_links_page.py",
+          "status": "`DONE`",
+          "review": "FACT: the page is saved in the repository root as requested, not inside, FACT: tier-1/2 cells prefer exact saved Varna section URLs when present in, FACT: when no exact section URL is saved, the page falls back to the source primary website link from, GAP: this artifact is a clean operator link matrix, not a proof of current scrape readiness or pattern completeness."
+        },
+        {
+          "title": "2026-04-28 — Root source-links progress coloring",
+          "summary": "",
+          "action": "Upgraded the root-level source links page so each segment cell is color-coded by current saved scrape progress and now shows compact `done/100`, description coverage, full-gallery count, and average local images per item.",
+          "changed_files": "scripts/generate_source_links_page.py, source-links-tier1-4.html",
+          "commands": "python3 scripts/generate_source_links_page.py, python3 -m py_compile scripts/generate_source_links_page.py",
+          "status": "`DONE`",
+          "review": "FACT: progress counts are now aggregated directly from, FACT: cell colors now distinguish unsupported, empty, partial,, FACT: the image metric shown in each cell is average saved local images per property item for that bucket."
+        },
+        {
+          "title": "2026-04-28 — Root source-links metric semantics correction",
+          "summary": "",
+          "action": "Replaced the threshold-style `#/100` wording in the root source-links page with source-total scrape coverage and explicit per-bucket completeness metrics.",
+          "changed_files": "scripts/generate_source_links_page.py, source-links-tier1-4.html, docs/agents/README.md, docs/agents/TASKS.md",
+          "commands": "python3 scripts/generate_source_links_page.py, python3 -m py_compile scripts/generate_source_links_page.py",
+          "status": "`DONE`",
+          "review": "FACT:, FACT:, FACT: the first metric line now means, FACT:, IMPROVEMENT RULE: operator dashboards must use source-total coverage semantics, while threshold values such as"
         }
       ],
       "tasks": {
@@ -1652,7 +1679,7 @@
         "todo": 5,
         "blocked": 0,
         "total": 14,
-        "journal_entries": 40,
+        "journal_entries": 43,
         "efficiency_pct": 43
       }
     },
@@ -2433,7 +2460,7 @@
           "id": "UX-04",
           "title": "Nationwide Bulgaria LUN-style map + listings experience",
           "status": "TODO",
-          "details": "TODO` (website seed updated 2026-04-27 with scraped property evidence; full UX-04 still waits on backend/filter gates)"
+          "details": "TODO` (website seed updated 2026-04-28 with grouped map markers, aggregate filter, search-mode toggle, scrollable all-card list, and foldable descriptions; full UX-04 still waits on backend/filter gates)"
         },
         {
           "id": "UX-05",
@@ -3016,7 +3043,7 @@
       "id": "UX-04",
       "title": "Nationwide Bulgaria LUN-style map + listings experience",
       "status": "TODO",
-      "details": "TODO` (website seed updated 2026-04-27 with scraped property evidence; full UX-04 still waits on backend/filter gates)"
+      "details": "TODO` (website seed updated 2026-04-28 with grouped map markers, aggregate filter, search-mode toggle, scrollable all-card list, and foldable descriptions; full UX-04 still waits on backend/filter gates)"
     },
     {
       "owner_key": "ux_ui_designer",

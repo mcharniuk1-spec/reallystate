@@ -1,7 +1,7 @@
 # Task For Gemma4 / OpenClaw: Full Bulgaria Tier-1/2 Scrape With Complete Galleries
 
 Generated: 2026-04-24
-Updated: 2026-04-27 after Gemma/OpenClaw output review
+Updated: 2026-04-28 after Codex UI/QA contract pass
 
 ## Objective
 
@@ -26,6 +26,8 @@ Run the Bulgaria Real Estate tier-1/2 scraper to completion for **all Bulgaria**
 - Legacy Varna-specific function still exists for the old control-plane path: `bgrealestate.scraping.run_parallel_varna_scrape(...)`.
 - Dashboard target exists: `docs/dashboard/scrape-status.html`.
 - Per-item photo/field JSON exists: `docs/exports/source-item-photo-coverage.json`.
+- Property quality endpoint exists for local website QA: `GET /api/property-quality/<encoded reference_id>`.
+- Property quality/building contract exists: `docs/exports/property-quality-and-building-contract.md`.
 - Dry-run planning output for all-Bulgaria scrape: `docs/exports/all-full-scrape-summary.json`.
 - Legacy Varna dry-run planning output: `docs/exports/varna-full-scrape-summary.json`.
 - Current strict patterned set from saved evidence includes: `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `OLX.bg`, `property.bg`, `SUPRIMMO`, `Bazar.bg`, `Yavlena`.
@@ -96,6 +98,20 @@ This is now the next Gemma/OpenClaw task after Codex completes the tier-1/2 qual
 
 After full-gallery local files exist, create a separate visual report for every accepted apartment listing. Do this listing by listing, and image by image, preserving the source image order.
 
+Before writing each report, run or replicate the property-quality checks from:
+
+```text
+GET /api/property-quality/<encoded reference_id>
+```
+
+The report must cover both visual evidence and contextual consistency:
+
+- whether the photos match the scraped description, title, category, size, and price range,
+- whether the listing has suspicious photo/description mismatches,
+- whether price, area, rooms, floor, and category are plausible for the city/source context,
+- whether the property still needs address-to-building footprint matching,
+- whether the source links represent the same property conservatively or only the current source.
+
 Output files:
 
 - Per-listing Markdown: `docs/exports/apartment-image-reports/<source_key>/<reference_id>.md`
@@ -117,6 +133,7 @@ For each apartment, the report must include:
 - tools/equipment present: visible kitchen equipment, construction/repair tools, cleaning tools, HVAC units, boilers, meters, radiators, security systems, smart-home devices, or `none visible`,
 - requirements: obvious repair/renovation needs, missing fixtures, moisture/damage signs, dated finishes, furnishing gaps, staging/photo-quality gaps, accessibility concerns, and items requiring human verification,
 - buyer/renter usability note: move-in readiness, rental readiness, family suitability, office/work suitability, and risks visible in photos,
+- consistency QA: photo-to-description match, price/size plausibility, missing fields, suspected parser issues, and whether a human should verify the listing,
 - confidence and uncertainty notes for every non-obvious conclusion.
 
 For each image inside the apartment group, create one numbered subsection or JSON object with:
@@ -157,6 +174,13 @@ Suggested JSON shape:
     "dominant_colors": ["..."],
     "missing_or_unclear": ["..."],
     "confidence": 0.82
+  },
+  "quality_checks": {
+    "photo_description_match": "pass / warn / fail",
+    "price_size_plausibility": "pass / warn / fail",
+    "missing_or_suspicious_fields": ["..."],
+    "building_match_status": "pending",
+    "human_review_required": true
   },
   "images": [
     {

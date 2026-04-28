@@ -97,6 +97,13 @@ This digest captures the full operator intent and execution context from the lat
   - for each website, find the reusable parsing pattern for every property/service route and save that pattern as code before calling the source `Patterned`
   - keep a website-level status split between item-pattern readiness and count-method readiness; do not mark a source fully ready if live counts are still estimate-only
   - the recurring scraper_1 operating loop is incremental: every 15 minutes append new listings, refresh changed listings, and mark disappeared listings inactive instead of silently dropping them
+  - after every scrape run, refresh source metrics with explicit counts for:
+    - saved items started out of latest saved website-total count
+    - fully parsed/full-gallery items out of saved items
+    - description coverage out of saved items
+    - local/remote image capture totals plus average images per item
+    - image-description coverage out of saved local images
+  - dashboard metrics must use source-total counts for operator views; threshold-only counters such as `100` belong only in dedicated control-plane views
 - **Acceptance gate**: each blocker has at least one mapped follow-up slice with dependency, and scraper-facing follow-ups keep the full-item/full-gallery requirement visible
 - **Output**: updated `TASKS.md` dependencies and notes
 - **Verifier**: lead agent + debugger
@@ -183,6 +190,7 @@ This digest captures the full operator intent and execution context from the lat
 - **Status**: `TODO`
 - **Read first**: `docs/business/varna-3d-osm-integration.md`, `sql/schema.sql` (building_entity)
 - **Do**: download GeoFabrik Bulgaria extract, clip to Varna bbox, extract buildings with height/levels, import into PostGIS `building_entity`, generate PMTiles for MapLibre 3D extrusion
+- **2026-04-28 product note**: homepage now uses OSM raster base map with at most 20 aggregated city/district points. Do not treat synthetic marker clusters as building-level geospatial objects. This slice must provide real address/coordinate → OSM/PostGIS building footprint matches before the UI can highlight actual buildings.
 - **Acceptance gate**: `scripts/import_osm_buildings_varna.py` runs on fixture/sample data; PostGIS query returns building footprints; PMTiles file generated
 - **Output**: `scripts/import_osm_buildings_varna.py`, `data/tiles/varna-buildings.pmtiles`, migration for building_entity enrichment, tests
 - **Verifier**: debugger + ux_ui_designer
@@ -510,14 +518,15 @@ Bulk live harvesting was started outside the formal S1-15 acceptance gate; do **
 ### S1-22: Gemma/OpenClaw apartment image-report generation handoff
 - **Status**: `TODO`
 - **Priority**: **HIGH** — starts after `S1-21` repairs media/field completeness
-- **Read first**: `docs/exports/taskforgema.md`, `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`, `docs/exports/source-item-photo-coverage.json`, `data/scraped/*/listings/*.json`, `data/media/`
+- **Read first**: `docs/exports/taskforgema.md`, `docs/exports/property-quality-and-building-contract.md`, `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`, `docs/exports/source-item-photo-coverage.json`, `data/scraped/*/listings/*.json`, `data/media/`
 - **Do**:
   1. Run only after Codex confirms which apartment listings have complete local galleries.
   2. Generate one Markdown and one JSON visual report per apartment under `docs/exports/apartment-image-reports/<source_key>/`.
   3. Describe every local image in order with scene type, style, layout clues, visible objects/equipment/tools, colors/materials, condition, defects/risks, confidence, and uncertainty.
-  4. Write global `index.md` and `index.json` with per-source counts: apartments eligible, reports created, images described, skipped rows, and skip reasons.
-  5. Do not invent unseen rooms or unavailable media; use `unclear` and confidence values.
-- **Acceptance gate**: every apartment with `full_gallery_downloaded=true` has report paths or a documented skip reason; dashboard/export artifacts include image-report status.
+  4. Run or replicate `GET /api/property-quality/<encoded reference_id>` for every processed listing and include photo completeness, description-context match, price/size plausibility, source-link evidence, and building-match status in the report.
+  5. Write global `index.md` and `index.json` with per-source counts: apartments eligible, reports created, images described, skipped rows, skip reasons, QA warnings, and building-match-pending rows.
+  6. Do not invent unseen rooms or unavailable media; use `unclear` and confidence values.
+- **Acceptance gate**: every apartment with `full_gallery_downloaded=true` has report paths or a documented skip reason; every completed report includes property QA checks; dashboard/export artifacts include image-report status.
 - **Output**: `docs/exports/apartment-image-reports/`, refreshed dashboards, updated `docs/agents/scraper_1/JOURNEY.md`
 - **Verifier**: debugger
 - **Depends on**: S1-21
@@ -774,10 +783,10 @@ Bulk live harvesting was started outside the formal S1-15 acceptance gate; do **
 - **Depends on**: UX-02, BD-02, BD-03
 
 ### UX-04: Nationwide Bulgaria LUN-style map + listings experience
-- **Status**: `TODO` (website seed updated 2026-04-27 with scraped property evidence; full UX-04 still waits on backend/filter gates)
+- **Status**: `TODO` (website seed updated 2026-04-28 with grouped map markers, aggregate filter, search-mode toggle, scrollable all-card list, and foldable descriptions; full UX-04 still waits on backend/filter gates)
 - **Read first**: `PLAN.md` §8, `docs/agents/ux_ui_designer/operator-dashboard-spec.md`, LUN-style reference notes
 - **Do**: shape homepage UX to LUN-like split flow (map + feed + filters) for **all of Bulgaria**: default viewport and filters are **country-wide**; users can narrow by region/city/bbox. Optional **Varna preset** is allowed for demos or 3D pilot (UX-07) but must not be the only mode. Keep the scraped-property evidence fields visible where useful: local/remote photo counts, full-gallery flag, description quality, scrape quality score, and image-report status.
-- **2026-04-27 lead note**: homepage seed now has MapLibre + OpenStreetMap raster base, deterministic nationwide coordinates for scraped rows without lat/lon, synchronized map/list selection, selected-property right panel, and scrollable right-side list. Full UX-04 still needs backend filter contracts and real geocoding before verification.
+- **2026-04-28 lead note**: homepage seed now has MapLibre + OpenStreetMap raster base, deterministic nationwide coordinates for scraped rows without lat/lon, at most 20 grouped city/district map points, synchronized map/list selection, selected-property right panel, selected-card pinning, scrollable full-card list, aggregate duplicate-source filter, region/description search modes, foldable descriptions, and source buttons. Full UX-04 still needs backend filter contracts, viewport-driven clustering, and real geocoding/building entities before verification.
 - **2026-04-27 product note**: property detail pages now expose `Marketed by sources` / `Source links` buttons using conservative source-link matching. Current source is always shown; cross-source links are only added when same-property evidence is strong enough and never inferred from neighboring listings on the same source.
 - **Acceptance gate**: prototype demonstrates Bulgaria-wide browse (no hard-coded Varna-only lock), map filters + listing cards + synchronized selection; spec calls out optional Varna shortcut vs default nationwide
 - **Output**: UX spec/update doc + component task breakdown
@@ -806,7 +815,7 @@ Bulk live harvesting was started outside the formal S1-15 acceptance gate; do **
 - **Status**: `TODO`
 - **Read first**: `docs/business/varna-3d-osm-integration.md`, `components/map/MapCanvas.tsx`
 - **Do**: implement MapLibre 3D building extrusion layer using PMTiles from BD-08; building click shows listing drawer; 2D/3D toggle
-- **2026-04-27 lead note**: temporary 3D property/building extrusions exist over the OSM raster map for homepage QA. Replace them with PMTiles/OSM building footprints when BD-08 lands.
+- **2026-04-28 lead note**: temporary synthetic property/building extrusions were removed from the homepage path. The UI should only claim building-level highlighting after BD-08 provides real PMTiles/OSM/PostGIS building footprints and address-based matches.
 - **Acceptance gate**: 3D buildings render in Varna viewport; building click opens drawer; 2D fallback works
 - **Output**: updated MapCanvas component + BuildingLayer + BuildingSummaryDrawer
 - **Verifier**: debugger + backend_developer

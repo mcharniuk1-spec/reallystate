@@ -185,6 +185,15 @@ For **verification entries** (debugger or other verifier):
 - Incremental runtime rule:
   - scraper_1 should prefer a repeating incremental cycle over one-off dumps: append newly seen listings, refresh changed ones, and mark missing listings inactive.
   - The default operator cadence for patterned tier-1/2 sources is every 15 minutes when automation is enabled.
+ - Metrics reporting rule:
+   - after each scrape action, recount and persist source metrics using the latest saved website-total evidence for that source
+   - operator-facing metrics must distinguish:
+     - `scraped_started`: saved item rows out of latest saved website-total count
+     - `scraped_full`: fully parsed item rows out of saved item rows
+     - `description_coverage`: item rows with description out of saved item rows
+     - `image_capture`: saved local images out of discovered remote images, plus average local images per item
+     - `image_description_coverage`: described/analyzed images out of saved local images
+   - do not replace source-total coverage with temporary thresholds such as `100` in operator dashboards unless the view is explicitly a threshold-only control panel
 
 ### scraper_t3 (tier-3)
 

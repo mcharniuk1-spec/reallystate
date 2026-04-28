@@ -2,16 +2,23 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import type { Listing } from "@/lib/types/listing";
-import type { Map as MapLibreMap, Marker as MapLibreMarker, GeoJSONSource } from "maplibre-gl";
+import type { Map as MapLibreMap, Marker as MapLibreMarker } from "maplibre-gl";
 
 const BULGARIA_CENTER: [number, number] = [25.4, 42.7];
 const DEFAULT_ZOOM = 7;
 const VARNA_CENTER: [number, number] = [27.91, 43.21];
 
 type Props = {
-  listings: Listing[];
+  listings: MapListing[];
   highlightId?: string | null;
   onSelect?: (id: string) => void;
+};
+
+export type MapListing = Listing & {
+  map_marker_kind?: "property" | "cluster";
+  map_cluster_count?: number;
+  map_cluster_label?: string;
+  map_cluster_items?: string[];
 };
 
 export function MapCanvas({ listings, highlightId, onSelect }: Props) {
@@ -77,7 +84,6 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
             }
             addBuildingLayer(map);
             setBuildingVisibility(map, "visible");
-            upsertListingBuildings(map, listings);
           } finally {
             if (initialized) setReady(true);
           }
@@ -92,7 +98,6 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
               if (map.isStyleLoaded()) {
                 addBuildingLayer(map);
                 setBuildingVisibility(map, "visible");
-                upsertListingBuildings(map, listings);
               }
             } finally {
               initialized = true;
@@ -126,9 +131,14 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
         if (l.latitude == null || l.longitude == null) continue;
 
         const el = document.createElement("div");
-        el.className = "bge-price-pin";
+        const isCluster = (l.map_cluster_count ?? 1) > 1 || l.map_marker_kind === "cluster";
+        el.className = isCluster ? "bge-price-pin bge-cluster-pin" : "bge-price-pin";
         el.dataset.id = l.reference_id;
-        el.textContent = l.price ? `${Math.round(l.price / 1000)}k` : "•";
+        el.dataset.items = l.map_cluster_items?.join("|") ?? l.reference_id;
+        el.title = isCluster
+          ? `${l.map_cluster_label ?? "Area"}: ${l.map_cluster_count ?? 1} properties`
+          : l.title ?? l.reference_id;
+        el.textContent = isCluster ? `${l.map_cluster_count ?? 1}` : l.price ? `${Math.round(l.price / 1000)}k` : "•";
 
         const marker = new maplibregl.Marker({ element: el })
           .setLngLat([l.longitude, l.latitude])
@@ -142,8 +152,6 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
         markersRef.current.push(marker);
       }
 
-      upsertListingBuildings(map, listings);
-
       if (!didFitRef.current) {
         fitToListings(map, listings);
         didFitRef.current = true;
@@ -156,7 +164,8 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
     for (const m of markersRef.current) {
       const el = m.getElement();
       const id = el.dataset.id;
-      if (id === highlightId) {
+      const containsHighlighted = Boolean(highlightId && (id === highlightId || el.dataset.items?.split("|").includes(highlightId)));
+      if (containsHighlighted) {
         el.classList.add("is-selected");
         el.style.zIndex = "10";
       } else {
@@ -227,6 +236,20 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
           box-shadow: 0 10px 24px rgba(8, 119, 99, 0.38);
           transform: scale(1.18);
         }
+        .bge-cluster-pin {
+          min-width: 42px;
+          height: 30px;
+          border-color: rgba(209, 243, 238, 0.96);
+          background: rgba(5, 84, 89, 0.92);
+          font-size: 12px;
+        }
+        .bge-cluster-pin::after {
+          content: "";
+          position: absolute;
+          inset: -7px;
+          border-radius: 999px;
+          border: 2px solid rgba(134, 216, 206, 0.42);
+        }
       `}</style>
 
       {!ready && (
@@ -241,7 +264,6 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
       {/* Map controls */}
       {ready && (
         <div className="absolute bottom-4 left-4 flex flex-col gap-2 z-10">
-          {/* 2D / 3D toggle */}
           <button
             type="button"
             onClick={toggle3D}
@@ -270,7 +292,6 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
             {is3D ? "3D" : "2D"}
           </button>
 
-          {/* Fly to Varna */}
           <button
             type="button"
             onClick={flyToVarna}
@@ -284,7 +305,7 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
             Varna
           </button>
           <div className="rounded-xl border border-line/50 bg-white/90 px-3 py-2 text-[10px] font-semibold text-mist shadow-lg backdrop-blur-sm">
-            OSM / OpenFreeMap
+            OSM base / building objects require matched footprints
           </div>
         </div>
       )}
@@ -343,79 +364,12 @@ function addBuildingLayer(map: MapLibreMap) {
     });
   }
 
-  if (!map.getSource("bge-listing-buildings")) {
-    map.addSource("bge-listing-buildings", {
-      type: "geojson",
-      data: emptyCollection(),
-    });
-  }
-
-  if (!existingLayers.includes("bge-listing-buildings-3d")) {
-    map.addLayer({
-      id: "bge-listing-buildings-3d",
-      source: "bge-listing-buildings",
-      type: "fill-extrusion",
-      minzoom: 12,
-      paint: {
-        "fill-extrusion-color": [
-          "interpolate",
-          ["linear"],
-          ["get", "height"],
-          16, "#86d8ce",
-          44, "#21a795",
-          90, "#087763",
-        ],
-        "fill-extrusion-height": ["get", "height"],
-        "fill-extrusion-base": 0,
-        "fill-extrusion-opacity": 0.58,
-      },
-      layout: {
-        visibility: "visible",
-      },
-    });
-  }
 }
 
 function setBuildingVisibility(map: MapLibreMap, visibility: "visible" | "none") {
   if (map.getLayer("bge-3d-buildings")) {
     map.setLayoutProperty("bge-3d-buildings", "visibility", visibility);
   }
-  if (map.getLayer("bge-listing-buildings-3d")) {
-    map.setLayoutProperty("bge-listing-buildings-3d", "visibility", visibility);
-  }
-}
-
-function upsertListingBuildings(map: MapLibreMap, listings: Listing[]) {
-  const source = map.getSource("bge-listing-buildings") as GeoJSONSource | undefined;
-  if (!source) return;
-  source.setData({
-    type: "FeatureCollection",
-    features: listings
-      .filter((item) => item.latitude != null && item.longitude != null)
-      .slice(0, 900)
-      .map((item) => {
-        const lat = item.latitude as number;
-        const lng = item.longitude as number;
-        const size = 0.00055 + ((hashNumber(item.reference_id, 5) % 7) * 0.00008);
-        const height = 18 + Math.min(95, Math.max(0, (item.area_sqm ?? item.price ?? 60000) / (item.area_sqm ? 3 : 14000)));
-        return {
-          type: "Feature",
-          properties: { id: item.reference_id, height },
-          geometry: {
-            type: "Polygon",
-            coordinates: [
-              [
-                [lng - size, lat - size],
-                [lng + size, lat - size],
-                [lng + size, lat + size],
-                [lng - size, lat + size],
-                [lng - size, lat - size],
-              ],
-            ],
-          },
-        };
-      }),
-  });
 }
 
 function fitToListings(map: MapLibreMap, listings: Listing[]) {
@@ -433,14 +387,4 @@ function fitToListings(map: MapLibreMap, listings: Listing[]) {
     ],
     { padding: 72, maxZoom: 12.5, duration: 0 },
   );
-}
-
-function emptyCollection() {
-  return { type: "FeatureCollection", features: [] } as const;
-}
-
-function hashNumber(value: string, salt: number) {
-  let hash = salt;
-  for (let i = 0; i < value.length; i += 1) hash = (hash * 31 + value.charCodeAt(i)) % 100000;
-  return hash;
 }

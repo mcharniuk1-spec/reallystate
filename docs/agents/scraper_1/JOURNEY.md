@@ -972,3 +972,52 @@ Modified files:
 - **Next Codex owner task**: `S1-21` in `docs/agents/TASKS.md`.
 - **Priority fixes**: `imot_bg` price/area extraction; `yavlena` description extraction; `address_bg` city extraction; media backfill patterns for `bulgarianproperties`, `property_bg`, `suprimmo`, and `homes_bg`.
 - **Status**: `S1-21` queued; `S1-22` queued for Gemma after Codex repair.
+
+### 2026-04-28 — Root source-links operator artifact
+
+- **Action**: Generated a root-level operator HTML page listing all tier-1 to tier-4 platforms with direct website links grouped into `buy residential`, `buy commercial`, `rent residential`, and `rent commercial`.
+- **Changed files**:
+  - `scripts/generate_source_links_page.py`
+  - `source-links-tier1-4.html`
+- **Commands run**:
+  - `python3 scripts/generate_source_links_page.py`
+- **Status**: `DONE`
+- **Review comments**:
+  - FACT: the page is saved in the repository root as requested, not inside `docs/` or another nested folder.
+  - FACT: tier-1/2 cells prefer exact saved Varna section URLs when present in `data/scrape_patterns/regions/varna/sections.json`.
+  - FACT: when no exact section URL is saved, the page falls back to the source primary website link from `data/source_registry.json`.
+  - GAP: this artifact is a clean operator link matrix, not a proof of current scrape readiness or pattern completeness.
+
+### 2026-04-28 — Root source-links progress coloring
+
+- **Action**: Upgraded the root-level source links page so each segment cell is color-coded by current saved scrape progress and now shows compact `done/100`, description coverage, full-gallery count, and average local images per item.
+- **Changed files**:
+  - `scripts/generate_source_links_page.py`
+  - `source-links-tier1-4.html`
+- **Commands run**:
+  - `python3 scripts/generate_source_links_page.py`
+  - `python3 -m py_compile scripts/generate_source_links_page.py`
+- **Status**: `DONE`
+- **Review comments**:
+  - FACT: progress counts are now aggregated directly from `data/scraped/*/listings/*.json`, not estimated from the registry alone.
+  - FACT: cell colors now distinguish unsupported, empty, partial, `100+ but not fully proven`, and `patterned + 100+` states.
+  - FACT: the image metric shown in each cell is average saved local images per property item for that bucket.
+
+### 2026-04-28 — Root source-links metric semantics correction
+
+- **Action**: Replaced the threshold-style `#/100` wording in the root source-links page with source-total scrape coverage and explicit per-bucket completeness metrics.
+- **Changed files**:
+  - `scripts/generate_source_links_page.py`
+  - `source-links-tier1-4.html`
+  - `docs/agents/README.md`
+  - `docs/agents/TASKS.md`
+- **Commands run**:
+  - `python3 scripts/generate_source_links_page.py`
+  - `python3 -m py_compile scripts/generate_source_links_page.py`
+- **Status**: `DONE`
+- **Review comments**:
+  - FACT: `desc` now means `items with saved description / saved items in the bucket`.
+  - FACT: `full` now means `items with full local gallery saved / saved items in the bucket`.
+  - FACT: the first metric line now means `saved items started / latest saved website-total active count for the source`, for example `scraped 233/12000 site`.
+  - FACT: `img described` is currently `0/N` because a separate image-description pipeline is not yet implemented in the saved corpus metrics.
+  - IMPROVEMENT RULE: operator dashboards must use source-total coverage semantics, while threshold values such as `100` belong only in control-plane views.
