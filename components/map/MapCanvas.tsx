@@ -1,11 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback, type MutableRefObject } from "react";
 import type { Listing } from "@/lib/types/listing";
 import type { Map as MapLibreMap, Marker as MapLibreMarker } from "maplibre-gl";
 
 const BULGARIA_CENTER: [number, number] = [25.4, 42.7];
 const DEFAULT_ZOOM = 7;
+const MAP_3D_PITCH = 14;
+const MAP_3D_BEARING = -8;
+const CLUSTER_GRAVITY_RADIUS_FACTOR = 0.2;
+const CLUSTER_GRAVITY_MIN_VISIBLE_PROPERTIES = 21;
 const VARNA_CENTER: [number, number] = [27.91, 43.21];
 
 type Props = {
@@ -26,6 +30,7 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
   const mapRef = useRef<MapLibreMap | null>(null);
   const markersRef = useRef<MapLibreMarker[]>([]);
   const didFitRef = useRef(false);
+  const isAutoCenteringRef = useRef(false);
   const [ready, setReady] = useState(false);
   const [is3D, setIs3D] = useState(true);
 
@@ -62,8 +67,8 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
           },
           center: BULGARIA_CENTER,
           zoom: DEFAULT_ZOOM,
-          pitch: 56,
-          bearing: -18,
+          pitch: MAP_3D_PITCH,
+          bearing: MAP_3D_BEARING,
           maxBounds: [
             [20.0, 40.5],
             [30.5, 45.0],
@@ -155,9 +160,33 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
       if (!didFitRef.current) {
         fitToListings(map, listings);
         didFitRef.current = true;
+        window.setTimeout(() => pinLargestNearbyAggregation(map, listings, is3D, isAutoCenteringRef), 250);
       }
     })();
-  }, [listings, ready, onSelect]);
+  }, [listings, ready, onSelect, is3D]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready) return;
+
+    let timer: number | undefined;
+    const handleMoveSettled = () => {
+      if (isAutoCenteringRef.current) return;
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        pinLargestNearbyAggregation(map, listings, is3D, isAutoCenteringRef);
+      }, 180);
+    };
+
+    map.on("moveend", handleMoveSettled);
+    map.on("zoomend", handleMoveSettled);
+
+    return () => {
+      window.clearTimeout(timer);
+      map.off("moveend", handleMoveSettled);
+      map.off("zoomend", handleMoveSettled);
+    };
+  }, [listings, ready, is3D]);
 
   // Highlight pin
   useEffect(() => {
@@ -180,8 +209,8 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
       map.easeTo({
         center: [selected.longitude, selected.latitude],
         zoom: Math.max(map.getZoom(), 15.5),
-        pitch: is3D ? 58 : map.getPitch(),
-        bearing: is3D ? -22 : map.getBearing(),
+        pitch: is3D ? MAP_3D_PITCH : map.getPitch(),
+        bearing: is3D ? MAP_3D_BEARING : map.getBearing(),
         duration: 850,
       });
     }
@@ -195,7 +224,7 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
     setIs3D(next);
 
     if (next) {
-      map.easeTo({ pitch: 55, bearing: -20, zoom: Math.max(map.getZoom(), 14), duration: 800 });
+      map.easeTo({ pitch: MAP_3D_PITCH, bearing: MAP_3D_BEARING, zoom: Math.max(map.getZoom(), 14), duration: 800 });
       setBuildingVisibility(map, "visible");
     } else {
       map.easeTo({ pitch: 0, bearing: 0, duration: 800 });
@@ -206,7 +235,7 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
   const flyToVarna = useCallback(() => {
     const map = mapRef.current;
     if (!map) return;
-    map.flyTo({ center: VARNA_CENTER, zoom: 15, pitch: is3D ? 55 : 0, bearing: is3D ? -20 : 0, duration: 2000 });
+    map.flyTo({ center: VARNA_CENTER, zoom: 15, pitch: is3D ? MAP_3D_PITCH : 0, bearing: is3D ? MAP_3D_BEARING : 0, duration: 2000 });
   }, [is3D]);
 
   return (
@@ -370,6 +399,51 @@ function setBuildingVisibility(map: MapLibreMap, visibility: "visible" | "none")
   if (map.getLayer("bge-3d-buildings")) {
     map.setLayoutProperty("bge-3d-buildings", "visibility", visibility);
   }
+}
+
+function pinLargestNearbyAggregation(
+  map: MapLibreMap,
+  listings: MapListing[],
+  is3D: boolean,
+  autoCenteringRef: MutableRefObject<boolean>,
+) {
+  const canvas = map.getCanvas();
+  const width = canvas.clientWidth;
+  const height = canvas.clientHeight;
+  if (!width || !height) return;
+
+  const center = { x: width / 2, y: height / 2 };
+  const nearbyRadius = Math.sqrt(width * height) * CLUSTER_GRAVITY_RADIUS_FACTOR;
+  const visible = listings
+    .filter((item) => item.latitude != null && item.longitude != null)
+    .map((item) => {
+      const point = map.project([item.longitude as number, item.latitude as number]);
+      const count = item.map_cluster_count ?? 1;
+      const distanceFromCenter = Math.hypot(point.x - center.x, point.y - center.y);
+      return { item, point, count, distanceFromCenter };
+    })
+    .filter(({ point }) => point.x >= 0 && point.x <= width && point.y >= 0 && point.y <= height);
+
+  const visibleProperties = visible.reduce((sum, entry) => sum + entry.count, 0);
+  if (visibleProperties < CLUSTER_GRAVITY_MIN_VISIBLE_PROPERTIES) return;
+
+  const target = visible
+    .filter((entry) => entry.distanceFromCenter <= nearbyRadius)
+    .sort((a, b) => b.count - a.count || a.distanceFromCenter - b.distanceFromCenter)[0];
+
+  if (!target || target.count <= 1 || target.distanceFromCenter < 12) return;
+
+  autoCenteringRef.current = true;
+  map.easeTo({
+    center: [target.item.longitude as number, target.item.latitude as number],
+    pitch: is3D ? MAP_3D_PITCH : 0,
+    bearing: is3D ? MAP_3D_BEARING : 0,
+    duration: 700,
+    essential: true,
+  });
+  window.setTimeout(() => {
+    autoCenteringRef.current = false;
+  }, 780);
 }
 
 function fitToListings(map: MapLibreMap, listings: Listing[]) {
