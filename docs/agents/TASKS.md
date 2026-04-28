@@ -510,6 +510,7 @@ Bulk live harvesting was started outside the formal S1-15 acceptance gate; do **
   3. Improve source-specific parsing patterns in code, not only generated JSON. Current priority repairs: `imot_bg` price/area extraction, `yavlena` description extraction, `address_bg` city extraction, and media backfill patterns for `bulgarianproperties`, `property_bg`, `suprimmo`, `homes_bg`.
   4. Regenerate all affected listing JSON, photo coverage exports, pattern-status exports, `docs/dashboard/scrape-status.html`, and frontend scraped-listing seed data.
   5. Keep legal gates intact and keep tests fixture-only.
+  6. Treat `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO` as the current priority four-bucket tier-1/2 pattern set. Each must keep explicit `buy_personal`, `buy_commercial`, `rent_personal`, and `rent_commercial` bucket instructions; where the website exposes a mixed route, accept rows only after card/detail category classification.
 - **Acceptance gate**: parser regression tests pass; dashboards show source-by-source and item-by-item media/field completeness; every source gap is mapped to either fixed, legal/runtime blocked, or queued for Gemma image reporting.
 - **Output**: updated parser code/tests, refreshed dashboards/exports, `docs/exports/tier12-quality-audit-2026-04-27.md`, updated `docs/agents/scraper_1/JOURNEY.md`
 - **Verifier**: debugger
@@ -526,6 +527,7 @@ Bulk live harvesting was started outside the formal S1-15 acceptance gate; do **
   4. Run or replicate `GET /api/property-quality/<encoded reference_id>` for every processed listing and include photo completeness, description-context match, price/size plausibility, source-link evidence, and building-match status in the report.
   5. Write global `index.md` and `index.json` with per-source counts: apartments eligible, reports created, images described, skipped rows, skip reasons, QA warnings, and building-match-pending rows.
   6. Do not invent unseen rooms or unavailable media; use `unclear` and confidence values.
+  7. Prioritize image-description reports for the seven four-bucket sources now patterned for Gemma/OpenClaw handoff: `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO`. Process all four screen categories: buy residential, buy commercial, rent residential, rent commercial.
 - **Acceptance gate**: every apartment with `full_gallery_downloaded=true` has report paths or a documented skip reason; every completed report includes property QA checks; dashboard/export artifacts include image-report status.
 - **Output**: `docs/exports/apartment-image-reports/`, refreshed dashboards, updated `docs/agents/scraper_1/JOURNEY.md`
 - **Verifier**: debugger

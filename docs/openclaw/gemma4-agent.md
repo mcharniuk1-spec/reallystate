@@ -19,6 +19,7 @@ Best-fit tasks in this repo:
 - **SQL drafting** (read-only queries) for Postgres validation.
 - **Draft generation** for per-listing reports *from local files/metadata* (e.g. `docs/exports/*`, `data/scraped/*`, `data/media/*`).
 - **Apartment image-description + property QA reports** after Codex confirms complete local-gallery rows. Use `docs/exports/taskforgema.md`, `docs/exports/property-quality-and-building-contract.md`, and only local image files listed in `local_image_files`.
+- **Four-bucket tier-1/2 source reporting** for `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO` across buy residential, buy commercial, rent residential, and rent commercial.
 
 ### 2) Hard guardrails (must follow)
 
@@ -46,7 +47,7 @@ When you hand a task to this agent, include:
 ### 3.1) Current planned sequence
 
 1. Codex tier1-2 agent runs `S1-21`: checks scrape quality, image counts, description fullness, local file validity, and repairs patterns.
-2. Gemma4 runs `S1-22`: creates per-apartment image reports and property QA reports from the Codex-confirmed local galleries.
+2. Gemma4 runs `S1-22`: creates per-listing image reports and property QA reports from the Codex-confirmed local galleries, prioritizing the seven four-bucket sources in `docs/exports/taskforgema.md`.
 3. Debugger verifies the handoff with `DBG-08`.
 
 ### 4) Ollama environment (operator responsibility)

@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-23T15:39:17.883957+00:00",
+  "generated_at": "2026-04-28T14:25:23.790768+00:00",
   "region_key": "varna",
   "bucket_count": 108,
-  "active_bucket_count": 18,
+  "active_bucket_count": 33,
   "rows": [
     {
       "section_id": "address_bg__varna__buy_personal__all",
@@ -30,17 +30,23 @@
       "section_id": "address_bg__varna__buy_commercial__all",
       "source_name": "Address.bg",
       "segment_key": "buy_commercial",
-      "active": false,
+      "active": true,
       "source_key": "address_bg",
       "pattern_status": "Patterned",
-      "support_status": "pattern_incomplete",
-      "activation_ready": false,
-      "skip_reason": "Commercial route split on Address.bg is not yet expressed as a reusable Varna bucket.",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
       "supported_verticals": [
-        "all"
+        "offices",
+        "shops",
+        "commercial_properties",
+        "garages",
+        "warehouses"
       ],
-      "entry_scope": "national_fallback_with_varna_filter",
-      "entry_urls": [],
+      "entry_scope": "varna_only_url",
+      "entry_urls": [
+        "https://address.bg/sale/varna/l4694"
+      ],
       "legal_mode": "public_crawl_with_review"
     },
     {
@@ -67,17 +73,23 @@
       "section_id": "address_bg__varna__rent_commercial__all",
       "source_name": "Address.bg",
       "segment_key": "rent_commercial",
-      "active": false,
+      "active": true,
       "source_key": "address_bg",
       "pattern_status": "Patterned",
-      "support_status": "pattern_incomplete",
-      "activation_ready": false,
-      "skip_reason": "Commercial rental route split on Address.bg is not yet saved as a reusable Varna bucket.",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
       "supported_verticals": [
-        "all"
+        "offices",
+        "shops",
+        "commercial_properties",
+        "garages",
+        "warehouses"
       ],
       "entry_scope": "national_fallback_with_varna_filter",
-      "entry_urls": [],
+      "entry_urls": [
+        "https://address.bg/rent"
+      ],
       "legal_mode": "public_crawl_with_review"
     },
     {
@@ -257,17 +269,25 @@
       "section_id": "bulgarianproperties__varna__buy_commercial__all",
       "source_name": "BulgarianProperties",
       "segment_key": "buy_commercial",
-      "active": false,
+      "active": true,
       "source_key": "bulgarianproperties",
       "pattern_status": "Patterned",
-      "support_status": "pattern_incomplete",
-      "activation_ready": false,
-      "skip_reason": "Commercial routes are not yet separated in the saved BulgarianProperties pattern set.",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
       "supported_verticals": [
-        "all"
+        "offices",
+        "shops",
+        "commercial_properties",
+        "garages",
+        "warehouses"
       ],
       "entry_scope": "national_fallback_with_varna_filter",
-      "entry_urls": [],
+      "entry_urls": [
+        "https://www.bulgarianproperties.com/properties_for_sale_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/offices_for_sale_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/businesses_for_sale_in_Bulgaria/index.html"
+      ],
       "legal_mode": "public_crawl_with_review"
     },
     {
@@ -294,17 +314,25 @@
       "section_id": "bulgarianproperties__varna__rent_commercial__all",
       "source_name": "BulgarianProperties",
       "segment_key": "rent_commercial",
-      "active": false,
+      "active": true,
       "source_key": "bulgarianproperties",
       "pattern_status": "Patterned",
-      "support_status": "pattern_incomplete",
-      "activation_ready": false,
-      "skip_reason": "Commercial rental routes are not yet separated in the saved BulgarianProperties pattern set.",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
       "supported_verticals": [
-        "all"
+        "offices",
+        "shops",
+        "commercial_properties",
+        "garages",
+        "warehouses"
       ],
       "entry_scope": "national_fallback_with_varna_filter",
-      "entry_urls": [],
+      "entry_urls": [
+        "https://www.bulgarianproperties.com/properties_for_rent_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/offices_for_rent_in_Bulgaria/index.html",
+        "https://www.bulgarianproperties.com/businesses_for_rent_in_Bulgaria/index.html"
+      ],
       "legal_mode": "public_crawl_with_review"
     },
     {
@@ -563,16 +591,20 @@
       "section_id": "homes_bg__varna__buy_commercial__all",
       "source_name": "Homes.bg",
       "segment_key": "buy_commercial",
-      "active": false,
+      "active": true,
       "source_key": "homes_bg",
       "pattern_status": "Patterned",
-      "support_status": "pattern_incomplete",
-      "activation_ready": false,
-      "skip_reason": "Commercial category filter is not yet locked for the Homes Varna API path.",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
       "supported_verticals": [
-        "all"
+        "offices",
+        "shops",
+        "commercial_properties",
+        "garages",
+        "warehouses"
       ],
-      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_scope": "varna_only_api_filter",
       "entry_urls": [],
       "legal_mode": "public_crawl_with_review"
     },
@@ -598,16 +630,20 @@
       "section_id": "homes_bg__varna__rent_commercial__all",
       "source_name": "Homes.bg",
       "segment_key": "rent_commercial",
-      "active": false,
+      "active": true,
       "source_key": "homes_bg",
       "pattern_status": "Patterned",
-      "support_status": "pattern_incomplete",
-      "activation_ready": false,
-      "skip_reason": "Commercial rental filter is not yet locked for the Homes Varna API path.",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
       "supported_verticals": [
-        "all"
+        "offices",
+        "shops",
+        "commercial_properties",
+        "garages",
+        "warehouses"
       ],
-      "entry_scope": "national_fallback_with_varna_filter",
+      "entry_scope": "varna_only_api_filter",
       "entry_urls": [],
       "legal_mode": "public_crawl_with_review"
     },
@@ -874,51 +910,68 @@
       "section_id": "luximmo__varna__buy_commercial__all",
       "source_name": "LUXIMMO",
       "segment_key": "buy_commercial",
-      "active": false,
+      "active": true,
       "source_key": "luximmo",
       "pattern_status": "Patterned",
-      "support_status": "pattern_incomplete",
-      "activation_ready": false,
-      "skip_reason": "Commercial LUXIMMO routes are not yet persisted in the reusable bucket catalog.",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
       "supported_verticals": [
-        "all"
+        "offices",
+        "shops",
+        "commercial_properties",
+        "garages",
+        "warehouses"
       ],
       "entry_scope": "national_fallback_with_varna_filter",
-      "entry_urls": [],
+      "entry_urls": [
+        "https://www.luximmo.bg/imoti-prodajbi/",
+        "https://www.luximmo.bg/biznes-imoti/"
+      ],
       "legal_mode": "public_crawl_with_review"
     },
     {
       "section_id": "luximmo__varna__rent_personal__all",
       "source_name": "LUXIMMO",
       "segment_key": "rent_personal",
-      "active": false,
+      "active": true,
       "source_key": "luximmo",
       "pattern_status": "Patterned",
-      "support_status": "pattern_incomplete",
-      "activation_ready": false,
-      "skip_reason": "Saved LUXIMMO runtime currently proves sale detail capture, not reusable rent discovery.",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
       "supported_verticals": [
-        "all"
+        "apartments",
+        "houses"
       ],
       "entry_scope": "national_fallback_with_varna_filter",
-      "entry_urls": [],
+      "entry_urls": [
+        "https://www.luximmo.bg/naemi/"
+      ],
       "legal_mode": "public_crawl_with_review"
     },
     {
       "section_id": "luximmo__varna__rent_commercial__all",
       "source_name": "LUXIMMO",
       "segment_key": "rent_commercial",
-      "active": false,
+      "active": true,
       "source_key": "luximmo",
       "pattern_status": "Patterned",
-      "support_status": "pattern_incomplete",
-      "activation_ready": false,
-      "skip_reason": "Commercial rental routes are not yet mapped for LUXIMMO.",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
       "supported_verticals": [
-        "all"
+        "offices",
+        "shops",
+        "commercial_properties",
+        "garages",
+        "warehouses"
       ],
       "entry_scope": "national_fallback_with_varna_filter",
-      "entry_urls": [],
+      "entry_urls": [
+        "https://www.luximmo.bg/naemi/",
+        "https://www.luximmo.bg/biznes-imoti-pod-naem/"
+      ],
       "legal_mode": "public_crawl_with_review"
     },
     {
@@ -1328,17 +1381,24 @@
       "section_id": "suprimmo__varna__buy_commercial__all",
       "source_name": "SUPRIMMO",
       "segment_key": "buy_commercial",
-      "active": false,
+      "active": true,
       "source_key": "suprimmo",
       "pattern_status": "Patterned",
-      "support_status": "pattern_incomplete",
-      "activation_ready": false,
-      "skip_reason": "Commercial category routes are not yet saved as reusable SUPRIMMO Varna sections.",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
       "supported_verticals": [
-        "all"
+        "offices",
+        "shops",
+        "commercial_properties",
+        "garages",
+        "warehouses"
       ],
       "entry_scope": "national_fallback_with_varna_filter",
-      "entry_urls": [],
+      "entry_urls": [
+        "https://www.suprimmo.bg/bulgaria/selectsya/",
+        "https://www.suprimmo.bg/bulgaria/biznes-imoti/"
+      ],
       "legal_mode": "public_crawl_with_review"
     },
     {
@@ -1365,17 +1425,24 @@
       "section_id": "suprimmo__varna__rent_commercial__all",
       "source_name": "SUPRIMMO",
       "segment_key": "rent_commercial",
-      "active": false,
+      "active": true,
       "source_key": "suprimmo",
       "pattern_status": "Patterned",
-      "support_status": "pattern_incomplete",
-      "activation_ready": false,
-      "skip_reason": "Commercial rental route split is not yet mapped for SUPRIMMO.",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
       "supported_verticals": [
-        "all"
+        "offices",
+        "shops",
+        "commercial_properties",
+        "garages",
+        "warehouses"
       ],
       "entry_scope": "national_fallback_with_varna_filter",
-      "entry_urls": [],
+      "entry_urls": [
+        "https://www.suprimmo.bg/naem/bulgaria/selectsya/",
+        "https://www.suprimmo.bg/naem/bulgaria/biznes-imoti/"
+      ],
       "legal_mode": "public_crawl_with_review"
     },
     {
@@ -1777,17 +1844,23 @@
       "section_id": "imot_bg__varna__buy_commercial__all",
       "source_name": "imot.bg",
       "segment_key": "buy_commercial",
-      "active": false,
+      "active": true,
       "source_key": "imot_bg",
       "pattern_status": "Patterned",
-      "support_status": "pattern_incomplete",
-      "activation_ready": false,
-      "skip_reason": "Commercial-specific Varna discovery routes are not yet persisted separately.",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
       "supported_verticals": [
-        "all"
+        "offices",
+        "shops",
+        "commercial_properties",
+        "garages",
+        "warehouses"
       ],
-      "entry_scope": "national_fallback_with_varna_filter",
-      "entry_urls": [],
+      "entry_scope": "varna_only_url",
+      "entry_urls": [
+        "https://www.imot.bg/obiavi/prodazhbi/grad-varna"
+      ],
       "legal_mode": "public_crawl_with_review"
     },
     {
@@ -1814,17 +1887,23 @@
       "section_id": "imot_bg__varna__rent_commercial__all",
       "source_name": "imot.bg",
       "segment_key": "rent_commercial",
-      "active": false,
+      "active": true,
       "source_key": "imot_bg",
       "pattern_status": "Patterned",
-      "support_status": "pattern_incomplete",
-      "activation_ready": false,
-      "skip_reason": "Commercial rental routes for Varna are not yet persisted as reusable patterns.",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
       "supported_verticals": [
-        "all"
+        "offices",
+        "shops",
+        "commercial_properties",
+        "garages",
+        "warehouses"
       ],
-      "entry_scope": "national_fallback_with_varna_filter",
-      "entry_urls": [],
+      "entry_scope": "varna_only_url",
+      "entry_urls": [
+        "https://www.imot.bg/obiavi/naemi/grad-varna"
+      ],
       "legal_mode": "public_crawl_with_review"
     },
     {
@@ -1934,17 +2013,24 @@
       "section_id": "property_bg__varna__buy_commercial__all",
       "source_name": "property.bg",
       "segment_key": "buy_commercial",
-      "active": false,
+      "active": true,
       "source_key": "property_bg",
       "pattern_status": "Patterned",
-      "support_status": "pattern_incomplete",
-      "activation_ready": false,
-      "skip_reason": "Commercial-specific property.bg routes are not yet saved as reusable Varna buckets.",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
       "supported_verticals": [
-        "all"
+        "offices",
+        "shops",
+        "commercial_properties",
+        "garages",
+        "warehouses"
       ],
       "entry_scope": "national_fallback_with_varna_filter",
-      "entry_urls": [],
+      "entry_urls": [
+        "https://www.property.bg/sales/bulgaria/selection/",
+        "https://www.property.bg/bulgaria/business-properties/"
+      ],
       "legal_mode": "public_crawl_with_review"
     },
     {
@@ -1971,17 +2057,24 @@
       "section_id": "property_bg__varna__rent_commercial__all",
       "source_name": "property.bg",
       "segment_key": "rent_commercial",
-      "active": false,
+      "active": true,
       "source_key": "property_bg",
       "pattern_status": "Patterned",
-      "support_status": "pattern_incomplete",
-      "activation_ready": false,
-      "skip_reason": "Commercial rental property.bg routes are not yet saved as reusable Varna buckets.",
+      "support_status": "supported",
+      "activation_ready": true,
+      "skip_reason": null,
       "supported_verticals": [
-        "all"
+        "offices",
+        "shops",
+        "commercial_properties",
+        "garages",
+        "warehouses"
       ],
       "entry_scope": "national_fallback_with_varna_filter",
-      "entry_urls": [],
+      "entry_urls": [
+        "https://www.property.bg/rentals/bulgaria/selection/",
+        "https://www.property.bg/rentals/bulgaria/business-properties/"
+      ],
       "legal_mode": "public_crawl_with_review"
     },
     {

@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback, type MutableRefObject } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type MutableRefObject } from "react";
 import type { Listing } from "@/lib/types/listing";
-import type { Map as MapLibreMap, Marker as MapLibreMarker } from "maplibre-gl";
+import type { Map as MapLibreMap, StyleSpecification } from "maplibre-gl";
 
 const BULGARIA_CENTER: [number, number] = [25.4, 42.7];
 const DEFAULT_ZOOM = 7;
@@ -11,6 +11,8 @@ const MAP_3D_BEARING = -8;
 const CLUSTER_GRAVITY_RADIUS_FACTOR = 0.2;
 const CLUSTER_GRAVITY_MIN_VISIBLE_PROPERTIES = 21;
 const VARNA_CENTER: [number, number] = [27.91, 43.21];
+const VECTOR_SOURCE_ID = "openfreemap-vector";
+const BUILDING_LAYER_ID = "bge-3d-buildings";
 
 type Props = {
   listings: MapListing[];
@@ -25,14 +27,37 @@ export type MapListing = Listing & {
   map_cluster_items?: string[];
 };
 
+type ScreenMarker = {
+  id: string;
+  items: string[];
+  title: string;
+  text: string;
+  x: number;
+  y: number;
+  isCluster: boolean;
+};
+
 export function MapCanvas({ listings, highlightId, onSelect }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);
-  const markersRef = useRef<MapLibreMarker[]>([]);
-  const didFitRef = useRef(false);
+  const lastFitKeyRef = useRef<string | null>(null);
   const isAutoCenteringRef = useRef(false);
   const [ready, setReady] = useState(false);
+  const [mapIssue, setMapIssue] = useState<string | null>(null);
   const [is3D, setIs3D] = useState(true);
+  const [screenMarkers, setScreenMarkers] = useState<ScreenMarker[]>([]);
+  const fitKey = useMemo(
+    () =>
+      listings
+        .filter((item) => item.latitude != null && item.longitude != null)
+        .map((item) => `${item.reference_id}:${item.latitude}:${item.longitude}:${item.map_cluster_count ?? 1}`)
+        .join("|"),
+    [listings],
+  );
+  const updateScreenMarkers = useCallback((map: MapLibreMap | null = mapRef.current) => {
+    if (!map) return;
+    setScreenMarkers(projectScreenMarkers(map, listings));
+  }, [listings]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -47,24 +72,7 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
 
         const map = new maplibregl.Map({
           container: containerRef.current,
-          style: {
-            version: 8,
-            sources: {
-              "openstreetmap-raster": {
-                type: "raster",
-                tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
-                tileSize: 256,
-                attribution: "© OpenStreetMap contributors",
-              },
-            },
-            layers: [
-              {
-                id: "openstreetmap-raster",
-                type: "raster",
-                source: "openstreetmap-raster",
-              },
-            ],
-          },
+          style: buildMapStyle(),
           center: BULGARIA_CENTER,
           zoom: DEFAULT_ZOOM,
           pitch: MAP_3D_PITCH,
@@ -77,6 +85,26 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
 
         map.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), "top-right");
         mapRef.current = map;
+        map.getCanvas().style.cursor = "grab";
+        map.on("dragstart", () => {
+          map.getCanvas().style.cursor = "grabbing";
+        });
+        map.on("dragend", () => {
+          map.getCanvas().style.cursor = "grab";
+        });
+        map.on("error", (event) => {
+          const message = event?.error?.message ?? "Map tiles are not fully available.";
+          if (message.toLowerCase().includes("tile") || message.toLowerCase().includes("fetch")) {
+            setMapIssue("Some OSM/OpenFreeMap tiles did not load; offline fallback remains visible.");
+          } else {
+            setMapIssue(message);
+          }
+          setReady(true);
+        });
+
+        const resizeObserver = new ResizeObserver(() => map.resize());
+        resizeObserver.observe(containerRef.current);
+        window.setTimeout(() => map.resize(), 100);
 
         let initialized = false;
         const initializeMapLayers = () => {
@@ -89,6 +117,7 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
             }
             addBuildingLayer(map);
             setBuildingVisibility(map, "visible");
+            map.resize();
           } finally {
             if (initialized) setReady(true);
           }
@@ -103,6 +132,7 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
               if (map.isStyleLoaded()) {
                 addBuildingLayer(map);
                 setBuildingVisibility(map, "visible");
+                map.resize();
               }
             } finally {
               initialized = true;
@@ -117,6 +147,8 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
 
     return () => {
       cancelled = true;
+      lastFitKeyRef.current = null;
+      setScreenMarkers([]);
       mapRef.current?.remove();
       mapRef.current = null;
     };
@@ -126,44 +158,34 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
     const map = mapRef.current;
     if (!map || !ready) return;
 
-    for (const m of markersRef.current) m.remove();
-    markersRef.current = [];
+    updateScreenMarkers(map);
 
-    (async () => {
-      const maplibregl = await import("maplibre-gl");
+    if (fitKey && lastFitKeyRef.current !== fitKey) {
+      fitToListings(map, listings);
+      lastFitKeyRef.current = fitKey;
+      window.setTimeout(() => {
+        updateScreenMarkers(map);
+        pinLargestNearbyAggregation(map, listings, is3D, isAutoCenteringRef);
+      }, 250);
+    }
+  }, [listings, ready, is3D, fitKey, updateScreenMarkers]);
 
-      for (const l of listings) {
-        if (l.latitude == null || l.longitude == null) continue;
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !ready) return;
 
-        const el = document.createElement("div");
-        const isCluster = (l.map_cluster_count ?? 1) > 1 || l.map_marker_kind === "cluster";
-        el.className = isCluster ? "bge-price-pin bge-cluster-pin" : "bge-price-pin";
-        el.dataset.id = l.reference_id;
-        el.dataset.items = l.map_cluster_items?.join("|") ?? l.reference_id;
-        el.title = isCluster
-          ? `${l.map_cluster_label ?? "Area"}: ${l.map_cluster_count ?? 1} properties`
-          : l.title ?? l.reference_id;
-        el.textContent = isCluster ? `${l.map_cluster_count ?? 1}` : l.price ? `${Math.round(l.price / 1000)}k` : "•";
+    const update = () => updateScreenMarkers(map);
+    map.on("move", update);
+    map.on("zoom", update);
+    map.on("resize", update);
+    update();
 
-        const marker = new maplibregl.Marker({ element: el })
-          .setLngLat([l.longitude, l.latitude])
-          .addTo(map);
-
-        el.addEventListener("click", (e) => {
-          e.stopPropagation();
-          onSelect?.(l.reference_id);
-        });
-
-        markersRef.current.push(marker);
-      }
-
-      if (!didFitRef.current) {
-        fitToListings(map, listings);
-        didFitRef.current = true;
-        window.setTimeout(() => pinLargestNearbyAggregation(map, listings, is3D, isAutoCenteringRef), 250);
-      }
-    })();
-  }, [listings, ready, onSelect, is3D]);
+    return () => {
+      map.off("move", update);
+      map.off("zoom", update);
+      map.off("resize", update);
+    };
+  }, [ready, updateScreenMarkers]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -188,21 +210,7 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
     };
   }, [listings, ready, is3D]);
 
-  // Highlight pin
   useEffect(() => {
-    for (const m of markersRef.current) {
-      const el = m.getElement();
-      const id = el.dataset.id;
-      const containsHighlighted = Boolean(highlightId && (id === highlightId || el.dataset.items?.split("|").includes(highlightId)));
-      if (containsHighlighted) {
-        el.classList.add("is-selected");
-        el.style.zIndex = "10";
-      } else {
-        el.classList.remove("is-selected");
-        el.style.zIndex = "";
-      }
-    }
-
     const map = mapRef.current;
     const selected = listings.find((item) => item.reference_id === highlightId);
     if (map && selected?.latitude != null && selected.longitude != null) {
@@ -213,36 +221,104 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
         bearing: is3D ? MAP_3D_BEARING : map.getBearing(),
         duration: 850,
       });
+      window.setTimeout(() => updateScreenMarkers(map), 900);
     }
-  }, [highlightId]);
+  }, [highlightId, listings, is3D, updateScreenMarkers]);
 
-  const toggle3D = useCallback(() => {
+  const setMapDimension = useCallback((next: boolean) => {
     const map = mapRef.current;
     if (!map) return;
 
-    const next = !is3D;
     setIs3D(next);
 
     if (next) {
-      map.easeTo({ pitch: MAP_3D_PITCH, bearing: MAP_3D_BEARING, zoom: Math.max(map.getZoom(), 14), duration: 800 });
+      map.easeTo({ pitch: MAP_3D_PITCH, bearing: MAP_3D_BEARING, duration: 800 });
       setBuildingVisibility(map, "visible");
     } else {
       map.easeTo({ pitch: 0, bearing: 0, duration: 800 });
       setBuildingVisibility(map, "none");
     }
-  }, [is3D]);
+  }, []);
+
+  const zoomToAll = useCallback(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    fitToListings(map, listings);
+    window.setTimeout(() => pinLargestNearbyAggregation(map, listings, is3D, isAutoCenteringRef), 250);
+  }, [is3D, listings]);
 
   const flyToVarna = useCallback(() => {
     const map = mapRef.current;
     if (!map) return;
-    map.flyTo({ center: VARNA_CENTER, zoom: 15, pitch: is3D ? MAP_3D_PITCH : 0, bearing: is3D ? MAP_3D_BEARING : 0, duration: 2000 });
+    map.flyTo({ center: VARNA_CENTER, zoom: 15, pitch: is3D ? MAP_3D_PITCH : 0, bearing: is3D ? MAP_3D_BEARING : 0, duration: 1400 });
   }, [is3D]);
 
   return (
-    <div className="relative h-full w-full overflow-hidden bg-paper">
-      <div ref={containerRef} className="h-full w-full" />
+    <div className="relative isolate h-full w-full overflow-hidden bg-paper" data-map-testid="property-map">
+      <div className="bge-map-fallback absolute inset-0" aria-hidden />
+      <div ref={containerRef} className="relative h-full w-full" />
+      {screenMarkers.map((marker) => {
+        const selected = Boolean(highlightId && (marker.id === highlightId || marker.items.includes(highlightId)));
+        return (
+          <button
+            key={marker.id}
+            type="button"
+            onPointerDown={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              onSelect?.(marker.id);
+            }}
+            onMouseDown={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              onSelect?.(marker.id);
+            }}
+            onClickCapture={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              onSelect?.(marker.id);
+            }}
+            onClick={() => onSelect?.(marker.id)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                event.stopPropagation();
+                onSelect?.(marker.id);
+              }
+            }}
+            className={`bge-price-pin ${marker.isCluster ? "bge-cluster-pin" : ""} ${selected ? "is-selected" : ""}`}
+            style={{
+              left: marker.x,
+              top: marker.y,
+              position: "absolute",
+              pointerEvents: "auto",
+              transform: "translate(-50%, -50%)",
+                zIndex: selected ? 1100 : 1000,
+            }}
+            title={marker.title}
+            aria-label={marker.isCluster ? `Map group ${marker.title}` : `Map property ${marker.title}`}
+          >
+            {marker.text}
+          </button>
+        );
+      })}
 
       <style jsx global>{`
+        .maplibregl-canvas {
+          outline: none;
+        }
+        .maplibregl-marker {
+          pointer-events: auto !important;
+        }
+        .bge-map-fallback {
+          background:
+            linear-gradient(90deg, rgba(8, 95, 86, 0.12) 1px, transparent 1px),
+            linear-gradient(rgba(8, 95, 86, 0.12) 1px, transparent 1px),
+            radial-gradient(circle at 76% 40%, rgba(73, 167, 184, 0.24), transparent 24%),
+            radial-gradient(circle at 48% 52%, rgba(54, 142, 103, 0.22), transparent 32%),
+            linear-gradient(135deg, #edf1e8 0%, #dbe8dc 42%, #cadfcf 100%);
+          background-size: 96px 96px, 96px 96px, auto, auto, auto;
+        }
         .bge-price-pin {
           min-width: 36px;
           height: 24px;
@@ -292,34 +368,25 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
 
       {/* Map controls */}
       {ready && (
-        <div className="absolute bottom-4 left-4 flex flex-col gap-2 z-10">
-          <button
-            type="button"
-            onClick={toggle3D}
-            className={`flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-semibold shadow-lg backdrop-blur-sm transition-colors ${
-              is3D
-                ? "bg-sea text-white"
-                : "bg-white/90 text-ink hover:bg-white border border-line/50"
-            }`}
-            title={is3D ? "Switch to 2D" : "Switch to 3D buildings"}
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              {is3D ? (
-                <>
-                  <path d="M12 3L2 9l10 6 10-6-10-6z" />
-                  <path d="M2 17l10 6 10-6" />
-                  <path d="M2 13l10 6 10-6" />
-                </>
-              ) : (
-                <>
-                  <path d="M12 3L2 9l10 6 10-6-10-6z" />
-                  <path d="M2 17l10 6 10-6" />
-                  <path d="M2 13l10 6 10-6" />
-                </>
-              )}
-            </svg>
-            {is3D ? "3D" : "2D"}
-          </button>
+        <div className="absolute bottom-4 left-4 flex flex-col gap-2" style={{ zIndex: 1200 }}>
+          <div className="flex rounded-xl border border-line/50 bg-white/90 p-1 text-xs font-semibold text-ink shadow-lg backdrop-blur-sm">
+            <button
+              type="button"
+              onClick={() => setMapDimension(false)}
+              className={`rounded-lg px-3 py-1.5 transition ${!is3D ? "bg-sea text-white" : "hover:bg-panel"}`}
+              title="Switch to flat 2D map"
+            >
+              2D
+            </button>
+            <button
+              type="button"
+              onClick={() => setMapDimension(true)}
+              className={`rounded-lg px-3 py-1.5 transition ${is3D ? "bg-sea text-white" : "hover:bg-panel"}`}
+              title="Switch to low-pitch 3D building view"
+            >
+              3D
+            </button>
+          </div>
 
           <button
             type="button"
@@ -333,8 +400,16 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
             </svg>
             Varna
           </button>
+          <button
+            type="button"
+            onClick={zoomToAll}
+            className="flex items-center gap-1.5 rounded-xl bg-white/90 border border-line/50 px-3 py-2 text-xs font-semibold text-ink shadow-lg backdrop-blur-sm hover:bg-white transition-colors"
+            title="Fit all visible grouped points"
+          >
+            Reset map
+          </button>
           <div className="rounded-xl border border-line/50 bg-white/90 px-3 py-2 text-[10px] font-semibold text-mist shadow-lg backdrop-blur-sm">
-            OSM base / building objects require matched footprints
+            {mapIssue ?? "OSM + OpenFreeMap vector buildings"}
           </div>
         </div>
       )}
@@ -342,23 +417,78 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
   );
 }
 
+function projectScreenMarkers(map: MapLibreMap, listings: MapListing[]): ScreenMarker[] {
+  const canvas = map.getCanvas();
+  const width = canvas.clientWidth;
+  const height = canvas.clientHeight;
+  if (!width || !height) return [];
+
+  return listings
+    .filter((item) => item.latitude != null && item.longitude != null)
+    .map((item) => {
+      const isCluster = (item.map_cluster_count ?? 1) > 1 || item.map_marker_kind === "cluster";
+      const point = map.project([item.longitude as number, item.latitude as number]);
+      const title = isCluster
+        ? `${item.map_cluster_label ?? "Area"}: ${item.map_cluster_count ?? 1} properties`
+        : item.title ?? item.reference_id;
+      return {
+        id: item.reference_id,
+        items: item.map_cluster_items ?? [item.reference_id],
+        title,
+        text: isCluster ? `${item.map_cluster_count ?? 1}` : item.price ? `${Math.round(item.price / 1000)}k` : "•",
+        x: point.x,
+        y: point.y,
+        isCluster,
+      };
+    })
+    .filter((marker) => marker.x >= -80 && marker.x <= width + 80 && marker.y >= -80 && marker.y <= height + 80);
+}
+
+function buildMapStyle(): StyleSpecification {
+  return {
+    version: 8,
+    glyphs: "https://tiles.openfreemap.org/fonts/{fontstack}/{range}.pbf",
+    sources: {
+      "openstreetmap-raster": {
+        type: "raster",
+        tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
+        tileSize: 256,
+        attribution: "OpenStreetMap contributors",
+      },
+      [VECTOR_SOURCE_ID]: {
+        type: "vector",
+        tiles: ["https://tiles.openfreemap.org/planet/{z}/{x}/{y}.pbf"],
+        minzoom: 0,
+        maxzoom: 14,
+        attribution: "OpenFreeMap",
+      },
+    },
+    layers: [
+      {
+        id: "bge-map-background",
+        type: "background",
+        paint: {
+          "background-color": "#e6eee4",
+        },
+      },
+      {
+        id: "openstreetmap-raster",
+        type: "raster",
+        source: "openstreetmap-raster",
+        paint: {
+          "raster-opacity": 0.96,
+        },
+      },
+    ],
+  } as StyleSpecification;
+}
+
 function addBuildingLayer(map: MapLibreMap) {
-  const style = map.getStyle();
-  if (!style?.sources) return;
-
-  const vectorSourceId = Object.keys(style.sources).find((key) => {
-    const src = style.sources[key];
-    return src && "type" in src && src.type === "vector";
-  });
-
-  if (!vectorSourceId) return;
-
-  const existingLayers = style.layers?.map((l) => l.id) ?? [];
-
-  if (!existingLayers.includes("bge-3d-buildings")) {
+  if (!map.getSource(VECTOR_SOURCE_ID) || map.getLayer(BUILDING_LAYER_ID)) return;
+  try {
     map.addLayer({
-      id: "bge-3d-buildings",
-      source: vectorSourceId,
+      id: BUILDING_LAYER_ID,
+      source: VECTOR_SOURCE_ID,
       "source-layer": "building",
       type: "fill-extrusion",
       minzoom: 14,
@@ -391,13 +521,14 @@ function addBuildingLayer(map: MapLibreMap) {
         visibility: "visible",
       },
     });
+  } catch {
+    // Some free vector mirrors expose the base map but not building source layers.
   }
-
 }
 
 function setBuildingVisibility(map: MapLibreMap, visibility: "visible" | "none") {
-  if (map.getLayer("bge-3d-buildings")) {
-    map.setLayoutProperty("bge-3d-buildings", "visibility", visibility);
+  if (map.getLayer(BUILDING_LAYER_ID)) {
+    map.setLayoutProperty(BUILDING_LAYER_ID, "visibility", visibility);
   }
 }
 

@@ -1,7 +1,7 @@
 # Task For Gemma4 / OpenClaw: Full Bulgaria Tier-1/2 Scrape With Complete Galleries
 
 Generated: 2026-04-24
-Updated: 2026-04-28 after Codex UI/QA contract pass
+Updated: 2026-04-28 after Codex map reliability and four-bucket tier-1/2 pattern pass
 
 ## Objective
 
@@ -31,6 +31,8 @@ Run the Bulgaria Real Estate tier-1/2 scraper to completion for **all Bulgaria**
 - Dry-run planning output for all-Bulgaria scrape: `docs/exports/all-full-scrape-summary.json`.
 - Legacy Varna dry-run planning output: `docs/exports/varna-full-scrape-summary.json`.
 - Current strict patterned set from saved evidence includes: `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `OLX.bg`, `property.bg`, `SUPRIMMO`, `Bazar.bg`, `Yavlena`.
+- Current Gemma priority pattern set is: `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, `SUPRIMMO`.
+- Those seven sources now have explicit bucket instructions for all four screen categories: `buy_personal` (buy residential), `buy_commercial` (buy commercial), `rent_personal` (rent residential), and `rent_commercial` (rent commercial). Some portals expose mixed sale/rent routes, so category acceptance must be confirmed from card/detail text before saving a row into a bucket.
 - Current file-backed source totals from `docs/exports/source-item-photo-coverage.json`: `Address.bg` 140 saved / 140 full-gallery; `BulgarianProperties` 249 / 1; `Homes.bg` 97 / 52; `imot.bg` 271 / 14; `LUXIMMO` 15 / 13; `OLX.bg` 249 / 249; `property.bg` 15 / 1; `SUPRIMMO` 12 / 1; `Bazar.bg` 250 / 192; `Yavlena` 251 / 250.
 - `BulgarianProperties`, `imot.bg`, `property.bg`, and `SUPRIMMO` have high remote-gallery counts in older saved rows and must run media backfill before their old corpus can be treated as full-gallery complete.
 - Known low/no-sample sources: `alo.bg`, `Domaza`, `Home2U` and several tier-2 sources not yet in `scripts/live_scraper.py`.
@@ -233,6 +235,20 @@ For each supported patterned source across all Bulgaria:
 - `buy_personal`: apartments, houses, land, new-build where source supports them.
 - `rent_personal`: apartments/houses where source supports them.
 - `buy_commercial` and `rent_commercial`: only when routes are legally allowed and parser patterns are explicit enough to preserve full detail and gallery capture.
+
+Priority four-bucket source matrix for the next Gemma/OpenClaw scrape and image-description wave:
+
+| Source | Buy residential | Buy commercial | Rent residential | Rent commercial | Category rule |
+|---|---:|---:|---:|---:|---|
+| Address.bg | yes | yes | yes | yes | Shared sale/rent routes are allowed only after detail estate type confirms residential/commercial. |
+| BulgarianProperties | yes | yes | yes | yes | Use sale/rent plus office/business routes; validate category on detail. |
+| Homes.bg | yes | yes | yes | yes | Homes API offerType separates buy/rent; residential/commercial must be classified from returned card/detail metadata. |
+| imot.bg | yes | yes | yes | yes | Varna/sale/rent routes can be shared; final bucket assignment comes from card/detail property type. |
+| LUXIMMO | yes | yes | yes | yes | Sale/rent/business routes are patterned; accept only when detail category matches the target bucket. |
+| property.bg | yes | yes | yes | yes | Selection/business routes are patterned; accept only when detail category matches the target bucket. |
+| SUPRIMMO | yes | yes | yes | yes | Selection/business routes are patterned; accept only when detail category matches the target bucket. |
+
+Gemma must create image-description reports for accepted listings from all four categories, not only apartments. Apartment reports keep the deepest room-by-room structure; commercial reports must describe workspaces, shopfronts, storage/warehouse space, building access, service areas, and fit-out condition when visible.
 
 For each accepted property, save:
 

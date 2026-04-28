@@ -311,7 +311,7 @@
   </div>
 
     <script id="dashboard-data" type="application/json">{
-  "generated_at": "2026-04-28T09:19:34.232797+00:00",
+  "generated_at": "2026-04-28T14:25:48.277841+00:00",
   "roadmap": {
     "done": 46,
     "total": 128,
@@ -1578,6 +1578,15 @@
           "commands": "python3 scripts/generate_source_links_page.py, python3 -m py_compile scripts/generate_source_links_page.py",
           "status": "`DONE`",
           "review": "FACT:, FACT:, FACT: the first metric line now means, FACT:, IMPROVEMENT RULE: operator dashboards must use source-total coverage semantics, while threshold values such as"
+        },
+        {
+          "title": "2026-04-28 — S1-21 four-bucket priority source pattern handoff",
+          "summary": "",
+          "action": "Updated the tier-1/2 section catalog so the operator-priority sources `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO` each have explicit supported bucket definitions for `buy_personal`, `buy_commercial`, `rent_personal`, and `rent_commercial`.",
+          "changed_files": "src/bgrealestate/scraping/section_catalog.py, docs/exports/taskforgema.md, docs/exports/tier12-four-bucket-pattern-handoff-2026-04-28.md, docs/openclaw/gemma4-agent.md, docs/agents/TASKS.md",
+          "commands": "",
+          "status": "`DONE_AWAITING_VERIFY`",
+          "review": "FACT: all seven priority sources now expose four non-empty bucket definitions in the curated section catalog., INTERPRETATION: sources with mixed public routes must classify residential/commercial from card/detail text before accepting a listing into the bucket., GAP: live reachability was not tested in this local pass; the next live scrape must record route/runtime failures by source and bucket."
         }
       ],
       "tasks": {
@@ -1679,7 +1688,7 @@
         "todo": 5,
         "blocked": 0,
         "total": 14,
-        "journal_entries": 43,
+        "journal_entries": 44,
         "efficiency_pct": 43
       }
     },

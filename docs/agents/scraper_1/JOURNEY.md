@@ -1021,3 +1021,18 @@ Modified files:
   - FACT: the first metric line now means `saved items started / latest saved website-total active count for the source`, for example `scraped 233/12000 site`.
   - FACT: `img described` is currently `0/N` because a separate image-description pipeline is not yet implemented in the saved corpus metrics.
   - IMPROVEMENT RULE: operator dashboards must use source-total coverage semantics, while threshold values such as `100` belong only in control-plane views.
+
+### 2026-04-28 — S1-21 four-bucket priority source pattern handoff
+
+- **Action**: Updated the tier-1/2 section catalog so the operator-priority sources `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO` each have explicit supported bucket definitions for `buy_personal`, `buy_commercial`, `rent_personal`, and `rent_commercial`.
+- **Changed files**:
+  - `src/bgrealestate/scraping/section_catalog.py`
+  - `docs/exports/taskforgema.md`
+  - `docs/exports/tier12-four-bucket-pattern-handoff-2026-04-28.md`
+  - `docs/openclaw/gemma4-agent.md`
+  - `docs/agents/TASKS.md`
+- **Status**: `DONE_AWAITING_VERIFY`
+- **Review comments**:
+  - FACT: all seven priority sources now expose four non-empty bucket definitions in the curated section catalog.
+  - INTERPRETATION: sources with mixed public routes must classify residential/commercial from card/detail text before accepting a listing into the bucket.
+  - GAP: live reachability was not tested in this local pass; the next live scrape must record route/runtime failures by source and bucket.

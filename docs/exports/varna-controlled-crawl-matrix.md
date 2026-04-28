@@ -5,9 +5,9 @@ This export is the explicit Stage 2 source/segment readiness layer for tier-1 an
 | Source | Segment | Pattern | Support | Active | Verticals | Entry scope | Notes |
 |---|---|---|---|---:|---|---|---|
 | Address.bg | `buy_personal` | `Patterned` | `supported` | yes | apartments, houses, land, new_build | `varna_only_url` | eligible for threshold planning |
-| Address.bg | `buy_commercial` | `Patterned` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial route split on Address.bg is not yet expressed as a reusable Varna bucket. |
+| Address.bg | `buy_commercial` | `Patterned` | `supported` | yes | offices, shops, commercial_properties, garages, warehouses | `varna_only_url` | eligible for threshold planning |
 | Address.bg | `rent_personal` | `Patterned` | `supported` | yes | apartments, houses | `national_fallback_with_varna_filter` | eligible for threshold planning |
-| Address.bg | `rent_commercial` | `Patterned` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial rental route split on Address.bg is not yet saved as a reusable Varna bucket. |
+| Address.bg | `rent_commercial` | `Patterned` | `supported` | yes | offices, shops, commercial_properties, garages, warehouses | `national_fallback_with_varna_filter` | eligible for threshold planning |
 | ApartmentsBulgaria.com | `buy_personal` | `without_sample_product_capture` | `unsupported` | no | all | `national_fallback_with_varna_filter` | Source registry does not declare sale/new-build/land support for this source. |
 | ApartmentsBulgaria.com | `buy_commercial` | `without_sample_product_capture` | `unsupported` | no | commercial_properties, offices | `national_fallback_with_varna_filter` | Source registry does not declare sale/new-build/land support for this source. |
 | ApartmentsBulgaria.com | `rent_personal` | `without_sample_product_capture` | `unsupported` | no | all | `national_fallback_with_varna_filter` | Source registry does not declare long-term rent support for this source. |
@@ -17,9 +17,9 @@ This export is the explicit Stage 2 source/segment readiness layer for tier-1 an
 | Bazar.bg | `rent_personal` | `Patterned` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Saved Bazar.bg runtime currently proves sale-side discovery only. |
 | Bazar.bg | `rent_commercial` | `Patterned` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial rental routes are not yet mapped for Bazar.bg. |
 | BulgarianProperties | `buy_personal` | `Patterned` | `supported` | yes | apartments, houses, land, new_build | `national_fallback_with_varna_filter` | eligible for threshold planning |
-| BulgarianProperties | `buy_commercial` | `Patterned` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial routes are not yet separated in the saved BulgarianProperties pattern set. |
+| BulgarianProperties | `buy_commercial` | `Patterned` | `supported` | yes | offices, shops, commercial_properties, garages, warehouses | `national_fallback_with_varna_filter` | eligible for threshold planning |
 | BulgarianProperties | `rent_personal` | `Patterned` | `supported` | yes | apartments, houses | `national_fallback_with_varna_filter` | eligible for threshold planning |
-| BulgarianProperties | `rent_commercial` | `Patterned` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial rental routes are not yet separated in the saved BulgarianProperties pattern set. |
+| BulgarianProperties | `rent_commercial` | `Patterned` | `supported` | yes | offices, shops, commercial_properties, garages, warehouses | `national_fallback_with_varna_filter` | eligible for threshold planning |
 | Domaza | `buy_personal` | `without_sample_product_capture` | `pattern_incomplete` | no | apartments, houses, land, new_build | `national_fallback_with_varna_filter` | Search routes are known, but source is not yet patterned enough for controlled activation. |
 | Domaza | `buy_commercial` | `without_sample_product_capture` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial routes are not yet saved as reusable Domaza buckets. |
 | Domaza | `rent_personal` | `without_sample_product_capture` | `pattern_incomplete` | no | apartments, houses | `national_fallback_with_varna_filter` | Rent route exists but reusable detail/media proof is not yet complete. |
@@ -33,9 +33,9 @@ This export is the explicit Stage 2 source/segment readiness layer for tier-1 an
 | Home2U | `rent_personal` | `without_sample_product_capture` | `pattern_incomplete` | no | apartments | `varna_only_url` | Varna rental route exists but detail/media pattern is not yet complete. |
 | Home2U | `rent_commercial` | `without_sample_product_capture` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial rental Home2U routes are not yet saved. |
 | Homes.bg | `buy_personal` | `Patterned` | `supported` | yes | apartments, houses, land, new_build | `varna_only_api_filter` | eligible for threshold planning |
-| Homes.bg | `buy_commercial` | `Patterned` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial category filter is not yet locked for the Homes Varna API path. |
+| Homes.bg | `buy_commercial` | `Patterned` | `supported` | yes | offices, shops, commercial_properties, garages, warehouses | `varna_only_api_filter` | eligible for threshold planning |
 | Homes.bg | `rent_personal` | `Patterned` | `supported` | yes | apartments, houses | `varna_only_api_filter` | eligible for threshold planning |
-| Homes.bg | `rent_commercial` | `Patterned` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial rental filter is not yet locked for the Homes Varna API path. |
+| Homes.bg | `rent_commercial` | `Patterned` | `supported` | yes | offices, shops, commercial_properties, garages, warehouses | `varna_only_api_filter` | eligible for threshold planning |
 | Imoteka.bg | `buy_personal` | `without_authorized_pattern` | `legal_blocked` | no | apartments, houses, new_build, land | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |
 | Imoteka.bg | `buy_commercial` | `without_authorized_pattern` | `legal_blocked` | no | apartments, houses, new_build, land, commercial_properties, offices | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |
 | Imoteka.bg | `rent_personal` | `without_authorized_pattern` | `legal_blocked` | no | apartments, houses | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |
@@ -49,9 +49,9 @@ This export is the explicit Stage 2 source/segment readiness layer for tier-1 an
 | Indomio.bg | `rent_personal` | `without_sample_product_capture` | `pattern_incomplete` | no | apartments, houses | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |
 | Indomio.bg | `rent_commercial` | `without_sample_product_capture` | `pattern_incomplete` | no | apartments, houses, commercial_properties, offices | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |
 | LUXIMMO | `buy_personal` | `Patterned` | `supported` | yes | apartments, houses, new_build | `national_fallback_with_varna_filter` | eligible for threshold planning |
-| LUXIMMO | `buy_commercial` | `Patterned` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial LUXIMMO routes are not yet persisted in the reusable bucket catalog. |
-| LUXIMMO | `rent_personal` | `Patterned` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Saved LUXIMMO runtime currently proves sale detail capture, not reusable rent discovery. |
-| LUXIMMO | `rent_commercial` | `Patterned` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial rental routes are not yet mapped for LUXIMMO. |
+| LUXIMMO | `buy_commercial` | `Patterned` | `supported` | yes | offices, shops, commercial_properties, garages, warehouses | `national_fallback_with_varna_filter` | eligible for threshold planning |
+| LUXIMMO | `rent_personal` | `Patterned` | `supported` | yes | apartments, houses | `national_fallback_with_varna_filter` | eligible for threshold planning |
+| LUXIMMO | `rent_commercial` | `Patterned` | `supported` | yes | offices, shops, commercial_properties, garages, warehouses | `national_fallback_with_varna_filter` | eligible for threshold planning |
 | Lions Group | `buy_personal` | `without_sample_product_capture` | `pattern_incomplete` | no | apartments, houses, new_build, land | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |
 | Lions Group | `buy_commercial` | `without_sample_product_capture` | `pattern_incomplete` | no | apartments, houses, new_build, land, commercial_properties, offices | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |
 | Lions Group | `rent_personal` | `without_sample_product_capture` | `pattern_incomplete` | no | apartments, houses | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |
@@ -73,9 +73,9 @@ This export is the explicit Stage 2 source/segment readiness layer for tier-1 an
 | Rentica.bg | `rent_personal` | `without_sample_product_capture` | `pattern_incomplete` | no | apartments, houses | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |
 | Rentica.bg | `rent_commercial` | `without_sample_product_capture` | `pattern_incomplete` | no | apartments, houses, commercial_properties, offices | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |
 | SUPRIMMO | `buy_personal` | `Patterned` | `supported` | yes | apartments, houses, land, new_build | `national_fallback_with_varna_filter` | eligible for threshold planning |
-| SUPRIMMO | `buy_commercial` | `Patterned` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial category routes are not yet saved as reusable SUPRIMMO Varna sections. |
+| SUPRIMMO | `buy_commercial` | `Patterned` | `supported` | yes | offices, shops, commercial_properties, garages, warehouses | `national_fallback_with_varna_filter` | eligible for threshold planning |
 | SUPRIMMO | `rent_personal` | `Patterned` | `supported` | yes | apartments, houses | `national_fallback_with_varna_filter` | eligible for threshold planning |
-| SUPRIMMO | `rent_commercial` | `Patterned` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial rental route split is not yet mapped for SUPRIMMO. |
+| SUPRIMMO | `rent_commercial` | `Patterned` | `supported` | yes | offices, shops, commercial_properties, garages, warehouses | `national_fallback_with_varna_filter` | eligible for threshold planning |
 | Svobodni-kvartiri.com | `buy_personal` | `without_sample_product_capture` | `unsupported` | no | all | `national_fallback_with_varna_filter` | Source registry does not declare sale/new-build/land support for this source. |
 | Svobodni-kvartiri.com | `buy_commercial` | `without_sample_product_capture` | `unsupported` | no | commercial_properties, offices | `national_fallback_with_varna_filter` | Source registry does not declare sale/new-build/land support for this source. |
 | Svobodni-kvartiri.com | `rent_personal` | `without_sample_product_capture` | `pattern_incomplete` | no | apartments, houses | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |
@@ -97,17 +97,17 @@ This export is the explicit Stage 2 source/segment readiness layer for tier-1 an
 | alo.bg | `rent_personal` | `without_sample_product_capture` | `supported` | no | apartments | `national_fallback_with_varna_filter` | eligible for threshold planning |
 | alo.bg | `rent_commercial` | `without_sample_product_capture` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial rental routes are not yet saved as reusable ALO buckets. |
 | imot.bg | `buy_personal` | `Patterned` | `supported` | yes | apartments, houses, land, new_build | `varna_only_url` | eligible for threshold planning |
-| imot.bg | `buy_commercial` | `Patterned` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial-specific Varna discovery routes are not yet persisted separately. |
+| imot.bg | `buy_commercial` | `Patterned` | `supported` | yes | offices, shops, commercial_properties, garages, warehouses | `varna_only_url` | eligible for threshold planning |
 | imot.bg | `rent_personal` | `Patterned` | `supported` | yes | apartments, houses | `varna_only_url` | eligible for threshold planning |
-| imot.bg | `rent_commercial` | `Patterned` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial rental routes for Varna are not yet persisted as reusable patterns. |
+| imot.bg | `rent_commercial` | `Patterned` | `supported` | yes | offices, shops, commercial_properties, garages, warehouses | `varna_only_url` | eligible for threshold planning |
 | imoti.net | `buy_personal` | `without_authorized_pattern` | `legal_blocked` | no | apartments, houses, new_build, land | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |
 | imoti.net | `buy_commercial` | `without_authorized_pattern` | `legal_blocked` | no | apartments, houses, new_build, land, commercial_properties, offices | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |
 | imoti.net | `rent_personal` | `without_authorized_pattern` | `legal_blocked` | no | apartments, houses | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |
 | imoti.net | `rent_commercial` | `without_authorized_pattern` | `legal_blocked` | no | apartments, houses, commercial_properties, offices | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |
 | property.bg | `buy_personal` | `Patterned` | `supported` | yes | apartments, houses, land, new_build | `national_fallback_with_varna_filter` | eligible for threshold planning |
-| property.bg | `buy_commercial` | `Patterned` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial-specific property.bg routes are not yet saved as reusable Varna buckets. |
+| property.bg | `buy_commercial` | `Patterned` | `supported` | yes | offices, shops, commercial_properties, garages, warehouses | `national_fallback_with_varna_filter` | eligible for threshold planning |
 | property.bg | `rent_personal` | `Patterned` | `supported` | yes | apartments, houses | `national_fallback_with_varna_filter` | eligible for threshold planning |
-| property.bg | `rent_commercial` | `Patterned` | `pattern_incomplete` | no | all | `national_fallback_with_varna_filter` | Commercial rental property.bg routes are not yet saved as reusable Varna buckets. |
+| property.bg | `rent_commercial` | `Patterned` | `supported` | yes | offices, shops, commercial_properties, garages, warehouses | `national_fallback_with_varna_filter` | eligible for threshold planning |
 | realestates.bg | `buy_personal` | `without_sample_product_capture` | `pattern_incomplete` | no | apartments, houses, land | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |
 | realestates.bg | `buy_commercial` | `without_sample_product_capture` | `pattern_incomplete` | no | apartments, houses, land, commercial_properties, offices | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |
 | realestates.bg | `rent_personal` | `without_sample_product_capture` | `pattern_incomplete` | no | apartments, houses | `national_fallback_with_varna_filter` | Source/segment route is not yet saved as a production-ready reusable pattern. |

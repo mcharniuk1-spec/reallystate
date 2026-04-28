@@ -145,10 +145,18 @@ def _curated_blueprints() -> dict[str, dict[str, SegmentBlueprint]]:
                     ],
                 },
             ),
-            "buy_commercial": _empty_segment(
-                "buy_commercial",
-                reason="Commercial category filter is not yet locked for the Homes Varna API path.",
-                status="pattern_incomplete",
+            "buy_commercial": SegmentBlueprint(
+                segment_key="buy_commercial",
+                discovery_mode="api_results",
+                entry_scope="varna_only_api_filter",
+                supported_verticals=("offices", "shops", "commercial_properties", "garages", "warehouses"),
+                implementation_notes="Use Homes API offerType=1 with city=varna; commercial categories are accepted only after card/detail classification confirms business property intent.",
+                discovery_templates={
+                    "api_templates": [
+                        "https://www.homes.bg/api/offers?currPage={page}&lang=bg&offerType=1&city=varna",
+                    ],
+                    "classification_required": True,
+                },
             ),
             "rent_personal": SegmentBlueprint(
                 segment_key="rent_personal",
@@ -162,10 +170,18 @@ def _curated_blueprints() -> dict[str, dict[str, SegmentBlueprint]]:
                     ],
                 },
             ),
-            "rent_commercial": _empty_segment(
-                "rent_commercial",
-                reason="Commercial rental filter is not yet locked for the Homes Varna API path.",
-                status="pattern_incomplete",
+            "rent_commercial": SegmentBlueprint(
+                segment_key="rent_commercial",
+                discovery_mode="api_results",
+                entry_scope="varna_only_api_filter",
+                supported_verticals=("offices", "shops", "commercial_properties", "garages", "warehouses"),
+                implementation_notes="Use Homes API offerType=2 with city=varna; commercial rental rows are preserved only when list/detail metadata confirms the category.",
+                discovery_templates={
+                    "api_templates": [
+                        "https://www.homes.bg/api/offers?currPage={page}&lang=bg&offerType=2&city=varna",
+                    ],
+                    "classification_required": True,
+                },
             ),
         },
         "imot.bg": {
@@ -178,10 +194,14 @@ def _curated_blueprints() -> dict[str, dict[str, SegmentBlueprint]]:
                 entry_scope="varna_only_url",
                 implementation_notes="Exact Varna sales route exists; residential and land classes are separated during list/detail parsing.",
             ),
-            "buy_commercial": _empty_segment(
-                "buy_commercial",
-                reason="Commercial-specific Varna discovery routes are not yet persisted separately.",
-                status="pattern_incomplete",
+            "buy_commercial": SegmentBlueprint(
+                segment_key="buy_commercial",
+                entry_urls=("https://www.imot.bg/obiavi/prodazhbi/grad-varna",),
+                supported_verticals=("offices", "shops", "commercial_properties", "garages", "warehouses"),
+                listing_pattern=r"imot\.bg/obiava-",
+                page_suffix="/p-{}",
+                entry_scope="varna_only_url",
+                implementation_notes="Shared Varna sales route; commercial rows must be classified from card/detail property type before acceptance.",
             ),
             "rent_personal": SegmentBlueprint(
                 segment_key="rent_personal",
@@ -192,10 +212,14 @@ def _curated_blueprints() -> dict[str, dict[str, SegmentBlueprint]]:
                 entry_scope="varna_only_url",
                 implementation_notes="Exact Varna rentals route exists; residential classes are filtered at card/detail parse.",
             ),
-            "rent_commercial": _empty_segment(
-                "rent_commercial",
-                reason="Commercial rental routes for Varna are not yet persisted as reusable patterns.",
-                status="pattern_incomplete",
+            "rent_commercial": SegmentBlueprint(
+                segment_key="rent_commercial",
+                entry_urls=("https://www.imot.bg/obiavi/naemi/grad-varna",),
+                supported_verticals=("offices", "shops", "commercial_properties", "garages", "warehouses"),
+                listing_pattern=r"imot\.bg/obiava-",
+                page_suffix="/p-{}",
+                entry_scope="varna_only_url",
+                implementation_notes="Shared Varna rentals route; commercial rows must be classified from card/detail property type before acceptance.",
             ),
         },
         "Address.bg": {
@@ -208,10 +232,14 @@ def _curated_blueprints() -> dict[str, dict[str, SegmentBlueprint]]:
                 entry_scope="varna_only_url",
                 implementation_notes="Exact Varna sales entry is known and saved.",
             ),
-            "buy_commercial": _empty_segment(
-                "buy_commercial",
-                reason="Commercial route split on Address.bg is not yet expressed as a reusable Varna bucket.",
-                status="pattern_incomplete",
+            "buy_commercial": SegmentBlueprint(
+                segment_key="buy_commercial",
+                entry_urls=("https://address.bg/sale/varna/l4694",),
+                supported_verticals=("offices", "shops", "commercial_properties", "garages", "warehouses"),
+                listing_pattern=r"address\.bg/.+-offer\d{5,}",
+                page_suffix="?page={}",
+                entry_scope="varna_only_url",
+                implementation_notes="Shared Address.bg Varna sales route; commercial eligibility is determined from offer estate type and detail text.",
             ),
             "rent_personal": SegmentBlueprint(
                 segment_key="rent_personal",
@@ -221,10 +249,13 @@ def _curated_blueprints() -> dict[str, dict[str, SegmentBlueprint]]:
                 page_suffix="?page={}",
                 implementation_notes="Varna rental route is not yet persisted separately; current fallback uses rent listing pages plus strict Varna filtering.",
             ),
-            "rent_commercial": _empty_segment(
-                "rent_commercial",
-                reason="Commercial rental route split on Address.bg is not yet saved as a reusable Varna bucket.",
-                status="pattern_incomplete",
+            "rent_commercial": SegmentBlueprint(
+                segment_key="rent_commercial",
+                entry_urls=("https://address.bg/rent",),
+                supported_verticals=("offices", "shops", "commercial_properties", "garages", "warehouses"),
+                listing_pattern=r"address\.bg/.+-offer\d{5,}",
+                page_suffix="?page={}",
+                implementation_notes="Shared rent route plus strict Varna and commercial category validation at card/detail parse.",
             ),
         },
         "BulgarianProperties": {
@@ -243,10 +274,17 @@ def _curated_blueprints() -> dict[str, dict[str, SegmentBlueprint]]:
                 page_suffix="?page={}",
                 implementation_notes="National entrypoints only; enforce Varna at card/detail/validation stages.",
             ),
-            "buy_commercial": _empty_segment(
-                "buy_commercial",
-                reason="Commercial routes are not yet separated in the saved BulgarianProperties pattern set.",
-                status="pattern_incomplete",
+            "buy_commercial": SegmentBlueprint(
+                segment_key="buy_commercial",
+                entry_urls=(
+                    "https://www.bulgarianproperties.com/properties_for_sale_in_Bulgaria/index.html",
+                    "https://www.bulgarianproperties.com/offices_for_sale_in_Bulgaria/index.html",
+                    "https://www.bulgarianproperties.com/businesses_for_sale_in_Bulgaria/index.html",
+                ),
+                supported_verticals=("offices", "shops", "commercial_properties", "garages", "warehouses"),
+                listing_pattern=r"bulgarianproperties\.com/.+AD\d+BG",
+                page_suffix="?page={}",
+                implementation_notes="Commercial sale bucket uses explicit office/business routes where reachable plus fallback sale discovery; detail parser must preserve only commercial categories.",
             ),
             "rent_personal": SegmentBlueprint(
                 segment_key="rent_personal",
@@ -256,10 +294,17 @@ def _curated_blueprints() -> dict[str, dict[str, SegmentBlueprint]]:
                 page_suffix="?page={}",
                 implementation_notes="National rental entrypoint; enforce Varna at downstream stages.",
             ),
-            "rent_commercial": _empty_segment(
-                "rent_commercial",
-                reason="Commercial rental routes are not yet separated in the saved BulgarianProperties pattern set.",
-                status="pattern_incomplete",
+            "rent_commercial": SegmentBlueprint(
+                segment_key="rent_commercial",
+                entry_urls=(
+                    "https://www.bulgarianproperties.com/properties_for_rent_in_Bulgaria/index.html",
+                    "https://www.bulgarianproperties.com/offices_for_rent_in_Bulgaria/index.html",
+                    "https://www.bulgarianproperties.com/businesses_for_rent_in_Bulgaria/index.html",
+                ),
+                supported_verticals=("offices", "shops", "commercial_properties", "garages", "warehouses"),
+                listing_pattern=r"bulgarianproperties\.com/.+AD\d+BG",
+                page_suffix="?page={}",
+                implementation_notes="Commercial rent bucket uses office/business routes where reachable plus fallback rent discovery; detail parser must preserve only commercial categories.",
             ),
         },
         "SUPRIMMO": {
@@ -275,10 +320,16 @@ def _curated_blueprints() -> dict[str, dict[str, SegmentBlueprint]]:
                 page_suffix="/page/{}/",
                 implementation_notes="National vertical routes; Varna enforced in list/detail/validation.",
             ),
-            "buy_commercial": _empty_segment(
-                "buy_commercial",
-                reason="Commercial category routes are not yet saved as reusable SUPRIMMO Varna sections.",
-                status="pattern_incomplete",
+            "buy_commercial": SegmentBlueprint(
+                segment_key="buy_commercial",
+                entry_urls=(
+                    "https://www.suprimmo.bg/bulgaria/selectsya/",
+                    "https://www.suprimmo.bg/bulgaria/biznes-imoti/",
+                ),
+                supported_verticals=("offices", "shops", "commercial_properties", "garages", "warehouses"),
+                listing_pattern=r"suprimmo\.bg/imot-\d{5,}",
+                page_suffix="/page/{}/",
+                implementation_notes="SUPRIMMO commercial sale is patterned as selection/business discovery with downstream commercial category validation.",
             ),
             "rent_personal": SegmentBlueprint(
                 segment_key="rent_personal",
@@ -288,10 +339,16 @@ def _curated_blueprints() -> dict[str, dict[str, SegmentBlueprint]]:
                 page_suffix="/page/{}/",
                 implementation_notes="Rental selection route exists, but requires downstream Varna filtering.",
             ),
-            "rent_commercial": _empty_segment(
-                "rent_commercial",
-                reason="Commercial rental route split is not yet mapped for SUPRIMMO.",
-                status="pattern_incomplete",
+            "rent_commercial": SegmentBlueprint(
+                segment_key="rent_commercial",
+                entry_urls=(
+                    "https://www.suprimmo.bg/naem/bulgaria/selectsya/",
+                    "https://www.suprimmo.bg/naem/bulgaria/biznes-imoti/",
+                ),
+                supported_verticals=("offices", "shops", "commercial_properties", "garages", "warehouses"),
+                listing_pattern=r"suprimmo\.bg/imot-\d{5,}",
+                page_suffix="/page/{}/",
+                implementation_notes="SUPRIMMO commercial rent is patterned as selection/business discovery with downstream commercial category validation.",
             ),
         },
         "LUXIMMO": {
@@ -303,20 +360,35 @@ def _curated_blueprints() -> dict[str, dict[str, SegmentBlueprint]]:
                 page_suffix="index{}.html",
                 implementation_notes="Saved routes focus on apartments; additional residential classes still classify via detail pages.",
             ),
-            "buy_commercial": _empty_segment(
-                "buy_commercial",
-                reason="Commercial LUXIMMO routes are not yet persisted in the reusable bucket catalog.",
-                status="pattern_incomplete",
+            "buy_commercial": SegmentBlueprint(
+                segment_key="buy_commercial",
+                entry_urls=(
+                    "https://www.luximmo.bg/imoti-prodajbi/",
+                    "https://www.luximmo.bg/biznes-imoti/",
+                ),
+                supported_verticals=("offices", "shops", "commercial_properties", "garages", "warehouses"),
+                listing_pattern=r"luximmo\.bg/.+-\d{5,}-[^\"'<> ]+\.html",
+                page_suffix="index{}.html",
+                implementation_notes="LUXIMMO commercial sales use saved detail parser with sale/business discovery; category must be validated from the detail page.",
             ),
-            "rent_personal": _empty_segment(
-                "rent_personal",
-                reason="Saved LUXIMMO runtime currently proves sale detail capture, not reusable rent discovery.",
-                status="pattern_incomplete",
+            "rent_personal": SegmentBlueprint(
+                segment_key="rent_personal",
+                entry_urls=("https://www.luximmo.bg/naemi/",),
+                supported_verticals=("apartments", "houses"),
+                listing_pattern=r"luximmo\.bg/.+-\d{5,}-[^\"'<> ]+\.html",
+                page_suffix="index{}.html",
+                implementation_notes="LUXIMMO rent discovery is patterned through the rental index with residential category validation at detail parse.",
             ),
-            "rent_commercial": _empty_segment(
-                "rent_commercial",
-                reason="Commercial rental routes are not yet mapped for LUXIMMO.",
-                status="pattern_incomplete",
+            "rent_commercial": SegmentBlueprint(
+                segment_key="rent_commercial",
+                entry_urls=(
+                    "https://www.luximmo.bg/naemi/",
+                    "https://www.luximmo.bg/biznes-imoti-pod-naem/",
+                ),
+                supported_verticals=("offices", "shops", "commercial_properties", "garages", "warehouses"),
+                listing_pattern=r"luximmo\.bg/.+-\d{5,}-[^\"'<> ]+\.html",
+                page_suffix="index{}.html",
+                implementation_notes="LUXIMMO commercial rent uses rental/business discovery where reachable and validates commercial category from detail text.",
             ),
         },
         "property.bg": {
@@ -331,10 +403,16 @@ def _curated_blueprints() -> dict[str, dict[str, SegmentBlueprint]]:
                 page_suffix="/page/{}/",
                 implementation_notes="National sale routes are saved; Varna enforced downstream.",
             ),
-            "buy_commercial": _empty_segment(
-                "buy_commercial",
-                reason="Commercial-specific property.bg routes are not yet saved as reusable Varna buckets.",
-                status="pattern_incomplete",
+            "buy_commercial": SegmentBlueprint(
+                segment_key="buy_commercial",
+                entry_urls=(
+                    "https://www.property.bg/sales/bulgaria/selection/",
+                    "https://www.property.bg/bulgaria/business-properties/",
+                ),
+                supported_verticals=("offices", "shops", "commercial_properties", "garages", "warehouses"),
+                listing_pattern=r"property\.bg/property-\d{5,}",
+                page_suffix="/page/{}/",
+                implementation_notes="property.bg commercial sales use selection/business discovery with strict commercial category validation on detail.",
             ),
             "rent_personal": SegmentBlueprint(
                 segment_key="rent_personal",
@@ -344,10 +422,16 @@ def _curated_blueprints() -> dict[str, dict[str, SegmentBlueprint]]:
                 page_suffix="/page/{}/",
                 implementation_notes="National rent route exists; enforce Varna in list/detail/validation.",
             ),
-            "rent_commercial": _empty_segment(
-                "rent_commercial",
-                reason="Commercial rental property.bg routes are not yet saved as reusable Varna buckets.",
-                status="pattern_incomplete",
+            "rent_commercial": SegmentBlueprint(
+                segment_key="rent_commercial",
+                entry_urls=(
+                    "https://www.property.bg/rentals/bulgaria/selection/",
+                    "https://www.property.bg/rentals/bulgaria/business-properties/",
+                ),
+                supported_verticals=("offices", "shops", "commercial_properties", "garages", "warehouses"),
+                listing_pattern=r"property\.bg/property-\d{5,}",
+                page_suffix="/page/{}/",
+                implementation_notes="property.bg commercial rentals use rental/business discovery with strict commercial category validation on detail.",
             ),
         },
         "Bazar.bg": {
