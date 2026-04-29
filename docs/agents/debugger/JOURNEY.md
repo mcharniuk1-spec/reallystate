@@ -259,3 +259,10 @@
 - **Result**: DEFERRED
 - **Failure details**: no verifier failure is implied; current analysis found no completed apartment image-description report output.
 - **Review comments**: verify `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`; verify the next Codex run produces per-source/per-property gaps; verify parser fixes are code-backed and fixture-tested; verify Gemma receives only Codex-confirmed apartment rows with complete local galleries.
+
+### 2026-04-29 — debugger follow-up queued: S1-21 audit + same-location grouping + Gemma sequence
+
+- **Gate commands run**: deferred formal verification until the updated S1-21 artifacts, frontend grouping behavior, and dashboard refresh are reviewed together.
+- **Result**: DEFERRED
+- **Failure details**: no verifier failure is implied; Action1 live scrape/backfill was not run in this offline audit pass.
+- **Review comments**: verify `docs/exports/s1-21-tier12-quality-audit-2026-04-29.md`, `docs/exports/s1-21-gemma-action0-eligible.json`, same-location aggregate behavior in the website, and the updated Action0/Action1/Action2 Gemma task sequence.

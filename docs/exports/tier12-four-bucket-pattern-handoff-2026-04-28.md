@@ -1,6 +1,7 @@
 # Tier-1/2 Four-Bucket Pattern Handoff
 
 Date: 2026-04-28
+Updated: 2026-04-29 with S1-21 Action0/Action1/Action2 execution order
 
 ## Scope
 
@@ -43,16 +44,19 @@ Read:
 
 Do:
 
-1. Run the all-Bulgaria tier-1/2 scrape/backfill only under operator-approved live runtime.
-2. Prioritize the seven sources above across all four buckets.
+0. **Action0 first**: read `docs/exports/s1-21-gemma-action0-eligible.json` and create one property image/QA report per eligible row from local images only.
+1. **Action1 second**: run the all-Bulgaria scrape/backfill for the seven sources above across all four buckets only under operator-approved live runtime.
+2. **Action2 third**: after Action1 QA, continue to the remaining legal tier-1/2 sources in `data/source_registry.json`.
 3. For every accepted listing, save full text, structured fields, all remote image URLs, all local images, source URL, source bucket, and category validation evidence.
 4. Create image-description reports from local files only.
 5. For residential listings, describe style, layout, rooms, colors, materials, visible tools/equipment, condition, requirements, and risks.
 6. For commercial listings, describe commercial type, access/frontage, workspace or sales-floor layout, storage/service areas, fit-out condition, colors/materials, visible equipment/tools, and operational suitability.
 7. Run or replicate the property-quality contract before marking a report complete.
+8. Preserve the same-location grouping contract: group rows only when useful address text plus city/district match; do not aggregate city-only or district-only placeholders.
 
 ## Acceptance
 
 - Each of the seven sources has a row in all four bucket columns in the source-link dashboard.
 - Every processed listing has source bucket, category evidence, photo counts, full-gallery status, and image-report status.
+- Every Action0 eligible row has a report or documented skip reason.
 - Dashboard artifacts are regenerated after the run.

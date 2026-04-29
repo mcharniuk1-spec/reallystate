@@ -1,14 +1,14 @@
 # Bulgaria Real Estate Platform Project Status Roadmap
 
-Updated: 2026-04-28
+Updated: 2026-04-29
 
 ## Current Stage
 
-The project is at **Stage 4/9 bridge: tier-1/2 scrape-quality hardening plus product-map UI stabilization**.
+The project is at **Stage 4/9 bridge: tier-1/2 scrape-quality hardening, property image reporting, and product-map UI stabilization**.
 
-The active operator priority is no longer only fixture scaffolding. The repo now contains a file-backed scrape corpus, source/photo dashboards, a Next.js product surface, and a MapLibre/OpenFreeMap 2D/3D map implementation. The next reliable gate is to prove quality across each listing before expanding volume: source links, page description, image counts, local image files, price/size/category plausibility, and building/address confidence.
+The active operator priority is no longer only fixture scaffolding. The repo now contains a file-backed scrape corpus, source/photo dashboards, a Next.js product surface, and a MapLibre/OpenFreeMap 2D/3D map implementation. The next reliable gate is ordered: Action0 property image reports from complete local galleries, Action1 seven-source full scrape/backfill, then Action2 remaining legal tier-1/2 sources.
 
-## 2026-04-28 Current Reporting Pack
+## 2026-04-29 Current Reporting Pack
 
 Repo-owned DOCX outputs were refreshed for handoff and review:
 
@@ -18,19 +18,27 @@ Repo-owned DOCX outputs were refreshed for handoff and review:
 | `docs/exports/project-architecture-execution-guide.docx` | Architecture, agent responsibilities, reporting pack, and OpenClaw/Gemma4 handoff rules. |
 | `docs/exports/project-status-roadmap.docx` | Current stage, risks, and next execution order. |
 
-Current four-bucket sources prepared for Gemma4/OpenClaw reporting: `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO`.
+Current four-bucket sources prepared for Gemma4/OpenClaw reporting and Action1 scrape/backfill: `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO`.
 
 Current required product buckets: buy residential, buy commercial, rent residential, rent commercial.
 
-The next Gemma4 task is per-property image description plus QA reporting from local files only. The next Codex/debugger task after that is to compare each generated image report against scraped descriptions, source links, photo counts, price/size ranges, and map/building confidence.
+Current S1-21 audit artifacts:
+
+- `docs/exports/s1-21-tier12-quality-audit-2026-04-29.md`
+- `docs/exports/s1-21-tier12-quality-audit-2026-04-29.json`
+- `docs/exports/s1-21-gemma-action0-eligible.json`
+
+The next Gemma4 task is **Action0**: per-property image description plus QA reporting from local files only. After that, **Action1** runs the seven-source all-Bulgaria scrape/backfill under operator-approved live runtime. **Action2** continues to the remaining legal tier-1/2 sources after Action1 QA.
 
 **Previous:** Stage 2 (database and persistence) remains in motion with many backend slices implemented or awaiting verification.
 
-**Now:** Execution is **sequenced** per `docs/agents/TASKS.md` § “Immediate execution priorities (2026-04-09)”:
+**Now:** Execution is **sequenced** per `docs/agents/TASKS.md` § `S1-21` / `S1-22`:
 
-1. **`scraper_1`**: `S1-15` → **`S1-18`** (non-stop until **≥100 listings × ≥5** tier-1/2 sources in **`canonical_listing`**; report in `docs/exports/tier12-live-volume-report.md`).
-2. **`backend_developer`**: **`BD-11`** first so live rows are countable in Postgres; **`BD-12`+** after `S1-18`.
-3. **`debugger`**: **`DBG-06`** / **`DBG-05`** after live volume + ingest proof unless waived.
+1. **`scraper_1` / Codex**: `S1-21` verifies saved-row quality, image counts, local file validity, description fullness, and same-location grouping.
+2. **`Gemma4/OpenClaw`**: `S1-22 Action0` describes every eligible property's local images and writes one whole-property visual/QA report.
+3. **`Gemma4/OpenClaw`**: `S1-22 Action1` scrapes/backfills the seven priority sources across four buckets.
+4. **`Gemma4/OpenClaw`**: `S1-22 Action2` continues to remaining legal tier-1/2 sources.
+5. **`debugger`**: verifies reports, source/photo counts, dashboards, and legal/runtime gating.
 
 **Fixture analysis:** `docs/exports/stage1-product-type-coverage.md` — all required product types covered by tier-1/2 fixtures (parser readiness, not production volume).
 

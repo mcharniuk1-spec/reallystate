@@ -43,8 +43,9 @@ make db-init
 - **Gemma4 (Ollama)**:
   - Purely local tasks: summarizing scrape logs, validating extracted JSON, generating SQL queries, generating Markdown/JSON “image report” drafts *from already-local inputs*.
   - Must not do risky compliance decisions; must defer to `data/source_registry.json` + `AGENTS.md`.
-  - For current scrape work, focus on `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO` across buy residential, buy commercial, rent residential, and rent commercial.
-  - For every apartment/property item, describe images one by one and produce a grouped property QA report with style, visual condition, layout/planning evidence, visible tools/equipment, colors, requirements, source links, and uncertainty flags.
+  - Current order is fixed: Action0 property image reports from `docs/exports/s1-21-gemma-action0-eligible.json`, then Action1 seven-source full scrape/backfill, then Action2 remaining legal tier-1/2 sources.
+  - For Action1, focus on `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO` across buy residential, buy commercial, rent residential, and rent commercial.
+  - For every property item, describe images one by one and produce a grouped property QA report with style, visual condition, layout/planning evidence, visible tools/equipment, colors, requirements, source links, same-location status, and uncertainty flags.
 
 - **Claude** (later):
   - Planning documents, larger refactor proposals, multi-file architecture reasoning.

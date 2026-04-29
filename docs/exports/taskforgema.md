@@ -1,11 +1,83 @@
 # Task For Gemma4 / OpenClaw: Full Bulgaria Tier-1/2 Scrape With Complete Galleries
 
 Generated: 2026-04-24
-Updated: 2026-04-28 after Codex map reliability and four-bucket tier-1/2 pattern pass
+Updated: 2026-04-29 after S1-21 file-backed quality audit, same-location grouping contract, and Action0/Action1/Action2 sequencing
 
 ## Objective
 
 Run the Bulgaria Real Estate tier-1/2 scraper to completion for **all Bulgaria**, not only Varna, across all legally allowed, patterned sources and supported buy/rent segments. Save every accepted property with full text, structured fields, source provenance, and all reachable photos as local files.
+
+## Authoritative Action Order
+
+Run the work in this order. Do not swap Action1 before Action0 unless the operator explicitly says to skip existing local-gallery enrichment.
+
+### Action0 — describe already saved property galleries first
+
+Input:
+
+- `docs/exports/s1-21-gemma-action0-eligible.json`
+- `docs/exports/s1-21-tier12-quality-audit-2026-04-29.json`
+- `data/scraped/*/listings/*.json`
+- `data/media/<reference_id>/...`
+- `docs/exports/property-quality-and-building-contract.md`
+
+Do:
+
+1. Process every row in `s1-21-gemma-action0-eligible.json`.
+2. Work property item by property item.
+3. For each property, inspect every local image in the listed order.
+4. Write one complete property-level report that combines all image descriptions with scraped title, description, price, area, category, address/location, source links, and QA checks.
+5. Include per-image scene descriptions and one whole-property summary covering style, visual description, layout/planning clues, requirements, visible tools/equipment, furniture/appliances, colors/materials, condition, risks, and confidence.
+6. Save outputs under `docs/exports/property-image-reports/<source_key>/<safe_reference_id>.md` and `.json`.
+7. Write `docs/exports/property-image-reports/index.md` and `index.json` with source totals, properties described, images described, skipped rows, skip reasons, QA warnings, and fields needing human review.
+
+Acceptance:
+
+- Every Action0 eligible row has a report or a precise skip reason.
+- Every report references only local image files that exist.
+- Every report includes image-by-image observations plus one whole-property description.
+- No rooms, equipment, colors, damage, building facts, or floorplans are invented.
+
+### Action1 — full seven-source all-Bulgaria scrape/backfill
+
+After Action0, run the full all-Bulgaria scrape/backfill for these sources only:
+
+1. `Address.bg`
+2. `BulgarianProperties`
+3. `Homes.bg`
+4. `imot.bg`
+5. `LUXIMMO`
+6. `property.bg`
+7. `SUPRIMMO`
+
+Required four screen categories for every source:
+
+- Buy residential -> `buy_personal`
+- Buy commercial -> `buy_commercial`
+- Rent residential -> `rent_personal`
+- Rent commercial -> `rent_commercial`
+
+For every accepted listing, save:
+
+- source name/key, source URL, all equivalent source links when detected conservatively,
+- title, full page description, combined text, structured attributes,
+- price/currency, area, rooms, floor, property type, buy/rent service type, residential/commercial category,
+- city, district, address text, coordinates/geocoding evidence when available,
+- all remote image URLs and all downloaded local image files,
+- source bucket, category validation evidence, parse warnings, media status, and local file validity.
+
+Acceptance:
+
+- All seven sources are attempted in all four categories under legal/source-registry gates.
+- Each source gets per-bucket logs with saved count, skipped count, block/runtime errors, and parser warnings.
+- Every row has photo counts, description coverage status, and source-link evidence.
+- Dashboards and S1-21/S1-22 exports are refreshed after the run.
+
+### Action2 — remaining legal tier-1/2 sources after Action1
+
+After Action1 is complete and QA-reviewed, repeat the same full scrape/backfill and image-report process for the rest of the legal tier-1/2 source set in `data/source_registry.json`.
+
+Action2 must not include sources marked `legal_review_required`, `licensing_required`, private/social/messenger-only, or blocked by `access_mode` without a separate operator/legal approval.
 
 ## Non-Negotiable Guardrails
 
@@ -20,7 +92,8 @@ Run the Bulgaria Real Estate tier-1/2 scraper to completion for **all Bulgaria**
 
 - Latest review artifact: `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`.
 - Current file-backed corpus has 1,549 saved tier-1/2 items, 18,707 remote photo references, and 5,376 local downloaded photos.
-- No completed apartment image-description reports were found as of 2026-04-27; the next Gemma pass should focus on those reports after Codex finishes `S1-21`.
+- No completed property image-description reports were found as of 2026-04-29; Action0 must create those reports from the S1-21 eligible local-gallery set before Action1 widens live/backfill scraping.
+- S1-21 audit outputs exist: `docs/exports/s1-21-tier12-quality-audit-2026-04-29.json`, `docs/exports/s1-21-tier12-quality-audit-2026-04-29.md`, and `docs/exports/s1-21-gemma-action0-eligible.json`.
 - One-call all-Bulgaria runtime function exists: `bgrealestate.scraping.run_parallel_all_scrape(...)`.
 - CLI wrapper exists: `python -m bgrealestate scrape-all-full`.
 - Legacy Varna-specific function still exists for the old control-plane path: `bgrealestate.scraping.run_parallel_varna_scrape(...)`.
@@ -94,11 +167,11 @@ make dashboard-doc
 
 Use `--dry-run` first if bandwidth or source blocking is uncertain.
 
-## Apartment Image Description Reports
+## Action0 Property Image Description Reports
 
-This is now the next Gemma/OpenClaw task after Codex completes the tier-1/2 quality audit and pattern repair pass (`S1-21`). Do not start from every scraped row blindly; use the Codex-confirmed eligible set of apartment listings with complete local galleries.
+This is the first Gemma/OpenClaw task. It applies to every eligible property item, not only apartments. Do not start from every scraped row blindly; use the Codex-confirmed eligible set in `docs/exports/s1-21-gemma-action0-eligible.json`.
 
-After full-gallery local files exist, create a separate visual report for every accepted apartment listing. Do this listing by listing, and image by image, preserving the source image order.
+After full-gallery local files exist, create a separate visual report for every accepted property listing. Do this listing by listing, and image by image, preserving the source image order.
 
 Before writing each report, run or replicate the property-quality checks from:
 
@@ -116,19 +189,20 @@ The report must cover both visual evidence and contextual consistency:
 
 Output files:
 
-- Per-listing Markdown: `docs/exports/apartment-image-reports/<source_key>/<reference_id>.md`
-- Per-listing JSON: `docs/exports/apartment-image-reports/<source_key>/<reference_id>.json`
-- Global Markdown index: `docs/exports/apartment-image-reports/index.md`
-- Global JSON index: `docs/exports/apartment-image-reports/index.json`
+- Per-listing Markdown: `docs/exports/property-image-reports/<source_key>/<safe_reference_id>.md`
+- Per-listing JSON: `docs/exports/property-image-reports/<source_key>/<safe_reference_id>.json`
+- Global Markdown index: `docs/exports/property-image-reports/index.md`
+- Global JSON index: `docs/exports/property-image-reports/index.json`
+- Legacy compatibility may mirror apartment-only rows to `docs/exports/apartment-image-reports/`, but the authoritative output is `property-image-reports`.
 
 Use only local image files from `local_image_files`. Do not analyze remote URLs unless the local file is missing and the row is explicitly marked as a gap. Do not invent unseen rooms, furniture, condition, or colors. If an element is unclear, write `unclear` and include a confidence value.
 
-For each apartment, the report must include:
+For each property, the report must include:
 
 - source name, source key, reference ID, listing URL, title, price, size, rooms, floor, city, district, address text,
 - photo counts: remote, local, full-gallery flag, photo download status,
-- image group summary: how many images, image ordering, likely room/scene sequence, missing-scene warnings,
-- apartment visual summary: overall style, likely renovation level, condition, natural-light impression, finish/material quality, cleanliness/readiness impression,
+- image group summary: how many images, image ordering, likely room/scene sequence or commercial/exterior sequence, missing-scene warnings,
+- property visual summary: overall style, likely renovation level, condition, natural-light impression, finish/material quality, cleanliness/readiness impression,
 - color palette: dominant wall, floor, cabinet, furniture, textile, bathroom, exterior, and accent colors,
 - planning/layout description: visible room sequence, kitchen relationship to living area, balcony/terrace evidence, corridor/hallway evidence, bathroom count evidence, storage/utility evidence, floorplan evidence,
 - what is present: furniture, appliances, heating/cooling units, sanitary fixtures, lighting, built-ins, balcony items, exterior views, parking/garage evidence, garden/yard evidence,
@@ -138,7 +212,7 @@ For each apartment, the report must include:
 - consistency QA: photo-to-description match, price/size plausibility, missing fields, suspected parser issues, and whether a human should verify the listing,
 - confidence and uncertainty notes for every non-obvious conclusion.
 
-For each image inside the apartment group, create one numbered subsection or JSON object with:
+For each image inside the property group, create one numbered subsection or JSON object with:
 
 - image order and local file path,
 - matching remote URL if available,
@@ -167,7 +241,7 @@ Suggested JSON shape:
     "full_gallery_downloaded": true,
     "photo_download_status": "full_gallery"
   },
-  "apartment_summary": {
+  "property_visual_summary": {
     "overall_style": "modern / classic / dated / luxury / unfinished / unclear",
     "visual_description": "...",
     "planning": "...",
@@ -206,13 +280,14 @@ Suggested JSON shape:
 
 Recommended execution order:
 
-1. Finish local gallery backfill.
-2. Build the per-listing image report generator.
-3. Run it first on 5 apartments per high-volume source and inspect the Markdown manually.
-4. Run it for all apartment listings with complete local galleries.
-5. Write the global index with source totals, apartment counts, images analyzed, reports created, skipped items, and skip reasons.
+1. Run Action0 from `docs/exports/s1-21-gemma-action0-eligible.json`.
+2. Inspect 5 property reports per high-volume source manually before the full Action0 batch.
+3. Write the global index with source totals, property counts, images analyzed, reports created, skipped items, and skip reasons.
+4. Run Action1 seven-source all-Bulgaria scrape/backfill.
+5. Re-run Action0 for newly complete local-gallery rows.
+6. Run Action2 for the remaining legal tier-1/2 source set after Action1 is accepted.
 
-Completion rule: an apartment with photos is not fully enriched until it has both all local images and one per-apartment visual report covering every local image in order.
+Completion rule: a property with photos is not fully enriched until it has both all local images and one per-property visual report covering every local image in order.
 
 ## PostgreSQL Proof Path
 
@@ -296,7 +371,7 @@ Confirm `docs/dashboard/scrape-status.html` shows, source by source:
 - For every listed item that exposes photos, `photo_count_local >= photo_count_remote` or the row is explicitly marked with `partial_gallery` / `no_local_files`.
 - Every source section called `Patterned` has at least one saved sample with full local gallery, description, price, city/address, and at least two structured fields.
 - Dashboard and JSON exports are regenerated.
-- Apartment image description reports exist for every apartment listing with complete local galleries, with one grouped report per apartment and one description entry per image.
+- Property image description reports exist for every Action0 eligible listing with complete local galleries, with one grouped report per property and one description entry per image.
 - Any blocked source has an explicit reason: legal gate, pattern incomplete, HTTP/DNS failure, anti-bot, or no usable all-Bulgaria/category route.
 
 ## Gaps To Close

@@ -1036,3 +1036,30 @@ Modified files:
   - FACT: all seven priority sources now expose four non-empty bucket definitions in the curated section catalog.
   - INTERPRETATION: sources with mixed public routes must classify residential/commercial from card/detail text before accepting a listing into the bucket.
   - GAP: live reachability was not tested in this local pass; the next live scrape must record route/runtime failures by source and bucket.
+
+### 2026-04-29 — S1-21 file-backed quality audit + Gemma action sequencing
+
+- **Action**: Ran the S1-21 offline audit for the seven Gemma priority sources, generated the Action0 eligible set, codified same-location grouping, and updated Gemma/OpenClaw task sequencing.
+- **Changed files**:
+  - `scripts/generate_s1_21_quality_audit.py`
+  - `docs/exports/s1-21-tier12-quality-audit-2026-04-29.json`
+  - `docs/exports/s1-21-tier12-quality-audit-2026-04-29.md`
+  - `docs/exports/s1-21-gemma-action0-eligible.json`
+  - `docs/exports/taskforgema.md`
+  - `docs/openclaw/gemma4-agent.md`
+  - `docs/exports/reporting-and-instruction-index.md`
+  - `docs/exports/tier12-four-bucket-pattern-handoff-2026-04-28.md`
+  - `docs/agents/TASKS.md`
+  - `docs/agents/README.md`
+  - `lib/listing-source-links.ts`
+  - `components/listings/MainExplorer.tsx`
+- **Commands run**:
+  - `python3 scripts/generate_s1_21_quality_audit.py`
+- **Tests run**:
+  - S1-21 audit generation: pass after report-format patch.
+- **Status**: `DONE_AWAITING_VERIFY`
+- **Review comments**:
+  - FACT: Action0 has 397 eligible rows with complete local-gallery evidence across the seven priority sources.
+  - FACT: same-location grouping now uses useful address text plus city/district and excludes city-only or district-only placeholder grouping.
+  - INTERPRETATION: Gemma should enrich existing complete galleries before the next live/backfill scrape wave so image-description gaps start shrinking immediately.
+  - GAP: Action1 live scrape/backfill remains operator/runtime gated and was not executed by this offline S1-21 audit.

@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import type { Listing, ListingSourceLink } from "@/lib/types/listing";
-import { getListingSourceLinks, normalizeText } from "@/lib/listing-source-links";
+import { buildLocationAggregateReferenceIndex, getListingSourceLinks, normalizeText } from "@/lib/listing-source-links";
 import { MapCanvas, type MapListing } from "@/components/map/MapCanvas";
 
 type DealMode = "buy" | "rent";
@@ -97,11 +97,6 @@ function buildSourceLinkIndex(items: Listing[]) {
   return index;
 }
 
-function hasCrossSourceAggregate(links: ListingSourceLink[] | undefined) {
-  if (!links) return false;
-  return new Set(links.map((link) => link.source_key ?? link.source_name)).size > 1;
-}
-
 function mapGroupKey(item: Listing) {
   const city = normalizeText(item.city ?? item.region) || "bulgaria";
   const district = normalizeText(item.district ?? item.resort ?? item.address_text) || "area";
@@ -184,13 +179,14 @@ export function MainExplorer() {
 
   const baseMapped = useMemo(() => filtered.map(withMapLocation), [filtered]);
   const sourceLinksByReference = useMemo(() => buildSourceLinkIndex(baseMapped), [baseMapped]);
+  const locationGroupsByReference = useMemo(() => buildLocationAggregateReferenceIndex(baseMapped), [baseMapped]);
   const aggregateCount = useMemo(
-    () => baseMapped.filter((item) => hasCrossSourceAggregate(sourceLinksByReference.get(item.reference_id))).length,
-    [baseMapped, sourceLinksByReference],
+    () => baseMapped.filter((item) => (locationGroupsByReference.get(item.reference_id)?.length ?? 0) > 1).length,
+    [baseMapped, locationGroupsByReference],
   );
   const mapped = useMemo(
-    () => (aggregateOnly ? baseMapped.filter((item) => hasCrossSourceAggregate(sourceLinksByReference.get(item.reference_id))) : baseMapped),
-    [aggregateOnly, baseMapped, sourceLinksByReference],
+    () => (aggregateOnly ? baseMapped.filter((item) => (locationGroupsByReference.get(item.reference_id)?.length ?? 0) > 1) : baseMapped),
+    [aggregateOnly, baseMapped, locationGroupsByReference],
   );
   const selected = useMemo(() => (selectedId ? mapped.find((item) => item.reference_id === selectedId) ?? null : null), [mapped, selectedId]);
   const listed = useMemo(() => (selected ? [selected, ...mapped.filter((item) => item.reference_id !== selected.reference_id)] : mapped), [mapped, selected]);
@@ -271,7 +267,7 @@ export function MainExplorer() {
 
         <aside className="flex min-h-0 flex-col overflow-hidden rounded-3xl border border-line bg-panel shadow-lift">
           <div className="border-b border-line p-3">
-            {selected ? <SelectedProperty item={selected} /> : <EmptySelection count={mapped.length} />}
+            {selected ? <SelectedProperty item={selected} locationGroupCount={locationGroupsByReference.get(selected.reference_id)?.length ?? 1} /> : <EmptySelection count={mapped.length} />}
           </div>
           <div className="flex items-center justify-between px-4 py-3">
             <h2 className="text-sm font-semibold text-ink">Nearby properties</h2>
@@ -285,6 +281,7 @@ export function MainExplorer() {
                 selected={item.reference_id === selected?.reference_id}
                 expanded={Boolean(expandedDescriptions[item.reference_id])}
                 sourceLinks={sourceLinksByReference.get(item.reference_id) ?? []}
+                locationGroupCount={locationGroupsByReference.get(item.reference_id)?.length ?? 1}
                 onSelect={setSelectedId}
                 onToggleDescription={(id) => setExpandedDescriptions((state) => ({ ...state, [id]: !state[id] }))}
               />
@@ -338,7 +335,7 @@ function EmptySelection({ count }: { count: number }) {
   );
 }
 
-function SelectedProperty({ item }: { item: Listing }) {
+function SelectedProperty({ item, locationGroupCount }: { item: Listing; locationGroupCount: number }) {
   const local = item.photo_count_local ?? item.local_image_files?.length ?? 0;
   const remote = item.photo_count_remote ?? item.image_urls.length;
   return (
@@ -356,6 +353,9 @@ function SelectedProperty({ item }: { item: Listing }) {
           <span className="rounded-md bg-panel px-2 py-1">{item.area_sqm ? `${Math.round(item.area_sqm)} m²` : "area n/a"}</span>
           <span className="rounded-md bg-panel px-2 py-1">{item.rooms ? `${item.rooms} rooms` : item.property_category}</span>
         </div>
+        {locationGroupCount > 1 ? (
+          <p className="mt-2 rounded-md bg-sea/10 px-2 py-1 text-[10px] font-semibold text-sea">{locationGroupCount} listings share this address/location</p>
+        ) : null}
         <Link
           href={`/properties/${encodeURIComponent(item.reference_id)}`}
           className="mt-3 block rounded-xl bg-sea px-3 py-2 text-center text-sm font-semibold text-white transition hover:bg-sea-bright"
@@ -372,6 +372,7 @@ function PropertyCard({
   selected,
   expanded,
   sourceLinks,
+  locationGroupCount,
   onSelect,
   onToggleDescription,
 }: {
@@ -379,6 +380,7 @@ function PropertyCard({
   selected: boolean;
   expanded: boolean;
   sourceLinks: ListingSourceLink[];
+  locationGroupCount: number;
   onSelect: (id: string) => void;
   onToggleDescription: (id: string) => void;
 }) {
@@ -428,6 +430,9 @@ function PropertyCard({
             </span>
             <span className="rounded-md bg-panel px-2 py-1">Q {item.scrape_quality_score ?? "n/a"}</span>
           </div>
+          {locationGroupCount > 1 ? (
+            <p className="mt-2 rounded-md bg-sea/10 px-2 py-1 text-[10px] font-semibold text-sea">{locationGroupCount} same-location rows</p>
+          ) : null}
         </div>
       </button>
       <div className="border-t border-line/60 px-3 pb-3 pt-2">

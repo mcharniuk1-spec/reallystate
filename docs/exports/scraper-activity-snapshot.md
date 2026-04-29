@@ -1,6 +1,6 @@
 # Scraper activity snapshot
 
-_Generated: 2026-04-29T03:59:10.263252+00:00_
+_Generated: 2026-04-29T08:18:13.809361+00:00_
 
 Summary of **fixture and live** work across scraper lanes. Authoritative logs: `docs/agents/scraper_1/JOURNEY.md`, `docs/agents/scraper_t3/JOURNEY.md`, `docs/agents/scraper_sm/JOURNEY.md`.
 

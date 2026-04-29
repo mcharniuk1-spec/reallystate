@@ -311,7 +311,7 @@
   </div>
 
     <script id="dashboard-data" type="application/json">{
-  "generated_at": "2026-04-29T03:59:10.263252+00:00",
+  "generated_at": "2026-04-29T08:18:13.809361+00:00",
   "roadmap": {
     "done": 46,
     "total": 128,
@@ -546,6 +546,15 @@
           "commands": "deferred formal verification until `S1-21` is executed.",
           "status": "DEFERRED",
           "review": "verify `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`; verify the next Codex run produces per-source/per-property gaps; verify parser fixes are code-backed and fixture-tested; verify Gemma receives only Codex-confirmed apartment rows with complete local galleries."
+        },
+        {
+          "title": "2026-04-29 — debugger follow-up queued: S1-21 audit + same-location grouping + Gemma sequence",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "deferred formal verification until the updated S1-21 artifacts, frontend grouping behavior, and dashboard refresh are reviewed together.",
+          "status": "DEFERRED",
+          "review": "verify `docs/exports/s1-21-tier12-quality-audit-2026-04-29.md`, `docs/exports/s1-21-gemma-action0-eligible.json`, same-location aggregate behavior in the website, and the updated Action0/Action1/Action2 Gemma task sequence."
         }
       ],
       "tasks": {
@@ -622,7 +631,7 @@
         "todo": 6,
         "blocked": 0,
         "total": 10,
-        "journal_entries": 18,
+        "journal_entries": 19,
         "efficiency_pct": 40
       }
     },
@@ -1587,6 +1596,15 @@
           "commands": "",
           "status": "`DONE_AWAITING_VERIFY`",
           "review": "FACT: all seven priority sources now expose four non-empty bucket definitions in the curated section catalog., INTERPRETATION: sources with mixed public routes must classify residential/commercial from card/detail text before accepting a listing into the bucket., GAP: live reachability was not tested in this local pass; the next live scrape must record route/runtime failures by source and bucket."
+        },
+        {
+          "title": "2026-04-29 — S1-21 file-backed quality audit + Gemma action sequencing",
+          "summary": "",
+          "action": "Ran the S1-21 offline audit for the seven Gemma priority sources, generated the Action0 eligible set, codified same-location grouping, and updated Gemma/OpenClaw task sequencing.",
+          "changed_files": "scripts/generate_s1_21_quality_audit.py, docs/exports/s1-21-tier12-quality-audit-2026-04-29.json, docs/exports/s1-21-tier12-quality-audit-2026-04-29.md, docs/exports/s1-21-gemma-action0-eligible.json, docs/exports/taskforgema.md, docs/openclaw/gemma4-agent.md, docs/exports/reporting-and-instruction-index.md, docs/exports/tier12-four-bucket-pattern-handoff-2026-04-28.md, docs/agents/TASKS.md, docs/agents/README.md, lib/listing-source-links.ts, components/listings/MainExplorer.tsx",
+          "commands": "python3 scripts/generate_s1_21_quality_audit.py, S1-21 audit generation: pass after report-format patch.",
+          "status": "`DONE_AWAITING_VERIFY`",
+          "review": "FACT: Action0 has 397 eligible rows with complete local-gallery evidence across the seven priority sources., FACT: same-location grouping now uses useful address text plus city/district and excludes city-only or district-only placeholder grouping., INTERPRETATION: Gemma should enrich existing complete galleries before the next live/backfill scrape wave so image-description gaps start shrinking immediately., GAP: Action1 live scrape/backfill remains operator/runtime gated and was not executed by "
         }
       ],
       "tasks": {
@@ -1642,6 +1660,12 @@
             "details": "IN_PROGRESS` (2026-04-21; strict pattern repairs promoted `Address.bg`, `BulgarianProperties`, `LUXIMMO`, `OLX.bg`, `property.bg`, `SUPRIMMO`, `Bazar.bg`, and `Yavlena` to `Patterned` from saved item evidence; DB proof is still blocked because no PostgreSQL server is running locally and Docker daemon/compose are unavailable in this environment; `alo.bg`/`Domaza`/`Home2U` still remain low-yield or zero-sample)"
           },
           {
+            "id": "S1-21",
+            "title": "Codex tier-1/2 scrape quality audit + pattern repair prep",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-29; file-backed S1-21 audit, Action0 eligible set, same-location grouping contract, and frontend same-location aggregate filter prepared; live Action1 scrape/backfill remains operator/runtime gated)"
+          },
+          {
             "id": "S1-20",
             "title": "Stage 1 controlled production prep — Varna-only region-first control plane (no live crawl)",
             "status": "DONE_AWAITING_VERIFY",
@@ -1656,14 +1680,8 @@
             "details": "TODO"
           },
           {
-            "id": "S1-21",
-            "title": "Codex tier-1/2 scrape quality audit + pattern repair prep",
-            "status": "TODO",
-            "details": "TODO"
-          },
-          {
             "id": "S1-22",
-            "title": "Gemma/OpenClaw apartment image-report generation handoff",
+            "title": "Gemma/OpenClaw Action0/Action1/Action2 property image-report + scrape handoff",
             "status": "TODO",
             "details": "TODO"
           },
@@ -1684,12 +1702,12 @@
       },
       "counts": {
         "verified": 3,
-        "in_progress": 6,
-        "todo": 5,
+        "in_progress": 7,
+        "todo": 4,
         "blocked": 0,
         "total": 14,
-        "journal_entries": 44,
-        "efficiency_pct": 43
+        "journal_entries": 45,
+        "efficiency_pct": 46
       }
     },
     {
@@ -2204,10 +2222,10 @@
       "label": "Tier-1/2 Scraping",
       "total": 14,
       "done_count": 3,
-      "current_count": 6,
-      "next_count": 5,
+      "current_count": 7,
+      "next_count": 4,
       "blocked_count": 0,
-      "progress_percent": 43,
+      "progress_percent": 46,
       "done_tasks": [
         {
           "id": "S1-01",
@@ -2260,6 +2278,12 @@
           "details": "IN_PROGRESS` (2026-04-21; strict pattern repairs promoted `Address.bg`, `BulgarianProperties`, `LUXIMMO`, `OLX.bg`, `property.bg`, `SUPRIMMO`, `Bazar.bg`, and `Yavlena` to `Patterned` from saved item evidence; DB proof is still blocked because no PostgreSQL server is running locally and Docker daemon/compose are unavailable in this environment; `alo.bg`/`Domaza`/`Home2U` still remain low-yield or zero-sample)"
         },
         {
+          "id": "S1-21",
+          "title": "Codex tier-1/2 scrape quality audit + pattern repair prep",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-29; file-backed S1-21 audit, Action0 eligible set, same-location grouping contract, and frontend same-location aggregate filter prepared; live Action1 scrape/backfill remains operator/runtime gated)"
+        },
+        {
           "id": "S1-20",
           "title": "Stage 1 controlled production prep — Varna-only region-first control plane (no live crawl)",
           "status": "DONE_AWAITING_VERIFY",
@@ -2274,14 +2298,8 @@
           "details": "TODO"
         },
         {
-          "id": "S1-21",
-          "title": "Codex tier-1/2 scrape quality audit + pattern repair prep",
-          "status": "TODO",
-          "details": "TODO"
-        },
-        {
           "id": "S1-22",
-          "title": "Gemma/OpenClaw apartment image-report generation handoff",
+          "title": "Gemma/OpenClaw Action0/Action1/Action2 property image-report + scrape handoff",
           "status": "TODO",
           "details": "TODO"
         },
@@ -2299,7 +2317,7 @@
         }
       ],
       "blocked_tasks": [],
-      "comment": "3 done, 6 current, 5 next"
+      "comment": "3 done, 7 current, 4 next"
     },
     {
       "key": "scraper_t3",
@@ -2767,6 +2785,14 @@
       "details": "DONE_AWAITING_VERIFY` (2026-04-23; control-plane widened to all tier-1/2 sources, per-source/segment readiness matrix, threshold summary, queue status, manual control worker, pause/unpause command, and manual activation runbook; operator must still run migrations locally and decide when to enqueue)"
     },
     {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-21",
+      "title": "Codex tier-1/2 scrape quality audit + pattern repair prep",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-29; file-backed S1-21 audit, Action0 eligible set, same-location grouping contract, and frontend same-location aggregate filter prepared; live Action1 scrape/backfill remains operator/runtime gated)"
+    },
+    {
       "owner_key": "scraper_sm",
       "owner": "Scraper SM",
       "id": "SM-02",
@@ -3009,16 +3035,8 @@
     {
       "owner_key": "scraper_1",
       "owner": "Scraper 1",
-      "id": "S1-21",
-      "title": "Codex tier-1/2 scrape quality audit + pattern repair prep",
-      "status": "TODO",
-      "details": "TODO"
-    },
-    {
-      "owner_key": "scraper_1",
-      "owner": "Scraper 1",
       "id": "S1-22",
-      "title": "Gemma/OpenClaw apartment image-report generation handoff",
+      "title": "Gemma/OpenClaw Action0/Action1/Action2 property image-report + scrape handoff",
       "status": "TODO",
       "details": "TODO"
     },

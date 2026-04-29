@@ -246,9 +246,9 @@ def four_bucket_pattern_rows() -> list[list[str]]:
 
 
 def four_bucket_addendum_markdown() -> str:
-    return f"""## 2026-04-28 Tier-1/2 Four-Bucket Scrape Addendum
+    return f"""## 2026-04-29 Tier-1/2 Four-Bucket Scrape Addendum
 
-This addendum is generated from `docs/exports/source-item-photo-coverage.json` and `data/scrape_patterns/regions/varna/sections.json`. It covers the current OpenClaw/Gemma4 handoff sources across the four product buckets from the operator screen: buy residential, buy commercial, rent residential, and rent commercial.
+This addendum is generated from `docs/exports/source-item-photo-coverage.json`, `docs/exports/s1-21-tier12-quality-audit-2026-04-29.json`, and `data/scrape_patterns/regions/varna/sections.json`. It covers the current OpenClaw/Gemma4 handoff sources across the four product buckets from the operator screen: buy residential, buy commercial, rent residential, and rent commercial.
 
 ### Current Item And Photo Coverage
 
@@ -260,11 +260,13 @@ This addendum is generated from `docs/exports/source-item-photo-coverage.json` a
 
 ### Agent Handoff Rules
 
-1. Gemma4/OpenClaw must consume only local files listed in `local_image_files`.
-2. Each property report must combine scraped page description, structured fields, source links, and ordered image descriptions.
-3. Photo counts, price, size, city/address, and category must be checked before marking a listing complete.
-4. Missing full-gallery status is a quality flag, not proof that the listing is unusable.
-5. Live scraping remains operator-approved and must respect `legal_mode`, `risk_mode`, and `access_mode` from `data/source_registry.json`.
+1. Action0 runs first: Gemma4/OpenClaw consumes `docs/exports/s1-21-gemma-action0-eligible.json` and only local files listed in `local_image_files`.
+2. Each property report must combine scraped page description, structured fields, source links, ordered image descriptions, and one whole-property visual summary.
+3. Photo counts, local file validity, price, size, city/address, category, and same-location status must be checked before marking a listing complete.
+4. Action1 runs second: the seven priority sources are scraped/backfilled across all four buckets only under operator-approved live runtime.
+5. Action2 runs third: remaining legal tier-1/2 sources continue after Action1 QA.
+6. Missing full-gallery status is a quality flag, not proof that the listing is unusable.
+7. Live scraping remains operator-approved and must respect `legal_mode`, `risk_mode`, and `access_mode` from `data/source_registry.json`.
 """
 
 
@@ -503,17 +505,19 @@ def write_docx(path: Path, sources: list[dict]) -> None:
         paragraph(f"The source inventory covers {len(sources)} Bulgarian real estate, short-term-rental, official-register, analytics, and social/messaging sources. It is designed as the handoff table for scraper, map, CRM, and reverse-publishing implementation."),
         paragraph("Source Coverage Logic", "Heading1"),
         paragraph("Tier 1 is for first ingestion. Tier 2 is for expansion after parser gates. Tier 3 is partner/vendor/official-service first. Tier 4 is lead intelligence only and must respect consent rules."),
-        paragraph("2026-04-28 Tier-1/2 Four-Bucket Scrape Addendum", "Heading1"),
-        paragraph("Generated from current scrape/photo coverage and Varna four-bucket pattern manifests for the OpenClaw/Gemma4 handoff."),
+        paragraph("2026-04-29 Tier-1/2 Four-Bucket Scrape Addendum", "Heading1"),
+        paragraph("Generated from current scrape/photo coverage, S1-21 quality audit outputs, and four-bucket pattern manifests for the OpenClaw/Gemma4 handoff."),
         paragraph("Current Item And Photo Coverage", "Heading1"),
         docx_table(four_bucket_media_rows(), max_rows=None),
         paragraph("Four-Bucket Pattern Readiness", "Heading1"),
         docx_table(four_bucket_pattern_rows(), max_rows=None),
         paragraph("Agent Handoff Rules", "Heading1"),
-        paragraph("1. Gemma4/OpenClaw must consume only local files listed in local_image_files."),
-        paragraph("2. Each property report must combine scraped page description, structured fields, source links, and ordered image descriptions."),
-        paragraph("3. Photo counts, price, size, city/address, and category must be checked before marking a listing complete."),
-        paragraph("4. Live scraping remains operator-approved and must respect legal_mode, risk_mode, and access_mode from data/source_registry.json."),
+        paragraph("1. Action0 runs first from docs/exports/s1-21-gemma-action0-eligible.json and consumes only local files listed in local_image_files."),
+        paragraph("2. Each property report must combine scraped page description, structured fields, source links, ordered image descriptions, and one whole-property visual summary."),
+        paragraph("3. Photo counts, local file validity, price, size, city/address, category, and same-location status must be checked before marking a listing complete."),
+        paragraph("4. Action1 runs second for the seven priority sources across all four buckets under operator-approved live runtime."),
+        paragraph("5. Action2 runs third for remaining legal tier-1/2 sources after Action1 QA."),
+        paragraph("6. Live scraping remains operator-approved and must respect legal_mode, risk_mode, and access_mode from data/source_registry.json."),
         paragraph("Main Source Link Table", "Heading1"),
         docx_table(rows, max_rows=None),
         paragraph("Debugging And Inefficiency Audit", "Heading1"),

@@ -1,6 +1,6 @@
 # Bulgaria Real Estate Platform Architecture And Execution Guide
 
-Updated: 2026-04-28
+Updated: 2026-04-29
 
 ## 1. Purpose
 
@@ -48,7 +48,13 @@ The current four-bucket tier-1/2 scrape handoff is centered on `Address.bg`, `Bu
 3. rent residential
 4. rent commercial
 
-Gemma4/OpenClaw must consume only local listing JSON and local image files, then produce per-property image descriptions and QA reports using `docs/exports/taskforgema.md` and `docs/exports/property-quality-and-building-contract.md`.
+Gemma4/OpenClaw must follow the current sequence:
+
+1. **Action0**: consume `docs/exports/s1-21-gemma-action0-eligible.json`, local listing JSON, and local image files, then produce per-property image descriptions and QA reports.
+2. **Action1**: under operator-approved live runtime, scrape/backfill `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO` across all four buckets.
+3. **Action2**: after Action1 QA, continue the same workflow for remaining legal tier-1/2 sources.
+
+Use `docs/exports/taskforgema.md`, `docs/exports/s1-21-tier12-quality-audit-2026-04-29.md`, and `docs/exports/property-quality-and-building-contract.md` as the authoritative handoff.
 
 ## 2. Product Goal
 

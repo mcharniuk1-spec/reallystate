@@ -1,6 +1,6 @@
 # Bulgaria Real Estate Source Links And Debug Report
 
-Generated: 2026-04-29T03:47:34.208141+00:00
+Generated: 2026-04-29T08:12:29.216952+00:00
 
 ## Executive Summary
 
@@ -19,9 +19,9 @@ The platform should continue with a source-first implementation sequence: regist
 
 Tier 1 is for the first ingestion wave: OLX via official API where possible, then crawl-friendly or high-value Bulgarian portals and agencies. Tier 2 is targeted expansion after parser gates. Tier 3 is partner/vendor/official-service first: Airbnb, Booking.com, Vrbo, AirDNA, Airbtics, official registers, cadastre, and auctions. Tier 4 is lead intelligence only: Telegram and public social overlays where appropriate, and consent-only Viber/WhatsApp/private-channel flows.
 
-## 2026-04-28 Tier-1/2 Four-Bucket Scrape Addendum
+## 2026-04-29 Tier-1/2 Four-Bucket Scrape Addendum
 
-This addendum is generated from `docs/exports/source-item-photo-coverage.json` and `data/scrape_patterns/regions/varna/sections.json`. It covers the current OpenClaw/Gemma4 handoff sources across the four product buckets from the operator screen: buy residential, buy commercial, rent residential, and rent commercial.
+This addendum is generated from `docs/exports/source-item-photo-coverage.json`, `docs/exports/s1-21-tier12-quality-audit-2026-04-29.json`, and `data/scrape_patterns/regions/varna/sections.json`. It covers the current OpenClaw/Gemma4 handoff sources across the four product buckets from the operator screen: buy residential, buy commercial, rent residential, and rent commercial.
 
 ### Current Item And Photo Coverage
 
@@ -49,11 +49,13 @@ This addendum is generated from `docs/exports/source-item-photo-coverage.json` a
 
 ### Agent Handoff Rules
 
-1. Gemma4/OpenClaw must consume only local files listed in `local_image_files`.
-2. Each property report must combine scraped page description, structured fields, source links, and ordered image descriptions.
-3. Photo counts, price, size, city/address, and category must be checked before marking a listing complete.
-4. Missing full-gallery status is a quality flag, not proof that the listing is unusable.
-5. Live scraping remains operator-approved and must respect `legal_mode`, `risk_mode`, and `access_mode` from `data/source_registry.json`.
+1. Action0 runs first: Gemma4/OpenClaw consumes `docs/exports/s1-21-gemma-action0-eligible.json` and only local files listed in `local_image_files`.
+2. Each property report must combine scraped page description, structured fields, source links, ordered image descriptions, and one whole-property visual summary.
+3. Photo counts, local file validity, price, size, city/address, category, and same-location status must be checked before marking a listing complete.
+4. Action1 runs second: the seven priority sources are scraped/backfilled across all four buckets only under operator-approved live runtime.
+5. Action2 runs third: remaining legal tier-1/2 sources continue after Action1 QA.
+6. Missing full-gallery status is a quality flag, not proof that the listing is unusable.
+7. Live scraping remains operator-approved and must respect `legal_mode`, `risk_mode`, and `access_mode` from `data/source_registry.json`.
 
 
 ## Source Link Table

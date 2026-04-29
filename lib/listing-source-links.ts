@@ -71,6 +71,34 @@ export function sourceMatchEvidence(base: Listing, candidate: Listing): string[]
   return evidence.slice(0, 5);
 }
 
+export function locationAggregateKey(listing: Listing): string {
+  const address = usefulAddressText(listing);
+  if (!address) return "";
+
+  const city = normalizeText(listing.city ?? listing.region);
+  const district = normalizeText(listing.district ?? listing.resort);
+  return [city || "bg", district || "area", address].join("::");
+}
+
+export function buildLocationAggregateIndex(items: Listing[]): Map<string, Listing[]> {
+  const groups = new Map<string, Listing[]>();
+  for (const item of items) {
+    const key = locationAggregateKey(item);
+    if (!key) continue;
+    groups.set(key, [...(groups.get(key) ?? []), item]);
+  }
+  return groups;
+}
+
+export function buildLocationAggregateReferenceIndex(items: Listing[]): Map<string, Listing[]> {
+  const byReference = new Map<string, Listing[]>();
+  for (const group of buildLocationAggregateIndex(items).values()) {
+    if (group.length < 2) continue;
+    for (const item of group) byReference.set(item.reference_id, group);
+  }
+  return byReference;
+}
+
 export function closeNumber(a: number | null, b: number | null, percent: number, absolute: number): boolean {
   if (a == null || b == null || a <= 0 || b <= 0) return false;
   return Math.abs(a - b) <= Math.max(Math.max(a, b) * percent, absolute);
@@ -87,6 +115,20 @@ export function normalizeText(value: string | null | undefined): string {
     .toLowerCase()
     .replace(/[^\p{L}\p{N}]+/gu, " ")
     .trim();
+}
+
+function usefulAddressText(listing: Listing): string {
+  const rawAddress = normalizeText(listing.address_text);
+  if (!rawAddress) return "";
+
+  const city = normalizeText(listing.city ?? listing.region);
+  const district = normalizeText(listing.district ?? listing.resort);
+  const cityDistrict = [city, district].filter(Boolean).join(" ");
+  const districtCity = [district, city].filter(Boolean).join(" ");
+  const weakLocations = new Set([city, district, cityDistrict, districtCity].filter(Boolean));
+  if (weakLocations.has(rawAddress)) return "";
+  if (rawAddress.length < 5) return "";
+  return rawAddress;
 }
 
 export function titleOverlap(a: string | null | undefined, b: string | null | undefined): number {

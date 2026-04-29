@@ -14,7 +14,7 @@ export type PropertyCategory =
 
 export type ConstructionType = "brick" | "panel" | "epk" | "monolith" | "wood" | "other";
 
-export type Amenity =
+export type KnownAmenity =
   | "parking"
   | "balcony"
   | "elevator"
@@ -26,6 +26,8 @@ export type Amenity =
   | "garage"
   | "ac"
   | "central_heating";
+
+export type Amenity = KnownAmenity | (string & {});
 
 export type Listing = {
   reference_id: string;

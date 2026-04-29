@@ -50,23 +50,26 @@ This digest captures the full operator intent and execution context from the lat
 - Backlog enriched with new backend/frontend/scraper/debugger/lead slices for deployment-ready execution.
 - Dashboard reliability issue fixed (embedded payload support for local `file://` opens) and dashboard regenerated.
 
-### D) Immediate execution priorities (2026-04-09 — operator lock-in)
+### D) Immediate execution priorities (2026-04-29 — S1-21 / S1-22 sequence)
 
-**Single focus lane until the volume gate is met:** `scraper_1` tier-1/2 live harvesting. Other specialists **do not start new non-blocking slices** except the narrow backend prerequisite below and recurring `CONST-*` hygiene.
+**Single focus lane now:** make the S1-21/S1-22 handoff executable in a strict order so scrape QA, image-description enrichment, and the next live/backfill wave do not run out of sequence.
 
-1. **`scraper_1` — non-stop until volume gate (see `S1-18`)**  
-   Implement/complete live HTTP + discovery + detail ingest (`S1-15`), then **continue running harvests without pausing for “slice done”** until **at least 5 distinct tier-1 or tier-2 sources** each have **≥100** persisted listing rows (see `S1-18` for counting rules).
+1. **`scraper_1` / Codex — S1-21 quality audit and pattern contract**  
+   Audit saved tier-1/2 rows for scrape quality, image counts, local file validity, description fullness, price/size/category/location fields, same-location grouping, and source-link evidence. Produce `docs/exports/s1-21-tier12-quality-audit-2026-04-29.{json,md}` and `docs/exports/s1-21-gemma-action0-eligible.json`.
 
-2. **`backend_developer` — prerequisite only until `S1-18` is met**  
-   **`BD-11` is the mandatory prerequisite** so live scrapes can land in `canonical_listing` (and related tables) for auditable counts. **Do not** treat `BD-12`–`BD-16` as in-scope for the same sprint wave as `S1-18` unless they unblock ingest. After `S1-18` is `VERIFIED`, resume the backend chain: `BD-12` → `BD-13` → `BD-14` → `BD-15` → …
+2. **`Gemma4/OpenClaw` — Action0 first**  
+   Process every row in `docs/exports/s1-21-gemma-action0-eligible.json`. For each property, describe every local image in order and write one whole-property visual/QA report under `docs/exports/property-image-reports/`.
 
-3. **`debugger` — planned after backend chain catches up**  
-   - **`DBG-06`**: batch-verify all `DONE_AWAITING_VERIFY` slices **after** `S1-18` is `VERIFIED` and **`BD-11` ingest is proven** on live rows (or operator explicitly waives DB counts — document in JOURNEY).  
-   - **`DBG-05`**: stage-1 quality gate (fixtures + product types per `docs/exports/stage1-product-type-coverage.md`) **after** live volume evidence exists or is explicitly deferred.
+3. **`Gemma4/OpenClaw` — Action1 second**  
+   Run the operator-approved all-Bulgaria scrape/backfill for exactly `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO` across buy residential, buy commercial, rent residential, and rent commercial.
 
-4. **Parked (do not expand until `S1-18` VERIFIED):** new `scraper_t3` / `scraper_sm` live work, LUN-style UX expansion (`UX-04`–`UX-12`), and deployment slices — unless they fix a blocker for tier-1/2 ingest.
+4. **`Gemma4/OpenClaw` — Action2 third**  
+   After Action1 QA, continue the same scrape/backfill plus property image-report workflow for the remaining legal tier-1/2 sources in `data/source_registry.json`.
 
-5. **Recurring:** `CONST-01` / `CONST-02`, `LEAD-05` dashboard refresh after any TASKS/JOURNEY change.
+5. **`debugger` — verification**  
+   Verify S1-21 outputs, Action0 report completeness, Action1 source/bucket logs, same-location aggregate behavior, source-link buttons, dashboards, and legal/runtime gating.
+
+6. **Recurring:** `CONST-01` / `CONST-02`, `LEAD-05` dashboard refresh after any TASKS/JOURNEY change.
 
 **Fixture / stage-1 analysis (no live DB):** `docs/exports/stage1-product-type-coverage.md` — all required product types (`sale`, `long_term_rent`, `short_term_rent`, `land`, `new_build`) are covered by tier-1/2 fixtures; this is **parser readiness**, not production volume.
 
@@ -501,9 +504,9 @@ Bulk live harvesting was started outside the formal S1-15 acceptance gate; do **
 - **Depends on**: `S1-15`, `BD-11`
 
 ### S1-21: Codex tier-1/2 scrape quality audit + pattern repair prep
-- **Status**: `TODO`
+- **Status**: `DONE_AWAITING_VERIFY` (2026-04-29; file-backed S1-21 audit, Action0 eligible set, same-location grouping contract, and frontend same-location aggregate filter prepared; live Action1 scrape/backfill remains operator/runtime gated)
 - **Priority**: **CRITICAL** — next operator-requested tier-1/2 run before Gemma resumes
-- **Read first**: `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`, `docs/exports/source-item-photo-coverage.json`, `docs/exports/tier12-pattern-status.md`, `docs/dashboard/scrape-status.html`, `scripts/live_scraper.py`, `data/scraped/*/listings/*.json`
+- **Read first**: `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`, `docs/exports/source-item-photo-coverage.json`, `docs/exports/tier12-pattern-status.md`, `docs/exports/s1-21-tier12-quality-audit-2026-04-29.md`, `docs/dashboard/scrape-status.html`, `scripts/live_scraper.py`, `data/scraped/*/listings/*.json`
 - **Do**:
   1. Audit every tier-1/2 source with saved rows for: item count, `photo_count_remote`, `photo_count_local`, `full_gallery_downloaded`, local file existence/decodability, description length, price, area, city, property type, rooms/floor/phones.
   2. Produce per-source and per-property failure tables: missing images, partial galleries, thin descriptions, missing price/area/city/type, suspicious one-photo galleries, and missing image-description reports.
@@ -511,25 +514,28 @@ Bulk live harvesting was started outside the formal S1-15 acceptance gate; do **
   4. Regenerate all affected listing JSON, photo coverage exports, pattern-status exports, `docs/dashboard/scrape-status.html`, and frontend scraped-listing seed data.
   5. Keep legal gates intact and keep tests fixture-only.
   6. Treat `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO` as the current priority four-bucket tier-1/2 pattern set. Each must keep explicit `buy_personal`, `buy_commercial`, `rent_personal`, and `rent_commercial` bucket instructions; where the website exposes a mixed route, accept rows only after card/detail category classification.
+  7. Use the S1-21 same-location contract for aggregation: group rows only when useful `address_text` plus city/district match; do not group rows by city-only, district-only, or weak placeholder address text. The website's aggregate filter is a dummy/moderation view for same-location rows, not proof that all grouped rows are duplicate listings.
+  8. Keep source-link aggregation separate from same-location grouping: source buttons show conservative equivalent/marketed-by links; same-location badges show rows sharing the same useful address/location.
 - **Acceptance gate**: parser regression tests pass; dashboards show source-by-source and item-by-item media/field completeness; every source gap is mapped to either fixed, legal/runtime blocked, or queued for Gemma image reporting.
-- **Output**: updated parser code/tests, refreshed dashboards/exports, `docs/exports/tier12-quality-audit-2026-04-27.md`, updated `docs/agents/scraper_1/JOURNEY.md`
+- **Output**: updated parser/code docs, refreshed dashboards/exports, `docs/exports/s1-21-tier12-quality-audit-2026-04-29.{json,md}`, `docs/exports/s1-21-gemma-action0-eligible.json`, updated `docs/agents/scraper_1/JOURNEY.md`
 - **Verifier**: debugger
 - **Depends on**: S1-18 file-backed corpus evidence, S1-20 all-Bulgaria runner
 
-### S1-22: Gemma/OpenClaw apartment image-report generation handoff
+### S1-22: Gemma/OpenClaw Action0/Action1/Action2 property image-report + scrape handoff
 - **Status**: `TODO`
-- **Priority**: **HIGH** — starts after `S1-21` repairs media/field completeness
-- **Read first**: `docs/exports/taskforgema.md`, `docs/exports/property-quality-and-building-contract.md`, `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`, `docs/exports/source-item-photo-coverage.json`, `data/scraped/*/listings/*.json`, `data/media/`
+- **Priority**: **HIGH** — starts after `S1-21` exports Action0 eligible rows
+- **Read first**: `docs/exports/taskforgema.md`, `docs/exports/s1-21-gemma-action0-eligible.json`, `docs/exports/s1-21-tier12-quality-audit-2026-04-29.md`, `docs/exports/property-quality-and-building-contract.md`, `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`, `docs/exports/source-item-photo-coverage.json`, `data/scraped/*/listings/*.json`, `data/media/`
 - **Do**:
-  1. Run only after Codex confirms which apartment listings have complete local galleries.
-  2. Generate one Markdown and one JSON visual report per apartment under `docs/exports/apartment-image-reports/<source_key>/`.
-  3. Describe every local image in order with scene type, style, layout clues, visible objects/equipment/tools, colors/materials, condition, defects/risks, confidence, and uncertainty.
-  4. Run or replicate `GET /api/property-quality/<encoded reference_id>` for every processed listing and include photo completeness, description-context match, price/size plausibility, source-link evidence, and building-match status in the report.
-  5. Write global `index.md` and `index.json` with per-source counts: apartments eligible, reports created, images described, skipped rows, skip reasons, QA warnings, and building-match-pending rows.
-  6. Do not invent unseen rooms or unavailable media; use `unclear` and confidence values.
-  7. Prioritize image-description reports for the seven four-bucket sources now patterned for Gemma/OpenClaw handoff: `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO`. Process all four screen categories: buy residential, buy commercial, rent residential, rent commercial.
-- **Acceptance gate**: every apartment with `full_gallery_downloaded=true` has report paths or a documented skip reason; every completed report includes property QA checks; dashboard/export artifacts include image-report status.
-- **Output**: `docs/exports/apartment-image-reports/`, refreshed dashboards, updated `docs/agents/scraper_1/JOURNEY.md`
+  1. **Action0 first**: process `docs/exports/s1-21-gemma-action0-eligible.json` and generate one Markdown and one JSON visual/QA report per property under `docs/exports/property-image-reports/<source_key>/`.
+  2. Describe every local image in order with scene type, style, layout clues, visible objects/equipment/tools, colors/materials, condition, defects/risks, confidence, and uncertainty.
+  3. Create one whole-property summary per listing with scraped description context, image-group interpretation, style, visual condition, planning/layout clues, requirements, colors, visible tools/equipment, and human-review warnings.
+  4. Run or replicate `GET /api/property-quality/<encoded reference_id>` for every processed listing and include photo completeness, description-context match, price/size plausibility, source-link evidence, same-location grouping status, and building-match status in the report.
+  5. Write global `index.md` and `index.json` with per-source counts: properties eligible, reports created, images described, skipped rows, skip reasons, QA warnings, and building-match-pending rows.
+  6. **Action1 second**: after Action0, run the operator-approved all-Bulgaria scrape/backfill for exactly `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO` across buy residential, buy commercial, rent residential, and rent commercial.
+  7. **Action2 third**: after Action1 QA, repeat the same scrape/backfill plus image-report workflow for the rest of legal tier-1/2 sources in `data/source_registry.json`.
+  8. Do not invent unseen rooms or unavailable media; use `unclear` and confidence values.
+- **Acceptance gate**: every Action0 eligible property has report paths or a documented skip reason; every completed report includes property QA checks; Action1 logs every seven-source/four-bucket attempt; dashboard/export artifacts include image-report status.
+- **Output**: `docs/exports/property-image-reports/`, refreshed dashboards, updated `docs/agents/scraper_1/JOURNEY.md`
 - **Verifier**: debugger
 - **Depends on**: S1-21
 
