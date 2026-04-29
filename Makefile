@@ -1,4 +1,4 @@
-.PHONY: doctor install install-scrape-agents dev-up dev-down dev-ready dev-logs db-shell db-init migrate test test-docker golden-path lint typecheck validate docs-refresh run-api run-worker run-scheduler run-frontend export-docs source-report status-report linear-export architecture-doc dashboard-doc connector-fixtures list-sources list-skills ingest-fixture ingest-fixture-dry sync-registry sync-social-registry export-tier4-data seed-social-fixtures export-source-stats tier4-plan scraping-inventory tier12-metrics download-images import-scraped scrape-bcpea scrape-validate-manifest scrape-sync-sections scrape-sync-sections-dry scrape-threshold-summary scrape-queue-status scrape-control-worker-once scrape-runner-once scrape-runner-pause scrape-runner-unpause scrape-generate-varna-manifest scrape-varna-full
+.PHONY: doctor install install-scrape-agents dev-up dev-down dev-ready dev-logs db-shell db-init migrate test test-docker golden-path lint typecheck validate docs-refresh run-api run-api-public run-worker run-scheduler run-frontend run-frontend-public run-frontend-build run-frontend-prod frontend-typecheck frontend-lint run-frontend-static export-docs source-report status-report linear-export architecture-doc dashboard-doc connector-fixtures list-sources list-skills ingest-fixture ingest-fixture-dry sync-registry sync-social-registry export-tier4-data seed-social-fixtures export-source-stats tier4-plan scraping-inventory tier12-metrics download-images import-scraped scrape-bcpea scrape-validate-manifest scrape-sync-sections scrape-sync-sections-dry scrape-threshold-summary scrape-queue-status scrape-control-worker-once scrape-runner-once scrape-runner-pause scrape-runner-unpause scrape-generate-varna-manifest scrape-varna-full scrape-all-full action1-matrix-snapshot
 
 # Prefer 3.13/3.12 when unset so install/lint match pyproject.toml requires-python >=3.12
 PYENV_PYTHON := $(shell ls "$$HOME"/.pyenv/versions/3.13*/bin/python3.13 "$$HOME"/.pyenv/versions/3.12*/bin/python3.12 2>/dev/null | sed -n '1p')
@@ -82,6 +82,11 @@ run-api:
 		{ echo >&2 "run-api requires Python 3.12+. Current: $$($(PYTHON) -V). Install python3.12+ (e.g. brew install python@3.12) and run: make run-api PYTHON=python3.12"; exit 1; }
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate.dev_api
 
+run-api-public:
+	@$(PYTHON) -c "import sys; sys.exit(0 if sys.version_info >= (3, 12) else 1)" || \
+		{ echo >&2 "run-api-public requires Python 3.12+."; exit 1; }
+	PYTHONPATH=$(PYTHONPATH) API_HOST=0.0.0.0 $(PYTHON) -m bgrealestate.dev_api
+
 run-worker:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate.dev_worker
 
@@ -91,6 +96,10 @@ run-scheduler:
 run-frontend:
 	@command -v npm >/dev/null 2>&1 || { echo "npm is required for the Next.js UI. Install Node.js or use: make run-frontend-static"; exit 1; }
 	npm install && npm run dev
+
+run-frontend-public:
+	@command -v npm >/dev/null 2>&1 || { echo "npm is required for the Next.js UI."; exit 1; }
+	npm install && npm run dev:public
 
 run-frontend-build:
 	@command -v npm >/dev/null 2>&1 || { echo "npm is required"; exit 1; }
@@ -223,3 +232,9 @@ scrape-runner-unpause:
 
 scrape-varna-full:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate scrape-varna-full $(EXTRA_ARGS)
+
+scrape-all-full:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate scrape-all-full $(EXTRA_ARGS)
+
+action1-matrix-snapshot:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) scripts/action1_scrape_matrix_snapshot.py

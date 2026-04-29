@@ -10,6 +10,7 @@ Use this skill when the repo needs a shared scraping environment, tool policy, a
 ## Read First
 - `AGENTS.md`
 - `docs/agents/TASKS.md`
+- `docs/exports/detective-product-orchestration-2026-04-30.md` (per-source approach + gates)
 - `pyproject.toml`
 - `.env.example`
 - `docs/exports/universal-agent-scrape-setup-2026-04-20.md`

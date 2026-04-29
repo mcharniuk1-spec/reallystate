@@ -11,6 +11,28 @@ Run the Bulgaria Real Estate tier-1/2 scraper to completion for **all Bulgaria**
 
 Run the work in this order. Do not swap Action1 before Action0 unless the operator explicitly says to skip existing local-gallery enrichment.
 
+## Operator Command Contract
+
+When the operator asks for an action, execute exactly that action:
+
+- **`Action0`** means: produce image-description and property-QA reports from the already-downloaded local-gallery eligible set. Do not scrape.
+- **`Action1`** means: scrape/backfill only the seven priority all-Bulgaria sources across the four screen buckets.
+- **`Action2`** means: after Action1 QA, expand to remaining legal tier-1/2 sources.
+
+If the operator says only “continue Gemma/OpenClaw” and no action is named, follow the **Operator acceptance gate** below instead of assuming Action0 first.
+
+### Operator acceptance gate (2026-04-30) — OpenClaw + Telegram cadence
+
+1. **Single prompt context**: every OpenClaw/Gemma4 activation must load **Action0 + Action1 + Action2** contracts from this file so the model never claims it is “waiting for URLs/patterns”.
+2. **Start execution only after `Action1 ACCEPT`**: until the operator sends **`Action1 ACCEPT`** in Telegram (or the exact same string in the operator message), OpenClaw must **not** run shell commands that mutate `data/scraped/`, `data/media/`, or live scrape flags — and must **not** start Action0 or Action2 file writes.
+3. **After `Action1 ACCEPT`**: execute **Action1 (`S1-22B`)** via `make scrape-all-full` (detached/`nohup` per operator host rules), refresh dashboards on milestones.
+4. **Telegram progress**: after every **+100 net new saved listing JSON files** across the seven Action1 sources, send one Telegram message containing:
+   - one **markdown table or bullet block**: **7 sources × 4 buckets** (`buy_personal`, `buy_commercial`, `rent_personal`, `rent_commercial`) with **saved item counts** plus **full-gallery %** and **avg description chars** per cell when available;
+   - top **errors/warnings** (HTTP, parse, legal gate) since the last ping.
+   - Operator shortcut: run `make action1-matrix-snapshot` on the host and paste/send the output.
+5. **Action0 (`S1-22A`)**: run only after the operator sends **`Action0 now`** following Action1 completion (or an explicit parallel waiver documented in `docs/agents/scraper_1/JOURNEY.md`).
+6. **Action2 (`S1-22C`)**: run only after **`Action2 now`** and debugger QA notes on Action1 allow expansion.
+
 ### Action0 — describe already saved property galleries first
 
 Input:
@@ -27,9 +49,15 @@ Do:
 2. Work property item by property item.
 3. For each property, inspect every local image in the listed order.
 4. Write one complete property-level report that combines all image descriptions with scraped title, description, price, area, category, address/location, source links, and QA checks.
-5. Include per-image scene descriptions and one whole-property summary covering style, visual description, layout/planning clues, requirements, visible tools/equipment, furniture/appliances, colors/materials, condition, risks, and confidence.
-6. Save outputs under `docs/exports/property-image-reports/<source_key>/<safe_reference_id>.md` and `.json`.
-7. Write `docs/exports/property-image-reports/index.md` and `index.json` with source totals, properties described, images described, skipped rows, skip reasons, QA warnings, and fields needing human review.
+5. Check property identity before reporting: one source publication is not always one sellable/rentable unit. If the page describes multiple apartments, a residential building, `1-2 bedroom` inventory, `apartments (various types)`, `selection of` units, or `prices from`, mark it `suspected_multi_unit_publication` and do not invent a single unit unless the source provides unit-level URL, price, area, and media evidence.
+6. Do not treat numeric `0` as a property price. Use `on_request` or `undefined` price status when that is what the source page says, otherwise mark the parser output as suspicious.
+7. Add a **single-property validity check** for each property item:
+   - Decide whether the page is a **single unit** with a coherent price + images + description.
+   - If not, mark it as `suspected_multi_unit_publication` and explain why (multi-unit wording, price-from, “selection of”, etc.).
+   - If photos do not match the description/category/price, record a mismatch note and set the single-property flag to false.
+8. Include per-image scene descriptions and one whole-property summary covering style, visual description, layout/planning clues, requirements, visible tools/equipment, furniture/appliances, colors/materials, condition, risks, and confidence.
+9. Save outputs under `docs/exports/property-image-reports/<source_key>/<safe_reference_id>.md` and `.json`.
+10. Write `docs/exports/property-image-reports/index.md` and `index.json` with source totals, properties described, images described, skipped rows, skip reasons, QA warnings, and fields needing human review.
 
 Acceptance:
 
@@ -40,7 +68,7 @@ Acceptance:
 
 ### Action1 — full seven-source all-Bulgaria scrape/backfill
 
-After Action0, run the full all-Bulgaria scrape/backfill for these sources only:
+After **`Action1 ACCEPT`** (and after Action0 only if the operator already waived the gate), run the full all-Bulgaria scrape/backfill for these sources only:
 
 1. `Address.bg`
 2. `BulgarianProperties`
@@ -71,7 +99,7 @@ Acceptance:
 - All seven sources are attempted in all four categories under legal/source-registry gates.
 - Each source gets per-bucket logs with saved count, skipped count, block/runtime errors, and parser warnings.
 - Every row has photo counts, description coverage status, and source-link evidence.
-- Dashboards and S1-21/S1-22 exports are refreshed after the run.
+- Dashboards and S1-21 / S1-22A-B-C exports are refreshed after the run.
 
 ### Action2 — remaining legal tier-1/2 sources after Action1
 
@@ -210,6 +238,10 @@ For each property, the report must include:
 - requirements: obvious repair/renovation needs, missing fixtures, moisture/damage signs, dated finishes, furnishing gaps, staging/photo-quality gaps, accessibility concerns, and items requiring human verification,
 - buyer/renter usability note: move-in readiness, rental readiness, family suitability, office/work suitability, and risks visible in photos,
 - consistency QA: photo-to-description match, price/size plausibility, missing fields, suspected parser issues, and whether a human should verify the listing,
+- **single-property validity**:
+  - `single_property_ok` (boolean)
+  - `single_property_comment` (string; why OK/not OK)
+  - `mismatch_notes` (array of strings; photo/description/category/price inconsistencies)
 - confidence and uncertainty notes for every non-obvious conclusion.
 
 For each image inside the property group, create one numbered subsection or JSON object with:
@@ -257,6 +289,11 @@ Suggested JSON shape:
     "missing_or_suspicious_fields": ["..."],
     "building_match_status": "pending",
     "human_review_required": true
+  },
+  "single_property_validity": {
+    "single_property_ok": true,
+    "single_property_comment": "Looks like one unit; consistent photos + single price + coherent description.",
+    "mismatch_notes": []
   },
   "images": [
     {

@@ -14,4 +14,6 @@ dist/
 build/
 tmp/
 data/media/
+# Raw HTML capture dirs (large); listing JSON remains operator-controlled
+data/scraped/**/raw/
 *.egg-info/

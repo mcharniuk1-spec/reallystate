@@ -1037,29 +1037,57 @@ Modified files:
   - INTERPRETATION: sources with mixed public routes must classify residential/commercial from card/detail text before accepting a listing into the bucket.
   - GAP: live reachability was not tested in this local pass; the next live scrape must record route/runtime failures by source and bucket.
 
-### 2026-04-29 — S1-21 file-backed quality audit + Gemma action sequencing
+### 2026-04-29 — Property identity anomaly audit and scraper pattern hardening
 
-- **Action**: Ran the S1-21 offline audit for the seven Gemma priority sources, generated the Action0 eligible set, codified same-location grouping, and updated Gemma/OpenClaw task sequencing.
+- **Action**: Added multi-unit/development publication checks, zero-price normalization rules, and suspicious area parsing checks to S1-21 audit and live scraper post-processing.
 - **Changed files**:
   - `scripts/generate_s1_21_quality_audit.py`
-  - `docs/exports/s1-21-tier12-quality-audit-2026-04-29.json`
-  - `docs/exports/s1-21-tier12-quality-audit-2026-04-29.md`
-  - `docs/exports/s1-21-gemma-action0-eligible.json`
-  - `docs/exports/taskforgema.md`
-  - `docs/openclaw/gemma4-agent.md`
-  - `docs/exports/reporting-and-instruction-index.md`
-  - `docs/exports/tier12-four-bucket-pattern-handoff-2026-04-28.md`
+  - `scripts/live_scraper.py`
+  - `docs/exports/property-identity-anomaly-audit-2026-04-29.md`
+  - `AGENTS.md`
   - `docs/agents/TASKS.md`
-  - `docs/agents/README.md`
-  - `lib/listing-source-links.ts`
-  - `components/listings/MainExplorer.tsx`
-- **Commands run**:
-  - `python3 scripts/generate_s1_21_quality_audit.py`
-- **Tests run**:
-  - S1-21 audit generation: pass after report-format patch.
+  - `docs/openclaw/gemma4-agent.md`
+  - `docs/exports/taskforgema.md`
 - **Status**: `DONE_AWAITING_VERIFY`
 - **Review comments**:
-  - FACT: Action0 has 397 eligible rows with complete local-gallery evidence across the seven priority sources.
-  - FACT: same-location grouping now uses useful address text plus city/district and excludes city-only or district-only placeholder grouping.
-  - INTERPRETATION: Gemma should enrich existing complete galleries before the next live/backfill scrape wave so image-description gaps start shrinking immediately.
-  - GAP: Action1 live scrape/backfill remains operator/runtime gated and was not executed by this offline S1-21 audit.
+  - FACT: website seed has 1,549 rows; highest multi-unit suspects are BulgarianProperties 55, OLX.bg 18, Yavlena 14, Homes.bg 7.
+  - FACT: Homes.bg has 60 area values below 2 sqm, matching decimal/locale parse failure.
+  - FACT: Yavlena has 13 numeric zero prices; numeric zero is now instructionally invalid as a real price.
+  - GAP: live pages were not refetched in this pass; flags are based on saved website seed and parser rules.
+
+### 2026-04-29 — Gemma/OpenClaw Action0-Action2 task split
+
+- **Action**: Split the Gemma/OpenClaw handoff into explicit Action0, Action1, and Action2 tasks so the running OpenClaw agent can execute the next operator command without guessing scope.
+- **Changed files**:
+  - `AGENTS.md`
+  - `docs/agents/TASKS.md`
+  - `docs/agents/README.md`
+  - `docs/openclaw/README.md`
+  - `docs/openclaw/gemma4-agent.md`
+  - `docs/exports/taskforgema.md`
+  - `docs/exports/reporting-and-instruction-index.md`
+- **Status**: `DONE_AWAITING_VERIFY`
+- **Review comments**:
+  - FACT: `S1-22A` is Action0 and is local-gallery report generation only.
+  - FACT: `S1-22B` is Action1 and is limited to seven priority all-Bulgaria sources across four buckets.
+  - FACT: `S1-22C` is Action2 and is limited to remaining legal tier-1/2 sources after Action1 QA.
+  - GAP: no Gemma/OpenClaw action output was executed in this pass; this pass updated the execution contract.
+
+### 2026-04-29 — Action1 status capture + bucket backfill for per-category reporting
+
+- **Action**: Backfilled `bucket_key`/`segment_key` for already-saved listing JSON rows so per-bucket reporting works consistently across older corpuses, and captured the latest per-source per-bucket scrape metrics (items, full-gallery %, avg description chars, avg remote/local photo counts).
+- **Execution note**: Action1 run is being monitored via the detached log `data/runs/action1_20260429_171309.log`; progress pings are sent to Telegram by the operator.
+- **Result snapshot (file-backed; 7 sources)**:
+  - `address_bg`: 153 total (buy_personal 134, buy_commercial 19), full gallery 100%
+  - `bulgarianproperties`: 275 total (buy_personal 257, buy_commercial 18), full gallery ~0.4% (media backfill needed)
+  - `homes_bg`: 111 total (buy_personal 111), full gallery ~42% (media backfill needed)
+  - `imot_bg`: 331 total (buy_personal 330, buy_commercial 1), full gallery ~30% (media backfill needed)
+  - `luximmo`: 138 total (buy_personal 138), full gallery 100%
+  - `property_bg`: 37 total (buy_personal 37), full gallery 100%
+  - `suprimmo`: 37 total (buy_personal 37), full gallery 100%
+- **Status**: `IN_PROGRESS`
+
+### 2026-04-30 — Detective orchestration + operator Action1 gate
+
+- **Action**: Cross-repo “detective” pass documented in `docs/exports/detective-product-orchestration-2026-04-30.md`; widened agent missions in `docs/agents/TASKS.md`; OpenClaw/Gemma4 gate (`Action1 ACCEPT`, Action0/2 deferred until explicit `Action0 now` / `Action2 now`) in `docs/exports/taskforgema.md`, `AGENTS.md`, `docs/agents/README.md`, `docs/openclaw/gemma4-agent.md`, `agent-skills/openclaw-ollama-gemma4/SKILL.md`; added `scripts/action1_scrape_matrix_snapshot.py` + `make action1-matrix-snapshot`; LAN hosting via `make run-api-public` / `make run-frontend-public`; UI liquid underlay + `framer-motion` / `tailwindcss-animate`.
+- **Status**: `DONE_AWAITING_VERIFY`

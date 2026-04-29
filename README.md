@@ -100,6 +100,17 @@ Generate/update the progress dashboard artifacts:
 make dashboard-doc
 ```
 
+## Local public view (LAN / demo phone)
+
+1. Start Postgres stack if the UI will hit the API with a real DB: `make dev-up` + `export DATABASE_URL=...` + `make db-init`.
+2. Bind FastAPI on all interfaces: `make run-api-public` (sets `API_HOST=0.0.0.0`). Keep `API_BASE_URL` as `http://127.0.0.1:8000` on the **same machine** so Next server-side `fetch` still works; add your LAN origin to `CORS_ALLOW_ORIGINS` if the browser calls the API **directly**.
+3. Bind Next on all interfaces: `make run-frontend-public` (runs `npm run dev:public`).
+4. Open from another device: `http://<your-lan-ip>:3000`.
+
+**Action1 Telegram matrix helper**: `make action1-matrix-snapshot` — prints the seven-source × four-bucket counts from `data/scraped/*/listings/*.json`.
+
+**Orchestration detective brief**: `docs/exports/detective-product-orchestration-2026-04-30.md`.
+
 List reusable project skills:
 
 ```bash

@@ -1,76 +1,44 @@
-# Skill: OpenClaw Ollama Gemma4 (offline QA + report drafting)
+# Skill: OpenClaw Ollama Gemma4 (orchestrated QA + gated live scrape narration)
 
 ## When to use
 
-Use this skill when the operator explicitly wants **Gemma4 via Ollama** to handle tasks that are:
+Use this skill when the operator runs **OpenClaw** with **Gemma4 via Ollama** for:
 
-- **offline/local** (no live crawling, no private data access),
-- primarily **analysis, QA, summarization, or report drafting**, and
-- based on existing repo artifacts such as:
-  - `docs/exports/*`
-  - `docs/dashboard/*`
-  - `data/scraped/*`
-  - `data/media/*`
-  - `sql/helpers/*`
-
-Examples:
-
-- Summarize scrape-status dashboards into a short operator report.
-- Draft SQL queries to validate per-source counts in `canonical_listing`.
-- Produce a Markdown “image report” draft for a listing given a set of local image paths + listing metadata JSON.
+- **Offline/local**: QA, summarization, SQL drafting, image-report drafting from **local files only** (`data/media/`, `docs/exports/`).
+- **Gated live scrape narration**: Action1 (`S1-22B`) after the operator posts **`Action1 ACCEPT`**, with **Telegram progress** on a fixed cadence.
 
 ## Hard constraints (non-negotiable)
 
 - Follow `AGENTS.md` guardrails.
 - Treat `data/source_registry.json` as authoritative for `legal_mode`, `risk_mode`, and `access_mode`.
 - Do **not** add live-network dependencies to tests.
-- Do **not** propose or automate private social/messenger scraping.
-- Do **not** handle secrets (API keys) beyond saying “set env var locally”.
+- Do **not** propose private social/messenger scraping.
+- Do **not** handle secrets beyond “set env var locally”.
+- **Never** ask the operator for new “target URLs / CSS patterns” for the seven Action1 sources — patterns live in `scripts/live_scraper.py`, `src/bgrealestate/scraping/`, and exports; read `docs/exports/taskforgema.md` instead.
 
-If asked about legality/compliance: point to `data/source_registry.json` + `AGENTS.md` and stop.
+## Operator acceptance gate (2026-04-30)
 
-## Required inputs from the operator
+1. **Always load** Action0 + Action1 + Action2 from `docs/exports/taskforgema.md` in the prompt context.
+2. **Do not execute** shell/Make steps that mutate `data/scraped/` or `data/media/` until **`Action1 ACCEPT`**.
+3. **After `Action1 ACCEPT`**: run Action1 per `docs/agents/TASKS.md` (`make scrape-all-full`, prefer detached/`nohup` on hosts that SIGTERM interactive runners).
+4. **Telegram**: after every **+100 net new** listing JSON saves across the seven Action1 sources, send **one** Telegram message with a **7 sources × 4 buckets** matrix (counts + full-gallery % + avg description chars when available) and top errors. Host shortcut: `make action1-matrix-snapshot`.
+5. **Action0**: only after operator **`Action0 now`** (no Action0 file writes before then unless `docs/agents/scraper_1/JOURNEY.md` documents a waiver).
+6. **Action2**: only after operator **`Action2 now`** + Action1 QA.
 
-To run a Gemma4 task safely, require:
+## Standard workflows
 
-- **Exact file paths** to read (or the precise directory scope).
-- The **desired output format** (Markdown / JSON / SQL).
-- The **intended destination path** in-repo if writing an artifact.
+### A) Offline scrape-status summary (Markdown)
 
-## Standard workflow
-
-1. Confirm the task is offline/local and within guardrails.
-2. Read only the provided inputs; do not crawl the web.
-3. Produce an output that is:
-   - structured,
-   - reproducible,
-   - includes known gaps, and
-   - includes confidence where interpretation is involved.
-
-## Output contracts
-
-### A) Scrape-status summary (Markdown)
-
-Must include:
-
-- time window (from artifact timestamp)
-- top 3 sources by saved count
-- sources with **low full-gallery** vs saved count (e.g. remote > local photo count)
-- recommended next operator command (only from existing `make` targets)
+Must include: artifact timestamp, top sources by count, low full-gallery warnings, next `make` command from existing targets only.
 
 ### B) SQL validation bundle
 
-Must include read-only queries to compute:
+Read-only queries for `canonical_listing` by source and media completion — only when DB access is in scope.
 
-- `canonical_listing` rows by `source_name`
-- `listing_media` completion ratios (where present)
+### C) Image report draft (Action0)
 
-### C) Image report draft
+Only local images. Include `single_property_ok`, `single_property_comment`, `mismatch_notes` per `docs/exports/taskforgema.md`.
 
-Only allowed when all image inputs are local files.
+### D) Ollama timeouts
 
-- Per-listing summary (style, condition, layout cues, colors, equipment/tools)
-- Per-image entries in order with `scene_type`, observations, risks, confidence
-
-Never invent unseen features; mark unclear items explicitly.
-
+If the model idles out: `openclaw --profile codex config set models.providers.ollama.timeoutSeconds 3600` then restart gateway (see `docs/openclaw/README.md`).

@@ -13,15 +13,17 @@ This project uses **6 specialist agents** plus a lead agent. Each agent finds wo
 | **Bugbot review priorities** | `.cursor/BUGBOT.md` |
 | **Skills (acceptance contracts)** | `agent-skills/<name>/SKILL.md` |
 
-## Current execution wave (2026-04-29)
+## Current execution wave (2026-04-29, **gate 2026-04-30**)
 
-Read **`docs/agents/TASKS.md`** § `S1-21` / `S1-22` for the full rules. Summary:
+Read **`docs/agents/TASKS.md`** § *Current Gemma/OpenClaw execution order* for the full rules. Summary:
 
-1. **`scraper_1` / Codex**: `S1-21` audits file-backed scrape quality, image counts, description fullness, local file validity, same-location grouping, and pattern gaps for the seven priority tier-1/2 sources.
-2. **`Gemma4/OpenClaw`**: `S1-22 Action0` runs first and creates one image-by-image plus whole-property report for every row in `docs/exports/s1-21-gemma-action0-eligible.json`.
-3. **`Gemma4/OpenClaw`**: `S1-22 Action1` runs second and performs the operator-approved all-Bulgaria scrape/backfill for `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO` across buy residential, buy commercial, rent residential, and rent commercial.
-4. **`Gemma4/OpenClaw`**: `S1-22 Action2` runs third and repeats the same process for the remaining legal tier-1/2 sources after Action1 is QA-reviewed.
-5. **`debugger`**: verifies scrape completeness, property image reports, dashboards, same-location grouping, source-link buttons, and legal/runtime gating before the next scrape wave is marked complete.
+1. **`scraper_1` / Gemma4 OpenClaw Action1 (`S1-22B`)**: all-Bulgaria scrape/backfill for the seven priority sources across `buy_personal`, `buy_commercial`, `rent_personal`, and `rent_commercial` — **first execution after operator `Action1 ACCEPT`**. Telegram: **+100 net new saves → 7×4 matrix** (`make action1-matrix-snapshot`).
+2. **`scraper_1` / Gemma4 OpenClaw Action0 (`S1-22A`)**: generate property image reports from `docs/exports/s1-21-gemma-action0-eligible.json` — **only after operator `Action0 now`** (unless waiver in `JOURNEY.md`). No live scrape.
+3. **`scraper_1` / Gemma4 OpenClaw Action2 (`S1-22C`)**: remaining legal tier-1/2 expansion — **only after operator `Action2 now`** + Action1 QA notes.
+4. **`debugger`**: verify each action output with `DBG-08`, including report completeness, media counts, source/bucket logs, and refreshed dashboards.
+5. **Other agents**: only pick work that unblocks this sequence or fixes website/dashboard regressions.
+
+**Detective / strategy index**: `docs/exports/detective-product-orchestration-2026-04-30.md`.
 
 ## Operator GO command protocol
 

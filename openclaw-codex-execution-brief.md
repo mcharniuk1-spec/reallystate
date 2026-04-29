@@ -73,6 +73,30 @@ Known current limitation:
 - [ ] No publishing adapters yet
 - [ ] No operator UI yet
 
+OpenClaw + Gemma4 (current execution wave, updated **2026-04-30**):
+
+- **Gate**: load Action0+1+2 from `docs/exports/taskforgema.md` in every prompt; **no live scrape / no Action0 file writes / no Action2** until operator **`Action1 ACCEPT`**.
+- **Action1 (`S1-22B`)** first: 7-source all-Bulgaria scrape/backfill across 4 buckets (`buy_personal`, `buy_commercial`, `rent_personal`, `rent_commercial`) for: `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, `SUPRIMMO`.
+- **Telegram**: every **+100** net new saves → **7×4** matrix + errors (`make action1-matrix-snapshot`).
+- **Action0 (`S1-22A`)**: only after **`Action0 now`** (local galleries; no live scrape).
+- **Action2 (`S1-22C`)**: only after **`Action2 now`** + Action1 QA.
+
+Authoritative contracts:
+
+- Action0/1/2 contract: `docs/exports/taskforgema.md`
+- Operator runbook: `docs/openclaw/README.md` and `docs/openclaw/gemma4-agent.md`
+- Task slices: `docs/agents/TASKS.md` (`S1-22A` / `S1-22B` / `S1-22C`)
+
+Important runtime note:
+
+- If Gemma4/OpenClaw “couldn’t generate a response” or stalls during long runs, increase the Ollama provider timeout and restart the gateway:
+
+```bash
+openclaw --profile codex config set models.providers.ollama.timeoutSeconds 3600
+openclaw --profile codex gateway restart
+openclaw --profile codex gateway probe
+```
+
 ---
 
 ## 4. Progress Dashboard

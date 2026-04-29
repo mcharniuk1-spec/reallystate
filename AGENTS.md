@@ -13,6 +13,9 @@ This repository is the foundation for a Bulgaria real estate ingestion, map, CRM
 
 - Use `data/source_registry.json` as the authoritative source matrix.
 - Enforce `legal_mode`, `risk_mode`, and `access_mode` before implementing any connector or publishing adapter.
+- Treat every saved scraper row as a source publication first. Promote it to a single property item only when the source page clearly represents one unit with its own detail URL and one price, or an explicit `on request` / `undefined` price state preserved in provenance.
+- Flag mixed multi-unit pages (`1-2 bedroom`, `apartments (various types)`, whole residential-building/development pages, or price-from pages) as grouped/development publications unless the source exposes unit-level URL, price, area, floor/rooms, and media evidence for each unit.
+- Never store numeric `0` as a real property price. Use `null` plus provenance such as `price_status = on_request` or `price_status = undefined` until a first-class field exists.
 - Do not add unsafe broad scraping for Airbnb, Booking.com, WhatsApp, Viber, private Facebook groups, or private Telegram groups.
 - Do not automate mass account creation, KYC bypass, CAPTCHA bypass, or private-account access.
 - Do not add live-network dependencies to tests; crawler tests must use fixtures.
@@ -33,6 +36,14 @@ Six specialist agents plus the lead agent operate under a structured coordinatio
 Agents: `backend_developer`, `scraper_1`, `scraper_t3`, `scraper_sm`, `ux_ui_designer`, `debugger`.
 
 Before starting work, every agent must read `docs/agents/TASKS.md` to find their current slice.
+
+Current Gemma/OpenClaw handoff (2026-04-29, **operator gate 2026-04-30**):
+
+- **Load in one context**: Action0 + Action1 + Action2 contracts from `docs/exports/taskforgema.md` so Gemma4 never asks for ad-hoc “URLs/patterns”.
+- **`S1-22B` / Action1**: scrape/backfill only `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO` for all Bulgaria across `buy_personal`, `buy_commercial`, `rent_personal`, and `rent_commercial` — **first execution after operator `Action1 ACCEPT`**. Telegram every **+100** net new saves: **7×4** matrix (`make action1-matrix-snapshot`).
+- **`S1-22A` / Action0**: local-gallery image reports — **only after operator `Action0 now`** following Action1 completion (unless waiver logged in `docs/agents/scraper_1/JOURNEY.md`).
+- **`S1-22C` / Action2**: expand to remaining legal tier-1/2 sources — **only after operator `Action2 now`** + Action1 QA.
+- Detailed operator prompt and report contract: `docs/exports/taskforgema.md` and `docs/openclaw/gemma4-agent.md`.
 
 ## Operator GO Commands
 
