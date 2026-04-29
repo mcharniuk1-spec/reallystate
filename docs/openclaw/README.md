@@ -14,6 +14,8 @@ This pack is designed to preserve project guardrails in `AGENTS.md` and the exec
 - `docs/agents/TASKS.md` (what to do next)
 - `docs/docker-and-database.md` (Docker/Postgres/MinIO/Temporal + media)
 - `docs/openclaw/gemma4-agent.md` (Gemma4 role, constraints, prompts)
+- `docs/exports/reporting-and-instruction-index.md` (current DOCX/reporting pack)
+- `docs/exports/taskforgema.md` (current Gemma4 scrape/image-description task)
 
 ### Baseline local runtime (host machine)
 
@@ -41,7 +43,8 @@ make db-init
 - **Gemma4 (Ollama)**:
   - Purely local tasks: summarizing scrape logs, validating extracted JSON, generating SQL queries, generating Markdown/JSON “image report” drafts *from already-local inputs*.
   - Must not do risky compliance decisions; must defer to `data/source_registry.json` + `AGENTS.md`.
+  - For current scrape work, focus on `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO` across buy residential, buy commercial, rent residential, and rent commercial.
+  - For every apartment/property item, describe images one by one and produce a grouped property QA report with style, visual condition, layout/planning evidence, visible tools/equipment, colors, requirements, source links, and uncertainty flags.
 
 - **Claude** (later):
   - Planning documents, larger refactor proposals, multi-file architecture reasoning.
-

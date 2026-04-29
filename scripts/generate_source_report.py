@@ -158,6 +158,115 @@ DEBUG_ITEMS = [
     ),
 ]
 
+FOUR_BUCKET_SOURCES = [
+    "Address.bg",
+    "BulgarianProperties",
+    "Homes.bg",
+    "imot.bg",
+    "LUXIMMO",
+    "property.bg",
+    "SUPRIMMO",
+]
+
+FOUR_BUCKET_SEGMENTS = [
+    ("buy_personal", "Buy residential"),
+    ("buy_commercial", "Buy commercial"),
+    ("rent_personal", "Rent residential"),
+    ("rent_commercial", "Rent commercial"),
+]
+
+
+def _load_json(path: Path) -> dict:
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _compact_counts(value: object) -> str:
+    if not isinstance(value, dict):
+        return ""
+    return ", ".join(f"{key}:{count}" for key, count in sorted(value.items()))
+
+
+def four_bucket_media_rows() -> list[list[str]]:
+    data = _load_json(EXPORT_DIR / "source-item-photo-coverage.json")
+    by_source = {row.get("source_name"): row for row in data.get("sources", [])}
+    rows = [
+        [
+            "Source",
+            "Items",
+            "Descriptions",
+            "Remote-photo items",
+            "Local-photo items",
+            "Full galleries",
+            "Remote photos",
+            "Local photos",
+            "Services",
+            "Categories",
+        ]
+    ]
+    for name in FOUR_BUCKET_SOURCES:
+        row = by_source.get(name, {})
+        rows.append(
+            [
+                name,
+                str(row.get("saved_listings", 0)),
+                str(row.get("items_with_description", 0)),
+                str(row.get("items_with_remote_photos", 0)),
+                str(row.get("items_with_local_media", 0)),
+                str(row.get("full_gallery_items", 0)),
+                str(row.get("total_remote_photos", 0)),
+                str(row.get("total_local_photos", 0)),
+                _compact_counts(row.get("service_counts")),
+                _compact_counts(row.get("category_counts")),
+            ]
+        )
+    return rows
+
+
+def four_bucket_pattern_rows() -> list[list[str]]:
+    data = _load_json(ROOT / "data" / "scrape_patterns" / "regions" / "varna" / "sections.json")
+    sections = data.get("sections", [])
+    by_key = {(row.get("source_name"), row.get("segment_key")): row for row in sections}
+    rows = [["Source", "Buy residential", "Buy commercial", "Rent residential", "Rent commercial"]]
+    for source in FOUR_BUCKET_SOURCES:
+        cells = [source]
+        for segment_key, _label in FOUR_BUCKET_SEGMENTS:
+            section = by_key.get((source, segment_key), {})
+            patterns = section.get("patterns", {})
+            detail = patterns.get("detail_page", {})
+            media = patterns.get("media_gallery", {})
+            status = "active" if section.get("active") else "inactive"
+            detail_status = detail.get("status", "missing")
+            media_status = media.get("status", "missing")
+            entry_count = len(section.get("entry_urls") or [])
+            cells.append(f"{status}; detail={detail_status}; media={media_status}; urls={entry_count}")
+        rows.append(cells)
+    return rows
+
+
+def four_bucket_addendum_markdown() -> str:
+    return f"""## 2026-04-28 Tier-1/2 Four-Bucket Scrape Addendum
+
+This addendum is generated from `docs/exports/source-item-photo-coverage.json` and `data/scrape_patterns/regions/varna/sections.json`. It covers the current OpenClaw/Gemma4 handoff sources across the four product buckets from the operator screen: buy residential, buy commercial, rent residential, and rent commercial.
+
+### Current Item And Photo Coverage
+
+{md_table(four_bucket_media_rows())}
+
+### Four-Bucket Pattern Readiness
+
+{md_table(four_bucket_pattern_rows())}
+
+### Agent Handoff Rules
+
+1. Gemma4/OpenClaw must consume only local files listed in `local_image_files`.
+2. Each property report must combine scraped page description, structured fields, source links, and ordered image descriptions.
+3. Photo counts, price, size, city/address, and category must be checked before marking a listing complete.
+4. Missing full-gallery status is a quality flag, not proof that the listing is unusable.
+5. Live scraping remains operator-approved and must respect `legal_mode`, `risk_mode`, and `access_mode` from `data/source_registry.json`.
+"""
+
 
 def load_registry() -> list[dict]:
     data = json.loads(REGISTRY_PATH.read_text(encoding="utf-8"))
@@ -338,6 +447,8 @@ The platform should continue with a source-first implementation sequence: regist
 
 Tier 1 is for the first ingestion wave: OLX via official API where possible, then crawl-friendly or high-value Bulgarian portals and agencies. Tier 2 is targeted expansion after parser gates. Tier 3 is partner/vendor/official-service first: Airbnb, Booking.com, Vrbo, AirDNA, Airbtics, official registers, cadastre, and auctions. Tier 4 is lead intelligence only: Telegram and public social overlays where appropriate, and consent-only Viber/WhatsApp/private-channel flows.
 
+{four_bucket_addendum_markdown()}
+
 ## Source Link Table
 
 {md_table(rows)}
@@ -392,6 +503,17 @@ def write_docx(path: Path, sources: list[dict]) -> None:
         paragraph(f"The source inventory covers {len(sources)} Bulgarian real estate, short-term-rental, official-register, analytics, and social/messaging sources. It is designed as the handoff table for scraper, map, CRM, and reverse-publishing implementation."),
         paragraph("Source Coverage Logic", "Heading1"),
         paragraph("Tier 1 is for first ingestion. Tier 2 is for expansion after parser gates. Tier 3 is partner/vendor/official-service first. Tier 4 is lead intelligence only and must respect consent rules."),
+        paragraph("2026-04-28 Tier-1/2 Four-Bucket Scrape Addendum", "Heading1"),
+        paragraph("Generated from current scrape/photo coverage and Varna four-bucket pattern manifests for the OpenClaw/Gemma4 handoff."),
+        paragraph("Current Item And Photo Coverage", "Heading1"),
+        docx_table(four_bucket_media_rows(), max_rows=None),
+        paragraph("Four-Bucket Pattern Readiness", "Heading1"),
+        docx_table(four_bucket_pattern_rows(), max_rows=None),
+        paragraph("Agent Handoff Rules", "Heading1"),
+        paragraph("1. Gemma4/OpenClaw must consume only local files listed in local_image_files."),
+        paragraph("2. Each property report must combine scraped page description, structured fields, source links, and ordered image descriptions."),
+        paragraph("3. Photo counts, price, size, city/address, and category must be checked before marking a listing complete."),
+        paragraph("4. Live scraping remains operator-approved and must respect legal_mode, risk_mode, and access_mode from data/source_registry.json."),
         paragraph("Main Source Link Table", "Heading1"),
         docx_table(rows, max_rows=None),
         paragraph("Debugging And Inefficiency Audit", "Heading1"),

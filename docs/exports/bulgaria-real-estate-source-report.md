@@ -1,6 +1,6 @@
 # Bulgaria Real Estate Source Links And Debug Report
 
-Generated: 2026-04-08T14:33:00.858630+00:00
+Generated: 2026-04-29T03:47:34.208141+00:00
 
 ## Executive Summary
 
@@ -18,6 +18,43 @@ The platform should continue with a source-first implementation sequence: regist
 ## Source Coverage Logic
 
 Tier 1 is for the first ingestion wave: OLX via official API where possible, then crawl-friendly or high-value Bulgarian portals and agencies. Tier 2 is targeted expansion after parser gates. Tier 3 is partner/vendor/official-service first: Airbnb, Booking.com, Vrbo, AirDNA, Airbtics, official registers, cadastre, and auctions. Tier 4 is lead intelligence only: Telegram and public social overlays where appropriate, and consent-only Viber/WhatsApp/private-channel flows.
+
+## 2026-04-28 Tier-1/2 Four-Bucket Scrape Addendum
+
+This addendum is generated from `docs/exports/source-item-photo-coverage.json` and `data/scrape_patterns/regions/varna/sections.json`. It covers the current OpenClaw/Gemma4 handoff sources across the four product buckets from the operator screen: buy residential, buy commercial, rent residential, and rent commercial.
+
+### Current Item And Photo Coverage
+
+| Source | Items | Descriptions | Remote-photo items | Local-photo items | Full galleries | Remote photos | Local photos | Services | Categories |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Address.bg | 140 | 140 | 140 | 140 | 140 | 140 | 141 | sale:140 | apartment:98, house:23, land:12, office:3, unknown:4 |
+| BulgarianProperties | 249 | 249 | 249 | 249 | 1 | 8114 | 286 | long_term_rent:12, sale:237 | apartment:162, house:61, land:11, office:5, unknown:10 |
+| Homes.bg | 97 | 97 | 95 | 52 | 52 | 489 | 304 | sale:97 | apartment:97 |
+| imot.bg | 271 | 271 | 271 | 15 | 14 | 3191 | 148 | sale:271 | apartment:242, house:1, land:1, unknown:27 |
+| LUXIMMO | 15 | 12 | 15 | 15 | 13 | 114 | 128 | sale:15 | apartment:15 |
+| property.bg | 15 | 15 | 15 | 15 | 1 | 1341 | 101 | sale:15 | apartment:15 |
+| SUPRIMMO | 12 | 12 | 12 | 12 | 1 | 1095 | 166 | sale:12 | apartment:12 |
+
+### Four-Bucket Pattern Readiness
+
+| Source | Buy residential | Buy commercial | Rent residential | Rent commercial |
+| --- | --- | --- | --- | --- |
+| Address.bg | active; detail=supported; media=supported; urls=1 | active; detail=supported; media=supported; urls=1 | active; detail=supported; media=supported; urls=1 | active; detail=supported; media=supported; urls=1 |
+| BulgarianProperties | active; detail=supported; media=supported; urls=6 | active; detail=supported; media=supported; urls=3 | active; detail=supported; media=supported; urls=1 | active; detail=supported; media=supported; urls=3 |
+| Homes.bg | active; detail=supported; media=supported; urls=0 | active; detail=supported; media=supported; urls=0 | active; detail=supported; media=supported; urls=0 | active; detail=supported; media=supported; urls=0 |
+| imot.bg | active; detail=supported; media=supported; urls=1 | active; detail=supported; media=supported; urls=1 | active; detail=supported; media=supported; urls=1 | active; detail=supported; media=supported; urls=1 |
+| LUXIMMO | active; detail=supported; media=supported; urls=1 | active; detail=supported; media=supported; urls=2 | active; detail=supported; media=supported; urls=1 | active; detail=supported; media=supported; urls=2 |
+| property.bg | active; detail=supported; media=supported; urls=2 | active; detail=supported; media=supported; urls=2 | active; detail=supported; media=supported; urls=1 | active; detail=supported; media=supported; urls=2 |
+| SUPRIMMO | active; detail=supported; media=supported; urls=3 | active; detail=supported; media=supported; urls=2 | active; detail=supported; media=supported; urls=1 | active; detail=supported; media=supported; urls=2 |
+
+### Agent Handoff Rules
+
+1. Gemma4/OpenClaw must consume only local files listed in `local_image_files`.
+2. Each property report must combine scraped page description, structured fields, source links, and ordered image descriptions.
+3. Photo counts, price, size, city/address, and category must be checked before marking a listing complete.
+4. Missing full-gallery status is a quality flag, not proof that the listing is unusable.
+5. Live scraping remains operator-approved and must respect `legal_mode`, `risk_mode`, and `access_mode` from `data/source_registry.json`.
+
 
 ## Source Link Table
 

@@ -1,6 +1,6 @@
 # Bulgaria Real Estate Platform Architecture And Execution Guide
 
-Updated: 2026-04-08
+Updated: 2026-04-28
 
 ## 1. Purpose
 
@@ -21,12 +21,34 @@ This guide complements:
 - `docs/project-status-roadmap.md`
 - `data/source_registry.json`
 - `sql/schema.sql`
+- `docs/exports/reporting-and-instruction-index.md`
+- `docs/exports/taskforgema.md`
+- `docs/openclaw/gemma4-agent.md`
 
 It also defines the execution “orchestra”:
 
 - specialist agent journey logs in `docs/agents/*/JOURNEY.md`
 - operator reporting outputs (PostgreSQL + XLSX exports)
 - an operator-first internal admin surface for source health and ingestion coverage
+
+## 1.1 Current Reporting And Instruction Pack
+
+The repo-owned DOCX pack is generated and versioned under `docs/exports/`:
+
+| Artifact | Purpose |
+|---|---|
+| `bulgaria-real-estate-source-report.docx` | Source registry, scrape/photo coverage, four-bucket pattern readiness, and agent handoff rules. |
+| `project-architecture-execution-guide.docx` | System architecture, guardrails, agent execution rules, and product/frontend/backend responsibilities. |
+| `project-status-roadmap.docx` | Current stage, completed work, open gates, and next execution order. |
+
+The current four-bucket tier-1/2 scrape handoff is centered on `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO` across:
+
+1. buy residential
+2. buy commercial
+3. rent residential
+4. rent commercial
+
+Gemma4/OpenClaw must consume only local listing JSON and local image files, then produce per-property image descriptions and QA reports using `docs/exports/taskforgema.md` and `docs/exports/property-quality-and-building-contract.md`.
 
 ## 2. Product Goal
 

@@ -20,6 +20,7 @@ Best-fit tasks in this repo:
 - **Draft generation** for per-listing reports *from local files/metadata* (e.g. `docs/exports/*`, `data/scraped/*`, `data/media/*`).
 - **Apartment image-description + property QA reports** after Codex confirms complete local-gallery rows. Use `docs/exports/taskforgema.md`, `docs/exports/property-quality-and-building-contract.md`, and only local image files listed in `local_image_files`.
 - **Four-bucket tier-1/2 source reporting** for `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO` across buy residential, buy commercial, rent residential, and rent commercial.
+- **Reporting pack review** using `docs/exports/reporting-and-instruction-index.md` and the generated DOCX files before operator handoff.
 
 ### 2) Hard guardrails (must follow)
 
@@ -49,6 +50,18 @@ When you hand a task to this agent, include:
 1. Codex tier1-2 agent runs `S1-21`: checks scrape quality, image counts, description fullness, local file validity, and repairs patterns.
 2. Gemma4 runs `S1-22`: creates per-listing image reports and property QA reports from the Codex-confirmed local galleries, prioritizing the seven four-bucket sources in `docs/exports/taskforgema.md`.
 3. Debugger verifies the handoff with `DBG-08`.
+
+### 3.2) Required report fields per property
+
+Each property report must include:
+
+- listing identity: `reference_id`, source name, source links, local listing JSON path, and local image files used
+- structured facts: price, currency, size, rooms/floor when present, category, service type, city/district/address
+- source-text summary: page title, scraped description, structured attributes, and combined text
+- image report: one ordered description per image, plus a grouped visual summary
+- visual content: style, colors, apparent condition, layout/planning clues, visible tools/equipment/appliances/furniture, and exterior/building context when visible
+- QA checks: photo-count match, description-image consistency, price/size plausibility, category consistency, source-link availability, and uncertainty/confidence
+- gaps: anything missing or unclear; do not invent missing attributes
 
 ### 4) Ollama environment (operator responsibility)
 

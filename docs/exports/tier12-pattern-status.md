@@ -1,6 +1,6 @@
 # Tier 1-2 Pattern Status
 
-Generated: 2026-04-28 14:25 UTC
+Generated: 2026-04-29 03:47 UTC
 
 Media storage mode: image binaries are stored as local files under `data/media/<reference_id>/...`; remote `image_urls` remain only as source traceability, while listing JSON artifacts now also store `local_image_files` and `local_image_storage_keys`.
 

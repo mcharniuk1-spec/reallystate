@@ -1,10 +1,28 @@
 # Bulgaria Real Estate Platform Project Status Roadmap
 
-Updated: 2026-04-09
+Updated: 2026-04-28
 
 ## Current Stage
 
-The project is at **Stage 3: Live tier-1/2 ingestion + volume gate — primary focus**.
+The project is at **Stage 4/9 bridge: tier-1/2 scrape-quality hardening plus product-map UI stabilization**.
+
+The active operator priority is no longer only fixture scaffolding. The repo now contains a file-backed scrape corpus, source/photo dashboards, a Next.js product surface, and a MapLibre/OpenFreeMap 2D/3D map implementation. The next reliable gate is to prove quality across each listing before expanding volume: source links, page description, image counts, local image files, price/size/category plausibility, and building/address confidence.
+
+## 2026-04-28 Current Reporting Pack
+
+Repo-owned DOCX outputs were refreshed for handoff and review:
+
+| Artifact | Current scope |
+|---|---|
+| `docs/exports/bulgaria-real-estate-source-report.docx` | Source registry plus four-bucket scrape/photo/pattern addendum. |
+| `docs/exports/project-architecture-execution-guide.docx` | Architecture, agent responsibilities, reporting pack, and OpenClaw/Gemma4 handoff rules. |
+| `docs/exports/project-status-roadmap.docx` | Current stage, risks, and next execution order. |
+
+Current four-bucket sources prepared for Gemma4/OpenClaw reporting: `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO`.
+
+Current required product buckets: buy residential, buy commercial, rent residential, rent commercial.
+
+The next Gemma4 task is per-property image description plus QA reporting from local files only. The next Codex/debugger task after that is to compare each generated image report against scraped descriptions, source links, photo counts, price/size ranges, and map/building confidence.
 
 **Previous:** Stage 2 (database and persistence) remains in motion with many backend slices implemented or awaiting verification.
 
