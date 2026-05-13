@@ -19,14 +19,34 @@ REPO = Path(__file__).resolve().parent.parent
 
 sys.path.insert(0, str(REPO / "src"))
 
-from bgrealestate.connectors.ingest import persist_listing_bundle  # noqa: E402
-from bgrealestate.db.session import create_db_engine  # noqa: E402
 from bgrealestate.enums import ListingIntent, PropertyCategory  # noqa: E402
 from bgrealestate.models import CanonicalListing, ParsedListing, RawCapture  # noqa: E402
 from bgrealestate.source_registry import SourceRegistry  # noqa: E402
 
 SCRAPED_ROOT = REPO / "data" / "scraped"
 REGISTRY_PATH = REPO / "data" / "source_registry.json"
+
+PROVENANCE_FIELDS = (
+    "price_status",
+    "bucket_key",
+    "segment_key",
+    "geo_scope",
+    "source_section_id",
+    "source_publication_type",
+    "scrape_status",
+    "scrape_acceptance_status",
+    "single_entity_candidate",
+    "listing_status",
+    "needs_rescrape",
+    "photo_count_remote",
+    "photo_count_local",
+    "full_gallery_downloaded",
+    "local_image_files",
+    "local_image_storage_keys",
+    "image_report_status",
+    "image_report_path",
+    "image_description_coverage",
+)
 
 
 def _as_datetime(value: Any) -> datetime:
@@ -38,7 +58,7 @@ def _as_datetime(value: Any) -> datetime:
 
 
 def _as_float(value: Any) -> float | None:
-    if value in (None, "", False):
+    if value is None or value == "":
         return None
     try:
         return float(value)
@@ -47,7 +67,7 @@ def _as_float(value: Any) -> float | None:
 
 
 def _as_int(value: Any) -> int | None:
-    if value in (None, "", False):
+    if value is None or value == "":
         return None
     try:
         return int(float(value))
@@ -67,6 +87,32 @@ def _normalize_image_urls(urls: list[Any]) -> list[str]:
         seen.add(url)
         out.append(url)
     return out
+
+
+def _coerce_price_amount(listing: dict[str, Any], provenance: dict[str, Any]) -> float | None:
+    price = _as_float(listing.get("price"))
+    status = str(provenance.get("price_status") or "").strip().lower()
+    if price == 0:
+        provenance["price_status"] = status if status in {"on_request", "undefined"} else "undefined"
+        provenance["price_amount_raw"] = listing.get("price")
+        provenance["price_zero_coerced_to_null"] = True
+        return None
+    return price
+
+
+def _import_crawl_provenance(listing: dict[str, Any], *, fetched_at: datetime, listing_file: Path) -> dict[str, Any]:
+    provenance = dict(listing.get("crawl_provenance") or {})
+    for field_name in PROVENANCE_FIELDS:
+        if field_name in listing:
+            provenance[field_name] = listing.get(field_name)
+    provenance.update(
+        {
+            "import_mode": "data_scraped",
+            "scraped_at": fetched_at.isoformat(),
+            "listing_file": str(listing_file.relative_to(REPO)),
+        }
+    )
+    return provenance
 
 
 def _coerce_intent(value: Any) -> ListingIntent:
@@ -100,7 +146,8 @@ def _build_models(
     intent = _coerce_intent(listing.get("listing_intent"))
     category = _coerce_category(listing.get("property_category"))
     image_urls = _normalize_image_urls(listing.get("image_urls") or [])
-    price = _as_float(listing.get("price"))
+    crawl_provenance = _import_crawl_provenance(listing, fetched_at=fetched_at, listing_file=listing_file)
+    price = _coerce_price_amount(listing, crawl_provenance)
     area_sqm = _as_float(listing.get("area_sqm"))
     price_per_sqm = round(price / area_sqm, 2) if price is not None and area_sqm else None
 
@@ -200,11 +247,7 @@ def _build_models(
         last_changed_at=fetched_at,
         removed_at=None,
         parser_version=parser_version,
-        crawl_provenance={
-            "import_mode": "data_scraped",
-            "scraped_at": fetched_at.isoformat(),
-            "listing_file": str(listing_file.relative_to(REPO)),
-        },
+        crawl_provenance=crawl_provenance,
     )
     return raw_capture, parsed, canonical
 
@@ -229,12 +272,17 @@ def _skip_reason(
     include_lost: bool,
     include_grouped: bool,
     include_inactive: bool,
+    include_unreviewed: bool,
 ) -> str | None:
+    status = str(listing.get("scrape_status") or "").strip()
+    if not include_unreviewed and status in {"", "PENDING_QA", "UNKNOWN"}:
+        return "unreviewed_quality_state"
     if not include_lost and (listing.get("scrape_status") == "LOST" or listing.get("needs_rescrape") is True):
         return "lost_rescrape_required"
     if not include_grouped and (
         listing.get("source_publication_type") == "multi_unit_or_development"
         or listing.get("scrape_acceptance_status") == "not_single_entity"
+        or listing.get("suspected_multi_unit_publication") is True
     ):
         return "grouped_publication_not_single_entity"
     if not include_inactive and str(listing.get("listing_status") or "").lower() in {"inactive", "removed", "expired"}:
@@ -251,6 +299,12 @@ def main() -> int:
     parser.add_argument("--include-lost", action="store_true", help="Import QA-quarantined LOST rows.")
     parser.add_argument("--include-grouped", action="store_true", help="Import grouped/development publications.")
     parser.add_argument("--include-inactive", action="store_true", help="Import inactive/removed/expired source listings.")
+    parser.add_argument("--include-unreviewed", action="store_true", help="Import PENDING_QA or missing-status rows.")
+    parser.add_argument(
+        "--promote-property-entities",
+        action="store_true",
+        help="Also run canonical property/offer unification. Default import remains source-publication-first.",
+    )
     args = parser.parse_args()
 
     registry = SourceRegistry.from_file(REGISTRY_PATH)
@@ -268,6 +322,7 @@ def main() -> int:
                 include_lost=args.include_lost,
                 include_grouped=args.include_grouped,
                 include_inactive=args.include_inactive,
+                include_unreviewed=args.include_unreviewed,
             )
             if reason:
                 skipped[reason] = skipped.get(reason, 0) + 1
@@ -282,6 +337,9 @@ def main() -> int:
             print(f"skipped {reason}: {count}")
         return 0
 
+    from bgrealestate.connectors.ingest import persist_listing_bundle  # noqa: E402
+    from bgrealestate.db.session import create_db_engine  # noqa: E402
+
     engine = create_db_engine()
     imported = 0
     per_source: dict[str, int] = {}
@@ -293,6 +351,7 @@ def main() -> int:
             include_lost=args.include_lost,
             include_grouped=args.include_grouped,
             include_inactive=args.include_inactive,
+            include_unreviewed=args.include_unreviewed,
         )
         if reason:
             continue
@@ -326,7 +385,7 @@ def main() -> int:
             raw_capture=raw_capture,
             parsed=parsed,
             canonical=canonical,
-            unify=True,
+            unify=args.promote_property_entities,
             download_images=args.download_images,
             source_payload={
                 "import_mode": "data_scraped",

@@ -1,0 +1,2529 @@
+{
+  "generated_at": "2026-05-13T13:45:33.447933+00:00",
+  "registry_source_count": 44,
+  "totals": {
+    "rows": 30334,
+    "action1_rows": 29397,
+    "pending_or_missing_qa_rows": 26231,
+    "db_import_default_candidate_rows": 1606,
+    "action1_estimated_ok": 20811,
+    "action1_estimated_lost": 7133,
+    "action1_estimated_grouped": 1453
+  },
+  "sources": [
+    {
+      "source_key": "address_bg",
+      "rows": 6473,
+      "bad_json": 0,
+      "source_names": {
+        "Address.bg": 6473
+      },
+      "stored_status": {
+        "PENDING_QA": 5582,
+        "LOST": 891
+      },
+      "stored_acceptance": {
+        "pending_quality_gate": 5582,
+        "not_scraped_rescrape_required": 891
+      },
+      "stored_publication_type": {
+        "single_unit_candidate": 6473
+      },
+      "estimated_quality": {
+        "SCRAPED_OK": 3330,
+        "LOST": 3143
+      },
+      "estimated_reasons": {
+        "one_remote_photo_gallery_suspect": 1677,
+        "missing_city_or_address": 1262,
+        "suspicious_unit_area_too_large": 306,
+        "partial_local_gallery": 197,
+        "suspicious_house_area_too_large": 156,
+        "missing_area": 3,
+        "description_too_short": 1
+      },
+      "estimated_warnings": {
+        "unknown_property_category": 649,
+        "low_sale_price": 37,
+        "thin_description": 27
+      },
+      "bucket_counts": {
+        "buy_personal": 3409,
+        "buy_commercial": 1314,
+        "rent_personal": 1160,
+        "rent_commercial": 590
+      },
+      "intent_counts": {
+        "sale": 4723,
+        "long_term_rent": 1750
+      },
+      "category_counts": {
+        "apartment": 3061,
+        "land": 1084,
+        "house": 859,
+        "unknown": 649,
+        "office": 436,
+        "shop": 384
+      },
+      "source_section_counts": {
+        "sale_all": 3832,
+        "rent_all": 1750,
+        "MISSING": 891
+      },
+      "bucket_quality": {
+        "buy_personal": {
+          "SCRAPED_OK": 1798,
+          "LOST": 1611
+        },
+        "rent_commercial": {
+          "SCRAPED_OK": 367,
+          "LOST": 223
+        },
+        "buy_commercial": {
+          "LOST": 869,
+          "SCRAPED_OK": 445
+        },
+        "rent_personal": {
+          "SCRAPED_OK": 720,
+          "LOST": 440
+        }
+      },
+      "bucket_reasons": {
+        "buy_personal": {
+          "one_remote_photo_gallery_suspect": 742,
+          "missing_city_or_address": 720,
+          "suspicious_unit_area_too_large": 157,
+          "suspicious_house_area_too_large": 153,
+          "partial_local_gallery": 116,
+          "missing_area": 3
+        },
+        "buy_commercial": {
+          "one_remote_photo_gallery_suspect": 775,
+          "missing_city_or_address": 82,
+          "suspicious_unit_area_too_large": 53,
+          "partial_local_gallery": 51,
+          "description_too_short": 1
+        },
+        "rent_personal": {
+          "missing_city_or_address": 359,
+          "one_remote_photo_gallery_suspect": 71,
+          "suspicious_unit_area_too_large": 22,
+          "partial_local_gallery": 14,
+          "suspicious_house_area_too_large": 3
+        },
+        "rent_commercial": {
+          "missing_city_or_address": 101,
+          "one_remote_photo_gallery_suspect": 89,
+          "suspicious_unit_area_too_large": 74,
+          "partial_local_gallery": 16
+        }
+      },
+      "field_gaps": {
+        "missing_city_or_address": 1262,
+        "unknown_property_category": 649,
+        "thin_description": 28,
+        "missing_area": 3
+      },
+      "phone_total": 100325,
+      "phone_valid": 50660,
+      "phone_invalid": 49665,
+      "remote_photos": 47367,
+      "local_photos": 50748,
+      "full_gallery_flagged": 6276,
+      "rows_remote_no_local": 94,
+      "rows_duplicate_remote_variants": 0,
+      "local_paths_total": 50748,
+      "local_paths_existing": 50748,
+      "duplicate_listing_url_keys": 0,
+      "duplicate_reference_id_keys": 0,
+      "duplicate_external_id_keys": 0,
+      "db_import_default_candidate_rows": 0,
+      "pending_or_missing_qa_rows": 5582,
+      "examples": {
+        "missing_city_or_address": [
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_001f2a6df8f5.json",
+            "reference_id": "Address.bg:001f2a6df8f5",
+            "title": "Тристаен апартамент във Варна, Аспарухово - код на имота: 688648",
+            "listing_url": "https://address.bg/varna-asparuhovo-tristaen-apartament-offer688648"
+          },
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_00475c55e98d.json",
+            "reference_id": "Address.bg:00475c55e98d",
+            "title": "Къща/Вила във Варна, к.к. Св.Св. Константин и Елена - код на имота: 680324",
+            "listing_url": "https://address.bg/varna-kk-svsv-konstantin-i-elena-kashta-vila-offer680324"
+          },
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_0053b162cd1c.json",
+            "reference_id": "Address.bg:0053b162cd1c",
+            "title": "Тристаен апартамент във Варна, Зимно кино Тракия - код на имота: 675121",
+            "listing_url": "https://address.bg/varna-zimno-kino-trakiya-tristaen-apartament-offer675121"
+          }
+        ],
+        "partial_local_gallery": [
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_002b19df6058.json",
+            "reference_id": "Address.bg:002b19df6058",
+            "title": "Парцел/Терен в Добрич, Промишлена зона - Запад - код на имота: 564671",
+            "listing_url": "https://address.bg/dobrich-promishlena-zona-zapad-parcel-teren-offer564671"
+          },
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_005fb3c0d6a1.json",
+            "reference_id": "Address.bg:005fb3c0d6a1",
+            "title": "Етаж от къща в Раднево, Широк Център - код на имота: 554600",
+            "listing_url": "https://address.bg/radnevo-shirok-centar-etazh-ot-kashta-offer554600"
+          },
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_01f8d1c9af9d.json",
+            "reference_id": "Address.bg:01f8d1c9af9d",
+            "title": "Къща/Вила в Плевен, Кайлъка - код на имота: 688099",
+            "listing_url": "https://address.bg/pleven-kaylaka-kashta-vila-offer688099"
+          }
+        ],
+        "one_remote_photo_gallery_suspect": [
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_005c5c402a25.json",
+            "reference_id": "Address.bg:005c5c402a25",
+            "title": "Парцел/Терен в Стара Загора, Индустриален - изток - код на имота: 612771",
+            "listing_url": "https://address.bg/stara-zagora-industrialen-iztok-parcel-teren-offer612771"
+          },
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_009a18e9b340.json",
+            "reference_id": "Address.bg:009a18e9b340",
+            "title": "Тристаен апартамент в София, Левски В - код на имота: 652027",
+            "listing_url": "https://address.bg/sofia-levski-v-tristaen-apartament-offer652027"
+          },
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_00a7a55f15a5.json",
+            "reference_id": "Address.bg:00a7a55f15a5",
+            "title": "Двустаен апартамент във Варна, к.к. Св.Св. Константин и Елена - код на имота: 660743",
+            "listing_url": "https://address.bg/varna-kk-svsv-konstantin-i-elena-dvustaen-apartament-offer660743"
+          }
+        ],
+        "suspicious_unit_area_too_large": [
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_01bd1b51f73b.json",
+            "reference_id": "Address.bg:01bd1b51f73b",
+            "title": "Многостаен апартамент в София, Мусагеница - код на имота: 680278",
+            "listing_url": "https://address.bg/sofia-musagenica-tristaen-apartament-offer680278"
+          },
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_01dec3522644.json",
+            "reference_id": "Address.bg:01dec3522644",
+            "title": "Тристаен апартамент в Горна Оряховица, Пролет - код на имота: 683855",
+            "listing_url": "https://address.bg/gorna-oryahovica-prolet-tristaen-apartament-offer683855"
+          },
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_020204fe7833.json",
+            "reference_id": "Address.bg:020204fe7833",
+            "title": "Офис Сграда/Търговски център в Длъжка поляна - код на имота: 547570",
+            "listing_url": "https://address.bg/dlazhka-polyana-ofis-sgrada-targovski-centar-offer547570"
+          }
+        ],
+        "suspicious_house_area_too_large": [
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_020763b5c3cb.json",
+            "reference_id": "Address.bg:020763b5c3cb",
+            "title": "Къща/Вила в Хисаря, Веригово - код на имота: 615806",
+            "listing_url": "https://address.bg/hisarya-verigovo-kashta-vila-offer615806"
+          },
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_04deec42cb9e.json",
+            "reference_id": "Address.bg:04deec42cb9e",
+            "title": "Къща/Вила в Девня, Девня - код на имота: 633437",
+            "listing_url": "https://address.bg/devnya-devnya-kashta-vila-offer633437"
+          },
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_076f9a753a4c.json",
+            "reference_id": "Address.bg:076f9a753a4c",
+            "title": "Къща/Вила в Лъка, м-ст Сухата река - код на имота: 588889",
+            "listing_url": "https://address.bg/laka-m-st-suhata-reka-kashta-vila-offer588889"
+          }
+        ],
+        "missing_area": [
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_2c339aaea061.json",
+            "reference_id": "Address.bg:2c339aaea061",
+            "title": "Гараж във Варна, Колхозен пазар - код на имота: 691269",
+            "listing_url": "https://address.bg/varna-kolhozen-pazar-garazh-offer691269"
+          },
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_78eb4858994f.json",
+            "reference_id": "Address.bg:78eb4858994f",
+            "title": "Паркомясто/Гаражна клетка във Варна, Колхозен пазар - код на имота: 691275",
+            "listing_url": "https://address.bg/varna-kolhozen-pazar-garazh-offer691275"
+          },
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_f60add37a1e8.json",
+            "reference_id": "Address.bg:f60add37a1e8",
+            "title": "Паркомясто/Гаражна клетка във Варна, Колхозен пазар - код на имота: 691268",
+            "listing_url": "https://address.bg/varna-kolhozen-pazar-garazh-offer691268"
+          }
+        ],
+        "description_too_short": [
+          {
+            "path": "data/scraped/address_bg/listings/Address.bg_450166.json",
+            "reference_id": "Address.bg:450166",
+            "title": "Парцел/Терен в Хасково, Кенана - код на имота: 450166",
+            "listing_url": "https://address.bg/haskovo-kenana-parcel-teren-offer450166"
+          }
+        ]
+      }
+    },
+    {
+      "source_key": "alo_bg",
+      "rows": 29,
+      "bad_json": 0,
+      "source_names": {
+        "alo.bg": 29
+      },
+      "stored_status": {
+        "MISSING": 29
+      },
+      "stored_acceptance": {
+        "MISSING": 29
+      },
+      "stored_publication_type": {
+        "MISSING": 29
+      },
+      "estimated_quality": {
+        "SCRAPED_OK": 29
+      },
+      "estimated_reasons": {},
+      "estimated_warnings": {
+        "thin_description": 1
+      },
+      "bucket_counts": {
+        "buy_personal": 29
+      },
+      "intent_counts": {
+        "sale": 29
+      },
+      "category_counts": {
+        "apartment": 29
+      },
+      "source_section_counts": {
+        "MISSING": 29
+      },
+      "bucket_quality": {
+        "buy_personal": {
+          "SCRAPED_OK": 29
+        }
+      },
+      "bucket_reasons": {},
+      "field_gaps": {
+        "thin_description": 1
+      },
+      "phone_total": 139,
+      "phone_valid": 3,
+      "phone_invalid": 136,
+      "remote_photos": 322,
+      "local_photos": 322,
+      "full_gallery_flagged": 29,
+      "rows_remote_no_local": 0,
+      "rows_duplicate_remote_variants": 0,
+      "local_paths_total": 322,
+      "local_paths_existing": 322,
+      "duplicate_listing_url_keys": 0,
+      "duplicate_reference_id_keys": 0,
+      "duplicate_external_id_keys": 0,
+      "db_import_default_candidate_rows": 0,
+      "pending_or_missing_qa_rows": 29,
+      "examples": {}
+    },
+    {
+      "source_key": "bazar_bg",
+      "rows": 250,
+      "bad_json": 0,
+      "source_names": {
+        "Bazar.bg": 250
+      },
+      "stored_status": {
+        "MISSING": 250
+      },
+      "stored_acceptance": {
+        "MISSING": 250
+      },
+      "stored_publication_type": {
+        "MISSING": 250
+      },
+      "estimated_quality": {
+        "SCRAPED_OK": 177,
+        "LOST": 73
+      },
+      "estimated_reasons": {
+        "partial_local_gallery": 58,
+        "missing_city_or_address": 17,
+        "zero_price_invalid": 3,
+        "suspicious_unit_area_too_large": 2,
+        "description_too_short": 1
+      },
+      "estimated_warnings": {
+        "thin_description": 49,
+        "unknown_property_category": 44,
+        "low_sale_price": 1
+      },
+      "bucket_counts": {
+        "MISSING": 250
+      },
+      "intent_counts": {
+        "sale": 194,
+        "long_term_rent": 56
+      },
+      "category_counts": {
+        "apartment": 205,
+        "unknown": 44,
+        "office": 1
+      },
+      "source_section_counts": {
+        "MISSING": 250
+      },
+      "bucket_quality": {
+        "MISSING": {
+          "SCRAPED_OK": 177,
+          "LOST": 73
+        }
+      },
+      "bucket_reasons": {
+        "MISSING": {
+          "partial_local_gallery": 58,
+          "missing_city_or_address": 17,
+          "zero_price_invalid": 3,
+          "suspicious_unit_area_too_large": 2,
+          "description_too_short": 1
+        }
+      },
+      "field_gaps": {
+        "thin_description": 50,
+        "unknown_property_category": 44,
+        "missing_city_or_address": 17,
+        "zero_price": 3
+      },
+      "phone_total": 4238,
+      "phone_valid": 1744,
+      "phone_invalid": 2494,
+      "remote_photos": 2607,
+      "local_photos": 2487,
+      "full_gallery_flagged": 192,
+      "rows_remote_no_local": 1,
+      "rows_duplicate_remote_variants": 229,
+      "local_paths_total": 2487,
+      "local_paths_existing": 2487,
+      "duplicate_listing_url_keys": 0,
+      "duplicate_reference_id_keys": 0,
+      "duplicate_external_id_keys": 0,
+      "db_import_default_candidate_rows": 0,
+      "pending_or_missing_qa_rows": 250,
+      "examples": {
+        "missing_city_or_address": [
+          {
+            "path": "data/scraped/bazar_bg/listings/Bazar.bg_40857836.json",
+            "reference_id": "Bazar.bg:40857836",
+            "title": "Продава 2-СТАЕН без комисионна за купувача, не се начислява ДДС  → Обява 40857836",
+            "listing_url": "https://bazar.bg/obiava-40857836/prodawa-2-staen-bez-komisionna-za-kupuwacha-ne-se-nachisliawa-dds"
+          },
+          {
+            "path": "data/scraped/bazar_bg/listings/Bazar.bg_48962610.json",
+            "reference_id": "Bazar.bg:48962610",
+            "title": "Готов бизнес - 2 апартамента и гараж с наематели до Градския парк → Обява 48962610",
+            "listing_url": "https://bazar.bg/obiava-48962610/gotow-biznes-2-apartamenta-i-garazh-s-naemateli-do-gradskiia-park"
+          },
+          {
+            "path": "data/scraped/bazar_bg/listings/Bazar.bg_51267270.json",
+            "reference_id": "Bazar.bg:51267270",
+            "title": "От собственик 2-СТАЕН град Пловдив, Христо Смирненски, без комисионна! → Обява 51267270",
+            "listing_url": "https://bazar.bg/obiava-51267270/ot-sobstwenik-2-staen-grad-plowdiw-hristo-smirnenski-bez-komisionna"
+          }
+        ],
+        "partial_local_gallery": [
+          {
+            "path": "data/scraped/bazar_bg/listings/Bazar.bg_40857836.json",
+            "reference_id": "Bazar.bg:40857836",
+            "title": "Продава 2-СТАЕН без комисионна за купувача, не се начислява ДДС  → Обява 40857836",
+            "listing_url": "https://bazar.bg/obiava-40857836/prodawa-2-staen-bez-komisionna-za-kupuwacha-ne-se-nachisliawa-dds"
+          },
+          {
+            "path": "data/scraped/bazar_bg/listings/Bazar.bg_44660760.json",
+            "reference_id": "Bazar.bg:44660760",
+            "title": "Продава 3-СТАЕН, гр. София, Стрелбище → Обява 44660760",
+            "listing_url": "https://bazar.bg/obiava-44660760/prodawa-3-staen-gr-sofiia-strelbishte"
+          },
+          {
+            "path": "data/scraped/bazar_bg/listings/Bazar.bg_48519509.json",
+            "reference_id": "Bazar.bg:48519509",
+            "title": "Продава 2-СТАЕН, гр. Търговище, Вароша → Обява 48519509",
+            "listing_url": "https://bazar.bg/obiava-48519509/prodawa-2-staen-gr-targowishte-warosha"
+          }
+        ],
+        "suspicious_unit_area_too_large": [
+          {
+            "path": "data/scraped/bazar_bg/listings/Bazar.bg_52889946.json",
+            "reference_id": "Bazar.bg:52889946",
+            "title": "Продава 2-СТАЕН, гр. София, Банишора → Обява 52889946",
+            "listing_url": "https://bazar.bg/obiava-52889946/prodawa-2-staen-gr-sofiia-banishora"
+          },
+          {
+            "path": "data/scraped/bazar_bg/listings/Bazar.bg_53968011.json",
+            "reference_id": "Bazar.bg:53968011",
+            "title": "Продава 2-СТАЕН, гр. София, Оборище → Обява 53968011",
+            "listing_url": "https://bazar.bg/obiava-53968011/prodawa-2-staen-gr-sofiia-oborishte"
+          }
+        ],
+        "zero_price_invalid": [
+          {
+            "path": "data/scraped/bazar_bg/listings/Bazar.bg_53640867.json",
+            "reference_id": "Bazar.bg:53640867",
+            "title": "Продава 1-СТАЕН, гр. Търговище, Вароша → Обява 53640867",
+            "listing_url": "https://bazar.bg/obiava-53640867/prodawa-1-staen-gr-targowishte-warosha"
+          },
+          {
+            "path": "data/scraped/bazar_bg/listings/Bazar.bg_54040815.json",
+            "reference_id": "Bazar.bg:54040815",
+            "title": "Продава 3-СТАЕН, гр. Стара Загора, Казански - изток → Обява 54040815",
+            "listing_url": "https://bazar.bg/obiava-54040815/prodawa-3-staen-gr-stara-zagora-kazanski-iztok"
+          },
+          {
+            "path": "data/scraped/bazar_bg/listings/Bazar.bg_54069540.json",
+            "reference_id": "Bazar.bg:54069540",
+            "title": "продавам многостаен апартамент идеален център → Обява 54069540",
+            "listing_url": "https://bazar.bg/obiava-54069540/prodawam-mnogostaen-apartament-idealen-tsentar"
+          }
+        ],
+        "description_too_short": [
+          {
+            "path": "data/scraped/bazar_bg/listings/Bazar.bg_54073097.json",
+            "reference_id": "Bazar.bg:54073097",
+            "title": "Продава 4-СТАЕН, гр. София, Драгалевци → Обява 54073097",
+            "listing_url": "https://bazar.bg/obiava-54073097/prodawa-4-staen-gr-sofiia-dragalewtsi"
+          }
+        ]
+      }
+    },
+    {
+      "source_key": "bulgarianproperties",
+      "rows": 2289,
+      "bad_json": 0,
+      "source_names": {
+        "BulgarianProperties": 2289
+      },
+      "stored_status": {
+        "PENDING_QA": 1888,
+        "GROUPED_PUBLICATION": 284,
+        "LOST": 117
+      },
+      "stored_acceptance": {
+        "pending_quality_gate": 1888,
+        "not_single_entity": 284,
+        "not_scraped_rescrape_required": 117
+      },
+      "stored_publication_type": {
+        "single_unit_candidate": 1972,
+        "multi_unit_or_development": 317
+      },
+      "estimated_quality": {
+        "LOST": 2277,
+        "SCRAPED_OK": 12
+      },
+      "estimated_reasons": {
+        "partial_local_gallery": 2271,
+        "missing_area": 510,
+        "suspicious_unit_area_too_large": 116,
+        "suspicious_house_area_too_large": 112,
+        "thin_title": 1,
+        "missing_city_or_address": 1
+      },
+      "estimated_warnings": {
+        "multi_unit_or_development": 323,
+        "unknown_property_category": 24
+      },
+      "bucket_counts": {
+        "buy_personal": 1766,
+        "buy_commercial": 274,
+        "rent_personal": 180,
+        "rent_commercial": 69
+      },
+      "intent_counts": {
+        "sale": 2040,
+        "long_term_rent": 249
+      },
+      "category_counts": {
+        "apartment": 1172,
+        "house": 750,
+        "land": 237,
+        "office": 62,
+        "shop": 44,
+        "unknown": 24
+      },
+      "source_section_counts": {
+        "sale_all": 2160,
+        "MISSING": 117,
+        "sale_apartment_1br": 7,
+        "sale_apartment_2br": 5
+      },
+      "bucket_quality": {
+        "buy_personal": {
+          "LOST": 1759,
+          "SCRAPED_OK": 7
+        },
+        "rent_commercial": {
+          "LOST": 68,
+          "SCRAPED_OK": 1
+        },
+        "rent_personal": {
+          "LOST": 177,
+          "SCRAPED_OK": 3
+        },
+        "buy_commercial": {
+          "LOST": 273,
+          "SCRAPED_OK": 1
+        }
+      },
+      "bucket_reasons": {
+        "buy_personal": {
+          "partial_local_gallery": 1755,
+          "missing_area": 422,
+          "suspicious_house_area_too_large": 111,
+          "suspicious_unit_area_too_large": 96
+        },
+        "rent_commercial": {
+          "partial_local_gallery": 68,
+          "missing_area": 14,
+          "suspicious_unit_area_too_large": 6
+        },
+        "rent_personal": {
+          "partial_local_gallery": 175,
+          "missing_area": 35,
+          "suspicious_unit_area_too_large": 8,
+          "thin_title": 1,
+          "missing_city_or_address": 1,
+          "suspicious_house_area_too_large": 1
+        },
+        "buy_commercial": {
+          "partial_local_gallery": 273,
+          "missing_area": 39,
+          "suspicious_unit_area_too_large": 6
+        }
+      },
+      "field_gaps": {
+        "missing_area": 510,
+        "unknown_property_category": 24,
+        "thin_title": 1,
+        "missing_city_or_address": 1
+      },
+      "phone_total": 74127,
+      "phone_valid": 60895,
+      "phone_invalid": 13232,
+      "remote_photos": 61878,
+      "local_photos": 55247,
+      "full_gallery_flagged": 18,
+      "rows_remote_no_local": 0,
+      "rows_duplicate_remote_variants": 0,
+      "local_paths_total": 55247,
+      "local_paths_existing": 55247,
+      "duplicate_listing_url_keys": 0,
+      "duplicate_reference_id_keys": 0,
+      "duplicate_external_id_keys": 0,
+      "db_import_default_candidate_rows": 0,
+      "pending_or_missing_qa_rows": 1888,
+      "examples": {
+        "partial_local_gallery": [
+          {
+            "path": "data/scraped/bulgarianproperties/listings/BulgarianProperties_0023d0450186.json",
+            "reference_id": "BulgarianProperties:0023d0450186",
+            "title": "Renovated 1-storey house with garden in Sokolovo village near Karnobat",
+            "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD84423BG_House_for_sale_near_Karnobat.html"
+          },
+          {
+            "path": "data/scraped/bulgarianproperties/listings/BulgarianProperties_00306e455332.json",
+            "reference_id": "BulgarianProperties:00306e455332",
+            "title": "Compact and fully furnished apartment with excellent functionality in Borovets",
+            "listing_url": "https://www.bulgarianproperties.com/Studios_in_Bulgaria/AD90050BG_Studio_for_sale_in_Borovets.html"
+          },
+          {
+            "path": "data/scraped/bulgarianproperties/listings/BulgarianProperties_00880d57f8df.json",
+            "reference_id": "BulgarianProperties:00880d57f8df",
+            "title": "Spacious office in a high-class building in Manastirski livadi quarter",
+            "listing_url": "https://www.bulgarianproperties.com/Offices_in_Bulgaria/AD82462BG_Office_for_rent_in_Sofia.html"
+          }
+        ],
+        "missing_area": [
+          {
+            "path": "data/scraped/bulgarianproperties/listings/BulgarianProperties_00880d57f8df.json",
+            "reference_id": "BulgarianProperties:00880d57f8df",
+            "title": "Spacious office in a high-class building in Manastirski livadi quarter",
+            "listing_url": "https://www.bulgarianproperties.com/Offices_in_Bulgaria/AD82462BG_Office_for_rent_in_Sofia.html"
+          },
+          {
+            "path": "data/scraped/bulgarianproperties/listings/BulgarianProperties_00f12ef61fa1.json",
+            "reference_id": "BulgarianProperties:00f12ef61fa1",
+            "title": "Bendida House Luxury Residence  a modern home with no maintenance fee in Nessebar",
+            "listing_url": "https://www.bulgarianproperties.com/Apartments_(various_types)_in_Bulgaria/AD90122BG_Apartments_(various_types)_for_sale_in_Nessebar.html"
+          },
+          {
+            "path": "data/scraped/bulgarianproperties/listings/BulgarianProperties_010c218ae841.json",
+            "reference_id": "BulgarianProperties:010c218ae841",
+            "title": "Apartment near Business Park Sofia",
+            "listing_url": "https://www.bulgarianproperties.com/Apartments_(various_types)_in_Bulgaria/AD82409BG_Apartments_(various_types)_for_sale_in_Sofia.html"
+          }
+        ],
+        "suspicious_unit_area_too_large": [
+          {
+            "path": "data/scraped/bulgarianproperties/listings/BulgarianProperties_00c6bd8a162d.json",
+            "reference_id": "BulgarianProperties:00c6bd8a162d",
+            "title": "One-Bedroom Apartment at a Promotional Price in Manastirski Livadi District",
+            "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD89108BG_1-bedroom_apartment_for_sale_in_Sofia.html"
+          },
+          {
+            "path": "data/scraped/bulgarianproperties/listings/BulgarianProperties_015f29a426ef.json",
+            "reference_id": "BulgarianProperties:015f29a426ef",
+            "title": "Ready-to-move apartment for rent in St. John Hill complex",
+            "listing_url": "https://www.bulgarianproperties.com/Studios_in_Bulgaria/AD79571BG_Studio_for_rent_in_Bansko.html"
+          },
+          {
+            "path": "data/scraped/bulgarianproperties/listings/BulgarianProperties_07ee0c45ed34.json",
+            "reference_id": "BulgarianProperties:07ee0c45ed34",
+            "title": "Lovely guest house at the foot of the Rhodope Mountain",
+            "listing_url": "https://www.bulgarianproperties.com/Hotels_in_Bulgaria/AD74229BG_Hotel_for_sale_near_Plovdiv.html"
+          }
+        ],
+        "suspicious_house_area_too_large": [
+          {
+            "path": "data/scraped/bulgarianproperties/listings/BulgarianProperties_06cc19d39cd2.json",
+            "reference_id": "BulgarianProperties:06cc19d39cd2",
+            "title": "Regulated plot with dilapidated house in the village of Markovo",
+            "listing_url": "https://www.bulgarianproperties.com/Regulated_plots_in_Bulgaria/AD89534BG_Regulated_plot_for_sale_near_Shumen.html"
+          },
+          {
+            "path": "data/scraped/bulgarianproperties/listings/BulgarianProperties_08b7942eb905.json",
+            "reference_id": "BulgarianProperties:08b7942eb905",
+            "title": "Guest Houses Complex in the Heart of the Elena Balkan",
+            "listing_url": "https://www.bulgarianproperties.com/Houses_in_Bulgaria/AD73985BG_House_for_sale_near_Elena.html"
+          },
+          {
+            "path": "data/scraped/bulgarianproperties/listings/BulgarianProperties_12abb26b7ce9.json",
+            "reference_id": "BulgarianProperties:12abb26b7ce9",
+            "title": "Regulated development land at the entrance of Samokov",
+            "listing_url": "https://www.bulgarianproperties.com/Regulated_plots_in_Bulgaria/AD88922BG_Regulated_plot_for_sale_in_Samokov.html"
+          }
+        ],
+        "thin_title": [
+          {
+            "path": "data/scraped/bulgarianproperties/listings/BulgarianProperties_073fa7701dcd.json",
+            "reference_id": "BulgarianProperties:073fa7701dcd",
+            "title": "Admiral",
+            "listing_url": "https://www.bulgarianproperties.com/Apartments_(various_types)_in_Bulgaria/AD35664BG_Apartments_(various_types)_for_sale_in_Sveti_Vlas.html"
+          }
+        ],
+        "missing_city_or_address": [
+          {
+            "path": "data/scraped/bulgarianproperties/listings/BulgarianProperties_8b7073616ab1.json",
+            "reference_id": "BulgarianProperties:8b7073616ab1",
+            "title": "1-bedroom apartment in small building in Alen Mak area",
+            "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD82827BG_1-bedroom_apartment_for_rent_in_.html"
+          }
+        ]
+      }
+    },
+    {
+      "source_key": "domaza",
+      "rows": 40,
+      "bad_json": 0,
+      "source_names": {
+        "Domaza": 40
+      },
+      "stored_status": {
+        "MISSING": 40
+      },
+      "stored_acceptance": {
+        "MISSING": 40
+      },
+      "stored_publication_type": {
+        "MISSING": 40
+      },
+      "estimated_quality": {
+        "SCRAPED_OK": 25,
+        "LOST": 13,
+        "GROUPED_PUBLICATION": 2
+      },
+      "estimated_reasons": {
+        "missing_area": 13
+      },
+      "estimated_warnings": {
+        "multi_unit_or_development": 2
+      },
+      "bucket_counts": {
+        "rent_personal": 22,
+        "buy_personal": 15,
+        "rent_commercial": 3
+      },
+      "intent_counts": {
+        "long_term_rent": 25,
+        "sale": 15
+      },
+      "category_counts": {
+        "apartment": 35,
+        "office": 3,
+        "house": 2
+      },
+      "source_section_counts": {
+        "MISSING": 40
+      },
+      "bucket_quality": {
+        "buy_personal": {
+          "LOST": 9,
+          "SCRAPED_OK": 5,
+          "GROUPED_PUBLICATION": 1
+        },
+        "rent_commercial": {
+          "LOST": 2,
+          "SCRAPED_OK": 1
+        },
+        "rent_personal": {
+          "SCRAPED_OK": 19,
+          "LOST": 2,
+          "GROUPED_PUBLICATION": 1
+        }
+      },
+      "bucket_reasons": {
+        "buy_personal": {
+          "missing_area": 9
+        },
+        "rent_commercial": {
+          "missing_area": 2
+        },
+        "rent_personal": {
+          "missing_area": 2
+        }
+      },
+      "field_gaps": {
+        "missing_area": 13
+      },
+      "phone_total": 12,
+      "phone_valid": 12,
+      "phone_invalid": 0,
+      "remote_photos": 777,
+      "local_photos": 777,
+      "full_gallery_flagged": 40,
+      "rows_remote_no_local": 0,
+      "rows_duplicate_remote_variants": 0,
+      "local_paths_total": 777,
+      "local_paths_existing": 777,
+      "duplicate_listing_url_keys": 0,
+      "duplicate_reference_id_keys": 0,
+      "duplicate_external_id_keys": 0,
+      "db_import_default_candidate_rows": 0,
+      "pending_or_missing_qa_rows": 40,
+      "examples": {
+        "missing_area": [
+          {
+            "path": "data/scraped/domaza/listings/Domaza_22334.json",
+            "reference_id": "Domaza:22334",
+            "title": "Жилищен Комплекс, гр. Бяла, Варна, България",
+            "listing_url": "https://www.domaza.bg/%D0%B6%D0%B8%D0%BB%D0%B8%D1%89%D0%B5%D0%BD_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%D0%B3%D1%80_%D0%B1%D1%8F%D0%BB%D0%B0_%D0%B2%D0%B0%D1%80%D0%BD%D0%B0_%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F-16-22334-p/"
+          },
+          {
+            "path": "data/scraped/domaza/listings/Domaza_23902.json",
+            "reference_id": "Domaza:23902",
+            "title": "Жилищен Комплекс, к.к. Златни пясъци, Варна, България",
+            "listing_url": "https://www.domaza.bg/%D0%B6%D0%B8%D0%BB%D0%B8%D1%89%D0%B5%D0%BD_%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%81_%D0%BA_%D0%BA_%D0%B7%D0%BB%D0%B0%D1%82%D0%BD%D0%B8_%D0%BF%D1%8F%D1%81%D1%8A%D1%86%D0%B8_%D0%B2%D0%B0%D1%80%D0%BD%D0%B0_%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F-16-23902-p/"
+          },
+          {
+            "path": "data/scraped/domaza/listings/Domaza_4038574.json",
+            "reference_id": "Domaza:4038574",
+            "title": "Офис, Широк център, гр. Варна, Варна, България",
+            "listing_url": "https://www.domaza.bg/%D0%BE%D1%84%D0%B8%D1%81_%D1%88%D0%B8%D1%80%D0%BE%D0%BA_%D1%86%D0%B5%D0%BD%D1%82%D1%8A%D1%80_%D0%B3%D1%80_%D0%B2%D0%B0%D1%80%D0%BD%D0%B0_%D0%B2%D0%B0%D1%80%D0%BD%D0%B0_%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F-16-4038574-p/"
+          }
+        ]
+      }
+    },
+    {
+      "source_key": "home2u",
+      "rows": 24,
+      "bad_json": 0,
+      "source_names": {
+        "Home2U": 24
+      },
+      "stored_status": {
+        "MISSING": 24
+      },
+      "stored_acceptance": {
+        "MISSING": 24
+      },
+      "stored_publication_type": {
+        "MISSING": 24
+      },
+      "estimated_quality": {
+        "LOST": 14,
+        "SCRAPED_OK": 10
+      },
+      "estimated_reasons": {
+        "thin_title": 13,
+        "missing_area": 3,
+        "missing_city_or_address": 1,
+        "missing_description": 1
+      },
+      "estimated_warnings": {
+        "low_sale_price": 3,
+        "thin_description": 1
+      },
+      "bucket_counts": {
+        "rent_personal": 8,
+        "buy_personal": 6,
+        "buy_commercial": 6,
+        "rent_commercial": 4
+      },
+      "intent_counts": {
+        "long_term_rent": 12,
+        "sale": 12
+      },
+      "category_counts": {
+        "apartment": 11,
+        "office": 5,
+        "land": 5,
+        "house": 3
+      },
+      "source_section_counts": {
+        "MISSING": 24
+      },
+      "bucket_quality": {
+        "rent_personal": {
+          "LOST": 5,
+          "SCRAPED_OK": 3
+        },
+        "rent_commercial": {
+          "SCRAPED_OK": 3,
+          "LOST": 1
+        },
+        "buy_personal": {
+          "LOST": 4,
+          "SCRAPED_OK": 2
+        },
+        "buy_commercial": {
+          "LOST": 4,
+          "SCRAPED_OK": 2
+        }
+      },
+      "bucket_reasons": {
+        "rent_personal": {
+          "thin_title": 5,
+          "missing_area": 2
+        },
+        "buy_personal": {
+          "thin_title": 3,
+          "missing_area": 1,
+          "missing_city_or_address": 1
+        },
+        "buy_commercial": {
+          "thin_title": 4,
+          "missing_description": 1
+        },
+        "rent_commercial": {
+          "thin_title": 1
+        }
+      },
+      "field_gaps": {
+        "thin_title": 13,
+        "missing_area": 3,
+        "thin_description": 1,
+        "missing_city_or_address": 1,
+        "missing_description": 1
+      },
+      "phone_total": 4,
+      "phone_valid": 4,
+      "phone_invalid": 0,
+      "remote_photos": 133,
+      "local_photos": 133,
+      "full_gallery_flagged": 24,
+      "rows_remote_no_local": 0,
+      "rows_duplicate_remote_variants": 0,
+      "local_paths_total": 133,
+      "local_paths_existing": 133,
+      "duplicate_listing_url_keys": 0,
+      "duplicate_reference_id_keys": 0,
+      "duplicate_external_id_keys": 0,
+      "db_import_default_candidate_rows": 0,
+      "pending_or_missing_qa_rows": 24,
+      "examples": {
+        "thin_title": [
+          {
+            "path": "data/scraped/home2u/listings/Home2U_0ed15363bab8.json",
+            "reference_id": "Home2U:0ed15363bab8",
+            "title": "2-стаен",
+            "listing_url": "https://home2u.bg/property/2-%d1%81%d1%82%d0%b0%d0%b5%d0%bd-e5196/"
+          },
+          {
+            "path": "data/scraped/home2u/listings/Home2U_388f9b582dc3.json",
+            "reference_id": "Home2U:388f9b582dc3",
+            "title": "Парцел",
+            "listing_url": "https://home2u.bg/property/parczel-6312d/"
+          },
+          {
+            "path": "data/scraped/home2u/listings/Home2U_5404c99198b4.json",
+            "reference_id": "Home2U:5404c99198b4",
+            "title": "Парцел",
+            "listing_url": "https://home2u.bg/property/%d0%bf%d0%b0%d1%80%d1%86%d0%b5%d0%bb-b1e33/"
+          }
+        ],
+        "missing_area": [
+          {
+            "path": "data/scraped/home2u/listings/Home2U_8574b353a658.json",
+            "reference_id": "Home2U:8574b353a658",
+            "title": "Ново Строителство",
+            "listing_url": "https://home2u.bg/new-construction/"
+          },
+          {
+            "path": "data/scraped/home2u/listings/Home2U_8b6554741093.json",
+            "reference_id": "Home2U:8b6554741093",
+            "title": "3-стаен",
+            "listing_url": "https://home2u.bg/property/3-%d1%81%d1%82%d0%b0%d0%b5%d0%bd-45346/"
+          },
+          {
+            "path": "data/scraped/home2u/listings/Home2U_d7f35208da4b.json",
+            "reference_id": "Home2U:d7f35208da4b",
+            "title": "3-стаен",
+            "listing_url": "https://home2u.bg/property/3-%d1%81%d1%82%d0%b0%d0%b5%d0%bd-9abac/"
+          }
+        ],
+        "missing_city_or_address": [
+          {
+            "path": "data/scraped/home2u/listings/Home2U_8574b353a658.json",
+            "reference_id": "Home2U:8574b353a658",
+            "title": "Ново Строителство",
+            "listing_url": "https://home2u.bg/new-construction/"
+          }
+        ],
+        "missing_description": [
+          {
+            "path": "data/scraped/home2u/listings/Home2U_cd2ccf24edff.json",
+            "reference_id": "Home2U:cd2ccf24edff",
+            "title": "Парцел",
+            "listing_url": "https://home2u.bg/property/%d0%bf%d0%b0%d1%80%d1%86%d0%b5%d0%bb-79c92/"
+          }
+        ]
+      }
+    },
+    {
+      "source_key": "homes_bg",
+      "rows": 144,
+      "bad_json": 0,
+      "source_names": {
+        "Homes.bg": 144
+      },
+      "stored_status": {
+        "LOST": 62,
+        "SCRAPED_OK": 60,
+        "PENDING_QA": 20,
+        "GROUPED_PUBLICATION": 2
+      },
+      "stored_acceptance": {
+        "not_scraped_rescrape_required": 62,
+        "accepted_single_entity_candidate": 60,
+        "pending_quality_gate": 20,
+        "not_single_entity": 2
+      },
+      "stored_publication_type": {
+        "single_unit_candidate": 135,
+        "multi_unit_or_development": 9
+      },
+      "estimated_quality": {
+        "SCRAPED_OK": 79,
+        "LOST": 62,
+        "GROUPED_PUBLICATION": 3
+      },
+      "estimated_reasons": {
+        "partial_local_gallery": 55,
+        "one_remote_photo_gallery_suspect": 13,
+        "missing_remote_gallery": 3,
+        "missing_description": 1
+      },
+      "estimated_warnings": {
+        "multi_unit_or_development": 10
+      },
+      "bucket_counts": {
+        "buy_personal": 144
+      },
+      "intent_counts": {
+        "sale": 144
+      },
+      "category_counts": {
+        "apartment": 144
+      },
+      "source_section_counts": {
+        "MISSING": 124,
+        "sale-sofia": 20
+      },
+      "bucket_quality": {
+        "buy_personal": {
+          "SCRAPED_OK": 79,
+          "LOST": 62,
+          "GROUPED_PUBLICATION": 3
+        }
+      },
+      "bucket_reasons": {
+        "buy_personal": {
+          "partial_local_gallery": 55,
+          "one_remote_photo_gallery_suspect": 13,
+          "missing_remote_gallery": 3,
+          "missing_description": 1
+        }
+      },
+      "field_gaps": {
+        "missing_description": 1
+      },
+      "phone_total": 201,
+      "phone_valid": 159,
+      "phone_invalid": 42,
+      "remote_photos": 1077,
+      "local_photos": 740,
+      "full_gallery_flagged": 86,
+      "rows_remote_no_local": 37,
+      "rows_duplicate_remote_variants": 0,
+      "local_paths_total": 740,
+      "local_paths_existing": 740,
+      "duplicate_listing_url_keys": 36,
+      "duplicate_reference_id_keys": 0,
+      "duplicate_external_id_keys": 0,
+      "db_import_default_candidate_rows": 60,
+      "pending_or_missing_qa_rows": 20,
+      "examples": {
+        "partial_local_gallery": [
+          {
+            "path": "data/scraped/homes_bg/listings/Homes.bg_01bf996371bd.json",
+            "reference_id": "Homes.bg:01bf996371bd",
+            "title": "Едностаен, 50m² - жк. Лозенец, София",
+            "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/ednostaen-50m2-sofiya-zhk.-lozenec/as1659480"
+          },
+          {
+            "path": "data/scraped/homes_bg/listings/Homes.bg_0376351f52e1.json",
+            "reference_id": "Homes.bg:0376351f52e1",
+            "title": "Тристаен, 104m² - жк. Надежда 4, София",
+            "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-104m2-sofiya-zhk.-nadezhda-4/as1592985"
+          },
+          {
+            "path": "data/scraped/homes_bg/listings/Homes.bg_09e4e5f2cf98.json",
+            "reference_id": "Homes.bg:09e4e5f2cf98",
+            "title": "Тристаен, 120m² - жк. Овча Купел, София",
+            "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-120m2-sofiya-zhk.-ovcha-kupel/as1678805"
+          }
+        ],
+        "one_remote_photo_gallery_suspect": [
+          {
+            "path": "data/scraped/homes_bg/listings/Homes.bg_1640280.json",
+            "reference_id": "Homes.bg:1640280",
+            "title": "Тристаен, 212m² - жк. Зона Б18, София",
+            "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-212m2-sofiya-zhk.-zona-b18/as1640280"
+          },
+          {
+            "path": "data/scraped/homes_bg/listings/Homes.bg_1678807.json",
+            "reference_id": "Homes.bg:1678807",
+            "title": "Двустаен, 74m² - Център, София",
+            "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-74m2-sofiya-centyr/as1678807"
+          },
+          {
+            "path": "data/scraped/homes_bg/listings/Homes.bg_1678822.json",
+            "reference_id": "Homes.bg:1678822",
+            "title": "Тристаен, 112m² - Център, София",
+            "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-112m2-sofiya-centyr/as1678822"
+          }
+        ],
+        "missing_remote_gallery": [
+          {
+            "path": "data/scraped/homes_bg/listings/Homes.bg_1678987.json",
+            "reference_id": "Homes.bg:1678987",
+            "title": "Двустаен, 65m² - жк. Западен Парк, София",
+            "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-65m2-sofiya-zhk.-zapaden-park/as1678987"
+          },
+          {
+            "path": "data/scraped/homes_bg/listings/Homes.bg_1681771.json",
+            "reference_id": "Homes.bg:1681771",
+            "title": "Тристаен, 85m² - жк. Люлин 1, София",
+            "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-85m2-sofiya-zhk.-ljulin-1/as1681771"
+          },
+          {
+            "path": "data/scraped/homes_bg/listings/Homes.bg_a121c8094b94.json",
+            "reference_id": "Homes.bg:a121c8094b94",
+            "title": "Двустаен, 65m² - жк. Западен Парк, София",
+            "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-65m2-sofiya-zhk.-zapaden-park/as1678987"
+          }
+        ],
+        "missing_description": [
+          {
+            "path": "data/scraped/homes_bg/listings/Homes.bg_1681798.json",
+            "reference_id": "Homes.bg:1681798",
+            "title": "Двустаен, 71m² - жк. Гео Милев, София",
+            "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-71m2-sofiya-zhk.-geo-milev/as1681798"
+          }
+        ]
+      }
+    },
+    {
+      "source_key": "imot_bg",
+      "rows": 9937,
+      "bad_json": 0,
+      "source_names": {
+        "imot.bg": 9937
+      },
+      "stored_status": {
+        "PENDING_QA": 8124,
+        "SCRAPED_OK": 1535,
+        "LOST": 189,
+        "GROUPED_PUBLICATION": 89
+      },
+      "stored_acceptance": {
+        "pending_quality_gate": 8124,
+        "accepted_single_entity_candidate": 1535,
+        "not_scraped_rescrape_required": 189,
+        "not_single_entity": 89
+      },
+      "stored_publication_type": {
+        "single_unit_candidate": 9844,
+        "multi_unit_or_development": 93
+      },
+      "estimated_quality": {
+        "SCRAPED_OK": 8986,
+        "GROUPED_PUBLICATION": 687,
+        "LOST": 264
+      },
+      "estimated_reasons": {
+        "partial_local_gallery": 209,
+        "missing_area": 176,
+        "description_too_short": 25,
+        "one_remote_photo_gallery_suspect": 9,
+        "suspicious_unit_area_too_large": 8,
+        "missing_description": 1
+      },
+      "estimated_warnings": {
+        "multi_unit_or_development": 692,
+        "unknown_property_category": 211,
+        "thin_description": 209
+      },
+      "bucket_counts": {
+        "buy_personal": 7590,
+        "rent_personal": 1970,
+        "buy_commercial": 242,
+        "rent_commercial": 135
+      },
+      "intent_counts": {
+        "sale": 7301,
+        "long_term_rent": 2636
+      },
+      "category_counts": {
+        "apartment": 9111,
+        "house": 238,
+        "unknown": 211,
+        "office": 197,
+        "land": 102,
+        "shop": 78
+      },
+      "source_section_counts": {
+        "MISSING": 1813,
+        "rent_sofiya": 1031,
+        "sale_plovdiv": 1030,
+        "sale_sofiya": 1023,
+        "sale_varna": 1020,
+        "rent_varna": 1012,
+        "sale_ruse": 1004,
+        "sale_stara-zagora": 1002,
+        "sale_burgas": 1002
+      },
+      "bucket_quality": {
+        "buy_personal": {
+          "SCRAPED_OK": 6751,
+          "GROUPED_PUBLICATION": 614,
+          "LOST": 225
+        },
+        "rent_personal": {
+          "SCRAPED_OK": 1895,
+          "GROUPED_PUBLICATION": 60,
+          "LOST": 15
+        },
+        "buy_commercial": {
+          "SCRAPED_OK": 218,
+          "LOST": 16,
+          "GROUPED_PUBLICATION": 8
+        },
+        "rent_commercial": {
+          "SCRAPED_OK": 122,
+          "LOST": 8,
+          "GROUPED_PUBLICATION": 5
+        }
+      },
+      "bucket_reasons": {
+        "buy_personal": {
+          "partial_local_gallery": 184,
+          "missing_area": 175,
+          "description_too_short": 21,
+          "one_remote_photo_gallery_suspect": 8,
+          "missing_description": 1
+        },
+        "rent_personal": {
+          "partial_local_gallery": 11,
+          "description_too_short": 4
+        },
+        "buy_commercial": {
+          "partial_local_gallery": 11,
+          "suspicious_unit_area_too_large": 3,
+          "missing_area": 1,
+          "one_remote_photo_gallery_suspect": 1
+        },
+        "rent_commercial": {
+          "suspicious_unit_area_too_large": 5,
+          "partial_local_gallery": 3
+        }
+      },
+      "field_gaps": {
+        "thin_description": 234,
+        "unknown_property_category": 211,
+        "missing_area": 176,
+        "missing_description": 1
+      },
+      "phone_total": 14498,
+      "phone_valid": 13871,
+      "phone_invalid": 627,
+      "remote_photos": 102804,
+      "local_photos": 102046,
+      "full_gallery_flagged": 9728,
+      "rows_remote_no_local": 184,
+      "rows_duplicate_remote_variants": 1568,
+      "local_paths_total": 102046,
+      "local_paths_existing": 102046,
+      "duplicate_listing_url_keys": 0,
+      "duplicate_reference_id_keys": 0,
+      "duplicate_external_id_keys": 0,
+      "db_import_default_candidate_rows": 1535,
+      "pending_or_missing_qa_rows": 8124,
+      "examples": {
+        "missing_area": [
+          {
+            "path": "data/scraped/imot_bg/listings/imot.bg_00a2fadab024.json",
+            "reference_id": "imot.bg:00a2fadab024",
+            "title": "������� ������ � ���� ����� ����������� ������ ����� 7898",
+            "listing_url": "https://www.imot.bg/obiava-7898-zhilishtna-sgrada-grad-sofiya-manastirski-livadi"
+          },
+          {
+            "path": "data/scraped/imot_bg/listings/imot.bg_018552b9094e.json",
+            "reference_id": "imot.bg:018552b9094e",
+            "title": "������� 2-����� ���� �����, ���� �-5 �����: 1b175334280873317",
+            "listing_url": "https://www.imot.bg/obiava-1b175334280873317-prodava-dvustaen-apartament-grad-sofiya-zona-b-5"
+          },
+          {
+            "path": "data/scraped/imot_bg/listings/imot.bg_05b40551a136.json",
+            "reference_id": "imot.bg:05b40551a136",
+            "title": "������� 2-����� ���� �����, ��������� �������� �����: 1b177495933652825",
+            "listing_url": "https://www.imot.bg/obiava-1b177495933652825-prodava-dvustaen-apartament-grad-sofiya-doktorski-pametnik"
+          }
+        ],
+        "partial_local_gallery": [
+          {
+            "path": "data/scraped/imot_bg/listings/imot.bg_00a2fadab024.json",
+            "reference_id": "imot.bg:00a2fadab024",
+            "title": "������� ������ � ���� ����� ����������� ������ ����� 7898",
+            "listing_url": "https://www.imot.bg/obiava-7898-zhilishtna-sgrada-grad-sofiya-manastirski-livadi"
+          },
+          {
+            "path": "data/scraped/imot_bg/listings/imot.bg_018552b9094e.json",
+            "reference_id": "imot.bg:018552b9094e",
+            "title": "������� 2-����� ���� �����, ���� �-5 �����: 1b175334280873317",
+            "listing_url": "https://www.imot.bg/obiava-1b175334280873317-prodava-dvustaen-apartament-grad-sofiya-zona-b-5"
+          },
+          {
+            "path": "data/scraped/imot_bg/listings/imot.bg_053896b1cae2.json",
+            "reference_id": "imot.bg:053896b1cae2",
+            "title": "Дава под Наем 2-СТАЕН град София, Бъкстон ул. Казбек Обява: 2c152706336856081",
+            "listing_url": "https://www.imot.bg/obiava-2c152706336856081-dava-pod-naem-dvustaen-apartament-grad-sofiya-bakston-ul-kazbek"
+          }
+        ],
+        "description_too_short": [
+          {
+            "path": "data/scraped/imot_bg/listings/imot.bg_0c3b0a30cce2.json",
+            "reference_id": "imot.bg:0c3b0a30cce2",
+            "title": "Продава 2-СТАЕН град Стара Загора, Загорка Обява: 1b161640807571641",
+            "listing_url": "https://www.imot.bg/obiava-1b161640807571641-prodava-dvustaen-apartament-grad-stara-zagora-zagorka"
+          },
+          {
+            "path": "data/scraped/imot_bg/listings/imot.bg_1d1bd5c219ae.json",
+            "reference_id": "imot.bg:1d1bd5c219ae",
+            "title": "Продава 2-СТАЕН град Стара Загора, Три чучура - център Обява: 1b155187329959703",
+            "listing_url": "https://www.imot.bg/obiava-1b155187329959703-prodava-dvustaen-apartament-grad-stara-zagora-tri-chuchura-tsentar"
+          },
+          {
+            "path": "data/scraped/imot_bg/listings/imot.bg_339f99bdfebb.json",
+            "reference_id": "imot.bg:339f99bdfebb",
+            "title": "Продава 2-СТАЕН град Стара Загора, Самара 3 Обява: 1b176575359207333",
+            "listing_url": "https://www.imot.bg/obiava-1b176575359207333-prodava-dvustaen-apartament-grad-stara-zagora-samara-3"
+          }
+        ],
+        "suspicious_unit_area_too_large": [
+          {
+            "path": "data/scraped/imot_bg/listings/imot.bg_19391720fbea.json",
+            "reference_id": "imot.bg:19391720fbea",
+            "title": "Дава под Наем ОФИС град София, Малинова долина Обява: 2h171440280181228",
+            "listing_url": "https://www.imot.bg/obiava-2h171440280181228-dava-pod-naem-ofis-grad-sofiya-malinova-dolina"
+          },
+          {
+            "path": "data/scraped/imot_bg/listings/imot.bg_1d2c50b286d2.json",
+            "reference_id": "imot.bg:1d2c50b286d2",
+            "title": "Дава под Наем ОФИС град София, Дружба 1 Обява: 2h177633002785191",
+            "listing_url": "https://www.imot.bg/obiava-2h177633002785191-dava-pod-naem-ofis-grad-sofiya-druzhba-1"
+          },
+          {
+            "path": "data/scraped/imot_bg/listings/imot.bg_73f88b89c346.json",
+            "reference_id": "imot.bg:73f88b89c346",
+            "title": "Дава под Наем МАГАЗИН град София, Република 2 Обява: 2m174946742408559",
+            "listing_url": "https://www.imot.bg/obiava-2m174946742408559-dava-pod-naem-magazin-grad-sofiya-republika-2"
+          }
+        ],
+        "one_remote_photo_gallery_suspect": [
+          {
+            "path": "data/scraped/imot_bg/listings/imot.bg_22891903c87e.json",
+            "reference_id": "imot.bg:22891903c87e",
+            "title": "Продава 2-СТАЕН град Стара Загора, Три чучура - север Обява: 1b177193911087885",
+            "listing_url": "https://www.imot.bg/obiava-1b177193911087885-prodava-dvustaen-apartament-grad-stara-zagora-tri-chuchura-sever"
+          },
+          {
+            "path": "data/scraped/imot_bg/listings/imot.bg_3fbbf2996579.json",
+            "reference_id": "imot.bg:3fbbf2996579",
+            "title": "Продава 2-СТАЕН град Бургас, Меден рудник - зона А Обява: 1b176375902964412",
+            "listing_url": "https://www.imot.bg/obiava-1b176375902964412-prodava-dvustaen-apartament-grad-burgas-meden-rudnik-zona-a"
+          },
+          {
+            "path": "data/scraped/imot_bg/listings/imot.bg_45800700fcc4.json",
+            "reference_id": "imot.bg:45800700fcc4",
+            "title": "Продава 3-СТАЕН град София, Гео Милев Обява: 1c175906743380664",
+            "listing_url": "https://www.imot.bg/obiava-1c175906743380664-prodava-tristaen-apartament-grad-sofiya-geo-milev"
+          }
+        ],
+        "missing_description": [
+          {
+            "path": "data/scraped/imot_bg/listings/imot.bg_9587930fbe72.json",
+            "reference_id": "imot.bg:9587930fbe72",
+            "title": "Продава 2-СТАЕН град Русе, Център Обява: 1b168467447738350",
+            "listing_url": "https://www.imot.bg/obiava-1b168467447738350-prodava-dvustaen-apartament-grad-ruse-tsentar"
+          }
+        ]
+      }
+    },
+    {
+      "source_key": "luximmo",
+      "rows": 2512,
+      "bad_json": 0,
+      "source_names": {
+        "LUXIMMO": 2512
+      },
+      "stored_status": {
+        "PENDING_QA": 2356,
+        "GROUPED_PUBLICATION": 138,
+        "SCRAPED_OK": 11,
+        "LOST": 7
+      },
+      "stored_acceptance": {
+        "pending_quality_gate": 2356,
+        "not_single_entity": 138,
+        "accepted_single_entity_candidate": 11,
+        "not_scraped_rescrape_required": 7
+      },
+      "stored_publication_type": {
+        "single_unit_candidate": 2373,
+        "multi_unit_or_development": 139
+      },
+      "estimated_quality": {
+        "SCRAPED_OK": 1788,
+        "LOST": 607,
+        "GROUPED_PUBLICATION": 117
+      },
+      "estimated_reasons": {
+        "missing_area": 518,
+        "suspicious_unit_area_too_large": 84,
+        "partial_local_gallery": 4,
+        "one_remote_photo_gallery_suspect": 1,
+        "suspicious_area_below_2sqm": 1
+      },
+      "estimated_warnings": {
+        "multi_unit_or_development": 151,
+        "thin_description": 113,
+        "low_sale_price": 1
+      },
+      "bucket_counts": {
+        "buy_personal": 2114,
+        "rent_personal": 397,
+        "rent_commercial": 1
+      },
+      "intent_counts": {
+        "sale": 2107,
+        "long_term_rent": 405
+      },
+      "category_counts": {
+        "apartment": 2500,
+        "house": 11,
+        "office": 1
+      },
+      "source_section_counts": {
+        "sale_apartments": 2494,
+        "MISSING": 18
+      },
+      "bucket_quality": {
+        "rent_personal": {
+          "SCRAPED_OK": 204,
+          "LOST": 183,
+          "GROUPED_PUBLICATION": 10
+        },
+        "buy_personal": {
+          "SCRAPED_OK": 1583,
+          "LOST": 424,
+          "GROUPED_PUBLICATION": 107
+        },
+        "rent_commercial": {
+          "SCRAPED_OK": 1
+        }
+      },
+      "bucket_reasons": {
+        "rent_personal": {
+          "missing_area": 179,
+          "suspicious_unit_area_too_large": 4
+        },
+        "buy_personal": {
+          "missing_area": 339,
+          "suspicious_unit_area_too_large": 80,
+          "partial_local_gallery": 4,
+          "one_remote_photo_gallery_suspect": 1,
+          "suspicious_area_below_2sqm": 1
+        }
+      },
+      "field_gaps": {
+        "missing_area": 518,
+        "thin_description": 113
+      },
+      "phone_total": 60338,
+      "phone_valid": 26709,
+      "phone_invalid": 33629,
+      "remote_photos": 17947,
+      "local_photos": 28601,
+      "full_gallery_flagged": 2508,
+      "rows_remote_no_local": 0,
+      "rows_duplicate_remote_variants": 2511,
+      "local_paths_total": 28601,
+      "local_paths_existing": 28601,
+      "duplicate_listing_url_keys": 0,
+      "duplicate_reference_id_keys": 0,
+      "duplicate_external_id_keys": 0,
+      "db_import_default_candidate_rows": 5,
+      "pending_or_missing_qa_rows": 2356,
+      "examples": {
+        "missing_area": [
+          {
+            "path": "data/scraped/luximmo/listings/LUXIMMO_000386d2645f.json",
+            "reference_id": "LUXIMMO:000386d2645f",
+            "title": "Просторен апартамент с три спални под наем до Мол \"България\"",
+            "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/sofiya/luksozni-imoti-chetiristayni-apartamenti/luksozen-imot-42216-chetiristaen-apartament-pod-naem-v-sofiya.html"
+          },
+          {
+            "path": "data/scraped/luximmo/listings/LUXIMMO_01fdc88d15a0.json",
+            "reference_id": "LUXIMMO:01fdc88d15a0",
+            "title": "Елегантен мезонет за продажба с впечатляващи гледки към Витоша в кв. \"Княжево\"",
+            "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/sofiya/luksozni-imoti-mezoneti/luksozen-imot-48388-mezonet-za-prodajba-v-sofiya.html"
+          },
+          {
+            "path": "data/scraped/luximmo/listings/LUXIMMO_024cb8c138a6.json",
+            "reference_id": "LUXIMMO:024cb8c138a6",
+            "title": "Тристаен апартамент под наем в затворен комплекс в квартал \"Бояна\"",
+            "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/sofiya/luksozni-imoti-tristayni-apartamenti/luksozen-imot-47772-tristaen-apartament-pod-naem-v-sofiya.html"
+          }
+        ],
+        "suspicious_unit_area_too_large": [
+          {
+            "path": "data/scraped/luximmo/listings/LUXIMMO_05500b921e02.json",
+            "reference_id": "LUXIMMO:05500b921e02",
+            "title": "Нова, жилищна сграда в местност в.з. \"Американски колеж\"",
+            "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/sofiya/luksozni-imoti-apartamenti-razlichni-tipove/luksozen-imot-44303-apartamenti-razlichni-tipove-za-prodajba-v-sofiya.html"
+          },
+          {
+            "path": "data/scraped/luximmo/listings/LUXIMMO_071af9855361.json",
+            "reference_id": "LUXIMMO:071af9855361",
+            "title": "Имот с две спални в модерна жилищна сграда в кв.\"Манастирски ливади\"",
+            "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/sofiya/luksozni-imoti-tristayni-apartamenti/luksozen-imot-47552-tristaen-apartament-za-prodajba-v-sofiya.html"
+          },
+          {
+            "path": "data/scraped/luximmo/listings/LUXIMMO_09cb0c5f7aa9.json",
+            "reference_id": "LUXIMMO:09cb0c5f7aa9",
+            "title": "Трети етап на строителство на жилищен комплекс от затворен тип в кв. Кръстова вада",
+            "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/sofiya/luksozni-imoti-apartamenti-razlichni-tipove/luksozen-imot-41828-apartamenti-razlichni-tipove-za-prodajba-v-sofiya.html"
+          }
+        ],
+        "partial_local_gallery": [
+          {
+            "path": "data/scraped/luximmo/listings/LUXIMMO_460e6bd89350.json",
+            "reference_id": "LUXIMMO:460e6bd89350",
+            "title": "Тристаен апартамент за продажба в новострояща се сграда до пл. \"Сточна гара\"",
+            "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/sofiya/luksozni-imoti-tristayni-apartamenti/luksozen-imot-42934-tristaen-apartament-za-prodajba-v-sofiya.html"
+          },
+          {
+            "path": "data/scraped/luximmo/listings/LUXIMMO_a0b72a596b81.json",
+            "reference_id": "LUXIMMO:a0b72a596b81",
+            "title": "Бутикова сграда на метри от Мол \"Парадайс\" с различни типове апартаменти",
+            "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/sofiya/luksozni-imoti-apartamenti-razlichni-tipove/luksozen-imot-44704-apartamenti-razlichni-tipove-za-prodajba-v-sofiya.html"
+          },
+          {
+            "path": "data/scraped/luximmo/listings/LUXIMMO_dfea86bf82b2.json",
+            "reference_id": "LUXIMMO:dfea86bf82b2",
+            "title": "Тристаен апартамент за продажба в нов жилищен комплекс в кв. Малинова долина",
+            "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/sofiya/luksozni-imoti-tristayni-apartamenti/luksozen-imot-44789-tristaen-apartament-za-prodajba-v-sofiya.html"
+          }
+        ],
+        "one_remote_photo_gallery_suspect": [
+          {
+            "path": "data/scraped/luximmo/listings/LUXIMMO_76f05411d18a.json",
+            "reference_id": "LUXIMMO:76f05411d18a",
+            "title": "Ултрамодерен апартамент на 2 нива с 4 гаража в най- престижната част на кв. Бояна",
+            "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/sofiya/luksozni-imoti-mnogostayni-apartamenti/luksozen-imot-38874-mnogostaen-apartament-za-prodajba-v-sofiya.html"
+          }
+        ],
+        "suspicious_area_below_2sqm": [
+          {
+            "path": "data/scraped/luximmo/listings/LUXIMMO_e027aa61d96c.json",
+            "reference_id": "LUXIMMO:e027aa61d96c",
+            "title": "Панорамен тристаен апартамент с нескриваема гледка море в м-т Долна Трака",
+            "listing_url": "https://www.luximmo.bg/bulgaria/oblast-varna/varna/luksozni-imoti-tristayni-apartamenti/luksozen-imot-47624-tristaen-apartament-za-prodajba-v-varna.html"
+          }
+        ]
+      }
+    },
+    {
+      "source_key": "olx_bg",
+      "rows": 249,
+      "bad_json": 0,
+      "source_names": {
+        "OLX.bg": 249
+      },
+      "stored_status": {
+        "MISSING": 249
+      },
+      "stored_acceptance": {
+        "MISSING": 249
+      },
+      "stored_publication_type": {
+        "MISSING": 249
+      },
+      "estimated_quality": {
+        "LOST": 131,
+        "SCRAPED_OK": 111,
+        "GROUPED_PUBLICATION": 7
+      },
+      "estimated_reasons": {
+        "missing_area": 107,
+        "missing_city_or_address": 41,
+        "suspicious_unit_area_too_large": 1
+      },
+      "estimated_warnings": {
+        "low_sale_price": 22,
+        "unknown_property_category": 17,
+        "multi_unit_or_development": 13,
+        "thin_description": 5
+      },
+      "bucket_counts": {
+        "MISSING": 249
+      },
+      "intent_counts": {
+        "sale": 132,
+        "long_term_rent": 117
+      },
+      "category_counts": {
+        "apartment": 170,
+        "house": 25,
+        "land": 24,
+        "unknown": 17,
+        "office": 13
+      },
+      "source_section_counts": {
+        "MISSING": 249
+      },
+      "bucket_quality": {
+        "MISSING": {
+          "LOST": 131,
+          "SCRAPED_OK": 111,
+          "GROUPED_PUBLICATION": 7
+        }
+      },
+      "bucket_reasons": {
+        "MISSING": {
+          "missing_area": 107,
+          "missing_city_or_address": 41,
+          "suspicious_unit_area_too_large": 1
+        }
+      },
+      "field_gaps": {
+        "missing_area": 107,
+        "missing_city_or_address": 41,
+        "unknown_property_category": 17,
+        "thin_description": 5
+      },
+      "phone_total": 28762,
+      "phone_valid": 15691,
+      "phone_invalid": 13071,
+      "remote_photos": 1365,
+      "local_photos": 1365,
+      "full_gallery_flagged": 249,
+      "rows_remote_no_local": 0,
+      "rows_duplicate_remote_variants": 0,
+      "local_paths_total": 1365,
+      "local_paths_existing": 1365,
+      "duplicate_listing_url_keys": 0,
+      "duplicate_reference_id_keys": 0,
+      "duplicate_external_id_keys": 0,
+      "db_import_default_candidate_rows": 0,
+      "pending_or_missing_qa_rows": 249,
+      "examples": {
+        "missing_area": [
+          {
+            "path": "data/scraped/olx_bg/listings/OLX.bg_125403576.json",
+            "reference_id": "OLX.bg:125403576",
+            "title": "Къща под наем 3 спални 2 бани с планинска гледка, 2 паркоместа, на 13км до Слънчев Бряг (с. Гюльовца). Затворен и охраняем квартал.",
+            "listing_url": "https://www.olx.bg/d/ad/kascha-pod-naem-3-spalni-2-bani-s-planinska-gledka-2-parkomesta-na-13km-do-slanchev-bryag-s-gyulovtsa-zatvoren-i-ohranyaem-kvartal-CID368-ID8ubck.html?search_reason=search%7Cpromoted"
+          },
+          {
+            "path": "data/scraped/olx_bg/listings/OLX.bg_137393111.json",
+            "reference_id": "OLX.bg:137393111",
+            "title": "4дка земеделска земя 3та/кат на главен път Варна-Русе от собственик",
+            "listing_url": "https://www.olx.bg/d/ad/4dka-zemedelska-zemya-3ta-kat-na-glaven-pat-varna-ruse-ot-sobstvenik-CID368-ID9iudW.html?search_reason=search%7Cpromoted"
+          },
+          {
+            "path": "data/scraped/olx_bg/listings/OLX.bg_143356538.json",
+            "reference_id": "OLX.bg:143356538",
+            "title": "отдавам Ателие под наем, кв.Редута, за сам човек-българин",
+            "listing_url": "https://www.olx.bg/d/ad/otdavam-atelie-pod-naem-kv-reduta-za-sam-chovek-balgarin-CID368-ID9HwAe.html?search_reason=search%7Cpromoted"
+          }
+        ],
+        "missing_city_or_address": [
+          {
+            "path": "data/scraped/olx_bg/listings/OLX.bg_125403576.json",
+            "reference_id": "OLX.bg:125403576",
+            "title": "Къща под наем 3 спални 2 бани с планинска гледка, 2 паркоместа, на 13км до Слънчев Бряг (с. Гюльовца). Затворен и охраняем квартал.",
+            "listing_url": "https://www.olx.bg/d/ad/kascha-pod-naem-3-spalni-2-bani-s-planinska-gledka-2-parkomesta-na-13km-do-slanchev-bryag-s-gyulovtsa-zatvoren-i-ohranyaem-kvartal-CID368-ID8ubck.html?search_reason=search%7Cpromoted"
+          },
+          {
+            "path": "data/scraped/olx_bg/listings/OLX.bg_137558579.json",
+            "reference_id": "OLX.bg:137558579",
+            "title": "Под 1 € на кв.м., складове и производствени помещения под наем",
+            "listing_url": "https://www.olx.bg/d/ad/pod-1-na-kv-m-skladove-i-proizvodstveni-pomescheniya-pod-naem-CID368-ID9jbgL.html?search_reason=search%7Cpromoted"
+          },
+          {
+            "path": "data/scraped/olx_bg/listings/OLX.bg_141964470.json",
+            "reference_id": "OLX.bg:141964470",
+            "title": "Панорамни парцели Старозагорски бани",
+            "listing_url": "https://www.olx.bg/d/ad/panoramni-partseli-starozagorski-bani-CID368-ID9BFrv.html?search_reason=search%7Cpromoted"
+          }
+        ],
+        "suspicious_unit_area_too_large": [
+          {
+            "path": "data/scraped/olx_bg/listings/OLX.bg_147539604.json",
+            "reference_id": "OLX.bg:147539604",
+            "title": "Представителен имот под наем с лице към бул. \"Черни връх\" в кв. Кръсто",
+            "listing_url": "https://www.olx.bg/d/ad/predstavitelen-imot-pod-naem-s-litse-kam-bul-cherni-vrah-v-kv-krasto-CID368-ID9Z3N2.html?search_reason=search%7Corganic"
+          }
+        ]
+      }
+    },
+    {
+      "source_key": "property_bg",
+      "rows": 3094,
+      "bad_json": 0,
+      "source_names": {
+        "property.bg": 3094
+      },
+      "stored_status": {
+        "PENDING_QA": 3089,
+        "SCRAPED_OK": 5
+      },
+      "stored_acceptance": {
+        "pending_quality_gate": 3089,
+        "accepted_single_entity_candidate": 5
+      },
+      "stored_publication_type": {
+        "single_unit_candidate": 3094
+      },
+      "estimated_quality": {
+        "SCRAPED_OK": 3053,
+        "LOST": 41
+      },
+      "estimated_reasons": {
+        "suspicious_unit_area_too_large": 25,
+        "description_too_short": 9,
+        "suspicious_house_area_too_large": 4,
+        "partial_local_gallery": 3,
+        "missing_area": 1
+      },
+      "estimated_warnings": {
+        "thin_description": 2066,
+        "low_sale_price": 121,
+        "unknown_property_category": 118
+      },
+      "bucket_counts": {
+        "buy_personal": 1983,
+        "rent_personal": 670,
+        "rent_commercial": 264,
+        "buy_commercial": 177
+      },
+      "intent_counts": {
+        "sale": 2159,
+        "long_term_rent": 935
+      },
+      "category_counts": {
+        "apartment": 1985,
+        "house": 550,
+        "office": 264,
+        "land": 151,
+        "unknown": 118,
+        "shop": 26
+      },
+      "source_section_counts": {
+        "sale_apartments": 1731,
+        "rent_selection": 791,
+        "sale_selection": 567,
+        "MISSING": 5
+      },
+      "bucket_quality": {
+        "buy_personal": {
+          "SCRAPED_OK": 1969,
+          "LOST": 14
+        },
+        "rent_commercial": {
+          "SCRAPED_OK": 244,
+          "LOST": 20
+        },
+        "rent_personal": {
+          "SCRAPED_OK": 666,
+          "LOST": 4
+        },
+        "buy_commercial": {
+          "SCRAPED_OK": 174,
+          "LOST": 3
+        }
+      },
+      "bucket_reasons": {
+        "rent_commercial": {
+          "suspicious_unit_area_too_large": 18,
+          "description_too_short": 2,
+          "partial_local_gallery": 1
+        },
+        "buy_personal": {
+          "suspicious_unit_area_too_large": 6,
+          "suspicious_house_area_too_large": 3,
+          "description_too_short": 3,
+          "partial_local_gallery": 1,
+          "missing_area": 1
+        },
+        "buy_commercial": {
+          "description_too_short": 2,
+          "suspicious_unit_area_too_large": 1
+        },
+        "rent_personal": {
+          "description_too_short": 2,
+          "suspicious_house_area_too_large": 1,
+          "partial_local_gallery": 1
+        }
+      },
+      "field_gaps": {
+        "thin_description": 2075,
+        "unknown_property_category": 118,
+        "missing_area": 1
+      },
+      "phone_total": 24330,
+      "phone_valid": 10451,
+      "phone_invalid": 13879,
+      "remote_photos": 138662,
+      "local_photos": 138764,
+      "full_gallery_flagged": 3091,
+      "rows_remote_no_local": 0,
+      "rows_duplicate_remote_variants": 3094,
+      "local_paths_total": 138764,
+      "local_paths_existing": 138764,
+      "duplicate_listing_url_keys": 0,
+      "duplicate_reference_id_keys": 0,
+      "duplicate_external_id_keys": 0,
+      "db_import_default_candidate_rows": 5,
+      "pending_or_missing_qa_rows": 3089,
+      "examples": {
+        "suspicious_unit_area_too_large": [
+          {
+            "path": "data/scraped/property_bg/listings/property.bg_0123d7e45c40.json",
+            "reference_id": "property.bg:0123d7e45c40",
+            "title": "Elite class A building - OKINAWA Office Center next to Simeonovsko Shose Blvd.",
+            "listing_url": "https://www.property.bg/property-132283-elite-class-a-building--okinawa-office-center-next-to-simeonovsko-shose-blvd/"
+          },
+          {
+            "path": "data/scraped/property_bg/listings/property.bg_01fade04055f.json",
+            "reference_id": "property.bg:01fade04055f",
+            "title": "Office to rent in Sofia",
+            "listing_url": "https://www.property.bg/property-139422-office/"
+          },
+          {
+            "path": "data/scraped/property_bg/listings/property.bg_04c8e32462cd.json",
+            "reference_id": "property.bg:04c8e32462cd",
+            "title": "Three-room studio with two terraces in a modern new building in the \"Lyulin 5\" district",
+            "listing_url": "https://www.property.bg/property-138682-three-room-studio-with-two-terraces-in-a-modern-new-building-in-the-quotlyulin-5quot-district/"
+          }
+        ],
+        "description_too_short": [
+          {
+            "path": "data/scraped/property_bg/listings/property.bg_01bba875be73.json",
+            "reference_id": "property.bg:01bba875be73",
+            "title": "Commercial space for rent near the vegetable market",
+            "listing_url": "https://www.property.bg/property-81056-commercial-space-for-rent-near-the-vegetable-market/"
+          },
+          {
+            "path": "data/scraped/property_bg/listings/property.bg_096ddbda3b63.json",
+            "reference_id": "property.bg:096ddbda3b63",
+            "title": "Commercial premises in the center of Vidin",
+            "listing_url": "https://www.property.bg/property-71639-commercial-premises-in-the-center-of-vidin/"
+          },
+          {
+            "path": "data/scraped/property_bg/listings/property.bg_6daa894f368f.json",
+            "reference_id": "property.bg:6daa894f368f",
+            "title": "Office in Sofia",
+            "listing_url": "https://www.property.bg/property-76921-office-in-sofia/"
+          }
+        ],
+        "partial_local_gallery": [
+          {
+            "path": "data/scraped/property_bg/listings/property.bg_01fade04055f.json",
+            "reference_id": "property.bg:01fade04055f",
+            "title": "Office to rent in Sofia",
+            "listing_url": "https://www.property.bg/property-139422-office/"
+          },
+          {
+            "path": "data/scraped/property_bg/listings/property.bg_5523e9f32e0a.json",
+            "reference_id": "property.bg:5523e9f32e0a",
+            "title": "Luxurious four-story house with a panorama of the sea and the city in Trakata district",
+            "listing_url": "https://www.property.bg/property-84034-luxurious-four-story-house-with-a-panorama-of-the-sea-and-the-city-in-trakata-district/"
+          },
+          {
+            "path": "data/scraped/property_bg/listings/property.bg_6636ba4b764a.json",
+            "reference_id": "property.bg:6636ba4b764a",
+            "title": "Furnished two-bedroom apartment in the \"Winter Cinema Trakia\" district",
+            "listing_url": "https://www.property.bg/property-106959-furnished-two-bedroom-apartment-in-the-winter-cinema-trakia-district/"
+          }
+        ],
+        "suspicious_house_area_too_large": [
+          {
+            "path": "data/scraped/property_bg/listings/property.bg_1dc7500f5536.json",
+            "reference_id": "property.bg:1dc7500f5536",
+            "title": "Regulated industrial plot in the industrial zone of the village of Yana - 60 m frontage on an asphalt road",
+            "listing_url": "https://www.property.bg/property-138303-regulated-industrial-plot-in-the-industrial-zone-of-the-village-of-yana--60-m-frontage-on-an-asphalt-road/"
+          },
+          {
+            "path": "data/scraped/property_bg/listings/property.bg_3253dd884d44.json",
+            "reference_id": "property.bg:3253dd884d44",
+            "title": "Pleasant villa with nice garden",
+            "listing_url": "https://www.property.bg/property-138117-pleasant-villa-with-nice-garden/"
+          },
+          {
+            "path": "data/scraped/property_bg/listings/property.bg_71b1f3578e3d.json",
+            "reference_id": "property.bg:71b1f3578e3d",
+            "title": "Investment plot with incredible sea view in the village of Emona, Nessebar",
+            "listing_url": "https://www.property.bg/property-135574-investment-plot-with-incredible-sea-view-in-the-village-of-emona-nessebar/"
+          }
+        ],
+        "missing_area": [
+          {
+            "path": "data/scraped/property_bg/listings/property.bg_c1db5d4d4460.json",
+            "reference_id": "property.bg:c1db5d4d4460",
+            "title": "Cozy two-bedroom apartment in Ovcha Kupel district",
+            "listing_url": "https://www.property.bg/property-138132-cozy-two-bedroom-apartment-in-ovcha-kupel-district/"
+          }
+        ]
+      }
+    },
+    {
+      "source_key": "suprimmo",
+      "rows": 4948,
+      "bad_json": 0,
+      "source_names": {
+        "SUPRIMMO": 4948
+      },
+      "stored_status": {
+        "PENDING_QA": 4235,
+        "GROUPED_PUBLICATION": 712,
+        "SCRAPED_OK": 1
+      },
+      "stored_acceptance": {
+        "pending_quality_gate": 4235,
+        "not_single_entity": 712,
+        "accepted_single_entity_candidate": 1
+      },
+      "stored_publication_type": {
+        "single_unit_candidate": 4236,
+        "multi_unit_or_development": 712
+      },
+      "estimated_quality": {
+        "SCRAPED_OK": 3563,
+        "LOST": 739,
+        "GROUPED_PUBLICATION": 646
+      },
+      "estimated_reasons": {
+        "missing_area": 684,
+        "suspicious_unit_area_too_large": 36,
+        "suspicious_house_area_too_large": 15,
+        "partial_local_gallery": 5,
+        "suspicious_area_below_2sqm": 1
+      },
+      "estimated_warnings": {
+        "multi_unit_or_development": 712,
+        "low_sale_price": 117,
+        "unknown_property_category": 66,
+        "thin_description": 47
+      },
+      "bucket_counts": {
+        "buy_personal": 2912,
+        "buy_commercial": 1132,
+        "rent_personal": 612,
+        "rent_commercial": 292
+      },
+      "intent_counts": {
+        "sale": 4043,
+        "long_term_rent": 905
+      },
+      "category_counts": {
+        "apartment": 2059,
+        "house": 1399,
+        "land": 1142,
+        "office": 254,
+        "unknown": 66,
+        "shop": 28
+      },
+      "source_section_counts": {
+        "sale_apartments": 1725,
+        "sale_houses": 1428,
+        "sale_land": 1100,
+        "rent_selection": 693,
+        "MISSING": 2
+      },
+      "bucket_quality": {
+        "buy_personal": {
+          "SCRAPED_OK": 2175,
+          "GROUPED_PUBLICATION": 414,
+          "LOST": 323
+        },
+        "rent_personal": {
+          "SCRAPED_OK": 350,
+          "LOST": 231,
+          "GROUPED_PUBLICATION": 31
+        },
+        "buy_commercial": {
+          "SCRAPED_OK": 836,
+          "GROUPED_PUBLICATION": 187,
+          "LOST": 109
+        },
+        "rent_commercial": {
+          "SCRAPED_OK": 202,
+          "LOST": 76,
+          "GROUPED_PUBLICATION": 14
+        }
+      },
+      "bucket_reasons": {
+        "rent_personal": {
+          "missing_area": 227,
+          "suspicious_unit_area_too_large": 3,
+          "partial_local_gallery": 1
+        },
+        "buy_commercial": {
+          "missing_area": 107,
+          "suspicious_area_below_2sqm": 1,
+          "partial_local_gallery": 1
+        },
+        "buy_personal": {
+          "missing_area": 297,
+          "suspicious_house_area_too_large": 15,
+          "suspicious_unit_area_too_large": 10,
+          "partial_local_gallery": 2
+        },
+        "rent_commercial": {
+          "missing_area": 53,
+          "suspicious_unit_area_too_large": 23,
+          "partial_local_gallery": 1
+        }
+      },
+      "field_gaps": {
+        "missing_area": 684,
+        "unknown_property_category": 66,
+        "thin_description": 47
+      },
+      "phone_total": 89246,
+      "phone_valid": 25052,
+      "phone_invalid": 64194,
+      "remote_photos": 229204,
+      "local_photos": 229556,
+      "full_gallery_flagged": 4943,
+      "rows_remote_no_local": 0,
+      "rows_duplicate_remote_variants": 4948,
+      "local_paths_total": 229556,
+      "local_paths_existing": 229556,
+      "duplicate_listing_url_keys": 0,
+      "duplicate_reference_id_keys": 0,
+      "duplicate_external_id_keys": 0,
+      "db_import_default_candidate_rows": 1,
+      "pending_or_missing_qa_rows": 4235,
+      "examples": {
+        "missing_area": [
+          {
+            "path": "data/scraped/suprimmo/listings/SUPRIMMO_0405d137ade6.json",
+            "reference_id": "SUPRIMMO:0405d137ade6",
+            "title": "Обзаведено студио под наем в елитен комплекс в Черноморец",
+            "listing_url": "https://www.suprimmo.bg/imot-135797-obzavedeno-studio-pod-naem-v-eliten-kompleks-v-chernomorets/"
+          },
+          {
+            "path": "data/scraped/suprimmo/listings/SUPRIMMO_051d37b05198.json",
+            "reference_id": "SUPRIMMO:051d37b05198",
+            "title": "Урбанизирани парцели за логистичен център или складови бази в близост до магистарала \"Европа\"",
+            "listing_url": "https://www.suprimmo.bg/imot-137698-urbanizirani-partseli-za-logistichen-tsentar-ili-skladovi-bazi-v-blizost-do-magistarala-evropa/"
+          },
+          {
+            "path": "data/scraped/suprimmo/listings/SUPRIMMO_05b639d93014.json",
+            "reference_id": "SUPRIMMO:05b639d93014",
+            "title": "Стратегически терен от 120 дка с възможност за разширение до 620+ дка и частно пристанище",
+            "listing_url": "https://www.suprimmo.bg/imot-134255-strategicheski-teren-ot-120-dka-s-vazmojnost-za-razshirenie-do-620-dka-i-chastno-pristanishte/"
+          }
+        ],
+        "partial_local_gallery": [
+          {
+            "path": "data/scraped/suprimmo/listings/SUPRIMMO_0789609687aa.json",
+            "reference_id": "SUPRIMMO:0789609687aa",
+            "title": "Къщи модерно ново строителство на 500 метра от плажа на Равда",
+            "listing_url": "https://www.suprimmo.bg/imot-103608-kashti-moderno-novo-stroitelstvo-na-500-metra-ot-plaja-na-ravda/"
+          },
+          {
+            "path": "data/scraped/suprimmo/listings/SUPRIMMO_Sve-139422.json",
+            "reference_id": "SUPRIMMO:Sve-139422",
+            "title": "Просторен офис в бизнес сграда",
+            "listing_url": "https://www.suprimmo.bg/imot-139422-prostoren-ofis-v-biznes-sgrada/"
+          },
+          {
+            "path": "data/scraped/suprimmo/listings/SUPRIMMO_VAR-106959.json",
+            "reference_id": "SUPRIMMO:VAR-106959",
+            "title": "Обзаведен тристаен апартамент в кв. \"Зимно кино Тракия\"",
+            "listing_url": "https://www.suprimmo.bg/imot-106959-obzaveden-tristaen-apartament-v-kv-zimno-kino-trakiya/"
+          }
+        ],
+        "suspicious_house_area_too_large": [
+          {
+            "path": "data/scraped/suprimmo/listings/SUPRIMMO_0789609687aa.json",
+            "reference_id": "SUPRIMMO:0789609687aa",
+            "title": "Къщи модерно ново строителство на 500 метра от плажа на Равда",
+            "listing_url": "https://www.suprimmo.bg/imot-103608-kashti-moderno-novo-stroitelstvo-na-500-metra-ot-plaja-na-ravda/"
+          },
+          {
+            "path": "data/scraped/suprimmo/listings/SUPRIMMO_2fe9ad2da742.json",
+            "reference_id": "SUPRIMMO:2fe9ad2da742",
+            "title": "Къщи с модерна визия на брега на морето в кв. \"Крайморие\"",
+            "listing_url": "https://www.suprimmo.bg/imot-134151-kashti-s-moderna-viziya-na-brega-na-moreto-v-kv-kraymorie/"
+          },
+          {
+            "path": "data/scraped/suprimmo/listings/SUPRIMMO_5c83c7b5f12a.json",
+            "reference_id": "SUPRIMMO:5c83c7b5f12a",
+            "title": "Три съседни имота с обща площ 7200 кв.м и сгради – само на 10 минути от АМ „Хемус“",
+            "listing_url": "https://www.suprimmo.bg/imot-136180-tri-sasedni-imota-s-obshta-plosht-7200-kvm-i-sgradi-samo-na-10-minuti-ot-am-hemus/"
+          }
+        ],
+        "suspicious_unit_area_too_large": [
+          {
+            "path": "data/scraped/suprimmo/listings/SUPRIMMO_189756f899b2.json",
+            "reference_id": "SUPRIMMO:189756f899b2",
+            "title": "Офиси в бизнес сграда клас \"А\"",
+            "listing_url": "https://www.suprimmo.bg/imot-99970-ofisi-v-biznes-sgrada-klas-a/"
+          },
+          {
+            "path": "data/scraped/suprimmo/listings/SUPRIMMO_2345140e9011.json",
+            "reference_id": "SUPRIMMO:2345140e9011",
+            "title": "Първокласни офис пространства в OKINAWA Office Center",
+            "listing_url": "https://www.suprimmo.bg/imot-132340-parvoklasni-ofis-prostranstva-v-okinawa-office-center/"
+          },
+          {
+            "path": "data/scraped/suprimmo/listings/SUPRIMMO_5203e17f300d.json",
+            "reference_id": "SUPRIMMO:5203e17f300d",
+            "title": "Офис - open space в нова бизнес сграда клас А в близост до Mall Plovdiv",
+            "listing_url": "https://www.suprimmo.bg/imot-116300-ofis--open-space-v-nova-biznes-sgrada-klas-a-v-blizost-do-mall-plovdiv/"
+          }
+        ],
+        "suspicious_area_below_2sqm": [
+          {
+            "path": "data/scraped/suprimmo/listings/SUPRIMMO_VAR-80551.json",
+            "reference_id": "SUPRIMMO:VAR-80551",
+            "title": "Парцели в регулация за инвестиция на границата на голф игрище Black Sea Rama",
+            "listing_url": "https://www.suprimmo.bg/imot-80551-partseli-v-regulatsiya-za-investitsiya-na-granitsata-na-golf-igrishte-black-sea-rama/"
+          }
+        ]
+      }
+    },
+    {
+      "source_key": "yavlena",
+      "rows": 345,
+      "bad_json": 0,
+      "source_names": {
+        "Yavlena": 345
+      },
+      "stored_status": {
+        "MISSING": 345
+      },
+      "stored_acceptance": {
+        "MISSING": 345
+      },
+      "stored_publication_type": {
+        "MISSING": 345
+      },
+      "estimated_quality": {
+        "LOST": 194,
+        "SCRAPED_OK": 144,
+        "GROUPED_PUBLICATION": 7
+      },
+      "estimated_reasons": {
+        "missing_description": 166,
+        "description_too_short": 22,
+        "zero_price_invalid": 9,
+        "suspicious_unit_area_too_large": 3,
+        "partial_local_gallery": 1
+      },
+      "estimated_warnings": {
+        "thin_description": 129,
+        "unknown_property_category": 28,
+        "multi_unit_or_development": 10
+      },
+      "bucket_counts": {
+        "MISSING": 216,
+        "buy_personal": 114,
+        "buy_commercial": 15
+      },
+      "intent_counts": {
+        "sale": 341,
+        "long_term_rent": 4
+      },
+      "category_counts": {
+        "apartment": 203,
+        "house": 56,
+        "land": 47,
+        "unknown": 28,
+        "office": 11
+      },
+      "source_section_counts": {
+        "MISSING": 345
+      },
+      "bucket_quality": {
+        "buy_personal": {
+          "SCRAPED_OK": 110,
+          "GROUPED_PUBLICATION": 4
+        },
+        "buy_commercial": {
+          "SCRAPED_OK": 15
+        },
+        "MISSING": {
+          "LOST": 194,
+          "SCRAPED_OK": 19,
+          "GROUPED_PUBLICATION": 3
+        }
+      },
+      "bucket_reasons": {
+        "MISSING": {
+          "missing_description": 166,
+          "description_too_short": 22,
+          "zero_price_invalid": 9,
+          "suspicious_unit_area_too_large": 3,
+          "partial_local_gallery": 1
+        }
+      },
+      "field_gaps": {
+        "missing_description": 166,
+        "thin_description": 151,
+        "unknown_property_category": 28,
+        "zero_price": 9
+      },
+      "phone_total": 646,
+      "phone_valid": 646,
+      "phone_invalid": 0,
+      "remote_photos": 345,
+      "local_photos": 345,
+      "full_gallery_flagged": 344,
+      "rows_remote_no_local": 1,
+      "rows_duplicate_remote_variants": 0,
+      "local_paths_total": 345,
+      "local_paths_existing": 345,
+      "duplicate_listing_url_keys": 0,
+      "duplicate_reference_id_keys": 0,
+      "duplicate_external_id_keys": 0,
+      "db_import_default_candidate_rows": 0,
+      "pending_or_missing_qa_rows": 345,
+      "examples": {
+        "missing_description": [
+          {
+            "path": "data/scraped/yavlena/listings/Yavlena_0381ae4d9137.json",
+            "reference_id": "Yavlena:0381ae4d9137",
+            "title": "Двустаен апартамент в Поморие 97 кв.м. ID 168399  | Явлена",
+            "listing_url": "https://www.yavlena.com/bg/168399"
+          },
+          {
+            "path": "data/scraped/yavlena/listings/Yavlena_04cfa486dd77.json",
+            "reference_id": "Yavlena:04cfa486dd77",
+            "title": "Тристаен апартамент в София 73 кв.м. ID 168071  | Явлена",
+            "listing_url": "https://www.yavlena.com/bg/168071"
+          },
+          {
+            "path": "data/scraped/yavlena/listings/Yavlena_04d8c7116f54.json",
+            "reference_id": "Yavlena:04d8c7116f54",
+            "title": "Парцел в Мулдава 4500 кв.м. ID 168326  | Явлена",
+            "listing_url": "https://www.yavlena.com/bg/168326"
+          }
+        ],
+        "description_too_short": [
+          {
+            "path": "data/scraped/yavlena/listings/Yavlena_0fc28d4388be.json",
+            "reference_id": "Yavlena:0fc28d4388be",
+            "title": "Четиристаен апартамент в София 164 кв.м. ID 168469  | Явлена",
+            "listing_url": "https://www.yavlena.com/bg/168469"
+          },
+          {
+            "path": "data/scraped/yavlena/listings/Yavlena_18e22499bdb4.json",
+            "reference_id": "Yavlena:18e22499bdb4",
+            "title": "Тристаен апартамент в София 74 кв.м. ID 168429  | Явлена",
+            "listing_url": "https://www.yavlena.com/bg/168429"
+          },
+          {
+            "path": "data/scraped/yavlena/listings/Yavlena_1e97cd154d66.json",
+            "reference_id": "Yavlena:1e97cd154d66",
+            "title": "Къща в Раковски 78 кв.м. ID 168257  | Явлена",
+            "listing_url": "https://www.yavlena.com/bg/168257"
+          }
+        ],
+        "zero_price_invalid": [
+          {
+            "path": "data/scraped/yavlena/listings/Yavlena_33136ba4cd9d.json",
+            "reference_id": "Yavlena:33136ba4cd9d",
+            "title": "Парцел в Долни Богров 100000 кв.м. ID 168147  | Явлена",
+            "listing_url": "https://www.yavlena.com/bg/168147"
+          },
+          {
+            "path": "data/scraped/yavlena/listings/Yavlena_3dd6b1d66a9e.json",
+            "reference_id": "Yavlena:3dd6b1d66a9e",
+            "title": "Офис / Административна във Варна 840 кв.м. ID 168210  | Явлена",
+            "listing_url": "https://www.yavlena.com/bg/168210"
+          },
+          {
+            "path": "data/scraped/yavlena/listings/Yavlena_48ef531e8825.json",
+            "reference_id": "Yavlena:48ef531e8825",
+            "title": "Жилищна сграда във Варна 1500 кв.м. ID 168261  | Явлена",
+            "listing_url": "https://www.yavlena.com/bg/168261"
+          }
+        ],
+        "suspicious_unit_area_too_large": [
+          {
+            "path": "data/scraped/yavlena/listings/Yavlena_48ef531e8825.json",
+            "reference_id": "Yavlena:48ef531e8825",
+            "title": "Жилищна сграда във Варна 1500 кв.м. ID 168261  | Явлена",
+            "listing_url": "https://www.yavlena.com/bg/168261"
+          },
+          {
+            "path": "data/scraped/yavlena/listings/Yavlena_dab35e5cf58b.json",
+            "reference_id": "Yavlena:dab35e5cf58b",
+            "title": "Други бизнес имоти в Никопол 4985 кв.м. ID 168416  | Явлена",
+            "listing_url": "https://www.yavlena.com/bg/168416"
+          },
+          {
+            "path": "data/scraped/yavlena/listings/Yavlena_f5723c9f6ec4.json",
+            "reference_id": "Yavlena:f5723c9f6ec4",
+            "title": "Други бизнес имоти в Плевен 1020 кв.м. ID 168476  | Явлена",
+            "listing_url": "https://www.yavlena.com/bg/168476"
+          }
+        ],
+        "partial_local_gallery": [
+          {
+            "path": "data/scraped/yavlena/listings/Yavlena_d28321e5625a.json",
+            "reference_id": "Yavlena:d28321e5625a",
+            "title": "Склад в Добровница 880 кв.м. ID 167866  | Явлена",
+            "listing_url": "https://www.yavlena.com/bg/167866"
+          }
+        ]
+      }
+    }
+  ],
+  "schema_alignment": {
+    "canonical_sql_columns": [
+      "act16_present",
+      "address_text",
+      "agency_name",
+      "amenities",
+      "area_sqm",
+      "broker_name",
+      "building_name",
+      "city",
+      "combined_text",
+      "construction_type",
+      "construction_year",
+      "crawl_provenance",
+      "currency",
+      "description",
+      "detail_url_canonical",
+      "developer_name",
+      "district",
+      "external_id",
+      "fees",
+      "first_seen",
+      "floor",
+      "geocode_confidence",
+      "image_urls",
+      "last_changed_at",
+      "last_seen",
+      "latitude",
+      "list_page_url",
+      "listing_intent",
+      "listing_url",
+      "longitude",
+      "messenger_handles",
+      "normalized_text",
+      "outbound_channel_hints",
+      "owner_group",
+      "owner_name",
+      "parser_version",
+      "phones",
+      "price",
+      "price_per_sqm",
+      "property_category",
+      "raw_detail_storage_key",
+      "raw_text_fallback",
+      "reference_id",
+      "region",
+      "region_key",
+      "removed_at",
+      "resort",
+      "rooms",
+      "segment_key",
+      "source_name",
+      "source_section_id",
+      "stage",
+      "structured_extra",
+      "title",
+      "total_floors",
+      "vertical_key"
+    ],
+    "canonical_domain_fields": [
+      "act16_present",
+      "address_text",
+      "agency_name",
+      "amenities",
+      "area_sqm",
+      "broker_name",
+      "building_name",
+      "city",
+      "construction_type",
+      "construction_year",
+      "crawl_provenance",
+      "currency",
+      "description",
+      "developer_name",
+      "district",
+      "external_id",
+      "fees",
+      "first_seen",
+      "floor",
+      "geocode_confidence",
+      "image_urls",
+      "last_changed_at",
+      "last_seen",
+      "latitude",
+      "listing_intent",
+      "listing_url",
+      "longitude",
+      "messenger_handles",
+      "outbound_channel_hints",
+      "owner_group",
+      "owner_name",
+      "parser_version",
+      "phones",
+      "price",
+      "price_per_sqm",
+      "property_category",
+      "reference_id",
+      "region",
+      "removed_at",
+      "resort",
+      "rooms",
+      "source_name",
+      "stage",
+      "title",
+      "total_floors"
+    ],
+    "canonical_db_model_fields": [
+      "act16_present",
+      "address_text",
+      "agency_name",
+      "amenities",
+      "area_sqm",
+      "broker_name",
+      "building_name",
+      "city",
+      "combined_text",
+      "construction_type",
+      "construction_year",
+      "crawl_provenance",
+      "currency",
+      "description",
+      "detail_url_canonical",
+      "developer_name",
+      "district",
+      "external_id",
+      "fees",
+      "first_seen",
+      "floor",
+      "geocode_confidence",
+      "image_urls",
+      "last_changed_at",
+      "last_seen",
+      "latitude",
+      "list_page_url",
+      "listing_intent",
+      "listing_url",
+      "longitude",
+      "messenger_handles",
+      "normalized_text",
+      "outbound_channel_hints",
+      "owner_group",
+      "owner_name",
+      "parser_version",
+      "phones",
+      "price",
+      "price_per_sqm",
+      "property_category",
+      "raw_detail_storage_key",
+      "raw_text_fallback",
+      "reference_id",
+      "region",
+      "region_key",
+      "removed_at",
+      "resort",
+      "rooms",
+      "segment_key",
+      "source_name",
+      "source_section_id",
+      "stage",
+      "structured_extra",
+      "title",
+      "total_floors",
+      "vertical_key"
+    ],
+    "domain_fields_missing_from_db_model": [],
+    "sql_columns_missing_from_db_model": [],
+    "db_model_fields_missing_from_sql": [],
+    "recommended_first_class_columns_absent_from_sql": [
+      "full_gallery_downloaded",
+      "image_description_coverage",
+      "image_report_status",
+      "listing_status",
+      "local_image_storage_keys",
+      "photo_count_local",
+      "photo_count_remote",
+      "price_status",
+      "scrape_acceptance_status",
+      "scrape_status",
+      "single_entity_candidate",
+      "source_publication_type"
+    ],
+    "all_bulgaria_control_plane_conflict": {
+      "fact": "source_section and crawl_run are constrained to region_key = 'varna', while current Action1 listing JSON uses all-Bulgaria bucket labels such as sale_all, sale_apartments, rent_personal, buy_commercial.",
+      "risk": "If source_section_id is persisted into canonical_listing without an all-Bulgaria source_section row, the FK fails; if it is omitted, segment/bucket provenance is lost."
+    }
+  }
+}

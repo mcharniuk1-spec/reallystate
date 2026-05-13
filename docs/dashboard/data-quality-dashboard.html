@@ -1,0 +1,783 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Quality Deep Review | Bulgaria Real Estate Ops</title>
+  <style>
+    :root { --bg:#f6f8fb; --panel:#fff; --ink:#152033; --muted:#637083; --line:#d9e2ec; --good:#047857; --warn:#b45309; --bad:#b91c1c; --info:#1d4ed8; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.45; }
+    header { background:#fff; border-bottom:1px solid var(--line); padding:28px min(5vw,56px) 20px; }
+    main { padding:24px min(5vw,56px) 56px; }
+    h1 { margin:0 0 6px; font-size:clamp(28px,4vw,44px); letter-spacing:0; }
+    h2 { margin:30px 0 12px; font-size:22px; letter-spacing:0; }
+    h3 { margin:18px 0 8px; font-size:16px; letter-spacing:0; }
+    nav { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+    nav a { border:1px solid var(--line); border-radius:6px; padding:8px 10px; background:#f8fafc; color:var(--ink); text-decoration:none; font-size:14px; }
+    a { color:var(--info); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .muted { color:var(--muted); }
+    .grid,.source-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:12px; }
+    .wide { display:grid; grid-template-columns:repeat(auto-fit,minmax(330px,1fr)); gap:12px; }
+    .panel, details.stat, details.source { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:14px; }
+    details.stat summary, details.source summary { cursor:pointer; list-style:none; }
+    details.stat summary::-webkit-details-marker, details.source summary::-webkit-details-marker { display:none; }
+    details.source summary { display:flex; justify-content:space-between; gap:12px; font-size:18px; }
+    .label { display:block; color:var(--muted); font-size:13px; }
+    .value { display:block; font-size:28px; font-weight:760; line-height:1.15; }
+    table { width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+    th,td { padding:9px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; font-size:14px; }
+    th { background:#eef3f8; color:#435166; font-size:12px; text-transform:uppercase; letter-spacing:.02em; }
+    .bar { display:block; height:6px; background:#e5eaf1; border-radius:999px; margin-top:6px; overflow:hidden; }
+    .bar span { display:block; height:100%; background:var(--info); }
+    code { background:#eef3f8; padding:2px 5px; border-radius:4px; }
+    footer { color:var(--muted); padding:0 min(5vw,56px) 32px; font-size:13px; }
+  </style>
+</head>
+<body>
+<header>
+  <p class="muted">Generated 2026-05-13 14:22:29Z. File-backed only; no live scraping or DB count claim.</p>
+  <h1>Data Quality Deep Review</h1>
+  <p class="muted">Scrape/database QA, BD-18 blockers, source repair patterns, media evidence, market-intelligence limits, and analytics handoff.</p>
+  <nav>
+    <a href="index.html">Hub</a>
+    <a href="properties-database.html">Properties Database</a>
+    <a href="data-quality-dashboard.html">Deep Data Quality</a>
+    <a href="scrape-status.html">Source Matrix</a>
+    <a href="../exports/data-quality-deep-review-2026-05-13.md">Report</a>
+    <a href="../exports/bd18-database-review-and-correction-spec-2026-05-13.md">BD-18 Spec</a>
+  </nav>
+</header>
+<main>
+  <section class="grid">
+    
+    <details class="stat" open>
+      <summary><span class="label">Audit rows</span><span class="value">30,334</span></summary>
+      <p><strong>Insight:</strong> DA-01 file-backed corpus size.</p>
+      <p><strong>Details:</strong> This is saved corpus evidence, not DB-backed count.</p>
+      <p><strong>Action:</strong> Keep DB claims blocked until DATABASE_URL and INFRA-02.</p>
+    </details>
+    
+    
+    <details class="stat" open>
+      <summary><span class="label">Action1 rows</span><span class="value">29,397</span></summary>
+      <p><strong>Insight:</strong> Controlled A1 source/bucket scope.</p>
+      <p><strong>Details:</strong> Seven Action1 sources across buy/rent personal/commercial buckets.</p>
+      <p><strong>Action:</strong> Repair A1 before widening Action2.</p>
+    </details>
+    
+    
+    <details class="stat" open>
+      <summary><span class="label">Importer candidates</span><span class="value">1,606</span></summary>
+      <p><strong>Insight:</strong> Default import remains accepted-only.</p>
+      <p><strong>Details:</strong> Importer now avoids default property_entity promotion.</p>
+      <p><strong>Action:</strong> Use dry-run until BD-18 DB proof.</p>
+    </details>
+    
+    
+    <details class="stat" open>
+      <summary><span class="label">Pending/missing QA</span><span class="value">26,231</span></summary>
+      <p><strong>Insight:</strong> Largest repair queue.</p>
+      <p><strong>Details:</strong> Rows without QA state cannot enter public views.</p>
+      <p><strong>Action:</strong> Scraper and DA-02 must classify or quarantine.</p>
+    </details>
+    
+    
+    <details class="stat" open>
+      <summary><span class="label">Gate good rows</span><span class="value">20,811</span></summary>
+      <p><strong>Insight:</strong> Offline single-unit estimate.</p>
+      <p><strong>Details:</strong> Needs denominator reconciliation with importer/dashboard.</p>
+      <p><strong>Action:</strong> Do not call this market coverage.</p>
+    </details>
+    
+    
+    <details class="stat" open>
+      <summary><span class="label">Gate LOST</span><span class="value">6,698</span></summary>
+      <p><strong>Insight:</strong> Repair/quarantine queue.</p>
+      <p><strong>Details:</strong> LOST rows are not canonical properties.</p>
+      <p><strong>Action:</strong> Scraper consumes LOST fixtures source by source.</p>
+    </details>
+    
+    
+    <details class="stat" open>
+      <summary><span class="label">Gate grouped</span><span class="value">1,888</span></summary>
+      <p><strong>Insight:</strong> Source publications, not units.</p>
+      <p><strong>Details:</strong> Development/project pages need unit-level evidence before split.</p>
+      <p><strong>Action:</strong> Keep out of canonical import.</p>
+    </details>
+    
+    
+    <details class="stat" open>
+      <summary><span class="label">Zero price rows</span><span class="value">12</span></summary>
+      <p><strong>Insight:</strong> Numeric zero is invalid as real price.</p>
+      <p><strong>Details:</strong> Importer coerces zero to null plus price_status provenance.</p>
+      <p><strong>Action:</strong> Parser must write price_status explicitly.</p>
+    </details>
+    
+  </section>
+  <h2>Source Overview</h2>
+  <table>
+    <thead><tr><th>Source</th><th>Rows</th><th>Import candidates</th><th>Blocked</th><th>Risk</th><th>Full gallery</th><th>Image descriptions</th><th>Top rules</th></tr></thead>
+    <tbody><tr><td><a href="#address_bg">address_bg</a></td><td>6,473<span class="bar "><span style="width:65%"></span></span></td><td>0</td><td>6,473</td><td>critical</td><td>6,276/6,473</td><td>0</td><td>image_semantic_description_unverified 6473, contact_overcapture_suspect 5832, missing_or_unreviewed_qa 5582</td></tr><tr><td><a href="#alo_bg">alo_bg</a></td><td>29<span class="bar "><span style="width:2%"></span></span></td><td>0</td><td>29</td><td>critical</td><td>29/29</td><td>0</td><td>missing_or_unreviewed_qa 29, missing_source_publication_type 29, missing_acceptance_status 29</td></tr><tr><td><a href="#bazar_bg">bazar_bg</a></td><td>250<span class="bar "><span style="width:3%"></span></span></td><td>0</td><td>250</td><td>critical</td><td>192/250</td><td>0</td><td>missing_or_unreviewed_qa 250, missing_source_publication_type 250, missing_acceptance_status 250</td></tr><tr><td><a href="#bulgarianproperties">bulgarianproperties</a></td><td>2,289<span class="bar "><span style="width:23%"></span></span></td><td>0</td><td>2,289</td><td>critical</td><td>18/2,289</td><td>0</td><td>image_semantic_description_unverified 2289, contact_overcapture_suspect 2289, partial_local_gallery 2271</td></tr><tr><td><a href="#domaza">domaza</a></td><td>40<span class="bar "><span style="width:2%"></span></span></td><td>0</td><td>40</td><td>critical</td><td>40/40</td><td>0</td><td>missing_or_unreviewed_qa 40, missing_source_publication_type 40, missing_acceptance_status 40</td></tr><tr><td><a href="#home2u">home2u</a></td><td>24<span class="bar "><span style="width:2%"></span></span></td><td>0</td><td>24</td><td>critical</td><td>24/24</td><td>0</td><td>missing_or_unreviewed_qa 24, missing_source_publication_type 24, missing_acceptance_status 24</td></tr><tr><td><a href="#homes_bg">homes_bg</a></td><td>144<span class="bar "><span style="width:2%"></span></span></td><td>60</td><td>84</td><td>high</td><td>86/144</td><td>0</td><td>image_semantic_description_unverified 144, lost_or_rescrape_required 62, remote_gallery_without_local_files 37</td></tr><tr><td><a href="#imot_bg">imot_bg</a></td><td>9,937<span class="bar "><span style="width:100%"></span></span></td><td>1,535</td><td>8,402</td><td>critical</td><td>9,728/9,937</td><td>0</td><td>image_semantic_description_unverified 9937, missing_or_unreviewed_qa 8124, duplicate_remote_image_urls 1568</td></tr><tr><td><a href="#luximmo">luximmo</a></td><td>2,512<span class="bar "><span style="width:25%"></span></span></td><td>5</td><td>2,507</td><td>critical</td><td>2,508/2,512</td><td>0</td><td>image_semantic_description_unverified 2512, contact_overcapture_suspect 2512, missing_or_unreviewed_qa 2356</td></tr><tr><td><a href="#olx_bg">olx_bg</a></td><td>249<span class="bar "><span style="width:3%"></span></span></td><td>0</td><td>249</td><td>critical</td><td>249/249</td><td>0</td><td>missing_or_unreviewed_qa 249, missing_source_publication_type 249, missing_acceptance_status 249</td></tr><tr><td><a href="#property_bg">property_bg</a></td><td>3,094<span class="bar "><span style="width:31%"></span></span></td><td>5</td><td>3,089</td><td>critical</td><td>3,091/3,094</td><td>0</td><td>image_semantic_description_unverified 3094, missing_or_unreviewed_qa 3089, thin_description 138</td></tr><tr><td><a href="#suprimmo">suprimmo</a></td><td>4,948<span class="bar "><span style="width:50%"></span></span></td><td>1</td><td>4,947</td><td>critical</td><td>4,943/4,948</td><td>0</td><td>image_semantic_description_unverified 4948, contact_overcapture_suspect 4948, missing_or_unreviewed_qa 4235</td></tr><tr><td><a href="#yavlena">yavlena</a></td><td>345<span class="bar "><span style="width:3%"></span></span></td><td>0</td><td>345</td><td>critical</td><td>344/345</td><td>0</td><td>missing_or_unreviewed_qa 345, one_remote_photo_gallery_suspect 345, missing_source_publication_type 345</td></tr></tbody>
+  </table>
+  <h2>Source Drilldown</h2>
+  <section class="wide">
+            <details class="source" id="address_bg">
+              <summary><span>address_bg</span><strong>6,473 rows</strong></summary>
+              <div class="source-grid">
+                
+    <details class="stat" open>
+      <summary><span class="label">Import candidates</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Accepted-only default import candidates.</p>
+      <p><strong>Details:</strong> Rows still need DB-backed BD-18 proof before release claims.</p>
+      <p><strong>Action:</strong> Use as internal QA/import fixture scope only.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Blocked rows</span><span class="value">6,473</span></summary>
+      <p><strong>Insight:</strong> Blocked rows remain source publications or repair queues.</p>
+      <p><strong>Details:</strong> Includes missing QA, LOST, grouped/development, inactive/stale, missing evidence, and media/contact issues.</p>
+      <p><strong>Action:</strong> Scraper must repair or quarantine by rule.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Gallery full rows</span><span class="value">6,276</span></summary>
+      <p><strong>Insight:</strong> Local gallery evidence is separate from semantic image descriptions.</p>
+      <p><strong>Details:</strong> Partial=103, one-photo suspect=1677, local exceeds remote=4159.</p>
+      <p><strong>Action:</strong> Do not start image descriptions until gallery identity is reliable.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Semantic image rows</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Image semantic descriptions are not active.</p>
+      <p><strong>Details:</strong> Report statuses: {&#x27;missing&#x27;: 6473}</p>
+      <p><strong>Action:</strong> Vision/media agent must verify Action0 before treating descriptions as evidence.</p>
+    </details>
+    
+              </div>
+              <h3>Repair Pattern</h3>
+              <p><strong>Wrong:</strong> Large pending QA queue, many one-photo suspect rows, missing city/address in some categories, and high invalid/duplicated phone extraction.</p>
+              <p><strong>Likely reason:</strong> List-card/detail merge and contact block extraction over-capture repeated boilerplate; QA state was not finalized after offline estimate.</p>
+              <p><strong>Inspect:</strong> Address detail parser, location selectors, gallery expansion, contact-block normalization, pending-to-accepted quality writeback.</p>
+              <p><strong>Fixture/sample:</strong> Use one accepted city row, one missing-location row, one one-photo row, and one commercial/rent row.</p>
+              <p><strong>Acceptance:</strong> Fixture rows preserve source URL, price/status, city/address, full gallery counts, valid contact provenance, and accepted QA only when single-unit evidence is present.</p>
+              <p><strong>Blocked:</strong> Pending QA, one-photo suspect, missing location, invalid contact-only, and missing/undefined price without source evidence.</p>
+              <h3>Top Rules</h3>
+              <table><tbody><tr><td>image_semantic_description_unverified</td><td>6,473</td></tr><tr><td>contact_overcapture_suspect</td><td>5,832</td></tr><tr><td>missing_or_unreviewed_qa</td><td>5,582</td></tr><tr><td>local_gallery_exceeds_remote_variants</td><td>4,159</td></tr><tr><td>one_remote_photo_gallery_suspect</td><td>1,677</td></tr><tr><td>missing_location_evidence</td><td>1,262</td></tr><tr><td>lost_or_rescrape_required</td><td>891</td></tr><tr><td>unknown_property_category</td><td>649</td></tr><tr><td>partial_local_gallery</td><td>103</td></tr><tr><td>remote_gallery_without_local_files</td><td>94</td></tr><tr><td>thin_description</td><td>3</td></tr><tr><td>missing_area</td><td>3</td></tr></tbody></table>
+              <h3>Examples</h3>
+              <ul><li><code>missing_or_unreviewed_qa</code>: <a href="../../data/scraped/address_bg/listings/Address.bg_0012a5649f6d.json">data/scraped/address_bg/listings/Address.bg_0012a5649f6d.json</a></li><li><code>image_semantic_description_unverified</code>: <a href="../../data/scraped/address_bg/listings/Address.bg_0012a5649f6d.json">data/scraped/address_bg/listings/Address.bg_0012a5649f6d.json</a></li><li><code>contact_overcapture_suspect</code>: <a href="../../data/scraped/address_bg/listings/Address.bg_0012a5649f6d.json">data/scraped/address_bg/listings/Address.bg_0012a5649f6d.json</a></li><li><code>local_gallery_exceeds_remote_variants</code>: <a href="../../data/scraped/address_bg/listings/Address.bg_001a3d0d094d.json">data/scraped/address_bg/listings/Address.bg_001a3d0d094d.json</a></li><li><code>missing_location_evidence</code>: <a href="../../data/scraped/address_bg/listings/Address.bg_001f2a6df8f5.json">data/scraped/address_bg/listings/Address.bg_001f2a6df8f5.json</a></li><li><code>lost_or_rescrape_required</code>: <a href="../../data/scraped/address_bg/listings/Address.bg_002b19df6058.json">data/scraped/address_bg/listings/Address.bg_002b19df6058.json</a></li><li><code>partial_local_gallery</code>: <a href="../../data/scraped/address_bg/listings/Address.bg_002b19df6058.json">data/scraped/address_bg/listings/Address.bg_002b19df6058.json</a></li><li><code>one_remote_photo_gallery_suspect</code>: <a href="../../data/scraped/address_bg/listings/Address.bg_005c5c402a25.json">data/scraped/address_bg/listings/Address.bg_005c5c402a25.json</a></li></ul>
+            </details>
+            
+            <details class="source" id="alo_bg">
+              <summary><span>alo_bg</span><strong>29 rows</strong></summary>
+              <div class="source-grid">
+                
+    <details class="stat" open>
+      <summary><span class="label">Import candidates</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Accepted-only default import candidates.</p>
+      <p><strong>Details:</strong> Rows still need DB-backed BD-18 proof before release claims.</p>
+      <p><strong>Action:</strong> Use as internal QA/import fixture scope only.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Blocked rows</span><span class="value">29</span></summary>
+      <p><strong>Insight:</strong> Blocked rows remain source publications or repair queues.</p>
+      <p><strong>Details:</strong> Includes missing QA, LOST, grouped/development, inactive/stale, missing evidence, and media/contact issues.</p>
+      <p><strong>Action:</strong> Scraper must repair or quarantine by rule.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Gallery full rows</span><span class="value">29</span></summary>
+      <p><strong>Insight:</strong> Local gallery evidence is separate from semantic image descriptions.</p>
+      <p><strong>Details:</strong> Partial=0, one-photo suspect=0, local exceeds remote=0.</p>
+      <p><strong>Action:</strong> Do not start image descriptions until gallery identity is reliable.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Semantic image rows</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Image semantic descriptions are not active.</p>
+      <p><strong>Details:</strong> Report statuses: {&#x27;missing&#x27;: 29}</p>
+      <p><strong>Action:</strong> Vision/media agent must verify Action0 before treating descriptions as evidence.</p>
+    </details>
+    
+              </div>
+              <h3>Repair Pattern</h3>
+              <p><strong>Wrong:</strong> All current rows lack explicit QA/source-publication fields even though estimate marks them OK.</p>
+              <p><strong>Likely reason:</strong> Legacy parser predates Action1 QA field writeback.</p>
+              <p><strong>Inspect:</strong> Alo detail parser output envelope, QA field defaults, bucket assignment, phone/contact provenance.</p>
+              <p><strong>Fixture/sample:</strong> Varna sale fixture with full gallery and phone block; add missing/expired page fixture if available.</p>
+              <p><strong>Acceptance:</strong> Every saved row gets scrape_status, scrape_acceptance_status, source_publication_type, listing_status, bucket_key, and media counts.</p>
+              <p><strong>Blocked:</strong> All missing-QA rows until explicit Action1 fields exist.</p>
+              <h3>Top Rules</h3>
+              <table><tbody><tr><td>missing_or_unreviewed_qa</td><td>29</td></tr><tr><td>missing_source_publication_type</td><td>29</td></tr><tr><td>missing_acceptance_status</td><td>29</td></tr><tr><td>image_semantic_description_unverified</td><td>29</td></tr><tr><td>thin_description</td><td>1</td></tr></tbody></table>
+              <h3>Examples</h3>
+              <ul><li><code>missing_or_unreviewed_qa</code>: <a href="../../data/scraped/alo_bg/listings/alo.bg_10497275.json">data/scraped/alo_bg/listings/alo.bg_10497275.json</a></li><li><code>missing_source_publication_type</code>: <a href="../../data/scraped/alo_bg/listings/alo.bg_10497275.json">data/scraped/alo_bg/listings/alo.bg_10497275.json</a></li><li><code>missing_acceptance_status</code>: <a href="../../data/scraped/alo_bg/listings/alo.bg_10497275.json">data/scraped/alo_bg/listings/alo.bg_10497275.json</a></li><li><code>image_semantic_description_unverified</code>: <a href="../../data/scraped/alo_bg/listings/alo.bg_10497275.json">data/scraped/alo_bg/listings/alo.bg_10497275.json</a></li><li><code>thin_description</code>: <a href="../../data/scraped/alo_bg/listings/alo.bg_11097790.json">data/scraped/alo_bg/listings/alo.bg_11097790.json</a></li></ul>
+            </details>
+            
+            <details class="source" id="bazar_bg">
+              <summary><span>bazar_bg</span><strong>250 rows</strong></summary>
+              <div class="source-grid">
+                
+    <details class="stat" open>
+      <summary><span class="label">Import candidates</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Accepted-only default import candidates.</p>
+      <p><strong>Details:</strong> Rows still need DB-backed BD-18 proof before release claims.</p>
+      <p><strong>Action:</strong> Use as internal QA/import fixture scope only.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Blocked rows</span><span class="value">250</span></summary>
+      <p><strong>Insight:</strong> Blocked rows remain source publications or repair queues.</p>
+      <p><strong>Details:</strong> Includes missing QA, LOST, grouped/development, inactive/stale, missing evidence, and media/contact issues.</p>
+      <p><strong>Action:</strong> Scraper must repair or quarantine by rule.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Gallery full rows</span><span class="value">192</span></summary>
+      <p><strong>Insight:</strong> Local gallery evidence is separate from semantic image descriptions.</p>
+      <p><strong>Details:</strong> Partial=57, one-photo suspect=0, local exceeds remote=0.</p>
+      <p><strong>Action:</strong> Do not start image descriptions until gallery identity is reliable.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Semantic image rows</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Image semantic descriptions are not active.</p>
+      <p><strong>Details:</strong> Report statuses: {&#x27;missing&#x27;: 250}</p>
+      <p><strong>Action:</strong> Vision/media agent must verify Action0 before treating descriptions as evidence.</p>
+    </details>
+    
+              </div>
+              <h3>Repair Pattern</h3>
+              <p><strong>Wrong:</strong> Missing QA, partial local galleries, missing city/address, numeric zero-price rows, and noisy phone extraction.</p>
+              <p><strong>Likely reason:</strong> Classified detail pages have variable location/price blocks and legacy parser did not enforce price_status.</p>
+              <p><strong>Inspect:</strong> Price parser, location parser, gallery downloader, phone extraction boundaries, accepted-only QA writer.</p>
+              <p><strong>Fixture/sample:</strong> Zero-price fixture, partial-gallery fixture, missing-location fixture, active/rent fixture.</p>
+              <p><strong>Acceptance:</strong> Numeric 0 becomes null plus price_status, location is present or blocked, and local gallery count matches remote count before acceptance.</p>
+              <p><strong>Blocked:</strong> Zero price, missing location, partial gallery, missing QA, LOST, inactive/stale classified rows.</p>
+              <h3>Top Rules</h3>
+              <table><tbody><tr><td>missing_or_unreviewed_qa</td><td>250</td></tr><tr><td>missing_source_publication_type</td><td>250</td></tr><tr><td>missing_acceptance_status</td><td>250</td></tr><tr><td>image_semantic_description_unverified</td><td>250</td></tr><tr><td>contact_overcapture_suspect</td><td>235</td></tr><tr><td>duplicate_remote_image_urls</td><td>229</td></tr><tr><td>partial_local_gallery</td><td>57</td></tr><tr><td>unknown_property_category</td><td>44</td></tr><tr><td>missing_location_evidence</td><td>17</td></tr><tr><td>thin_description</td><td>5</td></tr><tr><td>numeric_zero_price</td><td>3</td></tr><tr><td>remote_gallery_without_local_files</td><td>1</td></tr></tbody></table>
+              <h3>Examples</h3>
+              <ul><li><code>missing_or_unreviewed_qa</code>: <a href="../../data/scraped/bazar_bg/listings/Bazar.bg_40857836.json">data/scraped/bazar_bg/listings/Bazar.bg_40857836.json</a></li><li><code>missing_location_evidence</code>: <a href="../../data/scraped/bazar_bg/listings/Bazar.bg_40857836.json">data/scraped/bazar_bg/listings/Bazar.bg_40857836.json</a></li><li><code>partial_local_gallery</code>: <a href="../../data/scraped/bazar_bg/listings/Bazar.bg_40857836.json">data/scraped/bazar_bg/listings/Bazar.bg_40857836.json</a></li><li><code>missing_source_publication_type</code>: <a href="../../data/scraped/bazar_bg/listings/Bazar.bg_40857836.json">data/scraped/bazar_bg/listings/Bazar.bg_40857836.json</a></li><li><code>missing_acceptance_status</code>: <a href="../../data/scraped/bazar_bg/listings/Bazar.bg_40857836.json">data/scraped/bazar_bg/listings/Bazar.bg_40857836.json</a></li><li><code>image_semantic_description_unverified</code>: <a href="../../data/scraped/bazar_bg/listings/Bazar.bg_40857836.json">data/scraped/bazar_bg/listings/Bazar.bg_40857836.json</a></li><li><code>remote_gallery_without_local_files</code>: <a href="../../data/scraped/bazar_bg/listings/Bazar.bg_44660760.json">data/scraped/bazar_bg/listings/Bazar.bg_44660760.json</a></li><li><code>duplicate_remote_image_urls</code>: <a href="../../data/scraped/bazar_bg/listings/Bazar.bg_44660760.json">data/scraped/bazar_bg/listings/Bazar.bg_44660760.json</a></li></ul>
+            </details>
+            
+            <details class="source" id="bulgarianproperties">
+              <summary><span>bulgarianproperties</span><strong>2,289 rows</strong></summary>
+              <div class="source-grid">
+                
+    <details class="stat" open>
+      <summary><span class="label">Import candidates</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Accepted-only default import candidates.</p>
+      <p><strong>Details:</strong> Rows still need DB-backed BD-18 proof before release claims.</p>
+      <p><strong>Action:</strong> Use as internal QA/import fixture scope only.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Blocked rows</span><span class="value">2,289</span></summary>
+      <p><strong>Insight:</strong> Blocked rows remain source publications or repair queues.</p>
+      <p><strong>Details:</strong> Includes missing QA, LOST, grouped/development, inactive/stale, missing evidence, and media/contact issues.</p>
+      <p><strong>Action:</strong> Scraper must repair or quarantine by rule.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Gallery full rows</span><span class="value">18</span></summary>
+      <p><strong>Insight:</strong> Local gallery evidence is separate from semantic image descriptions.</p>
+      <p><strong>Details:</strong> Partial=2271, one-photo suspect=0, local exceeds remote=14.</p>
+      <p><strong>Action:</strong> Do not start image descriptions until gallery identity is reliable.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Semantic image rows</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Image semantic descriptions are not active.</p>
+      <p><strong>Details:</strong> Report statuses: {&#x27;missing&#x27;: 2289}</p>
+      <p><strong>Action:</strong> Vision/media agent must verify Action0 before treating descriptions as evidence.</p>
+    </details>
+    
+              </div>
+              <h3>Repair Pattern</h3>
+              <p><strong>Wrong:</strong> Very high LOST estimate, missing area, partial galleries, and agency contact over-capture.</p>
+              <p><strong>Likely reason:</strong> Agency pages mix full property pages, area/plot fields, language variants, and boilerplate phone lists.</p>
+              <p><strong>Inspect:</strong> Area/plot parser, language canonicalization, gallery carousel extraction, contact-list scoping.</p>
+              <p><strong>Fixture/sample:</strong> House with plot area, apartment with built area, missing-area page, full-gallery page.</p>
+              <p><strong>Acceptance:</strong> Area field has correct semantics, full gallery evidence is durable, and contact provenance identifies agency-level phone lists.</p>
+              <p><strong>Blocked:</strong> Missing area, partial gallery, LOST, grouped/new-build/project pages without unit evidence.</p>
+              <h3>Top Rules</h3>
+              <table><tbody><tr><td>image_semantic_description_unverified</td><td>2,289</td></tr><tr><td>contact_overcapture_suspect</td><td>2,289</td></tr><tr><td>partial_local_gallery</td><td>2,271</td></tr><tr><td>missing_or_unreviewed_qa</td><td>1,888</td></tr><tr><td>missing_area</td><td>510</td></tr><tr><td>grouped_or_development_publication</td><td>323</td></tr><tr><td>lost_or_rescrape_required</td><td>117</td></tr><tr><td>unknown_property_category</td><td>24</td></tr><tr><td>local_gallery_exceeds_remote_variants</td><td>14</td></tr><tr><td>thin_title</td><td>1</td></tr><tr><td>missing_location_evidence</td><td>1</td></tr></tbody></table>
+              <h3>Examples</h3>
+              <ul><li><code>missing_or_unreviewed_qa</code>: <a href="../../data/scraped/bulgarianproperties/listings/BulgarianProperties_0023d0450186.json">data/scraped/bulgarianproperties/listings/BulgarianProperties_0023d0450186.json</a></li><li><code>partial_local_gallery</code>: <a href="../../data/scraped/bulgarianproperties/listings/BulgarianProperties_0023d0450186.json">data/scraped/bulgarianproperties/listings/BulgarianProperties_0023d0450186.json</a></li><li><code>image_semantic_description_unverified</code>: <a href="../../data/scraped/bulgarianproperties/listings/BulgarianProperties_0023d0450186.json">data/scraped/bulgarianproperties/listings/BulgarianProperties_0023d0450186.json</a></li><li><code>contact_overcapture_suspect</code>: <a href="../../data/scraped/bulgarianproperties/listings/BulgarianProperties_0023d0450186.json">data/scraped/bulgarianproperties/listings/BulgarianProperties_0023d0450186.json</a></li><li><code>missing_area</code>: <a href="../../data/scraped/bulgarianproperties/listings/BulgarianProperties_00880d57f8df.json">data/scraped/bulgarianproperties/listings/BulgarianProperties_00880d57f8df.json</a></li><li><code>grouped_or_development_publication</code>: <a href="../../data/scraped/bulgarianproperties/listings/BulgarianProperties_00f12ef61fa1.json">data/scraped/bulgarianproperties/listings/BulgarianProperties_00f12ef61fa1.json</a></li><li><code>lost_or_rescrape_required</code>: <a href="../../data/scraped/bulgarianproperties/listings/BulgarianProperties_021986974a84.json">data/scraped/bulgarianproperties/listings/BulgarianProperties_021986974a84.json</a></li><li><code>local_gallery_exceeds_remote_variants</code>: <a href="../../data/scraped/bulgarianproperties/listings/BulgarianProperties_04924b4b09db.json">data/scraped/bulgarianproperties/listings/BulgarianProperties_04924b4b09db.json</a></li></ul>
+            </details>
+            
+            <details class="source" id="domaza">
+              <summary><span>domaza</span><strong>40 rows</strong></summary>
+              <div class="source-grid">
+                
+    <details class="stat" open>
+      <summary><span class="label">Import candidates</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Accepted-only default import candidates.</p>
+      <p><strong>Details:</strong> Rows still need DB-backed BD-18 proof before release claims.</p>
+      <p><strong>Action:</strong> Use as internal QA/import fixture scope only.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Blocked rows</span><span class="value">40</span></summary>
+      <p><strong>Insight:</strong> Blocked rows remain source publications or repair queues.</p>
+      <p><strong>Details:</strong> Includes missing QA, LOST, grouped/development, inactive/stale, missing evidence, and media/contact issues.</p>
+      <p><strong>Action:</strong> Scraper must repair or quarantine by rule.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Gallery full rows</span><span class="value">40</span></summary>
+      <p><strong>Insight:</strong> Local gallery evidence is separate from semantic image descriptions.</p>
+      <p><strong>Details:</strong> Partial=0, one-photo suspect=0, local exceeds remote=0.</p>
+      <p><strong>Action:</strong> Do not start image descriptions until gallery identity is reliable.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Semantic image rows</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Image semantic descriptions are not active.</p>
+      <p><strong>Details:</strong> Report statuses: {&#x27;missing&#x27;: 40}</p>
+      <p><strong>Action:</strong> Vision/media agent must verify Action0 before treating descriptions as evidence.</p>
+    </details>
+    
+              </div>
+              <h3>Repair Pattern</h3>
+              <p><strong>Wrong:</strong> Small tier-2 corpus includes residential-complex/grouped pages and missing area rows.</p>
+              <p><strong>Likely reason:</strong> Portal exposes project pages and multi-language/category pages that resemble unit pages.</p>
+              <p><strong>Inspect:</strong> Publication-type classifier, area field selectors, complex/development wording, per-language canonical URL mapping.</p>
+              <p><strong>Fixture/sample:</strong> Residential complex page, single unit page, missing-area page.</p>
+              <p><strong>Acceptance:</strong> Grouped/development pages are marked source publications; only unit URLs with price/status, area, and media can be accepted.</p>
+              <p><strong>Blocked:</strong> Complex/project pages, missing-area rows, ambiguous grouped offers.</p>
+              <h3>Top Rules</h3>
+              <table><tbody><tr><td>missing_or_unreviewed_qa</td><td>40</td></tr><tr><td>missing_source_publication_type</td><td>40</td></tr><tr><td>missing_acceptance_status</td><td>40</td></tr><tr><td>image_semantic_description_unverified</td><td>40</td></tr><tr><td>missing_area</td><td>13</td></tr><tr><td>grouped_or_development_publication</td><td>1</td></tr></tbody></table>
+              <h3>Examples</h3>
+              <ul><li><code>missing_or_unreviewed_qa</code>: <a href="../../data/scraped/domaza/listings/Domaza_22334.json">data/scraped/domaza/listings/Domaza_22334.json</a></li><li><code>missing_area</code>: <a href="../../data/scraped/domaza/listings/Domaza_22334.json">data/scraped/domaza/listings/Domaza_22334.json</a></li><li><code>missing_source_publication_type</code>: <a href="../../data/scraped/domaza/listings/Domaza_22334.json">data/scraped/domaza/listings/Domaza_22334.json</a></li><li><code>missing_acceptance_status</code>: <a href="../../data/scraped/domaza/listings/Domaza_22334.json">data/scraped/domaza/listings/Domaza_22334.json</a></li><li><code>image_semantic_description_unverified</code>: <a href="../../data/scraped/domaza/listings/Domaza_22334.json">data/scraped/domaza/listings/Domaza_22334.json</a></li><li><code>grouped_or_development_publication</code>: <a href="../../data/scraped/domaza/listings/Domaza_8262694.json">data/scraped/domaza/listings/Domaza_8262694.json</a></li></ul>
+            </details>
+            
+            <details class="source" id="home2u">
+              <summary><span>home2u</span><strong>24 rows</strong></summary>
+              <div class="source-grid">
+                
+    <details class="stat" open>
+      <summary><span class="label">Import candidates</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Accepted-only default import candidates.</p>
+      <p><strong>Details:</strong> Rows still need DB-backed BD-18 proof before release claims.</p>
+      <p><strong>Action:</strong> Use as internal QA/import fixture scope only.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Blocked rows</span><span class="value">24</span></summary>
+      <p><strong>Insight:</strong> Blocked rows remain source publications or repair queues.</p>
+      <p><strong>Details:</strong> Includes missing QA, LOST, grouped/development, inactive/stale, missing evidence, and media/contact issues.</p>
+      <p><strong>Action:</strong> Scraper must repair or quarantine by rule.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Gallery full rows</span><span class="value">24</span></summary>
+      <p><strong>Insight:</strong> Local gallery evidence is separate from semantic image descriptions.</p>
+      <p><strong>Details:</strong> Partial=0, one-photo suspect=7, local exceeds remote=0.</p>
+      <p><strong>Action:</strong> Do not start image descriptions until gallery identity is reliable.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Semantic image rows</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Image semantic descriptions are not active.</p>
+      <p><strong>Details:</strong> Report statuses: {&#x27;missing&#x27;: 24}</p>
+      <p><strong>Action:</strong> Vision/media agent must verify Action0 before treating descriptions as evidence.</p>
+    </details>
+    
+              </div>
+              <h3>Repair Pattern</h3>
+              <p><strong>Wrong:</strong> Small sample has thin titles, missing QA fields, and limited contact evidence.</p>
+              <p><strong>Likely reason:</strong> Agency template parser extracts short headline but not enough detail/context.</p>
+              <p><strong>Inspect:</strong> Title/detail selector, description body, contact provenance, listing_status markers.</p>
+              <p><strong>Fixture/sample:</strong> Rent listing, sale listing, missing detail page, inactive page if saved.</p>
+              <p><strong>Acceptance:</strong> Title and description are complete enough for dedupe/search and QA fields are explicit.</p>
+              <p><strong>Blocked:</strong> Missing QA, thin title-only rows, missing area/contact provenance.</p>
+              <h3>Top Rules</h3>
+              <table><tbody><tr><td>missing_or_unreviewed_qa</td><td>24</td></tr><tr><td>missing_source_publication_type</td><td>24</td></tr><tr><td>missing_acceptance_status</td><td>24</td></tr><tr><td>image_semantic_description_unverified</td><td>24</td></tr><tr><td>thin_title</td><td>13</td></tr><tr><td>one_remote_photo_gallery_suspect</td><td>7</td></tr><tr><td>missing_area</td><td>3</td></tr><tr><td>missing_location_evidence</td><td>1</td></tr><tr><td>missing_description</td><td>1</td></tr></tbody></table>
+              <h3>Examples</h3>
+              <ul><li><code>missing_or_unreviewed_qa</code>: <a href="../../data/scraped/home2u/listings/Home2U_0ed15363bab8.json">data/scraped/home2u/listings/Home2U_0ed15363bab8.json</a></li><li><code>thin_title</code>: <a href="../../data/scraped/home2u/listings/Home2U_0ed15363bab8.json">data/scraped/home2u/listings/Home2U_0ed15363bab8.json</a></li><li><code>missing_source_publication_type</code>: <a href="../../data/scraped/home2u/listings/Home2U_0ed15363bab8.json">data/scraped/home2u/listings/Home2U_0ed15363bab8.json</a></li><li><code>missing_acceptance_status</code>: <a href="../../data/scraped/home2u/listings/Home2U_0ed15363bab8.json">data/scraped/home2u/listings/Home2U_0ed15363bab8.json</a></li><li><code>image_semantic_description_unverified</code>: <a href="../../data/scraped/home2u/listings/Home2U_0ed15363bab8.json">data/scraped/home2u/listings/Home2U_0ed15363bab8.json</a></li><li><code>one_remote_photo_gallery_suspect</code>: <a href="../../data/scraped/home2u/listings/Home2U_23e83e030902.json">data/scraped/home2u/listings/Home2U_23e83e030902.json</a></li><li><code>missing_area</code>: <a href="../../data/scraped/home2u/listings/Home2U_8574b353a658.json">data/scraped/home2u/listings/Home2U_8574b353a658.json</a></li><li><code>missing_location_evidence</code>: <a href="../../data/scraped/home2u/listings/Home2U_8574b353a658.json">data/scraped/home2u/listings/Home2U_8574b353a658.json</a></li></ul>
+            </details>
+            
+            <details class="source" id="homes_bg">
+              <summary><span>homes_bg</span><strong>144 rows</strong></summary>
+              <div class="source-grid">
+                
+    <details class="stat" open>
+      <summary><span class="label">Import candidates</span><span class="value">60</span></summary>
+      <p><strong>Insight:</strong> Accepted-only default import candidates.</p>
+      <p><strong>Details:</strong> Rows still need DB-backed BD-18 proof before release claims.</p>
+      <p><strong>Action:</strong> Use as internal QA/import fixture scope only.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Blocked rows</span><span class="value">84</span></summary>
+      <p><strong>Insight:</strong> Blocked rows remain source publications or repair queues.</p>
+      <p><strong>Details:</strong> Includes missing QA, LOST, grouped/development, inactive/stale, missing evidence, and media/contact issues.</p>
+      <p><strong>Action:</strong> Scraper must repair or quarantine by rule.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Gallery full rows</span><span class="value">86</span></summary>
+      <p><strong>Insight:</strong> Local gallery evidence is separate from semantic image descriptions.</p>
+      <p><strong>Details:</strong> Partial=18, one-photo suspect=13, local exceeds remote=3.</p>
+      <p><strong>Action:</strong> Do not start image descriptions until gallery identity is reliable.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Semantic image rows</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Image semantic descriptions are not active.</p>
+      <p><strong>Details:</strong> Report statuses: {&#x27;missing&#x27;: 144}</p>
+      <p><strong>Action:</strong> Vision/media agent must verify Action0 before treating descriptions as evidence.</p>
+    </details>
+    
+              </div>
+              <h3>Repair Pattern</h3>
+              <p><strong>Wrong:</strong> Duplicate listing URLs, many LOST rows, local-gallery gaps, and some grouped/development rows.</p>
+              <p><strong>Likely reason:</strong> Offline reparsing recovered fields but source URL/reference normalization and media backfill are inconsistent.</p>
+              <p><strong>Inspect:</strong> Reference-id normalization, duplicate URL handling, gallery downloader, inactive/removed detection.</p>
+              <p><strong>Fixture/sample:</strong> Duplicate URL pair, accepted row with full gallery, LOST row, grouped/new-build row.</p>
+              <p><strong>Acceptance:</strong> Duplicate source URLs collapse to one source publication; accepted rows have local gallery and QA state; LOST stays quarantined.</p>
+              <p><strong>Blocked:</strong> LOST, duplicate unresolved URL clusters, grouped/development, local-gallery-missing rows.</p>
+              <h3>Top Rules</h3>
+              <table><tbody><tr><td>image_semantic_description_unverified</td><td>144</td></tr><tr><td>lost_or_rescrape_required</td><td>62</td></tr><tr><td>remote_gallery_without_local_files</td><td>37</td></tr><tr><td>missing_or_unreviewed_qa</td><td>20</td></tr><tr><td>partial_local_gallery</td><td>18</td></tr><tr><td>one_remote_photo_gallery_suspect</td><td>13</td></tr><tr><td>grouped_or_development_publication</td><td>9</td></tr><tr><td>missing_remote_gallery</td><td>3</td></tr><tr><td>local_gallery_exceeds_remote_variants</td><td>3</td></tr><tr><td>missing_description</td><td>1</td></tr></tbody></table>
+              <h3>Examples</h3>
+              <ul><li><code>lost_or_rescrape_required</code>: <a href="../../data/scraped/homes_bg/listings/Homes.bg_01bf996371bd.json">data/scraped/homes_bg/listings/Homes.bg_01bf996371bd.json</a></li><li><code>remote_gallery_without_local_files</code>: <a href="../../data/scraped/homes_bg/listings/Homes.bg_01bf996371bd.json">data/scraped/homes_bg/listings/Homes.bg_01bf996371bd.json</a></li><li><code>image_semantic_description_unverified</code>: <a href="../../data/scraped/homes_bg/listings/Homes.bg_01bf996371bd.json">data/scraped/homes_bg/listings/Homes.bg_01bf996371bd.json</a></li><li><code>partial_local_gallery</code>: <a href="../../data/scraped/homes_bg/listings/Homes.bg_0376351f52e1.json">data/scraped/homes_bg/listings/Homes.bg_0376351f52e1.json</a></li><li><code>grouped_or_development_publication</code>: <a href="../../data/scraped/homes_bg/listings/Homes.bg_09e4e5f2cf98.json">data/scraped/homes_bg/listings/Homes.bg_09e4e5f2cf98.json</a></li><li><code>missing_or_unreviewed_qa</code>: <a href="../../data/scraped/homes_bg/listings/Homes.bg_1476996.json">data/scraped/homes_bg/listings/Homes.bg_1476996.json</a></li><li><code>one_remote_photo_gallery_suspect</code>: <a href="../../data/scraped/homes_bg/listings/Homes.bg_1640280.json">data/scraped/homes_bg/listings/Homes.bg_1640280.json</a></li><li><code>missing_remote_gallery</code>: <a href="../../data/scraped/homes_bg/listings/Homes.bg_1678987.json">data/scraped/homes_bg/listings/Homes.bg_1678987.json</a></li></ul>
+            </details>
+            
+            <details class="source" id="imot_bg">
+              <summary><span>imot_bg</span><strong>9,937 rows</strong></summary>
+              <div class="source-grid">
+                
+    <details class="stat" open>
+      <summary><span class="label">Import candidates</span><span class="value">1,535</span></summary>
+      <p><strong>Insight:</strong> Accepted-only default import candidates.</p>
+      <p><strong>Details:</strong> Rows still need DB-backed BD-18 proof before release claims.</p>
+      <p><strong>Action:</strong> Use as internal QA/import fixture scope only.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Blocked rows</span><span class="value">8,402</span></summary>
+      <p><strong>Insight:</strong> Blocked rows remain source publications or repair queues.</p>
+      <p><strong>Details:</strong> Includes missing QA, LOST, grouped/development, inactive/stale, missing evidence, and media/contact issues.</p>
+      <p><strong>Action:</strong> Scraper must repair or quarantine by rule.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Gallery full rows</span><span class="value">9,728</span></summary>
+      <p><strong>Insight:</strong> Local gallery evidence is separate from semantic image descriptions.</p>
+      <p><strong>Details:</strong> Partial=25, one-photo suspect=9, local exceeds remote=376.</p>
+      <p><strong>Action:</strong> Do not start image descriptions until gallery identity is reliable.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Semantic image rows</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Image semantic descriptions are not active.</p>
+      <p><strong>Details:</strong> Report statuses: {&#x27;missing&#x27;: 9937}</p>
+      <p><strong>Action:</strong> Vision/media agent must verify Action0 before treating descriptions as evidence.</p>
+    </details>
+    
+              </div>
+              <h3>Repair Pattern</h3>
+              <p><strong>Wrong:</strong> Largest source with many pending QA rows, grouped/development pages, missing/unknown categories, thin descriptions, and duplicate IDs risk.</p>
+              <p><strong>Likely reason:</strong> High-volume portal mixes unit listings, project ads, agency reposts, and short list-card descriptions.</p>
+              <p><strong>Inspect:</strong> Detail-page parser, project-page classifier, category mapping, duplicate external_id/reference logic, stale listing markers.</p>
+              <p><strong>Fixture/sample:</strong> Sale unit, rent unit, project page, short-description page, duplicate/external-id row.</p>
+              <p><strong>Acceptance:</strong> Only unit-level detail pages with stable URL, price/status, area, media, and active status are accepted.</p>
+              <p><strong>Blocked:</strong> Pending QA, grouped/development, unknown category, missing area, inactive/stale rows.</p>
+              <h3>Top Rules</h3>
+              <table><tbody><tr><td>image_semantic_description_unverified</td><td>9,937</td></tr><tr><td>missing_or_unreviewed_qa</td><td>8,124</td></tr><tr><td>duplicate_remote_image_urls</td><td>1,568</td></tr><tr><td>local_gallery_exceeds_remote_variants</td><td>376</td></tr><tr><td>unknown_property_category</td><td>211</td></tr><tr><td>lost_or_rescrape_required</td><td>189</td></tr><tr><td>remote_gallery_without_local_files</td><td>184</td></tr><tr><td>missing_area</td><td>176</td></tr><tr><td>thin_description</td><td>131</td></tr><tr><td>grouped_or_development_publication</td><td>93</td></tr><tr><td>partial_local_gallery</td><td>25</td></tr><tr><td>one_remote_photo_gallery_suspect</td><td>9</td></tr><tr><td>missing_description</td><td>1</td></tr></tbody></table>
+              <h3>Examples</h3>
+              <ul><li><code>missing_or_unreviewed_qa</code>: <a href="../../data/scraped/imot_bg/listings/imot.bg_000edf42c963.json">data/scraped/imot_bg/listings/imot.bg_000edf42c963.json</a></li><li><code>image_semantic_description_unverified</code>: <a href="../../data/scraped/imot_bg/listings/imot.bg_000edf42c963.json">data/scraped/imot_bg/listings/imot.bg_000edf42c963.json</a></li><li><code>duplicate_remote_image_urls</code>: <a href="../../data/scraped/imot_bg/listings/imot.bg_0027872a2495.json">data/scraped/imot_bg/listings/imot.bg_0027872a2495.json</a></li><li><code>local_gallery_exceeds_remote_variants</code>: <a href="../../data/scraped/imot_bg/listings/imot.bg_002c97644d70.json">data/scraped/imot_bg/listings/imot.bg_002c97644d70.json</a></li><li><code>unknown_property_category</code>: <a href="../../data/scraped/imot_bg/listings/imot.bg_004df16d31a2.json">data/scraped/imot_bg/listings/imot.bg_004df16d31a2.json</a></li><li><code>lost_or_rescrape_required</code>: <a href="../../data/scraped/imot_bg/listings/imot.bg_00a2fadab024.json">data/scraped/imot_bg/listings/imot.bg_00a2fadab024.json</a></li><li><code>missing_area</code>: <a href="../../data/scraped/imot_bg/listings/imot.bg_00a2fadab024.json">data/scraped/imot_bg/listings/imot.bg_00a2fadab024.json</a></li><li><code>thin_description</code>: <a href="../../data/scraped/imot_bg/listings/imot.bg_00a2fadab024.json">data/scraped/imot_bg/listings/imot.bg_00a2fadab024.json</a></li></ul>
+            </details>
+            
+            <details class="source" id="luximmo">
+              <summary><span>luximmo</span><strong>2,512 rows</strong></summary>
+              <div class="source-grid">
+                
+    <details class="stat" open>
+      <summary><span class="label">Import candidates</span><span class="value">5</span></summary>
+      <p><strong>Insight:</strong> Accepted-only default import candidates.</p>
+      <p><strong>Details:</strong> Rows still need DB-backed BD-18 proof before release claims.</p>
+      <p><strong>Action:</strong> Use as internal QA/import fixture scope only.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Blocked rows</span><span class="value">2,507</span></summary>
+      <p><strong>Insight:</strong> Blocked rows remain source publications or repair queues.</p>
+      <p><strong>Details:</strong> Includes missing QA, LOST, grouped/development, inactive/stale, missing evidence, and media/contact issues.</p>
+      <p><strong>Action:</strong> Scraper must repair or quarantine by rule.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Gallery full rows</span><span class="value">2,508</span></summary>
+      <p><strong>Insight:</strong> Local gallery evidence is separate from semantic image descriptions.</p>
+      <p><strong>Details:</strong> Partial=4, one-photo suspect=1, local exceeds remote=153.</p>
+      <p><strong>Action:</strong> Do not start image descriptions until gallery identity is reliable.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Semantic image rows</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Image semantic descriptions are not active.</p>
+      <p><strong>Details:</strong> Report statuses: {&#x27;missing&#x27;: 2512}</p>
+      <p><strong>Action:</strong> Vision/media agent must verify Action0 before treating descriptions as evidence.</p>
+    </details>
+    
+              </div>
+              <h3>Repair Pattern</h3>
+              <p><strong>Wrong:</strong> Luxury agency rows have missing area, grouped/development pages, partial galleries, and large contact lists.</p>
+              <p><strong>Likely reason:</strong> Agency template mixes project, office, and luxury descriptions; contact blocks include sitewide phone variants.</p>
+              <p><strong>Inspect:</strong> Area parser, offer-kind classifier, gallery carousel, contact block scoping, language/region parser.</p>
+              <p><strong>Fixture/sample:</strong> Long-term rent apartment, sale apartment, project/development page, missing-area row.</p>
+              <p><strong>Acceptance:</strong> Offer kind, area, price/status, and contact provenance are preserved; grouped pages remain source publications.</p>
+              <p><strong>Blocked:</strong> Missing area, grouped/development, LOST, contact-only unsafe rows, image gaps.</p>
+              <h3>Top Rules</h3>
+              <table><tbody><tr><td>image_semantic_description_unverified</td><td>2,512</td></tr><tr><td>contact_overcapture_suspect</td><td>2,512</td></tr><tr><td>missing_or_unreviewed_qa</td><td>2,356</td></tr><tr><td>missing_area</td><td>518</td></tr><tr><td>local_gallery_exceeds_remote_variants</td><td>153</td></tr><tr><td>grouped_or_development_publication</td><td>146</td></tr><tr><td>lost_or_rescrape_required</td><td>7</td></tr><tr><td>partial_local_gallery</td><td>4</td></tr><tr><td>one_remote_photo_gallery_suspect</td><td>1</td></tr></tbody></table>
+              <h3>Examples</h3>
+              <ul><li><code>missing_or_unreviewed_qa</code>: <a href="../../data/scraped/luximmo/listings/LUXIMMO_000386d2645f.json">data/scraped/luximmo/listings/LUXIMMO_000386d2645f.json</a></li><li><code>missing_area</code>: <a href="../../data/scraped/luximmo/listings/LUXIMMO_000386d2645f.json">data/scraped/luximmo/listings/LUXIMMO_000386d2645f.json</a></li><li><code>image_semantic_description_unverified</code>: <a href="../../data/scraped/luximmo/listings/LUXIMMO_000386d2645f.json">data/scraped/luximmo/listings/LUXIMMO_000386d2645f.json</a></li><li><code>contact_overcapture_suspect</code>: <a href="../../data/scraped/luximmo/listings/LUXIMMO_000386d2645f.json">data/scraped/luximmo/listings/LUXIMMO_000386d2645f.json</a></li><li><code>grouped_or_development_publication</code>: <a href="../../data/scraped/luximmo/listings/LUXIMMO_01286b671353.json">data/scraped/luximmo/listings/LUXIMMO_01286b671353.json</a></li><li><code>local_gallery_exceeds_remote_variants</code>: <a href="../../data/scraped/luximmo/listings/LUXIMMO_024cb8c138a6.json">data/scraped/luximmo/listings/LUXIMMO_024cb8c138a6.json</a></li><li><code>lost_or_rescrape_required</code>: <a href="../../data/scraped/luximmo/listings/LUXIMMO_2184aaa5a9c6.json">data/scraped/luximmo/listings/LUXIMMO_2184aaa5a9c6.json</a></li><li><code>partial_local_gallery</code>: <a href="../../data/scraped/luximmo/listings/LUXIMMO_460e6bd89350.json">data/scraped/luximmo/listings/LUXIMMO_460e6bd89350.json</a></li></ul>
+            </details>
+            
+            <details class="source" id="olx_bg">
+              <summary><span>olx_bg</span><strong>249 rows</strong></summary>
+              <div class="source-grid">
+                
+    <details class="stat" open>
+      <summary><span class="label">Import candidates</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Accepted-only default import candidates.</p>
+      <p><strong>Details:</strong> Rows still need DB-backed BD-18 proof before release claims.</p>
+      <p><strong>Action:</strong> Use as internal QA/import fixture scope only.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Blocked rows</span><span class="value">249</span></summary>
+      <p><strong>Insight:</strong> Blocked rows remain source publications or repair queues.</p>
+      <p><strong>Details:</strong> Includes missing QA, LOST, grouped/development, inactive/stale, missing evidence, and media/contact issues.</p>
+      <p><strong>Action:</strong> Scraper must repair or quarantine by rule.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Gallery full rows</span><span class="value">249</span></summary>
+      <p><strong>Insight:</strong> Local gallery evidence is separate from semantic image descriptions.</p>
+      <p><strong>Details:</strong> Partial=0, one-photo suspect=0, local exceeds remote=0.</p>
+      <p><strong>Action:</strong> Do not start image descriptions until gallery identity is reliable.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Semantic image rows</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Image semantic descriptions are not active.</p>
+      <p><strong>Details:</strong> Report statuses: {&#x27;missing&#x27;: 249}</p>
+      <p><strong>Action:</strong> Vision/media agent must verify Action0 before treating descriptions as evidence.</p>
+    </details>
+    
+              </div>
+              <h3>Repair Pattern</h3>
+              <p><strong>Wrong:</strong> Missing QA, volatile classified inventory, missing location/area, and excessive phone extraction.</p>
+              <p><strong>Likely reason:</strong> API/HTML payloads vary and legacy rows lack Action1 quality fields.</p>
+              <p><strong>Inspect:</strong> Official API parser, location payload mapping, stale/deleted status, phone extraction allowlist.</p>
+              <p><strong>Fixture/sample:</strong> Active listing, deleted/inactive listing, missing-price row, missing-location row.</p>
+              <p><strong>Acceptance:</strong> Official/source status is preserved; missing or deleted rows are stale/review, not active public offers.</p>
+              <p><strong>Blocked:</strong> Missing QA, deleted/stale/volatile rows, missing price/status/location, owner-contact uncertainty.</p>
+              <h3>Top Rules</h3>
+              <table><tbody><tr><td>missing_or_unreviewed_qa</td><td>249</td></tr><tr><td>missing_source_publication_type</td><td>249</td></tr><tr><td>missing_acceptance_status</td><td>249</td></tr><tr><td>image_semantic_description_unverified</td><td>249</td></tr><tr><td>contact_overcapture_suspect</td><td>249</td></tr><tr><td>missing_area</td><td>107</td></tr><tr><td>missing_location_evidence</td><td>41</td></tr><tr><td>unknown_property_category</td><td>17</td></tr><tr><td>thin_description</td><td>1</td></tr></tbody></table>
+              <h3>Examples</h3>
+              <ul><li><code>missing_or_unreviewed_qa</code>: <a href="../../data/scraped/olx_bg/listings/OLX.bg_125403576.json">data/scraped/olx_bg/listings/OLX.bg_125403576.json</a></li><li><code>missing_area</code>: <a href="../../data/scraped/olx_bg/listings/OLX.bg_125403576.json">data/scraped/olx_bg/listings/OLX.bg_125403576.json</a></li><li><code>missing_location_evidence</code>: <a href="../../data/scraped/olx_bg/listings/OLX.bg_125403576.json">data/scraped/olx_bg/listings/OLX.bg_125403576.json</a></li><li><code>missing_source_publication_type</code>: <a href="../../data/scraped/olx_bg/listings/OLX.bg_125403576.json">data/scraped/olx_bg/listings/OLX.bg_125403576.json</a></li><li><code>missing_acceptance_status</code>: <a href="../../data/scraped/olx_bg/listings/OLX.bg_125403576.json">data/scraped/olx_bg/listings/OLX.bg_125403576.json</a></li><li><code>image_semantic_description_unverified</code>: <a href="../../data/scraped/olx_bg/listings/OLX.bg_125403576.json">data/scraped/olx_bg/listings/OLX.bg_125403576.json</a></li><li><code>contact_overcapture_suspect</code>: <a href="../../data/scraped/olx_bg/listings/OLX.bg_125403576.json">data/scraped/olx_bg/listings/OLX.bg_125403576.json</a></li><li><code>unknown_property_category</code>: <a href="../../data/scraped/olx_bg/listings/OLX.bg_137558579.json">data/scraped/olx_bg/listings/OLX.bg_137558579.json</a></li></ul>
+            </details>
+            
+            <details class="source" id="property_bg">
+              <summary><span>property_bg</span><strong>3,094 rows</strong></summary>
+              <div class="source-grid">
+                
+    <details class="stat" open>
+      <summary><span class="label">Import candidates</span><span class="value">5</span></summary>
+      <p><strong>Insight:</strong> Accepted-only default import candidates.</p>
+      <p><strong>Details:</strong> Rows still need DB-backed BD-18 proof before release claims.</p>
+      <p><strong>Action:</strong> Use as internal QA/import fixture scope only.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Blocked rows</span><span class="value">3,089</span></summary>
+      <p><strong>Insight:</strong> Blocked rows remain source publications or repair queues.</p>
+      <p><strong>Details:</strong> Includes missing QA, LOST, grouped/development, inactive/stale, missing evidence, and media/contact issues.</p>
+      <p><strong>Action:</strong> Scraper must repair or quarantine by rule.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Gallery full rows</span><span class="value">3,091</span></summary>
+      <p><strong>Insight:</strong> Local gallery evidence is separate from semantic image descriptions.</p>
+      <p><strong>Details:</strong> Partial=3, one-photo suspect=0, local exceeds remote=5.</p>
+      <p><strong>Action:</strong> Do not start image descriptions until gallery identity is reliable.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Semantic image rows</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Image semantic descriptions are not active.</p>
+      <p><strong>Details:</strong> Report statuses: {&#x27;missing&#x27;: 3094}</p>
+      <p><strong>Action:</strong> Vision/media agent must verify Action0 before treating descriptions as evidence.</p>
+    </details>
+    
+              </div>
+              <h3>Repair Pattern</h3>
+              <p><strong>Wrong:</strong> Many thin descriptions, unknown categories, and possible gallery over-count/duplicate variants.</p>
+              <p><strong>Likely reason:</strong> English/Bulgarian agency pages include repeated marketing boilerplate and large gallery variants.</p>
+              <p><strong>Inspect:</strong> Description extraction, category mapper, gallery de-duplication, SUPRIMMO-group dedupe hints.</p>
+              <p><strong>Fixture/sample:</strong> High-photo listing, thin-description listing, unknown-category listing, accepted row.</p>
+              <p><strong>Acceptance:</strong> Description has property-specific text, category is mapped, duplicate image variants are not overstated.</p>
+              <p><strong>Blocked:</strong> Thin-description-only, unknown category, grouped/development, media duplicate variants until reviewed.</p>
+              <h3>Top Rules</h3>
+              <table><tbody><tr><td>image_semantic_description_unverified</td><td>3,094</td></tr><tr><td>missing_or_unreviewed_qa</td><td>3,089</td></tr><tr><td>thin_description</td><td>138</td></tr><tr><td>unknown_property_category</td><td>118</td></tr><tr><td>local_gallery_exceeds_remote_variants</td><td>5</td></tr><tr><td>partial_local_gallery</td><td>3</td></tr><tr><td>contact_overcapture_suspect</td><td>3</td></tr><tr><td>missing_area</td><td>1</td></tr></tbody></table>
+              <h3>Examples</h3>
+              <ul><li><code>missing_or_unreviewed_qa</code>: <a href="../../data/scraped/property_bg/listings/property.bg_0001c7d93103.json">data/scraped/property_bg/listings/property.bg_0001c7d93103.json</a></li><li><code>image_semantic_description_unverified</code>: <a href="../../data/scraped/property_bg/listings/property.bg_0001c7d93103.json">data/scraped/property_bg/listings/property.bg_0001c7d93103.json</a></li><li><code>unknown_property_category</code>: <a href="../../data/scraped/property_bg/listings/property.bg_00b600ae04e7.json">data/scraped/property_bg/listings/property.bg_00b600ae04e7.json</a></li><li><code>thin_description</code>: <a href="../../data/scraped/property_bg/listings/property.bg_01bba875be73.json">data/scraped/property_bg/listings/property.bg_01bba875be73.json</a></li><li><code>partial_local_gallery</code>: <a href="../../data/scraped/property_bg/listings/property.bg_01fade04055f.json">data/scraped/property_bg/listings/property.bg_01fade04055f.json</a></li><li><code>contact_overcapture_suspect</code>: <a href="../../data/scraped/property_bg/listings/property.bg_24becc96d269.json">data/scraped/property_bg/listings/property.bg_24becc96d269.json</a></li><li><code>local_gallery_exceeds_remote_variants</code>: <a href="../../data/scraped/property_bg/listings/property.bg_3345d75b29ba.json">data/scraped/property_bg/listings/property.bg_3345d75b29ba.json</a></li><li><code>missing_area</code>: <a href="../../data/scraped/property_bg/listings/property.bg_c1db5d4d4460.json">data/scraped/property_bg/listings/property.bg_c1db5d4d4460.json</a></li></ul>
+            </details>
+            
+            <details class="source" id="suprimmo">
+              <summary><span>suprimmo</span><strong>4,948 rows</strong></summary>
+              <div class="source-grid">
+                
+    <details class="stat" open>
+      <summary><span class="label">Import candidates</span><span class="value">1</span></summary>
+      <p><strong>Insight:</strong> Accepted-only default import candidates.</p>
+      <p><strong>Details:</strong> Rows still need DB-backed BD-18 proof before release claims.</p>
+      <p><strong>Action:</strong> Use as internal QA/import fixture scope only.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Blocked rows</span><span class="value">4,947</span></summary>
+      <p><strong>Insight:</strong> Blocked rows remain source publications or repair queues.</p>
+      <p><strong>Details:</strong> Includes missing QA, LOST, grouped/development, inactive/stale, missing evidence, and media/contact issues.</p>
+      <p><strong>Action:</strong> Scraper must repair or quarantine by rule.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Gallery full rows</span><span class="value">4,943</span></summary>
+      <p><strong>Insight:</strong> Local gallery evidence is separate from semantic image descriptions.</p>
+      <p><strong>Details:</strong> Partial=5, one-photo suspect=0, local exceeds remote=11.</p>
+      <p><strong>Action:</strong> Do not start image descriptions until gallery identity is reliable.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Semantic image rows</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Image semantic descriptions are not active.</p>
+      <p><strong>Details:</strong> Report statuses: {&#x27;missing&#x27;: 4948}</p>
+      <p><strong>Action:</strong> Vision/media agent must verify Action0 before treating descriptions as evidence.</p>
+    </details>
+    
+              </div>
+              <h3>Repair Pattern</h3>
+              <p><strong>Wrong:</strong> Large grouped/development queue, missing area, unknown categories, and contact over-capture.</p>
+              <p><strong>Likely reason:</strong> Agency/developer inventory mixes houses, projects, resorts, and repeated contact blocks.</p>
+              <p><strong>Inspect:</strong> Project/development classifier, area parser, gallery extraction, contact provenance, category mapper.</p>
+              <p><strong>Fixture/sample:</strong> Project page, single house, rent unit, missing-area page.</p>
+              <p><strong>Acceptance:</strong> Grouped/development source publications never become canonical units without unit-level evidence.</p>
+              <p><strong>Blocked:</strong> Grouped/development, missing area, LOST, contact-only unsafe rows, pending QA.</p>
+              <h3>Top Rules</h3>
+              <table><tbody><tr><td>image_semantic_description_unverified</td><td>4,948</td></tr><tr><td>contact_overcapture_suspect</td><td>4,948</td></tr><tr><td>missing_or_unreviewed_qa</td><td>4,235</td></tr><tr><td>grouped_or_development_publication</td><td>712</td></tr><tr><td>missing_area</td><td>684</td></tr><tr><td>unknown_property_category</td><td>66</td></tr><tr><td>local_gallery_exceeds_remote_variants</td><td>11</td></tr><tr><td>partial_local_gallery</td><td>5</td></tr></tbody></table>
+              <h3>Examples</h3>
+              <ul><li><code>missing_or_unreviewed_qa</code>: <a href="../../data/scraped/suprimmo/listings/SUPRIMMO_ SOF 112646.json">data/scraped/suprimmo/listings/SUPRIMMO_ SOF 112646.json</a></li><li><code>image_semantic_description_unverified</code>: <a href="../../data/scraped/suprimmo/listings/SUPRIMMO_ SOF 112646.json">data/scraped/suprimmo/listings/SUPRIMMO_ SOF 112646.json</a></li><li><code>contact_overcapture_suspect</code>: <a href="../../data/scraped/suprimmo/listings/SUPRIMMO_ SOF 112646.json">data/scraped/suprimmo/listings/SUPRIMMO_ SOF 112646.json</a></li><li><code>grouped_or_development_publication</code>: <a href="../../data/scraped/suprimmo/listings/SUPRIMMO_001ffd8c3731.json">data/scraped/suprimmo/listings/SUPRIMMO_001ffd8c3731.json</a></li><li><code>unknown_property_category</code>: <a href="../../data/scraped/suprimmo/listings/SUPRIMMO_001ffd8c3731.json">data/scraped/suprimmo/listings/SUPRIMMO_001ffd8c3731.json</a></li><li><code>missing_area</code>: <a href="../../data/scraped/suprimmo/listings/SUPRIMMO_0405d137ade6.json">data/scraped/suprimmo/listings/SUPRIMMO_0405d137ade6.json</a></li><li><code>partial_local_gallery</code>: <a href="../../data/scraped/suprimmo/listings/SUPRIMMO_0789609687aa.json">data/scraped/suprimmo/listings/SUPRIMMO_0789609687aa.json</a></li><li><code>local_gallery_exceeds_remote_variants</code>: <a href="../../data/scraped/suprimmo/listings/SUPRIMMO_Kbs 125221.json">data/scraped/suprimmo/listings/SUPRIMMO_Kbs 125221.json</a></li></ul>
+            </details>
+            
+            <details class="source" id="yavlena">
+              <summary><span>yavlena</span><strong>345 rows</strong></summary>
+              <div class="source-grid">
+                
+    <details class="stat" open>
+      <summary><span class="label">Import candidates</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Accepted-only default import candidates.</p>
+      <p><strong>Details:</strong> Rows still need DB-backed BD-18 proof before release claims.</p>
+      <p><strong>Action:</strong> Use as internal QA/import fixture scope only.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Blocked rows</span><span class="value">345</span></summary>
+      <p><strong>Insight:</strong> Blocked rows remain source publications or repair queues.</p>
+      <p><strong>Details:</strong> Includes missing QA, LOST, grouped/development, inactive/stale, missing evidence, and media/contact issues.</p>
+      <p><strong>Action:</strong> Scraper must repair or quarantine by rule.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Gallery full rows</span><span class="value">344</span></summary>
+      <p><strong>Insight:</strong> Local gallery evidence is separate from semantic image descriptions.</p>
+      <p><strong>Details:</strong> Partial=0, one-photo suspect=345, local exceeds remote=1.</p>
+      <p><strong>Action:</strong> Do not start image descriptions until gallery identity is reliable.</p>
+    </details>
+    
+                
+    <details class="stat" open>
+      <summary><span class="label">Semantic image rows</span><span class="value">0</span></summary>
+      <p><strong>Insight:</strong> Image semantic descriptions are not active.</p>
+      <p><strong>Details:</strong> Report statuses: {&#x27;missing&#x27;: 345}</p>
+      <p><strong>Action:</strong> Vision/media agent must verify Action0 before treating descriptions as evidence.</p>
+    </details>
+    
+              </div>
+              <h3>Repair Pattern</h3>
+              <p><strong>Wrong:</strong> Many missing descriptions, one-photo rows, unknown categories, and zero-price rows.</p>
+              <p><strong>Likely reason:</strong> Parser under-extracts detail body/category and treats placeholder price/media as real evidence.</p>
+              <p><strong>Inspect:</strong> Detail description selector, category mapper, price parser, gallery selector, active/inactive markers.</p>
+              <p><strong>Fixture/sample:</strong> Hotel/commercial page, apartment unit, zero-price page, one-photo page.</p>
+              <p><strong>Acceptance:</strong> Commercial category is explicit, zero price is null plus status, and one-photo rows are blocked unless source truly has one image.</p>
+              <p><strong>Blocked:</strong> Missing description, unknown category, zero price, one-photo suspect, missing QA.</p>
+              <h3>Top Rules</h3>
+              <table><tbody><tr><td>missing_or_unreviewed_qa</td><td>345</td></tr><tr><td>one_remote_photo_gallery_suspect</td><td>345</td></tr><tr><td>missing_source_publication_type</td><td>345</td></tr><tr><td>missing_acceptance_status</td><td>345</td></tr><tr><td>image_semantic_description_unverified</td><td>345</td></tr><tr><td>missing_description</td><td>166</td></tr><tr><td>unknown_property_category</td><td>28</td></tr><tr><td>thin_description</td><td>22</td></tr><tr><td>numeric_zero_price</td><td>9</td></tr><tr><td>grouped_or_development_publication</td><td>4</td></tr><tr><td>local_gallery_exceeds_remote_variants</td><td>1</td></tr><tr><td>remote_gallery_without_local_files</td><td>1</td></tr></tbody></table>
+              <h3>Examples</h3>
+              <ul><li><code>missing_or_unreviewed_qa</code>: <a href="../../data/scraped/yavlena/listings/Yavlena_023103601cb5.json">data/scraped/yavlena/listings/Yavlena_023103601cb5.json</a></li><li><code>unknown_property_category</code>: <a href="../../data/scraped/yavlena/listings/Yavlena_023103601cb5.json">data/scraped/yavlena/listings/Yavlena_023103601cb5.json</a></li><li><code>one_remote_photo_gallery_suspect</code>: <a href="../../data/scraped/yavlena/listings/Yavlena_023103601cb5.json">data/scraped/yavlena/listings/Yavlena_023103601cb5.json</a></li><li><code>missing_source_publication_type</code>: <a href="../../data/scraped/yavlena/listings/Yavlena_023103601cb5.json">data/scraped/yavlena/listings/Yavlena_023103601cb5.json</a></li><li><code>missing_acceptance_status</code>: <a href="../../data/scraped/yavlena/listings/Yavlena_023103601cb5.json">data/scraped/yavlena/listings/Yavlena_023103601cb5.json</a></li><li><code>image_semantic_description_unverified</code>: <a href="../../data/scraped/yavlena/listings/Yavlena_023103601cb5.json">data/scraped/yavlena/listings/Yavlena_023103601cb5.json</a></li><li><code>missing_description</code>: <a href="../../data/scraped/yavlena/listings/Yavlena_0381ae4d9137.json">data/scraped/yavlena/listings/Yavlena_0381ae4d9137.json</a></li><li><code>thin_description</code>: <a href="../../data/scraped/yavlena/listings/Yavlena_0fc28d4388be.json">data/scraped/yavlena/listings/Yavlena_0fc28d4388be.json</a></li></ul>
+            </details>
+            </section>
+  <h2>Market Intelligence Readiness</h2>
+  <section class="wide">
+    <div class="panel">
+      <h3>Accepted Offer Mix</h3>
+      <table><thead><tr><th>Offer kind</th><th>Accepted rows</th><th>Median price</th></tr></thead><tbody><tr><td>sale</td><td>997</td><td>150,000.0</td></tr><tr><td>long_term_rent</td><td>517</td><td>650.0</td></tr><tr><td>long_term_rent_commercial</td><td>54</td><td>1,278.5</td></tr><tr><td>sale_commercial</td><td>38</td><td>102,000.0</td></tr></tbody></table>
+    </div>
+    <div class="panel">
+      <h3>Accepted Cities</h3>
+      <table><thead><tr><th>City</th><th>Accepted rows</th></tr></thead><tbody><tr><td>София</td><td>724</td></tr><tr><td>Варна</td><td>451</td></tr><tr><td>Пловдив</td><td>207</td></tr><tr><td>Бургас</td><td>97</td></tr><tr><td>Русе</td><td>65</td></tr><tr><td>Стара Загора</td><td>55</td></tr><tr><td>Sofia</td><td>3</td></tr><tr><td>Созопол</td><td>1</td></tr><tr><td>Yagodovo</td><td>1</td></tr><tr><td>Vidin</td><td>1</td></tr><tr><td>Видин</td><td>1</td></tr></tbody></table>
+    </div>
+  </section>
+  <h2>Analytics Handoff</h2>
+  <div class="panel">
+    <p><strong>FACT:</strong> No product telemetry was read or added. Current analysis is corpus/file-backed.</p>
+    <p><strong>INTERPRETATION:</strong> Future funnels must separate product events from data-quality counts.</p>
+    <p><strong>GAP:</strong> UA-02/BD-20/UA-03 remain needed before live analytics dashboards.</p>
+  </div>
+</main>
+<footer>Unsafe canonical import remains blocked. Semantic image descriptions remain unverified.</footer>
+</body>
+</html>

@@ -1,0 +1,1174 @@
+{
+  "generated_at": "2026-05-13 14:22:31Z",
+  "dashboards": {
+    "project_progress": "docs/dashboard/project-progress.html",
+    "properties_database": "docs/dashboard/properties-database.html",
+    "website": "docs/dashboard/website.html",
+    "support": "docs/dashboard/support.html"
+  },
+  "task_counts": {
+    "DONE_AWAITING_VERIFY": 45,
+    "BLOCKED": 2,
+    "TODO": 74,
+    "VERIFIED": 25,
+    "IN_PROGRESS": 3
+  },
+  "agents": [
+    {
+      "agent": "planner",
+      "label": "Planner",
+      "counts": {
+        "DONE_AWAITING_VERIFY": 4,
+        "TODO": 4,
+        "VERIFIED": 1
+      },
+      "open_count": 8,
+      "latest": "## 2026-05-13 \u2014 PLAN-07 DA-02/BD-18 next-owner sequential run - Action: Reviewed DA-02 and BD-18 evidence, wrote next-owner prompts, ran the requested owner sequence as planner/debugger/backend/infra/entity-resolution/vision/UX, and preserved data_analyst as evidence owner. - Changed files: - docs/agents/TASKS.md - docs/exports/next-owner-prompts-2026-05-13.md - docs/exports/debugger-da02-bd18-handoff-verification-2026-05-13.md - docs/exports/entity-resolution-accepted-only-candidate-layer-2026-05-13.md - docs/exports/vision-media-local-gallery-verification-2026-05-13.md - docs/agents/ux_ui_designer/verified-field-consumption-2026-05-13.md - agent JOURNEY",
+      "active_tasks": [
+        {
+          "id": "PLAN-03",
+          "title": "Self-development architecture rebuild",
+          "agent": "planner",
+          "status": "DONE_AWAITING_VERIFY (2026-05-13)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "CRITICAL",
+          "verifier": "debugger",
+          "depends_on": "PLAN-01",
+          "output": "architecture docs, role docs, skill files, planner journey entry.",
+          "acceptance": "docs define owner, verifier, cadence, skills, and next responsibilities without widening unsafe scraping or touching live DB data.",
+          "next_actions": [
+            "Keep existing core lanes: planner, backend_developer, data_analyst, scraper_1, scraper_sm, ux_ui_designer, debugger.",
+            "Add support lanes: ops_release_manager, infra_db_operator, market_intelligence_analyst, user_analytics_agent, vision_media_agent, entity_resolution_agent, knowledge_context_agent.",
+            "Define constant vs triggered cadence and review loop."
+          ]
+        },
+        {
+          "id": "CONST-01",
+          "title": "Activation sync + dashboard refresh",
+          "agent": "planner",
+          "status": "TODO (recurring)",
+          "status_key": "TODO",
+          "priority": "",
+          "verifier": "debugger",
+          "depends_on": "\u2014",
+          "output": "refreshed docs/exports/progress-dashboard.json, docs/exports/operational-dashboards.json, docs/dashboard/index.html, docs/dashboard/project-progress.html, docs/dashboard/properties-database.html, docs/dashboard/website.html, docs/dashboard/support.html, docs/exports/all-agent-execution-plan-2026-05-13.md, docs/exports/parallel-execution-timeline.md, docs/exports/scraper-activity-snapshot.md, and updated task notes.",
+          "acceptance": "latest run updates TASKS.md, docs/exports/operational-dashboards.json, and dashboard HTML timestamps; if full make dashboard-doc is blocked by corpus scan performance, run the operational dashboard generator and keep DA-03 blocker visible.",
+          "next_actions": []
+        },
+        {
+          "id": "CONST-02",
+          "title": "Cross-agent note propagation",
+          "agent": "planner",
+          "status": "TODO (recurring)",
+          "status_key": "TODO",
+          "priority": "",
+          "verifier": "lead agent + debugger",
+          "depends_on": "\u2014",
+          "output": "updated TASKS.md dependencies and notes",
+          "acceptance": "each blocker has at least one mapped follow-up slice with dependency, and scraper-facing follow-ups keep the full-item/full-gallery requirement visible",
+          "next_actions": []
+        },
+        {
+          "id": "PLAN-01",
+          "title": "Agent reset and OpenClaw Action1 control reset",
+          "agent": "planner",
+          "status": "DONE_AWAITING_VERIFY (2026-05-05)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "CRITICAL",
+          "verifier": "debugger",
+          "depends_on": "\u2014",
+          "output": "updated task queue, OpenClaw docs/skills, planner JOURNEY.",
+          "acceptance": "task queue and OpenClaw docs agree on agents, source scope, model roles, reporting, Action1 -> Action0 -> Action2 sequence, and debugger handoff.",
+          "next_actions": [
+            "Keep exactly these active lanes: planner, backend_developer, data_analyst, scraper_1, scraper_sm/S&M, ux_ui_designer, debugger.",
+            "Keep scraper_t3 historical only; move new tier-3 work into S&M.",
+            "Ensure OpenClaw reads Action0 + Action1 + Action2 but executes only the operator-approved next action."
+          ]
+        }
+      ]
+    },
+    {
+      "agent": "backend_developer",
+      "label": "Backend Developer",
+      "counts": {
+        "VERIFIED": 3,
+        "DONE_AWAITING_VERIFY": 7,
+        "TODO": 10,
+        "IN_PROGRESS": 1
+      },
+      "open_count": 18,
+      "latest": "## 2026-05-13 \u2014 BD-18 DB evidence tables and smoke import - Action: Implemented the BD-18 evidence-table layer and a DB smoke import script while keeping scraped import source-publication-first. - Changed files: sql/schema.sql, migrations/versions/20260513_0006_bd18_source_publication_evidence.py, src/bgrealestate/db/models.py, src/bgrealestate/db/import_contract.py, src/bgrealestate/db/repositories.py, src/bgrealestate/connectors/ingest.py, scripts/bd18_db_smoke_import.py, tests/test_backend_import_contract.py, Makefile, docs/agents/TASKS.md. - Tables added: source_publication_qa_review, status_history, entity_resolution_candidate, `entity_resolution_r",
+      "active_tasks": [
+        {
+          "id": "BD-04",
+          "title": "Auth / RBAC on CRM and listings routes",
+          "agent": "backend_developer",
+          "status": "DONE_AWAITING_VERIFY (2026-04-08)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "",
+          "verifier": "debugger (Bugbot priority: auth/RBAC)",
+          "depends_on": "BD-02",
+          "output": "auth middleware + test fixtures",
+          "acceptance": "unauthenticated requests return 401/403; make test passes with auth fixtures",
+          "next_actions": []
+        },
+        {
+          "id": "BD-05",
+          "title": "Temporal workflow wiring",
+          "agent": "backend_developer",
+          "status": "DONE_AWAITING_VERIFY (2026-04-08: Temporal worker/scheduler runtime scaffold implemented)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "",
+          "verifier": "debugger (idempotency + restart survival)",
+          "depends_on": "BD-01, BD-02",
+          "output": "Temporal workflows, workers, scheduler config",
+          "acceptance": "jobs survive worker restart; cursors persist; make test passes",
+          "next_actions": []
+        },
+        {
+          "id": "BD-06",
+          "title": "Map/search + chat context APIs (geo scope configurable)",
+          "agent": "backend_developer",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "",
+          "verifier": "debugger + ux_ui_designer",
+          "depends_on": "BD-02, BD-03, DBG-05",
+          "output": "API contract docs + tests + route updates",
+          "acceptance": "API contract tests prove (a) default/nationwide listing queries return Bulgaria-wide results when data exists, (b) optional Varna scope filter works when requested, (c) chat context returns selected property + active filters",
+          "next_actions": []
+        },
+        {
+          "id": "BD-07",
+          "title": "AI chat API bridge for property-aware search assistant",
+          "agent": "backend_developer",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "",
+          "verifier": "debugger + ux_ui_designer",
+          "depends_on": "BD-06",
+          "output": "chat bridge contract + tests + provider adapter",
+          "acceptance": "chat endpoint returns responses that include referenced property IDs and active filter echo; tests cover fallback/error states",
+          "next_actions": []
+        }
+      ]
+    },
+    {
+      "agent": "data_analyst",
+      "label": "Data Analyst",
+      "counts": {
+        "TODO": 2,
+        "VERIFIED": 2
+      },
+      "open_count": 2,
+      "latest": "## 2026-05-13 \u2014 DA-02 deep data-quality review and dashboard - Action: Acting as data_analyst, generated a compact deep review of the saved corpus, DB-readiness blockers, source-specific bad-scrape rules, media evidence, market-intelligence limits, and privacy-safe analytics handoff. Also acted as backend_developer for a narrow importer safety patch, vision_media_agent for image evidence separation, market_intelligence_analyst for accepted-only market limits, and user_analytics_agent for funnel/telemetry constraints. - Changed files: - scripts/generate_data_quality_deep_review.py - scripts/import_scraped_listings.py - scripts/generate_operational_dashboards.py",
+      "active_tasks": [
+        {
+          "id": "DA-03",
+          "title": "Dashboard source/photo coverage generator performance repair",
+          "agent": "data_analyst",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "HIGH",
+          "verifier": "debugger",
+          "depends_on": "PLAN-03",
+          "output": "script update or documented fallback, data analyst journey entry, and clear instructions for when to use the fast fallback versus full corpus dashboards.",
+          "acceptance": "make dashboard-doc completes without manual kill, or a documented fast dashboard target exists for task/JOURNEY-only changes.",
+          "next_actions": []
+        },
+        {
+          "id": "DA-04",
+          "title": "Four-dashboard denominator certification",
+          "agent": "data_analyst",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "HIGH",
+          "verifier": "debugger + ux_ui_designer + backend_developer",
+          "depends_on": "DA-02, DA-03, PLAN-06",
+          "output": "certified denominator note or JSON overlay, refreshed operational dashboards, data_analyst JOURNEY.",
+          "acceptance": "no dashboard cell can be mistaken for public market coverage; accepted single-unit, grouped/development, LOST, pending/missing QA, description, and media denominators are named and reproducible.",
+          "next_actions": [
+            "Certify which dashboard counts are file-backed audit counts, quality-gate counts, scrape-status operational counts, importer default candidates, or future DB counts.",
+            "Add a short denominator note for every Properties Database dashboard metric that can be misread as accepted property count.",
+            "Reconcile source-level differences between DA audit, action1 quality gate, and scrape-status export; preserve unresolved overlap as explicit GAP, not hidden adjustment."
+          ]
+        }
+      ]
+    },
+    {
+      "agent": "scraper_1",
+      "label": "Scraper 1",
+      "counts": {
+        "VERIFIED": 4,
+        "DONE_AWAITING_VERIFY": 5,
+        "IN_PROGRESS": 2,
+        "TODO": 7
+      },
+      "open_count": 14,
+      "latest": "### 2026-05-13 \u2014 S1-23 deep data-quality repair packet - Action: Data analyst produced docs/exports/data-quality-deep-review-2026-05-13.md and docs/dashboard/data-quality-dashboard.html with clickable source drilldowns, bad-scrape rules, example listing paths, and source-specific fixture/acceptance instructions. No live scraping was started. - Changed files: docs/exports/data-quality-deep-review-2026-05-13.md, docs/exports/data-quality-deep-review-2026-05-13.json, docs/dashboard/data-quality-dashboard.html, docs/agents/TASKS.md. - Commands run: analyst ran audit, quality gate, importer dry-run, and dashboard generation; scraper_1 ran no live commands. - Tests run",
+      "active_tasks": [
+        {
+          "id": "S1-11",
+          "title": "Live-safe ingestion runner (small)",
+          "agent": "scraper_1",
+          "status": "DONE_AWAITING_VERIFY (2026-04-08; CLI + tests added, golden-path command executed in skip-mode without DATABASE_URL)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "",
+          "verifier": "debugger + backend_developer (DB round-trip)",
+          "depends_on": "BD-01, S1-01",
+          "output": "CLI command + test",
+          "acceptance": "stats endpoints reflect the inserted record; make golden-path still passes",
+          "next_actions": []
+        },
+        {
+          "id": "S1-13",
+          "title": "Stage-1 scraping completion check (all product types)",
+          "agent": "scraper_1",
+          "status": "DONE_AWAITING_VERIFY (2026-04-08; coverage matrix + assertions added)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "",
+          "verifier": "debugger + backend_developer",
+          "depends_on": "S1-12",
+          "output": "docs/exports/stage1-product-type-coverage.md, coverage tests",
+          "acceptance": "matrix report exists and make test passes with product-type coverage assertions",
+          "next_actions": []
+        },
+        {
+          "id": "S1-14",
+          "title": "Discovery pagination for ALL tier-1 sources",
+          "agent": "scraper_1",
+          "status": "DONE_AWAITING_VERIFY (2026-04-08; discovery parsers + fixtures + tests added for all tier-1 sources)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "CRITICAL \u2014 scrapers can't run without discovery",
+          "verifier": "debugger",
+          "depends_on": "S1-01 through S1-10",
+          "output": "updated connector files, discovery fixtures, tests",
+          "acceptance": "every tier-1 source has working discovery; make test passes; fixtures exist for each",
+          "next_actions": [
+            "Implement parse_discovery_html() / parse_discovery_json() for every tier-1 source that doesn't already have it:",
+            "OLX.bg: paginate API search results (page parameter in API URL)",
+            "alo.bg: HTML pagination with next-page link"
+          ]
+        },
+        {
+          "id": "S1-15",
+          "title": "Live HTTP integration for tier-1 connectors",
+          "agent": "scraper_1",
+          "status": "IN_PROGRESS (2026-04-21; strict pattern repairs promoted Address.bg, BulgarianProperties, LUXIMMO, OLX.bg, property.bg, SUPRIMMO, Bazar.bg, and Yavlena to Patterned from saved item evidence; DB proof is still blocked because no PostgreSQL server is running locally and Docker daemon/compose are unavailable in this environment; alo.bg/Domaza/Home2U still remain low-yield or zero-sample)",
+          "status_key": "IN_PROGRESS",
+          "priority": "CRITICAL \u2014 must actually hit real websites to populate database; feeds S1-18 volume gate",
+          "verifier": "debugger (legal gate enforcement) + backend_developer (DB storage)",
+          "depends_on": "S1-14, BD-01",
+          "output": "updated connector base class, live fetch implementation, integration tests",
+          "acceptance": "make test still passes (no live network); with ENABLE_LIVE_TESTS=1, fetches 1 page from each tier-1 source and parses successfully; legal gates block restricted sources",
+          "next_actions": [
+            "Implement httpx-based live fetch in HtmlPortalConnector.fetch_url() with:",
+            "User-Agent rotation (realistic browser UAs)",
+            "Rate limiting (configurable per source, default 1 req/2sec)"
+          ]
+        }
+      ]
+    },
+    {
+      "agent": "scraper_sm",
+      "label": "S&M / Social + Vendor",
+      "counts": {
+        "DONE_AWAITING_VERIFY": 7,
+        "VERIFIED": 1,
+        "TODO": 9
+      },
+      "open_count": 16,
+      "latest": "## 2026-05-13 \u2014 SM-13 social media discovery and evidence queue - Action: Reviewed public-discoverable real-estate social/messenger candidates across Telegram, Facebook, Instagram, Viber, and WhatsApp; saved a machine-readable candidate matrix and a social-overlay evidence queue. No private/social/messenger scraping was added. - Changed files: - data/social_media_intelligence_candidates.json - docs/agents/scraper_sm/social-media-source-discovery-2026-05-13.md - docs/agents/scraper_sm/social-overlay-evidence-queue-2026-05-13.md - docs/agents/TASKS.md - docs/agents/scraper_sm/JOURNEY.md - Commands run: - sed/jq reads of role, registry, existing S&M docs,",
+      "active_tasks": [
+        {
+          "id": "SM-00",
+          "title": "S&M mission consolidation and OpenClaw monitor handoff",
+          "agent": "scraper_sm",
+          "status": "DONE_AWAITING_VERIFY (2026-05-05)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "CRITICAL",
+          "verifier": "debugger",
+          "depends_on": "PLAN-01",
+          "output": "updated TASKS, S&M JOURNEY, OpenClaw S&M instruction doc.",
+          "acceptance": "S&M instructions are explicit, tier-3 historical work is not lost, and OpenClaw can distinguish A1 marketplace scraping from S&M intelligence overlays.",
+          "next_actions": [
+            "Treat tier-3 partner/vendor/official and tier-4 social/messenger work as one S&M intelligence lane.",
+            "Keep all private/social/messenger scraping consent-gated; no private groups, DMs, unofficial sessions, or KYC/CAPTCHA bypass.",
+            "While Action1 runs, S&M may monitor reports and prepare QA/rescrape prompts, but must not widen Action1 source scope."
+          ]
+        },
+        {
+          "id": "SM-02",
+          "title": "Telegram public channel connector (fixture-first)",
+          "agent": "scraper_sm",
+          "status": "DONE_AWAITING_VERIFY (2026-04-08: acceptance gate passed)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "",
+          "verifier": "debugger + backend_developer",
+          "depends_on": "SM-01, BD-01",
+          "output": "src/bgrealestate/connectors/telegram_public.py, tests, NLP extraction",
+          "acceptance": "make test passes; fixtures contain redacted posts; no live Telegram calls",
+          "next_actions": []
+        },
+        {
+          "id": "SM-03",
+          "title": "X (Twitter) public monitor connector (fixture-first)",
+          "agent": "scraper_sm",
+          "status": "DONE_AWAITING_VERIFY (2026-04-08: acceptance gate passed)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "",
+          "verifier": "debugger",
+          "depends_on": "SM-01",
+          "output": "src/bgrealestate/connectors/x_public.py, tests, fixtures",
+          "acceptance": "make test passes; no live API calls",
+          "next_actions": []
+        },
+        {
+          "id": "SM-04",
+          "title": "Social lead-to-property mapping for AI chat context",
+          "agent": "scraper_sm",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "",
+          "verifier": "debugger + ux_ui_designer",
+          "depends_on": "SM-02, UX-05",
+          "output": "mapping schema + fixtures + parser update tasks",
+          "acceptance": "fixture-backed mapping examples pass tests; no live social calls",
+          "next_actions": []
+        }
+      ]
+    },
+    {
+      "agent": "scraper_t3",
+      "label": "Scraper T3 (historical)",
+      "counts": {
+        "VERIFIED": 2,
+        "DONE_AWAITING_VERIFY": 5,
+        "TODO": 1
+      },
+      "open_count": 6,
+      "latest": "### 2026-04-08 \u2014 T3-07: BCPEA live scraper (public auctions \u2014 legal to crawl) - Action: Built full live scraper for BCPEA property auction register (sales.bcpea.org). Fetched real HTML to understand actual site structure (server-rendered, not SPA). Implemented discovery pagination, detail page parsing, rate limiting, CLI command, Makefile targets, and realistic fixture-backed tests. Successfully scraped 180 real auction listings with full detail (property type, area, price EUR/BGN, court, bailiff, dates, photos, descriptions, scanned PDF documents, bailiff phone/mobile). - Changed files: - src/bgrealestate/connectors/tier3.py (added BcpeaDiscoveryItem, BcpeaDiscoveryPage, `p",
+      "active_tasks": [
+        {
+          "id": "T3-02",
+          "title": "AirDNA / Airbtics licensed data importer (fixture-first)",
+          "agent": "scraper_t3",
+          "status": "DONE_AWAITING_VERIFY",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "",
+          "verifier": "debugger + backend_developer (DB round-trip)",
+          "depends_on": "T3-01, BD-01",
+          "output": "connector, fixtures, tests, STR data model helpers",
+          "acceptance": "make test passes; no live vendor API calls in tests; fixture contains realistic STR metrics",
+          "next_actions": []
+        },
+        {
+          "id": "T3-03",
+          "title": "BCPEA property auctions connector (fixture-first)",
+          "agent": "scraper_t3",
+          "status": "DONE_AWAITING_VERIFY",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "",
+          "verifier": "debugger",
+          "depends_on": "T3-01",
+          "output": "connector, fixtures, tests",
+          "acceptance": "make test passes; no live network in tests; legal gates enforced",
+          "next_actions": []
+        },
+        {
+          "id": "T3-04",
+          "title": "Partner feed stub connectors (Airbnb/Booking.com/Vrbo)",
+          "agent": "scraper_t3",
+          "status": "DONE_AWAITING_VERIFY",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "",
+          "verifier": "debugger (legal gate enforcement)",
+          "depends_on": "T3-01",
+          "output": "stub connectors, fixtures, tests",
+          "acceptance": "make test passes; connector raises PartnerContractRequired on live calls; fixtures demonstrate expected feed structure",
+          "next_actions": []
+        },
+        {
+          "id": "T3-05",
+          "title": "Official register query wrappers (Property Register / KAIS Cadastre)",
+          "agent": "scraper_t3",
+          "status": "DONE_AWAITING_VERIFY",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "",
+          "verifier": "debugger + backend_developer",
+          "depends_on": "T3-01, BD-01",
+          "output": "query wrappers, fixtures, tests, consent enforcement",
+          "acceptance": "make test passes; no automated queries without operator consent; fixtures contain redacted sample responses",
+          "next_actions": []
+        }
+      ]
+    },
+    {
+      "agent": "ux_ui_designer",
+      "label": "UX/UI Designer",
+      "counts": {
+        "VERIFIED": 1,
+        "DONE_AWAITING_VERIFY": 6,
+        "TODO": 15
+      },
+      "open_count": 21,
+      "latest": "### 2026-05-13 \u2014 UX-22 verified field consumption contract - Action: Defined which DA-02/BD-18 dashboard/read-model fields UX can consume now, and which buyer-facing fields remain blocked. - Output: docs/agents/ux_ui_designer/verified-field-consumption-2026-05-13.md. - FACT: file-backed counts may appear only in operator/admin surfaces with explicit labels. - FACT: buyer-facing inventory/trust labels require accepted-only DB/read-model proof, BD-19, and debugger verification. - Status: DONE_AWAITING_VERIFY. - Review comments: UX-16/UX-21 may use labeled operator fields; UX-18 remains blocked for public surfaces.",
+      "active_tasks": [
+        {
+          "id": "UX-02",
+          "title": "Beta main page \u2014 map + listings + category picker",
+          "agent": "ux_ui_designer",
+          "status": "DONE_AWAITING_VERIFY (2026-04-08)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "",
+          "verifier": "debugger",
+          "depends_on": "UX-01",
+          "output": "app/(main)/page.tsx, components/listings/*, components/map/*, lib/types/listing.ts, lib/mock/listings.ts",
+          "acceptance": "page loads with mock/seeded data; category/intent filters work; map renders with pins; responsive mobile stacking",
+          "next_actions": []
+        },
+        {
+          "id": "UX-03",
+          "title": "Wire listings feed to live /listings API",
+          "agent": "ux_ui_designer",
+          "status": "DONE_AWAITING_VERIFY (2026-04-08)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "",
+          "verifier": "debugger",
+          "depends_on": "UX-02, BD-02, BD-03",
+          "output": "updated ListingFeed.tsx, new lib/hooks/useListings.ts",
+          "acceptance": "page fetches from FastAPI; pagination works; fallback to mock if API unreachable",
+          "next_actions": []
+        },
+        {
+          "id": "UX-04",
+          "title": "Nationwide Bulgaria LUN-style map + listings experience",
+          "agent": "ux_ui_designer",
+          "status": "TODO (website seed updated 2026-04-28 with grouped map markers, aggregate filter, search-mode toggle, scrollable all-card list, and foldable descriptions; full UX-04 still waits on backend/filter gates)",
+          "status_key": "TODO",
+          "priority": "",
+          "verifier": "debugger + backend_developer",
+          "depends_on": "UX-03, BD-06, DBG-05",
+          "output": "UX spec/update doc + component task breakdown",
+          "acceptance": "prototype demonstrates Bulgaria-wide browse (no hard-coded Varna-only lock), map filters + listing cards + synchronized selection; spec calls out optional Varna shortcut vs default nationwide",
+          "next_actions": []
+        },
+        {
+          "id": "UX-05",
+          "title": "AI chat panel with property/map-aware context",
+          "agent": "ux_ui_designer",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "",
+          "verifier": "debugger",
+          "depends_on": "UX-04, BD-07",
+          "output": "frontend chat-panel implementation",
+          "acceptance": "chat can reference current property card + filtered map state",
+          "next_actions": []
+        }
+      ]
+    },
+    {
+      "agent": "debugger",
+      "label": "Debugger",
+      "counts": {
+        "TODO": 16,
+        "VERIFIED": 7
+      },
+      "open_count": 16,
+      "latest": "### 2026-05-13 \u2014 VERIFY: DA-02 / BD-18 deep handoff - Gate commands run: - python3 -m py_compile scripts/bd18_db_smoke_import.py scripts/import_scraped_listings.py src/bgrealestate/db/import_contract.py src/bgrealestate/db/models.py src/bgrealestate/db/repositories.py src/bgrealestate/connectors/ingest.py tests/test_backend_import_contract.py migrations/versions/20260513_0006_bd18_source_publication_evidence.py \u2014 PASS. - PYTHONPATH=src python3 -m unittest tests.test_backend_import_contract -v \u2014 PASS under system Python, SQLAlchemy-dependent checks skipped. - PYTHONPATH=src /Users/getapple/.pyenv/versions/3.12.9/bin/python3.12 -m unittest tests.test_backend_import_contract -v",
+      "active_tasks": [
+        {
+          "id": "DBG-13",
+          "title": "Verify Plan 13.05 architecture reset and release gate",
+          "agent": "debugger",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "HIGH",
+          "verifier": "debugger",
+          "depends_on": "OPS-01",
+          "output": "debugger journey entry and task status updates.",
+          "acceptance": "unsafe files are absent from staged diff; role docs and task board have clear owners/verifiers; dashboard refresh blocker is recorded as DA-03 if unresolved.",
+          "next_actions": []
+        },
+        {
+          "id": "DBG-05",
+          "title": "Verify stage-1 scraping before expanding 3D / building-depth geo",
+          "agent": "debugger",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "",
+          "verifier": "lead agent",
+          "depends_on": "S1-13, BD-01, S1-18 (live portion)",
+          "output": "verification entry in docs/agents/debugger/JOURNEY.md",
+          "acceptance": "required product types covered per coverage doc; golden path passes; live volume report meets S1-18 thresholds or waiver is documented",
+          "next_actions": []
+        },
+        {
+          "id": "DBG-08",
+          "title": "Verify Codex tier-1/2 quality audit and Gemma readiness",
+          "agent": "debugger",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "CRITICAL \u2014 verifier for the Action0/Action1/Action2 Gemma/OpenClaw sequence",
+          "verifier": "lead agent",
+          "depends_on": "S1-21, S1-22A, S1-22B as applicable",
+          "output": "verification entry in docs/agents/debugger/JOURNEY.md, updated TASKS statuses",
+          "acceptance": "Action0 has report-or-skip coverage for every eligible row; Action1 has attempted all seven sources in all four buckets with saved/skipped/error counts; every high-priority source gap has a fix, test, blocker, or queued Action2 follow-up; no ambiguous Varna-only instruction remains.",
+          "next_actions": []
+        },
+        {
+          "id": "DBG-06",
+          "title": "Verify all pending DONE_AWAITING_VERIFY slices (batch 2)",
+          "agent": "debugger",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "CRITICAL \u2014 many slices await verification (scheduled after S1-18 + BD-11 live ingest proof per 2026-04-09 wave; early spot-checks allowed if operator requests)",
+          "verifier": "lead agent",
+          "depends_on": "S1-18, BD-11 (live rows or documented waiver)",
+          "output": "batch verification report in docs/agents/debugger/JOURNEY.md, updated statuses in TASKS.md",
+          "acceptance": "all slices either promoted to VERIFIED or documented as BLOCKED with specific failure reason",
+          "next_actions": [
+            "BD-04 (Auth/RBAC): test 401/403 responses, API key scope enforcement",
+            "BD-05 (Temporal): verify worker/scheduler stubs, test restart behavior",
+            "S1-11 (Ingestion runner): run fixture ingest, check DB round-trip"
+          ]
+        }
+      ]
+    },
+    {
+      "agent": "ops_release_manager",
+      "label": "Ops Release Manager",
+      "counts": {
+        "DONE_AWAITING_VERIFY": 2
+      },
+      "open_count": 2,
+      "latest": "## 2026-05-13 \u2014 OPS-02 data-analysis release gate prepared - Task: Prepare release safety gate while data_analyst is active; no staging or push. - Inputs: docs/agents/TASKS.md, docs/agents/roles/ops_release_manager.md, docs/integrations/mcp-and-skills-setup.md, .gitignore, project wiki memory/insights, agent-skills/ops-release-management/SKILL.md, agent-skills/qa-review-release/SKILL.md, agent-skills/security-audit/SKILL.md, agent-skills/ci-cd-pipeline/SKILL.md. - FACT: data_analyst owns accepted/LOST/grouped/media/dashboard truth; DA-01 is file-backed only; DB-backed claims remain blocked by BD-18, missing DB URLs, and INFRA-02. - INTERPRETATION: rel",
+      "active_tasks": [
+        {
+          "id": "OPS-01",
+          "title": "Safe git push gate for Plan 13.05",
+          "agent": "ops_release_manager",
+          "status": "DONE_AWAITING_VERIFY (2026-05-13; pushed to origin reallystate)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "CRITICAL",
+          "verifier": "debugger",
+          "depends_on": "PLAN-03",
+          "output": "release report in docs/agents/ops_release_manager/JOURNEY.md.",
+          "acceptance": "no unsafe paths or secrets in staged diff; push succeeds or blocker is recorded.",
+          "next_actions": [
+            "Unstage unsafe existing index entries without modifying working files.",
+            "Stage only safe code/docs/config/skills/runbooks.",
+            "Exclude secrets, raw capture dirs, DB dumps, runtime logs, OpenClaw state, and unreviewed large scraped corpus."
+          ]
+        },
+        {
+          "id": "OPS-02",
+          "title": "Data-analysis-driven release gate checklist",
+          "agent": "ops_release_manager",
+          "status": "DONE_AWAITING_VERIFY (2026-05-13; checklist only, no staging or push)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "CRITICAL",
+          "verifier": "debugger",
+          "depends_on": "DA-02 or current data_analyst handoff; DBG-21 verifies this checklist before release use.",
+          "output": "docs/agents/ops_release_manager/JOURNEY.md, TASKS release gate notes.",
+          "acceptance": "release checklist exists in ops journey and this task board; unsafe data/runtime/secrets exclusions are explicit; debugger release-hygiene verification is queued; no files are staged or pushed by this slice.",
+          "next_actions": [
+            "Treat data_analyst as the evidence owner for accepted/LOST/grouped/media/dashboard counts; release notes must cite reproducible artifact paths, not chat summaries.",
+            "Require DA-02 dashboard denominator semantics before any public count claim, and DA-03 or an explicit dashboard-refresh blocker note before broad validation claims.",
+            "Block DB-backed release claims until BD-18 import/schema alignment and INFRA-02 DB count verification succeed with a real DATABASE_URL / REMOTE_DATABASE_URL."
+          ]
+        }
+      ]
+    },
+    {
+      "agent": "infra_db_operator",
+      "label": "Infra DB Operator",
+      "counts": {
+        "DONE_AWAITING_VERIFY": 1,
+        "BLOCKED": 1
+      },
+      "open_count": 2,
+      "latest": "## 2026-05-13 \u2014 INFRA-02 BD-18 DB gate attempt - Action: Checked whether DB verification can run after BD-18 table/smoke-script implementation. - FACT: DATABASE_URL is not set in this environment. - Commands run: - if [ -n \"$DATABASE_URL\" ]; then echo DATABASE_URL_set; else echo DATABASE_URL_missing; fi - make verify-db-counts - make bd18-db-smoke-import - Result: both Make targets block immediately with DATABASE_URL is required. - Status: BLOCKED. - Next step: operator provides a libpq-compatible DATABASE_URL; infra then runs make migrate, make bd18-db-smoke-import, and make verify-db-counts.",
+      "active_tasks": [
+        {
+          "id": "INFRA-01",
+          "title": "Server and DB migration readiness",
+          "agent": "infra_db_operator",
+          "status": "DONE_AWAITING_VERIFY (2026-05-13)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "CRITICAL",
+          "verifier": "debugger + backend_developer",
+          "depends_on": "PLAN-03",
+          "output": "migration runbook, Make targets backup-db, restore-db, verify-db-counts, infra journey entry.",
+          "acceptance": "migration can be executed next once server SSH and DB URLs exist; no DB dump is committed.",
+          "next_actions": [
+            "Prepare backup/restore/count verification commands.",
+            "Document server prerequisites and provider recommendation.",
+            "Define transfer/restore/rollback steps."
+          ]
+        },
+        {
+          "id": "INFRA-02",
+          "title": "DB count verification execution gate",
+          "agent": "infra_db_operator",
+          "status": "BLOCKED (2026-05-13; DATABASE_URL missing, readiness inputs prepared, waiting on credentials/URLs and BD-18 DB smoke execution)",
+          "status_key": "BLOCKED",
+          "priority": "CRITICAL",
+          "verifier": "debugger + backend_developer + data_analyst",
+          "depends_on": "INFRA-01, BD-18",
+          "output": "infra journey entry plus docs/exports/db-count-verification-YYYY-MM-DD.md if counts run.",
+          "acceptance": "make verify-db-counts succeeds against the target DB and the report names accepted, skipped, grouped/development, LOST, inactive, and media-count gaps with source/bucket scope.",
+          "next_actions": [
+            "Once DATABASE_URL / REMOTE_DATABASE_URL exist, run backup/restore/count verification without committing dumps or runtime logs.",
+            "Compare DB counts with the latest data_analyst accepted/LOST/grouped/media artifacts.",
+            "Record mismatches as blockers for BD-18 or DA-02; do not reinterpret scrape quality."
+          ]
+        }
+      ]
+    },
+    {
+      "agent": "market_intelligence_analyst",
+      "label": "Market Intelligence",
+      "counts": {
+        "DONE_AWAITING_VERIFY": 1,
+        "TODO": 1
+      },
+      "open_count": 2,
+      "latest": "## 2026-05-13 \u2014 MI accepted-only data-quality handoff - Action: Data analyst added market-intelligence readiness into docs/exports/data-quality-deep-review-2026-05-13.md: accepted-only offer mix, accepted city slices, price summaries by offer kind, and limits on raw scrape-volume claims. - Changed files: docs/exports/data-quality-deep-review-2026-05-13.md, docs/dashboard/data-quality-dashboard.html, docs/agents/TASKS.md. - Commands run: python3 scripts/generate_data_quality_deep_review.py. - Tests run: none by MI; analyst tests logged in data_analyst JOURNEY. - Status: MI-02 remains TODO. - Review comments: Use accepted/import-candidate evidence only. Raw s",
+      "active_tasks": [
+        {
+          "id": "MI-01",
+          "title": "Weekly market and rival intelligence baseline",
+          "agent": "market_intelligence_analyst",
+          "status": "DONE_AWAITING_VERIFY (2026-05-13; file-backed only, no browsing/scraping)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "HIGH",
+          "verifier": "debugger + planner",
+          "depends_on": "PLAN-03",
+          "output": "docs/exports/market-intelligence-2026-05-13.md, market intelligence journey entry.",
+          "acceptance": "report separates FACT / INTERPRETATION / HYPOTHESIS / GAP and maps recommendations to planner tasks.",
+          "next_actions": []
+        },
+        {
+          "id": "MI-02",
+          "title": "Next weekly market review scorecard",
+          "agent": "market_intelligence_analyst",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "HIGH",
+          "verifier": "debugger + planner + data_analyst",
+          "depends_on": "MI-01, DA-02, BD-19",
+          "output": "docs/exports/market-review-scorecard-YYYY-MM-DD.md, market intelligence journey entry, planner-ready source priority list.",
+          "acceptance": "every source-strength or supply-gap claim cites a reproducible artifact; no private/unauthorized source route is proposed; public positioning language is blocked unless accepted-only DB counts support it.",
+          "next_actions": [
+            "Build a weekly source scorecard from accepted-only evidence: source family, legal/access mode, website-total basis, landed rows, accepted rows, grouped rows, LOST rows, media/description coverage, city/district coverage, price-status coverage, and product role.",
+            "Identify strategic supply gaps by geography, intent, property type, and source family without using raw scraped volume as a market fact.",
+            "Separate marketable claims from internal hypotheses and blocked data needs."
+          ]
+        }
+      ]
+    },
+    {
+      "agent": "user_analytics_agent",
+      "label": "User Analytics",
+      "counts": {
+        "DONE_AWAITING_VERIFY": 1,
+        "TODO": 2
+      },
+      "open_count": 3,
+      "latest": "## 2026-05-13 \u2014 UA data-quality dashboard handoff - Action: Data analyst added user-analytics constraints to the deep data-quality review: future funnels must separate product telemetry from corpus quality counts, and payloads must remain PII-free. - Changed files: docs/exports/data-quality-deep-review-2026-05-13.md, docs/dashboard/data-quality-dashboard.html, docs/agents/TASKS.md. - Commands run: python3 scripts/generate_data_quality_deep_review.py. - Tests run: none by UA; analyst backend/parser tests logged separately. - Status: UA-02 remains TODO. - Review comments: Required future events include listing impression, detail open, map result open, filter ap",
+      "active_tasks": [
+        {
+          "id": "UA-01",
+          "title": "Website analytics event taxonomy",
+          "agent": "user_analytics_agent",
+          "status": "DONE_AWAITING_VERIFY (2026-05-13: privacy-safe taxonomy written; implementation deferred until UI/backend contracts stabilize)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "HIGH",
+          "verifier": "debugger + ux_ui_designer",
+          "depends_on": "PLAN-03",
+          "output": "docs/analytics/user-event-taxonomy.md, user analytics journey entry.",
+          "acceptance": "no PII-bearing payloads; frontend/backend tasks are explicit.",
+          "next_actions": []
+        },
+        {
+          "id": "UA-02",
+          "title": "Privacy-safe instrumentation implementation plan",
+          "agent": "user_analytics_agent",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "HIGH",
+          "verifier": "debugger + ux_ui_designer + backend_developer",
+          "depends_on": "UA-01, BD-13, BD-17, BD-19, UX-15",
+          "output": "docs/analytics/instrumentation-implementation-plan.md, user analytics journey entry.",
+          "acceptance": "implementation plan maps every event to frontend/backend owner, payload schema, privacy rule, and verification case; no external analytics dependency.",
+          "next_actions": [
+            "After account/chat/admin/read-model contracts stabilize, freeze the event dictionary, payload allowlists, sampling/debounce rules, retention windows, and dashboard metrics.",
+            "Confirm UX events use derived fields only: no raw search text, raw chat text, emails, phones, names, source URLs, IPs, user agents, tokens, or admin private notes.",
+            "Map each event to an owner component/API and a debugger verification fixture."
+          ]
+        },
+        {
+          "id": "UA-03",
+          "title": "Product analytics dashboard contract",
+          "agent": "user_analytics_agent",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "MEDIUM",
+          "verifier": "debugger + ux_ui_designer + data_analyst",
+          "depends_on": "UA-02, BD-20, UX-20",
+          "output": "docs/analytics/product-dashboard-spec.md, user analytics journey entry.",
+          "acceptance": "dashboard spec includes metric definitions, required events, denominator rules, privacy constraints, and example SQL/API query shapes using only first-party event data.",
+          "next_actions": []
+        }
+      ]
+    },
+    {
+      "agent": "vision_media_agent",
+      "label": "Vision Media",
+      "counts": {
+        "DONE_AWAITING_VERIFY": 2,
+        "BLOCKED": 1,
+        "TODO": 2
+      },
+      "open_count": 5,
+      "latest": "## 2026-05-13 \u2014 VM-05 local-gallery verification before image descriptions - Action: Verified the current file-backed local-gallery evidence contract before any semantic image-description work. - Output: docs/exports/vision-media-local-gallery-verification-2026-05-13.md. - FACT: source-item-photo-coverage.json reports raw media capture/gallery evidence, not semantic image descriptions. - FACT: image descriptions remain inactive/unverified and Action0 remains blocked until operator Action0 now. - Status: DONE_AWAITING_VERIFY. - Review comments: Future image-description work must require accepted single-unit state plus local file existence/readability and explici",
+      "active_tasks": [
+        {
+          "id": "VM-01",
+          "title": "Vision media agent readiness",
+          "agent": "vision_media_agent",
+          "status": "DONE_AWAITING_VERIFY (2026-05-13; planning only, no image processing)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "HIGH",
+          "verifier": "debugger + data_analyst",
+          "depends_on": "DA-01 file-backed audit; Action0 execution remains blocked until operator Action0 now",
+          "output": "docs/exports/vision-media-action0-readiness-2026-05-13.md, vision journey entry, media QA follow-up slices.",
+          "acceptance": "readiness report separates FACT / INTERPRETATION / HYPOTHESIS / GAP; reports remain evidence, not final property facts; execution waits for operator Action0 now; buyer-facing promotion requires accepted single-unit status plus visual evidence gates.",
+          "next_actions": [
+            "Convert data analyst media gaps into semantic media QA tasks: gallery completeness, scene/room coverage, condition, equipment, style, photo-text consistency, and uncertainty.",
+            "Define the visual evidence threshold for buyer-facing display and stronger property promotion.",
+            "Define Action0 queue rules without running image processing; use only local files after operator Action0 now."
+          ]
+        },
+        {
+          "id": "VM-02",
+          "title": "Action0 semantic media QA execution queue",
+          "agent": "vision_media_agent",
+          "status": "BLOCKED (operator Action0 now required; do not run during planning)",
+          "status_key": "BLOCKED",
+          "priority": "HIGH",
+          "verifier": "debugger + data_analyst",
+          "depends_on": "VM-01 verification, operator Action0 now, Action1 QA state accepted by debugger/data_analyst",
+          "output": "docs/exports/property-image-reports/, optional compatibility mirror to docs/exports/apartment-image-reports/, vision journey entry.",
+          "acceptance": "every eligible row has a report or precise skip reason; every report references existing local files only; no rooms/equipment/condition/floorplans are invented; uncertainty is present for every non-obvious conclusion.",
+          "next_actions": [
+            "After operator Action0 now, process only rows from s1-21-gemma-action0-eligible.json or a debugger/data_analyst-approved successor queue.",
+            "Use only local_image_files; no remote fetch or gallery backfill inside semantic reporting.",
+            "Write one JSON and one Markdown report per property under docs/exports/property-image-reports/<source_key>/."
+          ]
+        },
+        {
+          "id": "VM-03",
+          "title": "Visual evidence promotion gate",
+          "agent": "vision_media_agent",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "HIGH",
+          "verifier": "debugger + data_analyst + backend_developer + ux_ui_designer",
+          "depends_on": "DA-02, BD-18, BD-19",
+          "output": "field contract or task handoff for backend/UX/dashboard implementation, vision journey entry.",
+          "acceptance": "backend/API/UI consumers can tell display_allowed_with_limited_media from promotion_allowed; no semantic image statement overwrites source facts; all blockers are auditable.",
+          "next_actions": [
+            "Turn the readiness report thresholds into product/DB/API fields: visual_evidence_status, semantic_report_status, missing_scene_warnings, human_review_required, and visual_promotion_blockers.",
+            "Separate buyer-facing display from promoted/enriched property use; promoted use needs a complete semantic report, not only local photos.",
+            "Keep grouped/development, LOST, inactive, pending-QA, partial-gallery, and no-report rows out of promoted property sets."
+          ]
+        },
+        {
+          "id": "VM-04",
+          "title": "Media QA dashboard handoff",
+          "agent": "vision_media_agent",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "MEDIUM",
+          "verifier": "debugger + data_analyst + ux_ui_designer",
+          "depends_on": "VM-01, DA-02, DA-03",
+          "output": "dashboard contract update or implementation handoff, vision journey entry.",
+          "acceptance": "dashboard terms distinguish raw media capture, gallery completeness, semantic image-report coverage, and buyer-facing promotion readiness.",
+          "next_actions": [
+            "Define dashboard metrics for media capture completeness and semantic report completeness separately.",
+            "Track per-source/per-bucket counts for accepted rows with full local gallery, partial gallery, unreadable/duplicate images, semantic report complete, semantic report skipped, and human-review required.",
+            "Ensure source-item-photo-coverage.json is not used as the accepted-row denominator until DA-02 reconciles stored status vs quality-gate status."
+          ]
+        }
+      ]
+    },
+    {
+      "agent": "entity_resolution_agent",
+      "label": "Entity Resolution",
+      "counts": {
+        "DONE_AWAITING_VERIFY": 2,
+        "TODO": 2
+      },
+      "open_count": 4,
+      "latest": "## 2026-05-13 \u2014 ER-02 accepted-only candidate layer - Action: Designed the accepted-only entity-resolution candidate layer for BD-21 without generating candidates or promoting properties. - Output: docs/exports/entity-resolution-accepted-only-candidate-layer-2026-05-13.md. - FACT: candidate input is restricted to accepted single-unit source publications; pending QA, LOST, inactive, grouped/development, and unknown rows are hard-excluded. - INTERPRETATION: entity resolution can prepare reviewable evidence safely now, but scoring/execution waits for BD-18/BD-19/DA-02 DB proof. - Status: DONE_AWAITING_VERIFY. - Next step: debugger/data_analyst/backend verify ER-02,",
+      "active_tasks": [
+        {
+          "id": "ER-01",
+          "title": "Conservative entity-resolution queue plan",
+          "agent": "entity_resolution_agent",
+          "status": "DONE_AWAITING_VERIFY (2026-05-13: planning only; no candidate generation, import, or property-entity promotion)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "MEDIUM",
+          "verifier": "debugger + data_analyst",
+          "depends_on": "DA-01 file-backed audit; execution candidates depend on BD-18, BD-19, DA-02, and accepted source-publication import evidence",
+          "output": "docs/exports/entity-resolution-queue-plan-2026-05-13.md, entity resolution journey entry.",
+          "acceptance": "grouped/development publications cannot be auto-merged as single units; plan states no property_entity / property_offer promotion in ER planning; follow-up slices depend on BD-18/BD-19 accepted source-publication evidence.",
+          "next_actions": []
+        },
+        {
+          "id": "ER-02",
+          "title": "Accepted-only duplicate candidate extraction contract",
+          "agent": "entity_resolution_agent",
+          "status": "DONE_AWAITING_VERIFY (2026-05-13; accepted-only candidate layer designed, no candidate generation)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "HIGH",
+          "verifier": "debugger + data_analyst + backend_developer",
+          "depends_on": "ER-01, BD-18, BD-19, DA-02",
+          "output": "docs/exports/entity-resolution-accepted-only-candidate-layer-2026-05-13.md, entity resolution journey entry.",
+          "acceptance": "contract includes deterministic input filters, source/bucket scope, idempotency key, and negative filters for grouped/development/unknown/LOST/inactive rows.",
+          "next_actions": [
+            "Define the exact accepted-only input query for source publications: SCRAPED_OK, accepted/single-entity state, not grouped/development, not LOST, not inactive/removed/expired, not pending/missing QA, and registry-backed source provenance.",
+            "Define candidate blocking keys and pair generation for exact source duplicates, strong cross-source same-unit candidates, weak same-building/project candidates, and conflict candidates.",
+            "Keep output as candidate rows/evidence only; do not create or update property_entity, property_offer, public /properties results, or buyer-facing labels."
+          ]
+        },
+        {
+          "id": "ER-03",
+          "title": "Evidence scoring and case-classification matrix",
+          "agent": "entity_resolution_agent",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "HIGH",
+          "verifier": "debugger + data_analyst",
+          "depends_on": "ER-02",
+          "output": "docs/exports/entity-resolution-scoring-matrix-YYYY-MM-DD.md, entity resolution journey entry.",
+          "acceptance": "matrix prevents confidence scores from overriding exclusion states and documents review actions for each case.",
+          "next_actions": [
+            "Define score components for source URL/id, city/district/address/building/project, area, price/price-status, rooms/floor/unit clues, contacts, photo overlap, media counts, and lifecycle dates.",
+            "Define hard blockers that override any score: grouped/development, unknown QA state, inactive, LOST, same-source non-exact records, zero-price-as-real-price, contradictory area/price/media/unit evidence.",
+            "Separate review labels: single_unit, grouped_or_development, unknown, source_duplicate, same_unit_candidate, same_complex_only, and conflicting_evidence."
+          ]
+        },
+        {
+          "id": "ER-04",
+          "title": "Source-publication relationship and conflict review policy",
+          "agent": "entity_resolution_agent",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "MEDIUM",
+          "verifier": "debugger + ux_ui_designer + data_analyst",
+          "depends_on": "ER-03, UX-15",
+          "output": "docs/exports/entity-resolution-review-policy-YYYY-MM-DD.md, entity resolution journey entry.",
+          "acceptance": "policy keeps source-publication evidence separate from canonical property promotion and names verifier fixtures for all five required case classes.",
+          "next_actions": [
+            "Define lifecycle for candidate review actions: link, dismiss, defer, mark_conflict, needs_unit_split, and needs_parser_repair.",
+            "Define audit fields for who/when/why plus immutable evidence snapshot.",
+            "Hand UX the operator-side wording for duplicate/confidence/provenance review without buyer-facing claims."
+          ]
+        }
+      ]
+    },
+    {
+      "agent": "knowledge_context_agent",
+      "label": "Knowledge Context",
+      "counts": {
+        "DONE_AWAITING_VERIFY": 1,
+        "TODO": 1
+      },
+      "open_count": 2,
+      "latest": "## 2026-05-13 \u2014 Codex hook and skill mapping revalidation - Action: Revalidated scripts/codex_project_hooks.py hook coverage for all 14 active agent roles (15 checks total), confirmed command guards, and re-checked role skill-map existence under agent-skills. - Inputs/Commands: python3 -m py_compile scripts/codex_project_hooks.py tests/test_codex_project_hooks.py, PYTHONPATH=src python3 -m unittest tests.test_codex_project_hooks -v, python3 scripts/codex_project_hooks.py --command \"make scrape-all-full\", python3 scripts/codex_project_hooks.py, make codex-hooks, and local role-skill map script checks. - Tests run: 6 hook unit tests + full hook preflight + command-gu",
+      "active_tasks": [
+        {
+          "id": "KCA-01",
+          "title": "Data-analyst evidence capture and wiki closeout",
+          "agent": "knowledge_context_agent",
+          "status": "DONE_AWAITING_VERIFY (2026-05-13: wiki run/log recorded; memory/insights unchanged under strict filters; DBG-15 dependency met)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "HIGH",
+          "verifier": "debugger + planner",
+          "depends_on": "DA-02 or DBG-15",
+          "output": "wiki run/log/memory/insight updates and knowledge_context_agent JOURNEY entry.",
+          "acceptance": "no meaningful conclusion exists only in chat; memory is updated only for future-affecting patterns; insights separate FACT / INTERPRETATION / HYPOTHESIS / GAP.",
+          "next_actions": [
+            "Create a wiki run record for the data-analyst-centered loop after the current analyst/debugger outputs are stable.",
+            "Update project log, memory, and insights under the strict filters only.",
+            "Update docs/reporting index if a new durable artifact becomes source-of-truth."
+          ]
+        },
+        {
+          "id": "KCA-02",
+          "title": "Four-dashboard knowledge capture",
+          "agent": "knowledge_context_agent",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "HIGH",
+          "verifier": "debugger + planner",
+          "depends_on": "PLAN-06, DBG dashboard verification",
+          "output": "wiki run/log/insight/memory updates as applicable, knowledge_context_agent JOURNEY.",
+          "acceptance": "no dashboard/planning conclusion exists only in chat; wiki entries separate FACT / INTERPRETATION / HYPOTHESIS / GAP and preserve strict memory filters.",
+          "next_actions": [
+            "Record the four-dashboard operating model as a wiki run after debugger verifies PLAN-06.",
+            "Update project log and insights only for reusable conclusions: dashboard role split, accepted-only evidence chain, and verifier queue hygiene.",
+            "Update memory only if the dashboard/denominator blocker is a repeating future-run constraint."
+          ]
+        }
+      ]
+    },
+    {
+      "agent": "lead_agent",
+      "label": "Lead Agent",
+      "counts": {
+        "VERIFIED": 4,
+        "TODO": 2,
+        "DONE_AWAITING_VERIFY": 1
+      },
+      "open_count": 3,
+      "latest": "No journey log yet.",
+      "active_tasks": [
+        {
+          "id": "LEAD-05",
+          "title": "Dashboard monitoring + architecture refresh (recurring)",
+          "agent": "lead_agent",
+          "status": "TODO (recurring)",
+          "status_key": "TODO",
+          "priority": "HIGH \u2014 lead agent's primary ongoing responsibility",
+          "verifier": "",
+          "depends_on": "",
+          "output": "updated dashboard, blocker notes, progress report",
+          "acceptance": "dashboard is current; no agent has been stuck on same slice for >2 activations without blocker documented",
+          "next_actions": [
+            "Read all JOURNEY.md files \u2014 identify progress since last check",
+            "Update docs/exports/progress-dashboard.json with current slice statuses",
+            "Run make dashboard-doc to regenerate dashboard HTML"
+          ]
+        },
+        {
+          "id": "LEAD-07",
+          "title": "OpenClaw/Gemma run analysis and next-run preparation",
+          "agent": "lead_agent",
+          "status": "DONE_AWAITING_VERIFY (2026-04-27)",
+          "status_key": "DONE_AWAITING_VERIFY",
+          "priority": "HIGH",
+          "verifier": "self",
+          "depends_on": "\u2014",
+          "output": "updated task queue, dashboards, frontend scraped-listing seed, run notes",
+          "acceptance": "analysis doc exists; S1-21, S1-22A, S1-22B, S1-22C, and DBG-08 are queued; website can show scraped items with media/quality metadata; dashboards are regenerated.",
+          "next_actions": []
+        },
+        {
+          "id": "LEAD-06",
+          "title": "GitLab CI/CD pipeline setup",
+          "agent": "lead_agent",
+          "status": "TODO",
+          "status_key": "TODO",
+          "priority": "HIGH \u2014 automated testing and deployment",
+          "verifier": "debugger",
+          "depends_on": "BD-14, UX-11",
+          "output": ".gitlab-ci.yml, CI documentation",
+          "acceptance": "CI pipeline runs on every push; all stages green; auto-deploy works",
+          "next_actions": [
+            "Create .gitlab-ci.yml with stages: lint \u2192 test \u2192 build \u2192 deploy",
+            "Lint stage: make lint + make typecheck",
+            "Test stage: make test + make golden-path (with PostgreSQL service container)"
+          ]
+        }
+      ]
+    }
+  ],
+  "properties_database": {
+    "audit_totals": {
+      "rows": 30334,
+      "action1_rows": 29397,
+      "pending_or_missing_qa_rows": 26231,
+      "db_import_default_candidate_rows": 1606,
+      "action1_estimated_ok": 20811,
+      "action1_estimated_lost": 7133,
+      "action1_estimated_grouped": 1453
+    },
+    "quality_rollup": {
+      "total": 29397,
+      "good_single_unit": 20811,
+      "bad_lost": 6698,
+      "grouped_publication": 1888
+    },
+    "scrape_totals": {
+      "tier_counts": {
+        "1": 10,
+        "2": 17
+      },
+      "saved_sources": 13,
+      "with_website_totals": 27,
+      "patterned_sources": 13,
+      "saved_listings": 30334,
+      "lost_items": 1266,
+      "grouped_publications": 1270,
+      "accepted_single_entity_candidates": 1612,
+      "with_description": 30165,
+      "with_photo_urls": 30331,
+      "with_readable_local_photos": 30014
+    },
+    "sources": [
+      {
+        "source": "address_bg",
+        "audit_rows": 6473,
+        "audit_action1_rows": "",
+        "audit_lost": 3143,
+        "audit_grouped": "",
+        "gate_total": 6473,
+        "gate_good": 3330,
+        "gate_lost": 3143,
+        "gate_grouped": ""
+      },
+      {
+        "source": "alo_bg",
+        "audit_rows": 29,
+        "audit_action1_rows": "",
+        "audit_lost": "",
+        "audit_grouped": ""
+      },
+      {
+        "source": "bazar_bg",
+        "audit_rows": 250,
+        "audit_action1_rows": "",
+        "audit_lost": 73,
+        "audit_grouped": ""
+      },
+      {
+        "source": "bulgarianproperties",
+        "audit_rows": 2289,
+        "audit_action1_rows": "",
+        "audit_lost": 2277,
+        "audit_grouped": "",
+        "gate_total": 2289,
+        "gate_good": 12,
+        "gate_lost": 1954,
+        "gate_grouped": 323
+      },
+      {
+        "source": "domaza",
+        "audit_rows": 40,
+        "audit_action1_rows": "",
+        "audit_lost": 13,
+        "audit_grouped": ""
+      },
+      {
+        "source": "home2u",
+        "audit_rows": 24,
+        "audit_action1_rows": "",
+        "audit_lost": 14,
+        "audit_grouped": ""
+      },
+      {
+        "source": "homes_bg",
+        "audit_rows": 144,
+        "audit_action1_rows": "",
+        "audit_lost": 62,
+        "audit_grouped": "",
+        "gate_total": 144,
+        "gate_good": 79,
+        "gate_lost": 55,
+        "gate_grouped": 10
+      },
+      {
+        "source": "imot_bg",
+        "audit_rows": 9937,
+        "audit_action1_rows": "",
+        "audit_lost": 264,
+        "audit_grouped": "",
+        "gate_total": 9937,
+        "gate_good": 8986,
+        "gate_lost": 259,
+        "gate_grouped": 692
+      },
+      {
+        "source": "luximmo",
+        "audit_rows": 2512,
+        "audit_action1_rows": "",
+        "audit_lost": 607,
+        "audit_grouped": "",
+        "gate_total": 2512,
+        "gate_good": 1788,
+        "gate_lost": 573,
+        "gate_grouped": 151
+      },
+      {
+        "source": "olx_bg",
+        "audit_rows": 249,
+        "audit_action1_rows": "",
+        "audit_lost": 131,
+        "audit_grouped": ""
+      },
+      {
+        "source": "property_bg",
+        "audit_rows": 3094,
+        "audit_action1_rows": "",
+        "audit_lost": 41,
+        "audit_grouped": "",
+        "gate_total": 3094,
+        "gate_good": 3053,
+        "gate_lost": 41,
+        "gate_grouped": ""
+      },
+      {
+        "source": "suprimmo",
+        "audit_rows": 4948,
+        "audit_action1_rows": "",
+        "audit_lost": 739,
+        "audit_grouped": "",
+        "gate_total": 4948,
+        "gate_good": 3563,
+        "gate_lost": 673,
+        "gate_grouped": 712
+      },
+      {
+        "source": "unknown",
+        "tier": 2,
+        "saved": 345,
+        "description": 179,
+        "photo_urls": 345,
+        "local_photos": 344,
+        "accepted": 0,
+        "lost": 0,
+        "grouped": 0
+      },
+      {
+        "source": "yavlena",
+        "audit_rows": 345,
+        "audit_action1_rows": "",
+        "audit_lost": 194,
+        "audit_grouped": ""
+      }
+    ]
+  },
+  "website": {
+    "routes": [
+      "/(main)",
+      "/admin",
+      "/api/backend/[path]",
+      "/api/images",
+      "/api/local-media/[path]",
+      "/api/placeholder/[params]",
+      "/api/property-quality/[id]",
+      "/chat",
+      "/dashboard/[path]",
+      "/listings",
+      "/map",
+      "/properties/[id]",
+      "/settings"
+    ],
+    "component_count": 17
+  }
+}

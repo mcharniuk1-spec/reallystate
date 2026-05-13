@@ -1164,3 +1164,53 @@ Modified files:
 - **Blockers**:
   - Full local image download for repaired galleries was not run in this debugger pass; it requires an operator-approved media backfill because Address.bg alone now has 31078 missing local files.
   - PostgreSQL/Docker were not reachable, so DB-backed canonical/source table geospatial QA must be rerun once services are up.
+
+### 2026-05-13 — S1-23 verifier repair handoff
+
+- **Action**: Debugger converted DA-01 findings into stricter S1-23 repair gates; no live scrape was started.
+- **Changed files**: `docs/agents/TASKS.md`, `docs/exports/debugger-da01-coordination-report-2026-05-13.md`
+- **Commands run**: none by scraper_1 in this note; verifier reruns are logged in `docs/agents/debugger/JOURNEY.md`.
+- **Tests run**: none by scraper_1 in this note.
+- **Status**: S1-23 remains TODO.
+- **Review comments**: Repair fixtures must cover Address.bg city/address/contact/gallery, BulgarianProperties local-gallery/unit-area/development separation, Homes.bg duplicate URL/active status/full gallery, imot.bg area/category/mojibake/grouped handling, property-family gallery variant de-duplication/unit-area selection, zero-price-to-status handling, and contact extraction that rejects dates, IDs, counters, and JavaScript fragments.
+
+### 2026-05-13 — S1-23 analyst-support source context, no live scraping
+
+- **Action**: Supported the active `data_analyst` run by reviewing tier-1/2 ownership, source-registry gates, DA-01/DBG-14 quality evidence, and Action1 parser/media gaps. Prepared source-specific repair directions only; did not start live scraping, media backfill, import, or Action2 expansion.
+- **Source ownership**:
+  - FACT: `scraper_1` owns tier-1/2 website connectors and Action1/Action2 reliability.
+  - FACT: Action1/A1 remains exactly `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, `SUPRIMMO`.
+  - FACT: Action2/A12 remains blocked until Action1 QA plus operator `Action2 now`; `imoti.net`, `Imoteka.bg`, and `Imoti.info` stay excluded by legal/licensing gates.
+  - FACT: Action0 image reports remain blocked until operator `Action0 now` after Action1 completion or a logged waiver.
+- **Source-specific next actions for analyst findings**:
+  - `Address.bg`: parser gap = city/address extraction and area sanity; media gap = one-photo suspects after high-resolution gallery repair; grouped/development = no current grouped rollup; provenance = apply QA/bucket/source URL state before import; price-state = never coerce missing/on-request to numeric zero.
+  - `BulgarianProperties`: parser gap = unit-area semantics; media gap = large partial-gallery backlog; grouped/development = keep project/development pages grouped unless unit-level URL, price/status, area, and media exist; provenance = preserve registry/source-domain and route/bucket evidence; price-state = explicit `on_request`/`undefined`.
+  - `Homes.bg`: parser gap = sale-apartment bias, duplicate URLs, active-state evidence; media gap = all offer JSON/API gallery images; grouped/development = keep mixed pages grouped; provenance = offer id, active marker, route bucket; price-state = explicit missing/on-request only.
+  - `imot.bg`: parser gap = missing area, category precision, mojibake/thin descriptions; media gap = partial local galleries; grouped/development = split development source publications from strong single-unit corpus; provenance = `adParams`, detail URL, active marker, route bucket; price-state = missing price remains provenance, not zero.
+  - `LUXIMMO`: parser gap = missing/oversized unit area; media gap = de-duplicate gallery size variants; grouped/development = project pages stay source publications; provenance = labeled unit fields and source-family route evidence; price-state = low/absent price needs review/status.
+  - `property.bg`: parser gap = thin descriptions and oversized areas; media gap = de-duplicate remote/local variants before counting; grouped/development = none in current rollup but keep classifier active; provenance = apply current pending QA state; price-state = low sale-price warnings require review.
+  - `SUPRIMMO`: parser gap = missing area and low-price warnings; media gap = gallery variant de-duplication; grouped/development = grouped/project pages stay source publications; provenance = labeled unit fields and source-family route evidence; price-state = absent/low values need status/review.
+- **INTERPRETATION**: The highest-impact scraper support is not new source discovery; it is reducing `PENDING_QA`, partial-gallery, grouped-publication, missing-area/address, phone-noise, and provenance gaps in the existing A1 corpus.
+- **GAP**: DB-backed counts, live URL freshness, and semantic image descriptions remain unverified here.
+- **Changed files**:
+  - `docs/agents/TASKS.md`
+  - `docs/agents/scraper_1/JOURNEY.md`
+  - `docs/exports/progress-dashboard.json` (partial dashboard refresh)
+  - `docs/dashboard/index.html` (partial dashboard refresh)
+  - `docs/exports/parallel-execution-timeline.md` (partial dashboard refresh)
+  - `docs/exports/scraper-activity-snapshot.md` (partial dashboard refresh)
+  - `docs/exports/website-inventory-analysis.json` (partial dashboard refresh)
+  - `docs/exports/website-inventory-analysis.md` (partial dashboard refresh)
+- **Commands run**: `sed`/`tail`/`rg`/`jq` inspection; `make dashboard-doc` attempted for mandatory dashboard refresh and killed after the known `generate_source_item_photo_coverage.py` stall. No live scraping commands.
+- **Tests run**: not run; documentation/handoff update only. Dashboard refresh is partial and remains covered by `DA-03`.
+- **Status**: `DONE_AWAITING_VERIFY`
+- **Debugger handoff**: `DBG-17` should verify no live scrape happened, Action1 -> Action0 -> Action2 gate is intact, and every DA-01 source finding maps to parser/media/grouped/provenance/price-state follow-up.
+
+### 2026-05-13 — S1-23 deep data-quality repair packet
+
+- **Action**: Data analyst produced `docs/exports/data-quality-deep-review-2026-05-13.md` and `docs/dashboard/data-quality-dashboard.html` with clickable source drilldowns, bad-scrape rules, example listing paths, and source-specific fixture/acceptance instructions. No live scraping was started.
+- **Changed files**: `docs/exports/data-quality-deep-review-2026-05-13.md`, `docs/exports/data-quality-deep-review-2026-05-13.json`, `docs/dashboard/data-quality-dashboard.html`, `docs/agents/TASKS.md`.
+- **Commands run**: analyst ran audit, quality gate, importer dry-run, and dashboard generation; scraper_1 ran no live commands.
+- **Tests run**: analyst ran `python3 -m unittest tests.test_action1_parser_regressions -v` — pass.
+- **Status**: S1-23 remains TODO but is now execution-ready from the deep review packet.
+- **Review comments**: Start with Action1 sources only. Keep missing-QA, LOST, grouped/development, inactive/stale, zero-price, missing location/area, media-gap, and contact-overcapture rows blocked until source-specific fixtures pass and QA state is written.

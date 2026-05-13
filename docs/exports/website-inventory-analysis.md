@@ -1,6 +1,6 @@
 # Website Inventory Analysis
 
-Generated at: `2026-05-13T08:32:11.006732+00:00`
+Generated at: `2026-05-13T13:45:42.423242+00:00`
 
 This artifact separates website-side inventory evidence from landed scraper corpus counts.
 
@@ -8,7 +8,7 @@ This artifact separates website-side inventory evidence from landed scraper corp
 
 - Tier: `1`
 - Website total: `18701` (Exact)
-- Coverage vs landed corpus: `5203` saved / `27.8%`
+- Coverage vs landed corpus: `6473` saved / `34.6%`
 - Total basis: `live_embedded_json`
 - Total notes: Computed as sale total 16935 plus rent total 1766 from live `offers-object` payloads.
 - Counting method: Read the live search page and extract `offers-object.total` from the embedded JSON payload.
@@ -42,7 +42,7 @@ This artifact separates website-side inventory evidence from landed scraper corp
 
 - Tier: `1`
 - Website total: `12000` (Estimate)
-- Coverage vs landed corpus: `1616` saved / `13.5%`
+- Coverage vs landed corpus: `2289` saved / `19.1%`
 - Total basis: `analysis_estimate`
 - Total notes: Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run.
 - Counting method: Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.
@@ -54,7 +54,7 @@ No category-level website counts are saved yet for this source.
 
 - Tier: `1`
 - Website total: `120000` (Estimate)
-- Coverage vs landed corpus: `132` saved / `0.1%`
+- Coverage vs landed corpus: `144` saved / `0.1%`
 - Total basis: `analysis_estimate`
 - Total notes: Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run.
 - Counting method: Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.
@@ -66,7 +66,7 @@ No category-level website counts are saved yet for this source.
 
 - Tier: `1`
 - Website total: `200000` (Estimate)
-- Coverage vs landed corpus: `8534` saved / `4.3%`
+- Coverage vs landed corpus: `9937` saved / `5.0%`
 - Total basis: `analysis_estimate`
 - Total notes: Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run.
 - Counting method: Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.
@@ -90,7 +90,7 @@ No category-level website counts are saved yet for this source.
 
 - Tier: `1`
 - Website total: `4000` (Estimate)
-- Coverage vs landed corpus: `2143` saved / `53.6%`
+- Coverage vs landed corpus: `2512` saved / `62.8%`
 - Total basis: `analysis_estimate`
 - Total notes: Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run.
 - Counting method: Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.
@@ -116,7 +116,7 @@ No category-level website counts are saved yet for this source.
 
 - Tier: `1`
 - Website total: `4229` (Lower bound)
-- Coverage vs landed corpus: `297` saved / `7.0%`
+- Coverage vs landed corpus: `3094` saved / `73.2%`
 - Total basis: `live_meta_description`
 - Total notes: The apartments page meta description says `Over 4229 properties`; wording is category-oriented but still needs one confirmation pass.
 - Counting method: Extract category counts from live page metadata.
@@ -130,7 +130,7 @@ No category-level website counts are saved yet for this source.
 
 - Tier: `1`
 - Website total: `4628` (Lower bound)
-- Coverage vs landed corpus: `297` saved / `6.4%`
+- Coverage vs landed corpus: `4948` saved / `106.9%`
 - Total basis: `live_meta_description`
 - Total notes: The apartments page meta description says `Over 4628 ...`, which is a category lower bound rather than a whole-site total.
 - Counting method: Extract category counts from live page metadata on the canonical product page.

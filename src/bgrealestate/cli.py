@@ -322,8 +322,8 @@ def main() -> int:
 
     if args.command == "download-images":
         from .db.session import create_db_engine, session_scope
+        from .db.media_ids import stable_listing_media_id
         from .db.repositories import CanonicalListingRepository, ListingMediaRepository
-        from .db.ids import new_id
         from .services.media import download_image
 
         engine = create_db_engine()
@@ -351,7 +351,7 @@ def main() -> int:
                 media_repo = ListingMediaRepository(session)
                 for i, url in enumerate(urls):
                     result = download_image(url, reference_id=listing.reference_id, ordering=i)
-                    media_id = new_id("lmed")
+                    media_id = stable_listing_media_id(listing.reference_id, url)
                     media_repo.upsert_media(
                         media_id=media_id,
                         listing_reference_id=listing.reference_id,

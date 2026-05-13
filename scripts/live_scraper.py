@@ -27,8 +27,12 @@ from pathlib import Path
 from typing import Any, Callable
 from urllib.parse import urljoin
 
-import httpx
 from bs4 import BeautifulSoup
+
+try:
+    import httpx
+except ModuleNotFoundError:  # parser-only tests can run without HTTP runtime deps
+    httpx = None  # type: ignore[assignment]
 
 REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "src"))
@@ -116,6 +120,8 @@ def _iter_pages(max_pages: int, page_order: str) -> list[int]:
 
 
 def make_client() -> httpx.Client:
+    if httpx is None:
+        raise RuntimeError("httpx is required for live fetching; install scrape runtime dependencies first")
     return httpx.Client(timeout=TIMEOUT, follow_redirects=True, headers=HEADERS,
                         limits=httpx.Limits(max_connections=5, max_keepalive_connections=2))
 

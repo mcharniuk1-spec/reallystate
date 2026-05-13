@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-29T08:13:19.880740+00:00",
+  "generated_at": "2026-05-13T13:46:10.671248+00:00",
   "sources": [
     {
       "tier": 1,
@@ -41,15 +41,15 @@
         "source_key": "address_bg",
         "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/listings",
         "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/raw",
-        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/listings/Address.bg_46c9d4cb568d.json",
-        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/raw/Address.bg_46c9d4cb568d.html",
-        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/Address.bg_46c9d4cb568d",
-        "reference_id": "Address.bg:46c9d4cb568d",
-        "listing_url": "https://address.bg/varna-m-st-zelenika-parcel-teren-offer686997",
-        "title": "Парцел/Терен във Варна, м-ст Зеленика - код на имота: 686997",
-        "description_chars": 184,
-        "remote_photo_count": 1,
-        "local_photo_count": 1,
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/listings/Address.bg_65ec51a198da.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/raw/Address.bg_65ec51a198da.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/Address.bg_65ec51a198da",
+        "reference_id": "Address.bg:65ec51a198da",
+        "listing_url": "https://address.bg/zavoy-kashta-vila-offer664502",
+        "title": "Къща/Вила в Завой - код на имота: 664502",
+        "description_chars": 164,
+        "remote_photo_count": 63,
+        "local_photo_count": 63,
         "local_photo_coverage_pct": 100.0,
         "has_full_gallery": true,
         "has_description": true,
@@ -59,23 +59,28 @@
         "has_floor": false,
         "has_phones": true,
         "has_city": true,
-        "has_district": true,
+        "has_district": false,
         "has_address": true,
         "has_local_image_files": true,
-        "local_image_files_count": 1,
+        "local_image_files_count": 63,
         "local_image_files_preview": [
-          "data/media/Address.bg_46c9d4cb568d/0000_f6185c81.jpg"
+          "data/media/Address.bg_65ec51a198da/0000_a54347b5.jpg",
+          "data/media/Address.bg_65ec51a198da/0001_456115c0.jpg",
+          "data/media/Address.bg_65ec51a198da/0002_2b7c40e8.jpg",
+          "data/media/Address.bg_65ec51a198da/0003_20a96c53.jpg",
+          "data/media/Address.bg_65ec51a198da/0004_d1da2846.jpg"
         ],
         "structured_fields_count": 2,
-        "source_attributes_count": 1
+        "source_attributes_count": 1,
+        "source_description_status": "captured"
       }
     },
     {
       "tier": 1,
       "source_name": "alo.bg",
       "primary_url": "https://www.alo.bg/",
-      "pattern_status": "without_sample_product_capture",
-      "pattern_issue": "No saved full product sample exists yet for this source.",
+      "pattern_status": "Patterned",
+      "pattern_issue": "Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields.",
       "count_status": "recounted_live",
       "recent_status": "without_recent_count_method",
       "varna_status": "without_varna_count_method",
@@ -100,13 +105,50 @@
         "basis": "not_recomputed",
         "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
       },
-      "method": "scoped HTML crawl with category filtering",
+      "method": "Varna-filtered category pages + `alo.bg` detail parser for params table, meta/body description, local gallery images, and source attributes.",
       "code_paths": [
-        "scripts/live_scraper.py::generic"
+        "scripts/live_scraper.py::generic",
+        "scripts/live_scraper.py::_parse_alo_bg"
       ],
       "db_status": "without_database_target",
       "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
-      "sample": null
+      "sample": {
+        "source_key": "alo_bg",
+        "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/alo_bg/listings",
+        "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/alo_bg/raw",
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/alo_bg/listings/alo.bg_11012820.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/alo_bg/raw/alo.bg_11012820.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/alo.bg_11012820",
+        "reference_id": "alo.bg:11012820",
+        "listing_url": "https://www.alo.bg/dvustaen-s-akt-16-v-kompleks-s-basein-parkomyasto-kv-galata-gr-varna-11012820",
+        "title": "Двустаен с АКТ 16 в комплекс с басейн, паркомясто, кв. Галата, гр. Варна Двустаен апартаме..",
+        "description_chars": 202,
+        "remote_photo_count": 10,
+        "local_photo_count": 10,
+        "local_photo_coverage_pct": 100.0,
+        "has_full_gallery": true,
+        "has_description": true,
+        "has_price": true,
+        "has_area": true,
+        "has_rooms": true,
+        "has_floor": true,
+        "has_phones": true,
+        "has_city": true,
+        "has_district": true,
+        "has_address": true,
+        "has_local_image_files": true,
+        "local_image_files_count": 10,
+        "local_image_files_preview": [
+          "data/media/alo.bg_11012820/0000_99033d89.jpg",
+          "data/media/alo.bg_11012820/0001_6a58d132.jpg",
+          "data/media/alo.bg_11012820/0002_8e2e1ac2.jpg",
+          "data/media/alo.bg_11012820/0003_fbdaa1c6.jpg",
+          "data/media/alo.bg_11012820/0004_bed78a0a.jpg"
+        ],
+        "structured_fields_count": 4,
+        "source_attributes_count": 13,
+        "source_description_status": "captured"
+      }
     },
     {
       "tier": 1,
@@ -148,20 +190,20 @@
         "source_key": "bulgarianproperties",
         "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/bulgarianproperties/listings",
         "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/bulgarianproperties/raw",
-        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/bulgarianproperties/listings/BulgarianProperties_ec4b0ae64e6c.json",
-        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/bulgarianproperties/raw/BulgarianProperties_ec4b0ae64e6c.html",
-        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/BulgarianProperties_ec4b0ae64e6c",
-        "reference_id": "BulgarianProperties:ec4b0ae64e6c",
-        "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD86759BG_1-bedroom_apartment_for_sale_in_Sozopol.html",
-        "title": "One bedroom turnkey apartment in Sozopol",
-        "description_chars": 51,
-        "remote_photo_count": 16,
-        "local_photo_count": 38,
-        "local_photo_coverage_pct": 237.5,
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/bulgarianproperties/listings/BulgarianProperties_756254aa3f13.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/bulgarianproperties/raw/BulgarianProperties_756254aa3f13.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/BulgarianProperties_756254aa3f13",
+        "reference_id": "BulgarianProperties:756254aa3f13",
+        "listing_url": "https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD90088BG_1-bedroom_apartment_for_sale_in_Bansko.html",
+        "title": "Renovated one-bedroom apartment in Regnum Bansko Mountain Resort",
+        "description_chars": 2281,
+        "remote_photo_count": 44,
+        "local_photo_count": 82,
+        "local_photo_coverage_pct": 186.36363636363635,
         "has_full_gallery": true,
         "has_description": true,
         "has_price": true,
-        "has_area": false,
+        "has_area": true,
         "has_rooms": true,
         "has_floor": false,
         "has_phones": true,
@@ -169,16 +211,17 @@
         "has_district": false,
         "has_address": true,
         "has_local_image_files": true,
-        "local_image_files_count": 38,
+        "local_image_files_count": 82,
         "local_image_files_preview": [
-          "data/media/BulgarianProperties_ec4b0ae64e6c/0000_30b1485f.jpg",
-          "data/media/BulgarianProperties_ec4b0ae64e6c/0001_30b1485f.jpg",
-          "data/media/BulgarianProperties_ec4b0ae64e6c/0002_21d91181.jpg",
-          "data/media/BulgarianProperties_ec4b0ae64e6c/0003_1b0c98f9.jpg",
-          "data/media/BulgarianProperties_ec4b0ae64e6c/0004_23e343be.jpg"
+          "data/media/BulgarianProperties_756254aa3f13/0000_1c680d8d.jpg",
+          "data/media/BulgarianProperties_756254aa3f13/0000_c91ab2e2.jpg",
+          "data/media/BulgarianProperties_756254aa3f13/0001_1c680d8d.jpg",
+          "data/media/BulgarianProperties_756254aa3f13/0001_c91ab2e2.jpg",
+          "data/media/BulgarianProperties_756254aa3f13/0002_ac54d652.jpg"
         ],
-        "structured_fields_count": 2,
-        "source_attributes_count": 4
+        "structured_fields_count": 3,
+        "source_attributes_count": 4,
+        "source_description_status": "captured"
       }
     },
     {
@@ -222,13 +265,13 @@
         "source_key": "homes_bg",
         "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/listings",
         "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/raw",
-        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/listings/Homes.bg_1681133.json",
-        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/raw/Homes.bg_1681133.html",
-        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/Homes.bg_1681133",
-        "reference_id": "Homes.bg:1681133",
-        "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-68m2-sofiya-centyr/as1681133",
-        "title": "Двустаен, 68m² - Център, София",
-        "description_chars": 1837,
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/listings/Homes.bg_1592983.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/raw/Homes.bg_1592983.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/Homes.bg_1592983",
+        "reference_id": "Homes.bg:1592983",
+        "listing_url": "https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-93m2-sofiya-zhk.-nadezhda-2/as1592983",
+        "title": "Тристаен, 93m² - жк. Надежда 2, София",
+        "description_chars": 423,
         "remote_photo_count": 10,
         "local_photo_count": 10,
         "local_photo_coverage_pct": 100.0,
@@ -245,14 +288,15 @@
         "has_local_image_files": true,
         "local_image_files_count": 10,
         "local_image_files_preview": [
-          "data/media/Homes.bg_1681133/0000_cfd05ac9.jpg",
-          "data/media/Homes.bg_1681133/0001_82a16b1e.jpg",
-          "data/media/Homes.bg_1681133/0002_a8ddfae7.jpg",
-          "data/media/Homes.bg_1681133/0003_159b1b96.jpg",
-          "data/media/Homes.bg_1681133/0004_29c16c6d.jpg"
+          "data/media/Homes.bg_1592983/0000_009644d4.jpg",
+          "data/media/Homes.bg_1592983/0001_1117535e.jpg",
+          "data/media/Homes.bg_1592983/0002_a2425ab6.jpg",
+          "data/media/Homes.bg_1592983/0003_b749f1d8.jpg",
+          "data/media/Homes.bg_1592983/0004_b02f09a7.jpg"
         ],
         "structured_fields_count": 4,
-        "source_attributes_count": 16
+        "source_attributes_count": 16,
+        "source_description_status": "captured"
       }
     },
     {
@@ -296,15 +340,15 @@
         "source_key": "imot_bg",
         "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/listings",
         "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/raw",
-        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/listings/imot.bg_3f93a31d3f1b.json",
-        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/raw/imot.bg_3f93a31d3f1b.html",
-        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/imot.bg_3f93a31d3f1b",
-        "reference_id": "imot.bg:3f93a31d3f1b",
-        "listing_url": "https://www.imot.bg/obiava-1a176959443896121-prodava-ednostaen-apartament-grad-sofiya-boyana",
-        "title": "Продава 1-СТАЕН град София, Бояна Обява: 1a176959443896121",
-        "description_chars": 2119,
-        "remote_photo_count": 15,
-        "local_photo_count": 15,
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/listings/imot.bg_37fae7324a6a.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/raw/imot.bg_37fae7324a6a.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/imot.bg_37fae7324a6a",
+        "reference_id": "imot.bg:37fae7324a6a",
+        "listing_url": "https://www.imot.bg/obiava-1c176960985075002-prodava-tristaen-apartament-grad-stara-zagora-ayazmoto",
+        "title": "Продава 3-СТАЕН град Стара Загора, Аязмото Обява: 1c176960985075002",
+        "description_chars": 318,
+        "remote_photo_count": 18,
+        "local_photo_count": 18,
         "local_photo_coverage_pct": 100.0,
         "has_full_gallery": true,
         "has_description": true,
@@ -317,16 +361,17 @@
         "has_district": true,
         "has_address": true,
         "has_local_image_files": true,
-        "local_image_files_count": 15,
+        "local_image_files_count": 18,
         "local_image_files_preview": [
-          "data/media/imot.bg_3f93a31d3f1b/0000_147f45d8.jpg",
-          "data/media/imot.bg_3f93a31d3f1b/0001_27706677.jpg",
-          "data/media/imot.bg_3f93a31d3f1b/0002_5755e343.jpg",
-          "data/media/imot.bg_3f93a31d3f1b/0003_4cf28098.jpg",
-          "data/media/imot.bg_3f93a31d3f1b/0004_7ad69903.jpg"
+          "data/media/imot.bg_37fae7324a6a/0000_9c354005.jpg",
+          "data/media/imot.bg_37fae7324a6a/0001_93d94c15.jpg",
+          "data/media/imot.bg_37fae7324a6a/0002_51cc5c47.jpg",
+          "data/media/imot.bg_37fae7324a6a/0003_bffa64e3.jpg",
+          "data/media/imot.bg_37fae7324a6a/0004_6d540fd9.jpg"
         ],
         "structured_fields_count": 4,
-        "source_attributes_count": 5
+        "source_attributes_count": 5,
+        "source_description_status": "captured"
       }
     },
     {
@@ -407,16 +452,16 @@
         "source_key": "luximmo",
         "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/listings",
         "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/raw",
-        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/listings/LUXIMMO_50928a486328.json",
-        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/raw/LUXIMMO_50928a486328.html",
-        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/LUXIMMO_50928a486328",
-        "reference_id": "LUXIMMO:50928a486328",
-        "listing_url": "https://www.luximmo.bg/bulgaria/oblast-sofia/borovets/luksozni-imoti-tristayni-apartamenti/luksozen-imot-40084-tristaen-apartament-za-prodajba-v-borovets.html",
-        "title": "Тристаен мезонет \"до ключ\" в престижния комплекс 7 Angels",
-        "description_chars": 538,
-        "remote_photo_count": 6,
-        "local_photo_count": 6,
-        "local_photo_coverage_pct": 100.0,
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/listings/LUXIMMO_fb4b943b5305.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/raw/LUXIMMO_fb4b943b5305.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/LUXIMMO_fb4b943b5305",
+        "reference_id": "LUXIMMO:fb4b943b5305",
+        "listing_url": "https://www.luximmo.bg/bulgaria/oblast-plovdiv/plovdiv/luksozni-imoti-dvustayni-apartamenti/luksozen-imot-48660-dvustaen-apartament-pod-naem-v-plovdiv.html",
+        "title": "Стилен двустаен апартамент в нова модерна сграда в кв. \"Христо Смирненски\"",
+        "description_chars": 545,
+        "remote_photo_count": 30,
+        "local_photo_count": 62,
+        "local_photo_coverage_pct": 206.66666666666669,
         "has_full_gallery": true,
         "has_description": true,
         "has_price": true,
@@ -425,19 +470,20 @@
         "has_floor": false,
         "has_phones": true,
         "has_city": true,
-        "has_district": false,
+        "has_district": true,
         "has_address": true,
         "has_local_image_files": true,
-        "local_image_files_count": 6,
+        "local_image_files_count": 62,
         "local_image_files_preview": [
-          "data/media/LUXIMMO_50928a486328/0000_46fe386d.jpg",
-          "data/media/LUXIMMO_50928a486328/0001_46fe386d.jpg",
-          "data/media/LUXIMMO_50928a486328/0002_890b9c0d.jpg",
-          "data/media/LUXIMMO_50928a486328/0003_196babe3.jpg",
-          "data/media/LUXIMMO_50928a486328/0004_dc0063d4.jpg"
+          "data/media/LUXIMMO_fb4b943b5305/0000_af8da876.jpg",
+          "data/media/LUXIMMO_fb4b943b5305/0001_af8da876.jpg",
+          "data/media/LUXIMMO_fb4b943b5305/0002_719a8ab2.jpg",
+          "data/media/LUXIMMO_fb4b943b5305/0003_ad76ca58.jpg",
+          "data/media/LUXIMMO_fb4b943b5305/0004_936d0742.jpg"
         ],
         "structured_fields_count": 3,
-        "source_attributes_count": 3
+        "source_attributes_count": 4,
+        "source_description_status": "captured"
       }
     },
     {
@@ -510,7 +556,8 @@
           "data/media/OLX.bg_147593402/0004_cfdb72dc.webp"
         ],
         "structured_fields_count": 3,
-        "source_attributes_count": 0
+        "source_attributes_count": 0,
+        "source_description_status": "captured"
       }
     },
     {
@@ -553,15 +600,15 @@
         "source_key": "property_bg",
         "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/property_bg/listings",
         "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/property_bg/raw",
-        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/property_bg/listings/property.bg_c6be6a6838ca.json",
-        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/property_bg/raw/property.bg_c6be6a6838ca.html",
-        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/property.bg_c6be6a6838ca",
-        "reference_id": "property.bg:c6be6a6838ca",
-        "listing_url": "https://www.property.bg/property-117962-two-room-maisonette-quotturnkeyquot-in-the-luxury-complex-7-angels/",
-        "title": "Two-room maisonette \"turnkey\" in the luxury complex 7 Angels",
-        "description_chars": 298,
-        "remote_photo_count": 87,
-        "local_photo_count": 87,
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/property_bg/listings/property.bg_02760f3b26be.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/property_bg/raw/property.bg_02760f3b26be.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/property.bg_02760f3b26be",
+        "reference_id": "property.bg:02760f3b26be",
+        "listing_url": "https://www.property.bg/property-128771-two-bedroom-apartment-in-an-exclusive-holiday-complex-in-bansko/",
+        "title": "Two-bedroom apartment in an exclusive holiday complex in Bansko",
+        "description_chars": 160,
+        "remote_photo_count": 195,
+        "local_photo_count": 195,
         "local_photo_coverage_pct": 100.0,
         "has_full_gallery": true,
         "has_description": true,
@@ -574,16 +621,17 @@
         "has_district": true,
         "has_address": true,
         "has_local_image_files": true,
-        "local_image_files_count": 87,
+        "local_image_files_count": 195,
         "local_image_files_preview": [
-          "data/media/property.bg_c6be6a6838ca/0000_b1d8f58f.jpg",
-          "data/media/property.bg_c6be6a6838ca/0001_5e2b4b85.jpg",
-          "data/media/property.bg_c6be6a6838ca/0002_a0b2db92.jpg",
-          "data/media/property.bg_c6be6a6838ca/0003_e1384009.jpg",
-          "data/media/property.bg_c6be6a6838ca/0004_8ba2135b.jpg"
+          "data/media/property.bg_02760f3b26be/0000_04949099.jpg",
+          "data/media/property.bg_02760f3b26be/0001_0d6a0301.jpg",
+          "data/media/property.bg_02760f3b26be/0002_5f66d79b.jpg",
+          "data/media/property.bg_02760f3b26be/0003_919f76b6.jpg",
+          "data/media/property.bg_02760f3b26be/0004_c1cc6b0c.jpg"
         ],
         "structured_fields_count": 3,
-        "source_attributes_count": 3
+        "source_attributes_count": 4,
+        "source_description_status": "captured"
       }
     },
     {
@@ -626,15 +674,15 @@
         "source_key": "suprimmo",
         "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/suprimmo/listings",
         "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/suprimmo/raw",
-        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/suprimmo/listings/SUPRIMMO_STO-132154.json",
-        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/suprimmo/raw/SUPRIMMO_STO-132154.html",
-        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/SUPRIMMO_STO-132154",
-        "reference_id": "SUPRIMMO:STO-132154",
-        "listing_url": "https://www.suprimmo.bg/imot-132154-yujen-dvustaen-apartament-s-otdelna-kuhnya-v-spokoen-i-zelen-rayon/",
-        "title": "Южен двустаен апартамент с отделна кухня, в спокоен и зелен район",
-        "description_chars": 542,
-        "remote_photo_count": 43,
-        "local_photo_count": 43,
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/suprimmo/listings/SUPRIMMO_LXH-69845.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/suprimmo/raw/SUPRIMMO_LXH-69845.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/SUPRIMMO_LXH-69845",
+        "reference_id": "SUPRIMMO:LXH-69845",
+        "listing_url": "https://www.suprimmo.bg/imot-69845-mnogostaen-apartament-do-klyuch-v-elitna-sgrada-do-cacao-beach/",
+        "title": "Многостаен апартамент \"до ключ\" в елитна сграда до Cacao Beach",
+        "description_chars": 546,
+        "remote_photo_count": 211,
+        "local_photo_count": 211,
         "local_photo_coverage_pct": 100.0,
         "has_full_gallery": true,
         "has_description": true,
@@ -647,16 +695,17 @@
         "has_district": true,
         "has_address": true,
         "has_local_image_files": true,
-        "local_image_files_count": 43,
+        "local_image_files_count": 211,
         "local_image_files_preview": [
-          "data/media/SUPRIMMO_STO-132154/0000_6d93e91f.jpg",
-          "data/media/SUPRIMMO_STO-132154/0001_c7298b7d.jpg",
-          "data/media/SUPRIMMO_STO-132154/0002_a9bae48c.jpg",
-          "data/media/SUPRIMMO_STO-132154/0003_dc2e39d6.jpg",
-          "data/media/SUPRIMMO_STO-132154/0004_50cd4fd2.jpg"
+          "data/media/SUPRIMMO_LXH-69845/0000_07ac6fb1.jpg",
+          "data/media/SUPRIMMO_LXH-69845/0001_96ebd1d7.jpg",
+          "data/media/SUPRIMMO_LXH-69845/0002_b191c247.jpg",
+          "data/media/SUPRIMMO_LXH-69845/0003_7b1c8e64.jpg",
+          "data/media/SUPRIMMO_LXH-69845/0004_24053783.jpg"
         ],
         "structured_fields_count": 3,
-        "source_attributes_count": 3
+        "source_attributes_count": 4,
+        "source_description_status": "captured"
       }
     },
     {
@@ -767,15 +816,16 @@
           "data/media/Bazar.bg_54105310/0004_84ca4ddb.jpg"
         ],
         "structured_fields_count": 3,
-        "source_attributes_count": 0
+        "source_attributes_count": 0,
+        "source_description_status": "captured"
       }
     },
     {
       "tier": 2,
       "source_name": "Domaza",
       "primary_url": "https://www.domaza.bg/",
-      "pattern_status": "without_sample_product_capture",
-      "pattern_issue": "No saved full product sample exists yet for this source.",
+      "pattern_status": "Patterned",
+      "pattern_issue": "Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields.",
       "count_status": "without_live_count_method",
       "recent_status": "without_recent_count_method",
       "varna_status": "without_varna_count_method",
@@ -800,13 +850,50 @@
         "basis": "not_recomputed",
         "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
       },
-      "method": "crawl with language canonicalization",
+      "method": "Varna sale/rent listing pages + Domaza detail parser for property content, features, rooms/area/price, and full `cdn.domaza.biz` gallery.",
       "code_paths": [
-        "scripts/live_scraper.py::generic"
+        "scripts/live_scraper.py::generic",
+        "scripts/live_scraper.py::_parse_domaza"
       ],
       "db_status": "without_database_target",
       "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
-      "sample": null
+      "sample": {
+        "source_key": "domaza",
+        "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/domaza/listings",
+        "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/domaza/raw",
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/domaza/listings/Domaza_8636166.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/domaza/raw/Domaza_8636166.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/Domaza_8636166",
+        "reference_id": "Domaza:8636166",
+        "listing_url": "https://www.domaza.bg/%D0%B0%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BC%D0%B5%D0%BD%D1%82_%D0%B7%D0%BA_%D1%82%D1%80%D0%B0%D0%BA%D0%B8%D1%8F_%D0%B3%D1%80_%D0%B2%D0%B0%D1%80%D0%BD%D0%B0_%D0%B2%D0%B0%D1%80%D0%BD%D0%B0_%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F-16-8636166-p/",
+        "title": "Апартамент, ЗК Тракия, гр. Варна, Варна, България",
+        "description_chars": 932,
+        "remote_photo_count": 32,
+        "local_photo_count": 32,
+        "local_photo_coverage_pct": 100.0,
+        "has_full_gallery": true,
+        "has_description": true,
+        "has_price": true,
+        "has_area": true,
+        "has_rooms": true,
+        "has_floor": false,
+        "has_phones": true,
+        "has_city": true,
+        "has_district": true,
+        "has_address": true,
+        "has_local_image_files": true,
+        "local_image_files_count": 32,
+        "local_image_files_preview": [
+          "data/media/Domaza_8636166/0000_d8e37377.jpg",
+          "data/media/Domaza_8636166/0001_f90c0788.jpg",
+          "data/media/Domaza_8636166/0002_3f02112a.jpg",
+          "data/media/Domaza_8636166/0003_d52ad108.jpg",
+          "data/media/Domaza_8636166/0004_20cbfed4.jpg"
+        ],
+        "structured_fields_count": 3,
+        "source_attributes_count": 5,
+        "source_description_status": "captured"
+      }
     },
     {
       "tier": 2,
@@ -850,8 +937,8 @@
       "tier": 2,
       "source_name": "Home2U",
       "primary_url": "https://home2u.bg/",
-      "pattern_status": "without_sample_product_capture",
-      "pattern_issue": "No saved full product sample exists yet for this source.",
+      "pattern_status": "Patterned",
+      "pattern_issue": "Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields.",
       "count_status": "without_live_count_method",
       "recent_status": "without_recent_count_method",
       "varna_status": "without_varna_count_method",
@@ -876,13 +963,46 @@
         "basis": "not_recomputed",
         "notes": "This source does not yet have a trustworthy whole-site Varna city vs Varna region counter saved in the repo."
       },
-      "method": "templated HTML parser",
+      "method": "Home2U property archive pages + detail parser for secondary info blocks, gallery images, source description status, and local media proof.",
       "code_paths": [
-        "scripts/live_scraper.py::generic"
+        "scripts/live_scraper.py::generic",
+        "scripts/live_scraper.py::_parse_home2u"
       ],
       "db_status": "without_database_target",
       "db_notes": "DATABASE_URL is unset in this environment, so full PostgreSQL persistence could not be re-proved in this run.",
-      "sample": null
+      "sample": {
+        "source_key": "home2u",
+        "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/home2u/listings",
+        "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/home2u/raw",
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/home2u/listings/Home2U_9e265a1748ab.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/home2u/raw/Home2U_9e265a1748ab.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/Home2U_9e265a1748ab",
+        "reference_id": "Home2U:9e265a1748ab",
+        "listing_url": "https://home2u.bg/property/targovsko-pomesthenie-pod-naem-v-rajona-na-avtogara-varna/",
+        "title": "ТЪРГОВСКО ПОМЕЩЕНИЕ ПОД НАЕМ В РАЙОНА НА АВТОГАРА ВАРНА",
+        "description_chars": 1192,
+        "remote_photo_count": 1,
+        "local_photo_count": 1,
+        "local_photo_coverage_pct": 100.0,
+        "has_full_gallery": true,
+        "has_description": true,
+        "has_price": true,
+        "has_area": true,
+        "has_rooms": true,
+        "has_floor": true,
+        "has_phones": true,
+        "has_city": true,
+        "has_district": true,
+        "has_address": true,
+        "has_local_image_files": true,
+        "local_image_files_count": 1,
+        "local_image_files_preview": [
+          "data/media/Home2U_9e265a1748ab/0000_4faca56f.jpg"
+        ],
+        "structured_fields_count": 4,
+        "source_attributes_count": 3,
+        "source_description_status": "captured"
+      }
     },
     {
       "tier": 2,
@@ -1342,13 +1462,13 @@
         "source_key": "yavlena",
         "listing_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/listings",
         "raw_root": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/raw",
-        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/listings/Yavlena_f7a1a1631995.json",
-        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/raw/Yavlena_f7a1a1631995.html",
-        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/Yavlena_f7a1a1631995",
-        "reference_id": "Yavlena:f7a1a1631995",
-        "listing_url": "https://www.yavlena.com/bg/168194",
-        "title": "Тристаен апартамент във Варна 102 кв.м. ID 168194  | Явлена",
-        "description_chars": 3,
+        "listing_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/listings/Yavlena_674a3a1d4ee3.json",
+        "raw_path": "/Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/raw/Yavlena_674a3a1d4ee3.html",
+        "media_dir": "/Users/getapple/Documents/Real Estate Bulg/data/media/Yavlena_674a3a1d4ee3",
+        "reference_id": "Yavlena:674a3a1d4ee3",
+        "listing_url": "https://www.yavlena.com/bg/168889",
+        "title": "Тристаен апартамент в София 108 кв.м. ID 168889  | Явлена",
+        "description_chars": 109,
         "remote_photo_count": 1,
         "local_photo_count": 1,
         "local_photo_coverage_pct": 100.0,
@@ -1360,15 +1480,16 @@
         "has_floor": false,
         "has_phones": true,
         "has_city": true,
-        "has_district": false,
+        "has_district": true,
         "has_address": true,
         "has_local_image_files": true,
         "local_image_files_count": 1,
         "local_image_files_preview": [
-          "data/media/Yavlena_f7a1a1631995/0000_3d2c6df2.jpg"
+          "data/media/Yavlena_674a3a1d4ee3/0000_fcc7ddc5.jpg"
         ],
         "structured_fields_count": 3,
-        "source_attributes_count": 3
+        "source_attributes_count": 3,
+        "source_description_status": "captured"
       }
     }
   ]

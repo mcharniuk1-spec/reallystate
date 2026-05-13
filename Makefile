@@ -1,4 +1,4 @@
-.PHONY: doctor install install-scrape-agents dev-up dev-down dev-ready dev-logs db-shell db-init migrate backup-db restore-db verify-db-counts test test-docker golden-path lint typecheck validate docs-refresh run-api run-api-public run-worker run-scheduler run-frontend run-frontend-public run-frontend-build run-frontend-prod frontend-typecheck frontend-lint run-frontend-static export-docs source-report status-report linear-export architecture-doc dashboard-doc connector-fixtures list-sources list-skills ingest-fixture ingest-fixture-dry sync-registry sync-social-registry export-tier4-data seed-social-fixtures export-source-stats tier4-plan scraping-inventory tier12-metrics download-images import-scraped scrape-bcpea scrape-validate-manifest scrape-sync-sections scrape-sync-sections-dry scrape-threshold-summary scrape-queue-status scrape-control-worker-once scrape-runner-once scrape-runner-pause scrape-runner-unpause scrape-generate-varna-manifest scrape-varna-full scrape-all-full action1-matrix-snapshot action1-telegram-report action1-checkpoint-notify action1-running-report action1-openclaw-continue action1-openclaw-main-resume action1-scrape-full-uncapped action1-scrape-full-uncapped-detached action1-telegram-watch action1-telegram-watch-detached action1-telegram-ops-rehydrate action1-openclaw-report-monitor openclaw-preflight action1-reporter-status action1-reporter-on action1-reporter-off action1-reporter-stop
+.PHONY: doctor install install-scrape-agents dev-up dev-down dev-ready dev-logs db-shell db-init migrate backup-db restore-db verify-db-counts bd18-db-smoke-import test test-docker golden-path lint typecheck validate codex-hooks codex-hooks-json docs-refresh run-api run-api-public run-worker run-scheduler run-frontend run-frontend-public run-frontend-build run-frontend-prod frontend-typecheck frontend-lint run-frontend-static export-docs source-report status-report linear-export architecture-doc dashboard-doc operational-dashboard-doc connector-fixtures list-sources list-skills ingest-fixture ingest-fixture-dry sync-registry sync-social-registry export-tier4-data seed-social-fixtures export-source-stats tier4-plan scraping-inventory tier12-metrics download-images import-scraped scrape-bcpea scrape-validate-manifest scrape-sync-sections scrape-sync-sections-dry scrape-threshold-summary scrape-queue-status scrape-control-worker-once scrape-runner-once scrape-runner-pause scrape-runner-unpause scrape-generate-varna-manifest scrape-varna-full scrape-all-full action1-matrix-snapshot action1-telegram-report action1-checkpoint-notify action1-running-report action1-openclaw-continue action1-openclaw-main-resume action1-scrape-full-uncapped action1-scrape-full-uncapped-detached action1-telegram-watch action1-telegram-watch-detached action1-telegram-ops-rehydrate action1-openclaw-report-monitor openclaw-preflight action1-reporter-status action1-reporter-on action1-reporter-off action1-reporter-stop
 
 # Prefer 3.13/3.12 when unset so install/lint match pyproject.toml requires-python >=3.12
 PYENV_PYTHON := $(shell ls "$$HOME"/.pyenv/versions/3.13*/bin/python3.13 "$$HOME"/.pyenv/versions/3.12*/bin/python3.12 2>/dev/null | sed -n '1p')
@@ -72,10 +72,13 @@ restore-db:
 
 verify-db-counts:
 	@if [ -z "$$DATABASE_URL" ]; then echo "DATABASE_URL is required"; exit 1; fi
-	@for table in source_registry source_endpoint crawl_run crawl_item canonical_listing property_entity property_offer media_asset app_user lead_thread lead_message; do \
+	@for table in source_registry source_endpoint crawl_run crawl_item canonical_listing source_publication_qa_review status_history entity_resolution_candidate entity_resolution_review_event property_entity property_offer media_asset listing_media media_description availability_calendar availability_slot availability_observation viewing_inquiry_request external_chat_ref app_user lead_thread lead_message; do \
 		printf "%-28s " "$$table"; \
 		psql "$$DATABASE_URL" -Atc "select count(*) from $$table;" 2>/dev/null || echo "missing_or_unavailable"; \
 	done
+
+bd18-db-smoke-import:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) scripts/bd18_db_smoke_import.py
 
 test:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m unittest discover -s tests -v
@@ -88,6 +91,12 @@ typecheck:
 
 validate:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) scripts/validate_project.py
+
+codex-hooks:
+	$(PYTHON) scripts/codex_project_hooks.py
+
+codex-hooks-json:
+	$(PYTHON) scripts/codex_project_hooks.py --json
 
 golden-path:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) scripts/golden_path_check.py
@@ -157,11 +166,17 @@ architecture-doc:
 	$(PYTHON) scripts/generate_architecture_guide.py
 
 dashboard-doc:
+	$(PYTHON) scripts/generate_data_quality_deep_review.py
 	$(PYTHON) scripts/generate_progress_dashboard.py
 	$(PYTHON) scripts/generate_website_inventory_analysis.py
 	$(PYTHON) scripts/generate_source_item_photo_coverage.py
 	$(PYTHON) scripts/generate_tier12_pattern_status.py
 	$(PYTHON) scripts/generate_scrape_status_dashboard.py
+	$(PYTHON) scripts/generate_operational_dashboards.py
+
+operational-dashboard-doc:
+	$(PYTHON) scripts/generate_data_quality_deep_review.py
+	$(PYTHON) scripts/generate_operational_dashboards.py
 
 investor-deck:
 	$(PYTHON) scripts/generate_investor_presentation.py

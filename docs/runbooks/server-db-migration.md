@@ -121,6 +121,7 @@ Key tables:
 - PostGIS extension is available.
 - App connects to remote DB.
 - Key counts match or every difference is explained.
+- No DB dump, checksum, `.env`, raw capture directory, or local OpenClaw state is committed or staged.
 - No live scraping resumes until `debugger` signs off.
 
 ## Rollback

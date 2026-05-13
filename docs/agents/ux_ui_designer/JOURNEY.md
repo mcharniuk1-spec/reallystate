@@ -558,3 +558,32 @@ Lead/moderator-planner pass added source provenance buttons to the property deta
   - FACT: account UI now shows mode switching, liked properties, saved searches, and property chat entry points.
   - FACT: chat posts to `/api/backend/api/v1/chat`; live auth/session wiring remains a follow-up.
   - GAP: no Playwright screenshot verification was run in this pass.
+
+### 2026-05-13 — UX-15: data-quality UX requirements from DA findings
+
+- **Action**: Converted DA-01/current Action1 quality findings into operator-first UX requirements and split follow-up UX work into admin QA queues, duplicate/confidence/provenance review, and later buyer-facing accepted-only trust labels.
+- **Changed files**:
+  - `docs/agents/ux_ui_designer/data-quality-ui-decision-notes-2026-05-13.md`
+  - `docs/agents/TASKS.md`
+  - `docs/agents/ux_ui_designer/JOURNEY.md`
+- **Commands run**:
+  - `sed -n '1,260p' docs/agents/TASKS.md`
+  - `sed -n '1,240p' docs/agents/roles/ux_ui_designer.md`
+  - `sed -n '1,240p' docs/agents/roles/data_analyst.md`
+  - `sed -n '1,220p' docs/exports/scrape-database-quality-audit-2026-05-13.md`
+- **Tests run**: not run; documentation/task-splitting slice only.
+- **Status**: `DONE_AWAITING_VERIFY`
+- **Review comments**:
+  - FACT: admin/operator requirements now cover accepted vs pending QA, grouped/development publications, media gaps, confidence, duplicate candidates, and source provenance.
+  - FACT: buyer-facing work is explicitly blocked until accepted-only export/import evidence, `DA-02`, `BD-18`, and `BD-19` are verified.
+  - INTERPRETATION: confidence and grouped/development signals are operator-review evidence, not buyer-facing truth claims.
+  - GAP: DB-backed API contracts for QA/media/provenance are still pending.
+
+### 2026-05-13 — UX-22 verified field consumption contract
+
+- **Action**: Defined which DA-02/BD-18 dashboard/read-model fields UX can consume now, and which buyer-facing fields remain blocked.
+- **Output**: `docs/agents/ux_ui_designer/verified-field-consumption-2026-05-13.md`.
+- **FACT**: file-backed counts may appear only in operator/admin surfaces with explicit labels.
+- **FACT**: buyer-facing inventory/trust labels require accepted-only DB/read-model proof, BD-19, and debugger verification.
+- **Status**: DONE_AWAITING_VERIFY.
+- **Review comments**: UX-16/UX-21 may use labeled operator fields; UX-18 remains blocked for public surfaces.

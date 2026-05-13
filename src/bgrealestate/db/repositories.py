@@ -11,6 +11,7 @@ from sqlalchemy.orm import Session
 from ..connectors.legal import DerivedLegalRule
 from ..models import CanonicalListing, RawCapture, SourceRegistryEntry
 from .ids import new_id
+from .import_contract import import_eligibility_from_provenance, stable_evidence_id
 from .models import (
     CanonicalListingModel,
     CrawlJobModel,
@@ -20,11 +21,13 @@ from .models import (
     PropertyEntityModel,
     PropertyOfferModel,
     RawCaptureModel,
+    SourcePublicationQAReviewModel,
     SourceEndpointModel,
     SourceLegalRuleModel,
     SourceListingModel,
     SourceListingSnapshotModel,
     SourceRegistryModel,
+    StatusHistoryModel,
 )
 
 
@@ -327,6 +330,91 @@ class ListingRepository:
         return snapshot_id
 
 
+class SourcePublicationEvidenceRepository:
+    def __init__(self, session: Session) -> None:
+        self.session = session
+
+    def record_import_evidence(
+        self,
+        *,
+        source_listing_id: str,
+        listing_reference_id: str,
+        provenance: dict[str, Any],
+        observed_at: datetime,
+        reviewer: str = "import_scraped_listings",
+    ) -> None:
+        import_eligible, import_eligibility_reason, blocked_reason = import_eligibility_from_provenance(provenance)
+        qa_state = str(provenance.get("scrape_status") or "UNKNOWN")
+        review_id = stable_evidence_id("qarev", source_listing_id, reviewer)
+        review_stmt = (
+            insert(SourcePublicationQAReviewModel)
+            .values(
+                review_id=review_id,
+                source_listing_id=source_listing_id,
+                listing_reference_id=listing_reference_id,
+                qa_state=qa_state,
+                reviewer=reviewer,
+                reviewed_at=observed_at,
+                import_eligible=import_eligible,
+                import_eligibility_reason=import_eligibility_reason,
+                blocked_import_reason=blocked_reason,
+                source_publication_type=provenance.get("source_publication_type"),
+                scrape_acceptance_status=provenance.get("scrape_acceptance_status"),
+                evidence_jsonb=provenance,
+            )
+            .on_conflict_do_update(
+                index_elements=[
+                    SourcePublicationQAReviewModel.source_listing_id,
+                    SourcePublicationQAReviewModel.reviewer,
+                ],
+                set_={
+                    "listing_reference_id": listing_reference_id,
+                    "qa_state": qa_state,
+                    "reviewed_at": observed_at,
+                    "import_eligible": import_eligible,
+                    "import_eligibility_reason": import_eligibility_reason,
+                    "blocked_import_reason": blocked_reason,
+                    "source_publication_type": provenance.get("source_publication_type"),
+                    "scrape_acceptance_status": provenance.get("scrape_acceptance_status"),
+                    "evidence_jsonb": provenance,
+                },
+            )
+        )
+        self.session.execute(review_stmt)
+
+        status = str(provenance.get("listing_status") or qa_state or "unknown")
+        status_event_id = stable_evidence_id("sthist", "source_publication", source_listing_id, status, observed_at.isoformat())
+        status_stmt = (
+            insert(StatusHistoryModel)
+            .values(
+                status_event_id=status_event_id,
+                subject_type="source_publication",
+                subject_id=source_listing_id,
+                from_status=None,
+                to_status=status,
+                observed_at=observed_at,
+                source_observed_at=observed_at,
+                provenance_jsonb={
+                    "listing_reference_id": listing_reference_id,
+                    "scrape_status": qa_state,
+                    "scrape_acceptance_status": provenance.get("scrape_acceptance_status"),
+                    "source_publication_type": provenance.get("source_publication_type"),
+                    "import_eligible": import_eligible,
+                    "blocked_import_reason": blocked_reason,
+                },
+            )
+            .on_conflict_do_nothing(
+                index_elements=[
+                    StatusHistoryModel.subject_type,
+                    StatusHistoryModel.subject_id,
+                    StatusHistoryModel.to_status,
+                    StatusHistoryModel.observed_at,
+                ]
+            )
+        )
+        self.session.execute(status_stmt)
+
+
 class CanonicalListingRepository:
     def __init__(self, session: Session) -> None:
         self.session = session
@@ -338,33 +426,13 @@ class CanonicalListingRepository:
         values["property_category"] = (
             str(listing.property_category.value) if hasattr(listing.property_category, "value") else str(listing.property_category)
         )
+        update_values = {key: value for key, value in values.items() if key not in {"reference_id", "first_seen"}}
         stmt = (
             insert(CanonicalListingModel)
             .values(**values)
             .on_conflict_do_update(
                 index_elements=[CanonicalListingModel.reference_id],
-                set_={
-                    "listing_url": listing.listing_url,
-                    "city": listing.city,
-                    "district": listing.district,
-                    "resort": listing.resort,
-                    "region": listing.region,
-                    "address_text": listing.address_text,
-                    "latitude": listing.latitude,
-                    "longitude": listing.longitude,
-                    "area_sqm": listing.area_sqm,
-                    "rooms": listing.rooms,
-                    "price": listing.price,
-                    "currency": listing.currency,
-                    "title": listing.title,
-                    "description": listing.description,
-                    "image_urls": listing.image_urls,
-                    "last_seen": listing.last_seen,
-                    "last_changed_at": listing.last_changed_at,
-                    "removed_at": listing.removed_at,
-                    "parser_version": listing.parser_version,
-                    "crawl_provenance": listing.crawl_provenance,
-                },
+                set_=update_values,
             )
         )
         self.session.execute(stmt)
@@ -506,4 +574,3 @@ class ListingMediaRepository:
         from sqlalchemy import func
         stmt = select(func.count()).where(ListingMediaModel.listing_reference_id == reference_id)
         return self.session.scalar(stmt) or 0
-

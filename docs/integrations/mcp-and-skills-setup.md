@@ -47,6 +47,22 @@ command = "npx"
 args = ["-y", "@modelcontextprotocol/server-postgres", "${READONLY_DATABASE_URL}"]
 ```
 
+## Codex Project Hooks
+
+Repo-local Codex guard hooks are available without editing home config:
+
+```bash
+make codex-hooks
+python3 scripts/codex_project_hooks.py --command "make scrape-all-full"
+```
+
+Hook docs and manifest:
+
+- `docs/agents/codex-hooks.md`
+- `codex-hooks/bgrealestate-hooks.json`
+
+Use command guards before live scraping, media backfill, unsafe imports, DB migration staging, broad git staging, or any command that might expose API keys/tokens.
+
 ## Required Environment
 
 ```bash
@@ -75,6 +91,29 @@ Use these skills by role:
 - `ux_ui_designer`: `web-frontend-nextjs`, `frontend-pages`, `geo-map-3d`, `visual-3d-map`, `web-performance-accessibility`.
 - `debugger`: `debugger-golden-path`, `qa-review-release`, `security-audit`, `test-generator`.
 - `knowledge_context_agent`: `context-engineering`, `docs-export`, `skill-discovery`.
+
+## Optimal Skill Bundles
+
+This matrix is the operative baseline for all active agents. Keep role `Skills` blocks and slice plans aligned to it.
+
+| Agent | Core Skills |
+| --- | --- |
+| `planner` | `agent-architecture-governance`, `software-architecture`, `subagent-driven-development`, `context-engineering`, `prompt-engineering` |
+| `ops_release_manager` | `ops-release-management`, `qa-review-release`, `security-audit`, `ci-cd-pipeline` |
+| `infra_db_operator` | `infra-db-migration`, `postgres-ops-psql`, `postgres-postgis-schema`, `railway-deploy` |
+| `backend_developer` | `backend-data-engineering`, `postgres-postgis-schema`, `workflow-runtime`, `fullstack-coding` |
+| `scraper_1` | `scraper-connector-builder`, `browser-scrape-ops`, `hybrid-scrape-stack`, `parser-fixture-qa`, `runtime-compliance-evaluator` |
+| `scraper_sm` | `publishing-compliance`, `runtime-compliance-evaluator`, `deep-research-workflow`, `scraper-connector-builder` |
+| `data_analyst` | `postgres-analysis`, `dashboard-visual-ops`, `test-generator` |
+| `market_intelligence_analyst` | `market-intelligence`, `deep-research-workflow` |
+| `user_analytics_agent` | `user-analytics-instrumentation`, `dashboard-visual-ops`, `web-performance-accessibility` |
+| `vision_media_agent` | `image-media-pipeline`, `managed-scrape-platforms` |
+| `entity_resolution_agent` | `dedupe-entity-resolution`, `postgres-analysis` |
+| `ux_ui_designer` | `web-frontend-nextjs`, `frontend-pages`, `geo-map-3d`, `visual-3d-map`, `web-performance-accessibility` |
+| `debugger` | `debugger-golden-path`, `qa-review-release`, `security-audit`, `test-generator` |
+| `knowledge_context_agent` | `context-engineering`, `docs-export`, `skill-discovery` |
+
+Validation rule: all skills above must be present in-repo under `agent-skills/<name>/SKILL.md` before a lane starts. No new external installations are needed for this matrix today.
 
 ## Not Installed In This Run
 

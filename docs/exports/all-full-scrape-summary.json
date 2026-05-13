@@ -1,24 +1,73 @@
 {
-  "generated_at": "2026-04-24T15:40:15.148626+00:00",
+  "generated_at": "2026-04-30T15:10:38.328152+00:00",
   "geo_scope": "all_bulgaria",
+  "explicit_sources_override": false,
   "target_per_source": 100,
   "max_pages": 8,
   "download_photos": true,
   "require_full_gallery": true,
   "patterned_only": true,
-  "dry_run": true,
+  "dry_run": false,
   "parallel_sources": 4,
   "max_waves": 3,
-  "source_count": 10,
+  "source_count": 13,
   "results": [
     {
       "source_key": "address_bg",
       "source_name": "Address.bg",
-      "before_count": 98,
+      "before_count": 3196,
       "target_per_source": 100,
-      "planned_max_listings": 27,
-      "status": "planned",
+      "planned_max_listings": 0,
+      "status": "skipped_threshold_reached",
       "waves": []
+    },
+    {
+      "source_key": "alo_bg",
+      "source_name": "alo.bg",
+      "before_count": 1,
+      "target_per_source": 100,
+      "planned_max_listings": 297,
+      "status": "stalled_no_progress",
+      "waves": [
+        {
+          "wave": 1,
+          "before_count": 1,
+          "after_count": 29,
+          "added_count": 28,
+          "max_pages": 8,
+          "planned_max_listings": 297,
+          "scrape_stats": {
+            "discovery_pages_fetched": 6,
+            "listing_urls_discovered": 83,
+            "listing_pages_fetched": 29,
+            "listing_pages_parsed": 29,
+            "photos_found": 322,
+            "photos_downloaded": 322,
+            "photos_failed": 0,
+            "with_description": 29
+          }
+        },
+        {
+          "wave": 2,
+          "before_count": 29,
+          "after_count": 29,
+          "added_count": 0,
+          "max_pages": 16,
+          "planned_max_listings": 213,
+          "scrape_stats": {
+            "discovery_pages_fetched": 6,
+            "listing_urls_discovered": 83,
+            "listing_pages_fetched": 0,
+            "listing_pages_parsed": 0,
+            "photos_found": 0,
+            "photos_downloaded": 0,
+            "photos_failed": 0,
+            "with_description": 0
+          }
+        }
+      ],
+      "after_count": 29,
+      "added_count": 28
     },
     {
       "source_key": "bazar_bg",
@@ -32,37 +81,211 @@
     {
       "source_key": "bulgarianproperties",
       "source_name": "BulgarianProperties",
-      "before_count": 1,
+      "before_count": 4,
       "target_per_source": 100,
-      "planned_max_listings": 297,
-      "status": "planned",
-      "waves": []
+      "planned_max_listings": 288,
+      "status": "stalled_no_progress",
+      "waves": [
+        {
+          "wave": 1,
+          "before_count": 4,
+          "after_count": 7,
+          "added_count": 3,
+          "max_pages": 8,
+          "planned_max_listings": 288,
+          "scrape_stats": {
+            "discovery_pages_fetched": 14,
+            "listing_urls_discovered": 293,
+            "listing_pages_fetched": 288,
+            "listing_pages_parsed": 288,
+            "photos_found": 7838,
+            "photos_downloaded": 7007,
+            "photos_failed": 831,
+            "with_description": 288
+          }
+        },
+        {
+          "wave": 2,
+          "before_count": 7,
+          "after_count": 7,
+          "added_count": 0,
+          "max_pages": 16,
+          "planned_max_listings": 279,
+          "scrape_stats": {
+            "discovery_pages_fetched": 10,
+            "listing_urls_discovered": 300,
+            "listing_pages_fetched": 279,
+            "listing_pages_parsed": 279,
+            "photos_found": 8877,
+            "photos_downloaded": 8065,
+            "photos_failed": 812,
+            "with_description": 279
+          }
+        }
+      ],
+      "after_count": 7,
+      "added_count": 3
+    },
+    {
+      "source_key": "domaza",
+      "source_name": "Domaza",
+      "before_count": 7,
+      "target_per_source": 100,
+      "planned_max_listings": 279,
+      "status": "stalled_no_progress",
+      "waves": [
+        {
+          "wave": 1,
+          "before_count": 7,
+          "after_count": 39,
+          "added_count": 32,
+          "max_pages": 8,
+          "planned_max_listings": 279,
+          "scrape_stats": {
+            "discovery_pages_fetched": 4,
+            "listing_urls_discovered": 40,
+            "listing_pages_fetched": 40,
+            "listing_pages_parsed": 40,
+            "photos_found": 777,
+            "photos_downloaded": 777,
+            "photos_failed": 0,
+            "with_description": 40
+          }
+        },
+        {
+          "wave": 2,
+          "before_count": 39,
+          "after_count": 38,
+          "added_count": 0,
+          "max_pages": 16,
+          "planned_max_listings": 183,
+          "scrape_stats": {
+            "discovery_pages_fetched": 4,
+            "listing_urls_discovered": 40,
+            "listing_pages_fetched": 40,
+            "listing_pages_parsed": 40,
+            "photos_found": 777,
+            "photos_downloaded": 777,
+            "photos_failed": 0,
+            "with_description": 40
+          }
+        }
+      ],
+      "after_count": 38,
+      "added_count": 31
+    },
+    {
+      "source_key": "home2u",
+      "source_name": "Home2U",
+      "before_count": 0,
+      "target_per_source": 100,
+      "planned_max_listings": 300,
+      "status": "stalled_no_progress",
+      "waves": [
+        {
+          "wave": 1,
+          "before_count": 0,
+          "after_count": 22,
+          "added_count": 22,
+          "max_pages": 8,
+          "planned_max_listings": 300,
+          "scrape_stats": {
+            "discovery_pages_fetched": 8,
+            "listing_urls_discovered": 23,
+            "listing_pages_fetched": 23,
+            "listing_pages_parsed": 23,
+            "photos_found": 132,
+            "photos_downloaded": 132,
+            "photos_failed": 0,
+            "with_description": 22
+          }
+        },
+        {
+          "wave": 2,
+          "before_count": 22,
+          "after_count": 22,
+          "added_count": 0,
+          "max_pages": 16,
+          "planned_max_listings": 234,
+          "scrape_stats": {
+            "discovery_pages_fetched": 8,
+            "listing_urls_discovered": 23,
+            "listing_pages_fetched": 23,
+            "listing_pages_parsed": 23,
+            "photos_found": 132,
+            "photos_downloaded": 132,
+            "photos_failed": 0,
+            "with_description": 22
+          }
+        }
+      ],
+      "after_count": 22,
+      "added_count": 22
     },
     {
       "source_key": "homes_bg",
       "source_name": "Homes.bg",
-      "before_count": 32,
+      "before_count": 59,
       "target_per_source": 100,
-      "planned_max_listings": 204,
-      "status": "planned",
-      "waves": []
+      "planned_max_listings": 123,
+      "status": "stalled_no_progress",
+      "waves": [
+        {
+          "wave": 1,
+          "before_count": 59,
+          "after_count": 66,
+          "added_count": 7,
+          "max_pages": 8,
+          "planned_max_listings": 123,
+          "scrape_stats": {
+            "discovery_pages_fetched": 64,
+            "listing_urls_discovered": 20,
+            "listing_pages_fetched": 20,
+            "listing_pages_parsed": 20,
+            "photos_found": 156,
+            "photos_downloaded": 156,
+            "photos_failed": 0,
+            "with_description": 19
+          }
+        },
+        {
+          "wave": 2,
+          "before_count": 66,
+          "after_count": 66,
+          "added_count": 0,
+          "max_pages": 16,
+          "planned_max_listings": 102,
+          "scrape_stats": {
+            "discovery_pages_fetched": 128,
+            "listing_urls_discovered": 20,
+            "listing_pages_fetched": 20,
+            "listing_pages_parsed": 20,
+            "photos_found": 156,
+            "photos_downloaded": 156,
+            "photos_failed": 0,
+            "with_description": 19
+          }
+        }
+      ],
+      "after_count": 66,
+      "added_count": 7
     },
     {
       "source_key": "imot_bg",
       "source_name": "imot.bg",
-      "before_count": 9,
+      "before_count": 6993,
       "target_per_source": 100,
-      "planned_max_listings": 273,
-      "status": "planned",
+      "planned_max_listings": 0,
+      "status": "skipped_threshold_reached",
       "waves": []
     },
     {
       "source_key": "luximmo",
       "source_name": "LUXIMMO",
-      "before_count": 10,
+      "before_count": 560,
       "target_per_source": 100,
-      "planned_max_listings": 270,
-      "status": "planned",
+      "planned_max_listings": 0,
+      "status": "skipped_threshold_reached",
       "waves": []
     },
     {
@@ -77,19 +300,19 @@
     {
       "source_key": "property_bg",
       "source_name": "property.bg",
-      "before_count": 1,
+      "before_count": 289,
       "target_per_source": 100,
-      "planned_max_listings": 297,
-      "status": "planned",
+      "planned_max_listings": 0,
+      "status": "skipped_threshold_reached",
       "waves": []
     },
     {
       "source_key": "suprimmo",
       "source_name": "SUPRIMMO",
-      "before_count": 1,
+      "before_count": 285,
       "target_per_source": 100,
-      "planned_max_listings": 297,
-      "status": "planned",
+      "planned_max_listings": 0,
+      "status": "skipped_threshold_reached",
       "waves": []
     },
     {
@@ -98,8 +321,29 @@
       "before_count": 57,
       "target_per_source": 100,
       "planned_max_listings": 129,
-      "status": "planned",
-      "waves": []
+      "status": "threshold_reached",
+      "waves": [
+        {
+          "wave": 1,
+          "before_count": 57,
+          "after_count": 175,
+          "added_count": 118,
+          "max_pages": 8,
+          "planned_max_listings": 129,
+          "scrape_stats": {
+            "discovery_pages_fetched": 3,
+            "listing_urls_discovered": 150,
+            "listing_pages_fetched": 129,
+            "listing_pages_parsed": 129,
+            "photos_found": 129,
+            "photos_downloaded": 129,
+            "photos_failed": 0,
+            "with_description": 129
+          }
+        }
+      ],
+      "after_count": 175,
+      "added_count": 118
     }
   ]
 }

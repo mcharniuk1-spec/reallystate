@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Properties Database Dashboard | Bulgaria Real Estate Ops</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fa;
+      --panel: #ffffff;
+      --ink: #17212f;
+      --muted: #5d6b7d;
+      --line: #d9e0e8;
+      --accent: #0f766e;
+      --warn: #b45309;
+      --bad: #b91c1c;
+      --good: #047857;
+      --info: #1d4ed8;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.45; }
+    header { padding: 28px min(5vw, 56px) 20px; background: #ffffff; border-bottom: 1px solid var(--line); }
+    h1 { margin: 0 0 6px; font-size: clamp(28px, 4vw, 44px); letter-spacing: 0; }
+    h2 { margin: 32px 0 12px; font-size: 22px; letter-spacing: 0; }
+    h3 { margin: 0 0 8px; font-size: 16px; letter-spacing: 0; }
+    p { margin: 0 0 10px; }
+    a { color: var(--info); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    nav a { border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; color: var(--ink); background: #f8fafc; font-size: 14px; }
+    main { padding: 24px min(5vw, 56px) 56px; }
+    .muted { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+    .wide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 12px; }
+    details.stat, .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+    details.stat summary { cursor: pointer; list-style: none; display: grid; gap: 4px; }
+    details.stat summary::-webkit-details-marker { display: none; }
+    .label { color: var(--muted); font-size: 13px; }
+    .value { font-size: 28px; font-weight: 750; line-height: 1.15; }
+    .tag { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 2px 8px; font-size: 12px; color: var(--muted); background: #f8fafc; }
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .bad { color: var(--bad); }
+    table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+    th, td { padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; font-size: 14px; }
+    th { background: #eef3f8; font-size: 12px; text-transform: uppercase; letter-spacing: .02em; color: #435166; }
+    tr:last-child td { border-bottom: 0; }
+    .nowrap { white-space: nowrap; }
+    footer { color: var(--muted); padding: 0 min(5vw, 56px) 32px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="tag">Generated 2026-05-13 14:22:31Z</p>
+    <h1>Properties Database Dashboard</h1>
+    <p class="muted">Scraping, QA, description, media, and accepted-only import readiness.</p>
+
+      <nav>
+        <a href="index.html">Hub</a>
+        <a href="project-progress.html">Project Progress</a>
+        <a href="properties-database.html">Properties Database</a>
+        <a href="website.html">Website</a>
+        <a href="support.html">Support</a>
+        <a href="data-quality-dashboard.html">Deep Data Quality</a>
+        <a href="scrape-status.html">Source Matrix</a>
+      </nav>
+
+  </header>
+  <main>
+
+      <section class="grid">
+
+    <details class="stat" open>
+      <summary><span class="label">Audit rows</span><span class="value">30,334</span></summary>
+      <p><strong>Insight:</strong> DA-01 is the current file-backed quality audit.</p>
+      <p><strong>Details:</strong> This is not a verified live database count.</p>
+      <p><strong>Action:</strong> Keep DB claims blocked until BD-18 + INFRA-02.</p>
+    </details>
+
+
+    <details class="stat" open>
+      <summary><span class="label">Action1 rows</span><span class="value">29,397</span></summary>
+      <p><strong>Insight:</strong> Action1 is the current marketplace evidence scope.</p>
+      <p><strong>Details:</strong> Seven sources x four buckets remain the controlled scope.</p>
+      <p><strong>Action:</strong> Do not widen Action2 until Action1 QA repair is verified.</p>
+    </details>
+
+
+    <details class="stat" open>
+      <summary><span class="label">DB import candidates</span><span class="value">1,606</span></summary>
+      <p><strong>Insight:</strong> Default import must be accepted-only.</p>
+      <p><strong>Details:</strong> Candidate count excludes pending/missing QA, LOST, grouped/development, and inactive rows where the audit can identify them.</p>
+      <p><strong>Action:</strong> Backend should preserve QA state before canonical promotion.</p>
+    </details>
+
+
+    <details class="stat" open>
+      <summary><span class="label">Pending or missing QA</span><span class="value">26,231</span></summary>
+      <p><strong>Insight:</strong> This is the largest data-risk queue.</p>
+      <p><strong>Details:</strong> Rows without clear QA state cannot enter public property views.</p>
+      <p><strong>Action:</strong> DA-02 and scraper repair waves must reduce or classify this queue.</p>
+    </details>
+
+
+    <details class="stat" open>
+      <summary><span class="label">Quality-gate total</span><span class="value">29,397</span></summary>
+      <p><strong>Insight:</strong> The quality gate uses its own denominator.</p>
+      <p><strong>Details:</strong> DA-02 must reconcile this with audit/importer/dashboard semantics.</p>
+      <p><strong>Action:</strong> Keep bad/grouped overlap visible.</p>
+    </details>
+
+
+    <details class="stat" open>
+      <summary><span class="label">Good single-unit</span><span class="value">20,811</span></summary>
+      <p><strong>Insight:</strong> These rows are closest to buyer-facing property candidates.</p>
+      <p><strong>Details:</strong> They still need accepted-only import/read-model proof before public claims.</p>
+      <p><strong>Action:</strong> Use for internal QA, not public coverage language.</p>
+    </details>
+
+
+    <details class="stat" open>
+      <summary><span class="label">LOST rows</span><span class="value">6,698</span></summary>
+      <p><strong>Insight:</strong> LOST means rescrape/repair or quarantine, not a valid property.</p>
+      <p><strong>Details:</strong> Do not import by default.</p>
+      <p><strong>Action:</strong> Scraper_1 should consume the LOST queue for bounded repairs.</p>
+    </details>
+
+
+    <details class="stat" open>
+      <summary><span class="label">Grouped publications</span><span class="value">1,888</span></summary>
+      <p><strong>Insight:</strong> Grouped/development rows are source publications, not single units.</p>
+      <p><strong>Details:</strong> Split only when unit-level URL, price/status, area, and media evidence exist.</p>
+      <p><strong>Action:</strong> Entity resolution and UX must keep these out of single-property flows.</p>
+    </details>
+
+
+    <details class="stat" open>
+      <summary><span class="label">Saved listings</span><span class="value">30,334</span></summary>
+      <p><strong>Insight:</strong> Scrape-status saved rows are operational capture counts.</p>
+      <p><strong>Details:</strong> They are useful for source health but not equivalent to accepted properties.</p>
+      <p><strong>Action:</strong> Display alongside accepted and LOST counts, never as market coverage.</p>
+    </details>
+
+
+    <details class="stat" open>
+      <summary><span class="label">Description coverage</span><span class="value">30,165</span></summary>
+      <p><strong>Insight:</strong> Description presence is improving but must be source-scoped.</p>
+      <p><strong>Details:</strong> Thin/mojibake descriptions still require parser repair.</p>
+      <p><strong>Action:</strong> UX should expose missing/weak description as QA state in admin only.</p>
+    </details>
+
+
+    <details class="stat" open>
+      <summary><span class="label">Readable local photos</span><span class="value">30,014</span></summary>
+      <p><strong>Insight:</strong> Local media is a trust prerequisite.</p>
+      <p><strong>Details:</strong> Remote URL counts alone are insufficient for durable gallery evidence.</p>
+      <p><strong>Action:</strong> Vision/media work waits for Action0 operator gate.</p>
+    </details>
+
+
+    <details class="stat" open>
+      <summary><span class="label">Patterned sources</span><span class="value">13</span></summary>
+      <p><strong>Insight:</strong> Pattern status is source-pattern readiness, not market completion.</p>
+      <p><strong>Details:</strong> Patterned must still prove accepted rows and full media by bucket.</p>
+      <p><strong>Action:</strong> Keep pattern and count readiness separate.</p>
+    </details>
+
+      </section>
+      <h2>Source Detail</h2>
+      <table>
+        <thead><tr><th>Source</th><th>Tier</th><th>Saved</th><th>Accepted/good</th><th>LOST</th><th>Grouped</th><th>Description</th><th>Readable local photos</th></tr></thead>
+        <tbody><tr><td>address_bg</td><td></td><td>n/a</td><td>3,330</td><td>3,143</td><td>n/a</td><td>n/a</td><td>n/a</td></tr><tr><td>alo_bg</td><td></td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td><td>n/a</td></tr><tr><td>bazar_bg</td><td></td><td>n/a</td><td>n/a</td><td>73</td><td>n/a</td><td>n/a</td><td>n/a</td></tr><tr><td>bulgarianproperties</td><td></td><td>n/a</td><td>12</td><td>1,954</td><td>323</td><td>n/a</td><td>n/a</td></tr><tr><td>domaza</td><td></td><td>n/a</td><td>n/a</td><td>13</td><td>n/a</td><td>n/a</td><td>n/a</td></tr><tr><td>home2u</td><td></td><td>n/a</td><td>n/a</td><td>14</td><td>n/a</td><td>n/a</td><td>n/a</td></tr><tr><td>homes_bg</td><td></td><td>n/a</td><td>79</td><td>55</td><td>10</td><td>n/a</td><td>n/a</td></tr><tr><td>imot_bg</td><td></td><td>n/a</td><td>8,986</td><td>259</td><td>692</td><td>n/a</td><td>n/a</td></tr><tr><td>luximmo</td><td></td><td>n/a</td><td>1,788</td><td>573</td><td>151</td><td>n/a</td><td>n/a</td></tr><tr><td>olx_bg</td><td></td><td>n/a</td><td>n/a</td><td>131</td><td>n/a</td><td>n/a</td><td>n/a</td></tr><tr><td>property_bg</td><td></td><td>n/a</td><td>3,053</td><td>41</td><td>n/a</td><td>n/a</td><td>n/a</td></tr><tr><td>suprimmo</td><td></td><td>n/a</td><td>3,563</td><td>673</td><td>712</td><td>n/a</td><td>n/a</td></tr><tr><td>unknown</td><td>2</td><td>345</td><td>n/a</td><td>n/a</td><td>n/a</td><td>179</td><td>344</td></tr><tr><td>yavlena</td><td></td><td>n/a</td><td>n/a</td><td>194</td><td>n/a</td><td>n/a</td><td>n/a</td></tr></tbody>
+      </table>
+
+  </main>
+  <footer>File-backed operator dashboards. DB-backed claims remain blocked until BD-18 + INFRA-02 verification.</footer>
+</body>
+</html>

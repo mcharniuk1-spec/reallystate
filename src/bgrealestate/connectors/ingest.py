@@ -11,8 +11,14 @@ from sqlalchemy.orm import Session
 from ..models import CanonicalListing, ParsedListing, RawCapture
 from ..source_registry import SourceRegistryEntry
 from ..pipeline import GenericHtmlListingParser, StandardIngestionPipeline
-from ..db.ids import new_id
-from ..db.repositories import CanonicalListingRepository, ListingMediaRepository, ListingRepository, RawCaptureRepository
+from ..db.media_ids import stable_listing_media_id
+from ..db.repositories import (
+    CanonicalListingRepository,
+    ListingMediaRepository,
+    ListingRepository,
+    RawCaptureRepository,
+    SourcePublicationEvidenceRepository,
+)
 from ..db.session import session_scope
 from ..services.unification import unify_listing
 
@@ -35,7 +41,7 @@ def _sync_listing_media(
     media_ids: list[str] = []
 
     for i, url in enumerate(image_urls):
-        media_id = new_id("lmed")
+        media_id = stable_listing_media_id(reference_id, url)
         storage_key = None
         mime_type = None
         width = None
@@ -98,6 +104,7 @@ def persist_listing_bundle(
         raw_repo = RawCaptureRepository(session)
         listing_repo = ListingRepository(session)
         canon_repo = CanonicalListingRepository(session)
+        evidence_repo = SourcePublicationEvidenceRepository(session)
 
         raw_capture_id = raw_repo.insert(raw_capture)
         source_listing_id = listing_repo.upsert_source_listing(
@@ -123,6 +130,12 @@ def persist_listing_bundle(
             canonical.reference_id,
             canonical.image_urls,
             download_images=download_images,
+        )
+        evidence_repo.record_import_evidence(
+            source_listing_id=source_listing_id,
+            listing_reference_id=canonical.reference_id,
+            provenance=canonical.crawl_provenance,
+            observed_at=raw_capture.fetched_at,
         )
 
         property_id = None

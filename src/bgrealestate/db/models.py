@@ -164,12 +164,30 @@ class CanonicalListingModel(Base):
     address_text: Mapped[str | None] = mapped_column(Text)
     latitude: Mapped[float | None] = mapped_column(Float)
     longitude: Mapped[float | None] = mapped_column(Float)
+    geocode_confidence: Mapped[float | None] = mapped_column(Float)
+    building_name: Mapped[str | None] = mapped_column(Text)
     area_sqm: Mapped[float | None] = mapped_column(Float)
     rooms: Mapped[float | None] = mapped_column(Float)
+    floor: Mapped[int | None] = mapped_column(Integer)
+    total_floors: Mapped[int | None] = mapped_column(Integer)
+    construction_type: Mapped[str | None] = mapped_column(Text)
+    construction_year: Mapped[int | None] = mapped_column(Integer)
+    stage: Mapped[str | None] = mapped_column(Text)
+    act16_present: Mapped[bool | None] = mapped_column(Boolean)
     price: Mapped[float | None] = mapped_column(Numeric)
     currency: Mapped[str | None] = mapped_column(Text)
     title: Mapped[str | None] = mapped_column(Text)
+    fees: Mapped[float | None] = mapped_column(Numeric)
+    price_per_sqm: Mapped[float | None] = mapped_column(Numeric)
+    broker_name: Mapped[str | None] = mapped_column(Text)
+    agency_name: Mapped[str | None] = mapped_column(Text)
+    owner_name: Mapped[str | None] = mapped_column(Text)
+    developer_name: Mapped[str | None] = mapped_column(Text)
+    phones: Mapped[list[str]] = mapped_column(JSONB, nullable=False, default=list)
+    messenger_handles: Mapped[list[str]] = mapped_column(JSONB, nullable=False, default=list)
+    outbound_channel_hints: Mapped[list[str]] = mapped_column(JSONB, nullable=False, default=list)
     description: Mapped[str | None] = mapped_column(Text)
+    amenities: Mapped[list[str]] = mapped_column(JSONB, nullable=False, default=list)
     image_urls: Mapped[list[str]] = mapped_column(JSONB, nullable=False, default=list)
     first_seen: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
     last_seen: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
@@ -228,6 +246,18 @@ class PropertyOfferModel(Base):
     last_changed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
 
 
+class PersonContactModel(Base):
+    __tablename__ = "person_contact"
+
+    contact_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    display_name: Mapped[str] = mapped_column(Text, nullable=False)
+    normalized_name: Mapped[str | None] = mapped_column(Text)
+    organization_id: Mapped[str | None] = mapped_column(Text)
+    role: Mapped[str | None] = mapped_column(Text)
+    language_codes: Mapped[list[str]] = mapped_column(JSONB, nullable=False, default=list)
+    metadata_jsonb: Mapped[dict[str, Any]] = mapped_column("metadata", JSONB, nullable=False, default=dict)
+
+
 class MediaAssetModel(Base):
     __tablename__ = "media_asset"
 
@@ -264,6 +294,170 @@ class ListingMediaModel(Base):
     height: Mapped[int | None] = mapped_column(Integer)
     file_size: Mapped[int | None] = mapped_column(BigInteger)
     download_status: Mapped[str] = mapped_column(Text, nullable=False, default="pending")
+
+
+class SourcePublicationQAReviewModel(Base):
+    __tablename__ = "source_publication_qa_review"
+    __table_args__ = (UniqueConstraint("source_listing_id", "reviewer"),)
+
+    review_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    source_listing_id: Mapped[str] = mapped_column(ForeignKey("source_listing.source_listing_id"), nullable=False)
+    listing_reference_id: Mapped[str | None] = mapped_column(ForeignKey("canonical_listing.reference_id"))
+    qa_state: Mapped[str] = mapped_column(Text, nullable=False)
+    reviewer: Mapped[str] = mapped_column(Text, nullable=False, default="system")
+    reviewed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    import_eligible: Mapped[bool] = mapped_column(Boolean, nullable=False, default=False)
+    import_eligibility_reason: Mapped[str | None] = mapped_column(Text)
+    blocked_import_reason: Mapped[str | None] = mapped_column(Text)
+    source_publication_type: Mapped[str | None] = mapped_column(Text)
+    scrape_acceptance_status: Mapped[str | None] = mapped_column(Text)
+    evidence_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+
+
+class StatusHistoryModel(Base):
+    __tablename__ = "status_history"
+    __table_args__ = (UniqueConstraint("subject_type", "subject_id", "to_status", "observed_at"),)
+
+    status_event_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    subject_type: Mapped[str] = mapped_column(Text, nullable=False)
+    subject_id: Mapped[str] = mapped_column(Text, nullable=False)
+    from_status: Mapped[str | None] = mapped_column(Text)
+    to_status: Mapped[str] = mapped_column(Text, nullable=False)
+    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    source_observed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    provenance_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+
+
+class EntityResolutionCandidateModel(Base):
+    __tablename__ = "entity_resolution_candidate"
+    __table_args__ = (
+        UniqueConstraint("primary_listing_reference_id", "candidate_listing_reference_id", "candidate_type"),
+    )
+
+    candidate_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    candidate_type: Mapped[str] = mapped_column(Text, nullable=False)
+    primary_listing_reference_id: Mapped[str] = mapped_column(ForeignKey("canonical_listing.reference_id"), nullable=False)
+    candidate_listing_reference_id: Mapped[str | None] = mapped_column(ForeignKey("canonical_listing.reference_id"))
+    candidate_property_id: Mapped[str | None] = mapped_column(ForeignKey("property_entity.property_id"))
+    review_status: Mapped[str] = mapped_column(Text, nullable=False, default="needs_review")
+    confidence_score: Mapped[float | None] = mapped_column(Float)
+    score_components_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+    conflict_reasons_jsonb: Mapped[list[Any]] = mapped_column(JSONB, nullable=False, default=list)
+    accepted_only_filter_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+    evidence_snapshot_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class EntityResolutionReviewEventModel(Base):
+    __tablename__ = "entity_resolution_review_event"
+
+    review_event_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    candidate_id: Mapped[str] = mapped_column(ForeignKey("entity_resolution_candidate.candidate_id"), nullable=False)
+    action: Mapped[str] = mapped_column(Text, nullable=False)
+    actor_user_id: Mapped[str | None] = mapped_column(ForeignKey("app_user.user_id"))
+    from_status: Mapped[str | None] = mapped_column(Text)
+    to_status: Mapped[str] = mapped_column(Text, nullable=False)
+    rationale: Mapped[str | None] = mapped_column(Text)
+    evidence_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class MediaDescriptionModel(Base):
+    __tablename__ = "media_description"
+
+    media_description_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    media_id: Mapped[str | None] = mapped_column(ForeignKey("media_asset.media_id"))
+    listing_media_id: Mapped[str | None] = mapped_column(ForeignKey("listing_media.media_id"))
+    listing_reference_id: Mapped[str | None] = mapped_column(ForeignKey("canonical_listing.reference_id"))
+    generated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    model_name: Mapped[str] = mapped_column(Text, nullable=False)
+    model_version: Mapped[str | None] = mapped_column(Text)
+    coverage_state: Mapped[str] = mapped_column(Text, nullable=False, default="pending")
+    scene_type: Mapped[str | None] = mapped_column(Text)
+    description_text: Mapped[str | None] = mapped_column(Text)
+    confidence_score: Mapped[float | None] = mapped_column(Float)
+    uncertainty_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+    evidence_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+
+
+class AvailabilityCalendarModel(Base):
+    __tablename__ = "availability_calendar"
+
+    calendar_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    listing_reference_id: Mapped[str | None] = mapped_column(ForeignKey("canonical_listing.reference_id"))
+    offer_id: Mapped[str | None] = mapped_column(ForeignKey("property_offer.offer_id"))
+    calendar_type: Mapped[str] = mapped_column(Text, nullable=False)
+    source_name: Mapped[str | None] = mapped_column(ForeignKey("source_registry.source_name"))
+    source_url: Mapped[str | None] = mapped_column(Text)
+    status: Mapped[str] = mapped_column(Text, nullable=False, default="active")
+    metadata_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class AvailabilitySlotModel(Base):
+    __tablename__ = "availability_slot"
+    __table_args__ = (UniqueConstraint("calendar_id", "slot_start", "slot_end"),)
+
+    slot_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    calendar_id: Mapped[str] = mapped_column(ForeignKey("availability_calendar.calendar_id"), nullable=False)
+    slot_start: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    slot_end: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    slot_status: Mapped[str] = mapped_column(Text, nullable=False)
+    price_amount: Mapped[float | None] = mapped_column(Numeric)
+    currency: Mapped[str | None] = mapped_column(Text)
+    metadata_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+
+
+class AvailabilityObservationModel(Base):
+    __tablename__ = "availability_observation"
+
+    observation_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    listing_reference_id: Mapped[str | None] = mapped_column(ForeignKey("canonical_listing.reference_id"))
+    offer_id: Mapped[str | None] = mapped_column(ForeignKey("property_offer.offer_id"))
+    observed_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    source_observed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    availability_status: Mapped[str] = mapped_column(Text, nullable=False)
+    price_amount: Mapped[float | None] = mapped_column(Numeric)
+    currency: Mapped[str | None] = mapped_column(Text)
+    provenance_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+
+
+class ViewingInquiryRequestModel(Base):
+    __tablename__ = "viewing_inquiry_request"
+
+    request_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    listing_reference_id: Mapped[str | None] = mapped_column(ForeignKey("canonical_listing.reference_id"))
+    property_id: Mapped[str | None] = mapped_column(ForeignKey("property_entity.property_id"))
+    offer_id: Mapped[str | None] = mapped_column(ForeignKey("property_offer.offer_id"))
+    requester_user_id: Mapped[str | None] = mapped_column(ForeignKey("app_user.user_id"))
+    contact_id: Mapped[str | None] = mapped_column(ForeignKey("person_contact.contact_id"))
+    request_type: Mapped[str] = mapped_column(Text, nullable=False)
+    request_status: Mapped[str] = mapped_column(Text, nullable=False, default="new")
+    preferred_time_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+    message_summary: Mapped[str | None] = mapped_column(Text)
+    provenance_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class ExternalChatRefModel(Base):
+    __tablename__ = "external_chat_ref"
+
+    chat_ref_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    thread_id: Mapped[str | None] = mapped_column(ForeignKey("lead_thread.thread_id"))
+    request_id: Mapped[str | None] = mapped_column(ForeignKey("viewing_inquiry_request.request_id"))
+    listing_reference_id: Mapped[str | None] = mapped_column(ForeignKey("canonical_listing.reference_id"))
+    property_id: Mapped[str | None] = mapped_column(ForeignKey("property_entity.property_id"))
+    offer_id: Mapped[str | None] = mapped_column(ForeignKey("property_offer.offer_id"))
+    participant_contact_id: Mapped[str | None] = mapped_column(ForeignKey("person_contact.contact_id"))
+    provider: Mapped[str] = mapped_column(Text, nullable=False)
+    external_thread_ref: Mapped[str | None] = mapped_column(Text)
+    handoff_status: Mapped[str] = mapped_column(Text, nullable=False, default="pending")
+    metadata_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
 
 
 class BuildingEntityModel(Base):

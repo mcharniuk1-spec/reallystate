@@ -1,0 +1,43 @@
+{
+  "mcpServers": {
+    "openai-docs": {
+      "type": "http",
+      "url": "https://developers.openai.com/mcp"
+    },
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--isolated"
+      ]
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest",
+        "--isolated=true"
+      ]
+    },
+    "github-readonly": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/readonly"
+    },
+    "cloudflare-docs": {
+      "type": "http",
+      "url": "https://docs.mcp.cloudflare.com/mcp"
+    },
+    "figma": {
+      "type": "http",
+      "url": "https://mcp.figma.com/mcp"
+    }
+  }
+}

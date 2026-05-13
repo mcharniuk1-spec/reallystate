@@ -1,6 +1,6 @@
 # Tier 1-2 Pattern Status
 
-Generated: 2026-04-29 08:13 UTC
+Generated: 2026-05-13 13:46 UTC
 
 Media storage mode: image binaries are stored as local files under `data/media/<reference_id>/...`; remote `image_urls` remain only as source traceability, while listing JSON artifacts now also store `local_image_files` and `local_image_storage_keys`.
 
@@ -10,7 +10,7 @@ This report separates four questions for each source:
 - Can we split Varna city vs Varna region at website level?
 - Do we have a saved code pattern that lands one full product item with full gallery evidence and local image files?
 
-Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LUXIMMO, OLX.bg, property.bg, SUPRIMMO, Bazar.bg, Yavlena
+Strict patterned sources: Address.bg, alo.bg, BulgarianProperties, Homes.bg, imot.bg, LUXIMMO, OLX.bg, property.bg, SUPRIMMO, Bazar.bg, Domaza, Home2U, Yavlena
 
 ## Address.bg (Tier 1)
 
@@ -27,32 +27,46 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 - DB status: `without_database_target`
 - Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/listings
 - Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/raw
-- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/listings/Address.bg_46c9d4cb568d.json
-- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/raw/Address.bg_46c9d4cb568d.html
-- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/Address.bg_46c9d4cb568d
-- Sample listing URL: https://address.bg/varna-m-st-zelenika-parcel-teren-offer686997
-- Sample title: Парцел/Терен във Варна, м-ст Зеленика - код на имота: 686997
-- Sample gallery: 1/1 saved locally (100.0%)
-- Local image files saved: 1
-- Local image file preview: data/media/Address.bg_46c9d4cb568d/0000_f6185c81.jpg
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/listings/Address.bg_65ec51a198da.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/address_bg/raw/Address.bg_65ec51a198da.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/Address.bg_65ec51a198da
+- Sample listing URL: https://address.bg/zavoy-kashta-vila-offer664502
+- Sample title: Къща/Вила в Завой - код на имота: 664502
+- Sample gallery: 63/63 saved locally (100.0%)
+- Local image files saved: 63
+- Local image file preview: data/media/Address.bg_65ec51a198da/0000_a54347b5.jpg, data/media/Address.bg_65ec51a198da/0001_456115c0.jpg, data/media/Address.bg_65ec51a198da/0002_2b7c40e8.jpg, data/media/Address.bg_65ec51a198da/0003_20a96c53.jpg, data/media/Address.bg_65ec51a198da/0004_d1da2846.jpg
 - Sample completeness: description=True, price=True, area=True, rooms=False, floor=False, phones=True, city=True, address=True
+- Source description status: captured
 - Structured fields count: 2
 - Source attributes count: 1
 
 ## alo.bg (Tier 1)
 
-- Pattern status: `without_sample_product_capture`
-- Pattern issue: No saved full product sample exists yet for this source.
+- Pattern status: `Patterned`
+- Pattern issue: Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields.
 - Count status: `recounted_live`
 - Recent status: `without_recent_count_method`
 - Varna status: `without_varna_count_method`
 - Website total active: 75961 (lower_bound)
 - Recent under 2 months: n/a
 - Varna split: n/a+n/a
-- Code method: scoped HTML crawl with category filtering
-- Code paths: scripts/live_scraper.py::generic
+- Code method: Varna-filtered category pages + `alo.bg` detail parser for params table, meta/body description, local gallery images, and source attributes.
+- Code paths: scripts/live_scraper.py::generic, scripts/live_scraper.py::_parse_alo_bg
 - DB status: `without_database_target`
-- Sample evidence: none saved yet
+- Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/alo_bg/listings
+- Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/alo_bg/raw
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/alo_bg/listings/alo.bg_11012820.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/alo_bg/raw/alo.bg_11012820.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/alo.bg_11012820
+- Sample listing URL: https://www.alo.bg/dvustaen-s-akt-16-v-kompleks-s-basein-parkomyasto-kv-galata-gr-varna-11012820
+- Sample title: Двустаен с АКТ 16 в комплекс с басейн, паркомясто, кв. Галата, гр. Варна Двустаен апартаме..
+- Sample gallery: 10/10 saved locally (100.0%)
+- Local image files saved: 10
+- Local image file preview: data/media/alo.bg_11012820/0000_99033d89.jpg, data/media/alo.bg_11012820/0001_6a58d132.jpg, data/media/alo.bg_11012820/0002_8e2e1ac2.jpg, data/media/alo.bg_11012820/0003_fbdaa1c6.jpg, data/media/alo.bg_11012820/0004_bed78a0a.jpg
+- Sample completeness: description=True, price=True, area=True, rooms=True, floor=True, phones=True, city=True, address=True
+- Source description status: captured
+- Structured fields count: 4
+- Source attributes count: 13
 
 ## BulgarianProperties (Tier 1)
 
@@ -69,16 +83,17 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 - DB status: `without_database_target`
 - Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/bulgarianproperties/listings
 - Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/bulgarianproperties/raw
-- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/bulgarianproperties/listings/BulgarianProperties_ec4b0ae64e6c.json
-- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/bulgarianproperties/raw/BulgarianProperties_ec4b0ae64e6c.html
-- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/BulgarianProperties_ec4b0ae64e6c
-- Sample listing URL: https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD86759BG_1-bedroom_apartment_for_sale_in_Sozopol.html
-- Sample title: One bedroom turnkey apartment in Sozopol
-- Sample gallery: 38/16 saved locally (237.5%)
-- Local image files saved: 38
-- Local image file preview: data/media/BulgarianProperties_ec4b0ae64e6c/0000_30b1485f.jpg, data/media/BulgarianProperties_ec4b0ae64e6c/0001_30b1485f.jpg, data/media/BulgarianProperties_ec4b0ae64e6c/0002_21d91181.jpg, data/media/BulgarianProperties_ec4b0ae64e6c/0003_1b0c98f9.jpg, data/media/BulgarianProperties_ec4b0ae64e6c/0004_23e343be.jpg
-- Sample completeness: description=True, price=True, area=False, rooms=True, floor=False, phones=True, city=True, address=True
-- Structured fields count: 2
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/bulgarianproperties/listings/BulgarianProperties_756254aa3f13.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/bulgarianproperties/raw/BulgarianProperties_756254aa3f13.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/BulgarianProperties_756254aa3f13
+- Sample listing URL: https://www.bulgarianproperties.com/1-bedroom_apartments_in_Bulgaria/AD90088BG_1-bedroom_apartment_for_sale_in_Bansko.html
+- Sample title: Renovated one-bedroom apartment in Regnum Bansko Mountain Resort
+- Sample gallery: 82/44 saved locally (186.4%)
+- Local image files saved: 82
+- Local image file preview: data/media/BulgarianProperties_756254aa3f13/0000_1c680d8d.jpg, data/media/BulgarianProperties_756254aa3f13/0000_c91ab2e2.jpg, data/media/BulgarianProperties_756254aa3f13/0001_1c680d8d.jpg, data/media/BulgarianProperties_756254aa3f13/0001_c91ab2e2.jpg, data/media/BulgarianProperties_756254aa3f13/0002_ac54d652.jpg
+- Sample completeness: description=True, price=True, area=True, rooms=True, floor=False, phones=True, city=True, address=True
+- Source description status: captured
+- Structured fields count: 3
 - Source attributes count: 4
 
 ## Homes.bg (Tier 1)
@@ -96,15 +111,16 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 - DB status: `without_database_target`
 - Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/listings
 - Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/raw
-- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/listings/Homes.bg_1681133.json
-- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/raw/Homes.bg_1681133.html
-- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/Homes.bg_1681133
-- Sample listing URL: https://www.homes.bg/offer/apartament-za-prodazhba/dvustaen-68m2-sofiya-centyr/as1681133
-- Sample title: Двустаен, 68m² - Център, София
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/listings/Homes.bg_1592983.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/homes_bg/raw/Homes.bg_1592983.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/Homes.bg_1592983
+- Sample listing URL: https://www.homes.bg/offer/apartament-za-prodazhba/tristaen-93m2-sofiya-zhk.-nadezhda-2/as1592983
+- Sample title: Тристаен, 93m² - жк. Надежда 2, София
 - Sample gallery: 10/10 saved locally (100.0%)
 - Local image files saved: 10
-- Local image file preview: data/media/Homes.bg_1681133/0000_cfd05ac9.jpg, data/media/Homes.bg_1681133/0001_82a16b1e.jpg, data/media/Homes.bg_1681133/0002_a8ddfae7.jpg, data/media/Homes.bg_1681133/0003_159b1b96.jpg, data/media/Homes.bg_1681133/0004_29c16c6d.jpg
+- Local image file preview: data/media/Homes.bg_1592983/0000_009644d4.jpg, data/media/Homes.bg_1592983/0001_1117535e.jpg, data/media/Homes.bg_1592983/0002_a2425ab6.jpg, data/media/Homes.bg_1592983/0003_b749f1d8.jpg, data/media/Homes.bg_1592983/0004_b02f09a7.jpg
 - Sample completeness: description=True, price=True, area=True, rooms=True, floor=True, phones=True, city=True, address=True
+- Source description status: captured
 - Structured fields count: 4
 - Source attributes count: 16
 
@@ -123,15 +139,16 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 - DB status: `without_database_target`
 - Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/listings
 - Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/raw
-- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/listings/imot.bg_3f93a31d3f1b.json
-- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/raw/imot.bg_3f93a31d3f1b.html
-- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/imot.bg_3f93a31d3f1b
-- Sample listing URL: https://www.imot.bg/obiava-1a176959443896121-prodava-ednostaen-apartament-grad-sofiya-boyana
-- Sample title: Продава 1-СТАЕН град София, Бояна Обява: 1a176959443896121
-- Sample gallery: 15/15 saved locally (100.0%)
-- Local image files saved: 15
-- Local image file preview: data/media/imot.bg_3f93a31d3f1b/0000_147f45d8.jpg, data/media/imot.bg_3f93a31d3f1b/0001_27706677.jpg, data/media/imot.bg_3f93a31d3f1b/0002_5755e343.jpg, data/media/imot.bg_3f93a31d3f1b/0003_4cf28098.jpg, data/media/imot.bg_3f93a31d3f1b/0004_7ad69903.jpg
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/listings/imot.bg_37fae7324a6a.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/imot_bg/raw/imot.bg_37fae7324a6a.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/imot.bg_37fae7324a6a
+- Sample listing URL: https://www.imot.bg/obiava-1c176960985075002-prodava-tristaen-apartament-grad-stara-zagora-ayazmoto
+- Sample title: Продава 3-СТАЕН град Стара Загора, Аязмото Обява: 1c176960985075002
+- Sample gallery: 18/18 saved locally (100.0%)
+- Local image files saved: 18
+- Local image file preview: data/media/imot.bg_37fae7324a6a/0000_9c354005.jpg, data/media/imot.bg_37fae7324a6a/0001_93d94c15.jpg, data/media/imot.bg_37fae7324a6a/0002_51cc5c47.jpg, data/media/imot.bg_37fae7324a6a/0003_bffa64e3.jpg, data/media/imot.bg_37fae7324a6a/0004_6d540fd9.jpg
 - Sample completeness: description=True, price=True, area=True, rooms=True, floor=True, phones=True, city=True, address=True
+- Source description status: captured
 - Structured fields count: 4
 - Source attributes count: 5
 
@@ -165,17 +182,18 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 - DB status: `without_database_target`
 - Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/listings
 - Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/raw
-- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/listings/LUXIMMO_50928a486328.json
-- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/raw/LUXIMMO_50928a486328.html
-- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/LUXIMMO_50928a486328
-- Sample listing URL: https://www.luximmo.bg/bulgaria/oblast-sofia/borovets/luksozni-imoti-tristayni-apartamenti/luksozen-imot-40084-tristaen-apartament-za-prodajba-v-borovets.html
-- Sample title: Тристаен мезонет "до ключ" в престижния комплекс 7 Angels
-- Sample gallery: 6/6 saved locally (100.0%)
-- Local image files saved: 6
-- Local image file preview: data/media/LUXIMMO_50928a486328/0000_46fe386d.jpg, data/media/LUXIMMO_50928a486328/0001_46fe386d.jpg, data/media/LUXIMMO_50928a486328/0002_890b9c0d.jpg, data/media/LUXIMMO_50928a486328/0003_196babe3.jpg, data/media/LUXIMMO_50928a486328/0004_dc0063d4.jpg
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/listings/LUXIMMO_fb4b943b5305.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/luximmo/raw/LUXIMMO_fb4b943b5305.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/LUXIMMO_fb4b943b5305
+- Sample listing URL: https://www.luximmo.bg/bulgaria/oblast-plovdiv/plovdiv/luksozni-imoti-dvustayni-apartamenti/luksozen-imot-48660-dvustaen-apartament-pod-naem-v-plovdiv.html
+- Sample title: Стилен двустаен апартамент в нова модерна сграда в кв. "Христо Смирненски"
+- Sample gallery: 62/30 saved locally (206.7%)
+- Local image files saved: 62
+- Local image file preview: data/media/LUXIMMO_fb4b943b5305/0000_af8da876.jpg, data/media/LUXIMMO_fb4b943b5305/0001_af8da876.jpg, data/media/LUXIMMO_fb4b943b5305/0002_719a8ab2.jpg, data/media/LUXIMMO_fb4b943b5305/0003_ad76ca58.jpg, data/media/LUXIMMO_fb4b943b5305/0004_936d0742.jpg
 - Sample completeness: description=True, price=True, area=True, rooms=True, floor=False, phones=True, city=True, address=True
+- Source description status: captured
 - Structured fields count: 3
-- Source attributes count: 3
+- Source attributes count: 4
 
 ## OLX.bg (Tier 1)
 
@@ -201,6 +219,7 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 - Local image files saved: 6
 - Local image file preview: data/media/OLX.bg_147593402/0000_81ed1c35.webp, data/media/OLX.bg_147593402/0001_0af518c5.webp, data/media/OLX.bg_147593402/0002_ea675f00.webp, data/media/OLX.bg_147593402/0003_c238bd3a.webp, data/media/OLX.bg_147593402/0004_cfdb72dc.webp
 - Sample completeness: description=True, price=True, area=True, rooms=True, floor=False, phones=True, city=True, address=True
+- Source description status: captured
 - Structured fields count: 3
 - Source attributes count: 0
 
@@ -219,17 +238,18 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 - DB status: `without_database_target`
 - Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/property_bg/listings
 - Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/property_bg/raw
-- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/property_bg/listings/property.bg_c6be6a6838ca.json
-- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/property_bg/raw/property.bg_c6be6a6838ca.html
-- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/property.bg_c6be6a6838ca
-- Sample listing URL: https://www.property.bg/property-117962-two-room-maisonette-quotturnkeyquot-in-the-luxury-complex-7-angels/
-- Sample title: Two-room maisonette "turnkey" in the luxury complex 7 Angels
-- Sample gallery: 87/87 saved locally (100.0%)
-- Local image files saved: 87
-- Local image file preview: data/media/property.bg_c6be6a6838ca/0000_b1d8f58f.jpg, data/media/property.bg_c6be6a6838ca/0001_5e2b4b85.jpg, data/media/property.bg_c6be6a6838ca/0002_a0b2db92.jpg, data/media/property.bg_c6be6a6838ca/0003_e1384009.jpg, data/media/property.bg_c6be6a6838ca/0004_8ba2135b.jpg
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/property_bg/listings/property.bg_02760f3b26be.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/property_bg/raw/property.bg_02760f3b26be.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/property.bg_02760f3b26be
+- Sample listing URL: https://www.property.bg/property-128771-two-bedroom-apartment-in-an-exclusive-holiday-complex-in-bansko/
+- Sample title: Two-bedroom apartment in an exclusive holiday complex in Bansko
+- Sample gallery: 195/195 saved locally (100.0%)
+- Local image files saved: 195
+- Local image file preview: data/media/property.bg_02760f3b26be/0000_04949099.jpg, data/media/property.bg_02760f3b26be/0001_0d6a0301.jpg, data/media/property.bg_02760f3b26be/0002_5f66d79b.jpg, data/media/property.bg_02760f3b26be/0003_919f76b6.jpg, data/media/property.bg_02760f3b26be/0004_c1cc6b0c.jpg
 - Sample completeness: description=True, price=True, area=True, rooms=True, floor=False, phones=True, city=True, address=True
+- Source description status: captured
 - Structured fields count: 3
-- Source attributes count: 3
+- Source attributes count: 4
 
 ## SUPRIMMO (Tier 1)
 
@@ -246,17 +266,18 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 - DB status: `without_database_target`
 - Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/suprimmo/listings
 - Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/suprimmo/raw
-- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/suprimmo/listings/SUPRIMMO_STO-132154.json
-- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/suprimmo/raw/SUPRIMMO_STO-132154.html
-- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/SUPRIMMO_STO-132154
-- Sample listing URL: https://www.suprimmo.bg/imot-132154-yujen-dvustaen-apartament-s-otdelna-kuhnya-v-spokoen-i-zelen-rayon/
-- Sample title: Южен двустаен апартамент с отделна кухня, в спокоен и зелен район
-- Sample gallery: 43/43 saved locally (100.0%)
-- Local image files saved: 43
-- Local image file preview: data/media/SUPRIMMO_STO-132154/0000_6d93e91f.jpg, data/media/SUPRIMMO_STO-132154/0001_c7298b7d.jpg, data/media/SUPRIMMO_STO-132154/0002_a9bae48c.jpg, data/media/SUPRIMMO_STO-132154/0003_dc2e39d6.jpg, data/media/SUPRIMMO_STO-132154/0004_50cd4fd2.jpg
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/suprimmo/listings/SUPRIMMO_LXH-69845.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/suprimmo/raw/SUPRIMMO_LXH-69845.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/SUPRIMMO_LXH-69845
+- Sample listing URL: https://www.suprimmo.bg/imot-69845-mnogostaen-apartament-do-klyuch-v-elitna-sgrada-do-cacao-beach/
+- Sample title: Многостаен апартамент "до ключ" в елитна сграда до Cacao Beach
+- Sample gallery: 211/211 saved locally (100.0%)
+- Local image files saved: 211
+- Local image file preview: data/media/SUPRIMMO_LXH-69845/0000_07ac6fb1.jpg, data/media/SUPRIMMO_LXH-69845/0001_96ebd1d7.jpg, data/media/SUPRIMMO_LXH-69845/0002_b191c247.jpg, data/media/SUPRIMMO_LXH-69845/0003_7b1c8e64.jpg, data/media/SUPRIMMO_LXH-69845/0004_24053783.jpg
 - Sample completeness: description=True, price=True, area=True, rooms=True, floor=False, phones=True, city=True, address=True
+- Source description status: captured
 - Structured fields count: 3
-- Source attributes count: 3
+- Source attributes count: 4
 
 ## ApartmentsBulgaria.com (Tier 2)
 
@@ -297,23 +318,37 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 - Local image files saved: 15
 - Local image file preview: data/media/Bazar.bg_54105310/0000_fbce90af.jpg, data/media/Bazar.bg_54105310/0001_cce79a98.jpg, data/media/Bazar.bg_54105310/0002_afedac9c.jpg, data/media/Bazar.bg_54105310/0003_2978b0fa.jpg, data/media/Bazar.bg_54105310/0004_84ca4ddb.jpg
 - Sample completeness: description=True, price=True, area=True, rooms=True, floor=False, phones=True, city=True, address=True
+- Source description status: captured
 - Structured fields count: 3
 - Source attributes count: 0
 
 ## Domaza (Tier 2)
 
-- Pattern status: `without_sample_product_capture`
-- Pattern issue: No saved full product sample exists yet for this source.
+- Pattern status: `Patterned`
+- Pattern issue: Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields.
 - Count status: `without_live_count_method`
 - Recent status: `without_recent_count_method`
 - Varna status: `without_varna_count_method`
 - Website total active: 22000 (estimate)
 - Recent under 2 months: n/a
 - Varna split: n/a+n/a
-- Code method: crawl with language canonicalization
-- Code paths: scripts/live_scraper.py::generic
+- Code method: Varna sale/rent listing pages + Domaza detail parser for property content, features, rooms/area/price, and full `cdn.domaza.biz` gallery.
+- Code paths: scripts/live_scraper.py::generic, scripts/live_scraper.py::_parse_domaza
 - DB status: `without_database_target`
-- Sample evidence: none saved yet
+- Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/domaza/listings
+- Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/domaza/raw
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/domaza/listings/Domaza_8636166.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/domaza/raw/Domaza_8636166.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/Domaza_8636166
+- Sample listing URL: https://www.domaza.bg/%D0%B0%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BC%D0%B5%D0%BD%D1%82_%D0%B7%D0%BA_%D1%82%D1%80%D0%B0%D0%BA%D0%B8%D1%8F_%D0%B3%D1%80_%D0%B2%D0%B0%D1%80%D0%BD%D0%B0_%D0%B2%D0%B0%D1%80%D0%BD%D0%B0_%D0%B1%D1%8A%D0%BB%D0%B3%D0%B0%D1%80%D0%B8%D1%8F-16-8636166-p/
+- Sample title: Апартамент, ЗК Тракия, гр. Варна, Варна, България
+- Sample gallery: 32/32 saved locally (100.0%)
+- Local image files saved: 32
+- Local image file preview: data/media/Domaza_8636166/0000_d8e37377.jpg, data/media/Domaza_8636166/0001_f90c0788.jpg, data/media/Domaza_8636166/0002_3f02112a.jpg, data/media/Domaza_8636166/0003_d52ad108.jpg, data/media/Domaza_8636166/0004_20cbfed4.jpg
+- Sample completeness: description=True, price=True, area=True, rooms=True, floor=False, phones=True, city=True, address=True
+- Source description status: captured
+- Structured fields count: 3
+- Source attributes count: 5
 
 ## Holding Group Real Estate (Tier 2)
 
@@ -332,18 +367,31 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 
 ## Home2U (Tier 2)
 
-- Pattern status: `without_sample_product_capture`
-- Pattern issue: No saved full product sample exists yet for this source.
+- Pattern status: `Patterned`
+- Pattern issue: Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields.
 - Count status: `without_live_count_method`
 - Recent status: `without_recent_count_method`
 - Varna status: `without_varna_count_method`
 - Website total active: 6000 (estimate)
 - Recent under 2 months: n/a
 - Varna split: n/a+n/a
-- Code method: templated HTML parser
-- Code paths: scripts/live_scraper.py::generic
+- Code method: Home2U property archive pages + detail parser for secondary info blocks, gallery images, source description status, and local media proof.
+- Code paths: scripts/live_scraper.py::generic, scripts/live_scraper.py::_parse_home2u
 - DB status: `without_database_target`
-- Sample evidence: none saved yet
+- Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/home2u/listings
+- Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/home2u/raw
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/home2u/listings/Home2U_9e265a1748ab.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/home2u/raw/Home2U_9e265a1748ab.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/Home2U_9e265a1748ab
+- Sample listing URL: https://home2u.bg/property/targovsko-pomesthenie-pod-naem-v-rajona-na-avtogara-varna/
+- Sample title: ТЪРГОВСКО ПОМЕЩЕНИЕ ПОД НАЕМ В РАЙОНА НА АВТОГАРА ВАРНА
+- Sample gallery: 1/1 saved locally (100.0%)
+- Local image files saved: 1
+- Local image file preview: data/media/Home2U_9e265a1748ab/0000_4faca56f.jpg
+- Sample completeness: description=True, price=True, area=True, rooms=True, floor=True, phones=True, city=True, address=True
+- Source description status: captured
+- Structured fields count: 4
+- Source attributes count: 3
 
 ## Imoteka.bg (Tier 2)
 
@@ -525,14 +573,15 @@ Strict patterned sources: Address.bg, BulgarianProperties, Homes.bg, imot.bg, LU
 - DB status: `without_database_target`
 - Source listing root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/listings
 - Source raw root: /Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/raw
-- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/listings/Yavlena_f7a1a1631995.json
-- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/raw/Yavlena_f7a1a1631995.html
-- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/Yavlena_f7a1a1631995
-- Sample listing URL: https://www.yavlena.com/bg/168194
-- Sample title: Тристаен апартамент във Варна 102 кв.м. ID 168194  | Явлена
+- Sample listing JSON: /Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/listings/Yavlena_674a3a1d4ee3.json
+- Sample raw HTML: /Users/getapple/Documents/Real Estate Bulg/data/scraped/yavlena/raw/Yavlena_674a3a1d4ee3.html
+- Sample media dir: /Users/getapple/Documents/Real Estate Bulg/data/media/Yavlena_674a3a1d4ee3
+- Sample listing URL: https://www.yavlena.com/bg/168889
+- Sample title: Тристаен апартамент в София 108 кв.м. ID 168889  | Явлена
 - Sample gallery: 1/1 saved locally (100.0%)
 - Local image files saved: 1
-- Local image file preview: data/media/Yavlena_f7a1a1631995/0000_3d2c6df2.jpg
+- Local image file preview: data/media/Yavlena_674a3a1d4ee3/0000_fcc7ddc5.jpg
 - Sample completeness: description=True, price=True, area=True, rooms=True, floor=False, phones=True, city=True, address=True
+- Source description status: captured
 - Structured fields count: 3
 - Source attributes count: 3

@@ -19,8 +19,6 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
-import httpx
-
 
 REPO = Path(__file__).resolve().parent.parent
 SCRAPED_ROOT = REPO / "data" / "scraped"
@@ -265,8 +263,10 @@ def audit(args: argparse.Namespace) -> dict[str, Any]:
 
     url_check_budget = args.url_check_limit
     url_check_per_source: dict[str, int] = defaultdict(int)
-    client: httpx.Client | None = None
+    client: Any = None
     if args.check_urls:
+        import httpx
+
         client = httpx.Client(
             timeout=args.url_timeout,
             follow_redirects=True,

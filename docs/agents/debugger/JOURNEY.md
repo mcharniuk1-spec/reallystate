@@ -432,3 +432,96 @@
 - **Tests run**: pending.
 - **Status**: TODO verifier follow-up.
 - **Review comments**: Verify no task file still assigns new tier-3 work to `scraper_t3`, no OpenClaw doc widens Action1 beyond A1, and completion requires data_analyst/debugger QA.
+
+### 2026-05-13 — VERIFY: DA-01 scrape database quality audit (agent: data_analyst)
+
+- **Gate commands run**:
+  - `python3 scripts/audit_scrape_database_quality.py` — PASS; regenerated audit totals match prior DA-01 report: 30,334 rows, 29,397 Action1 rows, 26,231 pending/missing QA rows, 20,811 Action1 OK, 7,133 LOST, 1,453 grouped.
+  - `python3 scripts/import_scraped_listings.py --dry-run` — PASS; `candidate_files=1612`, `skipped_files=28722`, including `skipped unreviewed_quality_state: 26231`.
+  - `python3 scripts/action1_dataset_quality_gate.py` — PASS; 29,397 Action1 rows, 20,811 good single-unit, 6,698 bad/lost, 1,888 grouped-publication rollup rows.
+  - `python3 scripts/action1_dataset_quality_gate.py --limit-per-source 20 --output docs/exports/action1-dataset-quality-gate-dryrun.json` — PASS; bounded smoke gate wrote dry-run output.
+  - `make dashboard-doc` — PASS; dashboard artifacts regenerated.
+  - `make verify-db-counts` — BLOCKED; `DATABASE_URL is required`.
+  - `python3 -m unittest tests.test_action1_parser_regressions -v` — PASS; 7 tests passed, so the prior `bs4` blocker is no longer present on this host.
+- **Result**: PASS for DA-01 file-backed verification; DB-backed canonical/import verification remains blocked.
+- **Findings**:
+  - FACT: DA-01 report separates FACT / INTERPRETATION / GAP and covers all seven Action1 sources with bucket counts.
+  - FACT: `S1-23` and `BD-18` are queued and actionable with acceptance gates; `DBG-14` is now complete.
+  - FACT: default importer still blocks unreviewed, `LOST`, grouped/development, and inactive rows unless explicit include flags are passed.
+  - FACT: `CanonicalListingRepository.upsert` still appears unsafe for real import because it sends full dataclass fields that are missing from `CanonicalListingModel`; this requires `BD-18`.
+  - GAP: PostgreSQL row counts, live URL existence, real DB import idempotency, and image semantic descriptions remain unverified.
+  - GAP: audit grouped count (`1,453`) and quality-gate grouped rollup (`1,888`) use different semantics; dashboard/reporting must document or reconcile this before release claims.
+- **Status updates**:
+  - `DA-01` -> `VERIFIED` for file-backed audit only.
+  - `DBG-14` -> `VERIFIED`.
+  - `S1-23`, `BD-18`, and `DA-02` remain open.
+- **Changed files**: `docs/agents/TASKS.md`, `docs/agents/debugger/JOURNEY.md`, regenerated dashboard/audit/quality exports.
+- **Review comments**: Do not canonical-import Action1 rows until `BD-18` has DB-backed fixture import proof and `make verify-db-counts` succeeds with a real `DATABASE_URL`.
+
+### 2026-05-13 — VERIFY: DA-01 coordination follow-up (agent: debugger)
+
+- **Gate commands run**:
+  - `python3 scripts/audit_scrape_database_quality.py` — PASS; reproduced 30,334 rows, 29,397 Action1 rows, 26,231 pending/missing QA rows, and Action1 OK/LOST/grouped 20,811/7,133/1,453.
+  - `python3 scripts/import_scraped_listings.py --dry-run` — PASS; candidate_files=1,612 and skipped_files=28,722.
+  - `python3 scripts/action1_dataset_quality_gate.py` — PASS; LOST queue=7,133 and grouped/development rollup=1,888.
+  - `python3 scripts/action1_dataset_quality_gate.py --limit-per-source 20 --output docs/exports/action1-dataset-quality-gate-dryrun.json` — PASS; bounded smoke output refreshed.
+  - `make dashboard-doc` — PASS; dashboard exports regenerated.
+  - `make verify-db-counts` — BLOCKED; `DATABASE_URL is required`.
+  - `python3 -m unittest tests.test_action1_parser_regressions -v` — PASS; 7 tests passed.
+- **Result**: PASS for file-backed DA-01 verification and task actionability; FAIL/BLOCKED for DB-backed canonical import readiness.
+- **Failure details**:
+  - DB-backed counts and SQLAlchemy/PostgreSQL runtime alignment remain unverified without `DATABASE_URL`.
+  - Dashboard exports are fresh but still expose stored/importer-state totals, not DA-01 offline quality-estimate denominators; DA-02 remains required.
+- **Review comments**:
+  - Created `docs/exports/debugger-da01-coordination-report-2026-05-13.md`.
+  - Tightened DA-02, BD-18, and S1-23 gates in `docs/agents/TASKS.md`.
+  - Keep canonical import accepted-only until BD-18, DA-02, INFRA-02, and a follow-up debugger gate pass.
+
+### 2026-05-13 — VERIFY: data-analyst-centered planner handoff (agent: planner)
+
+- **Gate commands run**:
+  - `sed -n ... docs/agents/TASKS.md docs/agents/README.md docs/agents/roles/debugger.md` — PASS; protocol and role context read.
+  - `tail -n ... docs/agents/data_analyst/JOURNEY.md docs/agents/*/JOURNEY.md` — PASS; latest producer and parallel-agent handoff context reviewed.
+  - `rg -n "Action0|Action1|Action2|PENDING_QA|LOST|grouped|DATABASE_URL|private|unsafe" ...` — PASS; no ordering or safety drift found in checked handoff docs.
+  - `git diff -- docs/agents/TASKS.md docs/agents/debugger/JOURNEY.md` — PASS; verifier edits scoped to task status and JOURNEY note.
+- **Result**: PASS for `PLAN-04` handoff protocol. Runtime/data verification remains deferred to the named follow-up slices.
+- **Findings**:
+  - FACT: `data_analyst` remains the evidence owner for Action1/A1 accepted, LOST, grouped/development, media, and dashboard-denominator claims.
+  - FACT: Handoffs have owners, gates, outputs, verifiers, and blocker/dependency states: `BD-18`/`BD-19`, `S1-23`/`S1-24`, `UX-15`, `INFRA-02`, `KCA-01`, and `DBG-16`.
+  - FACT: Action order is consistent in the checked sources: Action1 first after `Action1 ACCEPT`; Action0 only after `Action0 now`; Action2 only after `Action2 now` plus Action1 QA.
+  - FACT: Accepted-only import boundary is preserved in the handoff: unreviewed, `LOST`, grouped/development, and inactive rows cannot be promoted by default.
+  - FACT: No unsafe scraping expansion or DB mutation was introduced by the planner handoff; this verification did not run dashboard/full-corpus validation by operator request.
+  - GAP: `BD-18` was listed in the active map with only `DA-01`; verifier tightened it to include unresolved `BD-11` verification/live-DB proof before canonical DB import claims.
+  - BLOCKER: DB-backed counts/import proof remain blocked by missing `DATABASE_URL`, `BD-18`, and `INFRA-02`.
+  - BLOCKER: Dashboard denominator/performance work remains open in `DA-02` and `DA-03`.
+- **Status updates**:
+  - `PLAN-04` -> `VERIFIED`.
+  - `DBG-15` -> `VERIFIED`.
+  - `DBG-16` remains `TODO` until DA-dependent implementation slices produce handoffs.
+- **Changed files**: `docs/agents/TASKS.md`, `docs/agents/debugger/JOURNEY.md`.
+- **Review comments**: Keep implementation agents on analyst artifacts and acceptance gates. Do not claim Action1 completion, DB import success, or UI data truth from chat or raw corpus volume.
+
+### 2026-05-13 — VERIFY QUEUE: DA-02 / BD-18 deep data-quality handoff
+
+- **Action**: Data analyst produced a deep dashboard/report and patched importer guardrails. Debugger verification is now queued, not completed in this note.
+- **Read first**: `docs/exports/data-quality-deep-review-2026-05-13.md`, `docs/exports/bd18-database-review-and-correction-spec-2026-05-13.md`, `docs/dashboard/data-quality-dashboard.html`, `scripts/generate_data_quality_deep_review.py`, `scripts/import_scraped_listings.py`, `tests/test_backend_import_contract.py`.
+- **Expected gate**: rerun audit, importer dry-run, quality gate, backend import contract tests, parser regression tests, and `make verify-db-counts` when `DATABASE_URL` exists.
+- **Current blocker**: `make verify-db-counts` still fails with `DATABASE_URL is required`.
+- **Status**: TODO verifier queue.
+
+### 2026-05-13 — VERIFY: DA-02 / BD-18 deep handoff
+
+- **Gate commands run**:
+  - `python3 -m py_compile scripts/bd18_db_smoke_import.py scripts/import_scraped_listings.py src/bgrealestate/db/import_contract.py src/bgrealestate/db/models.py src/bgrealestate/db/repositories.py src/bgrealestate/connectors/ingest.py tests/test_backend_import_contract.py migrations/versions/20260513_0006_bd18_source_publication_evidence.py` — PASS.
+  - `PYTHONPATH=src python3 -m unittest tests.test_backend_import_contract -v` — PASS under system Python, SQLAlchemy-dependent checks skipped.
+  - `PYTHONPATH=src /Users/getapple/.pyenv/versions/3.12.9/bin/python3.12 -m unittest tests.test_backend_import_contract -v` — PASS, 7 tests.
+  - `make verify-db-counts` — BLOCKED, `DATABASE_URL is required`.
+  - `make bd18-db-smoke-import` — BLOCKED, `DATABASE_URL is required`.
+- **Result**: PASS for DA-02 file-backed handoff and BD-18 code-contract readiness; DB-backed migration/import/count proof remains blocked.
+- **Findings**:
+  - FACT: DA-02 outputs separate file-backed audit, quality-gate, importer, media, market, analytics, and DB-blocked states.
+  - FACT: BD-18 now defines first-class evidence tables for QA review, status history, entity-resolution candidate/review events, media descriptions, availability, inquiry, and external chat refs.
+  - FACT: import eligibility remains accepted-only and default import does not promote property entities.
+  - GAP: no PostgreSQL-backed smoke import can pass until `DATABASE_URL` exists and migrations are applied.
+- **Output**: `docs/exports/debugger-da02-bd18-handoff-verification-2026-05-13.md`.
+- **Status updates**: `DBG-24` -> VERIFIED; `DA-02` -> VERIFIED for file-backed handoff only; `BD-18` stays IN_PROGRESS; `INFRA-02` stays BLOCKED.

@@ -556,3 +556,109 @@ project validation ok
 - **Tests run**: focused tests passed; full `make test` passed (194 tests, 1 skipped); local FastAPI + Next proxy returned Ollama responses.
 - **Status**: DONE_AWAITING_VERIFY
 - **Review comments**: Property chat persistence uses existing `lead_thread`/`lead_message` tables plus the new `user_property_chat` join. Like/unlike now preserves state history instead of deleting the relationship.
+
+### 2026-05-13 — BD-18 verifier refinement handoff
+
+- **Action**: Debugger refined the BD-18 acceptance contract after DA-01 follow-up verification.
+- **Changed files**: `docs/agents/TASKS.md`, `docs/exports/debugger-da01-coordination-report-2026-05-13.md`
+- **Commands run**: none by backend in this note; verifier gates are recorded in `docs/agents/debugger/JOURNEY.md`.
+- **Tests run**: none by backend in this note.
+- **Status**: TODO remains with backend_developer.
+- **Review comments**: BD-18 must separate source publications, canonical properties, listing offers, QA reviews, status history, contacts, media evidence/descriptions, dedupe clusters, availability, inquiry requests, and external chat refs. Acceptance must prove DB-backed fixture import, zero-price-to-status handling, grouped import blocking, listing_media idempotency, and `make verify-db-counts` with DATABASE_URL.
+
+### 2026-05-13 — BD-18 prep: accepted-only import and provenance contract
+
+- **Action**: Reviewed DA-01/DBG-14 quality findings, checked accepted-only import boundaries without importing data, and made a small fixture-safe backend patch for import contract drift.
+- **FACT**: DA-01/DBG-14 currently treat the audit as file-backed only; PostgreSQL counts and DB import idempotency are still blocked by missing `DATABASE_URL`.
+- **FACT**: default import logic rejects missing/`PENDING_QA`/`UNKNOWN`, `LOST`/rescrape, grouped/development, and inactive rows unless explicit include flags are passed.
+- **FACT**: Action1 rows carry all-Bulgaria bucket provenance that does not fit the current Varna-only `source_section_id` FK.
+- **INTERPRETATION**: BD-18 should persist Action1 QA/media/bucket evidence in canonical JSON provenance first, then add first-class QA/media columns or a dedicated provenance table with DB smoke tests.
+- **HYPOTHESIS**: a scope-neutral source-publication provenance table will be cleaner than widening every legacy Varna control-plane FK in one migration.
+- **GAP**: DB-backed fixture import, Alembic migration application, and `make verify-db-counts` still require an available PostgreSQL URL.
+- **Changed files**:
+  - `src/bgrealestate/db/models.py`
+  - `src/bgrealestate/db/repositories.py`
+  - `src/bgrealestate/db/media_ids.py`
+  - `src/bgrealestate/connectors/ingest.py`
+  - `src/bgrealestate/cli.py`
+  - `scripts/import_scraped_listings.py`
+  - `tests/test_backend_import_contract.py`
+  - `docs/agents/TASKS.md`
+  - `docs/agents/backend_developer/JOURNEY.md`
+- **Commands run**:
+  - `python3 -m py_compile scripts/import_scraped_listings.py src/bgrealestate/db/media_ids.py src/bgrealestate/db/models.py src/bgrealestate/db/repositories.py src/bgrealestate/connectors/ingest.py src/bgrealestate/cli.py tests/test_backend_import_contract.py`
+  - `PYTHONPATH=src python3 -m unittest tests.test_backend_import_contract -v`
+  - `PYTHONPATH=src /Users/getapple/.pyenv/versions/3.12.9/bin/python3.12 -m unittest tests.test_backend_import_contract -v`
+  - `/Users/getapple/.pyenv/versions/3.12.9/bin/python3.12 -m py_compile scripts/import_scraped_listings.py src/bgrealestate/db/media_ids.py src/bgrealestate/db/models.py src/bgrealestate/db/repositories.py src/bgrealestate/connectors/ingest.py src/bgrealestate/cli.py tests/test_backend_import_contract.py`
+  - `python3 scripts/import_scraped_listings.py --dry-run` (stopped; full corpus scan was too slow in this workspace)
+  - `python3 scripts/import_scraped_listings.py --dry-run --limit 500` (stopped; same scan bottleneck)
+  - `python3 scripts/import_scraped_listings.py --dry-run --source property_bg` (stopped; same scan bottleneck)
+  - `make dashboard-doc` (partial; generated progress/dashboard inventory artifacts, then terminated during `generate_source_item_photo_coverage.py`)
+- **Tests run**:
+  - `tests.test_backend_import_contract` — pass under Python 3.12.9, 3 passed
+  - local system Python run also passed with 2 passed / 1 skipped (`sqlalchemy` absent)
+  - `py_compile` — pass
+- **Status**: IN_PROGRESS; contract prep done, DB-backed BD-18 acceptance still pending.
+- **Review comments**: `CanonicalListingModel` now covers the dataclass fields for SQLAlchemy runtimes, import preserves QA/media/all-Bulgaria provenance in `crawl_provenance`, and listing-media sync uses deterministic IDs for repeated imports/downloads. Dashboard refresh remains blocked at the known full-corpus source/photo coverage step (`DA-03`).
+
+Changed files:
+- `src/bgrealestate/db/models.py`
+- `src/bgrealestate/db/repositories.py`
+- `src/bgrealestate/db/media_ids.py`
+- `src/bgrealestate/connectors/ingest.py`
+- `src/bgrealestate/cli.py`
+- `scripts/import_scraped_listings.py`
+- `tests/test_backend_import_contract.py`
+- `docs/agents/TASKS.md`
+- `docs/agents/backend_developer/JOURNEY.md`
+- `docs/dashboard/index.html`
+- `docs/exports/progress-dashboard.json`
+- `docs/exports/parallel-execution-timeline.md`
+- `docs/exports/scraper-activity-snapshot.md`
+- `docs/exports/website-inventory-analysis.json`
+- `docs/exports/website-inventory-analysis.md`
+Agent tools used:
+- shell, apply_patch
+Skills used:
+- codebase-orientation, backend-data-engineering, infra-db-migration, postgres-postgis-schema
+Extensions/libraries used:
+- stdlib only for new code (`hashlib`)
+Commands run:
+- `python3 -m py_compile ...`
+- `PYTHONPATH=src python3 -m unittest tests.test_backend_import_contract -v`
+- `PYTHONPATH=src /Users/getapple/.pyenv/versions/3.12.9/bin/python3.12 -m unittest tests.test_backend_import_contract -v`
+- import dry-run attempts stopped due corpus scan bottleneck
+- `make dashboard-doc` partial, terminated during source/photo coverage scan
+Tests run:
+- focused backend import contract test: pass under Python 3.12.9; system Python fallback pass with SQLAlchemy-dependent check skipped
+Outputs produced:
+- BD-18 prep note in `TASKS.md`
+- `DBG-22` debugger handoff
+- fixture-safe import/provenance/media-id patch
+Risks / blockers:
+- no `DATABASE_URL`; no DB-backed import/count/migration proof
+- full corpus import dry-run scan stalled in this workspace
+- full dashboard refresh terminated at the known `generate_source_item_photo_coverage.py` bottleneck
+Progress update:
+- backend contract prep is ready for debugger review; BD-18 implementation remains open.
+Next step:
+- debugger runs `DBG-22`; backend then completes DB-backed BD-18 once PostgreSQL is available.
+
+## 2026-05-13 — BD-18 analyst safety patch
+
+- **Action**: Narrow safety update from data-analyst run: importer now converts numeric price `0` to `None` plus `price_status=undefined` provenance, blocks suspected multi-unit publications by default, and scraped-corpus imports no longer run property/entity unification by default. Added tests for zero-price conversion and unsafe QA blocking.
+- **Changed files**: `scripts/import_scraped_listings.py`, `tests/test_backend_import_contract.py`, `docs/exports/bd18-database-review-and-correction-spec-2026-05-13.md`, `docs/agents/TASKS.md`.
+- **Commands run**: `python3 scripts/import_scraped_listings.py --dry-run`; `make verify-db-counts`.
+- **Tests run**: `python3 -m unittest tests.test_backend_import_contract -v` — pass; `python3 -m py_compile scripts/import_scraped_listings.py tests/test_backend_import_contract.py` — pass.
+- **Status**: BD-18 remains `IN_PROGRESS`; DB-backed migration/import/count proof is still blocked.
+- **Review comments**: First-class DB structures for QA reviews, status history, dedupe clusters, media descriptions, availability, inquiry requests, and external chat refs remain backend work. `DATABASE_URL` is still required for `make verify-db-counts`.
+
+## 2026-05-13 — BD-18 DB evidence tables and smoke import
+
+- **Action**: Implemented the BD-18 evidence-table layer and a DB smoke import script while keeping scraped import source-publication-first.
+- **Changed files**: `sql/schema.sql`, `migrations/versions/20260513_0006_bd18_source_publication_evidence.py`, `src/bgrealestate/db/models.py`, `src/bgrealestate/db/import_contract.py`, `src/bgrealestate/db/repositories.py`, `src/bgrealestate/connectors/ingest.py`, `scripts/bd18_db_smoke_import.py`, `tests/test_backend_import_contract.py`, `Makefile`, `docs/agents/TASKS.md`.
+- **Tables added**: `source_publication_qa_review`, `status_history`, `entity_resolution_candidate`, `entity_resolution_review_event`, `media_description`, `availability_calendar`, `availability_slot`, `availability_observation`, `viewing_inquiry_request`, `external_chat_ref`.
+- **Commands run**: py_compile, focused backend import contract tests, `make bd18-db-smoke-import`.
+- **Tests run**: backend import contract tests pass under Python 3.12.9.
+- **Status**: IN_PROGRESS; DB smoke import script exists but exits with `DATABASE_URL is required` in this environment.
+- **Review comments**: Next backend step is running migrations and smoke import against real PostgreSQL, then handing `BD-19` a verified read-model base.

@@ -117,6 +117,69 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 
 **GAP**: Remote server/SSH credentials and live DB counts are not available yet, so migration is prepared as a runbook and Make targets, not executed.
 
+## 2026-05-13 planner handoff while `data_analyst` is active
+
+**FACT**: `data_analyst` is the active evidence owner for Action1/A1 corpus truth, dashboard denominators, and accepted/LOST/grouped/media counts. `DA-01` is verified as file-backed only; DB-backed counts remain blocked by missing `DATABASE_URL` and `BD-18`.
+
+**INTERPRETATION**: backend, scraper, UX, infra, and knowledge work may prepare contracts and fixes, but must not promote claims from chat or raw corpus volume. Use `DA-02` / `DA-03` outputs as the next dashboard-count evidence before UI or release claims.
+
+**GAP**: the current scraped corpus is dirty and moving; do not touch scraped DB/corpus directly in planner/debugger/UX/infra runs.
+
+**Active dependency map**:
+
+- `BD-18` depends on `DA-01` plus unresolved `BD-11` verification/live-DB proof; it must preserve analyst QA states before any canonical import.
+- `BD-19` depends on `BD-18` + `DA-02` and must expose DB-backed QA/read-model counts only after import proof.
+- `ER-01` is a planning-only entity-resolution contract; `ER-02`/`ER-03`/`ER-04` and `BD-21` must wait for accepted source-publication import/read-model proof before generating candidates.
+- `S1-23` / `S1-24` depend on analyst queues and must not widen Action2 before Action1 QA repair.
+- `UX-15` captures expected DA-driven UX requirements now; implementation slices `UX-16`/`UX-17`/`UX-18` depend on `DA-02`, `BD-18`, and `BD-19` so UI does not invent counts.
+- `INFRA-02` depends on `INFRA-01`, `BD-18`, and analyst count artifacts; it verifies DB counts, not scrape quality.
+- `KCA-01` captures durable run/memory/insight only after analyst/verifier outputs exist.
+- `DBG-15` verifies this handoff and `DBG-16` verifies downstream DA-dependent implementation slices.
+
+**Handoff list**:
+
+- `backend_developer`: start with `BD-18` prep, but do not claim canonical DB import until `BD-11`/DB fixture proof is verified; prepare `BD-19` only after analyst dashboard semantics are final; `BD-21` waits for ER accepted-only candidate contracts.
+- `entity_resolution_agent`: ER planning may define accepted-only matching contracts now; candidate generation waits for `BD-18`, `BD-19`, `DA-02`, and `BD-21`.
+- `scraper_1`: start with `S1-23`; execute `S1-24` only from analyst queues.
+- `ux_ui_designer`: prepare `UX-15` requirements now, then wait for `DA-02`/`BD-18`/`BD-19` before implementing data-quality surfaces.
+- `infra_db_operator`: wait for credentials plus `BD-18`, then execute `INFRA-02` DB count verification.
+- `knowledge_context_agent`: run `KCA-01` after analyst/verifier outputs are stable; update wiki under strict filters.
+- `debugger`: run `DBG-15` now; run `DBG-16` when producing agents hand off DA-dependent slices.
+
+## 2026-05-13 whole-project plan and four-dashboard operating model
+
+**FACT**: Multiple agents concluded planning/evidence slices on 2026-05-13. Current durable outputs include DA-01, DBG-15, BD-18 prep notes, MI-01, UX-15, OPS-02, INFRA-02 readiness notes, ER-01, VM-01, UA-01, SM-10/13, and KCA-01. Several are `DONE_AWAITING_VERIFY`, not complete.
+
+**INTERPRETATION**: The project should run as four explicit operator dashboards plus one task queue: (1) Project Progress with all agent subsections, (2) Properties Database with scraping/description/media/accepted evidence, (3) Website with public/admin UI gates, and (4) Support with release/infra/analytics/media/entity-resolution/knowledge/debugger assistance. The dashboards summarize reproducible artifacts; they must not become new sources of truth.
+
+**HYPOTHESIS**: Once DA-02 reconciles denominators and BD-18 proves accepted-only import, UX/admin queues can move faster because all labels and counts will have stable semantics.
+
+**GAP**: DB-backed count proof, dashboard coverage generator performance (`DA-03`), and operator-gated Action0 media processing remain unresolved.
+
+**Four-dashboard contract**:
+
+- Project Progress dashboard: all agents, slice status, verifier queue, critical path, latest agent insights, and handoff details.
+- Properties Database dashboard: saved rows, accepted/good rows, `LOST`, grouped/development, descriptions, local/readable media, Action1 scope, denominator warnings, and source-level details.
+- Website dashboard: Next.js route readiness, admin/public UX gates, backend read-model dependencies, public accepted-only rule, and product-surface blockers.
+- Support dashboard: release, infrastructure, market intelligence, analytics, vision media, entity resolution, S&M, knowledge capture, and debugger operational queues.
+
+**Updated critical path**:
+
+1. `debugger`: verify concluded docs/contracts in batches (`DBG-16`, `DBG-21`, `DBG-22`, new dashboard verifier) while keeping runtime/DB gates separate.
+2. `data_analyst`: execute `DA-02` denominator contract and `DA-03` dashboard performance repair; no UI/public count claim advances without these.
+3. `backend_developer`: finish `BD-18` accepted-only import/schema proof, then `BD-19` QA read model; keep file-backed artifacts authoritative until DB proof passes.
+4. `infra_db_operator`: keep `INFRA-02` blocked until real DB URLs/credentials and `BD-18` proof exist; then verify count parity only.
+5. `scraper_1`: execute `S1-23` and `S1-24` only from analyst queues; do not widen to Action2 or touch social/private routes.
+6. `ux_ui_designer`: implement `UX-16`/`UX-18` only after DA/BD count semantics exist; until then, keep dashboard/admin labels contract-only.
+7. `entity_resolution_agent`: advance `ER-02`/`ER-03` contracts only after accepted-only import/read-model proof; no auto-merge or public promotion.
+8. `vision_media_agent`: keep `VM-02` blocked until operator `Action0 now`; define promotion/readiness fields through `VM-03` after DA/BD gates.
+9. `market_intelligence_analyst`: run `MI-02` only from accepted-only evidence; no market coverage claims from raw scrape volume.
+10. `user_analytics_agent`: run `UA-02` after `BD-13`/`BD-17`/`BD-19`/`UX-15` contracts stabilize; keep payloads PII-free.
+11. `scraper_sm`: keep S&M route work consent-safe and separated from Action1 marketplace completeness; do not mix social/vendor observations into accepted property counts.
+12. `ops_release_manager`: use `OPS-02` checklist; block release notes until DA/BD/INFRA/debugger evidence is cited by artifact path.
+13. `knowledge_context_agent`: record run/log/insight closeouts after each verified planning or dashboard change; do not write raw scrape facts into memory.
+14. `planner`: maintain this dependency chain, dashboard contract, and verifier queues; do not touch scraped DB/corpus directly.
+
 ### PLAN-03: Self-development architecture rebuild
 - **Status**: `DONE_AWAITING_VERIFY` (2026-05-13)
 - **Priority**: **CRITICAL**
@@ -146,6 +209,21 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 - **Verifier**: debugger
 - **Depends on**: PLAN-03
 
+### OPS-02: Data-analysis-driven release gate checklist
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13; checklist only, no staging or push)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/agents/TASKS.md`, `docs/agents/roles/ops_release_manager.md`, `docs/integrations/mcp-and-skills-setup.md`, `.gitignore`, latest `data_analyst` outputs when ready
+- **Do**:
+  1. Treat `data_analyst` as the evidence owner for accepted/LOST/grouped/media/dashboard counts; release notes must cite reproducible artifact paths, not chat summaries.
+  2. Require DA-02 dashboard denominator semantics before any public count claim, and DA-03 or an explicit dashboard-refresh blocker note before broad validation claims.
+  3. Block DB-backed release claims until `BD-18` import/schema alignment and `INFRA-02` DB count verification succeed with a real `DATABASE_URL` / `REMOTE_DATABASE_URL`.
+  4. Confirm git exclusions before staging, including unsafe files that may already be tracked: `.env`, `.env.*` except `.env.example`, `.openclaw/`, `.cursor/*.log`, raw scrape dumps `data/scraped/**/raw/`, runtime logs/pids/locks, `data/scraper.log` changes unless intentional, DB dumps/backups/SQLite files, archives, build outputs, caches, virtualenvs, and unreviewed large scraped corpus batches.
+  5. Before any future commit, run staged unsafe-path scan, staged secret scan, `git diff --check`, and focused tests for changed code; record any skipped full validation with cause.
+- **Acceptance gate**: release checklist exists in ops journey and this task board; unsafe data/runtime/secrets exclusions are explicit; debugger release-hygiene verification is queued; no files are staged or pushed by this slice.
+- **Output**: `docs/agents/ops_release_manager/JOURNEY.md`, TASKS release gate notes.
+- **Verifier**: debugger
+- **Depends on**: DA-02 or current data_analyst handoff; DBG-21 verifies this checklist before release use.
+
 ### INFRA-01: Server and DB migration readiness
 - **Status**: `DONE_AWAITING_VERIFY` (2026-05-13)
 - **Priority**: **CRITICAL**
@@ -160,18 +238,51 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 - **Verifier**: debugger + backend_developer
 - **Depends on**: PLAN-03
 
+### INFRA-02: DB count verification execution gate
+- **Status**: `BLOCKED` (2026-05-13; `DATABASE_URL` missing, readiness inputs prepared, waiting on credentials/URLs and BD-18 DB smoke execution)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/runbooks/server-db-migration.md`, `docs/exports/scrape-database-quality-audit-2026-05-13.md`, `docs/exports/action1-dataset-quality-gate.json`, `scripts/import_scraped_listings.py`, `Makefile`
+- **Do**:
+  1. Once `DATABASE_URL` / `REMOTE_DATABASE_URL` exist, run backup/restore/count verification without committing dumps or runtime logs.
+  2. Compare DB counts with the latest data_analyst accepted/LOST/grouped/media artifacts.
+  3. Record mismatches as blockers for `BD-18` or `DA-02`; do not reinterpret scrape quality.
+- **Migration readiness notes (2026-05-13, infra_db_operator)**:
+  - Missing operator inputs: server provider/OS confirmation, SSH host/user/key, remote deploy user/sudo policy, remote app directory, Git clone/deploy-key access, local libpq `DATABASE_URL`, remote libpq `REMOTE_DATABASE_URL`, fixed `DB_DUMP` path/name, media transfer path or object-storage bucket, remote `REDIS_URL`/S3/MinIO/env values, firewall/Tailscale/TLS hostnames, and confirmation that live scraping/workers are paused.
+  - Command sequence confirmed from docs/Makefile: export local `DATABASE_URL` -> `make backup-db` -> transfer dump/checksum/media -> remote `docker compose up -d postgres redis minio temporal temporal-ui` -> export `REMOTE_DATABASE_URL` + `DB_DUMP` -> `make restore-db` -> local/remote `make verify-db-counts` using `DATABASE_URL` -> `diff -u` count files.
+  - URL constraint: backup/count commands call `pg_dump`/`psql`, so use `postgresql://...` libpq URLs, not SQLAlchemy-only `postgresql+psycopg://...` URLs.
+  - Planner blocker: keep this slice blocked until `INFRA-01` is verified and `BD-18` proves DB-backed import/schema alignment.
+  - Debugger blocker: later verify dry-run-to-live transition, no committed dumps/secrets/logs, checksum match, PostGIS availability, and count parity before any live scraping resumes.
+  - 2026-05-13 sequential run: `make verify-db-counts` and `make bd18-db-smoke-import` both block immediately because `DATABASE_URL` is not set. When provided, run `make migrate` first, then the BD-18 smoke import, then count verification.
+- **Acceptance gate**: `make verify-db-counts` succeeds against the target DB and the report names accepted, skipped, grouped/development, LOST, inactive, and media-count gaps with source/bucket scope.
+- **Output**: infra journey entry plus `docs/exports/db-count-verification-YYYY-MM-DD.md` if counts run.
+- **Verifier**: debugger + backend_developer + data_analyst
+- **Depends on**: INFRA-01, BD-18
+
 ### MI-01: Weekly market and rival intelligence baseline
-- **Status**: `TODO`
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13; file-backed only, no browsing/scraping)
 - **Priority**: HIGH
 - **Read first**: `docs/agents/roles/market_intelligence_analyst.md`, `deep-research-report.md`, `data/source_registry.json`, latest data analyst reports
 - **Do**: produce market/rival intelligence for portals, agencies, STR vendors, price/supply signals, and source-priority implications.
 - **Acceptance gate**: report separates FACT / INTERPRETATION / HYPOTHESIS / GAP and maps recommendations to planner tasks.
-- **Output**: `docs/exports/market-intelligence-YYYY-MM-DD.md`, market intelligence journey entry.
+- **Output**: `docs/exports/market-intelligence-2026-05-13.md`, market intelligence journey entry.
 - **Verifier**: debugger + planner
 - **Depends on**: PLAN-03
 
-### UA-01: Website analytics event taxonomy
+### MI-02: Next weekly market review scorecard
 - **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `docs/exports/market-intelligence-2026-05-13.md`, `docs/exports/data-quality-deep-review-2026-05-13.md`, `DA-02` output, `BD-19` output, `docs/exports/website-inventory-analysis.md`, `data/source_registry.json`
+- **Do**:
+  1. Build a weekly source scorecard from accepted-only evidence: source family, legal/access mode, website-total basis, landed rows, accepted rows, grouped rows, LOST rows, media/description coverage, city/district coverage, price-status coverage, and product role.
+  2. Identify strategic supply gaps by geography, intent, property type, and source family without using raw scraped volume as a market fact.
+  3. Separate marketable claims from internal hypotheses and blocked data needs.
+- **Acceptance gate**: every source-strength or supply-gap claim cites a reproducible artifact; no private/unauthorized source route is proposed; public positioning language is blocked unless accepted-only DB counts support it.
+- **Output**: `docs/exports/market-review-scorecard-YYYY-MM-DD.md`, market intelligence journey entry, planner-ready source priority list.
+- **Verifier**: debugger + planner + data_analyst
+- **Depends on**: MI-01, DA-02, BD-19
+
+### UA-01: Website analytics event taxonomy
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13: privacy-safe taxonomy written; implementation deferred until UI/backend contracts stabilize)
 - **Priority**: HIGH
 - **Read first**: `docs/agents/roles/user_analytics_agent.md`, `agent-skills/user-analytics-instrumentation/SKILL.md`, `app/`, `components/`, `docs/business/product-ux-structure.md`
 - **Do**: define privacy-safe events and funnels for browse, search, map, detail, saved properties, chat, source clicks, account mode, and admin review.
@@ -180,33 +291,185 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 - **Verifier**: debugger + ux_ui_designer
 - **Depends on**: PLAN-03
 
-### VM-01: Vision media agent readiness
+### UA-02: Privacy-safe instrumentation implementation plan
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `docs/analytics/user-event-taxonomy.md`, `docs/exports/data-quality-deep-review-2026-05-13.md`, `BD-20`, `UX-20`, `BD-13`, `BD-17`, `BD-19`, `UX-15`
+- **Do**:
+  1. After account/chat/admin/read-model contracts stabilize, freeze the event dictionary, payload allowlists, sampling/debounce rules, retention windows, and dashboard metrics.
+  2. Confirm UX events use derived fields only: no raw search text, raw chat text, emails, phones, names, source URLs, IPs, user agents, tokens, or admin private notes.
+  3. Map each event to an owner component/API and a debugger verification fixture.
+- **Acceptance gate**: implementation plan maps every event to frontend/backend owner, payload schema, privacy rule, and verification case; no external analytics dependency.
+- **Output**: `docs/analytics/instrumentation-implementation-plan.md`, user analytics journey entry.
+- **Verifier**: debugger + ux_ui_designer + backend_developer
+- **Depends on**: UA-01, BD-13, BD-17, BD-19, UX-15
+
+### UA-03: Product analytics dashboard contract
 - **Status**: `TODO`
 - **Priority**: MEDIUM
-- **Read first**: `docs/agents/roles/vision_media_agent.md`, `docs/exports/source-item-photo-coverage.json`, `docs/exports/s1-21-gemma-action0-eligible.json`
-- **Do**: define image report execution queue, output schema, local model choice, and uncertainty rules for Action0.
-- **Acceptance gate**: reports remain evidence, not final property facts; execution waits for operator `Action0 now`.
-- **Output**: `docs/exports/vision-media-action0-readiness-YYYY-MM-DD.md`, vision journey entry.
+- **Read first**: `docs/analytics/user-event-taxonomy.md`, `UA-02`, `BD-20`, `UX-20`, latest data analyst dashboard contracts
+- **Do**: define first-party dashboard views for browse-to-detail, search-to-result, map-to-detail, detail-to-save/contact/chat, profile retention, admin throughput, and media-confidence funnels.
+- **Acceptance gate**: dashboard spec includes metric definitions, required events, denominator rules, privacy constraints, and example SQL/API query shapes using only first-party event data.
+- **Output**: `docs/analytics/product-dashboard-spec.md`, user analytics journey entry.
+- **Verifier**: debugger + ux_ui_designer + data_analyst
+- **Depends on**: UA-02, BD-20, UX-20
+
+### VM-01: Vision media agent readiness
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13; planning only, no image processing)
+- **Priority**: HIGH
+- **Read first**: `docs/agents/roles/vision_media_agent.md`, `docs/agents/roles/data_analyst.md`, `agent-skills/image-media-pipeline/SKILL.md`, `docs/exports/source-item-photo-coverage.json`, `docs/exports/s1-21-gemma-action0-eligible.json`, `docs/exports/scrape-database-quality-audit-2026-05-13.md`, `docs/exports/action1-dataset-quality-gate.json`
+- **Do**:
+  1. Convert data analyst media gaps into semantic media QA tasks: gallery completeness, scene/room coverage, condition, equipment, style, photo-text consistency, and uncertainty.
+  2. Define the visual evidence threshold for buyer-facing display and stronger property promotion.
+  3. Define Action0 queue rules without running image processing; use only local files after operator `Action0 now`.
+  4. Hand debugger explicit verification needs for report schema, uncertainty, gate enforcement, and no-fact-overwrite behavior.
+- **Acceptance gate**: readiness report separates FACT / INTERPRETATION / HYPOTHESIS / GAP; reports remain evidence, not final property facts; execution waits for operator `Action0 now`; buyer-facing promotion requires accepted single-unit status plus visual evidence gates.
+- **Output**: `docs/exports/vision-media-action0-readiness-2026-05-13.md`, vision journey entry, media QA follow-up slices.
 - **Verifier**: debugger + data_analyst
-- **Depends on**: Action1 QA / operator `Action0 now`
+- **Depends on**: DA-01 file-backed audit; Action0 execution remains blocked until operator `Action0 now`
+
+### VM-02: Action0 semantic media QA execution queue
+- **Status**: `BLOCKED` (operator `Action0 now` required; do not run during planning)
+- **Priority**: HIGH
+- **Read first**: `VM-01`, `docs/exports/vision-media-action0-readiness-2026-05-13.md`, `docs/exports/taskforgema.md`, `docs/exports/s1-21-gemma-action0-eligible.json`, `docs/exports/property-quality-and-building-contract.md`
+- **Do**:
+  1. After operator `Action0 now`, process only rows from `s1-21-gemma-action0-eligible.json` or a debugger/data_analyst-approved successor queue.
+  2. Use only `local_image_files`; no remote fetch or gallery backfill inside semantic reporting.
+  3. Write one JSON and one Markdown report per property under `docs/exports/property-image-reports/<source_key>/`.
+  4. Include per-image scene type, style, layout clues, visible equipment/tools, colors/materials, condition, defects/risks, usefulness, confidence, and uncertainty.
+  5. Include whole-property report with photo-text consistency, single-property validity, missing-scene warnings, buyer/renter usability evidence, and human-review gaps.
+  6. Write index files with source totals, reports, images, skips, skip reasons, warnings, and human-review fields.
+- **Acceptance gate**: every eligible row has a report or precise skip reason; every report references existing local files only; no rooms/equipment/condition/floorplans are invented; uncertainty is present for every non-obvious conclusion.
+- **Output**: `docs/exports/property-image-reports/`, optional compatibility mirror to `docs/exports/apartment-image-reports/`, vision journey entry.
+- **Verifier**: debugger + data_analyst
+- **Depends on**: VM-01 verification, operator `Action0 now`, Action1 QA state accepted by debugger/data_analyst
+
+### VM-03: Visual evidence promotion gate
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `docs/exports/vision-media-action0-readiness-2026-05-13.md`, `DA-02`, `BD-18`, `BD-19`, `UX-16`, `UX-18`
+- **Do**:
+  1. Turn the readiness report thresholds into product/DB/API fields: `visual_evidence_status`, `semantic_report_status`, `missing_scene_warnings`, `human_review_required`, and `visual_promotion_blockers`.
+  2. Separate buyer-facing display from promoted/enriched property use; promoted use needs a complete semantic report, not only local photos.
+  3. Keep grouped/development, `LOST`, inactive, pending-QA, partial-gallery, and no-report rows out of promoted property sets.
+  4. Define property-type-specific evidence expectations for apartment/house, commercial, land, and development/source-publication pages.
+- **Acceptance gate**: backend/API/UI consumers can tell `display_allowed_with_limited_media` from `promotion_allowed`; no semantic image statement overwrites source facts; all blockers are auditable.
+- **Output**: field contract or task handoff for backend/UX/dashboard implementation, vision journey entry.
+- **Verifier**: debugger + data_analyst + backend_developer + ux_ui_designer
+- **Depends on**: DA-02, BD-18, BD-19
+
+### VM-04: Media QA dashboard handoff
+- **Status**: `TODO`
+- **Priority**: MEDIUM
+- **Read first**: `VM-01`, `VM-02`, `DA-02`, `DA-03`, `docs/exports/data-quality-deep-review-2026-05-13.md`, `scripts/generate_source_item_photo_coverage.py`, `docs/exports/property-image-reports/index.json`
+- **Do**:
+  1. Define dashboard metrics for media capture completeness and semantic report completeness separately.
+  2. Track per-source/per-bucket counts for accepted rows with full local gallery, partial gallery, unreadable/duplicate images, semantic report complete, semantic report skipped, and human-review required.
+  3. Ensure `source-item-photo-coverage.json` is not used as the accepted-row denominator until DA-02 reconciles stored status vs quality-gate status.
+- **Acceptance gate**: dashboard terms distinguish raw media capture, gallery completeness, semantic image-report coverage, and buyer-facing promotion readiness.
+- **Output**: dashboard contract update or implementation handoff, vision journey entry.
+- **Verifier**: debugger + data_analyst + ux_ui_designer
+- **Depends on**: VM-01, DA-02, DA-03
+
+### VM-05: Local-gallery verification before image descriptions
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13; file-backed verification contract prepared, no image descriptions generated)
+- **Priority**: HIGH
+- **Read first**: `docs/exports/vision-media-local-gallery-verification-2026-05-13.md`, `docs/exports/source-item-photo-coverage.json`, `docs/exports/data-quality-deep-review-2026-05-13.md`, `DA-02`
+- **Do**:
+  1. Verify local-gallery evidence separately from semantic image-description coverage.
+  2. Keep Action0 image-description execution blocked until operator `Action0 now`.
+  3. Require accepted single-unit state, local file existence/readability, explicit full/partial gallery status, and uncertainty before any semantic report can be promoted.
+- **Acceptance gate**: report states current local media totals, identifies that image descriptions are not generated, and keeps remote fetch/semantic generation out of this run.
+- **Output**: `docs/exports/vision-media-local-gallery-verification-2026-05-13.md`, vision journey entry.
+- **Verifier**: debugger + data_analyst + ux_ui_designer
+- **Depends on**: DA-02, VM-01
 
 ### ER-01: Conservative entity-resolution queue plan
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13: planning only; no candidate generation, import, or property-entity promotion)
+- **Priority**: MEDIUM
+- **Read first**: `docs/agents/roles/entity_resolution_agent.md`, `docs/agents/roles/data_analyst.md`, `src/bgrealestate/services/unification.py`, `src/bgrealestate/pipeline.py`, `tests/test_unification.py`, `sql/schema.sql`, `scripts/import_scraped_listings.py`, `docs/exports/property-identity-anomaly-audit-2026-04-29.md`, `docs/exports/action1-multi-unit-publications.json`, `docs/exports/scrape-database-quality-audit-2026-05-13.md`
+- **Do**: define duplicate candidate queue inputs, accepted-only source-publication filters, single-unit/grouped/unknown/duplicate/conflict taxonomy, evidence fields, confidence thresholds, backend schema/API handoff, and no-auto-merge review policy.
+- **Acceptance gate**: grouped/development publications cannot be auto-merged as single units; plan states no `property_entity` / `property_offer` promotion in ER planning; follow-up slices depend on `BD-18`/`BD-19` accepted source-publication evidence.
+- **Output**: `docs/exports/entity-resolution-queue-plan-2026-05-13.md`, entity resolution journey entry.
+- **Verifier**: debugger + data_analyst
+- **Depends on**: DA-01 file-backed audit; execution candidates depend on BD-18, BD-19, DA-02, and accepted source-publication import evidence
+
+### ER-02: Accepted-only duplicate candidate extraction contract
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13; accepted-only candidate layer designed, no candidate generation)
+- **Priority**: HIGH
+- **Read first**: ER-01 output, `BD-18`, `BD-19`, `DA-02`, `src/bgrealestate/services/unification.py`, `sql/schema.sql`, `scripts/import_scraped_listings.py`
+- **Do**:
+  1. Define the exact accepted-only input query for source publications: `SCRAPED_OK`, accepted/single-entity state, not grouped/development, not `LOST`, not inactive/removed/expired, not pending/missing QA, and registry-backed source provenance.
+  2. Define candidate blocking keys and pair generation for exact source duplicates, strong cross-source same-unit candidates, weak same-building/project candidates, and conflict candidates.
+  3. Keep output as candidate rows/evidence only; do not create or update `property_entity`, `property_offer`, public `/properties` results, or buyer-facing labels.
+  4. Hand backend_developer the SQL/API contract needed by `BD-21`.
+- **Acceptance gate**: contract includes deterministic input filters, source/bucket scope, idempotency key, and negative filters for grouped/development/unknown/LOST/inactive rows.
+- **Output**: `docs/exports/entity-resolution-accepted-only-candidate-layer-2026-05-13.md`, entity resolution journey entry.
+- **Verifier**: debugger + data_analyst + backend_developer
+- **Depends on**: ER-01, BD-18, BD-19, DA-02
+
+### ER-03: Evidence scoring and case-classification matrix
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: ER-01 output, ER-02 output, `docs/exports/action1-multi-unit-publications.json`, `docs/exports/scrape-database-quality-audit-2026-05-13.md`, `tests/test_unification.py`
+- **Do**:
+  1. Define score components for source URL/id, city/district/address/building/project, area, price/price-status, rooms/floor/unit clues, contacts, photo overlap, media counts, and lifecycle dates.
+  2. Define hard blockers that override any score: grouped/development, unknown QA state, inactive, `LOST`, same-source non-exact records, zero-price-as-real-price, contradictory area/price/media/unit evidence.
+  3. Separate review labels: `single_unit`, `grouped_or_development`, `unknown`, `source_duplicate`, `same_unit_candidate`, `same_complex_only`, and `conflicting_evidence`.
+  4. Require operator review for every cross-source link until a labeled Bulgarian sample validates thresholds.
+- **Acceptance gate**: matrix prevents confidence scores from overriding exclusion states and documents review actions for each case.
+- **Output**: `docs/exports/entity-resolution-scoring-matrix-YYYY-MM-DD.md`, entity resolution journey entry.
+- **Verifier**: debugger + data_analyst
+- **Depends on**: ER-02
+
+### ER-04: Source-publication relationship and conflict review policy
 - **Status**: `TODO`
 - **Priority**: MEDIUM
-- **Read first**: `docs/agents/roles/entity_resolution_agent.md`, `src/bgrealestate/services/unification.py`, `docs/exports/action1-multi-unit-publications.json`
-- **Do**: define duplicate candidate queue inputs, evidence fields, confidence thresholds, and no-auto-merge review policy.
-- **Acceptance gate**: grouped/development publications cannot be auto-merged as single units.
-- **Output**: `docs/exports/entity-resolution-queue-plan-YYYY-MM-DD.md`, entity resolution journey entry.
-- **Verifier**: debugger + data_analyst
-- **Depends on**: accepted source-publication import evidence
+- **Read first**: ER-01 output, ER-02 output, ER-03 output, `docs/agents/ux_ui_designer/data-quality-ui-decision-notes-2026-05-13.md`, UX-15
+- **Do**:
+  1. Define lifecycle for candidate review actions: `link`, `dismiss`, `defer`, `mark_conflict`, `needs_unit_split`, and `needs_parser_repair`.
+  2. Define audit fields for who/when/why plus immutable evidence snapshot.
+  3. Hand UX the operator-side wording for duplicate/confidence/provenance review without buyer-facing claims.
+  4. Hand debugger fixture scenarios for grouped/development negatives, same-complex false positives, conflicting price/area/media, and exact source duplicate cases.
+- **Acceptance gate**: policy keeps source-publication evidence separate from canonical property promotion and names verifier fixtures for all five required case classes.
+- **Output**: `docs/exports/entity-resolution-review-policy-YYYY-MM-DD.md`, entity resolution journey entry.
+- **Verifier**: debugger + ux_ui_designer + data_analyst
+- **Depends on**: ER-03, UX-15
+
+### KCA-01: Data-analyst evidence capture and wiki closeout
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13: wiki run/log recorded; memory/insights unchanged under strict filters; `DBG-15` dependency met)
+- **Priority**: HIGH
+- **Read first**: `docs/agents/roles/knowledge_context_agent.md`, `/Users/getapple/core/wiki/projects/real-estate-bulgaria/{index.md,memory.md,insights.md}`, `docs/exports/scrape-database-quality-audit-2026-05-13.md`, latest `data_analyst` and `debugger` JOURNEY entries
+- **Do**:
+  1. Create a wiki run record for the data-analyst-centered loop after the current analyst/debugger outputs are stable.
+  2. Update project log, memory, and insights under the strict filters only.
+  3. Update docs/reporting index if a new durable artifact becomes source-of-truth.
+- **Acceptance gate**: no meaningful conclusion exists only in chat; memory is updated only for future-affecting patterns; insights separate FACT / INTERPRETATION / HYPOTHESIS / GAP.
+- **Output**: wiki run/log/memory/insight updates and knowledge_context_agent JOURNEY entry.
+- **Verifier**: debugger + planner
+- **Depends on**: DA-02 or DBG-15
+
+### KCA-02: Four-dashboard knowledge capture
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `PLAN-06`, `docs/exports/operational-dashboards.json`, `docs/exports/all-agent-execution-plan-2026-05-13.md`, latest planner/debugger/data_analyst JOURNEY entries, `/Users/getapple/core/wiki/projects/real-estate-bulgaria/{index.md,memory.md,insights.md}`
+- **Do**:
+  1. Record the four-dashboard operating model as a wiki run after debugger verifies `PLAN-06`.
+  2. Update project log and insights only for reusable conclusions: dashboard role split, accepted-only evidence chain, and verifier queue hygiene.
+  3. Update memory only if the dashboard/denominator blocker is a repeating future-run constraint.
+  4. Keep scraped corpus details out of memory; cite artifact paths instead.
+- **Acceptance gate**: no dashboard/planning conclusion exists only in chat; wiki entries separate FACT / INTERPRETATION / HYPOTHESIS / GAP and preserve strict memory filters.
+- **Output**: wiki run/log/insight/memory updates as applicable, knowledge_context_agent JOURNEY.
+- **Verifier**: debugger + planner
+- **Depends on**: PLAN-06, DBG dashboard verification
 
 ### DA-03: Dashboard source/photo coverage generator performance repair
 - **Status**: `TODO`
 - **Priority**: HIGH
 - **Read first**: `scripts/generate_source_item_photo_coverage.py`, `scripts/generate_progress_dashboard.py`, `docs/exports/source-item-photo-coverage.json`, latest `data/scraped/**/listings/*.json` corpus size
-- **Do**: make `make dashboard-doc` reliable on the current large workspace by adding bounded/changed-file mode, progress output, or cached corpus scan behavior.
+- **Do**: make `make dashboard-doc` reliable on the current large workspace by adding bounded/changed-file mode, progress output, or cached corpus scan behavior. `make operational-dashboard-doc` now exists as a fast task/JOURNEY/dashboard refresh fallback, but it does not replace full source/photo coverage regeneration.
 - **Acceptance gate**: `make dashboard-doc` completes without manual kill, or a documented fast dashboard target exists for task/JOURNEY-only changes.
-- **Output**: script update or documented fallback, data analyst journey entry.
+- **Output**: script update or documented fallback, data analyst journey entry, and clear instructions for when to use the fast fallback versus full corpus dashboards.
 - **Verifier**: debugger
 - **Depends on**: PLAN-03
 
@@ -226,10 +489,10 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 
 ### CONST-01: Activation sync + dashboard refresh
 - **Status**: `TODO` (recurring)
-- **Read first**: `docs/agents/TASKS.md`, all `docs/agents/*/JOURNEY.md`, `docs/dashboard/index.html`
-- **Do**: on each activation, review progress deltas, update task dependencies/notes, and regenerate dashboard/exports after doc/task changes
-- **Acceptance gate**: latest run updates `TASKS.md` + dashboard JSON/HTML timestamps
-- **Output**: refreshed `docs/exports/progress-dashboard.json`, `docs/dashboard/index.html`, `docs/exports/parallel-execution-timeline.md`, `docs/exports/scraper-activity-snapshot.md`, and updated task notes
+- **Read first**: `docs/agents/TASKS.md`, all `docs/agents/*/JOURNEY.md`, `docs/dashboard/index.html`, `docs/dashboard/project-progress.html`, `docs/dashboard/properties-database.html`, `docs/dashboard/website.html`, `docs/dashboard/support.html`
+- **Do**: on each activation, review progress deltas, update task dependencies/notes, and regenerate the four dashboard surfaces plus legacy exports after doc/task changes.
+- **Acceptance gate**: latest run updates `TASKS.md`, `docs/exports/operational-dashboards.json`, and dashboard HTML timestamps; if full `make dashboard-doc` is blocked by corpus scan performance, run the operational dashboard generator and keep `DA-03` blocker visible.
+- **Output**: refreshed `docs/exports/progress-dashboard.json`, `docs/exports/operational-dashboards.json`, `docs/dashboard/index.html`, `docs/dashboard/project-progress.html`, `docs/dashboard/properties-database.html`, `docs/dashboard/website.html`, `docs/dashboard/support.html`, `docs/exports/all-agent-execution-plan-2026-05-13.md`, `docs/exports/parallel-execution-timeline.md`, `docs/exports/scraper-activity-snapshot.md`, and updated task notes.
 - **Verifier**: debugger
 - **Depends on**: —
 
@@ -296,6 +559,62 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 - **Verifier**: debugger
 - **Depends on**: PLAN-01
 
+### PLAN-04: Data-analyst-centered loop handoff
+- **Status**: `VERIFIED` (2026-05-13 by DBG-15; handoff protocol passed, DB/dashboard blockers retained)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/agents/TASKS.md`, `docs/agents/README.md`, `docs/agents/AGENT_LOOP_AND_CADENCE.md`, `docs/agents/roles/planner.md`, latest `data_analyst` / `debugger` JOURNEY entries
+- **Do**:
+  1. Treat `data_analyst` as the active evidence owner.
+  2. Identify slices depending on data_analyst outputs.
+  3. Add/refine next execution slices for backend, debugger, scraper_1, UX, infra, and knowledge lanes.
+  4. Do not touch scraped DB/corpus directly.
+- **Acceptance gate**: TASKS has an active dependency map, each dependent lane has a next slice and verifier, and debugger verification is queued.
+- **Output**: TASKS updates, planner JOURNEY entry, handoff list.
+- **Verifier**: debugger
+- **Depends on**: DA-01
+
+### PLAN-05: Market intelligence source-priority conversion
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `docs/exports/market-intelligence-2026-05-13.md`, `DA-02`, `BD-18`, `BD-19`, `S1-23`, `UX-15`
+- **Do**:
+  1. Convert MI-01 recommendations into the next cross-agent priority order after dashboard/import semantics are verified.
+  2. Keep source priorities split between current trusted browse base, high-gap next review group, partner/licensed STR routes, official verification routes, and consent-gated social overlays.
+  3. Block public "complete market" or "95% coverage" language until accepted-only DB-backed counts exist.
+- **Acceptance gate**: planner task order cites analyst/debugger artifacts, preserves Action1 -> Action0 -> Action2 gates, and feeds UX with positioning limits.
+- **Output**: updated `TASKS.md`, planner journey entry, optional source-priority decision doc.
+- **Verifier**: debugger + market_intelligence_analyst + ux_ui_designer
+- **Depends on**: MI-01, DA-02, BD-18, BD-19
+
+### PLAN-06: Whole-project plan and four-dashboard operating model
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13; file-backed dashboard generator and all-agent handoff plan added)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/agents/TASKS.md`, all `docs/agents/*/JOURNEY.md`, `docs/exports/scrape-database-quality-audit-2026-05-13.json`, `docs/exports/action1-dataset-quality-gate.json`, `docs/exports/scrape-status-dashboard.json`, `scripts/generate_operational_dashboards.py`
+- **Do**:
+  1. Review concluded execution across all agent journey logs and distinguish verified work from `DONE_AWAITING_VERIFY` handoffs.
+  2. Publish four explicit dashboards: Project Progress, Properties Database, Website, and Support.
+  3. Ensure every dashboard stat opens with insight, details, and next action; do not claim DB-backed truth from file-backed exports.
+  4. Export the all-agent next-action plan for planner/debugger handoff.
+  5. Keep scraped DB/corpus untouched; use current analyst/debugger artifacts only.
+- **Acceptance gate**: dashboard pages exist under `docs/dashboard/`, `docs/exports/operational-dashboards.json` and `docs/exports/all-agent-execution-plan-2026-05-13.md` are refreshed, all current agents have visible open-slice summaries, and debugger has a queued verification task.
+- **Output**: four dashboard HTML pages, operational dashboard JSON, all-agent execution plan export, planner JOURNEY entry.
+- **Verifier**: debugger + data_analyst + ux_ui_designer
+- **Depends on**: PLAN-04, DA-01, DBG-15
+
+### PLAN-07: DA-02/BD-18 next-owner prompt execution
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13; sequential owner prompts and role outputs recorded)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/exports/data-quality-deep-review-2026-05-13.md`, `docs/exports/bd18-database-review-and-correction-spec-2026-05-13.md`, `docs/exports/next-owner-prompts-2026-05-13.md`
+- **Do**:
+  1. Start as planner and publish precise prompts for debugger, backend, infra, entity resolution, vision media, and UX.
+  2. Run each owner lane sequentially with file-backed evidence and explicit DB/operator blockers.
+  3. Keep `data_analyst` as evidence owner; do not touch scraped DB/corpus directly.
+  4. Refresh operational dashboards and hand debugger the remaining runtime gates.
+- **Acceptance gate**: every named next owner has a prompt, output artifact or JOURNEY entry, and a clear next blocker/action; dashboards link to updated artifacts.
+- **Output**: `docs/exports/next-owner-prompts-2026-05-13.md`, owner JOURNEY entries, updated dashboards.
+- **Verifier**: debugger + planner
+- **Depends on**: DA-02, BD-18, PLAN-06
+
 ## ═══════════════════════════════════════════════════════
 ## DATA_ANALYST (scraped corpus QA + metrics truth)
 ## ═══════════════════════════════════════════════════════
@@ -303,7 +622,7 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 **Mission**: Be the truth layer for scraped data. Reconcile file-backed and DB-backed counts, detect wrong properties/text/images/coordinates/prices, classify accepted vs `LOST` vs grouped/development, and make dashboards honest.
 
 ### DA-01: Action1 A1 corpus consistency audit
-- **Status**: `TODO`
+- **Status**: `VERIFIED` (2026-05-13 by DBG-14; file-backed audit reproducible, DB counts still blocked by missing `DATABASE_URL`)
 - **Priority**: **CRITICAL**
 - **Read first**: `docs/exports/a1-pattern-depth-reliability-review-2026-05-04.md`, `docs/exports/action1-dataset-quality-gate-dryrun.json`, `docs/exports/action1-dataset-quality-gate.json`, `docs/exports/source-item-photo-coverage.json`, `docs/exports/scrape-status-dashboard.json`, `data/runs/scrape_metrics.jsonl`, `data/runs/action1_scrape_uncapped_*.log`, A1 `data/scraped/<source>/listings/*.json`
 - **Do**:
@@ -313,19 +632,33 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
   4. Mark rows as bad only through the existing quality-gate fields; do not silently delete rows.
   5. Refresh dashboard inputs only from reproducible scripts, never from chat summaries.
 - **Acceptance gate**: report includes seven A1 sources × four buckets with counts and reasons; every bad class has a clear next action: rescrape, grouped/development review, inactive skip, parser fix, legal/runtime blocker, or human review.
-- **Output**: `docs/exports/action1-a1-corpus-consistency-audit-YYYY-MM-DD.md`, refreshed quality JSON/CSV as needed, data_analyst JOURNEY.
+- **Output**: `docs/exports/scrape-database-quality-audit-2026-05-13.md`, `docs/exports/scrape-database-quality-audit-2026-05-13.json`, data_analyst JOURNEY. DB count proof remains blocked until `DATABASE_URL` is available; import dry-run now works offline and skips unreviewed rows by default.
 - **Verifier**: debugger
 - **Depends on**: S1-22B active corpus evidence
 
 ### DA-02: Dashboard metric contract repair
-- **Status**: `TODO`
+- **Status**: `VERIFIED` (2026-05-13 by DBG-24 for file-backed denominator/readiness handoff; DB counts still blocked)
 - **Priority**: HIGH
-- **Read first**: `scripts/generate_scrape_status_dashboard.py`, `scripts/generate_source_item_photo_coverage.py`, `docs/dashboard/scrape-status.html`, DA-01 report
-- **Do**: ensure dashboard cells show website/source total, accepted count, fully parsed count, description count, local-gallery count, image-description count, and rescrape/LOST/grouped counts separately.
-- **Acceptance gate**: dashboard no longer uses threshold denominators such as `100` as source-total denominators and clearly separates accepted properties from grouped source publications.
-- **Output**: dashboard script/code updates, refreshed dashboard exports, data_analyst JOURNEY.
+- **Read first**: `scripts/generate_data_quality_deep_review.py`, `docs/exports/data-quality-deep-review-2026-05-13.md`, `docs/dashboard/data-quality-dashboard.html`, `scripts/generate_scrape_status_dashboard.py`, `scripts/generate_source_item_photo_coverage.py`, `docs/dashboard/scrape-status.html`, DA-01 report
+- **Do**: ensure dashboard cells show website/source total, accepted count, fully parsed count, description count, local-gallery count, image-description count, and rescrape/LOST/grouped counts separately. Reconcile grouped/development denominator semantics across `scripts/audit_scrape_database_quality.py`, `scripts/action1_dataset_quality_gate.py`, and dashboard exports so rows that are both bad and multi-unit are not double-counted or mislabeled.
+- **Acceptance gate**: dashboard no longer uses threshold denominators such as `100` as source-total denominators; clearly separates accepted properties from grouped source publications; labels stored/importer-state counts separately from DA-01 offline quality estimates; reconciles or explicitly documents `bad_lost`, `grouped_publication`, and `bad_and_grouped` denominator semantics.
+- **Output**: `scripts/generate_data_quality_deep_review.py`, `docs/exports/data-quality-deep-review-2026-05-13.md`, `docs/exports/data-quality-deep-review-2026-05-13.json`, `docs/dashboard/data-quality-dashboard.html`, refreshed dashboard exports, data_analyst JOURNEY. Remaining blocker: DB-backed denominator proof still requires `DATABASE_URL` and `INFRA-02`.
 - **Verifier**: debugger + ux_ui_designer
 - **Depends on**: DA-01
+
+### DA-04: Four-dashboard denominator certification
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `DA-02`, `DA-03`, `docs/exports/operational-dashboards.json`, `docs/dashboard/properties-database.html`, `docs/exports/scrape-database-quality-audit-2026-05-13.json`, `docs/exports/action1-dataset-quality-gate.json`, `docs/exports/scrape-status-dashboard.json`
+- **Do**:
+  1. Certify which dashboard counts are file-backed audit counts, quality-gate counts, scrape-status operational counts, importer default candidates, or future DB counts.
+  2. Add a short denominator note for every Properties Database dashboard metric that can be misread as accepted property count.
+  3. Reconcile source-level differences between DA audit, action1 quality gate, and scrape-status export; preserve unresolved overlap as explicit `GAP`, not hidden adjustment.
+  4. Hand backend/UX/debugger a stable metric dictionary for `BD-19`, `UX-16`, and dashboard verification.
+- **Acceptance gate**: no dashboard cell can be mistaken for public market coverage; accepted single-unit, grouped/development, `LOST`, pending/missing QA, description, and media denominators are named and reproducible.
+- **Output**: certified denominator note or JSON overlay, refreshed operational dashboards, data_analyst JOURNEY.
+- **Verifier**: debugger + ux_ui_designer + backend_developer
+- **Depends on**: DA-02, DA-03, PLAN-06
 
 ## ═══════════════════════════════════════════════════════
 ## BACKEND_DEVELOPER (data engineer + infrastructure)
@@ -557,6 +890,79 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 - **Output**: `migrations/versions/20260429_0004_user_property_state_chat.py`, updated schema/models, updated users/chat API, `tests/test_chat_service.py`, expanded auth/API tests.
 - **Verifier**: debugger + ux_ui_designer
 - **Depends on**: BD-13, BD-11
+
+### BD-18: Canonical import/schema alignment for scraped QA evidence
+- **Status**: `IN_PROGRESS` (2026-05-13 backend prep + analyst safety patch + DB table/smoke script implementation; live DB migration/import proof still blocked by missing `DATABASE_URL`)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/exports/scrape-database-quality-audit-2026-05-13.md`, `docs/exports/bd18-database-review-and-correction-spec-2026-05-13.md`, `scripts/import_scraped_listings.py`, `src/bgrealestate/models.py`, `src/bgrealestate/db/models.py`, `src/bgrealestate/db/repositories.py`, `sql/schema.sql`
+- **Do**:
+  1. Align `CanonicalListing` dataclass, `CanonicalListingModel`, SQL migrations/schema, and `CanonicalListingRepository.upsert` so all canonical fields can persist without SQLAlchemy compile/runtime drift.
+  2. Add first-class or structured-extra persistence for `price_status`, `source_publication_type`, `scrape_status`, `scrape_acceptance_status`, `single_entity_candidate`, `listing_status`, remote/local photo counts, local image storage keys, and image report status.
+  3. Make `scripts/import_scraped_listings.py --dry-run` work without importing DB-only dependencies, then block default import of `PENDING_QA`, missing-status, `LOST`, grouped/development, and inactive rows.
+  4. Fix `listing_media` idempotency so repeated imports do not create duplicate media rows for the same listing URL/order.
+  5. Resolve the all-Bulgaria bucket/segment conflict with Varna-only `source_section` FKs: either create an all-Bulgaria control-plane model or persist Action1 bucket evidence outside the Varna `source_section_id` FK.
+  6. Separate persistence concepts instead of overloading `canonical_listing`: source publications, canonical properties, listing offers, QA reviews, status history, contacts, media assets, media descriptions, dedupe clusters, availability calendars/slots/observations, viewing/inquiry requests, and external chat references only.
+  7. Model sale, long-term rent, short-term rent, commercial, and mixed-use offers as compatible but distinct offer flows; do not infer short-term availability from listing existence.
+  8. Add import eligibility and blocked import reason fields; preserve price status, contact provenance, local media evidence, and source-publication type through import.
+- **Backend prep note (2026-05-13)**:
+  - FACT: default import must remain accepted-only: reject missing/`PENDING_QA`/`UNKNOWN`, `LOST`/`needs_rescrape`, grouped/development (`source_publication_type = multi_unit_or_development` or `scrape_acceptance_status = not_single_entity`), and inactive/removed/expired rows unless an explicit operator include flag is passed.
+  - FACT: Action1 provenance is all-Bulgaria and bucket-based; it cannot safely populate the current Varna-only `source_section_id` FK. Preserve `geo_scope`, `bucket_key`/`segment_key`, source-section strings, QA state, price status, local media keys, and image-report state in `crawl_provenance`/structured metadata until a scope-neutral control-plane migration exists.
+  - FACT: canonical property promotion must require `scrape_acceptance_status = accepted_single_entity_candidate`, `source_publication_type = single_unit_candidate`, not inactive, not rescrape-required, and one unit URL plus one numeric price or explicit `price_status in (on_request, undefined)`.
+  - INTERPRETATION: the first implementation wave should make file-backed import compile and persist evidence without using the Varna FK; the second wave should add first-class QA/media columns or a `source_publication_provenance` table and DB smoke tests.
+  - GAP: no PostgreSQL-backed fixture import, Alembic upgrade, or `make verify-db-counts` has run because a usable `DATABASE_URL` is not available in this environment.
+- **Analyst safety note (2026-05-13)**:
+  - FACT: `scripts/import_scraped_listings.py` now coerces numeric price `0` to `None` with `price_status=undefined` provenance unless source evidence already says `on_request`/`undefined`.
+  - FACT: scraped-corpus DB import now blocks suspected multi-unit publications, defaults to source-publication-first persistence, and does not run property/entity unification unless `--promote-property-entities` is passed explicitly.
+  - FACT: focused backend import contract tests cover zero-price conversion, unsafe QA blocking, provenance preservation, and listing-media deterministic IDs.
+  - GAP: first-class DB tables for `qa_reviews`, generic `status_history`, `dedupe_clusters`, `media_descriptions`, `availability_*`, `viewing_or_inquiry_requests`, and `external_chat_refs` still need backend implementation and DB smoke tests.
+  - 2026-05-13 sequential backend run: added `source_publication_qa_review`, `status_history`, `entity_resolution_candidate`, `entity_resolution_review_event`, `media_description`, `availability_calendar`, `availability_slot`, `availability_observation`, `viewing_inquiry_request`, and `external_chat_ref` to schema, migration, ORM models, import-evidence repository sync, tests, and `make bd18-db-smoke-import`. Smoke import is implemented but blocked until `DATABASE_URL` is supplied and migrations are applied.
+- **Acceptance gate**: import dry-run prints accepted/skipped counts from the current corpus; a DB-backed fixture import persists QA/media/segment/source-publication evidence; `CanonicalListingRepository.upsert` accepts the full payload without SQLAlchemy compile/runtime drift; repeated import is idempotent for listing media; fixtures cover sale, long-term rent, short-term rent, grouped/development blocked import, numeric-zero price converted to null plus status, and stale/unknown availability; `make verify-db-counts` passes when `DATABASE_URL` is available; tests pass without live-network dependencies.
+- **Output**: migration/schema/model/repository/importer updates, `scripts/bd18_db_smoke_import.py`, tests, backend_developer JOURNEY.
+- **Verifier**: debugger + data_analyst
+- **Depends on**: DA-01, BD-11
+
+### BD-19: QA evidence read model for dashboard/API truth
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `BD-18`, `DA-02`, `docs/exports/action1-dataset-quality-gate.json`, `src/bgrealestate/api/routers/admin.py`, `src/bgrealestate/db/repositories.py`, `lib/types/listing.ts`
+- **Do**:
+  1. After `BD-18` proves DB-backed import, expose accepted, LOST, grouped/development, inactive, missing-description, missing-price, media-gap, and image-report-status counts through an admin/API read model.
+  2. Keep file-backed analyst artifacts as source-of-truth until DB counts are verified by `INFRA-02`.
+  3. Return source/bucket-scoped counts; do not collapse bad/lost and grouped dimensions into one denominator.
+- **Acceptance gate**: seeded/fixture DB tests prove read-model counts match analyst fixture artifacts; API returns 503 cleanly without DB; no live-network dependency.
+- **Output**: API/repository updates, tests, backend_developer JOURNEY.
+- **Verifier**: debugger + data_analyst + ux_ui_designer
+- **Depends on**: BD-18, DA-02
+
+### BD-20: First-party product analytics event intake
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `docs/analytics/user-event-taxonomy.md`, `UA-02`, `src/bgrealestate/api/main.py`, `src/bgrealestate/api/routers/analytics.py`, `sql/schema.sql`, `src/bgrealestate/db/models.py`, `src/bgrealestate/db/repositories.py`
+- **Do**:
+  1. Add first-party event intake for allowlisted product events only; do not install external analytics or forward payloads to third parties.
+  2. Persist a minimal event envelope with schema version, event name, route pattern, surface, pseudonymous session/user hashes, coarse device/viewport buckets, and validated payload JSON.
+  3. Reject or drop unsafe fields including raw search text, raw chat text, emails, phones, names, source URLs, image URLs, IP addresses, raw user agents, tokens, and admin private notes.
+  4. Add retention and deletion hooks that align with auth/profile data once `BD-13` is live.
+  5. Expose fixture-safe summary queries for the dashboard contract in `UA-03`.
+- **Acceptance gate**: API/unit tests prove known events are accepted, unknown fields are rejected/dropped, unsafe payload examples fail, no external network is used, and API returns clean 503/disabled behavior without DB.
+- **Output**: migration/schema/model/router/repository updates, tests, backend_developer JOURNEY.
+- **Verifier**: debugger + user_analytics_agent
+- **Depends on**: UA-02, BD-13, BD-17, BD-19
+
+### BD-21: Entity-resolution candidate schema/API and import safety
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: ER-01 output, ER-02 output when available, `BD-18`, `BD-19`, `src/bgrealestate/services/unification.py`, `scripts/import_scraped_listings.py`, `sql/schema.sql`, `src/bgrealestate/db/models.py`, `src/bgrealestate/db/repositories.py`, `src/bgrealestate/api/routers/admin.py`
+- **Do**:
+  1. Add a reviewable entity-resolution candidate layer independent from `property_entity` and `property_offer` (candidate, evidence, and review event persistence).
+  2. Ensure scraped accepted source-publication import can persist source publications without automatically creating/updating `property_entity` or `property_offer` links unless an explicit reviewed merge path is invoked.
+  3. Expose admin-only read/review API for candidates; keep candidates out of public `/properties` and buyer-facing exports.
+  4. Persist score component JSON, conflict reasons, accepted-only filter evidence, and immutable source-publication snapshot references.
+  5. Add fixture DB tests for idempotent candidate generation and review events; no live network dependency.
+- **Acceptance gate**: grouped/development, pending QA, missing-status, `LOST`, inactive, and unknown rows cannot enter candidate scoring or property promotion; repeated candidate generation is idempotent; admin APIs are auth-gated; public APIs do not expose candidates.
+- **Output**: migration/schema/model/repository/API updates, tests, backend_developer JOURNEY.
+- **Verifier**: debugger + entity_resolution_agent + data_analyst
+- **Depends on**: ER-01, BD-18, BD-19, DA-02
 
 ---
 
@@ -850,6 +1256,47 @@ openclaw --profile codex agent --agent main \
   --deliver --reply-channel telegram --reply-to 181488201 --timeout 3600 --json
 ```
 
+### S1-23: Scraper repair from DA-01 scrape database audit
+- **Status**: `TODO` (2026-05-13 scraper-side source context prepared; no live scrape started)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/exports/scrape-database-quality-audit-2026-05-13.md`, `docs/exports/scrape-database-quality-audit-2026-05-13.json`, `docs/exports/data-quality-deep-review-2026-05-13.md`, `docs/dashboard/data-quality-dashboard.html`, `scripts/action1_dataset_quality_gate.py`, `scripts/live_scraper.py`, `data/source_registry.json`, A1 listing JSON for the seven sources.
+- **Do**:
+  1. Treat DA-01 findings as the current scraper issue list. Do not widen Action2 until Action1 QA repair is complete or explicitly waived.
+  2. Re-run/apply quality gate after every continuation so accepted rows are not left as `PENDING_QA`.
+  3. For `Address.bg`, repair missing city/address extraction, one-photo suspects, oversized area suspects, and noisy phones.
+  4. For `BulgarianProperties`, fix local-gallery completeness and unit-area parsing; keep development pages grouped.
+  5. For `Homes.bg`, expand beyond sale apartments, remove duplicate URL rows, confirm active status, and download all offer JSON gallery images.
+  6. For `imot.bg`, preserve the strong accepted corpus but repair partial galleries, missing area, category precision, grouped pages, and thin/mojibake descriptions.
+  7. For `LUXIMMO`, `property.bg`, and `SUPRIMMO`, deduplicate gallery size variants, fix missing/oversized area, classify development pages separately, and reduce thin descriptions/low sale-price warnings.
+  8. Normalize phones using source-specific contact blocks only; reject dates, IDs, counters, and JS numeric fragments.
+  9. Default import/export must exclude `PENDING_QA`, missing QA state, `LOST`, grouped/development, and inactive rows.
+  10. Use this source-specific analyst-support map before coding:
+      - `Address.bg`: parser gap = city/address + oversized area; media gap = one-photo suspects/high-resolution gallery evidence; grouped = none in current DA rollup; provenance = bucket/source URL/QA state must be applied; price-state = preserve missing/on-request as non-numeric.
+      - `BulgarianProperties`: parser gap = unit-area semantics; media gap = large partial-local-gallery backlog; grouped = development pages stay grouped unless unit URL + price/status + area + media exist; provenance = preserve registry/source-domain evidence and bucket route; price-state = preserve on-request/undefined.
+      - `Homes.bg`: parser gap = sale-apartment bias, duplicate detail URLs, active-state evidence; media gap = offer JSON/API gallery; grouped = keep mixed pages grouped; provenance = offer id, active marker, bucket route; price-state = explicit missing/on-request only.
+      - `imot.bg`: parser gap = missing area, category precision, mojibake/thin descriptions; media gap = partial gallery; grouped = separate development pages from strong single-unit corpus; provenance = `adParams`, detail URL, active marker, route bucket; price-state = missing price becomes provenance, not zero.
+      - `LUXIMMO` / `property.bg` / `SUPRIMMO`: parser gap = missing/oversized unit area and thin/low-price warnings; media gap = gallery size-variant de-duplication before local-vs-remote counts; grouped = development/project pages stay source publications; provenance = labeled unit fields + source-family route evidence; price-state = low or absent price requires status/review.
+      - Non-A1 tier-1/2 (`alo.bg`, `Bazar.bg`, `Domaza`, `Home2U`, `OLX.bg`, `Yavlena`, and other legal public sources) remains Action2/A12 context only until Action1 QA and operator `Action2 now`; blocked/legal sources (`imoti.net`, `Imoteka.bg`, `Imoti.info`) stay excluded.
+  11. Use `docs/exports/data-quality-deep-review-2026-05-13.md` source drilldowns for per-source bad-scrape examples and fixture selection; do not treat raw saved row counts as accepted property counts.
+- **Acceptance gate**: `python3 scripts/audit_scrape_database_quality.py` and `python3 scripts/action1_dataset_quality_gate.py --limit-per-source 20 --output docs/exports/action1-dataset-quality-gate-dryrun.json` run cleanly; the seven-source bucket matrix shows no unreviewed accepted imports; grouped/development counts use one documented definition; source-specific parser regressions cover each fixed pattern, including Address.bg city/address/contact/gallery, BulgarianProperties local-gallery/unit-area/development separation, Homes.bg duplicate URL/active-status/full-gallery handling, imot.bg area/category/mojibake/grouped handling, LUXIMMO/property.bg/SUPRIMMO gallery variant de-duplication and unit-area selection, zero-price-to-status handling, and source-specific contact extraction that rejects dates, IDs, counters, and JavaScript fragments.
+- **Output**: parser/media/contact fixes, refreshed quality/dashboard exports, scraper_1 JOURNEY.
+- **Verifier**: data_analyst + debugger
+- **Depends on**: DA-01, S1-22B
+
+### S1-24: Analyst-queued Action1 repair waves
+- **Status**: `TODO`
+- **Priority**: **CRITICAL**
+- **Read first**: `S1-23`, latest `DA-02` / `DA-03` outputs, `docs/exports/action1-lost-rescrape-queue.json`, `docs/exports/action1-multi-unit-publications.json`, `scripts/live_scraper.py`, `tests/test_action1_parser_regressions.py`
+- **Do**:
+  1. Execute bounded parser/media/contact repairs from data_analyst queues only; do not widen source scope to Action2.
+  2. For each source/bucket wave, record before/after accepted, LOST, grouped, inactive, description, price, area, local-gallery, and phone-noise counts.
+  3. Add fixture/regression coverage for each repaired source pattern before any live rerun.
+  4. Refresh quality gates after each wave and hand off to data_analyst/debugger.
+- **Acceptance gate**: bounded `action1_dataset_quality_gate` and scraper parser regressions pass; per-source/bucket delta report shows reduced unreviewed/bad states or a named blocker.
+- **Output**: parser/media/contact fixes, refreshed quality exports, `docs/exports/action1-repair-wave-YYYY-MM-DD.md`, scraper_1 JOURNEY.
+- **Verifier**: data_analyst + debugger
+- **Depends on**: S1-23, DA-02
+
 ### S1-22C: Gemma/OpenClaw Action2 — remaining legal tier-1/2 expansion
 - **Status**: `TODO`
 - **Priority**: **HIGH** — run only after Action1 QA
@@ -1131,6 +1578,107 @@ make dashboard-doc
 - **Verifier**: debugger
 - **Depends on**: SM-08, BD-11, BD-17
 
+### SM-10: Tier-3/tier-4 intelligence path matrix
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13)
+- **Priority**: HIGH — prepares safe evidence paths while data analyst work continues
+- **Read first**: `docs/agents/TASKS.md`, `docs/agents/roles/scraper_sm.md`, `data/source_registry.json`, `docs/agents/scraper_sm/social-ingestion-policy.md`, `docs/agents/scraper_sm/social-collection-options.md`
+- **Do**:
+  1. Define only legal, consent, partner, official API, licensed, or manual routes for tier-3/tier-4 intelligence.
+  2. Record legal/consent blockers for Airbnb, Booking.com, Vrbo, Flat Manager, Menada, AirDNA, Airbtics, BCPEA, KAIS, Property Register, Telegram, X, Facebook, Instagram, Threads, Viber, and WhatsApp.
+  3. Keep S&M evidence separate from canonical listings: source publications, CRM leads, review candidates, or analytics overlays only.
+  4. Produce follow-up slices that can complement data analyst findings without widening Action1 or scraping private/social/messenger channels.
+- **Acceptance gate**: path matrix exists; no unsafe scraping route is proposed; blocker language matches `source_registry` legal/access modes; follow-up tasks are explicit.
+- **Output**: `docs/agents/scraper_sm/tier3-tier4-intelligence-paths-2026-05-13.md`, S&M JOURNEY entry, TASKS follow-ups.
+- **Verifier**: debugger + data_analyst
+- **Depends on**: PLAN-03
+
+### SM-11: Official/register evidence queue
+- **Status**: `TODO`
+- **Priority**: HIGH — official evidence can complement accepted marketplace rows without private/social scraping
+- **Read first**: `docs/agents/scraper_sm/tier3-tier4-intelligence-paths-2026-05-13.md`, `data/source_registry.json` entries for BCPEA/KAIS/Property Register, `docs/exports/scrape-database-quality-audit-2026-05-13.md`, latest data analyst reports
+- **Do**:
+  1. Define fixture schemas and review states for BCPEA auction source publications.
+  2. Define manual/consent-only evidence envelopes for KAIS parcel/building checks and Property Register ownership checks.
+  3. Specify comparison fields for data analyst: source URL/reference, geography, address fragments, area, price/opening bid, document dates, confidence, and review blocker.
+  4. Block autonomous KAIS/Property Register querying; require operator/manual consent and permitted export evidence.
+  5. Keep all official evidence outside canonical listings until single-unit evidence and review gates pass.
+- **Acceptance gate**: queue spec separates auction/public-crawl evidence from consent/manual register checks; no official-service automation bypass is proposed.
+- **Output**: official/register evidence queue spec, fixture templates if needed, S&M JOURNEY entry.
+- **Verifier**: debugger + data_analyst
+- **Depends on**: SM-10
+
+### SM-12: Vendor/partner intelligence readiness
+- **Status**: `TODO`
+- **Priority**: HIGH — STR and partner evidence can explain supply/price gaps after data analyst baseline
+- **Read first**: `docs/agents/scraper_sm/tier3-tier4-intelligence-paths-2026-05-13.md`, `data/source_registry.json` tier-3 vendor/partner entries, T3-02/T3-04 historical outputs, latest data analyst reports
+- **Do**:
+  1. Define fixture contracts for AirDNA/Airbtics licensed STR metric snapshots; do not model them as listings.
+  2. Define partner-feed readiness checklists for Airbnb, Booking.com, Vrbo, Flat Manager, and Menada.
+  3. Keep live API/feed calls hard-blocked without license, partner contract, API docs, credentials, and debugger approval.
+  4. Map outputs to analytics overlays, channel capability evidence, partner inventory candidates, or publishing eligibility evidence.
+  5. Identify which fields can later help data analyst compare marketplace inventory against STR/vendor supply signals.
+- **Acceptance gate**: every vendor/partner route has an allowed path, blocker list, output class, and fixture-first test expectation; no crawl-first OTA route is proposed.
+- **Output**: vendor/partner readiness spec, fixture TODOs, S&M JOURNEY entry.
+- **Verifier**: debugger + data_analyst
+- **Depends on**: SM-10
+
+### SM-13: Social-overlay evidence queue and data analyst handoff
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13)
+- **Priority**: MEDIUM — use public/consented social signals as lead evidence only
+- **Read first**: `docs/agents/scraper_sm/tier3-tier4-intelligence-paths-2026-05-13.md`, `docs/agents/scraper_sm/social-ingestion-policy.md`, `docs/agents/scraper_sm/social-collection-options.md`, SM-02/SM-03 outputs, latest data analyst reports
+- **Do**:
+  1. Define review queue states for Telegram/X official API signals and Facebook/Instagram/Threads manual-consent signals.
+  2. Define consented/manual or official business/bot webhook envelopes for Viber and WhatsApp; block private groups, DMs, unofficial sessions, and mass account workflows.
+  3. Define redaction, provenance, channel/message IDs, extracted intent, location hints, price hints, and confidence fields.
+  4. Define handoff metrics for data analyst: lead-only, candidate-single-unit, suspected-multi-unit, noise, missing-price, redaction failure, and promotion-blocked counts.
+  5. Keep social evidence out of canonical listings until SM-09-style persistence and review gates are verified.
+- **Acceptance gate**: queue spec proves S&M signals remain separate from marketplace completeness; no unsafe social or messenger scraping path is introduced.
+- **Output**: `docs/agents/scraper_sm/social-overlay-evidence-queue-2026-05-13.md`, `docs/agents/scraper_sm/social-media-source-discovery-2026-05-13.md`, `data/social_media_intelligence_candidates.json`, S&M JOURNEY entry.
+- **Verifier**: debugger + data_analyst
+- **Depends on**: SM-10, SM-02, SM-03
+
+### SM-14: Telegram public candidate validation and fixture expansion
+- **Status**: `TODO`
+- **Priority**: HIGH — highest-confidence automated social overlay path
+- **Read first**: `data/social_media_intelligence_candidates.json`, `docs/agents/scraper_sm/social-overlay-evidence-queue-2026-05-13.md`, `src/bgrealestate/connectors/telegram_public.py`, `tests/test_telegram_public_connector.py`
+- **Do**:
+  1. Validate public status, channel type, activity, and duplicate risk for the top Telegram candidates.
+  2. Add redacted fixtures for at least four high-priority candidates: `rentvarna`, `varnarents`, `kvartirivarna`, and `addressbg`, if public/allowed samples are available.
+  3. Extend classifier fixtures for source-link candidates, lead-only messages, suspected multi-unit messages, and noise.
+  4. Do not run a live worker or store live data until token/session, rate limits, redaction, and debugger approval exist.
+- **Acceptance gate**: fixture tests pass offline; every candidate has route/status; no live Telegram dependency in tests.
+- **Output**: Telegram candidate validation notes, fixtures, parser tests, S&M JOURNEY entry.
+- **Verifier**: debugger + data_analyst
+- **Depends on**: SM-13
+
+### SM-15: Meta Facebook/Instagram manual/API route pilot
+- **Status**: `TODO`
+- **Priority**: MEDIUM — high signal but high compliance friction
+- **Read first**: `data/social_media_intelligence_candidates.json`, `docs/agents/scraper_sm/social-media-source-discovery-2026-05-13.md`, Meta/Instagram API docs, SM-13 queue spec
+- **Do**:
+  1. Split Facebook Groups, Facebook Pages, and Instagram profiles into route-specific queues.
+  2. Define manual operator capture templates for groups.
+  3. Define Graph API/Page and Instagram Business Discovery approval checklist for pages/professional profiles.
+  4. Add redacted manual fixtures only; no login-gated scraping or unofficial profile scraping.
+- **Acceptance gate**: manual/API route spec exists; fixture examples are redacted; unsafe scraping remains blocked.
+- **Output**: Meta route pilot spec, fixture templates, S&M JOURNEY entry.
+- **Verifier**: debugger + data_analyst
+- **Depends on**: SM-13
+
+### SM-16: WhatsApp/Viber opt-in business intake design
+- **Status**: `TODO`
+- **Priority**: MEDIUM — useful as inbound CRM, not source scraping
+- **Read first**: `data/social_media_intelligence_candidates.json`, `docs/agents/scraper_sm/social-media-source-discovery-2026-05-13.md`, Viber Bot API docs, WhatsApp Business Platform docs, SM-13 queue spec
+- **Do**:
+  1. Define Viber commercial bot/manual opt-in evidence envelope.
+  2. Define WhatsApp Business webhook evidence envelope for owner/agent opt-in conversations.
+  3. Define consent proof, unsubscribe/delete handling, redaction, and retention requirements.
+  4. Block arbitrary community/group/DM scraping.
+- **Acceptance gate**: opt-in intake spec exists; no group scraping route is proposed; debugger verifies consent and redaction.
+- **Output**: WhatsApp/Viber intake spec, fixture templates, S&M JOURNEY entry.
+- **Verifier**: debugger + backend_developer + data_analyst
+- **Depends on**: SM-13
+
 ---
 
 ## ═══════════════════════════════════════════════════════
@@ -1376,6 +1924,117 @@ make dashboard-doc
 - **Verifier**: debugger + backend_developer
 - **Depends on**: BD-17
 
+### UX-15: Data-quality UX requirements from DA findings
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13; requirements only, no public UI expansion)
+- **Priority**: HIGH — operator truth before buyer-facing claims
+- **Read first**: `docs/agents/roles/ux_ui_designer.md`, `docs/agents/roles/data_analyst.md`, `docs/exports/scrape-database-quality-audit-2026-05-13.md`, `docs/exports/action1-dataset-quality-gate.md`
+- **Do**:
+  1. Convert expected/current data-quality findings into UX/product requirements.
+  2. Define UI handling for accepted vs pending QA, grouped/development publications, media gaps, confidence, duplicate candidates, and source provenance.
+  3. Keep admin/operator UX tasks ahead of buyer-facing tasks.
+  4. Hand debugger the assumptions that must be verified before implementation.
+- **Acceptance gate**: decision notes separate FACT / INTERPRETATION / HYPOTHESIS / GAP; no public UI expansion is started; follow-up UX tasks are ordered admin/operator first, then buyer-facing.
+- **Output**: `docs/agents/ux_ui_designer/data-quality-ui-decision-notes-2026-05-13.md`, updated UX task slices, ux_ui_designer JOURNEY entry.
+- **Verifier**: debugger
+- **Depends on**: DA-01 file-backed audit
+
+### UX-16: Admin source-publication QA review queues
+- **Status**: `TODO`
+- **Priority**: HIGH — internal operator surface before public expansion
+- **Read first**: `docs/agents/ux_ui_designer/data-quality-ui-decision-notes-2026-05-13.md`, `docs/agents/ux_ui_designer/admin-ui-spec.md`, `docs/agents/ux_ui_designer/operator-dashboard-spec.md`, `docs/exports/scrape-database-quality-audit-2026-05-13.md`, `BD-18` output, `BD-19` output when available
+- **Do**:
+  1. Extend `/admin` requirements and implementation with a source-publication QA queue.
+  2. Show accepted, pending QA, `LOST`, inactive, grouped/development, media-gap, description-gap, parser-gap, and image-report states as separate filterable dimensions.
+  3. Provide an evidence drawer with source URL, source key, source external ID, bucket/segment key, first/last seen, price/status, area, media counts, QA reasons, and source registry legal/risk/access modes.
+  4. Add operator actions only when backed by API: accept, quarantine, grouped/development review, queue rescrape, queue media backfill, mark source-limited.
+- **Acceptance gate**: admin queue never describes grouped/development rows as single properties; table/drawer labels match DA-02 metric definitions; no public route consumes these rows.
+- **Output**: updated admin/operator spec and `/admin` component tasks or implementation.
+- **Verifier**: debugger + data_analyst + backend_developer
+- **Depends on**: DA-02, BD-18, BD-19
+
+### UX-17: Admin duplicate, confidence, and provenance review UX
+- **Status**: `TODO`
+- **Priority**: HIGH — internal entity-resolution review before merge claims
+- **Read first**: `docs/agents/ux_ui_designer/data-quality-ui-decision-notes-2026-05-13.md`, `ER-01` output, `ER-04` output when available, `BD-21` output when available, `src/bgrealestate/services/unification.py`, `docs/exports/action1-multi-unit-publications.json`
+- **Do**:
+  1. Define and build the operator duplicate-candidate queue after accepted source-publication import exists.
+  2. Show side-by-side source-publication cards with confidence score, match signals, conflict fields, photos, price/status, area, contacts, source URLs, and first/last seen.
+  3. Disable merge for grouped/development publications, low-confidence candidates, and records without unit-level evidence.
+  4. Keep raw confidence internal; buyer-facing UI can later show verified source count/provenance only.
+- **Acceptance gate**: grouped/development rows cannot be merged as one property; every merge/dismiss action is auditable; confidence language is internal and evidence-based.
+- **Output**: duplicate/confidence/provenance UX spec update and admin task/component breakdown.
+- **Verifier**: debugger + entity_resolution_agent + data_analyst
+- **Depends on**: ER-01, BD-18, BD-19, BD-21, accepted source-publication import evidence
+
+### UX-18: Buyer-facing accepted-only trust labels
+- **Status**: `TODO`
+- **Priority**: MEDIUM — do not start until public data gates pass
+- **Read first**: `docs/agents/ux_ui_designer/data-quality-ui-decision-notes-2026-05-13.md`, `docs/business/product-ux-structure.md`, `lib/types/listing.ts`, `DA-02` output, `BD-18` output, `BD-19` output
+- **Do**:
+  1. Update listing cards and property details to show only accepted single-unit records by default.
+  2. Translate pipeline evidence into buyer-safe labels: verified source, multiple sources, limited photos, price on request, location approximate.
+  3. Keep source provenance visible as `Listed on` / `Marketed by sources` without exposing parser internals.
+  4. Do not show grouped/development publications as normal property cards; reserve a future development/project surface until unit evidence exists.
+- **Acceptance gate**: public feed/detail fixtures prove pending QA, missing-status, `LOST`, inactive, and grouped/development rows are excluded; labels are backed by verified fields; browser screenshots show no misleading data-quality copy.
+- **Output**: buyer-facing trust-label component tasks or implementation after gates pass.
+- **Verifier**: debugger + data_analyst
+- **Depends on**: UX-16 verification, DA-02, BD-18, BD-19, public export accepted-only proof
+
+### UX-19: Market positioning and source-coverage language
+- **Status**: `TODO`
+- **Priority**: MEDIUM
+- **Read first**: `docs/exports/market-intelligence-2026-05-13.md`, `docs/agents/ux_ui_designer/data-quality-ui-decision-notes-2026-05-13.md`, `DA-02` output, `BD-19` output, `UX-18`
+- **Do**:
+  1. Define buyer-safe copy and UI labels for verified source provenance, limited media, approximate location, price on request, and accepted-only source coverage.
+  2. Reserve "complete market", "95% coverage", city trend, and price-per-sqm labels until accepted-only DB-backed counts and price rollups exist.
+  3. Map grouped/development publications to future project/new-build surfaces instead of normal property cards.
+- **Acceptance gate**: UX language does not overstate coverage, does not expose parser internals to buyers, and cites accepted-only fields for every trust label.
+- **Output**: UX copy/spec notes or implementation task breakdown.
+- **Verifier**: debugger + market_intelligence_analyst + data_analyst
+- **Depends on**: MI-01, UX-18, DA-02, BD-19
+
+### UX-20: First-party analytics instrumentation hooks
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `docs/analytics/user-event-taxonomy.md`, `UA-02`, `BD-20`, `components/listings/MainExplorer.tsx`, `components/map/MapCanvas.tsx`, `components/listings/PhotoCarousel.tsx`, `app/(main)/properties/[id]/detail-client.tsx`, `components/chat/ChatBar.tsx`, `components/chat/ChatWorkspace.tsx`, `components/account/AccountCabinet.tsx`, `app/(main)/admin/page.tsx`
+- **Do**:
+  1. Add a small first-party analytics client wrapper only after `BD-20` intake exists; no external analytics package.
+  2. Fire safe derived events for search/filter changes, listing impressions/selections, map marker/mode/view interactions, source link opens, save/contact/share intent, chat opens/messages/failures, profile mode/saved-search actions, admin queue/review actions, and media gallery navigation.
+  3. Derive and send only taxonomy-approved buckets/enums; never send raw search text, raw chat text, contact details, source URLs, image URLs, or admin notes.
+  4. Debounce/batch high-volume events: search changes, map moves, impressions, and media navigation.
+- **Acceptance gate**: component tests or debug sink fixtures show expected event names/payloads for key flows; `rg` finds no external analytics dependency; unsafe text/url/contact fields are absent.
+- **Output**: frontend analytics client/hooks, component wiring, UX JOURNEY entry, debugger handoff.
+- **Verifier**: debugger + user_analytics_agent + backend_developer
+- **Depends on**: UA-02, BD-20, UX-15
+
+### UX-21: In-platform four-dashboard shell
+- **Status**: `TODO`
+- **Priority**: MEDIUM
+- **Read first**: `PLAN-06`, `docs/dashboard/project-progress.html`, `docs/dashboard/properties-database.html`, `docs/dashboard/website.html`, `docs/dashboard/support.html`, `docs/exports/operational-dashboards.json`, `app/(main)/admin/page.tsx`, `app/(main)/dashboard/[...path]/route.ts`
+- **Do**:
+  1. Translate the static four-dashboard model into an authenticated operator/admin web-platform shell after `BD-19` exposes verified read models.
+  2. Preserve the same four categories and expandable insight/details/action pattern; do not compress statuses into opaque aggregate cards.
+  3. Show file-backed vs DB-backed badges for every count and hide public/release-ready labels until verifier gates pass.
+  4. Keep support operations separate from public marketplace pages; support dashboard is for operator assistance, not buyer marketing.
+- **Acceptance gate**: in-platform dashboard routes mirror the static dashboard semantics, use verified API/read-model data when available, and no public route displays raw QA or support data.
+- **Output**: admin/dashboard component plan or implementation, UX JOURNEY entry, screenshot/browser verification handoff.
+- **Verifier**: debugger + data_analyst + backend_developer
+- **Depends on**: PLAN-06, DA-04, BD-19
+
+### UX-22: Verified dashboard/read-model field consumption contract
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13; contract only, no buyer-facing implementation)
+- **Priority**: **HIGH**
+- **Read first**: `docs/agents/ux_ui_designer/verified-field-consumption-2026-05-13.md`, `DA-02`, `BD-18`, `BD-19`, `UX-16`, `UX-18`, `UX-21`, `docs/dashboard/data-quality-dashboard.html`
+- **Do**:
+  1. Consume only verified file-backed dashboard fields or DB-backed read-model fields.
+  2. Label file-backed audit, quality-gate estimate, importer candidate, media-capture, and DB-blocked states explicitly in admin/operator surfaces.
+  3. Keep buyer-facing cards/details/trust labels blocked until accepted-only DB/read-model proof, `BD-19`, and debugger verification exist.
+  4. Preserve grouped/development, `LOST`, inactive, pending QA, and image-description-not-generated states as internal operator evidence only.
+- **Acceptance gate**: UX contract names allowed fields, blocked fields, required labels, and dependent slices; no public route claims verified inventory or semantic image descriptions from file-backed operational dashboards alone.
+- **Output**: `docs/agents/ux_ui_designer/verified-field-consumption-2026-05-13.md`, ux_ui_designer JOURNEY entry.
+- **Verifier**: debugger + data_analyst + backend_developer
+- **Depends on**: DA-02, BD-18, BD-19
+
 ---
 
 ## ═══════════════════════════════════════════════════════
@@ -1526,6 +2185,161 @@ make dashboard-doc
 - **Output**: tests/mocks/logging isolation patch plus verifier note.
 - **Verifier**: lead agent
 - **Depends on**: —
+
+### DBG-14: Verify DA-01 scrape database quality audit
+- **Status**: `VERIFIED` (2026-05-13; file-backed DA-01 passed, DB-backed counts blocked)
+- **Priority**: **HIGH**
+- **Read first**: `docs/exports/scrape-database-quality-audit-2026-05-13.md`, `scripts/audit_scrape_database_quality.py`, `docs/agents/data_analyst/JOURNEY.md`, `docs/agents/TASKS.md`
+- **Do**:
+  1. Re-run `python3 scripts/audit_scrape_database_quality.py` and compare report totals with the committed JSON.
+  2. Verify the report separates FACT / INTERPRETATION / GAP and covers seven Action1 sources across four buckets.
+  3. Verify `S1-23` and `BD-18` are queued with concrete acceptance gates.
+  4. Record DB/import blockers (`DATABASE_URL` missing and SQLAlchemy import dependency) without promoting DB-backed claims.
+- **Acceptance gate**: report is reproducible; no public/DB completion claim is made without PostgreSQL evidence; follow-up tasks are actionable.
+- **Output**: debugger JOURNEY verification entry and TASKS status update for DA-01.
+- **Verifier**: debugger
+- **Depends on**: DA-01
+
+### DBG-22: Verify backend BD-18 contract prep
+- **Status**: `TODO`
+- **Priority**: **HIGH**
+- **Read first**: `docs/agents/backend_developer/JOURNEY.md`, `BD-18`, `docs/exports/bd18-database-review-and-correction-spec-2026-05-13.md`, `scripts/import_scraped_listings.py`, `src/bgrealestate/models.py`, `src/bgrealestate/db/models.py`, `src/bgrealestate/db/repositories.py`, `src/bgrealestate/db/media_ids.py`, `src/bgrealestate/connectors/ingest.py`, `tests/test_backend_import_contract.py`
+- **Do**:
+  1. Confirm no live scraped data was imported or mutated by the backend prep run.
+  2. Verify accepted-only import boundaries still reject unreviewed, LOST, grouped/development, and inactive rows by default.
+  3. Verify all-Bulgaria bucket/provenance evidence is preserved outside the Varna-only `source_section_id` FK.
+  4. Verify `CanonicalListingRepository.upsert` can accept the current `CanonicalListing` dataclass fields and repeated listing-media sync uses deterministic IDs.
+  5. Defer DB-backed import/count claims until `DATABASE_URL` is available.
+  6. Verify numeric price `0` cannot persist as a real price and default scraped import does not promote `property_entity` / `property_offer`.
+- **Acceptance gate**: `python3 -m py_compile scripts/import_scraped_listings.py src/bgrealestate/db/media_ids.py src/bgrealestate/db/models.py src/bgrealestate/db/repositories.py src/bgrealestate/connectors/ingest.py src/bgrealestate/cli.py tests/test_backend_import_contract.py`; `PYTHONPATH=src python3 -m unittest tests.test_backend_import_contract -v`; DB-backed fixture import remains blocked unless a real PostgreSQL URL is supplied.
+- **Output**: debugger JOURNEY verification entry and TASKS status update for `BD-18` prep.
+- **Verifier**: debugger
+- **Depends on**: BD-18
+
+### DBG-15: Verify data-analyst-centered planner handoff
+- **Status**: `VERIFIED` (2026-05-13; protocol pass, DB/dashboard verification deferred to BD-18/INFRA-02/DA-03)
+- **Priority**: **CRITICAL**
+- **Read first**: `PLAN-04`, `docs/agents/TASKS.md`, `docs/agents/planner/JOURNEY.md`, `docs/agents/README.md`, `docs/agents/AGENT_LOOP_AND_CADENCE.md`
+- **Do**:
+  1. Verify the active dependency map keeps `data_analyst` as evidence owner.
+  2. Verify backend, scraper_1, UX, infra, and knowledge slices each have a concrete next step, dependency, output, and verifier.
+  3. Verify planner did not touch scraped DB/corpus artifacts.
+- **Acceptance gate**: no active slice can claim Action1 completion, DB import success, or public UI data truth without analyst/debugger evidence.
+- **Output**: debugger JOURNEY entry; TASKS status update for `PLAN-04`.
+- **Verifier**: debugger
+- **Depends on**: PLAN-04
+
+### DBG-16: Verify DA-dependent implementation queue
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `BD-18`, `BD-19`, `S1-23`, `S1-24`, `UX-15`, `INFRA-02`, latest `DA-02` / `DA-03` outputs
+- **Do**:
+  1. Verify each DA-dependent implementation slice uses analyst artifacts as inputs, not chat summaries.
+  2. Run focused acceptance gates when a producing agent marks a slice `DONE_AWAITING_VERIFY`.
+  3. Record deferred verification reasons when `DATABASE_URL`, dashboard fast mode, or live credentials are missing.
+- **Acceptance gate**: every DA-dependent slice has PASS/FAIL/deferred debugger notes and no unresolved verifier handoff.
+- **Output**: debugger JOURNEY entries and TASKS status updates.
+- **Verifier**: debugger
+- **Depends on**: DA-02, DA-03 as applicable
+
+### DBG-23: Verify four-dashboard operating model
+- **Status**: `TODO`
+- **Priority**: **CRITICAL**
+- **Read first**: `PLAN-06`, `scripts/generate_operational_dashboards.py`, `docs/exports/operational-dashboards.json`, `docs/dashboard/index.html`, `docs/dashboard/project-progress.html`, `docs/dashboard/properties-database.html`, `docs/dashboard/website.html`, `docs/dashboard/support.html`
+- **Do**:
+  1. Run `python3 -m py_compile scripts/generate_operational_dashboards.py` and `python3 scripts/generate_operational_dashboards.py`.
+  2. Verify the four dashboard pages exist and each stat block is a `<details open>` item with insight/details/action text.
+  3. Verify the Project Progress dashboard includes all current agent lanes and does not lose new support agents.
+  4. Verify the Properties Database dashboard labels file-backed audit, quality-gate, scrape-status, and DB-blocked counts separately.
+  5. Verify the Website and Support dashboards do not claim public data readiness, deployment readiness, DB parity, or media report completion without upstream gates.
+- **Acceptance gate**: dashboards regenerate deterministically from file-backed artifacts, no scraped DB/corpus is touched, and unresolved DA-02/DA-03/BD-18/INFRA-02 gates remain visible.
+- **Output**: debugger JOURNEY entry and TASKS status update for `PLAN-06`.
+- **Verifier**: debugger + data_analyst + ux_ui_designer
+- **Depends on**: PLAN-06
+
+### DBG-24: Verify DA-02/BD-18 deep handoff
+- **Status**: `VERIFIED` (2026-05-13; file-backed handoff and code-contract checks passed, DB proof blocked by missing `DATABASE_URL`)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/exports/debugger-da02-bd18-handoff-verification-2026-05-13.md`, `docs/exports/data-quality-deep-review-2026-05-13.md`, `docs/exports/bd18-database-review-and-correction-spec-2026-05-13.md`, `docs/dashboard/data-quality-dashboard.html`, `scripts/import_scraped_listings.py`, `scripts/bd18_db_smoke_import.py`, `src/bgrealestate/db/models.py`, `src/bgrealestate/db/repositories.py`, `src/bgrealestate/connectors/ingest.py`, `tests/test_backend_import_contract.py`
+- **Do**:
+  1. Verify DA-02 dashboard/report outputs are file-backed and do not claim DB parity.
+  2. Verify BD-18 table/model/repository/import-smoke changes compile and preserve accepted-only source-publication import behavior.
+  3. Run focused backend import contract tests.
+  4. Record `make verify-db-counts` and `make bd18-db-smoke-import` as blocked until `DATABASE_URL` exists.
+- **Acceptance gate**: debugger report separates PASS file-backed/code-contract readiness from BLOCKED DB-backed migration/import/count proof, and names backend/infra/UX next owners.
+- **Output**: `docs/exports/debugger-da02-bd18-handoff-verification-2026-05-13.md`, debugger JOURNEY entry.
+- **Verifier**: debugger
+- **Depends on**: DA-02, BD-18
+
+### DBG-17: Verify scraper_1 analyst-support handoff
+- **Status**: `TODO`
+- **Priority**: **HIGH**
+- **Read first**: latest `docs/agents/scraper_1/JOURNEY.md`, `S1-23`, `docs/exports/scrape-database-quality-audit-2026-05-13.md`, `docs/exports/action1-dataset-quality-gate.md`, `data/source_registry.json`
+- **Do**:
+  1. Verify scraper_1 did not start live scraping or widen Action2.
+  2. Check that source-specific next actions cover parser gaps, media gaps, grouped/development handling, missing provenance, and price-state handling for all seven A1 sources.
+  3. Confirm Action1 -> Action0 -> Action2 gate remains intact and non-A1 sources are context only.
+- **Acceptance gate**: debugger can map every DA-01 source finding to a scraper repair, data_analyst follow-up, or blocked/legal state without contradicting source-registry gates.
+- **Output**: debugger JOURNEY verification entry and any required TASKS status update.
+- **Verifier**: debugger
+- **Depends on**: S1-23, DA-01
+
+### DBG-18: Verify vision media QA readiness and gates
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `VM-01`, `VM-02`, `VM-03`, `VM-04`, `docs/exports/vision-media-action0-readiness-2026-05-13.md`, `docs/agents/vision_media_agent/JOURNEY.md`, `docs/exports/s1-21-gemma-action0-eligible.json`, `docs/exports/action1-dataset-quality-gate.json`
+- **Do**:
+  1. Verify VM-01 did not run image processing and kept Action0 execution blocked until operator `Action0 now`.
+  2. Verify media QA tasks cover gallery completeness, per-image semantics, room/condition/equipment/style evidence, whole-property consistency, and uncertainty.
+  3. Verify buyer-facing display and promotion gates exclude pending QA, `LOST`, inactive, grouped/development, partial-gallery, and no-report rows unless explicitly source-limited.
+  4. Verify dashboard handoff warns against using stale media-coverage accepted counters before DA-02.
+- **Acceptance gate**: debugger can approve the media-evidence plan without any semantic image output being treated as canonical fact; any missing schema/gate requirement is mapped back to VM-02/VM-03/VM-04.
+- **Output**: debugger JOURNEY verification entry and TASKS status update for VM-01.
+- **Verifier**: debugger
+- **Depends on**: VM-01
+
+### DBG-21: Verify data-analysis release hygiene gate
+- **Status**: `TODO`
+- **Priority**: **CRITICAL**
+- **Read first**: `OPS-02`, `docs/agents/ops_release_manager/JOURNEY.md`, `.gitignore`, latest `data_analyst` outputs, staged diff if a release is later prepared
+- **Do**:
+  1. Verify OPS-02 did not stage, push, or promote counts while data analyst work was still running.
+  2. Confirm release notes require reproducible DA artifacts and separate file-backed, DB-backed, accepted, LOST, grouped/development, inactive, media-gap, and dashboard denominator claims.
+  3. If a staged release exists later, run unsafe-path and secret scans against the staged diff and block raw dumps, logs, DB dumps, secrets, local runtime state, archives, caches, and unreviewed corpus batches.
+  4. Record whether tracked `data/scraper.log` changed; treat unexpected log churn as a release blocker until DBG-10 resolves log isolation.
+- **Acceptance gate**: debugger records PASS/FAIL/deferred release-hygiene result; no data-analysis-driven release proceeds with unsafe files or unsupported data claims.
+- **Output**: debugger JOURNEY entry and TASKS status update.
+- **Verifier**: debugger
+- **Depends on**: OPS-02, DA-02/DA-03 as applicable
+
+### DBG-19: Verify privacy-safe analytics instrumentation
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `docs/analytics/user-event-taxonomy.md`, `UA-02`, `BD-20`, `UX-20`, tests for analytics payloads
+- **Do**:
+  1. Verify no external analytics dependencies, scripts, pixels, or outbound third-party telemetry endpoints were added.
+  2. Verify event payload tests reject raw search text, raw chat text, emails, phones, names, source URLs, image URLs, IP addresses, raw user agents, tokens, and admin notes.
+  3. Verify debounced/batched events do not over-log high-frequency search, map, impression, or media actions.
+  4. Verify dashboard queries use first-party event tables only.
+- **Acceptance gate**: focused tests and `rg` scans pass; debugger records PASS/FAIL with any unsafe field paths.
+- **Output**: debugger JOURNEY verification entry and TASKS status updates.
+- **Verifier**: debugger
+- **Depends on**: BD-20, UX-20, UA-03
+
+### DBG-20: Verify entity-resolution accepted-only/no-promotion gate
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: ER-01 output, ER-02/ER-03 outputs when available, `BD-21` output when available, `src/bgrealestate/services/unification.py`, `scripts/import_scraped_listings.py`, `docs/exports/action1-multi-unit-publications.json`, `docs/exports/scrape-database-quality-audit-2026-05-13.md`
+- **Do**:
+  1. Verify ER planning and later implementation consume accepted source-publication evidence, not chat summaries or raw scrape volume.
+  2. Verify pending QA, missing-status, `LOST`, inactive, grouped/development, unknown, and conflicting-evidence rows cannot enter duplicate scoring or property promotion.
+  3. Verify candidate generation, when implemented, writes reviewable candidate/evidence/review rows only until an explicit reviewed merge path exists.
+  4. Verify fixtures cover single-unit, grouped/development, unknown, duplicate, and conflicting-evidence cases.
+  5. Verify public `/properties` and buyer-facing exports do not expose ER candidates.
+- **Acceptance gate**: no ER slice creates or mutates `property_entity` / `property_offer` without reviewed accepted-only evidence; fixture tests and docs prove grouped/development rows cannot auto-merge as one property.
+- **Output**: debugger JOURNEY verification entry and TASKS status updates for ER/BD handoffs.
+- **Verifier**: debugger + data_analyst
+- **Depends on**: ER-01; implementation verification depends on ER-02, ER-03, BD-21
 
 ---
 

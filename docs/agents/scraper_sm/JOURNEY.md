@@ -195,3 +195,95 @@ New files:
 - **Tests run**: none.
 - **Status**: DONE_AWAITING_VERIFY.
 - **Review comments**: Debugger should verify that S&M cannot widen Action1 or run private/social scraping without legal/consent gates.
+
+## 2026-05-13 — SM-10 tier-3/tier-4 intelligence paths
+
+- **Action**: Prepared S&M intelligence paths for official/register, vendor/partner, STR analytics, and social-overlay evidence without scraping private/social/messenger channels.
+- **Changed files**:
+  - `docs/agents/scraper_sm/tier3-tier4-intelligence-paths-2026-05-13.md`
+  - `docs/agents/TASKS.md`
+  - `docs/agents/scraper_sm/JOURNEY.md`
+- **Commands run**:
+  - `sed -n '1,240p' docs/agents/TASKS.md`
+  - `sed -n '1,240p' docs/agents/roles/scraper_sm.md`
+  - `jq -r '.sources[] | select((.tier|tonumber) >= 3) ...' data/source_registry.json`
+  - `sed -n '1,260p' docs/agents/scraper_sm/JOURNEY.md`
+- **Tests run**: not run; documentation/task-planning slice only.
+- **Status**: DONE_AWAITING_VERIFY.
+- **Legal/consent blockers**: Airbnb/Booking/Vrbo/Flat Manager/Menada require partner/official routes; AirDNA/Airbtics require license/export access; KAIS/Property Register require manual/consent official-service use; Facebook/Instagram/Threads stay manual/consent/deferred; WhatsApp/Viber stay opt-in/partner/manual only; Telegram/X require official API access plus redaction/review.
+- **Review comments**: Added `SM-11`, `SM-12`, and `SM-13` so future S&M work complements data analyst findings while keeping signals separate from canonical listings.
+
+Changed files:
+- `docs/agents/scraper_sm/tier3-tier4-intelligence-paths-2026-05-13.md`
+- `docs/agents/TASKS.md`
+- `docs/agents/scraper_sm/JOURNEY.md`
+Agent tools used:
+- `rg`, `sed`, `jq`, `find`, `apply_patch`
+Skills used:
+- `publishing-compliance`
+- `runtime-compliance-evaluator`
+- `scraper-connector-builder`
+Extensions/libraries used:
+- none
+Commands run:
+- listed above
+Tests run:
+- none; docs/task-planning only
+Outputs produced:
+- S&M tier-3/tier-4 path matrix
+- SM-11/SM-12/SM-13 follow-up tasks
+Risks / blockers:
+- live S&M routes remain blocked until licenses/contracts/API credentials/manual consent/legal approval exist
+Progress update:
+- SM-10 `DONE_AWAITING_VERIFY`
+Next step:
+- debugger + data_analyst verify SM-10, then execute SM-11/SM-12/SM-13 in priority order
+
+## 2026-05-13 — SM-13 social media discovery and evidence queue
+
+- **Action**: Reviewed public-discoverable real-estate social/messenger candidates across Telegram, Facebook, Instagram, Viber, and WhatsApp; saved a machine-readable candidate matrix and a social-overlay evidence queue. No private/social/messenger scraping was added.
+- **Changed files**:
+  - `data/social_media_intelligence_candidates.json`
+  - `docs/agents/scraper_sm/social-media-source-discovery-2026-05-13.md`
+  - `docs/agents/scraper_sm/social-overlay-evidence-queue-2026-05-13.md`
+  - `docs/agents/TASKS.md`
+  - `docs/agents/scraper_sm/JOURNEY.md`
+- **Commands run**:
+  - `sed`/`jq` reads of role, registry, existing S&M docs, parser, and tests
+  - web research of public candidate pages/search results and official platform access docs
+- **Tests run**: `python3 -m json.tool data/social_media_intelligence_candidates.json`; `git diff --check -- docs/agents/TASKS.md docs/agents/scraper_sm/JOURNEY.md`; `rg -n "[ \t]+$" data/social_media_intelligence_candidates.json docs/agents/scraper_sm/social-media-source-discovery-2026-05-13.md docs/agents/scraper_sm/social-overlay-evidence-queue-2026-05-13.md`.
+- **Status**: DONE_AWAITING_VERIFY.
+- **Legal/consent blockers**: Facebook groups manual/consent only; Facebook/Instagram API use requires Meta/Instagram permissions or manual review; Viber requires commercial bot/business opt-in or manual consent; WhatsApp requires Business Platform opt-in/manual consent; Telegram live use requires official API route, public-channel validation, redaction, and debugger approval.
+- **Review comments**: Added `SM-14`, `SM-15`, and `SM-16` to convert the discovery list into fixture-first implementation work while keeping S&M evidence separate from canonical listings.
+
+Changed files:
+- `data/social_media_intelligence_candidates.json`
+- `docs/agents/scraper_sm/social-media-source-discovery-2026-05-13.md`
+- `docs/agents/scraper_sm/social-overlay-evidence-queue-2026-05-13.md`
+- `docs/agents/TASKS.md`
+- `docs/agents/scraper_sm/JOURNEY.md`
+Agent tools used:
+- `rg`, `sed`, `jq`, `find`, `apply_patch`, web research
+Skills used:
+- `publishing-compliance`
+- `runtime-compliance-evaluator`
+- `deep-research-workflow`
+- `web-scraping` (ethical/access constraints only; no scraper implemented)
+Extensions/libraries used:
+- none
+Commands run:
+- listed above
+Tests run:
+- JSON validation passed.
+- Tracked diff and new-file whitespace checks passed.
+Outputs produced:
+- public-discoverable social candidate matrix
+- reliable platform route plan
+- SM-13 queue spec
+- SM-14/SM-15/SM-16 follow-up tasks
+Risks / blockers:
+- the list excludes private/non-indexed groups by design; live routes require credentials, permissions, partner/consent proof, and debugger approval
+Progress update:
+- SM-13 `DONE_AWAITING_VERIFY`
+Next step:
+- debugger + data_analyst verify SM-13; then execute SM-14 first if Telegram route credentials/approval are available

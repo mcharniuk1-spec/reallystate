@@ -2,6 +2,7 @@
 
 Generated: 2026-04-24
 Updated: 2026-04-29 after S1-21 file-backed quality audit, same-location grouping contract, and Action0/Action1/Action2 sequencing
+Updated: 2026-04-23 OpenClaw scrape taxonomy A1/A12 alignment (`docs/openclaw/scrape-taxonomy-a1-a12.md`)
 
 ## Objective
 
@@ -24,14 +25,15 @@ If the operator says only “continue Gemma/OpenClaw” and no action is named, 
 ### Operator acceptance gate (2026-04-30) — OpenClaw + Telegram cadence
 
 1. **Single prompt context**: every OpenClaw/Gemma4 activation must load **Action0 + Action1 + Action2** contracts from this file so the model never claims it is “waiting for URLs/patterns”.
-2. **Start execution only after `Action1 ACCEPT`**: until the operator sends **`Action1 ACCEPT`** in Telegram (or the exact same string in the operator message), OpenClaw must **not** run shell commands that mutate `data/scraped/`, `data/media/`, or live scrape flags — and must **not** start Action0 or Action2 file writes.
-3. **After `Action1 ACCEPT`**: execute **Action1 (`S1-22B`)** via `make scrape-all-full` (detached/`nohup` per operator host rules), refresh dashboards on milestones.
-4. **Telegram progress**: after every **+100 net new saved listing JSON files** across the seven Action1 sources, send one Telegram message containing:
+2. **Workspace**: any OpenClaw agent that runs shell/Make for this repo **must** use workspace `/Users/getapple/Documents/Real Estate Bulg` (see `docs/openclaw/ACTION1_AGENT_BOOTSTRAP.md`). If `main` points at `~/.openclaw/workspace-codex`, it cannot read `AGENTS.md` / this file — fix `~/.openclaw-codex/openclaw.json` before trusting Telegram replies.
+3. **Start execution only after `Action1 ACCEPT`**: until the operator sends **`Action1 ACCEPT`** in Telegram (or the exact same string in the operator message), OpenClaw must **not** run shell commands that mutate `data/scraped/`, `data/media/`, or live scrape flags — and must **not** start Action0 or Action2 file writes.
+4. **After `Action1 ACCEPT`**: execute **Action1 (`S1-22B`)** via `make scrape-all-full` (detached/`nohup` per operator host rules), refresh dashboards on milestones.
+5. **Telegram progress**: after every **+100 net new saved listing JSON files** across the seven Action1 sources, send one Telegram message containing:
    - one **markdown table or bullet block**: **7 sources × 4 buckets** (`buy_personal`, `buy_commercial`, `rent_personal`, `rent_commercial`) with **saved item counts** plus **full-gallery %** and **avg description chars** per cell when available;
    - top **errors/warnings** (HTTP, parse, legal gate) since the last ping.
    - Operator shortcut: run `make action1-matrix-snapshot` on the host and paste/send the output.
-5. **Action0 (`S1-22A`)**: run only after the operator sends **`Action0 now`** following Action1 completion (or an explicit parallel waiver documented in `docs/agents/scraper_1/JOURNEY.md`).
-6. **Action2 (`S1-22C`)**: run only after **`Action2 now`** and debugger QA notes on Action1 allow expansion.
+6. **Action0 (`S1-22A`)**: run only after the operator sends **`Action0 now`** following Action1 completion (or an explicit parallel waiver documented in `docs/agents/scraper_1/JOURNEY.md`).
+7. **Action2 (`S1-22C`)**: run only after **`Action2 now`** and debugger QA notes on Action1 allow expansion.
 
 ### Action0 — describe already saved property galleries first
 
@@ -68,6 +70,8 @@ Acceptance:
 
 ### Action1 — full seven-source all-Bulgaria scrape/backfill
 
+**Code alignment (FACT):** In `src/bgrealestate/scraping/source_class.py`, this scope is **bucket A1** — same seven `SOURCE_CONFIGS` keys as the table below. See `docs/openclaw/scrape-taxonomy-a1-a12.md`.
+
 After **`Action1 ACCEPT`** (and after Action0 only if the operator already waived the gate), run the full all-Bulgaria scrape/backfill for these sources only:
 
 1. `Address.bg`
@@ -102,6 +106,8 @@ Acceptance:
 - Dashboards and S1-21 / S1-22A-B-C exports are refreshed after the run.
 
 ### Action2 — remaining legal tier-1/2 sources after Action1
+
+**Patterned non-A1 (A12):** Sources that are **Patterned** in `docs/exports/tier12-pattern-status.json` but **not** among the seven Action1 portals use scraper bucket **A12** (default concurrency lower than A1). Typical expansion order includes **alo.bg**, **Bazar.bg**, **Domaza**, **Home2U**, **OLX.bg**, **Yavlena** — still subject to `legal_mode` / `access_mode` in `data/source_registry.json`. Full taxonomy: `docs/openclaw/scrape-taxonomy-a1-a12.md`.
 
 After Action1 is complete and QA-reviewed, repeat the same full scrape/backfill and image-report process for the rest of the legal tier-1/2 source set in `data/source_registry.json`.
 
@@ -160,6 +166,12 @@ Live run after network and operator approval:
 
 ```bash
 make scrape-all-full EXTRA_ARGS="--parallel-sources 4 --max-pages 8 --max-waves 3 --target-per-source 100 --refresh-dashboard"
+```
+
+**Full Action1 harvest (seven sources, no per-source full-gallery count cap)** — continues wave-by-wave until stall; still respects `max-pages` / `max-waves`:
+
+```bash
+make action1-scrape-full-uncapped
 ```
 
 Callable Python function:

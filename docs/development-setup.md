@@ -6,7 +6,7 @@ For **Docker install**, service ports, **media on disk vs MinIO**, and **SQL hel
 
 ## Current Stage
 
-Core scaffold, Alembic migrations (initial schema from `sql/schema.sql`), Docker Compose stack, and a Next.js app shell are present; connectors and full API surface evolve per `PLAN.md`.
+Core scaffold, Alembic migrations, Docker Compose stack, FastAPI development routes, and a Next.js app shell are present. Account/chat now has a first backend contract for liked properties and property-linked conversations; connectors and the full production API surface evolve per `PLAN.md`.
 
 ## Local Containers
 
@@ -75,24 +75,45 @@ npm run dev
 
 `make run-frontend` may still serve a static fallback if present; prefer `npm run dev` for the app shell.
 
+Useful local pages:
+
+```text
+http://127.0.0.1:3000/listings
+http://127.0.0.1:3000/map
+http://127.0.0.1:3000/chat
+http://127.0.0.1:3000/settings
+http://127.0.0.1:3000/admin
+```
+
 ## Development Entrypoints
 
-These commands are intentionally lightweight until FastAPI, Temporal, and Next.js are implemented:
+These commands are intentionally lightweight until FastAPI, Temporal, and production workers are complete:
 
 ```bash
-make run-api        # stdlib status API on http://127.0.0.1:8000
+make run-api        # FastAPI development API on http://127.0.0.1:8000
 make run-worker     # placeholder worker heartbeat
 make run-scheduler  # placeholder scheduler summary
 make run-frontend   # static frontend shell on http://127.0.0.1:3000
 make validate       # JSON, Office package, and unit-test validation
 ```
 
-The placeholder API exposes:
+The development API exposes at least:
 
 ```text
 GET /health
 GET /sources
 GET /status
+POST /api/v1/chat
+GET /api/v1/users/me/liked
+GET /api/v1/users/me/property-chats
 ```
 
-Do not treat these as production APIs; they only make the development environment runnable while the real backend stages are built.
+For local chat model checks, keep provider configuration on the API process:
+
+```text
+CHAT_PROVIDER=ollama
+OLLAMA_BASE_URL=http://127.0.0.1:11434
+OLLAMA_CHAT_MODEL=gemma4:26b
+```
+
+Do not treat these as production APIs; they make the development environment runnable while the real backend stages are built.

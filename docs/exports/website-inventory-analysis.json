@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-13T08:32:11.006732+00:00",
+  "generated_at": "2026-05-13T13:45:42.423242+00:00",
   "totals": {
     "sources": 27,
     "with_live_total": 6,
@@ -17,8 +17,8 @@
         "url": "https://address.bg/sale",
         "notes": "Computed as sale total 16935 plus rent total 1766 from live `offers-object` payloads."
       },
-      "saved_listings": 5203,
-      "coverage_pct": 27.822041602053364,
+      "saved_listings": 6473,
+      "coverage_pct": 34.61312229292551,
       "inventory_rows": [
         {
           "service": "sale",
@@ -117,8 +117,8 @@
         "url": "https://www.bulgarianproperties.bg/",
         "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
       },
-      "saved_listings": 1616,
-      "coverage_pct": 13.466666666666665,
+      "saved_listings": 2289,
+      "coverage_pct": 19.075,
       "inventory_rows": [],
       "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
       "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
@@ -139,8 +139,8 @@
         "url": "https://www.homes.bg/",
         "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
       },
-      "saved_listings": 132,
-      "coverage_pct": 0.11,
+      "saved_listings": 144,
+      "coverage_pct": 0.12,
       "inventory_rows": [],
       "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
       "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
@@ -161,8 +161,8 @@
         "url": "https://www.imot.bg/",
         "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
       },
-      "saved_listings": 8534,
-      "coverage_pct": 4.267,
+      "saved_listings": 9937,
+      "coverage_pct": 4.9685,
       "inventory_rows": [],
       "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
       "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
@@ -205,15 +205,15 @@
         "url": "https://www.luximmo.bg/",
         "notes": "Fallback to the saved tier-1/2 source analysis estimate because no live category count was confirmed in this run."
       },
-      "saved_listings": 2143,
-      "coverage_pct": 53.574999999999996,
+      "saved_listings": 2512,
+      "coverage_pct": 62.8,
       "inventory_rows": [],
       "counting_method": "Use the configured category entry pages first, then extract visible counts, embedded JSON totals, or traced XHR payloads.",
       "counting_gap": "Website-side category totals are not yet confirmed and still depend on a source-specific live counting pass.",
       "analysis_estimate": 4000,
       "best_extraction_method": "careful crawl using stable luxury listing reference IDs",
       "state": "High-volume corpus on disk",
-      "next_step": "Close the text gap on detail pages before widening source coverage.",
+      "next_step": "Continue category-by-category refreshes and push the file-backed corpus into PostgreSQL for `S1-18` evidence.",
       "estimate_conflict": ""
     },
     {
@@ -259,8 +259,8 @@
         "url": "https://www.property.bg/bulgaria/apartments/",
         "notes": "The apartments page meta description says `Over 4229 properties`; wording is category-oriented but still needs one confirmation pass."
       },
-      "saved_listings": 297,
-      "coverage_pct": 7.022936864506976,
+      "saved_listings": 3094,
+      "coverage_pct": 73.16150390163159,
       "inventory_rows": [
         {
           "service": "sale",
@@ -291,8 +291,8 @@
         "url": "https://www.suprimmo.bg/bulgaria/apartamenti/",
         "notes": "The apartments page meta description says `Over 4628 ...`, which is a category lower bound rather than a whole-site total."
       },
-      "saved_listings": 297,
-      "coverage_pct": 6.417458945548833,
+      "saved_listings": 4948,
+      "coverage_pct": 106.91443388072601,
       "inventory_rows": [
         {
           "service": "sale",

@@ -1,0 +1,2 @@
+docs/exports/scrape-status-dashboard.json filter=lfs diff=lfs merge=lfs -text
+docs/exports/source-item-photo-coverage.json filter=lfs diff=lfs merge=lfs -text

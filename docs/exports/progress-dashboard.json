@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-13T08:46:20.852001+00:00",
+  "generated_at": "2026-05-13T13:45:42.041804+00:00",
   "roadmap": {
     "done": 46,
     "total": 128,
@@ -303,6 +303,42 @@
           "commands": "none yet.",
           "status": "TODO verifier follow-up.",
           "review": "Verify no task file still assigns new tier-3 work to `scraper_t3`, no OpenClaw doc widens Action1 beyond A1, and completion requires data_analyst/debugger QA."
+        },
+        {
+          "title": "2026-05-13 — VERIFY: DA-01 scrape database quality audit (agent: data_analyst)",
+          "summary": "",
+          "action": "",
+          "changed_files": "`docs/agents/TASKS.md`, `docs/agents/debugger/JOURNEY.md`, regenerated dashboard/audit/quality exports.",
+          "commands": "python3 scripts/audit_scrape_database_quality.py, python3 scripts/import_scraped_listings.py --dry-run, python3 scripts/action1_dataset_quality_gate.py, python3 scripts/action1_dataset_quality_gate.py --limit-per-source 20 --output docs/exports/action1-dataset-quality-gate-dryrun.json, make dashboard-doc, make verify-db-counts, python3 -m unittest tests.test_action1_parser_regressions -v",
+          "status": "PASS for DA-01 file-backed verification; DB-backed canonical/import verification remains blocked.",
+          "review": "Do not canonical-import Action1 rows until `BD-18` has DB-backed fixture import proof and `make verify-db-counts` succeeds with a real `DATABASE_URL`."
+        },
+        {
+          "title": "2026-05-13 — VERIFY: DA-01 coordination follow-up (agent: debugger)",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "python3 scripts/audit_scrape_database_quality.py, python3 scripts/import_scraped_listings.py --dry-run, python3 scripts/action1_dataset_quality_gate.py, python3 scripts/action1_dataset_quality_gate.py --limit-per-source 20 --output docs/exports/action1-dataset-quality-gate-dryrun.json, make dashboard-doc, make verify-db-counts, python3 -m unittest tests.test_action1_parser_regressions -v",
+          "status": "PASS for file-backed DA-01 verification and task actionability; FAIL/BLOCKED for DB-backed canonical import readiness.",
+          "review": "Created, Tightened DA-02, BD-18, and S1-23 gates in, Keep canonical import accepted-only until BD-18, DA-02, INFRA-02, and a follow-up debugger gate pass."
+        },
+        {
+          "title": "2026-05-13 — VERIFY: data-analyst-centered planner handoff (agent: planner)",
+          "summary": "",
+          "action": "",
+          "changed_files": "`docs/agents/TASKS.md`, `docs/agents/debugger/JOURNEY.md`.",
+          "commands": "sed -n ... docs/agents/TASKS.md docs/agents/README.md docs/agents/roles/debugger.md, tail -n ... docs/agents/data_analyst/JOURNEY.md docs/agents/*/JOURNEY.md, rg -n \"Action0|Action1|Action2|PENDING_QA|LOST|grouped|DATABASE_URL|private|unsafe\" ..., git diff -- docs/agents/TASKS.md docs/agents/debugger/JOURNEY.md",
+          "status": "PASS for `PLAN-04` handoff protocol. Runtime/data verification remains deferred to the named follow-up slices.",
+          "review": "Keep implementation agents on analyst artifacts and acceptance gates. Do not claim Action1 completion, DB import success, or UI data truth from chat or raw corpus volume."
+        },
+        {
+          "title": "2026-05-13 — VERIFY QUEUE: DA-02 / BD-18 deep data-quality handoff",
+          "summary": "",
+          "action": "Data analyst produced a deep dashboard/report and patched importer guardrails. Debugger verification is now queued, not completed in this note.",
+          "changed_files": "",
+          "commands": "",
+          "status": "TODO verifier queue.",
+          "review": ""
         }
       ],
       "tasks": {
@@ -330,6 +366,18 @@
             "title": "CI pipeline verification",
             "status": "VERIFIED",
             "details": "VERIFIED` (2026-04-08)"
+          },
+          {
+            "id": "DBG-14",
+            "title": "Verify DA-01 scrape database quality audit",
+            "status": "VERIFIED",
+            "details": "VERIFIED` (2026-05-13; file-backed DA-01 passed, DB-backed counts blocked)"
+          },
+          {
+            "id": "DBG-15",
+            "title": "Verify data-analyst-centered planner handoff",
+            "status": "VERIFIED",
+            "details": "VERIFIED` (2026-05-13; protocol pass, DB/dashboard verification deferred to BD-18/INFRA-02/DA-03)"
           }
         ],
         "in_progress": [],
@@ -375,18 +423,66 @@
             "title": "Fixture-only test hardening for live scraper/media side effects",
             "status": "TODO",
             "details": "TODO"
+          },
+          {
+            "id": "DBG-22",
+            "title": "Verify backend BD-18 contract prep",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "DBG-16",
+            "title": "Verify DA-dependent implementation queue",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "DBG-23",
+            "title": "Verify four-dashboard operating model",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "DBG-17",
+            "title": "Verify scraper_1 analyst-support handoff",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "DBG-18",
+            "title": "Verify vision media QA readiness and gates",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "DBG-21",
+            "title": "Verify data-analysis release hygiene gate",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "DBG-19",
+            "title": "Verify privacy-safe analytics instrumentation",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "DBG-20",
+            "title": "Verify entity-resolution accepted-only/no-promotion gate",
+            "status": "TODO",
+            "details": "TODO"
           }
         ],
         "blocked": []
       },
       "counts": {
-        "verified": 4,
+        "verified": 6,
         "in_progress": 0,
-        "todo": 7,
+        "todo": 15,
         "blocked": 0,
-        "total": 11,
-        "journal_entries": 25,
-        "efficiency_pct": 36
+        "total": 21,
+        "journal_entries": 29,
+        "efficiency_pct": 29
       }
     },
     {
@@ -566,6 +662,24 @@
           "commands": "`python3 -m py_compile ...`, `npm run typecheck`, `PYTHONPATH=src python3 -m unittest tests.test_chat_service tests.test_user_auth tests.test_api_fastapi -v`, `make test`, `make run-api`, `curl /api/v1/chat`, `curl /api/backend/api/v1/chat`",
           "status": "DONE_AWAITING_VERIFY",
           "review": "Property chat persistence uses existing `lead_thread`/`lead_message` tables plus the new `user_property_chat` join. Like/unlike now preserves state history instead of deleting the relationship."
+        },
+        {
+          "title": "2026-05-13 — BD-18 verifier refinement handoff",
+          "summary": "",
+          "action": "Debugger refined the BD-18 acceptance contract after DA-01 follow-up verification.",
+          "changed_files": "`docs/agents/TASKS.md`, `docs/exports/debugger-da01-coordination-report-2026-05-13.md`",
+          "commands": "none by backend in this note; verifier gates are recorded in `docs/agents/debugger/JOURNEY.md`.",
+          "status": "TODO remains with backend_developer.",
+          "review": "BD-18 must separate source publications, canonical properties, listing offers, QA reviews, status history, contacts, media evidence/descriptions, dedupe clusters, availability, inquiry requests, and external chat refs. Acceptance must prove DB-backed fixture import, zero-price-to-status handling, grouped import blocking, listing_media idempotency, and `make verify-db-counts` with DATABASE_URL."
+        },
+        {
+          "title": "2026-05-13 — BD-18 prep: accepted-only import and provenance contract",
+          "summary": "",
+          "action": "Narrow safety update from data-analyst run: importer now converts numeric price `0` to `None` plus `price_status=undefined` provenance, and scraped-corpus imports no longer run property/entity unification by default. Added tests for zero-price conversion and unsafe QA blocking.",
+          "changed_files": "`scripts/import_scraped_listings.py`, `tests/test_backend_import_contract.py`, `docs/exports/bd18-database-review-and-correction-spec-2026-05-13.md`, `docs/agents/TASKS.md`.",
+          "commands": "`python3 scripts/import_scraped_listings.py --dry-run`; `make verify-db-counts`.",
+          "status": "BD-18 remains `IN_PROGRESS`; DB-backed migration/import/count proof is still blocked.",
+          "review": "First-class DB structures for QA reviews, status history, dedupe clusters, media descriptions, availability, inquiry requests, and external chat refs remain backend work. `DATABASE_URL` is still required for `make verify-db-counts`."
         }
       ],
       "tasks": {
@@ -631,6 +745,12 @@
             "title": "User-property state ledger + property chat bridge",
             "status": "DONE_AWAITING_VERIFY",
             "details": "DONE_AWAITING_VERIFY` (2026-04-29: liked status ledger, user-property chat join, and Ollama chat adapter implemented)"
+          },
+          {
+            "id": "BD-18",
+            "title": "Canonical import/schema alignment for scraped QA evidence",
+            "status": "IN_PROGRESS",
+            "details": "IN_PROGRESS` (2026-05-13 backend prep + analyst safety patch: accepted-only boundary reviewed; ORM/import/media idempotency patch added; zero-price-to-null/status and no-default-property-promotion patched; DB-backed migration/import proof still pending)"
           }
         ],
         "todo": [
@@ -675,18 +795,36 @@
             "title": "WebSocket/SSE for real-time listing updates",
             "status": "TODO",
             "details": "TODO"
+          },
+          {
+            "id": "BD-19",
+            "title": "QA evidence read model for dashboard/API truth",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "BD-20",
+            "title": "First-party product analytics event intake",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "BD-21",
+            "title": "Entity-resolution candidate schema/API and import safety",
+            "status": "TODO",
+            "details": "TODO"
           }
         ],
         "blocked": []
       },
       "counts": {
         "verified": 3,
-        "in_progress": 7,
-        "todo": 7,
+        "in_progress": 8,
+        "todo": 10,
         "blocked": 0,
-        "total": 17,
-        "journal_entries": 18,
-        "efficiency_pct": 38
+        "total": 21,
+        "journal_entries": 20,
+        "efficiency_pct": 33
       }
     },
     {
@@ -884,6 +1022,15 @@
           "commands": "npm run typecheck, curl --max-time 20 -I -sS http://127.0.0.1:3000/chat, curl --max-time 20 -I -sS http://127.0.0.1:3000/settings, curl --max-time 75 -sS -X POST http://127.0.0.1:3000/api/backend/api/v1/chat ..., TypeScript check: pass., /chat, Next backend proxy to FastAPI/Ollama: pass.",
           "status": "DONE_AWAITING_VERIFY",
           "review": "FACT: account UI now shows mode switching, liked properties, saved searches, and property chat entry points., FACT: chat posts to, GAP: no Playwright screenshot verification was run in this pass."
+        },
+        {
+          "title": "2026-05-13 — UX-15: data-quality UX requirements from DA findings",
+          "summary": "",
+          "action": "Converted DA-01/current Action1 quality findings into operator-first UX requirements and split follow-up UX work into admin QA queues, duplicate/confidence/provenance review, and later buyer-facing accepted-only trust labels.",
+          "changed_files": "docs/agents/ux_ui_designer/data-quality-ui-decision-notes-2026-05-13.md, docs/agents/TASKS.md, docs/agents/ux_ui_designer/JOURNEY.md",
+          "commands": "sed -n '1,260p' docs/agents/TASKS.md, sed -n '1,240p' docs/agents/roles/ux_ui_designer.md, sed -n '1,240p' docs/agents/roles/data_analyst.md, sed -n '1,220p' docs/exports/scrape-database-quality-audit-2026-05-13.md",
+          "status": "`DONE_AWAITING_VERIFY`",
+          "review": "FACT: admin/operator requirements now cover accepted vs pending QA, grouped/development publications, media gaps, confidence, duplicate candidates, and source provenance., FACT: buyer-facing work is explicitly blocked until accepted-only export/import evidence,, INTERPRETATION: confidence and grouped/development signals are operator-review evidence, not buyer-facing truth claims., GAP: DB-backed API contracts for QA/media/provenance are still pending."
         }
       ],
       "tasks": {
@@ -919,6 +1066,12 @@
             "title": "Account cabinet, liked properties, and property chat UX",
             "status": "DONE_AWAITING_VERIFY",
             "details": "DONE_AWAITING_VERIFY` (2026-04-29: `/settings`, `/chat`, and global chat bar now align to BD-17 contracts)"
+          },
+          {
+            "id": "UX-15",
+            "title": "Data-quality UX requirements from DA findings",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-05-13; requirements only, no public UI expansion)"
           }
         ],
         "todo": [
@@ -975,18 +1128,54 @@
             "title": "Design system — colors, typography, spacing tokens",
             "status": "TODO",
             "details": "TODO"
+          },
+          {
+            "id": "UX-16",
+            "title": "Admin source-publication QA review queues",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "UX-17",
+            "title": "Admin duplicate, confidence, and provenance review UX",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "UX-18",
+            "title": "Buyer-facing accepted-only trust labels",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "UX-19",
+            "title": "Market positioning and source-coverage language",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "UX-20",
+            "title": "First-party analytics instrumentation hooks",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "UX-21",
+            "title": "In-platform four-dashboard shell",
+            "status": "TODO",
+            "details": "TODO"
           }
         ],
         "blocked": []
       },
       "counts": {
         "verified": 1,
-        "in_progress": 4,
-        "todo": 9,
+        "in_progress": 5,
+        "todo": 15,
         "blocked": 0,
-        "total": 14,
-        "journal_entries": 20,
-        "efficiency_pct": 21
+        "total": 21,
+        "journal_entries": 21,
+        "efficiency_pct": 17
       }
     },
     {
@@ -1497,6 +1686,33 @@
           "commands": "",
           "status": "`DONE_AWAITING_VERIFY`",
           "review": ""
+        },
+        {
+          "title": "2026-05-13 — S1-23 verifier repair handoff",
+          "summary": "",
+          "action": "Debugger converted DA-01 findings into stricter S1-23 repair gates; no live scrape was started.",
+          "changed_files": "`docs/agents/TASKS.md`, `docs/exports/debugger-da01-coordination-report-2026-05-13.md`",
+          "commands": "none by scraper_1 in this note; verifier reruns are logged in `docs/agents/debugger/JOURNEY.md`.",
+          "status": "S1-23 remains TODO.",
+          "review": "Repair fixtures must cover Address.bg city/address/contact/gallery, BulgarianProperties local-gallery/unit-area/development separation, Homes.bg duplicate URL/active status/full gallery, imot.bg area/category/mojibake/grouped handling, property-family gallery variant de-duplication/unit-area selection, zero-price-to-status handling, and contact extraction that rejects dates, IDs, counters, and JavaScript fragments."
+        },
+        {
+          "title": "2026-05-13 — S1-23 analyst-support source context, no live scraping",
+          "summary": "",
+          "action": "Supported the active `data_analyst` run by reviewing tier-1/2 ownership, source-registry gates, DA-01/DBG-14 quality evidence, and Action1 parser/media gaps. Prepared source-specific repair directions only; did not start live scraping, media backfill, import, or Action2 expansion., FACT:, FACT: Action1/A1 remains exactly, FACT: Action2/A12 remains blocked until Action1 QA plus operator, FACT: Action0 image reports remain blocked until operator, Address.bg, BulgarianProperties, Homes.bg, imot.bg,",
+          "changed_files": "docs/agents/TASKS.md, docs/agents/scraper_1/JOURNEY.md, docs/exports/progress-dashboard.json, docs/dashboard/index.html, docs/exports/parallel-execution-timeline.md, docs/exports/scraper-activity-snapshot.md, docs/exports/website-inventory-analysis.json, docs/exports/website-inventory-analysis.md",
+          "commands": "`sed`/`tail`/`rg`/`jq` inspection; `make dashboard-doc` attempted for mandatory dashboard refresh and killed after the known `generate_source_item_photo_coverage.py` stall. No live scraping commands.",
+          "status": "`DONE_AWAITING_VERIFY`",
+          "review": ""
+        },
+        {
+          "title": "2026-05-13 — S1-23 deep data-quality repair packet",
+          "summary": "",
+          "action": "Data analyst produced `docs/exports/data-quality-deep-review-2026-05-13.md` and `docs/dashboard/data-quality-dashboard.html` with clickable source drilldowns, bad-scrape rules, example listing paths, and source-specific fixture/acceptance instructions. No live scraping was started.",
+          "changed_files": "`docs/exports/data-quality-deep-review-2026-05-13.md`, `docs/exports/data-quality-deep-review-2026-05-13.json`, `docs/dashboard/data-quality-dashboard.html`, `docs/agents/TASKS.md`.",
+          "commands": "analyst ran audit, quality gate, importer dry-run, and dashboard generation; scraper_1 ran no live commands.",
+          "status": "S1-23 remains TODO but is now execution-ready from the deep review packet.",
+          "review": "Start with Action1 sources only. Keep missing-QA, LOST, grouped/development, inactive/stale, zero-price, missing location/area, media-gap, and contact-overcapture rows blocked until source-specific fixtures pass and QA state is written."
         }
       ],
       "tasks": {
@@ -1584,6 +1800,18 @@
             "details": "TODO"
           },
           {
+            "id": "S1-23",
+            "title": "Scraper repair from DA-01 scrape database audit",
+            "status": "TODO",
+            "details": "TODO` (2026-05-13 scraper-side source context prepared; no live scrape started)"
+          },
+          {
+            "id": "S1-24",
+            "title": "Analyst-queued Action1 repair waves",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
             "id": "S1-22C",
             "title": "Gemma/OpenClaw Action2 — remaining legal tier-1/2 expansion",
             "status": "TODO",
@@ -1607,11 +1835,11 @@
       "counts": {
         "verified": 4,
         "in_progress": 7,
-        "todo": 5,
+        "todo": 7,
         "blocked": 0,
-        "total": 16,
-        "journal_entries": 55,
-        "efficiency_pct": 47
+        "total": 18,
+        "journal_entries": 58,
+        "efficiency_pct": 42
       }
     },
     {
@@ -1867,11 +2095,11 @@
         {
           "title": "2026-04-29 — SM-08 setup: messenger publication entity plan",
           "summary": "",
-          "action": "Consolidated tier-3 and tier-4 intelligence work under scraper_sm / S&M. S&M now owns vendor/partner/official routes plus social/messenger overlays, while Action1 A1 marketplace scraping remains scraper_1-owned and OpenClaw-monitored.",
-          "changed_files": "`docs/agents/TASKS.md`, `docs/agents/README.md`, `docs/openclaw/OPENCLAW_S_AND_M_AGENT.md`.",
-          "commands": "documentation inspection only.",
+          "action": "Reviewed public-discoverable real-estate social/messenger candidates across Telegram, Facebook, Instagram, Viber, and WhatsApp; saved a machine-readable candidate matrix and a social-overlay evidence queue. No private/social/messenger scraping was added.",
+          "changed_files": "`docs/agents/TASKS.md`, `docs/agents/README.md`, `docs/openclaw/OPENCLAW_S_AND_M_AGENT.md`., docs/agents/scraper_sm/tier3-tier4-intelligence-paths-2026-05-13.md, docs/agents/TASKS.md, docs/agents/scraper_sm/JOURNEY.md, data/social_media_intelligence_candidates.json, docs/agents/scraper_sm/social-media-source-discovery-2026-05-13.md, docs/agents/scraper_sm/social-overlay-evidence-queue-2026-05-13.md, docs/agents/TASKS.md, docs/agents/scraper_sm/JOURNEY.md",
+          "commands": "sed, web research of public candidate pages/search results and official platform access docs",
           "status": "DONE_AWAITING_VERIFY.",
-          "review": "Debugger should verify that S&M cannot widen Action1 or run private/social scraping without legal/consent gates."
+          "review": "Added `SM-14`, `SM-15`, and `SM-16` to convert the discovery list into fixture-first implementation work while keeping S&M evidence separate from canonical listings., data/social_media_intelligence_candidates.json, docs/agents/scraper_sm/social-media-source-discovery-2026-05-13.md, docs/agents/scraper_sm/social-overlay-evidence-queue-2026-05-13.md, docs/agents/TASKS.md, docs/agents/scraper_sm/JOURNEY.md, rg, publishing-compliance, runtime-compliance-evaluator, deep-research-workflow, web-scrapin"
         }
       ],
       "tasks": {
@@ -1913,6 +2141,18 @@
             "title": "Facebook public group scraper (consent-gated)",
             "status": "DONE_AWAITING_VERIFY",
             "details": "DONE_AWAITING_VERIFY` (2026-04-08: implementation deferred by legal decision)"
+          },
+          {
+            "id": "SM-10",
+            "title": "Tier-3/tier-4 intelligence path matrix",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-05-13)"
+          },
+          {
+            "id": "SM-13",
+            "title": "Social-overlay evidence queue and data analyst handoff",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-05-13)"
           }
         ],
         "todo": [
@@ -1939,18 +2179,48 @@
             "title": "Approved messenger candidate persistence into source-publication pipeline",
             "status": "TODO",
             "details": "TODO"
+          },
+          {
+            "id": "SM-11",
+            "title": "Official/register evidence queue",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "SM-12",
+            "title": "Vendor/partner intelligence readiness",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "SM-14",
+            "title": "Telegram public candidate validation and fixture expansion",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "SM-15",
+            "title": "Meta Facebook/Instagram manual/API route pilot",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "SM-16",
+            "title": "WhatsApp/Viber opt-in business intake design",
+            "status": "TODO",
+            "details": "TODO"
           }
         ],
         "blocked": []
       },
       "counts": {
         "verified": 1,
-        "in_progress": 5,
-        "todo": 4,
+        "in_progress": 7,
+        "todo": 9,
         "blocked": 0,
-        "total": 10,
+        "total": 17,
         "journal_entries": 10,
-        "efficiency_pct": 35
+        "efficiency_pct": 26
       }
     },
     {
@@ -2037,12 +2307,12 @@
     {
       "key": "backend_developer",
       "label": "Backend/API/Data",
-      "total": 17,
+      "total": 21,
       "done_count": 3,
-      "current_count": 7,
-      "next_count": 7,
+      "current_count": 8,
+      "next_count": 10,
       "blocked_count": 0,
-      "progress_percent": 38,
+      "progress_percent": 33,
       "done_tasks": [
         {
           "id": "BD-01",
@@ -2105,6 +2375,12 @@
           "title": "User-property state ledger + property chat bridge",
           "status": "DONE_AWAITING_VERIFY",
           "details": "DONE_AWAITING_VERIFY` (2026-04-29: liked status ledger, user-property chat join, and Ollama chat adapter implemented)"
+        },
+        {
+          "id": "BD-18",
+          "title": "Canonical import/schema alignment for scraped QA evidence",
+          "status": "IN_PROGRESS",
+          "details": "IN_PROGRESS` (2026-05-13 backend prep + analyst safety patch: accepted-only boundary reviewed; ORM/import/media idempotency patch added; zero-price-to-null/status and no-default-property-promotion patched; DB-backed migration/import proof still pending)"
         }
       ],
       "next_tasks": [
@@ -2149,20 +2425,38 @@
           "title": "WebSocket/SSE for real-time listing updates",
           "status": "TODO",
           "details": "TODO"
+        },
+        {
+          "id": "BD-19",
+          "title": "QA evidence read model for dashboard/API truth",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "BD-20",
+          "title": "First-party product analytics event intake",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "BD-21",
+          "title": "Entity-resolution candidate schema/API and import safety",
+          "status": "TODO",
+          "details": "TODO"
         }
       ],
       "blocked_tasks": [],
-      "comment": "3 done, 7 current, 7 next"
+      "comment": "3 done, 8 current, 10 next"
     },
     {
       "key": "scraper_1",
       "label": "Tier-1/2 Scraping",
-      "total": 16,
+      "total": 18,
       "done_count": 4,
       "current_count": 7,
-      "next_count": 5,
+      "next_count": 7,
       "blocked_count": 0,
-      "progress_percent": 47,
+      "progress_percent": 42,
       "done_tasks": [
         {
           "id": "S1-01",
@@ -2247,6 +2541,18 @@
           "details": "TODO"
         },
         {
+          "id": "S1-23",
+          "title": "Scraper repair from DA-01 scrape database audit",
+          "status": "TODO",
+          "details": "TODO` (2026-05-13 scraper-side source context prepared; no live scrape started)"
+        },
+        {
+          "id": "S1-24",
+          "title": "Analyst-queued Action1 repair waves",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
           "id": "S1-22C",
           "title": "Gemma/OpenClaw Action2 — remaining legal tier-1/2 expansion",
           "status": "TODO",
@@ -2266,7 +2572,7 @@
         }
       ],
       "blocked_tasks": [],
-      "comment": "4 done, 7 current, 5 next"
+      "comment": "4 done, 7 current, 7 next"
     },
     {
       "key": "scraper_t3",
@@ -2337,12 +2643,12 @@
     {
       "key": "scraper_sm",
       "label": "Tier-4 Social Overlays",
-      "total": 10,
+      "total": 17,
       "done_count": 1,
-      "current_count": 5,
-      "next_count": 4,
+      "current_count": 7,
+      "next_count": 9,
       "blocked_count": 0,
-      "progress_percent": 35,
+      "progress_percent": 26,
       "done_tasks": [
         {
           "id": "SM-01",
@@ -2381,6 +2687,18 @@
           "title": "Facebook public group scraper (consent-gated)",
           "status": "DONE_AWAITING_VERIFY",
           "details": "DONE_AWAITING_VERIFY` (2026-04-08: implementation deferred by legal decision)"
+        },
+        {
+          "id": "SM-10",
+          "title": "Tier-3/tier-4 intelligence path matrix",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-05-13)"
+        },
+        {
+          "id": "SM-13",
+          "title": "Social-overlay evidence queue and data analyst handoff",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-05-13)"
         }
       ],
       "next_tasks": [
@@ -2407,20 +2725,50 @@
           "title": "Approved messenger candidate persistence into source-publication pipeline",
           "status": "TODO",
           "details": "TODO"
+        },
+        {
+          "id": "SM-11",
+          "title": "Official/register evidence queue",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "SM-12",
+          "title": "Vendor/partner intelligence readiness",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "SM-14",
+          "title": "Telegram public candidate validation and fixture expansion",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "SM-15",
+          "title": "Meta Facebook/Instagram manual/API route pilot",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "SM-16",
+          "title": "WhatsApp/Viber opt-in business intake design",
+          "status": "TODO",
+          "details": "TODO"
         }
       ],
       "blocked_tasks": [],
-      "comment": "1 done, 5 current, 4 next"
+      "comment": "1 done, 7 current, 9 next"
     },
     {
       "key": "ux_ui_designer",
       "label": "Frontend/Product UX",
-      "total": 14,
+      "total": 21,
       "done_count": 1,
-      "current_count": 4,
-      "next_count": 9,
+      "current_count": 5,
+      "next_count": 15,
       "blocked_count": 0,
-      "progress_percent": 21,
+      "progress_percent": 17,
       "done_tasks": [
         {
           "id": "UX-01",
@@ -2453,6 +2801,12 @@
           "title": "Account cabinet, liked properties, and property chat UX",
           "status": "DONE_AWAITING_VERIFY",
           "details": "DONE_AWAITING_VERIFY` (2026-04-29: `/settings`, `/chat`, and global chat bar now align to BD-17 contracts)"
+        },
+        {
+          "id": "UX-15",
+          "title": "Data-quality UX requirements from DA findings",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-05-13; requirements only, no public UI expansion)"
         }
       ],
       "next_tasks": [
@@ -2509,20 +2863,26 @@
           "title": "Design system — colors, typography, spacing tokens",
           "status": "TODO",
           "details": "TODO"
+        },
+        {
+          "id": "UX-16",
+          "title": "Admin source-publication QA review queues",
+          "status": "TODO",
+          "details": "TODO"
         }
       ],
       "blocked_tasks": [],
-      "comment": "1 done, 4 current, 9 next"
+      "comment": "1 done, 5 current, 15 next"
     },
     {
       "key": "debugger",
       "label": "Verification/Safety",
-      "total": 11,
-      "done_count": 4,
+      "total": 21,
+      "done_count": 6,
       "current_count": 0,
-      "next_count": 7,
+      "next_count": 15,
       "blocked_count": 0,
-      "progress_percent": 36,
+      "progress_percent": 29,
       "done_tasks": [
         {
           "id": "DBG-01",
@@ -2547,6 +2907,18 @@
           "title": "CI pipeline verification",
           "status": "VERIFIED",
           "details": "VERIFIED` (2026-04-08)"
+        },
+        {
+          "id": "DBG-14",
+          "title": "Verify DA-01 scrape database quality audit",
+          "status": "VERIFIED",
+          "details": "VERIFIED` (2026-05-13; file-backed DA-01 passed, DB-backed counts blocked)"
+        },
+        {
+          "id": "DBG-15",
+          "title": "Verify data-analyst-centered planner handoff",
+          "status": "VERIFIED",
+          "details": "VERIFIED` (2026-05-13; protocol pass, DB/dashboard verification deferred to BD-18/INFRA-02/DA-03)"
         }
       ],
       "current_tasks": [],
@@ -2592,10 +2964,28 @@
           "title": "Fixture-only test hardening for live scraper/media side effects",
           "status": "TODO",
           "details": "TODO"
+        },
+        {
+          "id": "DBG-22",
+          "title": "Verify backend BD-18 contract prep",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "DBG-16",
+          "title": "Verify DA-dependent implementation queue",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "DBG-23",
+          "title": "Verify four-dashboard operating model",
+          "status": "TODO",
+          "details": "TODO"
         }
       ],
       "blocked_tasks": [],
-      "comment": "4 done, 0 current, 7 next"
+      "comment": "6 done, 0 current, 15 next"
     },
     {
       "key": "lead_agent",
@@ -2659,6 +3049,14 @@
     }
   ],
   "all_tasks": [
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-18",
+      "title": "Canonical import/schema alignment for scraped QA evidence",
+      "status": "IN_PROGRESS",
+      "details": "IN_PROGRESS` (2026-05-13 backend prep + analyst safety patch: accepted-only boundary reviewed; ORM/import/media idempotency patch added; zero-price-to-null/status and no-default-property-promotion patched; DB-backed migration/import proof still pending)"
+    },
     {
       "owner_key": "scraper_1",
       "owner": "Scraper 1",
@@ -2820,6 +3218,22 @@
       "details": "DONE_AWAITING_VERIFY` (2026-04-08: implementation deferred by legal decision)"
     },
     {
+      "owner_key": "scraper_sm",
+      "owner": "Scraper SM",
+      "id": "SM-10",
+      "title": "Tier-3/tier-4 intelligence path matrix",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-05-13)"
+    },
+    {
+      "owner_key": "scraper_sm",
+      "owner": "Scraper SM",
+      "id": "SM-13",
+      "title": "Social-overlay evidence queue and data analyst handoff",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-05-13)"
+    },
+    {
       "owner_key": "scraper_t3",
       "owner": "Scraper T3",
       "id": "T3-02",
@@ -2892,6 +3306,14 @@
       "details": "DONE_AWAITING_VERIFY` (2026-04-29: `/settings`, `/chat`, and global chat bar now align to BD-17 contracts)"
     },
     {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-15",
+      "title": "Data-quality UX requirements from DA findings",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-05-13; requirements only, no public UI expansion)"
+    },
+    {
       "owner_key": "backend_developer",
       "owner": "Backend Developer",
       "id": "BD-06",
@@ -2944,6 +3366,30 @@
       "owner": "Backend Developer",
       "id": "BD-16",
       "title": "WebSocket/SSE for real-time listing updates",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-19",
+      "title": "QA evidence read model for dashboard/API truth",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-20",
+      "title": "First-party product analytics event intake",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-21",
+      "title": "Entity-resolution candidate schema/API and import safety",
       "status": "TODO",
       "details": "TODO"
     },
@@ -3004,6 +3450,70 @@
       "details": "TODO"
     },
     {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-16",
+      "title": "Verify DA-dependent implementation queue",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-17",
+      "title": "Verify scraper_1 analyst-support handoff",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-18",
+      "title": "Verify vision media QA readiness and gates",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-19",
+      "title": "Verify privacy-safe analytics instrumentation",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-20",
+      "title": "Verify entity-resolution accepted-only/no-promotion gate",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-21",
+      "title": "Verify data-analysis release hygiene gate",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-22",
+      "title": "Verify backend BD-18 contract prep",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-23",
+      "title": "Verify four-dashboard operating model",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
       "owner_key": "lead_agent",
       "owner": "Lead Agent",
       "id": "LEAD-05",
@@ -3060,6 +3570,22 @@
       "details": "TODO"
     },
     {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-23",
+      "title": "Scraper repair from DA-01 scrape database audit",
+      "status": "TODO",
+      "details": "TODO` (2026-05-13 scraper-side source context prepared; no live scrape started)"
+    },
+    {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-24",
+      "title": "Analyst-queued Action1 repair waves",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
       "owner_key": "scraper_sm",
       "owner": "Scraper SM",
       "id": "SM-04",
@@ -3088,6 +3614,46 @@
       "owner": "Scraper SM",
       "id": "SM-09",
       "title": "Approved messenger candidate persistence into source-publication pipeline",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "scraper_sm",
+      "owner": "Scraper SM",
+      "id": "SM-11",
+      "title": "Official/register evidence queue",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "scraper_sm",
+      "owner": "Scraper SM",
+      "id": "SM-12",
+      "title": "Vendor/partner intelligence readiness",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "scraper_sm",
+      "owner": "Scraper SM",
+      "id": "SM-14",
+      "title": "Telegram public candidate validation and fixture expansion",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "scraper_sm",
+      "owner": "Scraper SM",
+      "id": "SM-15",
+      "title": "Meta Facebook/Instagram manual/API route pilot",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "scraper_sm",
+      "owner": "Scraper SM",
+      "id": "SM-16",
+      "title": "WhatsApp/Viber opt-in business intake design",
       "status": "TODO",
       "details": "TODO"
     },
@@ -3172,6 +3738,54 @@
       "details": "TODO"
     },
     {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-16",
+      "title": "Admin source-publication QA review queues",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-17",
+      "title": "Admin duplicate, confidence, and provenance review UX",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-18",
+      "title": "Buyer-facing accepted-only trust labels",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-19",
+      "title": "Market positioning and source-coverage language",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-20",
+      "title": "First-party analytics instrumentation hooks",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-21",
+      "title": "In-platform four-dashboard shell",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
       "owner_key": "backend_developer",
       "owner": "Backend Developer",
       "id": "BD-01",
@@ -3226,6 +3840,22 @@
       "title": "CI pipeline verification",
       "status": "VERIFIED",
       "details": "VERIFIED` (2026-04-08)"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-14",
+      "title": "Verify DA-01 scrape database quality audit",
+      "status": "VERIFIED",
+      "details": "VERIFIED` (2026-05-13; file-backed DA-01 passed, DB-backed counts blocked)"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-15",
+      "title": "Verify data-analyst-centered planner handoff",
+      "status": "VERIFIED",
+      "details": "VERIFIED` (2026-05-13; protocol pass, DB/dashboard verification deferred to BD-18/INFRA-02/DA-03)"
     },
     {
       "owner_key": "lead_agent",

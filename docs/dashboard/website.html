@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Website Dashboard | Bulgaria Real Estate Ops</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fa;
+      --panel: #ffffff;
+      --ink: #17212f;
+      --muted: #5d6b7d;
+      --line: #d9e0e8;
+      --accent: #0f766e;
+      --warn: #b45309;
+      --bad: #b91c1c;
+      --good: #047857;
+      --info: #1d4ed8;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.45; }
+    header { padding: 28px min(5vw, 56px) 20px; background: #ffffff; border-bottom: 1px solid var(--line); }
+    h1 { margin: 0 0 6px; font-size: clamp(28px, 4vw, 44px); letter-spacing: 0; }
+    h2 { margin: 32px 0 12px; font-size: 22px; letter-spacing: 0; }
+    h3 { margin: 0 0 8px; font-size: 16px; letter-spacing: 0; }
+    p { margin: 0 0 10px; }
+    a { color: var(--info); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    nav a { border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; color: var(--ink); background: #f8fafc; font-size: 14px; }
+    main { padding: 24px min(5vw, 56px) 56px; }
+    .muted { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+    .wide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 12px; }
+    details.stat, .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+    details.stat summary { cursor: pointer; list-style: none; display: grid; gap: 4px; }
+    details.stat summary::-webkit-details-marker { display: none; }
+    .label { color: var(--muted); font-size: 13px; }
+    .value { font-size: 28px; font-weight: 750; line-height: 1.15; }
+    .tag { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 2px 8px; font-size: 12px; color: var(--muted); background: #f8fafc; }
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .bad { color: var(--bad); }
+    table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+    th, td { padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; font-size: 14px; }
+    th { background: #eef3f8; font-size: 12px; text-transform: uppercase; letter-spacing: .02em; color: #435166; }
+    tr:last-child td { border-bottom: 0; }
+    .nowrap { white-space: nowrap; }
+    footer { color: var(--muted); padding: 0 min(5vw, 56px) 32px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="tag">Generated 2026-05-13 14:22:31Z</p>
+    <h1>Website Dashboard</h1>
+    <p class="muted">Frontend route readiness, UX gates, and public-data safety.</p>
+
+      <nav>
+        <a href="index.html">Hub</a>
+        <a href="project-progress.html">Project Progress</a>
+        <a href="properties-database.html">Properties Database</a>
+        <a href="website.html">Website</a>
+        <a href="support.html">Support</a>
+        <a href="data-quality-dashboard.html">Deep Data Quality</a>
+        <a href="scrape-status.html">Source Matrix</a>
+      </nav>
+
+  </header>
+  <main>
+
+      <section class="grid">
+
+    <details class="stat" open>
+      <summary><span class="label">App routes</span><span class="value">13</span></summary>
+      <p><strong>Insight:</strong> The app shell exists across buyer, map, chat, settings, admin, and dashboard routes.</p>
+      <p><strong>Details:</strong> Route count is structural readiness, not data trust.</p>
+      <p><strong>Action:</strong> Keep public property routes accepted-only.</p>
+    </details>
+
+
+    <details class="stat" open>
+      <summary><span class="label">React components</span><span class="value">17</span></summary>
+      <p><strong>Insight:</strong> Reusable UI components exist for the platform.</p>
+      <p><strong>Details:</strong> Dashboard and admin surfaces still need DA/BD read-model contracts.</p>
+      <p><strong>Action:</strong> UX-16/18 should implement only verified metric labels.</p>
+    </details>
+
+
+    <details class="stat" open>
+      <summary><span class="label">UX open slices</span><span class="value">21</span></summary>
+      <p><strong>Insight:</strong> Frontend work is waiting on data-count and import truth.</p>
+      <p><strong>Details:</strong> UX-15 completed requirements; UX-16/17/18/19/20 remain contract-driven.</p>
+      <p><strong>Action:</strong> Do not invent counts in UI while DA-02 and BD-19 are pending.</p>
+    </details>
+
+
+    <details class="stat" open>
+      <summary><span class="label">Backend UI contracts</span><span class="value">3</span></summary>
+      <p><strong>Insight:</strong> Website dashboards depend on backend read models.</p>
+      <p><strong>Details:</strong> BD-19/20/21 are the API/data contracts for QA, analytics, and entity-resolution review.</p>
+      <p><strong>Action:</strong> Prioritize BD-19 after BD-18 proof.</p>
+    </details>
+
+      </section>
+      <h2>Route Inventory</h2>
+      <table><thead><tr><th>Route</th><th>Insight</th></tr></thead><tbody><tr><td>/(main)</td><td>Next.js app route</td></tr><tr><td>/admin</td><td>Next.js app route</td></tr><tr><td>/api/backend/[path]</td><td>Next.js app route</td></tr><tr><td>/api/images</td><td>Next.js app route</td></tr><tr><td>/api/local-media/[path]</td><td>Next.js app route</td></tr><tr><td>/api/placeholder/[params]</td><td>Next.js app route</td></tr><tr><td>/api/property-quality/[id]</td><td>Next.js app route</td></tr><tr><td>/chat</td><td>Next.js app route</td></tr><tr><td>/dashboard/[path]</td><td>Next.js app route</td></tr><tr><td>/listings</td><td>Next.js app route</td></tr><tr><td>/map</td><td>Next.js app route</td></tr><tr><td>/properties/[id]</td><td>Next.js app route</td></tr><tr><td>/settings</td><td>Next.js app route</td></tr></tbody></table>
+      <h2>Website Execution Queue</h2>
+      <table><thead><tr><th>ID</th><th>Slice</th><th>Owner</th><th>Status</th><th>Depends</th><th>Next evidence/action</th></tr></thead><tbody><tr><td class="nowrap">UX-02</td><td>Beta main page — map + listings + category picker</td><td>UX/UI Designer</td><td>DONE_AWAITING_VERIFY</td><td>UX-01</td><td>page loads with mock/seeded data; category/intent filters work; map renders with pins; responsive mobile stacking</td></tr>
+<tr><td class="nowrap">UX-03</td><td>Wire listings feed to live /listings API</td><td>UX/UI Designer</td><td>DONE_AWAITING_VERIFY</td><td>UX-02, BD-02, BD-03</td><td>page fetches from FastAPI; pagination works; fallback to mock if API unreachable</td></tr>
+<tr><td class="nowrap">UX-04</td><td>Nationwide Bulgaria LUN-style map + listings experience</td><td>UX/UI Designer</td><td>TODO</td><td>UX-03, BD-06, DBG-05</td><td>prototype demonstrates Bulgaria-wide browse (no hard-coded Varna-only lock), map filters + listing cards + synchronized selection; spec calls out optional Varna shortcut vs default nationwide</td></tr>
+<tr><td class="nowrap">UX-05</td><td>AI chat panel with property/map-aware context</td><td>UX/UI Designer</td><td>TODO</td><td>UX-04, BD-07</td><td>chat can reference current property card + filtered map state</td></tr>
+<tr><td class="nowrap">UX-06</td><td>Product UX structure spec (LUN-style buyer marketplace)</td><td>UX/UI Designer</td><td>DONE_AWAITING_VERIFY</td><td>UX-01</td><td>refined spec exists with component breakdown for all pages</td></tr>
+<tr><td class="nowrap">UX-07</td><td>3D map integration with building layer (MapLibre)</td><td>UX/UI Designer</td><td>TODO</td><td>UX-04, BD-08</td><td>3D buildings render in Varna viewport; building click opens drawer; 2D fallback works</td></tr>
+<tr><td class="nowrap">UX-08</td><td>Shop view — full property feed with advanced filters (like LUN.ua)</td><td>UX/UI Designer</td><td>TODO</td><td>UX-04, BD-12</td><td>Filter sidebar/panel (collapsible on mobile):; Intent toggle: Buy / Rent / Short-term / Auction / Land; Category chips: Apartment / House / Villa / Studio / Penthouse / Office / Shop / Land / Garage</td></tr>
+<tr><td class="nowrap">UX-09</td><td>Property detail page — LUN.ua style (like lun.ua item page)</td><td>UX/UI Designer</td><td>TODO</td><td>UX-08, BD-11</td><td>Photo gallery: fullscreen capable, swipeable, zoom, lightbox, photo count badge; Price box: price, price/m², price history chart (if available), currency toggle (EUR/BGN); Facts grid: type, rooms, area, floor/total_floors, year, construction type, Act 16 statu</td></tr>
+<tr><td class="nowrap">UX-10</td><td>User profile cabinet — buyer/renter/seller mode switching</td><td>UX/UI Designer</td><td>TODO</td><td>UX-08, BD-13</td><td>Header mode switcher: visible toggle in top navigation — &quot;I&#x27;m Buying&quot; / &quot;I&#x27;m Renting&quot; / &quot;I&#x27;m Selling&quot;; Switching mode changes: navigation items, dashboard data, available actions; Mode persists in user profile (not just frontend state)</td></tr>
+<tr><td class="nowrap">UX-11</td><td>Vercel deployment — frontend</td><td>UX/UI Designer</td><td>TODO</td><td>UX-08, BD-14</td><td>Configure Vercel project for Next.js 15 deployment; Set environment variables: NEXT_PUBLIC_API_URL pointing to Railway backend (https://bgrealestate-api.up.railway.app); Configure custom domain (optional) or use default *.vercel.app</td></tr>
+<tr><td class="nowrap">UX-12</td><td>Admin dashboard — live operator panel</td><td>UX/UI Designer</td><td>TODO</td><td>UX-11, BD-03</td><td>Source health table: all sources with status (active/error/stale), last crawl time, listing count, error rate; Crawl jobs table: recent jobs with status, duration, records processed; Parser failure queue: failed parses with raw HTML preview + error message + r</td></tr>
+<tr><td class="nowrap">UX-13</td><td>Design system — colors, typography, spacing tokens</td><td>UX/UI Designer</td><td>TODO</td><td>UX-02</td><td>Implement design tokens from product-ux-structure.md §6 in Tailwind config:; Colors: primary (#4361ee), accent (#e94560), success (#16c79a), warning (#f9c74f), dark (#1a1a2e), light (#f5f5f5); Typography: Inter/system-ui for body, JetBrains Mono for prices/IDs</td></tr>
+<tr><td class="nowrap">UX-14</td><td>Account cabinet, liked properties, and property chat UX</td><td>UX/UI Designer</td><td>DONE_AWAITING_VERIFY</td><td>BD-17</td><td>Reframe /settings as a profile/account cabinet with buyer/renter/seller mode, liked properties, saved searches, and chat entry points.; Reframe /chat around search threads and property threads.; Connect chat surfaces through the Next backend proxy so model key</td></tr>
+<tr><td class="nowrap">UX-15</td><td>Data-quality UX requirements from DA findings</td><td>UX/UI Designer</td><td>DONE_AWAITING_VERIFY</td><td>DA-01 file-backed audit</td><td>Convert expected/current data-quality findings into UX/product requirements.; Define UI handling for accepted vs pending QA, grouped/development publications, media gaps, confidence, duplicate candidates, and source provenance.; Keep admin/operator UX tasks ah</td></tr>
+<tr><td class="nowrap">UX-16</td><td>Admin source-publication QA review queues</td><td>UX/UI Designer</td><td>TODO</td><td>DA-02, BD-18, BD-19</td><td>Extend /admin requirements and implementation with a source-publication QA queue.; Show accepted, pending QA, LOST, inactive, grouped/development, media-gap, description-gap, parser-gap, and image-report states as separate filterable dimensions.; Provide an ev</td></tr>
+<tr><td class="nowrap">UX-17</td><td>Admin duplicate, confidence, and provenance review UX</td><td>UX/UI Designer</td><td>TODO</td><td>ER-01, BD-18, BD-19, BD-21, accepted source-publication import evidence</td><td>Define and build the operator duplicate-candidate queue after accepted source-publication import exists.; Show side-by-side source-publication cards with confidence score, match signals, conflict fields, photos, price/status, area, contacts, source URLs, and f</td></tr>
+<tr><td class="nowrap">UX-18</td><td>Buyer-facing accepted-only trust labels</td><td>UX/UI Designer</td><td>TODO</td><td>UX-16 verification, DA-02, BD-18, BD-19, public export accepted-only proof</td><td>Update listing cards and property details to show only accepted single-unit records by default.; Translate pipeline evidence into buyer-safe labels: verified source, multiple sources, limited photos, price on request, location approximate.; Keep source provena</td></tr>
+<tr><td class="nowrap">UX-19</td><td>Market positioning and source-coverage language</td><td>UX/UI Designer</td><td>TODO</td><td>MI-01, UX-18, DA-02, BD-19</td><td>Define buyer-safe copy and UI labels for verified source provenance, limited media, approximate location, price on request, and accepted-only source coverage.; Reserve &quot;complete market&quot;, &quot;95% coverage&quot;, city trend, and price-per-sqm labels until accepted-only </td></tr>
+<tr><td class="nowrap">UX-20</td><td>First-party analytics instrumentation hooks</td><td>UX/UI Designer</td><td>TODO</td><td>UA-02, BD-20, UX-15</td><td>Add a small first-party analytics client wrapper only after BD-20 intake exists; no external analytics package.; Fire safe derived events for search/filter changes, listing impressions/selections, map marker/mode/view interactions, source link opens, save/cont</td></tr>
+<tr><td class="nowrap">UX-21</td><td>In-platform four-dashboard shell</td><td>UX/UI Designer</td><td>TODO</td><td>PLAN-06, DA-04, BD-19</td><td>Translate the static four-dashboard model into an authenticated operator/admin web-platform shell after BD-19 exposes verified read models.; Preserve the same four categories and expandable insight/details/action pattern; do not compress statuses into opaque a</td></tr>
+<tr><td class="nowrap">UX-22</td><td>Verified dashboard/read-model field consumption contract</td><td>UX/UI Designer</td><td>DONE_AWAITING_VERIFY</td><td>DA-02, BD-18, BD-19</td><td>Consume only verified file-backed dashboard fields or DB-backed read-model fields.; Label file-backed audit, quality-gate estimate, importer candidate, media-capture, and DB-blocked states explicitly in admin/operator surfaces.; Keep buyer-facing cards/details</td></tr>
+<tr><td class="nowrap">BD-19</td><td>QA evidence read model for dashboard/API truth</td><td>Backend Developer</td><td>TODO</td><td>BD-18, DA-02</td><td>After BD-18 proves DB-backed import, expose accepted, LOST, grouped/development, inactive, missing-description, missing-price, media-gap, and image-report-status counts through an admin/API read model.; Keep file-backed analyst artifacts as source-of-truth unt</td></tr>
+<tr><td class="nowrap">BD-20</td><td>First-party product analytics event intake</td><td>Backend Developer</td><td>TODO</td><td>UA-02, BD-13, BD-17, BD-19</td><td>Add first-party event intake for allowlisted product events only; do not install external analytics or forward payloads to third parties.; Persist a minimal event envelope with schema version, event name, route pattern, surface, pseudonymous session/user hashe</td></tr>
+<tr><td class="nowrap">BD-21</td><td>Entity-resolution candidate schema/API and import safety</td><td>Backend Developer</td><td>TODO</td><td>ER-01, BD-18, BD-19, DA-02</td><td>Add a reviewable entity-resolution candidate layer independent from property_entity and property_offer (candidate, evidence, and review event persistence).; Ensure scraped accepted source-publication import can persist source publications without automatically</td></tr></tbody></table>
+      <h2>Buyer-Facing Rule</h2>
+      <div class="panel">
+        <p><strong>FACT:</strong> Public website views must not consume LOST, grouped/development, inactive, pending-QA, or missing-status rows.</p>
+        <p><strong>INTERPRETATION:</strong> Admin queues can show raw quality work, but public pages need accepted single-unit proof plus media/description state.</p>
+        <p><strong>GAP:</strong> DB-backed accepted-only read model is pending BD-19 and verifier sign-off.</p>
+      </div>
+
+  </main>
+  <footer>File-backed operator dashboards. DB-backed claims remain blocked until BD-18 + INFRA-02 verification.</footer>
+</body>
+</html>

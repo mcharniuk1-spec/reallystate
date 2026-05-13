@@ -465,6 +465,148 @@ create table if not exists listing_event (
     details jsonb not null default '{}'::jsonb
 );
 
+create table if not exists source_publication_qa_review (
+    review_id text primary key,
+    source_listing_id text not null references source_listing(source_listing_id),
+    listing_reference_id text references canonical_listing(reference_id),
+    qa_state text not null,
+    reviewer text not null default 'system',
+    reviewed_at timestamptz not null default now(),
+    import_eligible boolean not null default false,
+    import_eligibility_reason text,
+    blocked_import_reason text,
+    source_publication_type text,
+    scrape_acceptance_status text,
+    evidence_jsonb jsonb not null default '{}'::jsonb,
+    unique(source_listing_id, reviewer)
+);
+
+create table if not exists status_history (
+    status_event_id text primary key,
+    subject_type text not null,
+    subject_id text not null,
+    from_status text,
+    to_status text not null,
+    observed_at timestamptz not null,
+    source_observed_at timestamptz,
+    provenance_jsonb jsonb not null default '{}'::jsonb,
+    unique(subject_type, subject_id, to_status, observed_at)
+);
+
+create table if not exists entity_resolution_candidate (
+    candidate_id text primary key,
+    candidate_type text not null,
+    primary_listing_reference_id text not null references canonical_listing(reference_id),
+    candidate_listing_reference_id text references canonical_listing(reference_id),
+    candidate_property_id text references property_entity(property_id),
+    review_status text not null default 'needs_review',
+    confidence_score double precision,
+    score_components_jsonb jsonb not null default '{}'::jsonb,
+    conflict_reasons_jsonb jsonb not null default '[]'::jsonb,
+    accepted_only_filter_jsonb jsonb not null default '{}'::jsonb,
+    evidence_snapshot_jsonb jsonb not null default '{}'::jsonb,
+    created_at timestamptz not null default now(),
+    updated_at timestamptz not null default now(),
+    unique(primary_listing_reference_id, candidate_listing_reference_id, candidate_type)
+);
+
+create table if not exists entity_resolution_review_event (
+    review_event_id text primary key,
+    candidate_id text not null references entity_resolution_candidate(candidate_id),
+    action text not null,
+    actor_user_id text references app_user(user_id),
+    from_status text,
+    to_status text not null,
+    rationale text,
+    evidence_jsonb jsonb not null default '{}'::jsonb,
+    created_at timestamptz not null default now()
+);
+
+create table if not exists media_description (
+    media_description_id text primary key,
+    media_id text references media_asset(media_id),
+    listing_media_id text references listing_media(media_id),
+    listing_reference_id text references canonical_listing(reference_id),
+    generated_at timestamptz not null default now(),
+    model_name text not null,
+    model_version text,
+    coverage_state text not null default 'pending',
+    scene_type text,
+    description_text text,
+    confidence_score double precision,
+    uncertainty_jsonb jsonb not null default '{}'::jsonb,
+    evidence_jsonb jsonb not null default '{}'::jsonb
+);
+
+create table if not exists availability_calendar (
+    calendar_id text primary key,
+    listing_reference_id text references canonical_listing(reference_id),
+    offer_id text references property_offer(offer_id),
+    calendar_type text not null,
+    source_name text references source_registry(source_name),
+    source_url text,
+    status text not null default 'active',
+    metadata_jsonb jsonb not null default '{}'::jsonb,
+    created_at timestamptz not null default now(),
+    updated_at timestamptz not null default now()
+);
+
+create table if not exists availability_slot (
+    slot_id text primary key,
+    calendar_id text not null references availability_calendar(calendar_id),
+    slot_start timestamptz not null,
+    slot_end timestamptz not null,
+    slot_status text not null,
+    price_amount numeric,
+    currency text,
+    metadata_jsonb jsonb not null default '{}'::jsonb,
+    unique(calendar_id, slot_start, slot_end)
+);
+
+create table if not exists availability_observation (
+    observation_id text primary key,
+    listing_reference_id text references canonical_listing(reference_id),
+    offer_id text references property_offer(offer_id),
+    observed_at timestamptz not null,
+    source_observed_at timestamptz,
+    availability_status text not null,
+    price_amount numeric,
+    currency text,
+    provenance_jsonb jsonb not null default '{}'::jsonb
+);
+
+create table if not exists viewing_inquiry_request (
+    request_id text primary key,
+    listing_reference_id text references canonical_listing(reference_id),
+    property_id text references property_entity(property_id),
+    offer_id text references property_offer(offer_id),
+    requester_user_id text references app_user(user_id),
+    contact_id text references person_contact(contact_id),
+    request_type text not null,
+    request_status text not null default 'new',
+    preferred_time_jsonb jsonb not null default '{}'::jsonb,
+    message_summary text,
+    provenance_jsonb jsonb not null default '{}'::jsonb,
+    created_at timestamptz not null default now(),
+    updated_at timestamptz not null default now()
+);
+
+create table if not exists external_chat_ref (
+    chat_ref_id text primary key,
+    thread_id text references lead_thread(thread_id),
+    request_id text references viewing_inquiry_request(request_id),
+    listing_reference_id text references canonical_listing(reference_id),
+    property_id text references property_entity(property_id),
+    offer_id text references property_offer(offer_id),
+    participant_contact_id text references person_contact(contact_id),
+    provider text not null,
+    external_thread_ref text,
+    handoff_status text not null default 'pending',
+    metadata_jsonb jsonb not null default '{}'::jsonb,
+    created_at timestamptz not null default now(),
+    updated_at timestamptz not null default now()
+);
+
 create table if not exists source_account (
     account_id text primary key,
     source_name text not null references source_registry(source_name),

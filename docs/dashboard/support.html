@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support Dashboard | Bulgaria Real Estate Ops</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fa;
+      --panel: #ffffff;
+      --ink: #17212f;
+      --muted: #5d6b7d;
+      --line: #d9e0e8;
+      --accent: #0f766e;
+      --warn: #b45309;
+      --bad: #b91c1c;
+      --good: #047857;
+      --info: #1d4ed8;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.45; }
+    header { padding: 28px min(5vw, 56px) 20px; background: #ffffff; border-bottom: 1px solid var(--line); }
+    h1 { margin: 0 0 6px; font-size: clamp(28px, 4vw, 44px); letter-spacing: 0; }
+    h2 { margin: 32px 0 12px; font-size: 22px; letter-spacing: 0; }
+    h3 { margin: 0 0 8px; font-size: 16px; letter-spacing: 0; }
+    p { margin: 0 0 10px; }
+    a { color: var(--info); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    nav a { border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; color: var(--ink); background: #f8fafc; font-size: 14px; }
+    main { padding: 24px min(5vw, 56px) 56px; }
+    .muted { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+    .wide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 12px; }
+    details.stat, .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+    details.stat summary { cursor: pointer; list-style: none; display: grid; gap: 4px; }
+    details.stat summary::-webkit-details-marker { display: none; }
+    .label { color: var(--muted); font-size: 13px; }
+    .value { font-size: 28px; font-weight: 750; line-height: 1.15; }
+    .tag { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 2px 8px; font-size: 12px; color: var(--muted); background: #f8fafc; }
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .bad { color: var(--bad); }
+    table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+    th, td { padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; font-size: 14px; }
+    th { background: #eef3f8; font-size: 12px; text-transform: uppercase; letter-spacing: .02em; color: #435166; }
+    tr:last-child td { border-bottom: 0; }
+    .nowrap { white-space: nowrap; }
+    footer { color: var(--muted); padding: 0 min(5vw, 56px) 32px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="tag">Generated 2026-05-13 14:22:31Z</p>
+    <h1>Support Dashboard</h1>
+    <p class="muted">Operational assistance, release, infra, analytics, media, and verification lanes.</p>
+
+      <nav>
+        <a href="index.html">Hub</a>
+        <a href="project-progress.html">Project Progress</a>
+        <a href="properties-database.html">Properties Database</a>
+        <a href="website.html">Website</a>
+        <a href="support.html">Support</a>
+        <a href="data-quality-dashboard.html">Deep Data Quality</a>
+        <a href="scrape-status.html">Source Matrix</a>
+      </nav>
+
+  </header>
+  <main>
+
+      <section class="grid">
+
+    <details class="stat" open>
+      <summary><span class="label">Support open slices</span><span class="value">52</span></summary>
+      <p><strong>Insight:</strong> Operational assistance now has explicit owners.</p>
+      <p><strong>Details:</strong> This includes release, infra, market, analytics, vision, entity resolution, knowledge, S&amp;M, and verification.</p>
+      <p><strong>Action:</strong> Keep support work evidence-backed and verifier-gated.</p>
+    </details>
+
+
+    <details class="stat" open>
+      <summary><span class="label">Awaiting verification</span><span class="value">17</span></summary>
+      <p><strong>Insight:</strong> Several concluded planning outputs need debugger promotion.</p>
+      <p><strong>Details:</strong> Most are docs/contracts, not runtime execution.</p>
+      <p><strong>Action:</strong> Debugger should batch verify low-risk docs, then queue runtime gates separately.</p>
+    </details>
+
+
+    <details class="stat" open>
+      <summary><span class="label">Blocked support gates</span><span class="value">2</span></summary>
+      <p><strong>Insight:</strong> Blocked work is mostly credential/operator gated.</p>
+      <p><strong>Details:</strong> INFRA-02 needs DB URLs; VM-02 needs operator Action0 now.</p>
+      <p><strong>Action:</strong> Do not substitute file-backed evidence for DB/operator proof.</p>
+    </details>
+
+
+    <details class="stat" open>
+      <summary><span class="label">Todo support slices</span><span class="value">33</span></summary>
+      <p><strong>Insight:</strong> Support roadmap is now visible.</p>
+      <p><strong>Details:</strong> Next work should convert contracts into implementation only after upstream evidence exists.</p>
+      <p><strong>Action:</strong> Prioritize DA/BD/DBG handoffs before adding new scope.</p>
+    </details>
+
+      </section>
+      <h2>Operational Lanes</h2>
+      <table><thead><tr><th>Lane</th><th>Open</th><th>Latest insight</th></tr></thead><tbody><tr><td>S&amp;M / Social + Vendor</td><td>16</td><td>## 2026-05-13 — SM-13 social media discovery and evidence queue - Action: Reviewed public-discoverable real-estate social/messenger candidates across Telegram, Facebook, Instagram, Viber, and WhatsApp; saved a machine-readable candidate matrix and a social-ove</td></tr><tr><td>Debugger</td><td>16</td><td>### 2026-05-13 — VERIFY: DA-02 / BD-18 deep handoff - Gate commands run: - python3 -m py_compile scripts/bd18_db_smoke_import.py scripts/import_scraped_listings.py src/bgrealestate/db/import_contract.py src/bgrealestate/db/models.py src/bgrealestate/db/reposit</td></tr><tr><td>Ops Release Manager</td><td>2</td><td>## 2026-05-13 — OPS-02 data-analysis release gate prepared - Task: Prepare release safety gate while data_analyst is active; no staging or push. - Inputs: docs/agents/TASKS.md, docs/agents/roles/ops_release_manager.md, docs/integrations/mcp-and-skills-setup.md</td></tr><tr><td>Infra DB Operator</td><td>2</td><td>## 2026-05-13 — INFRA-02 BD-18 DB gate attempt - Action: Checked whether DB verification can run after BD-18 table/smoke-script implementation. - FACT: DATABASE_URL is not set in this environment. - Commands run: - if [ -n &quot;$DATABASE_URL&quot; ]; then echo DATABASE</td></tr><tr><td>Market Intelligence</td><td>2</td><td>## 2026-05-13 — MI accepted-only data-quality handoff - Action: Data analyst added market-intelligence readiness into docs/exports/data-quality-deep-review-2026-05-13.md: accepted-only offer mix, accepted city slices, price summaries by offer kind, and limits </td></tr><tr><td>User Analytics</td><td>3</td><td>## 2026-05-13 — UA data-quality dashboard handoff - Action: Data analyst added user-analytics constraints to the deep data-quality review: future funnels must separate product telemetry from corpus quality counts, and payloads must remain PII-free. - Changed f</td></tr><tr><td>Vision Media</td><td>5</td><td>## 2026-05-13 — VM-05 local-gallery verification before image descriptions - Action: Verified the current file-backed local-gallery evidence contract before any semantic image-description work. - Output: docs/exports/vision-media-local-gallery-verification-202</td></tr><tr><td>Entity Resolution</td><td>4</td><td>## 2026-05-13 — ER-02 accepted-only candidate layer - Action: Designed the accepted-only entity-resolution candidate layer for BD-21 without generating candidates or promoting properties. - Output: docs/exports/entity-resolution-accepted-only-candidate-layer-2</td></tr><tr><td>Knowledge Context</td><td>2</td><td>## 2026-05-13 — Codex hook and skill mapping revalidation - Action: Revalidated scripts/codex_project_hooks.py hook coverage for all 14 active agent roles (15 checks total), confirmed command guards, and re-checked role skill-map existence under agent-skills. </td></tr></tbody></table>
+      <h2>Support Execution Queue</h2>
+      <table><thead><tr><th>ID</th><th>Slice</th><th>Owner</th><th>Status</th><th>Depends</th><th>Next evidence/action</th></tr></thead><tbody><tr><td class="nowrap">OPS-01</td><td>Safe git push gate for Plan 13.05</td><td>Ops Release Manager</td><td>DONE_AWAITING_VERIFY</td><td>PLAN-03</td><td>Unstage unsafe existing index entries without modifying working files.; Stage only safe code/docs/config/skills/runbooks.; Exclude secrets, raw capture dirs, DB dumps, runtime logs, OpenClaw state, and unreviewed large scraped corpus.</td></tr>
+<tr><td class="nowrap">OPS-02</td><td>Data-analysis-driven release gate checklist</td><td>Ops Release Manager</td><td>DONE_AWAITING_VERIFY</td><td>DA-02 or current data_analyst handoff; DBG-21 verifies this checklist before release use.</td><td>Treat data_analyst as the evidence owner for accepted/LOST/grouped/media/dashboard counts; release notes must cite reproducible artifact paths, not chat summaries.; Require DA-02 dashboard denominator semantics before any public count claim, and DA-03 or an ex</td></tr>
+<tr><td class="nowrap">INFRA-01</td><td>Server and DB migration readiness</td><td>Infra DB Operator</td><td>DONE_AWAITING_VERIFY</td><td>PLAN-03</td><td>Prepare backup/restore/count verification commands.; Document server prerequisites and provider recommendation.; Define transfer/restore/rollback steps.</td></tr>
+<tr><td class="nowrap">INFRA-02</td><td>DB count verification execution gate</td><td>Infra DB Operator</td><td>BLOCKED</td><td>INFRA-01, BD-18</td><td>Once DATABASE_URL / REMOTE_DATABASE_URL exist, run backup/restore/count verification without committing dumps or runtime logs.; Compare DB counts with the latest data_analyst accepted/LOST/grouped/media artifacts.; Record mismatches as blockers for BD-18 or DA</td></tr>
+<tr><td class="nowrap">MI-01</td><td>Weekly market and rival intelligence baseline</td><td>Market Intelligence</td><td>DONE_AWAITING_VERIFY</td><td>PLAN-03</td><td>report separates FACT / INTERPRETATION / HYPOTHESIS / GAP and maps recommendations to planner tasks.</td></tr>
+<tr><td class="nowrap">MI-02</td><td>Next weekly market review scorecard</td><td>Market Intelligence</td><td>TODO</td><td>MI-01, DA-02, BD-19</td><td>Build a weekly source scorecard from accepted-only evidence: source family, legal/access mode, website-total basis, landed rows, accepted rows, grouped rows, LOST rows, media/description coverage, city/district coverage, price-status coverage, and product role</td></tr>
+<tr><td class="nowrap">UA-01</td><td>Website analytics event taxonomy</td><td>User Analytics</td><td>DONE_AWAITING_VERIFY</td><td>PLAN-03</td><td>no PII-bearing payloads; frontend/backend tasks are explicit.</td></tr>
+<tr><td class="nowrap">UA-02</td><td>Privacy-safe instrumentation implementation plan</td><td>User Analytics</td><td>TODO</td><td>UA-01, BD-13, BD-17, BD-19, UX-15</td><td>After account/chat/admin/read-model contracts stabilize, freeze the event dictionary, payload allowlists, sampling/debounce rules, retention windows, and dashboard metrics.; Confirm UX events use derived fields only: no raw search text, raw chat text, emails, </td></tr>
+<tr><td class="nowrap">UA-03</td><td>Product analytics dashboard contract</td><td>User Analytics</td><td>TODO</td><td>UA-02, BD-20, UX-20</td><td>dashboard spec includes metric definitions, required events, denominator rules, privacy constraints, and example SQL/API query shapes using only first-party event data.</td></tr>
+<tr><td class="nowrap">VM-01</td><td>Vision media agent readiness</td><td>Vision Media</td><td>DONE_AWAITING_VERIFY</td><td>DA-01 file-backed audit; Action0 execution remains blocked until operator Action0 now</td><td>Convert data analyst media gaps into semantic media QA tasks: gallery completeness, scene/room coverage, condition, equipment, style, photo-text consistency, and uncertainty.; Define the visual evidence threshold for buyer-facing display and stronger property </td></tr>
+<tr><td class="nowrap">VM-02</td><td>Action0 semantic media QA execution queue</td><td>Vision Media</td><td>BLOCKED</td><td>VM-01 verification, operator Action0 now, Action1 QA state accepted by debugger/data_analyst</td><td>After operator Action0 now, process only rows from s1-21-gemma-action0-eligible.json or a debugger/data_analyst-approved successor queue.; Use only local_image_files; no remote fetch or gallery backfill inside semantic reporting.; Write one JSON and one Markdo</td></tr>
+<tr><td class="nowrap">VM-03</td><td>Visual evidence promotion gate</td><td>Vision Media</td><td>TODO</td><td>DA-02, BD-18, BD-19</td><td>Turn the readiness report thresholds into product/DB/API fields: visual_evidence_status, semantic_report_status, missing_scene_warnings, human_review_required, and visual_promotion_blockers.; Separate buyer-facing display from promoted/enriched property use; p</td></tr>
+<tr><td class="nowrap">VM-04</td><td>Media QA dashboard handoff</td><td>Vision Media</td><td>TODO</td><td>VM-01, DA-02, DA-03</td><td>Define dashboard metrics for media capture completeness and semantic report completeness separately.; Track per-source/per-bucket counts for accepted rows with full local gallery, partial gallery, unreadable/duplicate images, semantic report complete, semantic</td></tr>
+<tr><td class="nowrap">VM-05</td><td>Local-gallery verification before image descriptions</td><td>Vision Media</td><td>DONE_AWAITING_VERIFY</td><td>DA-02, VM-01</td><td>Verify local-gallery evidence separately from semantic image-description coverage.; Keep Action0 image-description execution blocked until operator Action0 now.; Require accepted single-unit state, local file existence/readability, explicit full/partial galler</td></tr>
+<tr><td class="nowrap">ER-01</td><td>Conservative entity-resolution queue plan</td><td>Entity Resolution</td><td>DONE_AWAITING_VERIFY</td><td>DA-01 file-backed audit; execution candidates depend on BD-18, BD-19, DA-02, and accepted source-publication import evidence</td><td>grouped/development publications cannot be auto-merged as single units; plan states no property_entity / property_offer promotion in ER planning; follow-up slices depend on BD-18/BD-19 accepted source-publication evidence.</td></tr>
+<tr><td class="nowrap">ER-02</td><td>Accepted-only duplicate candidate extraction contract</td><td>Entity Resolution</td><td>DONE_AWAITING_VERIFY</td><td>ER-01, BD-18, BD-19, DA-02</td><td>Define the exact accepted-only input query for source publications: SCRAPED_OK, accepted/single-entity state, not grouped/development, not LOST, not inactive/removed/expired, not pending/missing QA, and registry-backed source provenance.; Define candidate bloc</td></tr>
+<tr><td class="nowrap">ER-03</td><td>Evidence scoring and case-classification matrix</td><td>Entity Resolution</td><td>TODO</td><td>ER-02</td><td>Define score components for source URL/id, city/district/address/building/project, area, price/price-status, rooms/floor/unit clues, contacts, photo overlap, media counts, and lifecycle dates.; Define hard blockers that override any score: grouped/development,</td></tr>
+<tr><td class="nowrap">ER-04</td><td>Source-publication relationship and conflict review policy</td><td>Entity Resolution</td><td>TODO</td><td>ER-03, UX-15</td><td>Define lifecycle for candidate review actions: link, dismiss, defer, mark_conflict, needs_unit_split, and needs_parser_repair.; Define audit fields for who/when/why plus immutable evidence snapshot.; Hand UX the operator-side wording for duplicate/confidence/p</td></tr>
+<tr><td class="nowrap">KCA-01</td><td>Data-analyst evidence capture and wiki closeout</td><td>Knowledge Context</td><td>DONE_AWAITING_VERIFY</td><td>DA-02 or DBG-15</td><td>Create a wiki run record for the data-analyst-centered loop after the current analyst/debugger outputs are stable.; Update project log, memory, and insights under the strict filters only.; Update docs/reporting index if a new durable artifact becomes source-of</td></tr>
+<tr><td class="nowrap">KCA-02</td><td>Four-dashboard knowledge capture</td><td>Knowledge Context</td><td>TODO</td><td>PLAN-06, DBG dashboard verification</td><td>Record the four-dashboard operating model as a wiki run after debugger verifies PLAN-06.; Update project log and insights only for reusable conclusions: dashboard role split, accepted-only evidence chain, and verifier queue hygiene.; Update memory only if the </td></tr>
+<tr><td class="nowrap">DBG-13</td><td>Verify Plan 13.05 architecture reset and release gate</td><td>Debugger</td><td>TODO</td><td>OPS-01</td><td>unsafe files are absent from staged diff; role docs and task board have clear owners/verifiers; dashboard refresh blocker is recorded as DA-03 if unresolved.</td></tr>
+<tr><td class="nowrap">SM-00</td><td>S&amp;M mission consolidation and OpenClaw monitor handoff</td><td>S&amp;M / Social + Vendor</td><td>DONE_AWAITING_VERIFY</td><td>PLAN-01</td><td>Treat tier-3 partner/vendor/official and tier-4 social/messenger work as one S&amp;M intelligence lane.; Keep all private/social/messenger scraping consent-gated; no private groups, DMs, unofficial sessions, or KYC/CAPTCHA bypass.; While Action1 runs, S&amp;M may moni</td></tr>
+<tr><td class="nowrap">SM-02</td><td>Telegram public channel connector (fixture-first)</td><td>S&amp;M / Social + Vendor</td><td>DONE_AWAITING_VERIFY</td><td>SM-01, BD-01</td><td>make test passes; fixtures contain redacted posts; no live Telegram calls</td></tr>
+<tr><td class="nowrap">SM-03</td><td>X (Twitter) public monitor connector (fixture-first)</td><td>S&amp;M / Social + Vendor</td><td>DONE_AWAITING_VERIFY</td><td>SM-01</td><td>make test passes; no live API calls</td></tr>
+<tr><td class="nowrap">SM-04</td><td>Social lead-to-property mapping for AI chat context</td><td>S&amp;M / Social + Vendor</td><td>TODO</td><td>SM-02, UX-05</td><td>fixture-backed mapping examples pass tests; no live social calls</td></tr>
+<tr><td class="nowrap">SM-05</td><td>Social collection options research (decision matrix)</td><td>S&amp;M / Social + Vendor</td><td>DONE_AWAITING_VERIFY</td><td>SM-01</td><td>decision matrix doc exists with all platforms covered; no code written</td></tr>
+<tr><td class="nowrap">SM-06</td><td>Telegram live connector (Telegram Bot API or MTProto)</td><td>S&amp;M / Social + Vendor</td><td>TODO</td><td>SM-02, SM-05, BD-14</td><td>Implement live Telegram public channel monitoring using official Bot API (or Telethon for MTProto if approved); Subscribe to 5-10 known Bulgarian real estate Telegram channels (public only); Parse new messages → extract real estate leads → store as lead_thread</td></tr>
+<tr><td class="nowrap">SM-07</td><td>Facebook public group scraper (consent-gated)</td><td>S&amp;M / Social + Vendor</td><td>DONE_AWAITING_VERIFY</td><td>SM-05</td><td>if implemented, fixture-backed tests pass; no private data accessed; legal review documented</td></tr>
+<tr><td class="nowrap">SM-08</td><td>Messenger publication candidates for Telegram, WhatsApp, and Viber</td><td>S&amp;M / Social + Vendor</td><td>TODO</td><td>SM-01, SM-02, SM-05</td><td>Implement fixture-first candidate mapper for Telegram public-channel messages, WhatsApp manual/Cloud API webhook payloads, and Viber manual/bot webhook payloads.; Redact phone/email/name/private profile fields before persistence.; Classify each message as lead</td></tr>
+<tr><td class="nowrap">SM-09</td><td>Approved messenger candidate persistence into source-publication pipeline</td><td>S&amp;M / Social + Vendor</td><td>TODO</td><td>SM-08, BD-11, BD-17</td><td>approved fixture candidate creates source publication + review status; unapproved/noise/private messages do not create property entities; make test passes.</td></tr>
+<tr><td class="nowrap">SM-10</td><td>Tier-3/tier-4 intelligence path matrix</td><td>S&amp;M / Social + Vendor</td><td>DONE_AWAITING_VERIFY</td><td>PLAN-03</td><td>Define only legal, consent, partner, official API, licensed, or manual routes for tier-3/tier-4 intelligence.; Record legal/consent blockers for Airbnb, Booking.com, Vrbo, Flat Manager, Menada, AirDNA, Airbtics, BCPEA, KAIS, Property Register, Telegram, X, Fac</td></tr>
+<tr><td class="nowrap">SM-11</td><td>Official/register evidence queue</td><td>S&amp;M / Social + Vendor</td><td>TODO</td><td>SM-10</td><td>Define fixture schemas and review states for BCPEA auction source publications.; Define manual/consent-only evidence envelopes for KAIS parcel/building checks and Property Register ownership checks.; Specify comparison fields for data analyst: source URL/refer</td></tr>
+<tr><td class="nowrap">SM-12</td><td>Vendor/partner intelligence readiness</td><td>S&amp;M / Social + Vendor</td><td>TODO</td><td>SM-10</td><td>Define fixture contracts for AirDNA/Airbtics licensed STR metric snapshots; do not model them as listings.; Define partner-feed readiness checklists for Airbnb, Booking.com, Vrbo, Flat Manager, and Menada.; Keep live API/feed calls hard-blocked without license</td></tr>
+<tr><td class="nowrap">SM-13</td><td>Social-overlay evidence queue and data analyst handoff</td><td>S&amp;M / Social + Vendor</td><td>DONE_AWAITING_VERIFY</td><td>SM-10, SM-02, SM-03</td><td>Define review queue states for Telegram/X official API signals and Facebook/Instagram/Threads manual-consent signals.; Define consented/manual or official business/bot webhook envelopes for Viber and WhatsApp; block private groups, DMs, unofficial sessions, an</td></tr>
+<tr><td class="nowrap">SM-14</td><td>Telegram public candidate validation and fixture expansion</td><td>S&amp;M / Social + Vendor</td><td>TODO</td><td>SM-13</td><td>Validate public status, channel type, activity, and duplicate risk for the top Telegram candidates.; Add redacted fixtures for at least four high-priority candidates: rentvarna, varnarents, kvartirivarna, and addressbg, if public/allowed samples are available.</td></tr>
+<tr><td class="nowrap">SM-15</td><td>Meta Facebook/Instagram manual/API route pilot</td><td>S&amp;M / Social + Vendor</td><td>TODO</td><td>SM-13</td><td>Split Facebook Groups, Facebook Pages, and Instagram profiles into route-specific queues.; Define manual operator capture templates for groups.; Define Graph API/Page and Instagram Business Discovery approval checklist for pages/professional profiles.</td></tr>
+<tr><td class="nowrap">SM-16</td><td>WhatsApp/Viber opt-in business intake design</td><td>S&amp;M / Social + Vendor</td><td>TODO</td><td>SM-13</td><td>Define Viber commercial bot/manual opt-in evidence envelope.; Define WhatsApp Business webhook evidence envelope for owner/agent opt-in conversations.; Define consent proof, unsubscribe/delete handling, redaction, and retention requirements.</td></tr>
+<tr><td class="nowrap">DBG-05</td><td>Verify stage-1 scraping before expanding 3D / building-depth geo</td><td>Debugger</td><td>TODO</td><td>S1-13, BD-01, S1-18 (live portion)</td><td>required product types covered per coverage doc; golden path passes; live volume report meets S1-18 thresholds or waiver is documented</td></tr>
+<tr><td class="nowrap">DBG-08</td><td>Verify Codex tier-1/2 quality audit and Gemma readiness</td><td>Debugger</td><td>TODO</td><td>S1-21, S1-22A, S1-22B as applicable</td><td>Action0 has report-or-skip coverage for every eligible row; Action1 has attempted all seven sources in all four buckets with saved/skipped/error counts; every high-priority source gap has a fix, test, blocker, or queued Action2 follow-up; no ambiguous Varna-only instruction remains.</td></tr>
+<tr><td class="nowrap">DBG-06</td><td>Verify all pending DONE_AWAITING_VERIFY slices (batch 2)</td><td>Debugger</td><td>TODO</td><td>S1-18, BD-11 (live rows or documented waiver)</td><td>BD-04 (Auth/RBAC): test 401/403 responses, API key scope enforcement; BD-05 (Temporal): verify worker/scheduler stubs, test restart behavior; S1-11 (Ingestion runner): run fixture ingest, check DB round-trip</td></tr>
+<tr><td class="nowrap">DBG-07</td><td>End-to-end website smoke test</td><td>Debugger</td><td>TODO</td><td>BD-14, UX-11</td><td>GET /api/v1/ready returns 200 (Railway); Homepage loads with map + listings (Vercel); Click a listing → property detail page loads</td></tr>
+<tr><td class="nowrap">DBG-08</td><td>Security audit — auth, injection, XSS, CORS</td><td>Debugger</td><td>TODO</td><td>BD-14, BD-13</td><td>SQL injection audit: verify all queries use parameterized statements; XSS audit: verify all user content is escaped in frontend; Auth audit: verify JWT validation, session handling, password hashing</td></tr>
+<tr><td class="nowrap">DBG-09</td><td>End-of-run verification sweep</td><td>Debugger</td><td>TODO</td><td>—</td><td>After each backend, scraper, or UX run, scan for the latest slice updates and match them to their acceptance gates.; Execute the relevant verification immediately when the gate is runnable, or record an explicit deferred reason in docs/agents/debugger/JOURNEY.</td></tr>
+<tr><td class="nowrap">DBG-10</td><td>Fixture-only test hardening for live scraper/media side effects</td><td>Debugger</td><td>TODO</td><td>—</td><td>make test leaves data/scraper.log unchanged and no test performs external HTTP unless explicitly enabled by an opt-in env var.</td></tr>
+<tr><td class="nowrap">DBG-22</td><td>Verify backend BD-18 contract prep</td><td>Debugger</td><td>TODO</td><td>BD-18</td><td>Confirm no live scraped data was imported or mutated by the backend prep run.; Verify accepted-only import boundaries still reject unreviewed, LOST, grouped/development, and inactive rows by default.; Verify all-Bulgaria bucket/provenance evidence is preserved</td></tr>
+<tr><td class="nowrap">DBG-16</td><td>Verify DA-dependent implementation queue</td><td>Debugger</td><td>TODO</td><td>DA-02, DA-03 as applicable</td><td>Verify each DA-dependent implementation slice uses analyst artifacts as inputs, not chat summaries.; Run focused acceptance gates when a producing agent marks a slice DONE_AWAITING_VERIFY.; Record deferred verification reasons when DATABASE_URL, dashboard fast</td></tr>
+<tr><td class="nowrap">DBG-23</td><td>Verify four-dashboard operating model</td><td>Debugger</td><td>TODO</td><td>PLAN-06</td><td>Run python3 -m py_compile scripts/generate_operational_dashboards.py and python3 scripts/generate_operational_dashboards.py.; Verify the four dashboard pages exist and each stat block is a &lt;details open&gt; item with insight/details/action text.; Verify the Proje</td></tr>
+<tr><td class="nowrap">DBG-17</td><td>Verify scraper_1 analyst-support handoff</td><td>Debugger</td><td>TODO</td><td>S1-23, DA-01</td><td>Verify scraper_1 did not start live scraping or widen Action2.; Check that source-specific next actions cover parser gaps, media gaps, grouped/development handling, missing provenance, and price-state handling for all seven A1 sources.; Confirm Action1 -&gt; Acti</td></tr>
+<tr><td class="nowrap">DBG-18</td><td>Verify vision media QA readiness and gates</td><td>Debugger</td><td>TODO</td><td>VM-01</td><td>Verify VM-01 did not run image processing and kept Action0 execution blocked until operator Action0 now.; Verify media QA tasks cover gallery completeness, per-image semantics, room/condition/equipment/style evidence, whole-property consistency, and uncertaint</td></tr>
+<tr><td class="nowrap">DBG-21</td><td>Verify data-analysis release hygiene gate</td><td>Debugger</td><td>TODO</td><td>OPS-02, DA-02/DA-03 as applicable</td><td>Verify OPS-02 did not stage, push, or promote counts while data analyst work was still running.; Confirm release notes require reproducible DA artifacts and separate file-backed, DB-backed, accepted, LOST, grouped/development, inactive, media-gap, and dashboar</td></tr></tbody></table>
+
+  </main>
+  <footer>File-backed operator dashboards. DB-backed claims remain blocked until BD-18 + INFRA-02 verification.</footer>
+</body>
+</html>

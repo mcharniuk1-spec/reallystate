@@ -4,9 +4,20 @@ Updated: 2026-04-29
 
 ## Current Stage
 
-The project is at **Stage 4/9 bridge: tier-1/2 scrape-quality hardening, property image reporting, and product-map UI stabilization**.
+The project is at **Stage 4/9 bridge: tier-1/2 scrape-quality hardening plus account/chat foundation hardening**.
 
-The active operator priority is no longer only fixture scaffolding. The repo now contains a file-backed scrape corpus, source/photo dashboards, a Next.js product surface, and a MapLibre/OpenFreeMap 2D/3D map implementation. The next reliable gate is ordered: Action0 property image reports from complete local galleries, Action1 seven-source full scrape/backfill, then Action2 remaining legal tier-1/2 sources.
+The active operator priority is no longer only fixture scaffolding. The repo now contains a file-backed scrape corpus, source/photo dashboards, a Next.js product surface, a MapLibre/OpenFreeMap 2D/3D map implementation, and a protected account/chat foundation. The next reliable gate is to prove source quality and persistence quality before expanding volume: source links, page description, image counts, local image files, price/size/category plausibility, building/address confidence, liked-property state history, and property-chat persistence.
+
+## 2026-04-29 Product/Data Update
+
+| Area | Current state | Verification status |
+|---|---|---|
+| Liked properties | `saved_property` keeps status and update time; changes are recorded in `saved_property_status_event`. | Focused tests pass; PostgreSQL migration still needs runtime verification. |
+| Property chat | `user_property_chat` connects user, property, and `lead_thread`; messages persist through the CRM message model. | Focused API tests pass; real Bearer-token DB run remains queued. |
+| Chat provider | Backend chat supports local Ollama with `gemma4:26b` default and stub fallback. API keys stay server-side. | Mocked Ollama and local proxy smoke passed. |
+| Account UI | `/settings` is now an account cabinet with mode switching, liked properties, saved searches, and chat entry points. | Typecheck passed; browser screenshot pass still pending. |
+| Chat UI | `/chat` is now a global and selected-property chat workspace posting through `/api/backend/api/v1/chat`. | HTTP checks passed; Playwright/a11y pass still pending. |
+| Social overlays | `SM-08` is queued for fixture-first messenger publication candidates from public Telegram and manual/consent-gated WhatsApp/Viber exports. | Planning doc exists; no live social access implemented. |
 
 ## 2026-04-29 Current Reporting Pack
 
@@ -28,17 +39,17 @@ Current S1-21 audit artifacts:
 - `docs/exports/s1-21-tier12-quality-audit-2026-04-29.json`
 - `docs/exports/s1-21-gemma-action0-eligible.json`
 
-The next Gemma4 task is **Action0**: per-property image description plus QA reporting from local files only. After that, **Action1** runs the seven-source all-Bulgaria scrape/backfill under operator-approved live runtime. **Action2** continues to the remaining legal tier-1/2 sources after Action1 QA.
+The next Gemma4/OpenClaw task sequence remains: **Action0** property image reports from complete local galleries, **Action1** seven-source all-Bulgaria scrape/backfill after operator acceptance, then **Action2** remaining legal tier-1/2 sources after Action1 QA.
 
 **Previous:** Stage 2 (database and persistence) remains in motion with many backend slices implemented or awaiting verification.
 
 **Now:** Execution is **sequenced** per `docs/agents/TASKS.md` § `S1-21` / `S1-22`:
 
-1. **`scraper_1` / Codex**: `S1-21` verifies saved-row quality, image counts, local file validity, description fullness, and same-location grouping.
-2. **`Gemma4/OpenClaw`**: `S1-22 Action0` describes every eligible property's local images and writes one whole-property visual/QA report.
-3. **`Gemma4/OpenClaw`**: `S1-22 Action1` scrapes/backfills the seven priority sources across four buckets.
-4. **`Gemma4/OpenClaw`**: `S1-22 Action2` continues to remaining legal tier-1/2 sources.
-5. **`debugger`**: verifies reports, source/photo counts, dashboards, and legal/runtime gating.
+1. **`scraper_1` / Codex**: `S1-21` verifies saved-row quality, image counts, local file validity, description fullness, same-location grouping, and source-publication identity.
+2. **`Gemma4/OpenClaw`**: `S1-22 Action0` describes eligible local image galleries and writes one whole-property visual/QA report per property.
+3. **`Gemma4/OpenClaw`**: `S1-22 Action1` scrapes/backfills the seven priority sources across four buckets after operator `Action1 ACCEPT`.
+4. **`Gemma4/OpenClaw`**: `S1-22 Action2` continues to remaining legal tier-1/2 sources after Action1 QA and operator approval.
+5. **`backend_developer` / `ux_ui_designer` / `debugger`**: verify account/chat migrations, API state, UI flows, and no-network test hardening through BD-17, UX-14, and DBG-10.
 
 **Fixture analysis:** `docs/exports/stage1-product-type-coverage.md` — all required product types covered by tier-1/2 fixtures (parser readiness, not production volume).
 
@@ -73,6 +84,9 @@ The current repo can load and classify sources, run a generic parser pipeline te
 - Docker Compose scaffold for PostgreSQL/PostGIS, Redis, MinIO, Temporal, and Temporal UI.
 - Backend dependency metadata in `pyproject.toml`.
 - Frontend dependency metadata in `package.json` plus a runnable Next.js App Router shell (Tailwind, TanStack Query, home + MVP routes) that reads the Python dev API (`/health`, `/sources`) when `make run-api` is up.
+- Authenticated user routes for liked properties and property chats are present behind Bearer auth.
+- Chat service can call the backend-local Ollama adapter (`gemma4:26b` default) and falls back to a stub when the local provider is unavailable.
+- `/settings` and `/chat` now expose account, liked-property, and property-chat workflows rather than placeholders.
 - Development setup guide in `docs/development-setup.md`.
 - Lightweight development run targets for API, worker, scheduler, and frontend shell.
 - Local `make validate` command for JSON, Office package, and unit-test validation.
@@ -91,22 +105,22 @@ The current repo can load and classify sources, run a generic parser pipeline te
 ## What Does Not Work Yet
 
 - No real tier-1 live connector for `OLX.bg`, `alo.bg`, `imot.bg`, or other portals beyond the shared HTML scaffold (Homes.bg remains the only fixture-tuned parser).
-- No PostgreSQL/PostGIS migration runtime yet.
+- PostgreSQL/PostGIS migration runtime still needs local execution proof for the newest user-property chat migration.
 - No Temporal workers or scheduler yet.
 - No Redis rate-limit state yet.
 - No S3/MinIO object storage adapter yet.
 - No media/photo download pipeline yet.
 - No production dedupe/entity graph persistence yet.
 - No geocoder/cadastre/building-footprint integration yet.
-- No FastAPI API server yet.
-- Next.js App Router UI shell exists at the repo root (`app/`, `npm run dev`); listings feed and map/chat/settings/admin are placeholders until FastAPI and CRM/map APIs land.
+- FastAPI development API exists; production API hardening and DB-backed runtime proof are still pending.
+- Next.js App Router UI shell exists at the repo root (`app/`, `npm run dev`); listings feed, map data, and admin are still partial, while account/chat now have first backend contracts.
 - The current `run-api`, `run-worker`, `run-scheduler`, and `run-frontend` targets are development placeholders, not production services (`run-frontend` now starts Next.js when Node/npm is available).
 - Stage 2 database work is partially implemented: SQLAlchemy model coverage and some repositories now exist, but tenant/account boundaries, broader repository coverage, and real migration execution against PostgreSQL are still pending.
 - Source registry persistence now stores `primary_url`, `related_urls`, `languages`, and `listing_types` when `sync-database` is run against PostgreSQL.
 - Docker is not available in the current local shell, so Compose services have not been started or validated here.
 - `Homes.bg` discovery is still a placeholder and there is no live crawl execution path validated against a running database.
-- `/listings`, `/properties/[id]`, `/map`, `/chat`, `/settings`, and `/admin` routes exist as designed shells; canonical listing search, map layers, and CRM are not wired to real APIs yet.
-- No real CRM messaging integration yet.
+- `/listings`, `/properties/[id]`, `/map`, `/chat`, `/settings`, and `/admin` routes exist; canonical listing search and map layers remain partial, while `/chat` and `/settings` now use the first account/chat contracts.
+- CRM messaging has a local property-chat bridge, but no external messaging provider integration yet.
 - No real reverse publishing adapters yet.
 - No production deployment, monitoring, or security hardening yet.
 

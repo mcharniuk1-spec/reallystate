@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Progress Dashboard | Bulgaria Real Estate Ops</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fa;
+      --panel: #ffffff;
+      --ink: #17212f;
+      --muted: #5d6b7d;
+      --line: #d9e0e8;
+      --accent: #0f766e;
+      --warn: #b45309;
+      --bad: #b91c1c;
+      --good: #047857;
+      --info: #1d4ed8;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.45; }
+    header { padding: 28px min(5vw, 56px) 20px; background: #ffffff; border-bottom: 1px solid var(--line); }
+    h1 { margin: 0 0 6px; font-size: clamp(28px, 4vw, 44px); letter-spacing: 0; }
+    h2 { margin: 32px 0 12px; font-size: 22px; letter-spacing: 0; }
+    h3 { margin: 0 0 8px; font-size: 16px; letter-spacing: 0; }
+    p { margin: 0 0 10px; }
+    a { color: var(--info); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    nav a { border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; color: var(--ink); background: #f8fafc; font-size: 14px; }
+    main { padding: 24px min(5vw, 56px) 56px; }
+    .muted { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+    .wide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 12px; }
+    details.stat, .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+    details.stat summary { cursor: pointer; list-style: none; display: grid; gap: 4px; }
+    details.stat summary::-webkit-details-marker { display: none; }
+    .label { color: var(--muted); font-size: 13px; }
+    .value { font-size: 28px; font-weight: 750; line-height: 1.15; }
+    .tag { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 2px 8px; font-size: 12px; color: var(--muted); background: #f8fafc; }
+    .good { color: var(--good); }
+    .warn { color: var(--warn); }
+    .bad { color: var(--bad); }
+    table { width: 100%; border-collapse: collapse; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+    th, td { padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; font-size: 14px; }
+    th { background: #eef3f8; font-size: 12px; text-transform: uppercase; letter-spacing: .02em; color: #435166; }
+    tr:last-child td { border-bottom: 0; }
+    .nowrap { white-space: nowrap; }
+    footer { color: var(--muted); padding: 0 min(5vw, 56px) 32px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="tag">Generated 2026-05-13 14:22:31Z</p>
+    <h1>Project Progress Dashboard</h1>
+    <p class="muted">Whole-project execution state with all agent lanes and verifier gates.</p>
+
+      <nav>
+        <a href="index.html">Hub</a>
+        <a href="project-progress.html">Project Progress</a>
+        <a href="properties-database.html">Properties Database</a>
+        <a href="website.html">Website</a>
+        <a href="support.html">Support</a>
+        <a href="data-quality-dashboard.html">Deep Data Quality</a>
+        <a href="scrape-status.html">Source Matrix</a>
+      </nav>
+
+  </header>
+  <main>
+
+      <section class="grid">
+    <details class="stat" open>
+      <summary><span class="label">Total slices</span><span class="value">149</span></summary>
+      <p><strong>Insight:</strong> The task board is now the project operating plan.</p>
+      <p><strong>Details:</strong> Counts include active, historic, recurring, and support-lane slices.</p>
+      <p><strong>Action:</strong> Keep new work as verifier-gated slices, not chat-only requests.</p>
+    </details>
+
+    <details class="stat" open>
+      <summary><span class="label">Verified slices</span><span class="value">25</span></summary>
+      <p><strong>Insight:</strong> Verified work is the only completed state usable for downstream claims.</p>
+      <p><strong>Details:</strong> DONE_AWAITING_VERIFY still needs debugger or assigned verifier promotion.</p>
+
+    </details>
+
+    <details class="stat" open>
+      <summary><span class="label">Awaiting verifier</span><span class="value">45</span></summary>
+      <p><strong>Insight:</strong> There is a large verification queue from concluded agent execution.</p>
+      <p><strong>Details:</strong> Debugger should batch similar documentation-only gates, then isolate runtime/DB gates.</p>
+
+    </details>
+
+    <details class="stat" open>
+      <summary><span class="label">Blocked slices</span><span class="value">2</span></summary>
+      <p><strong>Insight:</strong> The main blockers are DB credentials/import proof and operator-gated media execution.</p>
+      <p><strong>Details:</strong> Do not unblock public UI or release claims until the named gates clear.</p>
+
+    </details>
+
+    <details class="stat" open>
+      <summary><span class="label">Open active slices</span><span class="value">124</span></summary>
+      <p><strong>Insight:</strong> The project has many open slices, but only a few are critical path.</p>
+      <p><strong>Details:</strong> Critical path: DA-02/DA-03 -&gt; BD-18/BD-19 -&gt; INFRA-02 -&gt; UX-16/18 -&gt; release.</p>
+
+    </details>
+
+    <details class="stat" open>
+      <summary><span class="label">Agent lanes</span><span class="value">16</span></summary>
+      <p><strong>Insight:</strong> All current specialist lanes are represented.</p>
+      <p><strong>Details:</strong> The dashboard includes new support lanes absent from the legacy progress view.</p>
+
+    </details>
+    </section>
+      <h2>Critical Path</h2>
+      <div class="panel">
+        <p><strong>FACT:</strong> Data analyst remains evidence owner for Action1 accepted/LOST/grouped/media counts. DA-01 is file-backed; DB-backed proof is still blocked.</p>
+        <p><strong>INTERPRETATION:</strong> The next whole-project move is denominator repair and accepted-only import proof, then admin/UI truth surfaces.</p>
+        <p><strong>GAP:</strong> No public completeness, DB count, or release claim is valid until DA-02/DA-03, BD-18/BD-19, INFRA-02, and debugger gates complete.</p>
+      </div>
+      <h2>Agent Subsections</h2>
+      <section class="wide-grid">
+            <details class="stat" open>
+              <summary><span class="label">Planner</span><span class="value">8</span></summary>
+              <p><strong>Insight:</strong> ## 2026-05-13 — PLAN-07 DA-02/BD-18 next-owner sequential run - Action: Reviewed DA-02 and BD-18 evidence, wrote next-owner prompts, ran the requested owner sequence as planner/debugger/backend/infra/entity-resolution/vision/UX, and preserved data_analyst as evidence owner. - Changed files: - docs/agents/TASKS.md - docs/exports/next-owner-prompts-2026-05-13.</p>
+              <p><strong>Details:</strong> DONE_AWAITING_VERIFY: 4, TODO: 4, VERIFIED: 1</p>
+              <p><strong>Action:</strong> PLAN-03 DONE_AWAITING_VERIFY; CONST-01 TODO; CONST-02 TODO; PLAN-01 DONE_AWAITING_VERIFY</p>
+            </details>
+
+            <details class="stat" open>
+              <summary><span class="label">Backend Developer</span><span class="value">18</span></summary>
+              <p><strong>Insight:</strong> ## 2026-05-13 — BD-18 DB evidence tables and smoke import - Action: Implemented the BD-18 evidence-table layer and a DB smoke import script while keeping scraped import source-publication-first. - Changed files: sql/schema.sql, migrations/versions/20260513_0006_bd18_source_publication_evidence.py, src/bgrealestate/db/models.py, src/bgrealestate/db/import_con</p>
+              <p><strong>Details:</strong> DONE_AWAITING_VERIFY: 7, IN_PROGRESS: 1, TODO: 10, VERIFIED: 3</p>
+              <p><strong>Action:</strong> BD-04 DONE_AWAITING_VERIFY; BD-05 DONE_AWAITING_VERIFY; BD-06 TODO; BD-07 TODO</p>
+            </details>
+
+            <details class="stat" open>
+              <summary><span class="label">Data Analyst</span><span class="value">2</span></summary>
+              <p><strong>Insight:</strong> ## 2026-05-13 — DA-02 deep data-quality review and dashboard - Action: Acting as data_analyst, generated a compact deep review of the saved corpus, DB-readiness blockers, source-specific bad-scrape rules, media evidence, market-intelligence limits, and privacy-safe analytics handoff. Also acted as backend_developer for a narrow importer safety patch, vision_</p>
+              <p><strong>Details:</strong> TODO: 2, VERIFIED: 2</p>
+              <p><strong>Action:</strong> DA-03 TODO; DA-04 TODO</p>
+            </details>
+
+            <details class="stat" open>
+              <summary><span class="label">Scraper 1</span><span class="value">14</span></summary>
+              <p><strong>Insight:</strong> ### 2026-05-13 — S1-23 deep data-quality repair packet - Action: Data analyst produced docs/exports/data-quality-deep-review-2026-05-13.md and docs/dashboard/data-quality-dashboard.html with clickable source drilldowns, bad-scrape rules, example listing paths, and source-specific fixture/acceptance instructions. No live scraping was started. - Changed files:</p>
+              <p><strong>Details:</strong> DONE_AWAITING_VERIFY: 5, IN_PROGRESS: 2, TODO: 7, VERIFIED: 4</p>
+              <p><strong>Action:</strong> S1-11 DONE_AWAITING_VERIFY; S1-13 DONE_AWAITING_VERIFY; S1-14 DONE_AWAITING_VERIFY; S1-15 IN_PROGRESS</p>
+            </details>
+
+            <details class="stat" open>
+              <summary><span class="label">S&amp;M / Social + Vendor</span><span class="value">16</span></summary>
+              <p><strong>Insight:</strong> ## 2026-05-13 — SM-13 social media discovery and evidence queue - Action: Reviewed public-discoverable real-estate social/messenger candidates across Telegram, Facebook, Instagram, Viber, and WhatsApp; saved a machine-readable candidate matrix and a social-overlay evidence queue. No private/social/messenger scraping was added. - Changed files: - data/social_</p>
+              <p><strong>Details:</strong> DONE_AWAITING_VERIFY: 7, TODO: 9, VERIFIED: 1</p>
+              <p><strong>Action:</strong> SM-00 DONE_AWAITING_VERIFY; SM-02 DONE_AWAITING_VERIFY; SM-03 DONE_AWAITING_VERIFY; SM-04 TODO</p>
+            </details>
+
+            <details class="stat" open>
+              <summary><span class="label">Scraper T3 (historical)</span><span class="value">6</span></summary>
+              <p><strong>Insight:</strong> ### 2026-04-08 — T3-07: BCPEA live scraper (public auctions — legal to crawl) - Action: Built full live scraper for BCPEA property auction register (sales.bcpea.org). Fetched real HTML to understand actual site structure (server-rendered, not SPA). Implemented discovery pagination, detail page parsing, rate limiting, CLI command, Makefile targets, and realis</p>
+              <p><strong>Details:</strong> DONE_AWAITING_VERIFY: 5, TODO: 1, VERIFIED: 2</p>
+              <p><strong>Action:</strong> T3-02 DONE_AWAITING_VERIFY; T3-03 DONE_AWAITING_VERIFY; T3-04 DONE_AWAITING_VERIFY; T3-05 DONE_AWAITING_VERIFY</p>
+            </details>
+
+            <details class="stat" open>
+              <summary><span class="label">UX/UI Designer</span><span class="value">21</span></summary>
+              <p><strong>Insight:</strong> ### 2026-05-13 — UX-22 verified field consumption contract - Action: Defined which DA-02/BD-18 dashboard/read-model fields UX can consume now, and which buyer-facing fields remain blocked. - Output: docs/agents/ux_ui_designer/verified-field-consumption-2026-05-13.md. - FACT: file-backed counts may appear only in operator/admin surfaces with explicit labels. </p>
+              <p><strong>Details:</strong> DONE_AWAITING_VERIFY: 6, TODO: 15, VERIFIED: 1</p>
+              <p><strong>Action:</strong> UX-02 DONE_AWAITING_VERIFY; UX-03 DONE_AWAITING_VERIFY; UX-04 TODO; UX-05 TODO</p>
+            </details>
+
+            <details class="stat" open>
+              <summary><span class="label">Debugger</span><span class="value">16</span></summary>
+              <p><strong>Insight:</strong> ### 2026-05-13 — VERIFY: DA-02 / BD-18 deep handoff - Gate commands run: - python3 -m py_compile scripts/bd18_db_smoke_import.py scripts/import_scraped_listings.py src/bgrealestate/db/import_contract.py src/bgrealestate/db/models.py src/bgrealestate/db/repositories.py src/bgrealestate/connectors/ingest.py tests/test_backend_import_contract.py migrations/vers</p>
+              <p><strong>Details:</strong> TODO: 16, VERIFIED: 7</p>
+              <p><strong>Action:</strong> DBG-13 TODO; DBG-05 TODO; DBG-08 TODO; DBG-06 TODO</p>
+            </details>
+
+            <details class="stat" open>
+              <summary><span class="label">Ops Release Manager</span><span class="value">2</span></summary>
+              <p><strong>Insight:</strong> ## 2026-05-13 — OPS-02 data-analysis release gate prepared - Task: Prepare release safety gate while data_analyst is active; no staging or push. - Inputs: docs/agents/TASKS.md, docs/agents/roles/ops_release_manager.md, docs/integrations/mcp-and-skills-setup.md, .gitignore, project wiki memory/insights, agent-skills/ops-release-management/SKILL.md, agent-skil</p>
+              <p><strong>Details:</strong> DONE_AWAITING_VERIFY: 2</p>
+              <p><strong>Action:</strong> OPS-01 DONE_AWAITING_VERIFY; OPS-02 DONE_AWAITING_VERIFY</p>
+            </details>
+
+            <details class="stat" open>
+              <summary><span class="label">Infra DB Operator</span><span class="value">2</span></summary>
+              <p><strong>Insight:</strong> ## 2026-05-13 — INFRA-02 BD-18 DB gate attempt - Action: Checked whether DB verification can run after BD-18 table/smoke-script implementation. - FACT: DATABASE_URL is not set in this environment. - Commands run: - if [ -n &quot;$DATABASE_URL&quot; ]; then echo DATABASE_URL_set; else echo DATABASE_URL_missing; fi - make verify-db-counts - make bd18-db-smoke-import - R</p>
+              <p><strong>Details:</strong> BLOCKED: 1, DONE_AWAITING_VERIFY: 1</p>
+              <p><strong>Action:</strong> INFRA-01 DONE_AWAITING_VERIFY; INFRA-02 BLOCKED</p>
+            </details>
+
+            <details class="stat" open>
+              <summary><span class="label">Market Intelligence</span><span class="value">2</span></summary>
+              <p><strong>Insight:</strong> ## 2026-05-13 — MI accepted-only data-quality handoff - Action: Data analyst added market-intelligence readiness into docs/exports/data-quality-deep-review-2026-05-13.md: accepted-only offer mix, accepted city slices, price summaries by offer kind, and limits on raw scrape-volume claims. - Changed files: docs/exports/data-quality-deep-review-2026-05-13.md, d</p>
+              <p><strong>Details:</strong> DONE_AWAITING_VERIFY: 1, TODO: 1</p>
+              <p><strong>Action:</strong> MI-01 DONE_AWAITING_VERIFY; MI-02 TODO</p>
+            </details>
+
+            <details class="stat" open>
+              <summary><span class="label">User Analytics</span><span class="value">3</span></summary>
+              <p><strong>Insight:</strong> ## 2026-05-13 — UA data-quality dashboard handoff - Action: Data analyst added user-analytics constraints to the deep data-quality review: future funnels must separate product telemetry from corpus quality counts, and payloads must remain PII-free. - Changed files: docs/exports/data-quality-deep-review-2026-05-13.md, docs/dashboard/data-quality-dashboard.htm</p>
+              <p><strong>Details:</strong> DONE_AWAITING_VERIFY: 1, TODO: 2</p>
+              <p><strong>Action:</strong> UA-01 DONE_AWAITING_VERIFY; UA-02 TODO; UA-03 TODO</p>
+            </details>
+
+            <details class="stat" open>
+              <summary><span class="label">Vision Media</span><span class="value">5</span></summary>
+              <p><strong>Insight:</strong> ## 2026-05-13 — VM-05 local-gallery verification before image descriptions - Action: Verified the current file-backed local-gallery evidence contract before any semantic image-description work. - Output: docs/exports/vision-media-local-gallery-verification-2026-05-13.md. - FACT: source-item-photo-coverage.json reports raw media capture/gallery evidence, not </p>
+              <p><strong>Details:</strong> BLOCKED: 1, DONE_AWAITING_VERIFY: 2, TODO: 2</p>
+              <p><strong>Action:</strong> VM-01 DONE_AWAITING_VERIFY; VM-02 BLOCKED; VM-03 TODO; VM-04 TODO</p>
+            </details>
+
+            <details class="stat" open>
+              <summary><span class="label">Entity Resolution</span><span class="value">4</span></summary>
+              <p><strong>Insight:</strong> ## 2026-05-13 — ER-02 accepted-only candidate layer - Action: Designed the accepted-only entity-resolution candidate layer for BD-21 without generating candidates or promoting properties. - Output: docs/exports/entity-resolution-accepted-only-candidate-layer-2026-05-13.md. - FACT: candidate input is restricted to accepted single-unit source publications; pen</p>
+              <p><strong>Details:</strong> DONE_AWAITING_VERIFY: 2, TODO: 2</p>
+              <p><strong>Action:</strong> ER-01 DONE_AWAITING_VERIFY; ER-02 DONE_AWAITING_VERIFY; ER-03 TODO; ER-04 TODO</p>
+            </details>
+
+            <details class="stat" open>
+              <summary><span class="label">Knowledge Context</span><span class="value">2</span></summary>
+              <p><strong>Insight:</strong> ## 2026-05-13 — Codex hook and skill mapping revalidation - Action: Revalidated scripts/codex_project_hooks.py hook coverage for all 14 active agent roles (15 checks total), confirmed command guards, and re-checked role skill-map existence under agent-skills. - Inputs/Commands: python3 -m py_compile scripts/codex_project_hooks.py tests/test_codex_project_hoo</p>
+              <p><strong>Details:</strong> DONE_AWAITING_VERIFY: 1, TODO: 1</p>
+              <p><strong>Action:</strong> KCA-01 DONE_AWAITING_VERIFY; KCA-02 TODO</p>
+            </details>
+
+            <details class="stat" open>
+              <summary><span class="label">Lead Agent</span><span class="value">3</span></summary>
+              <p><strong>Insight:</strong> No journey log yet.</p>
+              <p><strong>Details:</strong> DONE_AWAITING_VERIFY: 1, TODO: 2, VERIFIED: 4</p>
+              <p><strong>Action:</strong> LEAD-05 TODO; LEAD-07 DONE_AWAITING_VERIFY; LEAD-06 TODO</p>
+            </details>
+            </section>
+      <h2>Execution Queue</h2>
+      <table><thead><tr><th>ID</th><th>Slice</th><th>Owner</th><th>Status</th><th>Depends</th><th>Next evidence/action</th></tr></thead><tbody><tr><td class="nowrap">BD-18</td><td>Canonical import/schema alignment for scraped QA evidence</td><td>Backend Developer</td><td>IN_PROGRESS</td><td>DA-01, BD-11</td><td>Align CanonicalListing dataclass, CanonicalListingModel, SQL migrations/schema, and CanonicalListingRepository.upsert so all canonical fields can persist without SQLAlchemy compile/runtime drift.; Add first-class or structured-extra persistence for price_statu</td></tr>
+<tr><td class="nowrap">S1-15</td><td>Live HTTP integration for tier-1 connectors</td><td>Scraper 1</td><td>IN_PROGRESS</td><td>S1-14, BD-01</td><td>Implement httpx-based live fetch in HtmlPortalConnector.fetch_url() with:; User-Agent rotation (realistic browser UAs); Rate limiting (configurable per source, default 1 req/2sec)</td></tr>
+<tr><td class="nowrap">S1-22B</td><td>Gemma/OpenClaw Action1 — seven-source all-Bulgaria scrape/backfill</td><td>Scraper 1</td><td>IN_PROGRESS</td><td>operator Action1 ACCEPT posted to Telegram (or echoed in the OpenClaw operator message). S1-22A is not a hard prerequisite anymore; Action0 is sequenced by operator Action0 now after Action1 unless waived in JOURNEY.md.</td><td>Run all-Bulgaria scrape/backfill only for the seven scoped sources and only through legal/source-registry gates.; Resume from persisted file/log state, not chat. Use data/runs/action1_scrape_uncapped_*, data/runs/scrape_metrics.jsonl, and source listing JSON c</td></tr>
+<tr><td class="nowrap">INFRA-02</td><td>DB count verification execution gate</td><td>Infra DB Operator</td><td>BLOCKED</td><td>INFRA-01, BD-18</td><td>Once DATABASE_URL / REMOTE_DATABASE_URL exist, run backup/restore/count verification without committing dumps or runtime logs.; Compare DB counts with the latest data_analyst accepted/LOST/grouped/media artifacts.; Record mismatches as blockers for BD-18 or DA</td></tr>
+<tr><td class="nowrap">VM-02</td><td>Action0 semantic media QA execution queue</td><td>Vision Media</td><td>BLOCKED</td><td>VM-01 verification, operator Action0 now, Action1 QA state accepted by debugger/data_analyst</td><td>After operator Action0 now, process only rows from s1-21-gemma-action0-eligible.json or a debugger/data_analyst-approved successor queue.; Use only local_image_files; no remote fetch or gallery backfill inside semantic reporting.; Write one JSON and one Markdo</td></tr>
+<tr><td class="nowrap">BD-04</td><td>Auth / RBAC on CRM and listings routes</td><td>Backend Developer</td><td>DONE_AWAITING_VERIFY</td><td>BD-02</td><td>unauthenticated requests return 401/403; make test passes with auth fixtures</td></tr>
+<tr><td class="nowrap">BD-05</td><td>Temporal workflow wiring</td><td>Backend Developer</td><td>DONE_AWAITING_VERIFY</td><td>BD-01, BD-02</td><td>jobs survive worker restart; cursors persist; make test passes</td></tr>
+<tr><td class="nowrap">BD-09</td><td>Property analytics views + duplicate detection</td><td>Backend Developer</td><td>DONE_AWAITING_VERIFY</td><td>BD-02</td><td>views return expected shapes on seeded data; API endpoint works; make test passes</td></tr>
+<tr><td class="nowrap">BD-10</td><td>Photo classification pipeline stub</td><td>Backend Developer</td><td>DONE_AWAITING_VERIFY</td><td>BD-01</td><td>migration applies; classifier stub returns expected dict on test image; make test passes</td></tr>
+<tr><td class="nowrap">BD-11</td><td>Unified listing database — merge scraper outputs into canonical store</td><td>Backend Developer</td><td>DONE_AWAITING_VERIFY</td><td>BD-01, BD-02, S1-13</td><td>Create src/bgrealestate/services/unification.py — takes raw scraper output from any tier-1/2/3 connector and writes into source_listing → parsed_listing → canonical_listing pipeline; Implement deduplication: match by address + similar price + similar area with</td></tr>
+<tr><td class="nowrap">BD-13</td><td>User profile + auth system (buyer/renter/seller modes)</td><td>Backend Developer</td><td>DONE_AWAITING_VERIFY</td><td>BD-04, BD-11</td><td>Implement user registration: POST /auth/register (email + password + name); Implement login: POST /auth/login → returns JWT token; Implement user profile: GET /users/me, PATCH /users/me</td></tr>
+<tr><td class="nowrap">BD-17</td><td>User-property state ledger + property chat bridge</td><td>Backend Developer</td><td>DONE_AWAITING_VERIFY</td><td>BD-13, BD-11</td><td>Persist user-property likes as durable state, not only a row that disappears on unlike.; Record every like/unlike status transition in a separate event table.; Create an explicit user -&gt; property -&gt; chat -&gt; lead_thread connection.</td></tr>
+<tr><td class="nowrap">ER-01</td><td>Conservative entity-resolution queue plan</td><td>Entity Resolution</td><td>DONE_AWAITING_VERIFY</td><td>DA-01 file-backed audit; execution candidates depend on BD-18, BD-19, DA-02, and accepted source-publication import evidence</td><td>grouped/development publications cannot be auto-merged as single units; plan states no property_entity / property_offer promotion in ER planning; follow-up slices depend on BD-18/BD-19 accepted source-publication evidence.</td></tr>
+<tr><td class="nowrap">ER-02</td><td>Accepted-only duplicate candidate extraction contract</td><td>Entity Resolution</td><td>DONE_AWAITING_VERIFY</td><td>ER-01, BD-18, BD-19, DA-02</td><td>Define the exact accepted-only input query for source publications: SCRAPED_OK, accepted/single-entity state, not grouped/development, not LOST, not inactive/removed/expired, not pending/missing QA, and registry-backed source provenance.; Define candidate bloc</td></tr>
+<tr><td class="nowrap">INFRA-01</td><td>Server and DB migration readiness</td><td>Infra DB Operator</td><td>DONE_AWAITING_VERIFY</td><td>PLAN-03</td><td>Prepare backup/restore/count verification commands.; Document server prerequisites and provider recommendation.; Define transfer/restore/rollback steps.</td></tr>
+<tr><td class="nowrap">KCA-01</td><td>Data-analyst evidence capture and wiki closeout</td><td>Knowledge Context</td><td>DONE_AWAITING_VERIFY</td><td>DA-02 or DBG-15</td><td>Create a wiki run record for the data-analyst-centered loop after the current analyst/debugger outputs are stable.; Update project log, memory, and insights under the strict filters only.; Update docs/reporting index if a new durable artifact becomes source-of</td></tr>
+<tr><td class="nowrap">LEAD-07</td><td>OpenClaw/Gemma run analysis and next-run preparation</td><td>Lead Agent</td><td>DONE_AWAITING_VERIFY</td><td>—</td><td>analysis doc exists; S1-21, S1-22A, S1-22B, S1-22C, and DBG-08 are queued; website can show scraped items with media/quality metadata; dashboards are regenerated.</td></tr>
+<tr><td class="nowrap">MI-01</td><td>Weekly market and rival intelligence baseline</td><td>Market Intelligence</td><td>DONE_AWAITING_VERIFY</td><td>PLAN-03</td><td>report separates FACT / INTERPRETATION / HYPOTHESIS / GAP and maps recommendations to planner tasks.</td></tr>
+<tr><td class="nowrap">OPS-01</td><td>Safe git push gate for Plan 13.05</td><td>Ops Release Manager</td><td>DONE_AWAITING_VERIFY</td><td>PLAN-03</td><td>Unstage unsafe existing index entries without modifying working files.; Stage only safe code/docs/config/skills/runbooks.; Exclude secrets, raw capture dirs, DB dumps, runtime logs, OpenClaw state, and unreviewed large scraped corpus.</td></tr>
+<tr><td class="nowrap">OPS-02</td><td>Data-analysis-driven release gate checklist</td><td>Ops Release Manager</td><td>DONE_AWAITING_VERIFY</td><td>DA-02 or current data_analyst handoff; DBG-21 verifies this checklist before release use.</td><td>Treat data_analyst as the evidence owner for accepted/LOST/grouped/media/dashboard counts; release notes must cite reproducible artifact paths, not chat summaries.; Require DA-02 dashboard denominator semantics before any public count claim, and DA-03 or an ex</td></tr>
+<tr><td class="nowrap">PLAN-01</td><td>Agent reset and OpenClaw Action1 control reset</td><td>Planner</td><td>DONE_AWAITING_VERIFY</td><td>—</td><td>Keep exactly these active lanes: planner, backend_developer, data_analyst, scraper_1, scraper_sm/S&amp;M, ux_ui_designer, debugger.; Keep scraper_t3 historical only; move new tier-3 work into S&amp;M.; Ensure OpenClaw reads Action0 + Action1 + Action2 but executes onl</td></tr>
+<tr><td class="nowrap">PLAN-03</td><td>Self-development architecture rebuild</td><td>Planner</td><td>DONE_AWAITING_VERIFY</td><td>PLAN-01</td><td>Keep existing core lanes: planner, backend_developer, data_analyst, scraper_1, scraper_sm, ux_ui_designer, debugger.; Add support lanes: ops_release_manager, infra_db_operator, market_intelligence_analyst, user_analytics_agent, vision_media_agent, entity_resol</td></tr>
+<tr><td class="nowrap">PLAN-06</td><td>Whole-project plan and four-dashboard operating model</td><td>Planner</td><td>DONE_AWAITING_VERIFY</td><td>PLAN-04, DA-01, DBG-15</td><td>Review concluded execution across all agent journey logs and distinguish verified work from DONE_AWAITING_VERIFY handoffs.; Publish four explicit dashboards: Project Progress, Properties Database, Website, and Support.; Ensure every dashboard stat opens with i</td></tr>
+<tr><td class="nowrap">PLAN-07</td><td>DA-02/BD-18 next-owner prompt execution</td><td>Planner</td><td>DONE_AWAITING_VERIFY</td><td>DA-02, BD-18, PLAN-06</td><td>Start as planner and publish precise prompts for debugger, backend, infra, entity resolution, vision media, and UX.; Run each owner lane sequentially with file-backed evidence and explicit DB/operator blockers.; Keep data_analyst as evidence owner; do not touc</td></tr>
+<tr><td class="nowrap">S1-11</td><td>Live-safe ingestion runner (small)</td><td>Scraper 1</td><td>DONE_AWAITING_VERIFY</td><td>BD-01, S1-01</td><td>stats endpoints reflect the inserted record; make golden-path still passes</td></tr>
+<tr><td class="nowrap">S1-13</td><td>Stage-1 scraping completion check (all product types)</td><td>Scraper 1</td><td>DONE_AWAITING_VERIFY</td><td>S1-12</td><td>matrix report exists and make test passes with product-type coverage assertions</td></tr>
+<tr><td class="nowrap">S1-14</td><td>Discovery pagination for ALL tier-1 sources</td><td>Scraper 1</td><td>DONE_AWAITING_VERIFY</td><td>S1-01 through S1-10</td><td>Implement parse_discovery_html() / parse_discovery_json() for every tier-1 source that doesn&#x27;t already have it:; OLX.bg: paginate API search results (page parameter in API URL); alo.bg: HTML pagination with next-page link</td></tr>
+<tr><td class="nowrap">S1-20</td><td>Stage 1 controlled production prep — Varna-only region-first control plane (no live crawl)</td><td>Scraper 1</td><td>DONE_AWAITING_VERIFY</td><td>BD-01 (migrations baseline)</td><td>Keep only region_key = varna in schema, manifests, and CHECK constraints; do not add other regions in implementation until an explicit schema/policy change.; Persist layered patterns per source → section → list_page → detail_page → media_gallery in source_sect</td></tr>
+<tr><td class="nowrap">S1-21</td><td>Codex tier-1/2 scrape quality audit + pattern repair prep</td><td>Scraper 1</td><td>DONE_AWAITING_VERIFY</td><td>S1-18 file-backed corpus evidence, S1-20 all-Bulgaria runner</td><td>Audit every tier-1/2 source with saved rows for: item count, photo_count_remote, photo_count_local, full_gallery_downloaded, local file existence/decodability, description length, price, area, city, property type, rooms/floor/phones.; Produce per-source and pe</td></tr>
+<tr><td class="nowrap">SM-00</td><td>S&amp;M mission consolidation and OpenClaw monitor handoff</td><td>S&amp;M / Social + Vendor</td><td>DONE_AWAITING_VERIFY</td><td>PLAN-01</td><td>Treat tier-3 partner/vendor/official and tier-4 social/messenger work as one S&amp;M intelligence lane.; Keep all private/social/messenger scraping consent-gated; no private groups, DMs, unofficial sessions, or KYC/CAPTCHA bypass.; While Action1 runs, S&amp;M may moni</td></tr>
+<tr><td class="nowrap">SM-02</td><td>Telegram public channel connector (fixture-first)</td><td>S&amp;M / Social + Vendor</td><td>DONE_AWAITING_VERIFY</td><td>SM-01, BD-01</td><td>make test passes; fixtures contain redacted posts; no live Telegram calls</td></tr>
+<tr><td class="nowrap">SM-03</td><td>X (Twitter) public monitor connector (fixture-first)</td><td>S&amp;M / Social + Vendor</td><td>DONE_AWAITING_VERIFY</td><td>SM-01</td><td>make test passes; no live API calls</td></tr>
+<tr><td class="nowrap">SM-05</td><td>Social collection options research (decision matrix)</td><td>S&amp;M / Social + Vendor</td><td>DONE_AWAITING_VERIFY</td><td>SM-01</td><td>decision matrix doc exists with all platforms covered; no code written</td></tr>
+<tr><td class="nowrap">SM-07</td><td>Facebook public group scraper (consent-gated)</td><td>S&amp;M / Social + Vendor</td><td>DONE_AWAITING_VERIFY</td><td>SM-05</td><td>if implemented, fixture-backed tests pass; no private data accessed; legal review documented</td></tr>
+<tr><td class="nowrap">SM-10</td><td>Tier-3/tier-4 intelligence path matrix</td><td>S&amp;M / Social + Vendor</td><td>DONE_AWAITING_VERIFY</td><td>PLAN-03</td><td>Define only legal, consent, partner, official API, licensed, or manual routes for tier-3/tier-4 intelligence.; Record legal/consent blockers for Airbnb, Booking.com, Vrbo, Flat Manager, Menada, AirDNA, Airbtics, BCPEA, KAIS, Property Register, Telegram, X, Fac</td></tr>
+<tr><td class="nowrap">SM-13</td><td>Social-overlay evidence queue and data analyst handoff</td><td>S&amp;M / Social + Vendor</td><td>DONE_AWAITING_VERIFY</td><td>SM-10, SM-02, SM-03</td><td>Define review queue states for Telegram/X official API signals and Facebook/Instagram/Threads manual-consent signals.; Define consented/manual or official business/bot webhook envelopes for Viber and WhatsApp; block private groups, DMs, unofficial sessions, an</td></tr>
+<tr><td class="nowrap">T3-02</td><td>AirDNA / Airbtics licensed data importer (fixture-first)</td><td>Scraper T3 (historical)</td><td>DONE_AWAITING_VERIFY</td><td>T3-01, BD-01</td><td>make test passes; no live vendor API calls in tests; fixture contains realistic STR metrics</td></tr>
+<tr><td class="nowrap">T3-03</td><td>BCPEA property auctions connector (fixture-first)</td><td>Scraper T3 (historical)</td><td>DONE_AWAITING_VERIFY</td><td>T3-01</td><td>make test passes; no live network in tests; legal gates enforced</td></tr>
+<tr><td class="nowrap">T3-04</td><td>Partner feed stub connectors (Airbnb/Booking.com/Vrbo)</td><td>Scraper T3 (historical)</td><td>DONE_AWAITING_VERIFY</td><td>T3-01</td><td>make test passes; connector raises PartnerContractRequired on live calls; fixtures demonstrate expected feed structure</td></tr>
+<tr><td class="nowrap">T3-05</td><td>Official register query wrappers (Property Register / KAIS Cadastre)</td><td>Scraper T3 (historical)</td><td>DONE_AWAITING_VERIFY</td><td>T3-01, BD-01</td><td>make test passes; no automated queries without operator consent; fixtures contain redacted sample responses</td></tr>
+<tr><td class="nowrap">T3-07</td><td>BCPEA live scraper (public auctions are legal to crawl)</td><td>Scraper T3 (historical)</td><td>DONE_AWAITING_VERIFY</td><td>T3-03, BD-15</td><td>live scraper fetches real auction listings; stores in DB; make test still passes (fixture-only)</td></tr>
+<tr><td class="nowrap">UA-01</td><td>Website analytics event taxonomy</td><td>User Analytics</td><td>DONE_AWAITING_VERIFY</td><td>PLAN-03</td><td>no PII-bearing payloads; frontend/backend tasks are explicit.</td></tr>
+<tr><td class="nowrap">UX-02</td><td>Beta main page — map + listings + category picker</td><td>UX/UI Designer</td><td>DONE_AWAITING_VERIFY</td><td>UX-01</td><td>page loads with mock/seeded data; category/intent filters work; map renders with pins; responsive mobile stacking</td></tr>
+<tr><td class="nowrap">UX-03</td><td>Wire listings feed to live /listings API</td><td>UX/UI Designer</td><td>DONE_AWAITING_VERIFY</td><td>UX-02, BD-02, BD-03</td><td>page fetches from FastAPI; pagination works; fallback to mock if API unreachable</td></tr>
+<tr><td class="nowrap">UX-06</td><td>Product UX structure spec (LUN-style buyer marketplace)</td><td>UX/UI Designer</td><td>DONE_AWAITING_VERIFY</td><td>UX-01</td><td>refined spec exists with component breakdown for all pages</td></tr>
+<tr><td class="nowrap">UX-14</td><td>Account cabinet, liked properties, and property chat UX</td><td>UX/UI Designer</td><td>DONE_AWAITING_VERIFY</td><td>BD-17</td><td>Reframe /settings as a profile/account cabinet with buyer/renter/seller mode, liked properties, saved searches, and chat entry points.; Reframe /chat around search threads and property threads.; Connect chat surfaces through the Next backend proxy so model key</td></tr>
+<tr><td class="nowrap">UX-15</td><td>Data-quality UX requirements from DA findings</td><td>UX/UI Designer</td><td>DONE_AWAITING_VERIFY</td><td>DA-01 file-backed audit</td><td>Convert expected/current data-quality findings into UX/product requirements.; Define UI handling for accepted vs pending QA, grouped/development publications, media gaps, confidence, duplicate candidates, and source provenance.; Keep admin/operator UX tasks ah</td></tr>
+<tr><td class="nowrap">UX-22</td><td>Verified dashboard/read-model field consumption contract</td><td>UX/UI Designer</td><td>DONE_AWAITING_VERIFY</td><td>DA-02, BD-18, BD-19</td><td>Consume only verified file-backed dashboard fields or DB-backed read-model fields.; Label file-backed audit, quality-gate estimate, importer candidate, media-capture, and DB-blocked states explicitly in admin/operator surfaces.; Keep buyer-facing cards/details</td></tr>
+<tr><td class="nowrap">VM-01</td><td>Vision media agent readiness</td><td>Vision Media</td><td>DONE_AWAITING_VERIFY</td><td>DA-01 file-backed audit; Action0 execution remains blocked until operator Action0 now</td><td>Convert data analyst media gaps into semantic media QA tasks: gallery completeness, scene/room coverage, condition, equipment, style, photo-text consistency, and uncertainty.; Define the visual evidence threshold for buyer-facing display and stronger property </td></tr>
+<tr><td class="nowrap">VM-05</td><td>Local-gallery verification before image descriptions</td><td>Vision Media</td><td>DONE_AWAITING_VERIFY</td><td>DA-02, VM-01</td><td>Verify local-gallery evidence separately from semantic image-description coverage.; Keep Action0 image-description execution blocked until operator Action0 now.; Require accepted single-unit state, local file existence/readability, explicit full/partial galler</td></tr>
+<tr><td class="nowrap">BD-06</td><td>Map/search + chat context APIs (geo scope configurable)</td><td>Backend Developer</td><td>TODO</td><td>BD-02, BD-03, DBG-05</td><td>API contract tests prove (a) default/nationwide listing queries return Bulgaria-wide results when data exists, (b) optional Varna scope filter works when requested, (c) chat context returns selected property + active filters</td></tr>
+<tr><td class="nowrap">BD-07</td><td>AI chat API bridge for property-aware search assistant</td><td>Backend Developer</td><td>TODO</td><td>BD-06</td><td>chat endpoint returns responses that include referenced property IDs and active filter echo; tests cover fallback/error states</td></tr>
+<tr><td class="nowrap">BD-08</td><td>Varna OSM 3D building data pipeline</td><td>Backend Developer</td><td>TODO</td><td>BD-01</td><td>scripts/import_osm_buildings_varna.py runs on fixture/sample data; PostGIS query returns building footprints; PMTiles file generated</td></tr>
+<tr><td class="nowrap">BD-12</td><td>Shop-style filter API for property feed</td><td>Backend Developer</td><td>TODO</td><td>BD-11, BD-06</td><td>Extend GET /properties with full filter parameters: intent (buy/rent/str/auction), category (apartment/house/villa/studio/land/commercial), price_min, price_max, area_min, area_max, rooms_min, rooms_max, city, district, bbox (map viewport), sort_by (price_asc,</td></tr>
+<tr><td class="nowrap">BD-14</td><td>Railway deployment — backend + DB + scraper worker</td><td>Backend Developer</td><td>TODO</td><td>BD-01, BD-04</td><td>Create railway.toml configuration for 3 services:; api: FastAPI backend (make run-api), port 8000, DATABASE_URL from Railway PostgreSQL plugin; worker: Temporal/cron scraper worker (make run-worker), connects to same DB</td></tr>
+<tr><td class="nowrap">BD-15</td><td>Scraper orchestration — continuous crawl loop</td><td>Backend Developer</td><td>TODO</td><td>BD-05, BD-11, BD-14</td><td>Implement production scraper loop in src/bgrealestate/services/scraper_runner.py:; On startup: load all tier-1 sources from source_registry; For each source: discover listing URLs → fetch detail → parse → unify → store</td></tr>
+<tr><td class="nowrap">BD-16</td><td>WebSocket/SSE for real-time listing updates</td><td>Backend Developer</td><td>TODO</td><td>BD-15, BD-12</td><td>SSE endpoint sends events when new listings are inserted; frontend receives and displays them; make test passes</td></tr>
+<tr><td class="nowrap">BD-19</td><td>QA evidence read model for dashboard/API truth</td><td>Backend Developer</td><td>TODO</td><td>BD-18, DA-02</td><td>After BD-18 proves DB-backed import, expose accepted, LOST, grouped/development, inactive, missing-description, missing-price, media-gap, and image-report-status counts through an admin/API read model.; Keep file-backed analyst artifacts as source-of-truth unt</td></tr>
+<tr><td class="nowrap">BD-20</td><td>First-party product analytics event intake</td><td>Backend Developer</td><td>TODO</td><td>UA-02, BD-13, BD-17, BD-19</td><td>Add first-party event intake for allowlisted product events only; do not install external analytics or forward payloads to third parties.; Persist a minimal event envelope with schema version, event name, route pattern, surface, pseudonymous session/user hashe</td></tr>
+<tr><td class="nowrap">BD-21</td><td>Entity-resolution candidate schema/API and import safety</td><td>Backend Developer</td><td>TODO</td><td>ER-01, BD-18, BD-19, DA-02</td><td>Add a reviewable entity-resolution candidate layer independent from property_entity and property_offer (candidate, evidence, and review event persistence).; Ensure scraped accepted source-publication import can persist source publications without automatically</td></tr></tbody></table>
+
+  </main>
+  <footer>File-backed operator dashboards. DB-backed claims remain blocked until BD-18 + INFRA-02 verification.</footer>
+</body>
+</html>
