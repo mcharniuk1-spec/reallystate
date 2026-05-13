@@ -99,10 +99,25 @@ def score(row: dict[str, Any]) -> float:
     return min(100, points)
 
 
+def is_public_listing(row: dict[str, Any]) -> bool:
+    """Only expose rows that passed the latest source-publication QA gate."""
+    if row.get("scrape_status") == "LOST" or row.get("needs_rescrape") is True:
+        return False
+    if row.get("source_publication_type") == "multi_unit_or_development":
+        return False
+    if row.get("scrape_acceptance_status") == "not_single_entity":
+        return False
+    if str(row.get("listing_status") or "").lower() in {"inactive", "removed", "expired"}:
+        return False
+    return True
+
+
 def convert(source_key: str, path: Path) -> dict[str, Any] | None:
     try:
         row = json.loads(path.read_text())
     except Exception:
+        return None
+    if not is_public_listing(row):
         return None
 
     local_files = [x for x in row.get("local_image_files", []) if isinstance(x, str)]
@@ -154,6 +169,10 @@ def convert(source_key: str, path: Path) -> dict[str, Any] | None:
         "image_report_status": "missing",
         "image_report_md": None,
         "image_report_json": None,
+        "scrape_status": row.get("scrape_status"),
+        "scrape_acceptance_status": row.get("scrape_acceptance_status"),
+        "source_publication_type": row.get("source_publication_type"),
+        "single_entity_candidate": row.get("single_entity_candidate"),
         "first_seen": row.get("first_seen") or row.get("scraped_at"),
         "last_seen": row.get("last_seen") or row.get("scraped_at"),
         "last_changed_at": row.get("last_changed_at"),

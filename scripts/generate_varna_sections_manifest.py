@@ -12,12 +12,11 @@ This script performs no network access and does not touch the database.
 from __future__ import annotations
 
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-
-import sys
 
 sys.path.insert(0, str(REPO / "src"))
 

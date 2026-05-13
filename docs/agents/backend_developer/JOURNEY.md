@@ -547,3 +547,12 @@ project validation ok
 **Added:** `docs/docker-and-database.md`, `sql/helpers/*.sql` + README, `MEDIA_STORAGE_PATH` in `.env.example`, `data/media/` in `.gitignore`, Makefile `dev-ready` / `db-shell`, README + `docs/development-setup.md` cross-links.
 
 **Note:** Docker Engine remains a host install; the repo documents `make dev-up` / `make db-init` only.
+
+### 2026-04-29 — BD-17: user-property state ledger + property chat bridge
+
+- **Action**: Added durable liked-property status, status-change events, explicit user-property chat joins, and a backend chat provider adapter with local Ollama `gemma4:26b` default and stub fallback.
+- **Changed files**: `sql/schema.sql`, `migrations/versions/20260429_0004_user_property_state_chat.py`, `src/bgrealestate/db/models.py`, `src/bgrealestate/api/routers/users.py`, `src/bgrealestate/api/routers/chat.py`, `src/bgrealestate/services/chat_service.py`, `tests/test_chat_service.py`, `tests/test_user_auth.py`, `tests/test_api_fastapi.py`, `docs/agents/TASKS.md`
+- **Commands run**: `python3 -m py_compile ...`, `npm run typecheck`, `PYTHONPATH=src python3 -m unittest tests.test_chat_service tests.test_user_auth tests.test_api_fastapi -v`, `make test`, `make run-api`, `curl /api/v1/chat`, `curl /api/backend/api/v1/chat`
+- **Tests run**: focused tests passed; full `make test` passed (194 tests, 1 skipped); local FastAPI + Next proxy returned Ollama responses.
+- **Status**: DONE_AWAITING_VERIFY
+- **Review comments**: Property chat persistence uses existing `lead_thread`/`lead_message` tables plus the new `user_property_chat` join. Like/unlike now preserves state history instead of deleting the relationship.

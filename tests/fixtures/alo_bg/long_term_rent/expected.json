@@ -1,0 +1,27 @@
+{
+  "address_text": "ул. Примерна 1",
+  "area_sqm": 60.0,
+  "city": "Варна",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "ALO-RENT-200200",
+  "image_urls": [
+    "https://img.alo.bg/photos/big/alo-rent-img1.jpg"
+  ],
+  "latitude": 43.2141,
+  "listing_intent": "long_term_rent",
+  "listing_url": "https://www.alo.bg/ad/ALO-RENT-200200",
+  "longitude": 27.9147,
+  "owner_group": "ALO.BG",
+  "parser_version": "v1",
+  "phones": [
+    "+359 888 123 456"
+  ],
+  "price": 650.0,
+  "property_category": "apartment",
+  "reference_id": "alo.bg:ALO-RENT-200200",
+  "region": "Варна",
+  "rooms": null,
+  "source_name": "alo.bg"
+}
+

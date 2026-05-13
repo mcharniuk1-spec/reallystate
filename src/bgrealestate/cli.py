@@ -150,20 +150,20 @@ def main() -> int:
     queue_status.add_argument("--source-name", help="Restrict queue summary to a single source.")
     queue_status.add_argument("--section-id", help="Restrict queue summary to a single section bucket.")
 
-    worker_once = subparsers.add_parser(
+    worker_once_parser = subparsers.add_parser(
         "scrape-control-worker-once",
         help="Process one manual control-plane queue task (discover/threshold_check) or preview it without writes.",
     )
-    worker_once.add_argument("--source-name", help="Restrict worker to a single source.")
-    worker_once.add_argument("--section-id", help="Restrict worker to a single section bucket.")
-    worker_once.add_argument(
+    worker_once_parser.add_argument("--source-name", help="Restrict worker to a single source.")
+    worker_once_parser.add_argument("--section-id", help="Restrict worker to a single section bucket.")
+    worker_once_parser.add_argument(
         "--task-type",
         action="append",
         dest="task_types",
         help="Allow only this task type. Repeat to allow multiple. Default: discover + threshold_check.",
     )
-    worker_once.add_argument("--lease-seconds", type=int, default=300, help="Lease duration for a claimed queue task.")
-    worker_once.add_argument(
+    worker_once_parser.add_argument("--lease-seconds", type=int, default=300, help="Lease duration for a claimed queue task.")
+    worker_once_parser.add_argument(
         "--apply",
         action="store_true",
         help="Actually lease/process one task. Default is read-only preview of the next eligible task.",
@@ -215,6 +215,47 @@ def main() -> int:
         help="Refresh scrape coverage and dashboard artifacts after the run.",
     )
     full_varna.add_argument("--output", type=Path, default=None, help="Optional summary JSON path override.")
+
+    full_all = subparsers.add_parser(
+        "scrape-all-full",
+        help="Run the patterned nationwide (all Bulgaria) scrape across supported sources and optionally refresh dashboard artifacts.",
+    )
+    full_all.add_argument(
+        "--target-per-source",
+        type=int,
+        default=100,
+        help="Target full-gallery listings per source; use 0 for uncapped harvest until stall (max-waves / discovery limits still apply).",
+    )
+    full_all.add_argument("--max-pages", type=int, default=8, help="Base page budget per wave.")
+    full_all.add_argument("--max-waves", type=int, default=3, help="Maximum repeated scrape waves per source.")
+    full_all.add_argument("--parallel-sources", type=int, default=4, help="Number of sources to scrape in parallel.")
+    full_all.add_argument("--sources", help="Comma-separated source keys or source names.")
+    full_all.add_argument("--dry-run", action="store_true", help="Plan and count only; do not fetch live pages.")
+    full_all.add_argument(
+        "--download-photos",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Download all discovered photos as local files (default: true).",
+    )
+    full_all.add_argument(
+        "--require-full-gallery",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Count only rows with complete local gallery capture toward thresholds (default: true).",
+    )
+    full_all.add_argument(
+        "--patterned-only",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Restrict to strict patterned sources (default: true).",
+    )
+    full_all.add_argument(
+        "--refresh-dashboard",
+        action=argparse.BooleanOptionalAction,
+        default=False,
+        help="Refresh scrape coverage and dashboard artifacts after the run.",
+    )
+    full_all.add_argument("--output", type=Path, default=None, help="Optional summary JSON path override.")
 
     args = parser.parse_args()
     registry = SourceRegistry.from_file(args.registry)
@@ -542,6 +583,28 @@ def main() -> int:
             parallel_sources=args.parallel_sources,
             sources=sources,
             output_path=args.output or DEFAULT_OUTPUT_PATH,
+            refresh_dashboard=bool(args.refresh_dashboard),
+        )
+        print(_json.dumps(out, indent=2, default=str, ensure_ascii=False))
+        return 0
+
+    if args.command == "scrape-all-full":
+        import json as _json
+
+        from .scraping.varna_full_scrape import DEFAULT_ALL_OUTPUT_PATH, run_parallel_all_scrape
+
+        sources = [item.strip() for item in (args.sources or "").split(",") if item.strip()] or None
+        out = run_parallel_all_scrape(
+            target_per_source=args.target_per_source,
+            max_pages=args.max_pages,
+            max_waves=args.max_waves,
+            download_photos=bool(args.download_photos),
+            require_full_gallery=bool(args.require_full_gallery),
+            patterned_only=bool(args.patterned_only),
+            dry_run=bool(args.dry_run),
+            parallel_sources=args.parallel_sources,
+            sources=sources,
+            output_path=args.output or DEFAULT_ALL_OUTPUT_PATH,
             refresh_dashboard=bool(args.refresh_dashboard),
         )
         print(_json.dumps(out, indent=2, default=str, ensure_ascii=False))

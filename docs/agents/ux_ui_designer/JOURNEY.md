@@ -496,3 +496,65 @@ Lead/frontend QA pass converted the homepage placeholder map into a MapLibre sur
 ### 2026-04-27 — Product source-link buttons
 
 Lead/moderator-planner pass added source provenance buttons to the property detail surface. Product pages now show a full `Marketed by sources` section and a compact right-side `Source links` panel. The matching policy is deliberately conservative: the current source URL is always shown, cross-source candidates require strong same-property evidence, and neighboring units from the same source are excluded to avoid misleading users.
+
+### 2026-04-29 — Homepage map block reliability and 70/30 split
+
+- **Action**: Reworked the homepage map/list row so the map is 2D by default, 3D is opt-in, map pins stay visible through a fallback projection, the layout uses a 70/30 map-to-property split, and the right property panel scrolls internally.
+- **Changed files**:
+  - `components/map/MapCanvas.tsx`
+  - `components/listings/MainExplorer.tsx`
+  - `docs/agents/TASKS.md`
+- **Commands run**:
+  - `npm run typecheck`
+  - `make dashboard-doc`
+  - `curl --max-time 20 -I -sS http://127.0.0.1:3000/`
+- **Tests run**:
+  - TypeScript check: pass.
+  - Dashboard regeneration: pass.
+  - Dev server HTTP check: pass.
+- **Status**: `DONE_AWAITING_VERIFY`
+- **Review comments**:
+  - FACT: the map and property blocks now share one viewport-bounded row, 70% map and 30% properties on desktop.
+  - FACT: property cards are reduced in image height, padding, and type scale so more fit inside the right panel.
+  - FACT: visible pins fall back to normalized Bulgaria coordinates if remote tiles or MapLibre projection are unavailable.
+  - FACT: the property list uses an explicit internal scrollbar.
+  - GAP: Playwright screenshot verification could not run because local Playwright browser binaries are missing.
+
+### 2026-04-29 — Viewport grouping and scroll-panel repair
+
+- **Action**: Reworked homepage map grouping to be viewport-driven and repaired the responsive map/list stack.
+- **Changed files**:
+  - `components/map/MapCanvas.tsx`
+  - `components/listings/MainExplorer.tsx`
+  - `docs/agents/TASKS.md`
+- **Status**: `DONE_AWAITING_VERIFY`
+- **Review comments**:
+  - FACT: desktop shows max 20 current-view markers; 21-39 visible properties merge nearest points, and 40+ use a 20-cell viewport grid.
+  - FACT: selecting a group filters the right panel to that group only.
+  - FACT: selecting a single property pins it first inside the scrollable list, not in a separate fixed card.
+  - FACT: narrow viewports stack map above property panel.
+
+### 2026-04-29 — UX-14: account cabinet + property chat surfaces
+
+- **Action**: Reframed `/settings` as an account cabinet and `/chat` as a search/property-thread workspace. Wired global and full-page chat to the backend proxy so the frontend is ready for the Ollama/API chat bridge without exposing provider keys.
+- **Changed files**:
+  - `components/account/AccountCabinet.tsx`
+  - `components/chat/ChatWorkspace.tsx`
+  - `components/chat/ChatBar.tsx`
+  - `app/(main)/settings/page.tsx`
+  - `app/(main)/chat/page.tsx`
+  - `docs/agents/TASKS.md`
+- **Commands run**:
+  - `npm run typecheck`
+  - `curl --max-time 20 -I -sS http://127.0.0.1:3000/chat`
+  - `curl --max-time 20 -I -sS http://127.0.0.1:3000/settings`
+  - `curl --max-time 75 -sS -X POST http://127.0.0.1:3000/api/backend/api/v1/chat ...`
+- **Tests run**:
+  - TypeScript check: pass.
+  - `/chat` and `/settings` HTTP checks: pass.
+  - Next backend proxy to FastAPI/Ollama: pass.
+- **Status**: DONE_AWAITING_VERIFY
+- **Review comments**:
+  - FACT: account UI now shows mode switching, liked properties, saved searches, and property chat entry points.
+  - FACT: chat posts to `/api/backend/api/v1/chat`; live auth/session wiring remains a follow-up.
+  - GAP: no Playwright screenshot verification was run in this pass.

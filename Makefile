@@ -1,4 +1,4 @@
-.PHONY: doctor install install-scrape-agents dev-up dev-down dev-ready dev-logs db-shell db-init migrate test test-docker golden-path lint typecheck validate docs-refresh run-api run-api-public run-worker run-scheduler run-frontend run-frontend-public run-frontend-build run-frontend-prod frontend-typecheck frontend-lint run-frontend-static export-docs source-report status-report linear-export architecture-doc dashboard-doc connector-fixtures list-sources list-skills ingest-fixture ingest-fixture-dry sync-registry sync-social-registry export-tier4-data seed-social-fixtures export-source-stats tier4-plan scraping-inventory tier12-metrics download-images import-scraped scrape-bcpea scrape-validate-manifest scrape-sync-sections scrape-sync-sections-dry scrape-threshold-summary scrape-queue-status scrape-control-worker-once scrape-runner-once scrape-runner-pause scrape-runner-unpause scrape-generate-varna-manifest scrape-varna-full scrape-all-full action1-matrix-snapshot
+.PHONY: doctor install install-scrape-agents dev-up dev-down dev-ready dev-logs db-shell db-init migrate backup-db restore-db verify-db-counts test test-docker golden-path lint typecheck validate docs-refresh run-api run-api-public run-worker run-scheduler run-frontend run-frontend-public run-frontend-build run-frontend-prod frontend-typecheck frontend-lint run-frontend-static export-docs source-report status-report linear-export architecture-doc dashboard-doc connector-fixtures list-sources list-skills ingest-fixture ingest-fixture-dry sync-registry sync-social-registry export-tier4-data seed-social-fixtures export-source-stats tier4-plan scraping-inventory tier12-metrics download-images import-scraped scrape-bcpea scrape-validate-manifest scrape-sync-sections scrape-sync-sections-dry scrape-threshold-summary scrape-queue-status scrape-control-worker-once scrape-runner-once scrape-runner-pause scrape-runner-unpause scrape-generate-varna-manifest scrape-varna-full scrape-all-full action1-matrix-snapshot action1-telegram-report action1-checkpoint-notify action1-running-report action1-openclaw-continue action1-openclaw-main-resume action1-scrape-full-uncapped action1-scrape-full-uncapped-detached action1-telegram-watch action1-telegram-watch-detached action1-telegram-ops-rehydrate action1-openclaw-report-monitor openclaw-preflight action1-reporter-status action1-reporter-on action1-reporter-off action1-reporter-stop
 
 # Prefer 3.13/3.12 when unset so install/lint match pyproject.toml requires-python >=3.12
 PYENV_PYTHON := $(shell ls "$$HOME"/.pyenv/versions/3.13*/bin/python3.13 "$$HOME"/.pyenv/versions/3.12*/bin/python3.12 2>/dev/null | sed -n '1p')
@@ -58,6 +58,24 @@ db-init:
 
 migrate:
 	$(PYTHON) -m alembic -c alembic.ini upgrade head
+
+backup-db:
+	@if [ -z "$$DATABASE_URL" ]; then echo "DATABASE_URL is required"; exit 1; fi
+	@mkdir -p /tmp/bgrealestate-backups
+	pg_dump -Fc --no-owner --no-acl "$$DATABASE_URL" -f "$${DB_DUMP:-/tmp/bgrealestate-backups/bgrealestate_full_$$(date +%Y%m%d_%H%M%S).dump}"
+	@shasum -a 256 "$${DB_DUMP:-$$(ls -t /tmp/bgrealestate-backups/bgrealestate_full_*.dump | sed -n '1p')}" > "$${DB_DUMP:-$$(ls -t /tmp/bgrealestate-backups/bgrealestate_full_*.dump | sed -n '1p')}.sha256"
+
+restore-db:
+	@if [ -z "$$REMOTE_DATABASE_URL" ]; then echo "REMOTE_DATABASE_URL is required"; exit 1; fi
+	@if [ -z "$$DB_DUMP" ]; then echo "DB_DUMP=/path/to/file.dump is required"; exit 1; fi
+	pg_restore --clean --if-exists --no-owner --no-acl -d "$$REMOTE_DATABASE_URL" "$$DB_DUMP"
+
+verify-db-counts:
+	@if [ -z "$$DATABASE_URL" ]; then echo "DATABASE_URL is required"; exit 1; fi
+	@for table in source_registry source_endpoint crawl_run crawl_item canonical_listing property_entity property_offer media_asset app_user lead_thread lead_message; do \
+		printf "%-28s " "$$table"; \
+		psql "$$DATABASE_URL" -Atc "select count(*) from $$table;" 2>/dev/null || echo "missing_or_unavailable"; \
+	done
 
 test:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m unittest discover -s tests -v
@@ -238,3 +256,60 @@ scrape-all-full:
 
 action1-matrix-snapshot:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) scripts/action1_scrape_matrix_snapshot.py
+
+action1-telegram-report:
+	$(PYTHON) scripts/action1_full_telegram_report.py --compact
+
+action1-checkpoint-notify:
+	$(PYTHON) scripts/action1_checkpoint_notify.py $(EXTRA_ARGS)
+
+action1-running-report:
+	$(PYTHON) scripts/action1_full_telegram_report.py --running-line
+
+action1-openclaw-continue:
+	./scripts/action1_openclaw_continue.sh
+
+action1-openclaw-main-resume:
+	./scripts/action1_openclaw_main_resume.sh
+
+# Action1: seven sources, no per-source full-gallery cap (0 = until stall). Requires network; log under data/runs/.
+action1-scrape-full-uncapped:
+	./scripts/action1_scrape_full_uncapped.sh
+
+# Detached runner to avoid interactive SIGTERM; writes pid + nohup log under data/runs/.
+action1-scrape-full-uncapped-detached:
+	./scripts/action1_scrape_full_uncapped_detached.sh
+
+# Loop (300s): OpenClaw Telegram running-line report while Action1 scrape runs. Override ACTION1_TG_INTERVAL_SEC.
+action1-telegram-watch:
+	./scripts/action1_telegram_watch.sh
+
+# Detached runner to keep Telegram loop alive; writes pid + nohup log under data/runs/.
+action1-telegram-watch-detached:
+	./scripts/action1_telegram_watch_detached.sh
+
+# Reliable Telegram context reset: message send + verbatim RUNNING line (avoids long agent --deliver hangs).
+action1-telegram-ops-rehydrate:
+	bash ./scripts/action1_telegram_ops_rehydrate.sh
+
+# Explicit TASKS/JOURNEY/run-log snapshot for OpenClaw (append full run to data/runs/openclaw_preflight.log).
+# Optional: FOCUS=telegram PROBE=1 make openclaw-preflight
+openclaw-preflight:
+	bash ./scripts/openclaw_context_preflight.sh
+
+# OpenClaw send + JSON parse + timeout; exits after STOP_AFTER_SUCCESS_STREAK consecutive OK sends (default 5). Logs data/runs/action1_report_monitor.log
+action1-openclaw-report-monitor:
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) scripts/action1_openclaw_report_monitor.py
+
+# Reporter control (prevents “texts even when off” via enabled-file gating + pid kills).
+action1-reporter-status:
+	bash ./scripts/action1_reporter_control.sh status
+
+action1-reporter-on:
+	bash ./scripts/action1_reporter_control.sh start
+
+action1-reporter-off:
+	bash ./scripts/action1_reporter_control.sh disable
+
+action1-reporter-stop:
+	bash ./scripts/action1_reporter_control.sh stop

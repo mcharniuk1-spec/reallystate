@@ -1,0 +1,25 @@
+{
+  "address_text": null,
+  "area_sqm": null,
+  "city": null,
+  "currency": "EUR",
+  "district": null,
+  "external_id": "DM-PROJECT-1",
+  "image_urls": [
+    "https://domaza.bg/images/DM-PROJECT-1.jpg"
+  ],
+  "latitude": null,
+  "listing_intent": "sale",
+  "listing_url": "https://www.domaza.bg/property/DM-PROJECT-1",
+  "longitude": null,
+  "owner_group": "Domaza",
+  "parser_version": "v1",
+  "phones": [],
+  "price": null,
+  "property_category": "project",
+  "reference_id": "Domaza:DM-PROJECT-1",
+  "region": null,
+  "rooms": null,
+  "source_name": "Domaza"
+}
+

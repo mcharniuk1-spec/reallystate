@@ -16,9 +16,11 @@ import logging
 import os
 import re
 import sys
+import threading
 import time
 import traceback
-from dataclasses import asdict, dataclass, field
+from concurrent.futures import ThreadPoolExecutor
+from dataclasses import dataclass, field, fields
 from datetime import datetime, timezone
 from html import unescape
 from pathlib import Path
@@ -32,6 +34,19 @@ REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO / "src"))
 
 from bgrealestate.services.media import download_image, ensure_media_root  # noqa: E402
+
+try:
+    from bgrealestate.scraping.source_class import (  # noqa: E402
+        detail_concurrency_for_source,
+        source_bucket_for_key,
+    )
+except ImportError:
+
+    def source_bucket_for_key(source_key: str, *, source_display_name: str) -> str:  # type: ignore[no-redef]
+        return "other"
+
+    def detail_concurrency_for_source(source_key: str, source_display_name: str) -> int:  # type: ignore[no-redef]
+        return max(1, int(os.environ.get("SCRAPER_CONCURRENCY_OTHER", "1")))
 
 logging.basicConfig(
     level=logging.INFO,
@@ -83,6 +98,21 @@ ROOM_LABELS = {
     "four-room": 4.0,
 }
 PHOTO_LIMIT = int(os.getenv("SCRAPER_MAX_PHOTOS_PER_LISTING", "0"))
+PAGE_ORDER_DEFAULT = str(os.getenv("SCRAPER_PAGE_ORDER", "newest_first")).strip().lower()
+
+
+def _iter_pages(max_pages: int, page_order: str) -> list[int]:
+    """Return page numbers to iterate for discovery.
+
+    Many portals default to newest-first. For long backfills we sometimes need
+    oldest-first *within the scanned window* (bottom-to-top) so older inventory
+    isn't starved forever.
+    """
+
+    pages = list(range(1, max(1, int(max_pages)) + 1))
+    if page_order.strip().lower() in {"oldest_first", "oldest_first_within_window", "bottom_to_top"}:
+        pages.reverse()
+    return pages
 
 
 def make_client() -> httpx.Client:
@@ -228,6 +258,128 @@ def _unique_preserve(items: list[str]) -> list[str]:
     return out
 
 
+def _absolute_image_url(url: str, base_url: str) -> str:
+    if not url:
+        return ""
+    return _normalize_image_url(urljoin(base_url, url.strip()))
+
+
+def _image_urls_from_selector(soup: BeautifulSoup, selector: str, base_url: str) -> list[str]:
+    urls: list[str] = []
+    for img in soup.select(selector):
+        for attr in ("src", "data-src", "data-lazy"):
+            raw = _text_or_empty(img.get(attr))
+            if raw:
+                urls.append(_absolute_image_url(raw, base_url))
+        srcset = _text_or_empty(img.get("srcset"))
+        if srcset:
+            first = srcset.split(",", 1)[0].strip().split(" ", 1)[0]
+            if first:
+                urls.append(_absolute_image_url(first, base_url))
+    return _unique_preserve([url for url in urls if url.startswith("http")])
+
+
+def _anchor_urls_from_selector(soup: BeautifulSoup, selector: str, base_url: str) -> list[str]:
+    urls: list[str] = []
+    for node in soup.select(selector):
+        for attr in ("href", "data-src", "data-href", "src"):
+            raw = _text_or_empty(node.get(attr))
+            if raw:
+                urls.append(_absolute_image_url(raw, base_url))
+    return _unique_preserve([url for url in urls if url.startswith("http")])
+
+
+def _clean_description(value: Any) -> str:
+    text = unescape(_text_or_empty(value))
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
+def _best_description(*candidates: Any) -> str:
+    cleaned = [_clean_description(candidate) for candidate in candidates if _clean_description(candidate)]
+    if not cleaned:
+        return ""
+    return max(cleaned, key=len)[:6000]
+
+
+def _extract_labeled_area_value(text: str, labels: tuple[str, ...]) -> float | None:
+    label_re = "|".join(re.escape(label) for label in labels)
+    for match in re.finditer(
+        rf"(?:{label_re})\s*(?:[:=\-–]|</?\w+[^>]*>|\s)\s*(\d[\d\s.,]*)\s*(?:sq\.?\s*m|sq m|кв\.?\s*м|m²|м²)",
+        text,
+        re.IGNORECASE,
+    ):
+        value = _parse_number(match.group(1))
+        if value is not None and value > 0:
+            return value
+    return None
+
+
+def _extract_area_from_title(text: str) -> float | None:
+    for match in re.finditer(r"(\d+(?:[.,]\d+)?)\s*(?:sq\.?\s*m|sq m|кв\.?\s*м|m²|м²)", text, re.IGNORECASE):
+        value = _parse_number(match.group(1))
+        if value is not None and value >= 2:
+            return value
+    return None
+
+
+def _coordinates_in_bulgaria(latitude: Any, longitude: Any) -> bool:
+    lat = _parse_number(latitude)
+    lon = _parse_number(longitude)
+    if lat is None or lon is None:
+        return False
+    lat_f = float(lat)
+    lon_f = float(lon)
+    if not (41.0 <= lat_f <= 44.5 and 22.0 <= lon_f <= 29.5):
+        return False
+    # Rough Bulgaria boundary. A bbox admits Romania/Turkey/Greece border
+    # spillover; this polygon is intentionally conservative for scraper QA.
+    polygon = [
+        (22.35, 44.22),
+        (22.90, 44.05),
+        (23.80, 44.18),
+        (24.80, 43.95),
+        (25.30, 43.70),
+        (26.05, 43.98),
+        (27.30, 44.15),
+        (28.60, 43.75),
+        (28.60, 43.25),
+        (28.20, 42.00),
+        (27.50, 41.90),
+        (26.30, 41.75),
+        (25.25, 41.25),
+        (24.00, 41.35),
+        (22.90, 41.25),
+        (22.35, 41.60),
+    ]
+    inside = False
+    j = len(polygon) - 1
+    for i, (xi, yi) in enumerate(polygon):
+        xj, yj = polygon[j]
+        intersects = ((yi > lat_f) != (yj > lat_f)) and (
+            lon_f < (xj - xi) * (lat_f - yi) / ((yj - yi) or 1e-12) + xi
+        )
+        if intersects:
+            inside = not inside
+        j = i
+    return inside
+
+
+def _param_rows_by_label(soup: BeautifulSoup, row_selector: str, label_selector: str, value_selector: str) -> dict[str, str]:
+    params: dict[str, str] = {}
+    for row in soup.select(row_selector):
+        label_el = row.select_one(label_selector)
+        value_els = row.select(value_selector)
+        if not label_el or not value_els:
+            continue
+        label = unescape(label_el.get_text(" ", strip=True)).strip(" :")
+        value_el = value_els[-1]
+        value = unescape(value_el.get_text(" ", strip=True)).strip()
+        if label and value:
+            params[label] = value
+    return params
+
+
 def _extract_phone_numbers(text: str) -> list[str]:
     return _unique_preserve([match.strip() for match in _PHONE_RE.findall(text)])
 
@@ -268,16 +420,22 @@ def _extract_js_single_quoted_value(text: str, key: str) -> str:
 
 
 def _parse_title_city_district(title: str) -> tuple[str, str]:
+    def _clean_district(value: str | None) -> str:
+        district = _text_or_empty(value).strip()
+        # Common Bulgarian prefixes in titles, e.g. "кв. Надежда", "м. Евксиноград".
+        district = re.sub(r"^(?:кв|м)\.?\s*", "", district, flags=re.IGNORECASE).strip()
+        return district
+
     raw = title.strip()
     match = re.search(r"гр\.\s*([^,|]+)(?:,\s*([^|]+))?", raw, re.IGNORECASE)
     if match:
-        return match.group(1).strip(), _text_or_empty(match.group(2))
+        return match.group(1).strip(), _clean_district(match.group(2))
     match = re.search(r"гр\.\s*([A-ZА-Я][^\s|•]+)\s+([^|•]+)", raw, re.IGNORECASE)
     if match:
-        return match.group(1).strip(), _text_or_empty(match.group(2)).strip()
+        return match.group(1).strip(), _clean_district(match.group(2))
     match = re.search(r"\bв\s+([A-ZА-Я][^,|]+?)(?:,\s*([^|]+))?(?:\s*(?:-|$))", raw)
     if match:
-        return match.group(1).strip(), _text_or_empty(match.group(2))
+        return match.group(1).strip(), _clean_district(match.group(2))
     match = re.search(r"\bв\s+([A-ZА-Я][A-Za-zА-Яа-я\- ]+?)\s+\d", raw)
     if match:
         return match.group(1).strip(), ""
@@ -318,6 +476,46 @@ def _merge_source_result(base: dict[str, Any], patch: dict[str, Any]) -> dict[st
     return base
 
 
+def _apply_bucket_context(parsed: dict[str, Any], bucket_label: str, source_url: str = "") -> None:
+    """Use the discovery route as a conservative section hint, not as detail proof.
+
+    Detail pages remain primary, but route context prevents obvious drift such as
+    rent pages being reclassified as sale because the body contains generic sales
+    marketing text, or land routes being downgraded to unknown/apartment.
+    """
+    label = f"{bucket_label} {source_url}".lower()
+    parsed["source_section_id"] = bucket_label or parsed.get("source_section_id") or "default"
+    if any(token in label for token in ("rent", "rental", "naem", "naemi", "pod-naem", "под-наем")):
+        parsed["listing_intent"] = "long_term_rent"
+    elif any(token in label for token in ("sale", "sales", "prodazh", "prodaj", "properties_for_sale", "продаж")):
+        parsed["listing_intent"] = "sale"
+
+    if any(token in label for token in ("land", "parcel", "partsel", "parzel", "teren", "зем", "парцел")):
+        parsed["property_category"] = "land"
+    elif any(token in label for token in ("office", "ofisi", "офис")):
+        parsed["property_category"] = "office"
+    elif any(token in label for token in ("shop", "magazin", "магазин")):
+        parsed["property_category"] = "shop"
+    elif any(token in label for token in ("house", "houses", "kushti", "kashti", "vili", "villa", "къщ", "вил")):
+        parsed["property_category"] = "house"
+    elif any(token in label for token in ("apartment", "apartments", "apartamenti", "апартамент")):
+        parsed["property_category"] = "apartment"
+
+
+def _apply_immediate_publication_status(parsed: dict[str, Any]) -> None:
+    """Persist source-publication semantics early so OpenClaw/importers can gate safely."""
+    if parsed.get("suspected_multi_unit_publication"):
+        parsed["source_publication_type"] = "multi_unit_or_development"
+        parsed["scrape_status"] = "GROUPED_PUBLICATION"
+        parsed["scrape_acceptance_status"] = "not_single_entity"
+        parsed["single_entity_candidate"] = False
+    else:
+        parsed.setdefault("source_publication_type", "single_unit_candidate")
+        parsed.setdefault("scrape_status", "PENDING_QA")
+        parsed.setdefault("scrape_acceptance_status", "pending_quality_gate")
+        parsed.setdefault("single_entity_candidate", True)
+
+
 def _text_list(value: Any) -> list[str]:
     if not value:
         return []
@@ -342,8 +540,38 @@ def _parse_address_bg(soup: BeautifulSoup, html: str, url: str, result: dict[str
         area_values = _extract_area_values(html)
     exact_area_match = re.search(r"приблизително\s*(\d[\d\s.,]*)\s*кв", html, re.IGNORECASE)
     exact_area = _parse_number(exact_area_match.group(1)) if exact_area_match else None
-    breadcrumb_text = " ".join(li.get_text(" ", strip=True) for li in soup.select("[itemtype*='BreadcrumbList'] li, .breadcrumbs li"))
-    phone_urls = [link.get("href", "").replace("tel:", "") for link in soup.select("a[href^='tel:']")]
+    breadcrumb_text = " ".join(
+        li.get_text(" ", strip=True)
+        for li in soup.select("[itemtype*='BreadcrumbList'] li, .breadcrumbs li")
+    )
+    phone_urls: list[str] = []
+    for link in soup.select("a[href^='tel:']"):
+        href = str(link.get("href") or "")
+        phone_urls.append(href.replace("tel:", ""))
+    gallery_candidates = [
+        *_anchor_urls_from_selector(
+            soup,
+            "a.image[href*='/storage/uploads/offers/'], a[href*='/storage/uploads/offers/'][href*='/1000x']",
+            url,
+        ),
+        *_image_urls_from_selector(
+            soup,
+            "img[src*='/storage/uploads/offers/'], img[data-src*='/storage/uploads/offers/']",
+            url,
+        ),
+        *_extract_image_urls_from_text(html, allow_domains=("address.bg/storage/uploads/offers/",)),
+    ]
+    gallery_candidates = [
+        image_url
+        for image_url in _unique_preserve(gallery_candidates)
+        if "/storage/uploads/offers/" in image_url and not re.search(r"/(?:100x|150x|200x|250x|300x|370x200)/", image_url)
+    ]
+    for preferred_size in ("/1000x666/", "/764x510/"):
+        sized = [image_url for image_url in gallery_candidates if preferred_size in image_url and not image_url.lower().endswith(".webp")]
+        if sized:
+            gallery_candidates = sized
+            break
+    gallery_urls = gallery_candidates
     patch = {
         "price": result.get("price"),
         "currency": result.get("currency") or "EUR",
@@ -352,6 +580,7 @@ def _parse_address_bg(soup: BeautifulSoup, html: str, url: str, result: dict[str
         "address_text": address_text or ", ".join(part for part in [city, district] if part),
         "phones": _unique_preserve([*_extract_phone_numbers(html), *_text_list(phone_urls)]),
         "area_sqm": exact_area or (max(area_values) if area_values else None),
+        "image_urls": gallery_urls or result.get("image_urls", []),
         "source_attributes": {
             "breadcrumb_text": breadcrumb_text,
         },
@@ -380,17 +609,22 @@ def _parse_address_bg(soup: BeautifulSoup, html: str, url: str, result: dict[str
             patch["city"] = match.group(1).strip()
             patch["district"] = match.group(2).strip()
     if patch["city"] and not patch["address_text"]:
-        patch["address_text"] = ", ".join(part for part in [patch["city"], patch["district"]] if part)
+        patch["address_text"] = ", ".join(str(part) for part in [patch["city"], patch["district"]] if part)
     if patch["district"]:
-        patch["district"] = re.sub(r"\s*-\s*код на имота.*$", "", patch["district"]).strip()
-        patch["address_text"] = ", ".join(part for part in [patch["city"], patch["district"]] if part)
-    return _merge_source_result(result, patch)
+        district_text = _text_or_empty(patch.get("district"))
+        patch["district"] = re.sub(r"\s*-\s*код на имота.*$", "", district_text).strip()
+        patch["address_text"] = ", ".join(str(part) for part in [patch["city"], patch["district"]] if part)
+    merged = _merge_source_result(result, patch)
+    if gallery_urls:
+        merged["image_urls"] = gallery_urls
+    return merged
 
 
 def _parse_bulgarianproperties(soup: BeautifulSoup, html: str, url: str, result: dict[str, Any]) -> dict[str, Any]:
     blocks = _load_json_ld_blocks(soup)
     product = next((block for block in blocks if block.get("@type") == "Product"), {})
-    title = _text_or_empty((soup.find("h1") or {}).get_text(" ", strip=True) if soup.find("h1") else "")
+    h1 = soup.find("h1")
+    title = _text_or_empty(h1.get_text(" ", strip=True) if h1 else "")
     data_layer_match = re.search(r"dataLayer\.push\((\{.*?listing_id:.*?\})\);", html, re.DOTALL)
     data_layer = data_layer_match.group(1) if data_layer_match else html
     property_type = _extract_js_single_quoted_value(data_layer, "property_type") or _extract_js_single_quoted_value(html, "property_type")
@@ -409,8 +643,34 @@ def _parse_bulgarianproperties(soup: BeautifulSoup, html: str, url: str, result:
     # this listing's own media proof.
     image_urls = [image_url for image_url in image_urls if "/big/" in image_url]
     area_values = _extract_area_values(html)
+    meta_description = ""
+    for selector in (
+        {"property": "og:description"},
+        {"name": "description"},
+    ):
+        meta = soup.find("meta", attrs=selector)
+        if meta and meta.get("content"):
+            meta_description = _best_description(meta_description, meta.get("content"))
+    body_description = ""
+    for selector in (
+        ".property-description",
+        ".description",
+        ".component-single-property-description",
+        ".component-single-property-general-information",
+        "#property-description",
+    ):
+        node = soup.select_one(selector)
+        if node:
+            body_description = _best_description(body_description, node.get_text(" ", strip=True))
+    description = _best_description(
+        result.get("description"),
+        product.get("description") if isinstance(product, dict) else "",
+        meta_description,
+        body_description,
+    )
     patch = {
         "title": title or _text_or_empty(product.get("name")) or result.get("title"),
+        "description": description or result.get("description"),
         "price": _parse_number(_extract_js_single_quoted_value(data_layer, "price")) or result.get("price"),
         "currency": result.get("currency") or _text_or_empty(((product.get("offers") or {}).get("priceCurrency"))) or "EUR",
         "city": town,
@@ -444,6 +704,31 @@ def _parse_property_family(soup: BeautifulSoup, html: str, url: str, result: dic
     }
     image_urls = _extract_image_urls_from_text(html, allow_domains=domain_map.get(source_name, ()))
     area_values = _extract_area_values(html)
+    preferred_area = None
+    for key in ("content_area", "property_area", "built_area", "living_area", "area"):
+        preferred_area = _parse_number(_extract_js_single_quoted_value(data_layer, key))
+        if preferred_area is not None and preferred_area > 0:
+            break
+    if preferred_area is None:
+        preferred_area = _extract_labeled_area_value(
+            html,
+            (
+                "РЗП",
+                "ЗП",
+                "Обща площ",
+                "Жилищна площ",
+                "Площ",
+                "Built-up area",
+                "Total built-up area",
+                "Area",
+            ),
+        )
+    if preferred_area is None:
+        preferred_area = _extract_area_from_title(title)
+    if preferred_area is None:
+        sane_area_values = [value for value in area_values if 2 <= value <= 5000]
+        preferred_area = sane_area_values[0] if sane_area_values else (area_values[0] if area_values else None)
+    raw_max_area = max(area_values) if area_values else None
     patch = {
         "title": title or result.get("title"),
         "price": result.get("price"),
@@ -453,7 +738,7 @@ def _parse_property_family(soup: BeautifulSoup, html: str, url: str, result: dic
         "region": _extract_js_single_quoted_value(data_layer, "region"),
         "property_category": _slug_to_category(_extract_js_single_quoted_value(data_layer, "property_type") or title),
         "listing_intent": "sale" if any(word in _extract_js_single_quoted_value(data_layer, "type").lower() for word in ("sale", "sales", "продава")) else result.get("listing_intent"),
-        "area_sqm": area_values[0] if area_values else result.get("area_sqm"),
+        "area_sqm": preferred_area or result.get("area_sqm"),
         "rooms": _rooms_from_text(title or _extract_js_single_quoted_value(data_layer, "property_type")),
         "address_text": ", ".join(part for part in [_extract_js_single_quoted_value(data_layer, "town"), _extract_js_single_quoted_value(data_layer, "quart") or _extract_js_single_quoted_value(data_layer, "neighborhood_fb_estate")] if part),
         "phones": _extract_phone_numbers(html),
@@ -462,9 +747,12 @@ def _parse_property_family(soup: BeautifulSoup, html: str, url: str, result: dic
             "town": _extract_js_single_quoted_value(data_layer, "town"),
             "district_raw": _extract_js_single_quoted_value(data_layer, "quart") or _extract_js_single_quoted_value(data_layer, "neighborhood_fb_estate"),
             "listing_id": _extract_js_single_quoted_value(data_layer, "listing_id"),
+            "raw_max_area_sqm": raw_max_area,
         },
     }
-    if patch["price"] is None or (patch["price"] and patch["price"] < 1000 and patch["listing_intent"] == "sale"):
+    price_val = patch.get("price")
+    intent_val = str(patch.get("listing_intent") or "")
+    if price_val is None or (isinstance(price_val, (int, float)) and price_val < 1000 and intent_val == "sale"):
         patch["price"] = _parse_number(_extract_js_single_quoted_value(data_layer, "price")) or patch["price"]
     return _merge_source_result(result, patch)
 
@@ -530,10 +818,22 @@ def _parse_yavlena(soup: BeautifulSoup, html: str, url: str, result: dict[str, A
         payload = _decode_escaped_json_fragment(fragment)
     title = _text_or_empty(soup.title.get_text(" ", strip=True) if soup.title else result.get("title"))
     city, district = _parse_title_city_district(title)
+    if district.strip().lower() in {"м", "кв"}:
+        district = ""
     if not city:
         title_match = re.search(r"в\s+([A-ZА-Я][A-Za-zА-Яа-я\- ]+?)\s+\d+\s*кв", title)
         if title_match:
             city = title_match.group(1).strip()
+    if not district:
+        meta_desc = ""
+        meta_el = soup.find("meta", attrs={"name": "description"})
+        if meta_el:
+            meta_desc = str(meta_el.get("content") or "")
+        if meta_desc:
+            district_match = re.search(r"в\s+София\s*[-–]\s*([^,]+)", meta_desc)
+            if district_match:
+                district = district_match.group(1).strip()
+                district = re.sub(r"\s+\d+$", "", district).strip()
     description = _text_or_empty((payload or {}).get("description")) or result.get("description")
     if not description:
         description_match = re.search(r'description\\":\\"(.*?)\\",\\"constructionType', html)
@@ -587,6 +887,179 @@ def _parse_yavlena(soup: BeautifulSoup, html: str, url: str, result: dict[str, A
     }
     if patch["price"] is None and price_match:
         patch["price"] = _parse_number(price_match.group(1))
+    return _merge_source_result(result, patch)
+
+
+def _parse_alo_bg(soup: BeautifulSoup, html: str, url: str, result: dict[str, Any]) -> dict[str, Any]:
+    params = _param_rows_by_label(soup, ".ads-params-row", ".ads-param-title", ".ads-params-cell")
+    title_tag = soup.find("title")
+    title = _text_or_empty(title_tag.get_text(" ", strip=True) if title_tag else result.get("title"))
+    canonical = soup.find("link", rel="canonical")
+    canonical_url = _text_or_empty(canonical.get("href") if canonical else url)
+    external_match = re.search(r"-(\d{5,})(?:[/?#].*)?$", canonical_url or url)
+    external_id = external_match.group(1) if external_match else _text_or_empty(params.get("Обява №"))
+    image_urls = [
+        url for url in _image_urls_from_selector(soup, "img", "https://www.alo.bg/")
+        if "/user_files/" in url and (not external_id or f"/{external_id}_" in url)
+    ]
+    if not image_urls:
+        image_urls = [url for url in result.get("image_urls", []) if "/user_files/" in url]
+
+    description = result.get("description") or ""
+    desc_el = soup.select_one("#description_div, .ads-description, .description")
+    if desc_el:
+        description = desc_el.get_text(" ", strip=True)
+    if description.lower().startswith("описание "):
+        description = description.split(" ", 1)[1].strip()
+
+    price_text = params.get("Цена") or ""
+    area_text = params.get("Квадратура") or ""
+    type_text = params.get("Вид на имота") or title
+    floor_text = params.get("Номер на етажа") or params.get("Етаж") or ""
+    location_text = params.get("Местоположение") or ""
+    location_blob = " ".join([location_text, title, description, canonical_url])
+    district = ""
+    if location_text:
+        district = location_text.split(",")[0].strip()
+    if not district:
+        district_match = re.search(r"кв\.\s*([A-Za-zА-Яа-я0-9 .'-]+)", location_blob)
+        if district_match:
+            district = district_match.group(1).split(",")[0].split("-")[0].strip()
+    city = "Варна" if "варна" in location_blob.lower() else result.get("city", "")
+
+    patch = {
+        "listing_url": canonical_url or url,
+        "external_id": external_id or result.get("external_id"),
+        "title": title or result.get("title"),
+        "description": description,
+        "price": _parse_number(price_text) if price_text else result.get("price"),
+        "currency": "EUR" if "€" in price_text else ("BGN" if "лв" in price_text.lower() else result.get("currency") or "EUR"),
+        "area_sqm": _parse_number(area_text) or result.get("area_sqm"),
+        "rooms": _rooms_from_text(type_text) or _rooms_from_text(title),
+        "floor": _parse_floor_value(floor_text) if floor_text else result.get("floor"),
+        "city": city,
+        "district": district or result.get("district", ""),
+        "address_text": ", ".join(part for part in [city, district] if part),
+        "listing_intent": "long_term_rent" if "imoti-naemi" in canonical_url else "sale",
+        "property_category": _slug_to_category(type_text),
+        "image_urls": image_urls or result.get("image_urls", []),
+        "phones": _extract_phone_numbers(html),
+        "source_attributes": params,
+    }
+    return _merge_source_result(result, patch)
+
+
+def _parse_domaza(soup: BeautifulSoup, html: str, url: str, result: dict[str, Any]) -> dict[str, Any]:
+    h1 = soup.find("h1")
+    title = _text_or_empty(h1.get_text(" ", strip=True) if h1 else result.get("title"))
+    canonical = soup.find("meta", property="og:url")
+    canonical_url = _text_or_empty(canonical.get("content") if canonical else url)
+    external_match = re.search(r"-16-(\d+)-p", canonical_url or url)
+    external_id = external_match.group(1) if external_match else hashlib.sha1((canonical_url or url).encode()).hexdigest()[:12]
+    content = soup.select_one(".property_content")
+    content_text = content.get_text(" ", strip=True) if content else soup.get_text(" ", strip=True)
+    description_el = soup.select_one("#property_description")
+    description = ""
+    if description_el:
+        description = re.sub(r"^Описание\s*", "", description_el.get_text(" ", strip=True)).strip()
+    feature_el = soup.select_one("#property_features")
+    feature_text = feature_el.get_text(" ", strip=True) if feature_el else ""
+    image_urls = [
+        image_url for image_url in _image_urls_from_selector(soup, "#property_gallery img, .property_image_thumb img", "https://www.domaza.bg/")
+        if "cdn.domaza.biz/upload/properties" in image_url and f"/{external_id}/" in image_url
+    ]
+
+    city = "Варна" if "варна" in title.lower() or "варна" in content_text.lower() else result.get("city", "")
+    district = ""
+    title_parts = [part.strip() for part in title.split(",") if part.strip()]
+    if title_parts:
+        for part in title_parts:
+            if part not in {"Апартамент", "Къща", "Варна", "България"} and "гр." not in part:
+                district = part
+                break
+    params: dict[str, str] = {}
+    for label in ("Цена", "Обща площ", "Чиста площ", "Стаи"):
+        match = re.search(rf"{label}\s+([^А-Яа-я]+(?:€|m\s*2|m2)?|\d+(?:[.,]\d+)?)", content_text)
+        if match:
+            params[label] = match.group(1).strip()
+    if feature_text:
+        params["Характеристики"] = feature_text
+
+    price_match = re.search(r"(\d[\d\s.,]*)\s*€", content_text)
+    area_match = re.search(r"Обща площ\s+(\d[\d\s.,]*)\s*m\s*2", content_text)
+    rooms_match = re.search(r"Стаи\s+(\d+(?:[.,]\d+)?)", content_text)
+    patch = {
+        "listing_url": canonical_url or url,
+        "external_id": external_id,
+        "title": title or result.get("title"),
+        "description": description or result.get("description"),
+        "price": _parse_number(price_match.group(1)) if price_match else result.get("price"),
+        "currency": "EUR",
+        "area_sqm": _parse_number(area_match.group(1)) if area_match else result.get("area_sqm"),
+        "rooms": _parse_number(rooms_match.group(1)) if rooms_match else result.get("rooms"),
+        "city": city,
+        "district": district,
+        "address_text": ", ".join(part for part in [city, district] if part),
+        "listing_intent": "long_term_rent" if " наем " in content_text.lower() else "sale",
+        "property_category": _slug_to_category(title + " " + content_text),
+        "image_urls": image_urls or result.get("image_urls", []),
+        "phones": _extract_phone_numbers(content_text),
+        "amenities": [item.strip() for item in feature_text.split() if item.strip()][:80],
+        "source_attributes": params,
+    }
+    return _merge_source_result(result, patch)
+
+
+def _parse_home2u(soup: BeautifulSoup, html: str, url: str, result: dict[str, Any]) -> dict[str, Any]:
+    h1 = soup.find("h1")
+    title = _text_or_empty(h1.get_text(" ", strip=True) if h1 else result.get("title"))
+    canonical = soup.find("link", rel="canonical")
+    canonical_url = _text_or_empty(canonical.get("href") if canonical else url)
+    external_id = hashlib.sha1((canonical_url or url).encode()).hexdigest()[:12]
+    info = soup.select_one(".section-building-info-secondary")
+    info_text = info.get_text(" ", strip=True) if info else soup.get_text(" ", strip=True)
+    description_el = soup.select_one(".section__content")
+    description = ""
+    if description_el:
+        description = re.sub(r"^За имота\s*", "", description_el.get_text(" ", strip=True)).strip()
+    description_status = "captured" if description else "absent_on_detail_page"
+    gallery_urls = [
+        image_url for image_url in _image_urls_from_selector(soup, ".section-building-gallery img, .list-gallery img", "https://home2u.bg/")
+        if "/wp-content/uploads/" in image_url and not image_url.endswith(".svg")
+    ]
+    price_el = soup.select_one(".section__head-price")
+    price_text = price_el.get_text(" ", strip=True) if price_el else info_text
+    location_match = re.search(r"Местоположение\s*:?\s*([^:]+?)\s+Площ", info_text)
+    location_text = location_match.group(1).strip() if location_match else ""
+    city, district = _split_bg_location(location_text) if location_text else ("", "")
+    if not city and "варна" in info_text.lower():
+        city = "Варна"
+    area_match = re.search(r"Площ(?:\s+в\s+квадратни\s+метри)?\s*:?\s*(\d[\d\s.,]*)\s*m2", info_text, re.IGNORECASE)
+    floor_match = re.search(r"Етаж\s*:?\s*([A-Za-zА-Яа-я0-9 .-]+)", info_text)
+    source_attrs = {
+        "location": location_text,
+        "floor_text": floor_match.group(1).strip() if floor_match else "",
+        "description_status": description_status,
+    }
+    patch = {
+        "listing_url": canonical_url or url,
+        "external_id": external_id,
+        "title": title or result.get("title"),
+        "description": description or result.get("description"),
+        "price": _parse_number(price_text),
+        "currency": "EUR" if "€" in price_text else result.get("currency", "EUR"),
+        "area_sqm": _parse_number(area_match.group(1)) if area_match else result.get("area_sqm"),
+        "rooms": _rooms_from_text(title + " " + description),
+        "floor": _parse_floor_value(floor_match.group(1)) if floor_match else result.get("floor"),
+        "city": city,
+        "district": district,
+        "address_text": location_text,
+        "listing_intent": "long_term_rent" if "pod-naem" in canonical_url or "под наем" in (title + " " + description).lower() else "sale",
+        "property_category": _slug_to_category(title + " " + canonical_url + " " + description),
+        "image_urls": gallery_urls or result.get("image_urls", []),
+        "phones": _extract_phone_numbers(info_text),
+        "source_attributes": source_attrs,
+    }
     return _merge_source_result(result, patch)
 
 
@@ -651,6 +1124,9 @@ def _rooms_from_text(text: str) -> float | None:
 
 
 def _parse_floor_value(value: str) -> float | None:
+    lowered = value.lower()
+    if "партер" in lowered or "ground" in lowered:
+        return 0.0
     match = re.search(r"(\d+)", value)
     if not match:
         return None
@@ -721,6 +1197,11 @@ def parse_homes_detail(html: str, url: str) -> dict[str, Any] | None:
     if isinstance(coordinates, (list, tuple)) and len(coordinates) >= 2:
         latitude = _parse_number(coordinates[0])
         longitude = _parse_number(coordinates[1])
+        if latitude is not None and longitude is not None and not _coordinates_in_bulgaria(latitude, longitude):
+            if _coordinates_in_bulgaria(longitude, latitude):
+                latitude, longitude = longitude, latitude
+            else:
+                latitude = longitude = None
 
     attrs = offer.get("attributes") or []
     attr_map: dict[str, str] = {}
@@ -753,7 +1234,12 @@ def parse_homes_detail(html: str, url: str) -> dict[str, Any] | None:
     property_category = _slug_to_category(url + " " + title)
     listing_intent = _slug_to_intent(url)
     rooms = _rooms_from_text(title)
-    area_sqm = _parse_number(title)
+    area_sqm = _extract_area_from_title(title)
+    if area_sqm is None:
+        for area_label in ("Квадратура", "Площ", "Area"):
+            area_sqm = _parse_number(attr_map.get(area_label))
+            if area_sqm is not None:
+                break
     price_value = _parse_number((((offer.get("price") or {}).get("value")) or "").replace(",", ""))
     currency = _text_or_empty(((offer.get("price") or {}).get("currency"))) or "EUR"
     extras = [item.get("name") for item in offer.get("extras") or [] if isinstance(item, dict) and item.get("name")]
@@ -835,15 +1321,16 @@ def parse_imot_detail(html: str, url: str) -> dict[str, Any] | None:
     }
 
     page_title = _text_or_empty(soup.title.get_text(" ", strip=True)) if soup.title else ""
-    h1_text = _text_or_empty((soup.find("h1") or {}).get_text(" ", strip=True) if soup.find("h1") else "")
+    h1 = soup.find("h1")
+    h1_text = _text_or_empty(h1.get_text(" ", strip=True) if h1 else "")
     title = h1_text or page_title or _text_or_empty(result.get("title"))
     if title:
         cleaned_title = re.sub(r"\s*::\s*imot\.bg.*$", "", title, flags=re.IGNORECASE).strip()
         result["title"] = cleaned_title
     canonical = soup.find("link", rel="canonical")
-    canonical_url = canonical.get("href") if canonical else url
+    canonical_url = str(canonical.get("href") or url) if canonical else url
     result["listing_intent"] = _slug_to_intent(canonical_url)
-    result["property_category"] = _slug_to_category(canonical_url + " " + title)
+    result["property_category"] = _slug_to_category(f"{canonical_url} {title}")
     result["rooms"] = result.get("rooms") or _rooms_from_text(title) or _rooms_from_text(result.get("description") or "")
 
     gallery_urls: list[str] = []
@@ -917,8 +1404,8 @@ def parse_imot_detail(html: str, url: str) -> dict[str, Any] | None:
     title_area_match = re.search(r"(\d+(?:[.,]\d+)?)\s*кв\.?\s*м", title.lower())
     if title_area_match:
         area_sources.append(title_area_match.group(0))
-    for value in area_sources:
-        area = _parse_number(value)
+    for raw_value in area_sources:
+        area = _parse_number(raw_value)
         if area is not None:
             result["area_sqm"] = area
             break
@@ -927,8 +1414,8 @@ def parse_imot_detail(html: str, url: str) -> dict[str, Any] | None:
         params.get("Етаж"),
         params.get("Етажност"),
     ]
-    for value in floor_sources:
-        floor = _parse_floor_value(_text_or_empty(value))
+    for raw_value in floor_sources:
+        floor = _parse_floor_value(_text_or_empty(raw_value))
         if floor is not None:
             result["floor"] = floor
             break
@@ -1008,6 +1495,14 @@ def parse_listing_html(html: str, url: str, source_name: str) -> dict[str, Any] 
         result = _parse_bazar_bg(soup, html, url, result)
     elif source_name == "Yavlena":
         result = _parse_yavlena(soup, html, url, result)
+    elif source_name == "alo.bg":
+        result = _parse_alo_bg(soup, html, url, result)
+    elif source_name == "Domaza":
+        result = _parse_domaza(soup, html, url, result)
+    elif source_name == "Home2U":
+        result = _parse_home2u(soup, html, url, result)
+
+    _apply_property_identity_flags(result)
 
     ext_id = result.get("external_id") or hashlib.sha1(url.encode()).hexdigest()[:12]
     result["external_id"] = ext_id
@@ -1030,6 +1525,71 @@ def parse_listing_html(html: str, url: str, source_name: str) -> dict[str, Any] 
     if result["title"] or result["image_urls"] or result["price"] is not None:
         return result
     return None
+
+
+_MULTI_UNIT_PUBLICATION_RE = re.compile(
+    r"\b\d+\s*[-–/]\s*\d+\s*(bedroom|bed|room|спалн|стайн|стаен)\b"
+    r"|apartments\s*\(various\s*types\)|various_types|different apartments|apartments available|units available"
+    r"|selection of|choice of|prices?\s+from|starting\s+from|цени\s+от|цена\s+от"
+    r"|new development|project development|whole residential building|entire residential building"
+    r"|жилищна сграда\s+(?:с|предлага|включва|разполага)|новострояща\s+се\s+жилищна\s+сграда"
+    r"|комплекс\s+от\s+\d+|вилно\s+селище|проект\s+с\s+\d+",
+    re.IGNORECASE,
+)
+
+_ON_REQUEST_PRICE_RE = re.compile(r"по\s+запитване|при\s+запитване|on\s+request|upon\s+request|price\s+on\s+request", re.IGNORECASE)
+
+
+def _apply_property_identity_flags(result: dict[str, Any]) -> None:
+    warnings = list(result.get("scrape_warnings") or [])
+    provenance = dict(result.get("crawl_provenance") or {})
+    text = "\n".join(str(result.get(key) or "") for key in ("title", "description", "listing_url"))
+
+    if _MULTI_UNIT_PUBLICATION_RE.search(text):
+        result["suspected_multi_unit_publication"] = True
+        warnings.append("suspected_multi_unit_publication")
+        provenance["identity_status"] = "source_publication_requires_unit_level_review"
+    else:
+        result["suspected_multi_unit_publication"] = False
+        provenance.setdefault("identity_status", "single_publication_candidate")
+
+    if result.get("price") == 0:
+        result["price"] = None
+        provenance["price_status"] = "undefined"
+        warnings.append("zero_price_normalized_to_undefined")
+    elif result.get("price") is None and _ON_REQUEST_PRICE_RE.search(text):
+        provenance["price_status"] = "on_request"
+    elif result.get("price") is None:
+        provenance.setdefault("price_status", "undefined")
+    else:
+        provenance.setdefault("price_status", "numeric")
+
+    area = result.get("area_sqm")
+    if isinstance(area, (int, float)) and 0 < float(area) < 2:
+        title_area_values = [value for value in _extract_area_values(str(result.get("title") or "")) if value >= 2]
+        title_area = title_area_values[0] if title_area_values else None
+        if title_area and title_area >= 2:
+            result["area_sqm"] = title_area
+            warnings.append("area_decimal_parse_corrected_from_title")
+        else:
+            provenance["area_status"] = "suspicious_decimal_parse"
+            warnings.append("suspicious_area_decimal_parse")
+
+    latitude = result.get("latitude")
+    longitude = result.get("longitude")
+    if latitude is not None and longitude is not None and not _coordinates_in_bulgaria(latitude, longitude):
+        if _coordinates_in_bulgaria(longitude, latitude):
+            result["latitude"], result["longitude"] = longitude, latitude
+            warnings.append("coordinate_order_corrected")
+        else:
+            result["latitude"] = None
+            result["longitude"] = None
+            provenance["geo_status"] = "outside_bulgaria_coordinates_rejected"
+            warnings.append("outside_bulgaria_coordinates_rejected")
+
+    result["crawl_provenance"] = provenance
+    if warnings:
+        result["scrape_warnings"] = sorted(set(warnings))
 
 
 def _apply_json_ld(ld: dict, r: dict):
@@ -1057,8 +1617,11 @@ def _apply_json_ld(ld: dict, r: dict):
     geo = ld.get("geo")
     if isinstance(geo, dict) and r["latitude"] is None:
         try:
-            r["latitude"] = float(geo.get("latitude", 0))
-            r["longitude"] = float(geo.get("longitude", 0))
+            latitude = float(geo.get("latitude", 0))
+            longitude = float(geo.get("longitude", 0))
+            if _coordinates_in_bulgaria(latitude, longitude):
+                r["latitude"] = latitude
+                r["longitude"] = longitude
         except (ValueError, TypeError):
             pass
     addr = ld.get("address")
@@ -1089,7 +1652,7 @@ def _extract_meta(soup, r):
             continue
         if prop == "og:title" and not r["title"]:
             r["title"] = c
-        elif prop == "og:description" and not r["description"]:
+        elif prop in {"og:description", "description"} and not r["description"]:
             r["description"] = c[:2000]
         elif prop == "og:image" and c not in r["image_urls"]:
             r["image_urls"].append(c)
@@ -1168,6 +1731,110 @@ class ScrapeStats:
     start_time: str = ""
     end_time: str = ""
     duration_seconds: float = 0.0
+    detail_concurrency_used: int = 1
+    source_bucket: str = ""
+    _stats_lock: threading.Lock = field(default_factory=threading.Lock, repr=False, compare=False)
+
+
+def scrape_stats_to_dict(stats: ScrapeStats) -> dict[str, Any]:
+    """JSON-serializable stats (excludes threading.Lock)."""
+    return {f.name: getattr(stats, f.name) for f in fields(stats) if f.name != "_stats_lock"}
+
+
+def _thread_local_client_factory(
+    download_photos: bool,
+) -> Callable[[], tuple[httpx.Client, httpx.Client | None]]:
+    tls = threading.local()
+
+    def get_clients() -> tuple[httpx.Client, httpx.Client | None]:
+        if getattr(tls, "http", None) is None:
+            tls.http = make_client()
+            tls.photo = make_client() if download_photos else None
+        return tls.http, tls.photo
+
+    return get_clients
+
+
+def _run_bounded_listing_details(
+    stats: ScrapeStats,
+    log_label: str,
+    source_key: str,
+    source_display_name: str,
+    urls: list[str],
+    max_listings: int,
+    download_photos: bool,
+    detail_fn: Callable[[int, str, httpx.Client, httpx.Client | None], None],
+) -> None:
+    """Detail phase: bounded parallel fetches; one httpx client (and optional photo client) per worker thread."""
+    stats.source_bucket = source_bucket_for_key(source_key, source_display_name=source_display_name)
+    workers = detail_concurrency_for_source(source_key, source_display_name)
+    stats.detail_concurrency_used = workers
+    to_process = list(enumerate(urls[:max_listings]))
+    total = len(to_process)
+    get_clients = _thread_local_client_factory(download_photos)
+
+    def _execute(job: tuple[int, str]) -> None:
+        i, url = job
+        if i > 0 and i % 25 == 0:
+            with stats._stats_lock:
+                fetched = stats.listing_pages_fetched
+                parsed = stats.listing_pages_parsed
+            logger.info(
+                "[%s] Progress: %d/%d fetched=%d parsed=%d",
+                log_label,
+                i,
+                total,
+                fetched,
+                parsed,
+            )
+        time.sleep(DELAY)
+        http, photo = get_clients()
+        detail_fn(i, url, http, photo)
+
+    def _safe(job: tuple[int, str]) -> None:
+        try:
+            _execute(job)
+        except Exception:
+            logger.exception("[%s] Unhandled error for %s", log_label, job[1])
+            with stats._stats_lock:
+                stats.listing_pages_failed += 1
+
+    if workers <= 1:
+        for item in to_process:
+            _safe(item)
+        return
+
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        list(pool.map(_safe, to_process))
+
+
+def _append_scrape_metrics(stats: ScrapeStats) -> None:
+    runs_dir = REPO / "data" / "runs"
+    runs_dir.mkdir(parents=True, exist_ok=True)
+    line = {
+        "ts": stats.end_time or stats.start_time,
+        "source_key": stats.source_key,
+        "source_name": stats.source_name,
+        "source_bucket": stats.source_bucket,
+        "detail_concurrency_used": stats.detail_concurrency_used,
+        "duration_seconds": stats.duration_seconds,
+        "listing_urls_discovered": stats.listing_urls_discovered,
+        "listing_pages_fetched": stats.listing_pages_fetched,
+        "listing_pages_parsed": stats.listing_pages_parsed,
+        "listing_pages_failed": stats.listing_pages_failed,
+        "photos_found": stats.photos_found,
+        "photos_downloaded": stats.photos_downloaded,
+        "photos_failed": stats.photos_failed,
+        "errors_count": len(stats.errors),
+    }
+    payload = json.dumps(line, ensure_ascii=False)
+    path = runs_dir / "scrape_metrics.jsonl"
+    with path.open("a", encoding="utf-8") as wf:
+        wf.write(payload + "\n")
+    (runs_dir / "scrape_metrics_latest.json").write_text(
+        json.dumps(line, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
 
 
 def _save_listing(stats: ScrapeStats, parsed: dict, html: str, source_key: str,
@@ -1177,6 +1844,7 @@ def _save_listing(stats: ScrapeStats, parsed: dict, html: str, source_key: str,
     safe_ref = re.sub(r'[/:*?"<>|\\]', '_', ref_id)
     if extra_fields:
         parsed.update(extra_fields)
+    _apply_immediate_publication_status(parsed)
 
     listing_dir = SCRAPED_ROOT / source_key / "listings"
     raw_dir = SCRAPED_ROOT / source_key / "raw"
@@ -1204,50 +1872,67 @@ def _save_listing(stats: ScrapeStats, parsed: dict, html: str, source_key: str,
         parsed["local_media_dir"] = str(media_dir.resolve())
     parsed["photo_count_remote"] = len(imgs)
 
-    stats.listing_pages_parsed += 1
-    if parsed.get("price") is not None:
-        stats.with_price += 1
-    if parsed.get("latitude") is not None:
-        stats.with_geo += 1
-    if parsed.get("city") or parsed.get("address_text"):
-        stats.with_address += 1
-    if parsed.get("area_sqm") is not None:
-        stats.with_area += 1
-    if parsed.get("rooms") is not None:
-        stats.with_rooms += 1
-    if parsed.get("description"):
-        stats.with_description += 1
+    with stats._stats_lock:
+        stats.listing_pages_parsed += 1
+        if parsed.get("price") is not None:
+            stats.with_price += 1
+        if parsed.get("latitude") is not None:
+            stats.with_geo += 1
+        if parsed.get("city") or parsed.get("address_text"):
+            stats.with_address += 1
+        if parsed.get("area_sqm") is not None:
+            stats.with_area += 1
+        if parsed.get("rooms") is not None:
+            stats.with_rooms += 1
+        if parsed.get("description"):
+            stats.with_description += 1
 
-    intent = parsed.get("listing_intent", "unknown")
-    stats.intents[intent] = stats.intents.get(intent, 0) + 1
-    cat = parsed.get("property_category", "unknown")
-    stats.categories[cat] = stats.categories.get(cat, 0) + 1
-    if product_label:
-        stats.product_breakdown[product_label] = stats.product_breakdown.get(product_label, 0) + 1
-    if ref_id not in stats.sample_reference_ids and len(stats.sample_reference_ids) < 8:
-        stats.sample_reference_ids.append(ref_id)
-    stats.photos_found += len(imgs)
+        intent = parsed.get("listing_intent", "unknown")
+        stats.intents[intent] = stats.intents.get(intent, 0) + 1
+        cat = parsed.get("property_category", "unknown")
+        stats.categories[cat] = stats.categories.get(cat, 0) + 1
+        if product_label:
+            stats.product_breakdown[product_label] = stats.product_breakdown.get(product_label, 0) + 1
+            parsed["pattern_bucket_label"] = product_label
+        if ref_id not in stats.sample_reference_ids and len(stats.sample_reference_ids) < 8:
+            stats.sample_reference_ids.append(ref_id)
+        stats.photos_found += len(imgs)
 
     if download_photos and imgs and photo_client:
         photo_urls = imgs if PHOTO_LIMIT <= 0 else imgs[:PHOTO_LIMIT]
         for idx, photo_url in enumerate(photo_urls):
             try:
                 dr = download_image(photo_url, reference_id=safe_ref, ordering=idx, client=photo_client)
-                if dr.status == "downloaded":
-                    stats.photos_downloaded += 1
-                else:
-                    stats.photos_failed += 1
+                with stats._stats_lock:
+                    if dr.status == "downloaded":
+                        stats.photos_downloaded += 1
+                    else:
+                        stats.photos_failed += 1
             except Exception:
-                stats.photos_failed += 1
+                with stats._stats_lock:
+                    stats.photos_failed += 1
 
-        if media_dir.exists():
-            stored_files = sorted(p for p in media_dir.iterdir() if p.is_file())
-            parsed["local_image_files"] = [str(path.relative_to(REPO)) for path in stored_files]
-            parsed["local_image_storage_keys"] = [f"{safe_ref}/{path.name}" for path in stored_files]
+    if media_dir.exists():
+        stored_files = sorted(p for p in media_dir.iterdir() if p.is_file())
+        parsed["local_image_files"] = [str(path.relative_to(REPO)) for path in stored_files]
+        parsed["local_image_storage_keys"] = [f"{safe_ref}/{path.name}" for path in stored_files]
     parsed["photo_count_local"] = len(parsed.get("local_image_files") or [])
+    # Partial galleries are normal mid-run (failed downloads, rate limits, or `--download-photos` off).
+    # `action1_full_telegram_report.py` flags gallery_gap until local catches up to remote — not always a parser bug.
     parsed["full_gallery_downloaded"] = bool(
         parsed["photo_count_remote"] > 0 and parsed["photo_count_local"] >= parsed["photo_count_remote"]
     )
+    # Normalize to four operator buckets used throughout the repo.
+    # This is intentionally coarse and derived from parsed intent + category so the
+    # dashboard and quality audits can reason about coverage even when a source's
+    # own search routes are mixed.
+    listing_intent = str(parsed.get("listing_intent") or "sale").lower()
+    property_category = str(parsed.get("property_category") or "other").lower()
+    deal = "rent" if listing_intent in {"rent", "long_term_rent", "short_term_rent", "short_term_rental"} else "buy"
+    commercial = property_category in {"office", "shop", "land", "garage"}
+    space = "commercial" if commercial else "personal"
+    parsed["bucket_key"] = f"{deal}_{space}"
+    parsed["segment_key"] = parsed["bucket_key"]
     if parsed["photo_count_remote"] <= 0:
         parsed["photo_download_status"] = "no_remote_gallery"
     elif parsed["photo_count_local"] <= 0:
@@ -1267,7 +1952,8 @@ def _save_listing(stats: ScrapeStats, parsed: dict, html: str, source_key: str,
 
 def _scrape_homes_bg(stats: ScrapeStats, client: httpx.Client, max_pages: int, max_listings: int,
                      download_photos: bool, photo_client: httpx.Client | None,
-                     *, api_templates: list[tuple[str, str]] | None = None,
+                     *, page_order: str = "newest_first",
+                     api_templates: list[tuple[str, str]] | None = None,
                      accept_parsed: Callable[[dict[str, Any], str, str, str], bool] | None = None,
                      save_context_builder: Callable[[dict[str, Any], str, str, str], dict[str, Any] | None] | None = None):
     """Homes.bg: uses JSON API for discovery, HTML for detail."""
@@ -1296,7 +1982,7 @@ def _scrape_homes_bg(stats: ScrapeStats, client: httpx.Client, max_pages: int, m
             template_defs.append((intent_label, template))
 
     for intent_label, api_template in template_defs:
-        for page in range(1, max_pages + 1):
+        for page in _iter_pages(max_pages, page_order):
             if len(all_urls) >= max_listings:
                 break
             api_url = api_template.format(page=page)
@@ -1322,37 +2008,52 @@ def _scrape_homes_bg(stats: ScrapeStats, client: httpx.Client, max_pages: int, m
     stats.listing_urls_discovered = len(all_urls)
     logger.info("[homes_bg] Discovery: %d unique URLs from %d API pages", len(all_urls), stats.discovery_pages_fetched)
 
-    for i, url in enumerate(all_urls[:max_listings]):
-        if i > 0 and i % 25 == 0:
-            logger.info("[homes_bg] Progress: %d/%d fetched (%d parsed)", i, len(all_urls), stats.listing_pages_parsed)
-        time.sleep(DELAY)
-        html = fetch_page(client, url)
+    def _detail_homes(
+        _i: int, url: str, http: httpx.Client, photo: httpx.Client | None,
+    ) -> None:
+        html = fetch_page(http, url)
         if not html:
-            stats.listing_pages_failed += 1
-            continue
-        stats.listing_pages_fetched += 1
+            with stats._stats_lock:
+                stats.listing_pages_failed += 1
+            return
+        with stats._stats_lock:
+            stats.listing_pages_fetched += 1
         parsed = parse_homes_detail(html, url)
         if parsed:
             bucket_label = url_to_bucket.get(url, "default")
+            _apply_bucket_context(parsed, bucket_label, url)
             if accept_parsed and not accept_parsed(parsed, url, html, bucket_label):
-                continue
+                return
             _save_listing(
                 stats,
                 parsed,
                 html,
                 "homes_bg",
                 download_photos=download_photos,
-                photo_client=photo_client,
+                photo_client=photo,
                 product_label=bucket_label or f"{parsed.get('listing_intent', 'unknown')}:{parsed.get('property_category', 'unknown')}",
                 extra_fields=save_context_builder(parsed, url, html, bucket_label) if save_context_builder else None,
             )
         else:
-            stats.listing_pages_failed += 1
+            with stats._stats_lock:
+                stats.listing_pages_failed += 1
+
+    _run_bounded_listing_details(
+        stats,
+        "homes_bg",
+        "homes_bg",
+        "Homes.bg",
+        all_urls,
+        max_listings,
+        download_photos,
+        _detail_homes,
+    )
 
 
 def _scrape_imot_bg(stats: ScrapeStats, client: httpx.Client, max_pages: int, max_listings: int,
                     download_photos: bool, photo_client: httpx.Client | None,
-                    *, search_routes: list[tuple[str, str]] | None = None,
+                    *, page_order: str = "newest_first",
+                    search_routes: list[tuple[str, str]] | None = None,
                     accept_parsed: Callable[[dict[str, Any], str, str, str], bool] | None = None,
                     save_context_builder: Callable[[dict[str, Any], str, str, str], dict[str, Any] | None] | None = None):
     """imot.bg: server-rendered search with /obiava-... URLs."""
@@ -1371,10 +2072,17 @@ def _scrape_imot_bg(stats: ScrapeStats, client: httpx.Client, max_pages: int, ma
     url_to_bucket: dict[str, str] = {}
     obiava_re = re.compile(r'href="(//www\.imot\.bg/obiava-[^"]+)"')
 
-    route_defs = search_routes or [(url.split("/")[-1], url) for url in search_urls]
+    if search_routes:
+        route_defs = search_routes
+    else:
+        route_defs = []
+        for search_url in search_urls:
+            intent_label = "rent" if "/naemi/" in search_url else "sale"
+            city_label = search_url.rsplit("/", 1)[-1].replace("grad-", "")
+            route_defs.append((f"{intent_label}_{city_label}", search_url))
 
     for bucket_label, search_url in route_defs:
-        for page in range(1, max_pages + 1):
+        for page in _iter_pages(max_pages, page_order):
             if len(all_urls) >= max_listings:
                 break
             paged_url = search_url if page == 1 else f"{search_url}/p-{page}"
@@ -1403,38 +2111,53 @@ def _scrape_imot_bg(stats: ScrapeStats, client: httpx.Client, max_pages: int, ma
     stats.listing_urls_discovered = len(all_urls)
     logger.info("[imot_bg] Discovery: %d unique URLs", len(all_urls))
 
-    for i, url in enumerate(all_urls[:max_listings]):
-        if i > 0 and i % 25 == 0:
-            logger.info("[imot_bg] Progress: %d/%d", i, stats.listing_pages_parsed)
-        time.sleep(DELAY)
-        html = fetch_page(client, url)
+    def _detail_imot(
+        _i: int, url: str, http: httpx.Client, photo: httpx.Client | None,
+    ) -> None:
+        html = fetch_page(http, url)
         if not html:
-            stats.listing_pages_failed += 1
-            continue
-        stats.listing_pages_fetched += 1
+            with stats._stats_lock:
+                stats.listing_pages_failed += 1
+            return
+        with stats._stats_lock:
+            stats.listing_pages_fetched += 1
         parsed = parse_imot_detail(html, url)
         if parsed:
             bucket_label = url_to_bucket.get(url, "default")
+            _apply_bucket_context(parsed, bucket_label, url)
             if accept_parsed and not accept_parsed(parsed, url, html, bucket_label):
-                continue
+                return
             _save_listing(
                 stats,
                 parsed,
                 html,
                 "imot_bg",
                 download_photos=download_photos,
-                photo_client=photo_client,
+                photo_client=photo,
                 product_label=bucket_label or f"{parsed.get('listing_intent', 'unknown')}:{parsed.get('property_category', 'unknown')}",
                 extra_fields=save_context_builder(parsed, url, html, bucket_label) if save_context_builder else None,
             )
         else:
-            stats.listing_pages_failed += 1
+            with stats._stats_lock:
+                stats.listing_pages_failed += 1
+
+    _run_bounded_listing_details(
+        stats,
+        "imot_bg",
+        "imot_bg",
+        "imot.bg",
+        all_urls,
+        max_listings,
+        download_photos,
+        _detail_imot,
+    )
 
 
 def _scrape_generic_html(stats: ScrapeStats, client: httpx.Client, source_key: str, source_name: str,
                          search_urls: list[str], listing_pattern: re.Pattern, base_url: str,
                          max_pages: int, max_listings: int, download_photos: bool, photo_client: httpx.Client | None,
                          *, page_suffix: str = "?page={}", buckets: list[dict[str, Any]] | None = None,
+                         page_order: str = "newest_first",
                          accept_parsed: Callable[[dict[str, Any], str, str, str], bool] | None = None,
                          save_context_builder: Callable[[dict[str, Any], str, str, str], dict[str, Any] | None] | None = None):
     """Generic HTML scraper for sources with standard pagination."""
@@ -1449,7 +2172,7 @@ def _scrape_generic_html(stats: ScrapeStats, client: httpx.Client, source_key: s
         bucket_urls = bucket.get("search_urls") or []
         bucket_suffix = bucket.get("page_suffix", page_suffix)
         for search_url in bucket_urls:
-            for page in range(1, max_pages + 1):
+            for page in _iter_pages(max_pages, page_order):
                 if len(all_urls) >= max_listings:
                     break
                 if page == 1:
@@ -1467,7 +2190,7 @@ def _scrape_generic_html(stats: ScrapeStats, client: httpx.Client, source_key: s
                 soup = BeautifulSoup(html, "lxml")
                 new_count = 0
                 for a in soup.find_all("a", href=True):
-                    href = a["href"]
+                    href = str(a.get("href") or "")
                     full = urljoin(base_url, href)
                     if listing_pattern.search(full) and full not in seen:
                         seen.add(full)
@@ -1489,32 +2212,46 @@ def _scrape_generic_html(stats: ScrapeStats, client: httpx.Client, source_key: s
     stats.listing_urls_discovered = len(all_urls)
     logger.info("[%s] Discovery: %d URLs from %d pages", source_key, len(all_urls), stats.discovery_pages_fetched)
 
-    for i, url in enumerate(all_urls[:max_listings]):
-        if i > 0 and i % 25 == 0:
-            logger.info("[%s] Progress: %d/%d parsed", source_key, stats.listing_pages_parsed, i)
-        time.sleep(DELAY)
-        html = fetch_page(client, url)
+    def _detail_generic(
+        _i: int, url: str, http: httpx.Client, photo: httpx.Client | None,
+    ) -> None:
+        html = fetch_page(http, url)
         if not html:
-            stats.listing_pages_failed += 1
-            continue
-        stats.listing_pages_fetched += 1
+            with stats._stats_lock:
+                stats.listing_pages_failed += 1
+            return
+        with stats._stats_lock:
+            stats.listing_pages_fetched += 1
         parsed = parse_listing_html(html, url, source_name)
         if parsed:
             bucket_label = url_to_bucket.get(url, "default")
+            _apply_bucket_context(parsed, bucket_label, url)
             if accept_parsed and not accept_parsed(parsed, url, html, bucket_label):
-                continue
+                return
             _save_listing(
                 stats,
                 parsed,
                 html,
                 source_key,
                 download_photos=download_photos,
-                photo_client=photo_client,
+                photo_client=photo,
                 product_label=bucket_label,
                 extra_fields=save_context_builder(parsed, url, html, bucket_label) if save_context_builder else None,
             )
         else:
-            stats.listing_pages_failed += 1
+            with stats._stats_lock:
+                stats.listing_pages_failed += 1
+
+    _run_bounded_listing_details(
+        stats,
+        source_key,
+        source_key,
+        source_name,
+        all_urls,
+        max_listings,
+        download_photos,
+        _detail_generic,
+    )
 
 
 # ──────────────────────────────────────────────────────────────
@@ -1530,22 +2267,22 @@ SOURCE_CONFIGS: dict[str, dict[str, Any]] = {
         "buckets": [
             {
                 "label": "sale_apartments",
-                "search_urls": ["https://www.alo.bg/obiavi/imoti-prodajbi/apartamenti-stai/"],
+                "search_urls": ["https://www.alo.bg/obiavi/imoti-prodajbi/apartamenti-stai/?region_id=3&location_ids=554"],
             },
             {
                 "label": "sale_houses",
-                "search_urls": ["https://www.alo.bg/obiavi/imoti-prodajbi/kashti-vili/"],
+                "search_urls": ["https://www.alo.bg/obiavi/imoti-prodajbi/kashti-vili/?region_id=3&location_ids=554"],
             },
             {
                 "label": "sale_land",
                 "search_urls": [
-                    "https://www.alo.bg/obiavi/imoti-prodajbi/parzeli-za-zastroiavane-investicionni-proekti/",
-                    "https://www.alo.bg/obiavi/imoti-prodajbi/zemedelska-zemia-gradini-lozia-gora/",
+                    "https://www.alo.bg/obiavi/imoti-prodajbi/parzeli-za-zastroiavane-investicionni-proekti/?region_id=3&location_ids=554",
+                    "https://www.alo.bg/obiavi/imoti-prodajbi/zemedelska-zemia-gradini-lozia-gora/?region_id=3&location_ids=554",
                 ],
             },
             {
                 "label": "rent_apartments",
-                "search_urls": ["https://www.alo.bg/obiavi/imoti-naemi/apartamenti-stai/"],
+                "search_urls": ["https://www.alo.bg/obiavi/imoti-naemi/apartamenti-stai/?region_id=3&location_ids=554"],
             },
         ],
         "listing_pattern": re.compile(r"alo\.bg/.+-\d{5,}(?:[/?#].*)?$"),
@@ -1554,12 +2291,27 @@ SOURCE_CONFIGS: dict[str, dict[str, Any]] = {
     "address_bg": {
         "name": "Address.bg", "func": "generic",
         "base_url": "https://address.bg",
-        "search_urls": [
-            "https://address.bg/sale",
-            "https://address.bg/rent",
-            "https://address.bg/sale/sofia/l4451",
-            "https://address.bg/sale/varna/l4694",
-            "https://address.bg/rent/sofia/l4451",
+        "buckets": [
+            {
+                "label": "sale_all",
+                "search_urls": ["https://address.bg/sale"],
+            },
+            {
+                "label": "rent_all",
+                "search_urls": ["https://address.bg/rent"],
+            },
+            {
+                "label": "sale_sofia",
+                "search_urls": ["https://address.bg/sale/sofia/l4451"],
+            },
+            {
+                "label": "sale_varna",
+                "search_urls": ["https://address.bg/sale/varna/l4694"],
+            },
+            {
+                "label": "rent_sofia",
+                "search_urls": ["https://address.bg/rent/sofia/l4451"],
+            },
         ],
         "listing_pattern": re.compile(r"address\.bg/.+-offer\d{5,}(?:[/?#].*)?$"),
         "page_suffix": "?page={}",
@@ -1697,11 +2449,10 @@ SOURCE_CONFIGS: dict[str, dict[str, Any]] = {
         "name": "Domaza", "func": "generic",
         "base_url": "https://www.domaza.bg",
         "search_urls": [
-            "https://www.domaza.bg/property/index/search/1/s/572da6146f10beb4bf6333d75039731a4d2b9902",
-            "https://www.domaza.bg/property/index/search/1/s/c8a3ad4db8f37d4e8b31fe9db66bc4d1f537ba5a",
-            "https://www.domaza.bg/property/index/search/1/s/e8780bcda8fa201940f1ce87e404f870d0c5c3fc",
+            "https://www.domaza.bg/недвижими_имоти_във_варна_за_продажба/",
+            "https://www.domaza.bg/недвижими_имоти_във_варна_под_наем/",
         ],
-        "listing_pattern": re.compile(r"domaza\.(bg|biz)/.+ID\d+"),
+        "listing_pattern": re.compile(r"domaza\.bg/.+-16-\d+-p/"),
         "page_suffix": "?page={}",
     },
     "yavlena": {
@@ -1724,14 +2475,12 @@ SOURCE_CONFIGS: dict[str, dict[str, Any]] = {
         "name": "Home2U", "func": "generic",
         "base_url": "https://home2u.bg",
         "search_urls": [
-            "https://home2u.bg/nedvizhimi-imoti-sofia/",
-            "https://home2u.bg/nedvizhimi-imoti-varna/",
-            "https://home2u.bg/nedvizhimi-imoti-burgas/",
-            "https://home2u.bg/nedvizhimi-imoti-plovdiv/",
-            "https://home2u.bg/apartamenti-pod-naem-sofia/",
+            "https://home2u.bg/partseli-i-teren-varna/",
+            "https://home2u.bg/ofisi-pod-naem-varna/",
+            "https://home2u.bg/magazini-pod-naem-varna/",
             "https://home2u.bg/apartamenti-pod-naem-varna/",
         ],
-        "listing_pattern": re.compile(r"home2u\.bg/.+-[a-z0-9]{5,}"),
+        "listing_pattern": re.compile(r"home2u\.bg/property/[^\"'<> ]+/?(?:[?#].*)?$"),
         "page_suffix": "?page={}",
     },
     "olx_bg": {
@@ -1751,6 +2500,7 @@ SOURCE_CONFIGS: dict[str, dict[str, Any]] = {
 
 def scrape_source(key: str, *, download_photos: bool = False,
                   max_pages: int = 12, max_listings: int = 500,
+                  page_order: str | None = None,
                   config_override: dict[str, Any] | None = None,
                   accept_parsed: Callable[[dict[str, Any], str, str, str], bool] | None = None,
                   save_context_builder: Callable[[dict[str, Any], str, str, str], dict[str, Any] | None] | None = None) -> ScrapeStats:
@@ -1766,9 +2516,11 @@ def scrape_source(key: str, *, download_photos: bool = False,
 
     try:
         func_name = cfg["func"]
+        effective_page_order = str(page_order or cfg.get("page_order") or PAGE_ORDER_DEFAULT or "newest_first").strip().lower()
         if func_name == "_scrape_homes_bg":
             _scrape_homes_bg(
                 stats, client, max_pages, max_listings, download_photos, photo_client,
+                page_order=effective_page_order,
                 api_templates=cfg.get("api_templates"),
                 accept_parsed=accept_parsed,
                 save_context_builder=save_context_builder,
@@ -1776,6 +2528,7 @@ def scrape_source(key: str, *, download_photos: bool = False,
         elif func_name == "_scrape_imot_bg":
             _scrape_imot_bg(
                 stats, client, max_pages, max_listings, download_photos, photo_client,
+                page_order=effective_page_order,
                 search_routes=cfg.get("search_routes"),
                 accept_parsed=accept_parsed,
                 save_context_builder=save_context_builder,
@@ -1787,6 +2540,7 @@ def scrape_source(key: str, *, download_photos: bool = False,
                 max_pages, max_listings, download_photos, photo_client,
                 page_suffix=cfg.get("page_suffix", "?page={}"),
                 buckets=cfg.get("buckets"),
+                page_order=effective_page_order,
                 accept_parsed=accept_parsed,
                 save_context_builder=save_context_builder,
             )
@@ -1803,7 +2557,9 @@ def scrape_source(key: str, *, download_photos: bool = False,
 
     stats_dir = SCRAPED_ROOT / key
     stats_dir.mkdir(parents=True, exist_ok=True)
-    (stats_dir / "scrape_stats.json").write_text(json.dumps(asdict(stats), ensure_ascii=False, indent=2), encoding="utf-8")
+    (stats_dir / "scrape_stats.json").write_text(json.dumps(scrape_stats_to_dict(stats), ensure_ascii=False, indent=2), encoding="utf-8")
+
+    _append_scrape_metrics(stats)
 
     logger.info(
         "[%s] DONE in %.1fs — discovered=%d fetched=%d parsed=%d photos=%d/%d",
@@ -1855,7 +2611,7 @@ def main():
         "total_parsed": sum(s.listing_pages_parsed for s in all_stats),
         "total_photos_found": sum(s.photos_found for s in all_stats),
         "total_photos_downloaded": sum(s.photos_downloaded for s in all_stats),
-        "per_source": [asdict(s) for s in all_stats],
+        "per_source": [scrape_stats_to_dict(s) for s in all_stats],
     }
     (SCRAPED_ROOT / "scrape_summary.json").write_text(json.dumps(combined, ensure_ascii=False, indent=2), encoding="utf-8")
 

@@ -172,6 +172,17 @@ class TestAuthEndpointRegistration(unittest.TestCase):
         r = self.client.get("/users/me/dashboard")
         self.assertEqual(r.status_code, 401)
 
+    def test_liked_requires_bearer_token(self) -> None:
+        r = self.client.get("/users/me/liked")
+        self.assertEqual(r.status_code, 401)
+
+    def test_property_chats_require_bearer_token(self) -> None:
+        self.assertEqual(self.client.get("/users/me/property-chats").status_code, 401)
+        self.assertEqual(
+            self.client.post("/users/me/property-chats", json={"property_id": "prop_demo"}).status_code,
+            401,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

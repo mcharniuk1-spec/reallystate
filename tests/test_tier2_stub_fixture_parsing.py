@@ -56,6 +56,9 @@ class TestTier2StubFixtures(unittest.TestCase):
     def test_domaza_short_term_rent_fixture(self) -> None:
         self._run_case("Domaza", "domaza", "short_term_rent")
 
+    def test_domaza_development_page_fixture(self) -> None:
+        self._run_case("Domaza", "domaza", "development_page")
+
     def test_home2u_new_build_fixture(self) -> None:
         self._run_case("Home2U", "home2u", "new_build")
 

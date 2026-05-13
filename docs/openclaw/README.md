@@ -8,12 +8,35 @@ This folder documents how to run this repo using **OpenClaw** with:
 
 This pack is designed to preserve project guardrails in `AGENTS.md` and the execution queue in `docs/agents/TASKS.md`.
 
+### Why “memory” and tasks seem to disappear
+
+OpenClaw and the LLM do **not** automatically retain project state across sessions the way **git** does. Read **`docs/openclaw/memory-context-and-operational-failures.md`** (facts vs interpretations, workspace mistakes, timeouts vs forgetting).
+
+Before debugging “lost context”, run on the host:
+
+```bash
+make openclaw-preflight
+```
+
+That appends a snapshot to `data/runs/openclaw_preflight.log` (TASKS grep, JOURNEY tails, latest Telegram watcher log, scrape metrics). Use `FOCUS=tasks`, `FOCUS=telegram`, or `PROBE=1` to narrow output.
+
+### Reporter skill (5-minute Telegram cadence)
+
+Use **`agent-skills/reporter/SKILL.md`** for the **reporter** role: default **`ACTION1_TG_INTERVAL_SEC=300`** (5 minutes), file-backed RUNNING lines, no freestyle counts. Full consolidated instructions: **`docs/openclaw/reporter-agent-instructions.md`**.
+
 ### What to read first
 
 - `AGENTS.md` (guardrails and stop conditions)
 - `docs/agents/TASKS.md` (what to do next)
 - `docs/docker-and-database.md` (Docker/Postgres/MinIO/Temporal + media)
 - `docs/openclaw/gemma4-agent.md` (Gemma4 role, constraints, prompts)
+- `docs/openclaw/action1-multi-agent.md` (Action1: Gemma + Qwen + DeepSeek parallel roles, Telegram triad)
+- `docs/openclaw/ACTION1_AGENT_BOOTSTRAP.md` (**mandatory** context: repo path, seven `primary_url`s, four buckets — stops “missing URLs/patterns” hallucinations)
+- `docs/openclaw/scrape-taxonomy-a1-a12.md` (**Action1 = A1 keys**, **A12** Patterned non-A1, metrics, DB/file consistency)
+- `docs/openclaw/action1-running-report-template.md` (**mandatory** Action1 Telegram/OpenClaw progress layout — must mirror `scripts/action1_full_telegram_report.py --running-line`)
+- `docs/openclaw/memory-context-and-operational-failures.md` (why stats/tasks “vanish” — usually disk/workspace/timeout, not magic memory)
+- `agent-skills/reporter/SKILL.md` + `docs/openclaw/reporter-agent-instructions.md` (**reporter** role: 5-minute cadence, settings, logs)
+- `docs/openclaw/OLLAMA_MODEL_ESCALATION.md` (**Gemma first**, then Qwen for code, DeepSeek for deep logic)
 - `docs/exports/reporting-and-instruction-index.md` (current DOCX/reporting pack)
 - `docs/exports/taskforgema.md` (current Gemma4 scrape/image-description task)
 

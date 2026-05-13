@@ -1,6 +1,6 @@
 # Reporting And Instruction Index
 
-Updated: 2026-04-29
+Updated: 2026-05-13
 
 ## Repo-Owned DOCX Pack
 
@@ -25,6 +25,21 @@ Updated: 2026-04-29
 | `docs/exports/taskforgema.md` | Next Gemma4/OpenClaw scrape and image-description task. |
 | `docs/exports/property-quality-and-building-contract.md` | Property QA contract used by Codex, debugger, and Gemma4. |
 
+## Current Product/Data Reporting Sources
+
+| Artifact | Purpose |
+|---|---|
+| `docs/agents/SELF_DEVELOPMENT_ARCHITECTURE.md` | Current self-development agent architecture, review loop, and Plan B cadence. |
+| `docs/agents/AGENT_LOOP_AND_CADENCE.md` | Constant vs triggered agent cadence and review ring. |
+| `docs/operator/agent-team-operating-manual.md` | Human-readable operating manual for activating agents and reading outputs. |
+| `docs/runbooks/server-db-migration.md` | Server and PostgreSQL/PostGIS migration runbook for the next execution step. |
+| `docs/integrations/mcp-and-skills-setup.md` | Safe MCP setup and role-to-skill mapping. |
+| `docs/exports/strategic-code-manager-review-2026-04-29.md` | Strategic review covering BD-17, UX-14, SM-08, account/chat contracts, and next verification tasks. |
+| `docs/agents/scraper_sm/messenger-publication-entity-plan-2026-04-29.md` | Fixture-first plan for public Telegram and manual/consent-gated WhatsApp/Viber publication candidates. |
+| `migrations/versions/20260429_0004_user_property_state_chat.py` | Database migration for liked-property status history and user-property chat joins. |
+| `components/account/AccountCabinet.tsx` | `/settings` account cabinet surface for mode, liked properties, saved searches, and chat entry points. |
+| `components/chat/ChatWorkspace.tsx` | `/chat` workspace for global and selected-property chat through the backend proxy. |
+
 ## Active Four-Bucket Sources
 
 These sources are the current Gemma4/OpenClaw focus across buy residential, buy commercial, rent residential, and rent commercial:
@@ -37,12 +52,22 @@ These sources are the current Gemma4/OpenClaw focus across buy residential, buy 
 6. `property.bg`
 7. `SUPRIMMO`
 
+## Active Gemma/OpenClaw Tasks
+
+| Task | Action | Purpose | Primary input | Primary output |
+|---|---|---|---|---|
+| `S1-22A` | Action0 | Local-gallery image reports and property QA | `docs/exports/s1-21-gemma-action0-eligible.json` | `docs/exports/property-image-reports/` |
+| `S1-22B` | Action1 | Seven-source all-Bulgaria scrape/backfill across four buckets | `docs/exports/taskforgema.md` + source patterns | refreshed `data/scraped/`, `data/media/`, dashboards |
+| `S1-22C` | Action2 | Remaining legal tier-1/2 expansion after QA | `data/source_registry.json` | refreshed source metrics, patterns, dashboards |
+
 ## Reporting Rules
 
 1. DOCX files must be regenerated from repo artifacts before handoff or push.
 2. Do not claim a property is visually complete unless local image files exist and photo counts match the listing JSON.
-3. Gemma4/OpenClaw must run Action0 before Action1 unless the operator explicitly skips existing-gallery enrichment.
+3. Gemma4/OpenClaw must run Action1 first after operator `Action1 ACCEPT`; Action0 runs only after operator `Action0 now`, and Action2 only after operator `Action2 now` plus Action1 QA.
 4. Each property report must include source links, scraped description, one ordered description per image, one whole-property visual summary, price, size, category, address/city, same-location status, and quality flags.
 5. Same-location aggregation is based on useful address text plus city/district; city-only or district-only placeholders must not create aggregate groups.
 6. Dashboard JSON/HTML and markdown reports must be refreshed with `make dashboard-doc` after scrape or pattern changes.
 7. Live scraping remains operator-approved and constrained by `data/source_registry.json`.
+8. User-property state changes must be saved as status events; do not delete liked-property rows to represent unlike.
+9. Messenger/social publication candidates must remain source publications first and must not use private WhatsApp, Viber, Telegram, or Facebook access without explicit authorization and consent.

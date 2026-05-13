@@ -10,21 +10,20 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 REPO = Path(__file__).resolve().parent.parent
 
-import sys
-
 sys.path.insert(0, str(REPO / "src"))
 
-from bgrealestate.connectors.ingest import persist_listing_bundle
-from bgrealestate.db.session import create_db_engine
-from bgrealestate.enums import ListingIntent, PropertyCategory
-from bgrealestate.models import CanonicalListing, ParsedListing, RawCapture
-from bgrealestate.source_registry import SourceRegistry
+from bgrealestate.connectors.ingest import persist_listing_bundle  # noqa: E402
+from bgrealestate.db.session import create_db_engine  # noqa: E402
+from bgrealestate.enums import ListingIntent, PropertyCategory  # noqa: E402
+from bgrealestate.models import CanonicalListing, ParsedListing, RawCapture  # noqa: E402
+from bgrealestate.source_registry import SourceRegistry  # noqa: E402
 
 SCRAPED_ROOT = REPO / "data" / "scraped"
 REGISTRY_PATH = REPO / "data" / "source_registry.json"
@@ -224,12 +223,34 @@ def _iter_listing_files(root: Path, source_filter: str | None) -> list[Path]:
     return listing_files
 
 
+def _skip_reason(
+    listing: dict[str, Any],
+    *,
+    include_lost: bool,
+    include_grouped: bool,
+    include_inactive: bool,
+) -> str | None:
+    if not include_lost and (listing.get("scrape_status") == "LOST" or listing.get("needs_rescrape") is True):
+        return "lost_rescrape_required"
+    if not include_grouped and (
+        listing.get("source_publication_type") == "multi_unit_or_development"
+        or listing.get("scrape_acceptance_status") == "not_single_entity"
+    ):
+        return "grouped_publication_not_single_entity"
+    if not include_inactive and str(listing.get("listing_status") or "").lower() in {"inactive", "removed", "expired"}:
+        return "inactive_source_listing"
+    return None
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Import data/scraped listings into the DB pipeline.")
     parser.add_argument("--source", help="Limit to one scraped source dir (e.g. bazar_bg, yavlena).")
     parser.add_argument("--limit", type=int, default=0, help="Max listings to import (0 = no limit).")
     parser.add_argument("--dry-run", action="store_true", help="Only count and print candidate imports.")
     parser.add_argument("--download-images", action="store_true", help="Download images during import.")
+    parser.add_argument("--include-lost", action="store_true", help="Import QA-quarantined LOST rows.")
+    parser.add_argument("--include-grouped", action="store_true", help="Import grouped/development publications.")
+    parser.add_argument("--include-inactive", action="store_true", help="Import inactive/removed/expired source listings.")
     args = parser.parse_args()
 
     registry = SourceRegistry.from_file(REGISTRY_PATH)
@@ -239,13 +260,26 @@ def main() -> int:
 
     if args.dry_run:
         counts: dict[str, int] = {}
+        skipped: dict[str, int] = {}
         for listing_file in listing_files:
             data = json.loads(listing_file.read_text(encoding="utf-8"))
+            reason = _skip_reason(
+                data,
+                include_lost=args.include_lost,
+                include_grouped=args.include_grouped,
+                include_inactive=args.include_inactive,
+            )
+            if reason:
+                skipped[reason] = skipped.get(reason, 0) + 1
+                continue
             src = str(data.get("source_name") or listing_file.parent.parent.name)
             counts[src] = counts.get(src, 0) + 1
-        print(f"candidate_files={len(listing_files)}")
+        print(f"candidate_files={sum(counts.values())}")
+        print(f"skipped_files={sum(skipped.values())}")
         for source_name, count in sorted(counts.items()):
             print(f"{source_name}: {count}")
+        for reason, count in sorted(skipped.items()):
+            print(f"skipped {reason}: {count}")
         return 0
 
     engine = create_db_engine()
@@ -254,6 +288,14 @@ def main() -> int:
 
     for idx, listing_file in enumerate(listing_files, start=1):
         listing = json.loads(listing_file.read_text(encoding="utf-8"))
+        reason = _skip_reason(
+            listing,
+            include_lost=args.include_lost,
+            include_grouped=args.include_grouped,
+            include_inactive=args.include_inactive,
+        )
+        if reason:
+            continue
         source_name = str(listing.get("source_name") or "").strip()
         source = registry.by_name(source_name)
         if source is None:

@@ -236,6 +236,23 @@ def count_saved_source_items(source_key: str, *, require_full_gallery: bool = Tr
     return count
 
 
+def resolve_explicit_source_keys(source_labels: list[str]) -> list[str]:
+    """Map CLI names (``address_bg``, ``Homes.bg``, etc.) to ``live_scraper.SOURCE_CONFIGS`` keys.
+
+    Used by Action1 and operator overrides so **explicit --sources always runs those portals**
+    even when ``tier12-pattern-status.json`` marks them non-Patterned.
+    """
+    wanted = {s.strip().lower() for s in source_labels if s.strip()}
+    if not wanted:
+        return []
+    matched: list[str] = []
+    for key, cfg in SOURCE_CONFIGS.items():
+        name = (cfg.get("name") or "").strip().lower()
+        if key.lower() in wanted or name in wanted:
+            matched.append(key)
+    return sorted(set(matched))
+
+
 def patterned_source_keys(*, patterned_only: bool = True) -> list[str]:
     if not patterned_only or not PATTERN_STATUS_PATH.exists():
         return sorted(SOURCE_CONFIGS)
@@ -314,6 +331,9 @@ def make_save_context_builder(section: VarnaSection) -> Callable[[dict[str, Any]
 
 
 def _listings_goal(current_count: int, target_per_section: int) -> int:
+    if target_per_section <= 0:
+        # Uncapped harvest: large per-wave batch until the runner stalls (no threshold exit).
+        return 250_000
     remaining = max(0, target_per_section - current_count)
     if remaining <= 0:
         return 0
@@ -415,13 +435,14 @@ def run_source_sections(
     max_waves: int,
 ) -> dict[str, Any]:
     sections = sorted(sections, key=lambda item: item.section_id)
+    sections_out: list[dict[str, Any]] = []
     out = {
         "source_key": source_key,
         "source_name": sections[0].source_name if sections else source_key,
-        "sections": [],
+        "sections": sections_out,
     }
     for section in sections:
-        out["sections"].append(
+        sections_out.append(
             run_section_scrape(
                 section,
                 max_pages=max_pages,
@@ -528,10 +549,14 @@ def run_source_full_scrape(
         "before_count": before,
         "target_per_source": target_per_source,
         "planned_max_listings": _listings_goal(before, target_per_source),
-        "status": "skipped_threshold_reached" if before >= target_per_source else "planned",
+        "status": (
+            "skipped_threshold_reached"
+            if target_per_source > 0 and before >= target_per_source
+            else "planned"
+        ),
         "waves": [],
     }
-    if before >= target_per_source or dry_run:
+    if (target_per_source > 0 and before >= target_per_source) or dry_run:
         return result
 
     after = before
@@ -549,6 +574,7 @@ def run_source_full_scrape(
             download_photos=download_photos,
             max_pages=wave_pages,
             max_listings=goal,
+            page_order=str(__import__("os").environ.get("SCRAPER_PAGE_ORDER", "newest_first")),
         )
         after = count_saved_source_items(source_key, require_full_gallery=require_full_gallery)
         result["waves"].append(
@@ -571,7 +597,7 @@ def run_source_full_scrape(
                 },
             }
         )
-        if after >= target_per_source:
+        if target_per_source > 0 and after >= target_per_source:
             status = "threshold_reached"
             break
         if after <= current:
@@ -603,14 +629,18 @@ def run_parallel_all_scrape(
     max_waves: int = 3,
     refresh_dashboard: bool = False,
 ) -> dict[str, Any]:
-    source_keys = patterned_source_keys(patterned_only=patterned_only)
+    # Explicit source list (e.g. Action1 seven portals) overrides patterned-only filtering so
+    # scrape-all-full never silently drops "Homes.bg" style names due to pattern-status drift.
     if sources:
-        wanted = {item.strip().lower() for item in sources if item.strip()}
-        source_keys = [
-            key
-            for key in source_keys
-            if key.lower() in wanted or SOURCE_CONFIGS[key]["name"].lower() in wanted
-        ]
+        explicit = resolve_explicit_source_keys(list(sources))
+        if not explicit:
+            raise ValueError(
+                f"No live_scraper source keys matched --sources={sources!r}. "
+                f"Valid keys: {', '.join(sorted(SOURCE_CONFIGS))}"
+            )
+        source_keys = explicit
+    else:
+        source_keys = patterned_source_keys(patterned_only=patterned_only)
 
     results: list[dict[str, Any]] = []
     with ThreadPoolExecutor(max_workers=max(1, parallel_sources)) as executor:
@@ -634,6 +664,7 @@ def run_parallel_all_scrape(
     payload = {
         "generated_at": datetime.now(tz=timezone.utc).isoformat(),
         "geo_scope": "all_bulgaria",
+        "explicit_sources_override": bool(sources),
         "target_per_source": target_per_source,
         "max_pages": max_pages,
         "download_photos": download_photos,
@@ -662,4 +693,5 @@ __all__ = [
     "is_varna_listing",
     "is_section_item_complete",
     "refresh_dashboard_artifacts",
+    "resolve_explicit_source_keys",
 ]

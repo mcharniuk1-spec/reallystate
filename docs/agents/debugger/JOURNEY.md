@@ -260,9 +260,175 @@
 - **Failure details**: no verifier failure is implied; current analysis found no completed apartment image-description report output.
 - **Review comments**: verify `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`; verify the next Codex run produces per-source/per-property gaps; verify parser fixes are code-backed and fixture-tested; verify Gemma receives only Codex-confirmed apartment rows with complete local galleries.
 
-### 2026-04-29 — debugger follow-up queued: S1-21 audit + same-location grouping + Gemma sequence
+### 2026-04-29 — debugger follow-up queued: BD-17 / UX-14 / SM-08 setup
 
-- **Gate commands run**: deferred formal verification until the updated S1-21 artifacts, frontend grouping behavior, and dashboard refresh are reviewed together.
-- **Result**: DEFERRED
-- **Failure details**: no verifier failure is implied; Action1 live scrape/backfill was not run in this offline audit pass.
-- **Review comments**: verify `docs/exports/s1-21-tier12-quality-audit-2026-04-29.md`, `docs/exports/s1-21-gemma-action0-eligible.json`, same-location aggregate behavior in the website, and the updated Action0/Action1/Action2 Gemma task sequence.
+- **Gate commands run**:
+  - `python3 -m py_compile ...`
+  - `npm run typecheck`
+  - `PYTHONPATH=src python3 -m unittest tests.test_chat_service tests.test_user_auth tests.test_api_fastapi -v`
+- **Result**: DEFERRED pending full debugger sweep; focused gates passed locally.
+- **Failure details**: no verification failure is implied.
+- **Review comments**:
+  - Verify Alembic migration `20260429_0004` on PostgreSQL.
+  - Verify `/users/me/liked` and `/users/me/property-chats` with real Bearer JWT once a DB is available.
+  - Verify `/chat` and global chat via local FastAPI + Ollama `gemma4:26b` if the model exists locally.
+
+### 2026-04-29 — debugger follow-up queued: fixture-only test hardening
+
+- **Gate commands run**:
+  - `make test`
+  - `rg -n "static4\\.superimoti|download_photos|download_image|live_scraper|scrape_all_full" tests scripts/live_scraper.py`
+- **Result**: DEFERRED; `make test` passes but has side effects.
+- **Failure details**:
+  - FACT: `make test` passed, but emitted external HTTP/image-download log lines and modified `data/scraper.log`.
+  - INTERPRETATION: the suite is not fully side-effect free even though the project guardrail says crawler tests must use fixtures.
+- **Review comments**: queued `DBG-10` to isolate live-scraper/media logging and external HTTP from the default test suite.
+
+### 2026-04-29 — docs/dashboard reconciliation after account-chat work
+
+- **Gate commands run**:
+  - `rg -n "BD-17|UX-14|SM-08|DBG-10|Ollama|gemma4|property chat|liked|saved_property_status_event|user_property_chat" README.md docs app components src tests`
+  - `make dashboard-doc`
+- **Result**: PASS for documentation reconciliation; runtime verification still follows `DBG-10` and BD-17/UX-14 acceptance gates.
+- **Review comments**:
+  - Updated README, development setup, reporting index, and status roadmap so account/chat and messenger planning are no longer only present in code/task logs.
+  - Dashboard refresh is derived from current repo state; raw Action1 scrape outputs were not edited by this reconciliation pass.
+
+### 2026-04-30 — VERIFY: tier-pattern audit artifacts + alo.bg rent/land + Domaza development-page classification (agent: codex/run evidence)
+
+- **Gate commands run**:
+  - `python3 -m py_compile scripts/generate_all_tier_pattern_audit.py`
+  - `python3 scripts/generate_all_tier_pattern_audit.py`
+  - `make lint`
+  - `make typecheck`
+  - `make test`
+  - `make validate`
+  - `make dashboard-doc`
+- **Result**: PASS
+- **Review comments**:
+  - Confirmed the tier-pattern audit generator is runnable and the export suite regenerates cleanly.
+  - Added fixture-backed proof for `alo.bg` long-term rent and land parsing (without touching live runtime concurrency).
+  - Added a Domaza development/building aggregate fixture and a minimal classifier heuristic so these pages are treated as `PropertyCategory.PROJECT` (prevents accidental single-unit promotion).
+
+### 2026-04-30 — DEBUGGER: Action1 seven-source scrape quality detective repair
+
+- **Gate commands run**:
+  - `python3 -m py_compile scripts/live_scraper.py scripts/reparse_action1_from_raw.py scripts/generate_s1_21_quality_audit.py tests/test_action1_parser_regressions.py`
+  - `python3 -m unittest tests.test_action1_parser_regressions -v`
+  - `python3 scripts/reparse_action1_from_raw.py --dry-run --limit 10 --output docs/exports/action1-offline-reparse-summary-dryrun.json`
+  - `python3 scripts/reparse_action1_from_raw.py --output docs/exports/action1-offline-reparse-summary.json`
+  - `python3 scripts/generate_s1_21_quality_audit.py`
+  - `python3 scripts/generate_frontend_scraped_listings.py`
+  - `python3 scripts/backfill_scraped_media.py --source <Action1 source> --dry-run --output docs/exports/action1-*-media-backfill-dryrun.json`
+  - `make dashboard-doc`
+- **Result**: PASS for parser-pattern repair and offline file-backed corpus reparse; DB geospatial gate BLOCKED by unavailable PostgreSQL/Docker runtime.
+- **Findings**:
+  - FACT: Address.bg raw pages expose full `/storage/uploads/offers/.../1000x666/` galleries; previous parser retained one OG/teaser image for many rows.
+  - FACT: BulgarianProperties had full descriptions in JSON-LD/body text; previous saved rows kept short meta/list snippets.
+  - FACT: Homes.bg area parsing converted title text like `165m²` to `0.165`; parser now requires sqm-specific extraction.
+  - FACT: SUPRIMMO/property-family parser could select complex/project land totals as unit area; parser now prefers unit labels such as `РЗП`, `ЗП`, `Обща площ`.
+  - FACT: file-backed Action1 JSON audit found 0 outside-Bulgaria coordinates after repair; PostgreSQL canonical/source tables could not be checked because the DB was down.
+- **Offline reparse summary**:
+  - `address_bg`: 4718 scanned, 4530 updated
+  - `bulgarianproperties`: 1616 scanned, 1616 updated
+  - `homes_bg`: 132 scanned, 132 updated
+  - `imot_bg`: 8298 scanned, 2005 updated
+  - `luximmo`: 1732 scanned, 540 updated
+  - `property_bg`: 297 scanned, 25 updated
+  - `suprimmo`: 297 scanned, 72 updated
+- **Remaining media gaps from dry-run**:
+  - `Address.bg`: 31078 missing local image downloads after gallery URL repair
+  - `BulgarianProperties`: 5027 missing local image downloads
+  - `Homes.bg`: 396 missing local image downloads
+  - `imot.bg`: 2115 missing local image downloads
+  - `LUXIMMO`: 2 missing local image downloads
+  - `property.bg` / `SUPRIMMO`: 0 missing local image downloads in dry-run
+- **Artifacts**:
+  - `docs/exports/action1-quality-debug-report-2026-04-30.md`
+  - `docs/exports/action1-offline-reparse-summary.json`
+  - `docs/exports/s1-21-tier12-quality-audit-2026-04-29.{json,md}`
+  - `docs/exports/action1-*-media-backfill-dryrun.json`
+  - `docs/dashboard/scrape-status.html`
+  - `sql/helpers/03_action1_quality_gate.sql`
+- **Risks / blockers**:
+  - OpenClaw Action1 processes were still running, so file-backed counts are moving while this debugger pass runs.
+  - Full local image download was not executed in this debugger pass; running it for repaired Address.bg/BulgarianProperties would download tens of thousands of files.
+  - PostgreSQL and Docker were unavailable locally, blocking direct DB inconsistency checks.
+
+### 2026-05-01 — DEBUGGER: Action1 dataset quarantine and source-identity hardening
+
+- **Gate commands run**:
+  - `python3 scripts/action1_dataset_quality_gate.py --apply --check-urls --url-check-limit 210 --url-check-per-source 30 --url-timeout 8 --output docs/exports/action1-dataset-quality-gate.json`
+  - `python3 -m py_compile scripts/action1_dataset_quality_gate.py scripts/live_scraper.py scripts/generate_frontend_scraped_listings.py scripts/import_scraped_listings.py scripts/generate_s1_21_quality_audit.py scripts/generate_source_item_photo_coverage.py scripts/generate_scrape_status_dashboard.py`
+  - `python3 scripts/generate_source_item_photo_coverage.py`
+  - `python3 scripts/generate_s1_21_quality_audit.py`
+  - `python3 scripts/generate_frontend_scraped_listings.py`
+  - `python3 scripts/import_scraped_listings.py --dry-run`
+  - `python3 scripts/generate_scrape_status_dashboard.py`
+- **Result**: PASS for file-backed quarantine, import/frontend protection, and dashboard/report regeneration; DB live verification remains blocked until PostgreSQL is available.
+- **Findings**:
+  - FACT: 7734 Action1 rows are now `LOST` and queued for rescrape; they are not considered properly scraped.
+  - FACT: 1039 Action1 rows are classified as grouped/development source publications, not single sellable/rentable entities.
+  - FACT: bounded live URL checks covered 180 suspect rows across six sources; 176 existed, 2 returned 404, 1 had inactive/removed marker, and 1 was network-error/unknown.
+  - FACT: public/frontend scraped export contains 10700 rows after excluding `LOST` and grouped publications; verification found 0 LOST and 0 grouped rows in that output.
+  - FACT: default DB import dry-run now skips 7734 `lost_rescrape_required` rows and 725 `grouped_publication_not_single_entity` rows.
+- **Source QA summary**:
+  - `Address.bg`: 5203 saved, 0 accepted single candidates, 5203 LOST, 0 grouped.
+  - `BulgarianProperties`: 1616 saved, 4 accepted single candidates, 1612 LOST, 279 grouped.
+  - `Homes.bg`: 132 saved, 63 accepted single candidates, 67 LOST, 10 grouped.
+  - `imot.bg`: 8534 saved, 7561 accepted single candidates, 383 LOST, 603 grouped.
+  - `LUXIMMO`: 2143 saved, 1619 accepted single candidates, 430 LOST, 105 grouped.
+  - `property.bg`: 297 saved, 297 accepted single candidates, 0 LOST, 0 grouped.
+  - `SUPRIMMO`: 297 saved, 219 accepted single candidates, 39 LOST, 42 grouped.
+- **Artifacts**:
+  - `docs/exports/action1-dataset-quality-gate.{json,md}`
+  - `docs/exports/action1-lost-rescrape-queue.{json,csv}`
+  - `docs/exports/action1-multi-unit-publications.json`
+  - `docs/exports/action1-source-identification-methods-2026-05-01.md`
+  - `docs/exports/source-item-photo-coverage.json`
+  - `docs/dashboard/scrape-status.html`
+- **Risks / blockers**:
+  - Address.bg and BulgarianProperties are heavily quarantined because full local gallery evidence is incomplete; this is deliberate under the operator full-gallery rule.
+  - The file corpus may keep moving while OpenClaw runs; rerun the quality gate after the next scrape session.
+  - PostgreSQL/Docker verification was not available in this environment, so canonical DB rows were protected via importer defaults but not directly audited.
+
+### 2026-05-04 — DEBUGGER: A1 pattern-depth and OpenClaw continuation hardening
+
+- **Gate commands run**:
+  - `python3 -m py_compile scripts/action1_dataset_quality_gate.py scripts/live_scraper.py scripts/generate_tier12_pattern_status.py scripts/generate_frontend_scraped_listings.py scripts/import_scraped_listings.py tests/test_action1_parser_regressions.py`
+  - `python3 -m unittest tests.test_action1_parser_regressions -v`
+  - `python3 scripts/action1_dataset_quality_gate.py --limit-per-source 20 --output docs/exports/action1-dataset-quality-gate-dryrun.json`
+  - `python3 scripts/import_scraped_listings.py --dry-run --source property_bg`
+  - `python3 scripts/import_scraped_listings.py --dry-run --limit 500`
+- **Result**: PASS for parser/QA-code hardening and bounded OpenClaw smoke gates.
+- **Findings**:
+  - FACT: discovery route context was not consistently persisted as a conservative operation/property hint for all A1 rows.
+  - FACT: pattern-status sample selection could still choose bad evidence unless it explicitly excluded `LOST`, grouped/development, and inactive rows.
+  - FACT: import/frontend defaults already blocked `LOST` and grouped rows; this pass also blocks inactive/removed/expired rows by default.
+- **Code updates**:
+  - `scripts/live_scraper.py`: added bucket-context application, immediate source-publication status, Address.bg labeled buckets, imot.bg sale/rent route labels.
+  - `scripts/action1_dataset_quality_gate.py`: honors persisted grouped status, flags inactive source rows, requires area for land, adds `--limit-per-source`.
+  - `scripts/generate_tier12_pattern_status.py`: pattern proof now excludes quarantined/grouped/inactive samples.
+  - `scripts/import_scraped_listings.py` and `scripts/generate_frontend_scraped_listings.py`: default output excludes inactive/removed/expired rows.
+  - `tests/test_action1_parser_regressions.py`: added route-context and grouped/inactive QA regression tests.
+- **Artifacts**:
+  - `docs/exports/a1-pattern-depth-reliability-review-2026-05-04.md`
+- **Risks / blockers**:
+  - Full-corpus local scans were slow in this workspace and were manually stopped; bounded smoke gate exists for OpenClaw/debugger checks, but full QA should still run after large batches.
+  - DB-backed verification still depends on restored PostgreSQL/Docker runtime.
+## 2026-05-05 — queued verification for agent reset and OpenClaw S&M rules
+
+- **Action**: Planner queued debugger verification for the 2026-05-05 agent reset, OpenClaw Action1 continuation rules, reporter wording, and S&M tier-3/tier-4 boundaries.
+- **Changed files to verify**:
+  - `docs/agents/TASKS.md`
+  - `docs/agents/README.md`
+  - `docs/openclaw/ACTION1_AGENT_BOOTSTRAP.md`
+  - `docs/openclaw/OPENCLAW_S_AND_M_AGENT.md`
+  - `agent-skills/openclaw-ollama-gemma4/SKILL.md`
+  - `agent-skills/reporter/SKILL.md`
+  - `docs/openclaw/reporter-agent-instructions.md`
+  - `docs/openclaw/action1-multi-agent.md`
+- **Commands run**: none yet.
+- **Tests run**: pending.
+- **Status**: TODO verifier follow-up.
+- **Review comments**: Verify no task file still assigns new tier-3 work to `scraper_t3`, no OpenClaw doc widens Action1 beyond A1, and completion requires data_analyst/debugger QA.

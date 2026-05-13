@@ -22,9 +22,21 @@ OUTPUT_MD = EXPORTS / "tier12-pattern-status.md"
 
 
 PATTERN_METHODS = {
+    "alo.bg": {
+        "code_paths": ["scripts/live_scraper.py::generic", "scripts/live_scraper.py::_parse_alo_bg"],
+        "method": "Varna-filtered category pages + `alo.bg` detail parser for params table, meta/body description, local gallery images, and source attributes.",
+    },
+    "Domaza": {
+        "code_paths": ["scripts/live_scraper.py::generic", "scripts/live_scraper.py::_parse_domaza"],
+        "method": "Varna sale/rent listing pages + Domaza detail parser for property content, features, rooms/area/price, and full `cdn.domaza.biz` gallery.",
+    },
     "Homes.bg": {
         "code_paths": ["scripts/live_scraper.py::_scrape_homes_bg", "scripts/live_scraper.py::parse_homes_detail"],
         "method": "Homes JSON discovery API + detail-page `__PRELOADED_STATE__` extraction with full gallery download.",
+    },
+    "Home2U": {
+        "code_paths": ["scripts/live_scraper.py::generic", "scripts/live_scraper.py::_parse_home2u"],
+        "method": "Home2U property archive pages + detail parser for secondary info blocks, gallery images, source description status, and local media proof.",
     },
     "imot.bg": {
         "code_paths": ["scripts/live_scraper.py::_scrape_imot_bg", "scripts/live_scraper.py::parse_imot_detail"],
@@ -63,6 +75,7 @@ class SampleEvidence:
     local_image_files_preview: list[str]
     structured_fields_count: int
     source_attributes_count: int
+    source_description_status: str
 
 
 def load_json(path: Path) -> dict:
@@ -103,6 +116,8 @@ def build_source_key_map() -> dict[str, str]:
 
 def sample_score(payload: dict[str, Any], local_photo_count: int, listing_path: Path) -> tuple[int, ...]:
     remote = len(payload.get("image_urls") or [])
+    source_attributes = payload.get("source_attributes") or {}
+    description_proven = bool(payload.get("description")) or source_attributes.get("description_status") == "absent_on_detail_page"
     structured_fields = sum(
         1 for key in ("area_sqm", "rooms", "floor")
         if payload.get(key) is not None
@@ -110,7 +125,7 @@ def sample_score(payload: dict[str, Any], local_photo_count: int, listing_path: 
     return (
         1 if remote and local_photo_count >= remote else 0,
         1 if local_photo_count > 0 else 0,
-        1 if payload.get("description") else 0,
+        1 if description_proven else 0,
         1 if payload.get("price") is not None else 0,
         1 if payload.get("address_text") else 0,
         1 if payload.get("city") else 0,
@@ -124,6 +139,19 @@ def sample_score(payload: dict[str, Any], local_photo_count: int, listing_path: 
         remote,
         listing_path.stat().st_mtime,
     )
+
+
+def qa_eligible_sample(payload: dict[str, Any]) -> bool:
+    """Pattern proof must not be built from quarantined or grouped publications."""
+    if payload.get("scrape_status") == "LOST" or payload.get("needs_rescrape") is True:
+        return False
+    if payload.get("source_publication_type") == "multi_unit_or_development":
+        return False
+    if payload.get("scrape_acceptance_status") == "not_single_entity":
+        return False
+    if str(payload.get("listing_status") or "").lower() in {"inactive", "removed", "expired"}:
+        return False
+    return True
 
 
 def find_best_sample(source_key: str, source_name: str) -> SampleEvidence | None:
@@ -140,9 +168,14 @@ def find_best_sample(source_key: str, source_name: str) -> SampleEvidence | None
             continue
         if (payload.get("source_name") or source_name) != source_name:
             continue
+        if not qa_eligible_sample(payload):
+            continue
         listing_url = str(payload.get("listing_url") or "").lower()
         title = str(payload.get("title") or "").lower()
+        source_attributes = payload.get("source_attributes") or {}
         if any(skip in listing_url for skip in ("zhilishten-kompleks", "zhilishtna-sgrada")):
+            continue
+        if source_name == "Home2U" and "/property/" not in listing_url:
             continue
         if any(skip in title for skip in ("жилищен комплекс", "жилищна сграда")):
             continue
@@ -170,7 +203,7 @@ def find_best_sample(source_key: str, source_name: str) -> SampleEvidence | None
             local_photo_count=local_photo_count,
             local_photo_coverage_pct=coverage,
             has_full_gallery=remote_photo_count > 0 and local_photo_count >= remote_photo_count,
-            has_description=bool(payload.get("description")),
+            has_description=bool(payload.get("description")) or source_attributes.get("description_status") == "absent_on_detail_page",
             has_price=payload.get("price") is not None,
             has_area=payload.get("area_sqm") is not None,
             has_rooms=payload.get("rooms") is not None,
@@ -183,7 +216,8 @@ def find_best_sample(source_key: str, source_name: str) -> SampleEvidence | None
             local_image_files_count=len(local_image_files),
             local_image_files_preview=local_image_files[:5],
             structured_fields_count=structured_fields_count,
-            source_attributes_count=len(payload.get("source_attributes") or {}),
+            source_attributes_count=len(source_attributes),
+            source_description_status=str(source_attributes.get("description_status") or ("captured" if payload.get("description") else "missing")),
         )
         score = sample_score(payload, local_photo_count, listing_path)
         if best is None or score > best[0]:
@@ -193,12 +227,11 @@ def find_best_sample(source_key: str, source_name: str) -> SampleEvidence | None
 
 def pattern_status_for(row: dict, sample: SampleEvidence | None, scrape_row: dict) -> tuple[str, str]:
     legal_mode = row.get("legal_mode")
-    saved = scrape_row.get("saved_listings", 0)
     if legal_mode == "licensing_required":
         return "without_authorized_pattern", "Source is licensing-gated; no public scraping pattern should be marked complete."
     if legal_mode == "legal_review_required":
         return "without_authorized_pattern", "Source needs legal review before a live pattern can be promoted."
-    if saved <= 0 or not sample:
+    if not sample:
         return "without_sample_product_capture", "No saved full product sample exists yet for this source."
     if not sample.has_local_image_files:
         return "without_local_image_files", "Images are not yet persisted as local files for the best saved sample."
@@ -206,11 +239,15 @@ def pattern_status_for(row: dict, sample: SampleEvidence | None, scrape_row: dic
         return "without_full_gallery_capture", "Detail capture works, but the saved sample does not yet prove full gallery completeness."
     if not sample.has_description:
         return "without_full_item_capture", "A saved sample exists, but it still misses the main description/body text."
+    if sample.source_description_status == "absent_on_detail_page":
+        description_note = " Detail page exposes no description body for the selected sample; absence is saved as source evidence."
+    else:
+        description_note = ""
     if not sample.has_price or not (sample.has_city or sample.has_address):
         return "without_core_fields_capture", "The saved sample still misses core commercial or location fields such as price and address/city."
     if sample.structured_fields_count < 2:
         return "without_structured_fields_capture", "The saved sample still misses too many structured fields from the detail page (area, rooms, floor, phones)."
-    return "Patterned", "Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields."
+    return "Patterned", "Code pattern exists and the best saved sample proves full local image-file capture plus core and structured detail-page fields." + description_note
 
 
 def count_status_for(website_total: dict) -> str:
@@ -339,6 +376,7 @@ def render_md(rows: list[dict]) -> str:
                 f"- Local image files saved: {sample['local_image_files_count']}",
                 f"- Local image file preview: {', '.join(sample['local_image_files_preview']) if sample['local_image_files_preview'] else 'none'}",
                 f"- Sample completeness: description={sample['has_description']}, price={sample['has_price']}, area={sample['has_area']}, rooms={sample['has_rooms']}, floor={sample['has_floor']}, phones={sample['has_phones']}, city={sample['has_city']}, address={sample['has_address']}",
+                f"- Source description status: {sample['source_description_status']}",
                 f"- Structured fields count: {sample['structured_fields_count']}",
                 f"- Source attributes count: {sample['source_attributes_count']}",
             ])

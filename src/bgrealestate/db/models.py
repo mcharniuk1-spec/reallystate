@@ -168,6 +168,7 @@ class CanonicalListingModel(Base):
     rooms: Mapped[float | None] = mapped_column(Float)
     price: Mapped[float | None] = mapped_column(Numeric)
     currency: Mapped[str | None] = mapped_column(Text)
+    title: Mapped[str | None] = mapped_column(Text)
     description: Mapped[str | None] = mapped_column(Text)
     image_urls: Mapped[list[str]] = mapped_column(JSONB, nullable=False, default=list)
     first_seen: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
@@ -198,9 +199,13 @@ class PropertyEntityModel(Base):
     entity_type: Mapped[str] = mapped_column(Text, nullable=False, default="unknown")
     canonical_title: Mapped[str | None] = mapped_column(Text)
     canonical_description: Mapped[str | None] = mapped_column(Text)
+    canonical_url: Mapped[str | None] = mapped_column(Text)
     canonical_address: Mapped[str | None] = mapped_column(Text)
     canonical_city: Mapped[str | None] = mapped_column(Text)
     canonical_building_name: Mapped[str | None] = mapped_column(Text)
+    source_links: Mapped[list[dict[str, Any]]] = mapped_column(JSONB, nullable=False, default=list)
+    merged_image_urls: Mapped[list[str]] = mapped_column(JSONB, nullable=False, default=list)
+    description_summary: Mapped[str | None] = mapped_column(Text)
     latitude: Mapped[float | None] = mapped_column(Float)
     longitude: Mapped[float | None] = mapped_column(Float)
     geom: Mapped[Any | None] = mapped_column(Geometry("Point", 4326))
@@ -301,7 +306,24 @@ class SavedPropertyModel(Base):
     user_id: Mapped[str] = mapped_column(ForeignKey("app_user.user_id"), nullable=False)
     property_id: Mapped[str] = mapped_column(ForeignKey("property_entity.property_id"), nullable=False)
     listing_reference_id: Mapped[str | None] = mapped_column(ForeignKey("canonical_listing.reference_id"))
+    status: Mapped[str] = mapped_column(Text, nullable=False, default="liked")
     notes: Mapped[str | None] = mapped_column(Text)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class SavedPropertyStatusEventModel(Base):
+    __tablename__ = "saved_property_status_event"
+
+    event_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    saved_id: Mapped[str] = mapped_column(ForeignKey("saved_property.saved_id"), nullable=False)
+    user_id: Mapped[str] = mapped_column(ForeignKey("app_user.user_id"), nullable=False)
+    property_id: Mapped[str] = mapped_column(ForeignKey("property_entity.property_id"), nullable=False)
+    actor_user_id: Mapped[str | None] = mapped_column(ForeignKey("app_user.user_id"))
+    action: Mapped[str] = mapped_column(Text, nullable=False)
+    from_status: Mapped[str | None] = mapped_column(Text)
+    to_status: Mapped[str] = mapped_column(Text, nullable=False)
+    details_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
 
 
@@ -333,6 +355,32 @@ class LeadThreadModel(Base):
     last_message_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     follow_up_due_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+
+
+class LeadThreadPropertyLinkModel(Base):
+    __tablename__ = "lead_thread_property_link"
+
+    link_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    thread_id: Mapped[str] = mapped_column(ForeignKey("lead_thread.thread_id"), nullable=False)
+    property_id: Mapped[str | None] = mapped_column(ForeignKey("property_entity.property_id"))
+    source_listing_id: Mapped[str | None] = mapped_column(ForeignKey("source_listing.source_listing_id"))
+    offer_id: Mapped[str | None] = mapped_column(ForeignKey("property_offer.offer_id"))
+    relationship_type: Mapped[str] = mapped_column(Text, nullable=False)
+
+
+class UserPropertyChatModel(Base):
+    __tablename__ = "user_property_chat"
+    __table_args__ = (UniqueConstraint("user_id", "property_id"),)
+
+    chat_id: Mapped[str] = mapped_column(Text, primary_key=True)
+    user_id: Mapped[str] = mapped_column(ForeignKey("app_user.user_id"), nullable=False)
+    property_id: Mapped[str] = mapped_column(ForeignKey("property_entity.property_id"), nullable=False)
+    thread_id: Mapped[str] = mapped_column(ForeignKey("lead_thread.thread_id"), nullable=False)
+    status: Mapped[str] = mapped_column(Text, nullable=False, default="open")
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    last_message_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    metadata_jsonb: Mapped[dict[str, Any]] = mapped_column(JSONB, nullable=False, default=dict)
 
 
 class LeadMessageModel(Base):

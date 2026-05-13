@@ -1,0 +1,12 @@
+{
+  "source_key": "domaza",
+  "source_name": "Domaza",
+  "listing_path": "data/scraped/domaza/listings/Domaza_7345004.json",
+  "raw_path": "data/scraped/domaza/raw/Domaza_7345004.html",
+  "expected_reference_id": "Domaza:7345004",
+  "expected_city": "Варна",
+  "expected_category": "apartment",
+  "min_remote_photos": 20,
+  "min_structured_fields": 2,
+  "description_required": true
+}

@@ -24,7 +24,6 @@ def build_fetch_list_tasks(payload: dict[str, Any]) -> list[dict[str, Any]]:
     metadata for a later HTTP/list executor without starting any network work.
     """
     section_id = str(payload["section_id"])
-    source_name = str(payload["source_name"])
     source_spec = dict(payload.get("source_spec") or {})
     list_spec = dict(payload.get("list_spec") or {})
     source_key = source_spec.get("source_key")

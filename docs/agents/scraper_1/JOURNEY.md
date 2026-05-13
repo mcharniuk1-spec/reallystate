@@ -1091,3 +1091,76 @@ Modified files:
 
 - **Action**: Cross-repo “detective” pass documented in `docs/exports/detective-product-orchestration-2026-04-30.md`; widened agent missions in `docs/agents/TASKS.md`; OpenClaw/Gemma4 gate (`Action1 ACCEPT`, Action0/2 deferred until explicit `Action0 now` / `Action2 now`) in `docs/exports/taskforgema.md`, `AGENTS.md`, `docs/agents/README.md`, `docs/openclaw/gemma4-agent.md`, `agent-skills/openclaw-ollama-gemma4/SKILL.md`; added `scripts/action1_scrape_matrix_snapshot.py` + `make action1-matrix-snapshot`; LAN hosting via `make run-api-public` / `make run-frontend-public`; UI liquid underlay + `framer-motion` / `tailwindcss-animate`.
 - **Status**: `DONE_AWAITING_VERIFY`
+
+### 2026-04-30 — All-tier unpatterned-source audit + universality review
+
+- **Action**: Audited current repo state across all source tiers while excluding the seven Action1 sources from repair scope; generated `docs/exports/all-tier-source-pattern-audit-2026-04-30.{md,json,xlsx}` plus the durable proposed-pattern registry `data/scrape_patterns/pattern_candidates/all-tier-unpatterned-source-patterns.json` and `docs/exports/all-tier-unpatterned-source-patterns-2026-04-30.md`.
+- **Key findings**:
+  - Strongest public repair candidates remain `alo.bg`, `Domaza`, and `Home2U` because they already have route and/or fixture evidence but still lack one saved strict sample item with full local gallery proof.
+  - Legal/authorization gates still block `imoti.net`, `Imoteka.bg`, and `Imoti.info` from promotion to public-scrape `Patterned`.
+  - Non-Action1 patterned-source universality is still incomplete: `OLX.bg` is broad but not fully proven universal; `Bazar.bg` and `Yavlena` still need broader template proof.
+- **Status**: `DONE_AWAITING_VERIFY`
+
+### 2026-04-29 — Action1 Telegram matrix + Ollama triad + checkpoint tooling
+
+- **Action**: Shipped `scripts/action1_full_telegram_report.py` (`--compact` for TG-sized 7×4 + quality), `scripts/action1_checkpoint_notify.py` (+100 net JSON → optional `openclaw message send`), `make action1-telegram-report` / `make action1-checkpoint-notify`, `docs/openclaw/action1-multi-agent.md`, and `scripts/action1_openclaw_triad.sh` (sequential `action1_gemma` / `action1_qwen` / `action1_deepseek` → Telegram `181488201`). Initialized `data/runs/action1_listing_json_total.txt` for +100 cadence; scrape logs under `data/runs/action1_scrape_*.log`.
+- **Note**: Triad roles are defined only in `docs/openclaw/action1-multi-agent.md` (Gemma = orchestration/description/management; Qwen = coding/automation; DeepSeek = reasoning/heavy logic). No diagram image is part of the repo contract for roles.
+- **Status**: `IN_PROGRESS`
+
+### 2026-04-29 — OpenClaw `main` workspace + Action1 bootstrap (Telegram “missing URLs” fix)
+
+- **Root cause**: OpenClaw agent `main` inherited `agents.defaults.workspace` = `~/.openclaw/workspace-codex`, so Telegram-driven turns could not read `AGENTS.md` / `docs/exports/taskforgema.md` and falsely asked the operator for Address.bg / LUXIMMO / property.bg / SUPRIMMO URLs and “patterns”.
+- **Fix**: `~/.openclaw-codex/openclaw.json` — set `main.workspace` to `/Users/getapple/Documents/Real Estate Bulg`; added `docs/openclaw/ACTION1_AGENT_BOOTSTRAP.md` (seven `primary_url`s from `data/source_registry.json`, four buckets, read order); `~/.openclaw-codex/agents/main/agent/SOUL.md`; `scripts/action1_openclaw_main_resume.sh` + `make action1-openclaw-main-resume`; triad prompts prepend bootstrap; Telegram notice message id **195** (host session).
+- **Status**: `IN_PROGRESS`
+
+### 2026-04-30 — Strict sample-proof for alo.bg, Domaza, and Home2U
+
+- **Action**: Promoted the three strongest non-Action1 repair candidates from route evidence to saved sample proof: `alo.bg` sale apartment, `Domaza` single-unit apartment samples, and `Home2U` Varna land detail.
+- **Saved proof**:
+  - `alo.bg`: `alo.bg:10977264`, 15/15 gallery files saved locally, description/price/area/rooms/floor/city captured.
+  - `Domaza`: strict best sample `Domaza:8124886` in pattern status and fixture-bound sample `Domaza:7345004`, full local galleries proven; development pages remain skipped from best-sample promotion.
+  - `Home2U`: `Home2U:cd2ccf24edff`, 6/6 gallery files saved locally, price/area/floor/city captured; source detail page has empty description body, saved as `source_attributes.description_status = absent_on_detail_page`.
+- **Validation**: `python3 -m unittest tests.test_strict_sample_proof -v` passed; `make dashboard-doc` and `python3 scripts/generate_all_tier_pattern_audit.py` refreshed strict dashboards and XLSX/MD audit artifacts.
+- **Status**: `DONE_AWAITING_VERIFY`
+
+### 2026-04-23 — live_scraper bounded detail concurrency (A1 / A12) + `scrape_metrics` hook
+
+- **Action**: Per-source detail phase now uses `ThreadPoolExecutor` with `SCRAPER_CONCURRENCY_A1` / `A12` / `OTHER` (from `src/bgrealestate/scraping/source_class.py`); one `httpx` client (and photo client) per worker thread. After each `scrape_source` run, append JSON to `data/runs/scrape_metrics.jsonl` and update `data/runs/scrape_metrics_latest.json`. Ops: `scripts/action1_scrape_full_uncapped.sh` exports defaults and uses `--parallel-sources 7`; `make action1-telegram-watch` + `scripts/action1_telegram_watch.sh` for 5-minute OpenClaw running-line reports; `scripts/action1_openclaw_continue.sh` handoff updated.
+- **Status**: `DONE`
+
+### 2026-04-23 — OpenClaw instructions: Action1 vs A1 vs A12 + DB alignment
+
+- **Action**: Consistency audit: 13 Patterned tier12 sources = 7 A1 (Action1) + 6 A12. Added `docs/openclaw/scrape-taxonomy-a1-a12.md`; updated `ACTION1_AGENT_BOOTSTRAP.md`, `taskforgema.md`, `gemma4-agent.md`, `openclaw/README.md`, `agent-skills/openclaw-ollama-gemma4/SKILL.md`, `source_class.py` docstring, `action1_openclaw_continue.sh`. BulgarianProperties registry `.bg` vs scraper `.com` documented.
+- **Status**: `DONE`
+
+### 2026-04-30 — Action1 parser-pattern repair + offline corpus reparse
+
+- **Action**: Repaired Action1 parser patterns for incorrect galleries/descriptions/areas and reparsed saved local raw HTML for all seven Action1 sources without launching a live crawl.
+- **Root causes fixed**:
+  - `Address.bg`: detail galleries were present in raw HTML but parser kept one OG/teaser image; now extracts ordered `/1000x666/` gallery URLs.
+  - `BulgarianProperties`: full descriptions were present in JSON-LD/body text but saved rows kept short meta/list text; now picks the longest full detail description.
+  - `Homes.bg`: title area like `165m²` was parsed as `0.165`; now uses sqm-specific extraction.
+  - `LUXIMMO` / `property.bg` / `SUPRIMMO`: unit area now prefers labeled fields (`РЗП`, `ЗП`, `Обща площ`, title sqm) instead of broad project/complex area values.
+  - Geospatial parser now rejects/suppresses coordinates outside a conservative Bulgaria polygon and corrects swapped coordinate order when possible.
+- **Reparse result**:
+  - `address_bg`: 4718 scanned, 4530 updated
+  - `bulgarianproperties`: 1616 scanned, 1616 updated
+  - `homes_bg`: 132 scanned, 132 updated
+  - `imot_bg`: 8298 scanned, 2005 updated
+  - `luximmo`: 1732 scanned, 540 updated
+  - `property_bg`: 297 scanned, 25 updated
+  - `suprimmo`: 297 scanned, 72 updated
+- **Quality snapshot after repair**:
+  - Outside-Bulgaria coordinates in file-backed Action1 JSON: 0
+  - Remaining local media backfill dry-run gap: Address.bg 31078, BulgarianProperties 5027, Homes.bg 396, imot.bg 2115, LUXIMMO 2, property.bg 0, SUPRIMMO 0
+- **Outputs**:
+  - `scripts/reparse_action1_from_raw.py`
+  - `tests/test_action1_parser_regressions.py`
+  - `docs/exports/action1-quality-debug-report-2026-04-30.md`
+  - `docs/exports/action1-offline-reparse-summary.json`
+  - `sql/helpers/03_action1_quality_gate.sql`
+  - refreshed `docs/dashboard/scrape-status.html` and frontend scraped-listing seed data
+- **Status**: `DONE_AWAITING_VERIFY`
+- **Blockers**:
+  - Full local image download for repaired galleries was not run in this debugger pass; it requires an operator-approved media backfill because Address.bg alone now has 31078 missing local files.
+  - PostgreSQL/Docker were not reachable, so DB-backed canonical/source table geospatial QA must be rerun once services are up.

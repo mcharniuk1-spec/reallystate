@@ -24,7 +24,7 @@ TIER1_HTML_SOURCES = [
     ("imoti.net", "imoti_net"),
 ]
 
-FIXTURE_CASES = ["basic_listing", "blocked_page"]
+FIXTURE_CASES = ["basic_listing", "blocked_page", "long_term_rent", "land_listing"]
 
 
 class TestTier1HtmlFixtureParsing(unittest.TestCase):

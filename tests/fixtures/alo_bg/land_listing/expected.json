@@ -1,0 +1,27 @@
+{
+  "address_text": "кв. Владиславово",
+  "area_sqm": 500.0,
+  "city": "Варна",
+  "currency": "EUR",
+  "district": null,
+  "external_id": "ALO-LAND-100100",
+  "image_urls": [
+    "https://img.alo.bg/photos/big/alo-land-img1.jpg"
+  ],
+  "latitude": 43.2,
+  "listing_intent": "sale",
+  "listing_url": "https://www.alo.bg/ad/ALO-LAND-100100",
+  "longitude": 27.9,
+  "owner_group": "ALO.BG",
+  "parser_version": "v1",
+  "phones": [
+    "+359 889 000 111"
+  ],
+  "price": 90000.0,
+  "property_category": "land",
+  "reference_id": "alo.bg:ALO-LAND-100100",
+  "region": "Варна",
+  "rooms": null,
+  "source_name": "alo.bg"
+}
+

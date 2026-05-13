@@ -55,7 +55,10 @@ export function ChatBar() {
   const [tab, setTab] = useState<ChatTab>("search");
   const [input, setInput] = useState("");
   const [searchMsgs, setSearchMsgs] = useState<Message[]>(DEMO_SEARCH_MESSAGES);
-  const [propertyMsgs] = useState<Message[]>(DEMO_PROPERTY_MESSAGES);
+  const [propertyMsgs, setPropertyMsgs] = useState<Message[]>(DEMO_PROPERTY_MESSAGES);
+  const [loading, setLoading] = useState(false);
+  const [provider, setProvider] = useState<string>("local");
+  const [error, setError] = useState<string | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const messages = tab === "search" ? searchMsgs : propertyMsgs;
@@ -66,36 +69,79 @@ export function ChatBar() {
     }
   }, [messages.length, expanded]);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     const text = input.trim();
-    if (!text) return;
+    if (!text || loading) return;
+    setError(null);
+    setLoading(true);
     setInput("");
 
-    if (tab === "search") {
-      const userMsg: Message = {
-        id: `u-${Date.now()}`,
-        role: "user",
-        content: text,
-        timestamp: new Date(),
-      };
-      setSearchMsgs((prev) => [...prev, userMsg]);
+    const userMsg: Message = {
+      id: `u-${Date.now()}`,
+      role: "user",
+      content: text,
+      timestamp: new Date(),
+    };
+    const base = tab === "search" ? searchMsgs : propertyMsgs;
+    const next = [...base, userMsg];
+    const setMessages = tab === "search" ? setSearchMsgs : setPropertyMsgs;
+    setMessages(next);
 
-      setTimeout(() => {
-        const aiMsg: Message = {
+    try {
+      const res = await fetch("/api/backend/api/v1/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: [
+            {
+              role: "system",
+              content:
+                tab === "search"
+                  ? "You help buyers search Bulgarian real estate using the current map and listing evidence."
+                  : "You help with a selected property chat. Keep replies factual and flag missing source evidence.",
+            },
+            ...next
+              .filter((msg) => msg.role !== "system")
+              .map((msg) => ({ role: msg.role, content: msg.content })),
+          ],
+          active_filters: { surface: "global_chat_bar", mode: tab },
+        }),
+      });
+      const data = (await res.json()) as { message?: string; provider?: string; error?: string };
+      if (!res.ok) {
+        throw new Error(data.error ?? `HTTP ${res.status}`);
+      }
+      setProvider(data.provider ?? "api");
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `a-${Date.now()}`,
+          role: "assistant",
+          content: data.message || getAIResponse(text),
+          timestamp: new Date(),
+        },
+      ]);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Chat request failed");
+      setProvider("fallback");
+      setMessages((prev) => [
+        ...prev,
+        {
           id: `a-${Date.now()}`,
           role: "assistant",
           content: getAIResponse(text),
           timestamp: new Date(),
-        };
-        setSearchMsgs((prev) => [...prev, aiMsg]);
-      }, 600);
+        },
+      ]);
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
-      handleSend();
+      void handleSend();
     }
   };
 
@@ -157,7 +203,7 @@ export function ChatBar() {
           <div className="flex items-center gap-1.5">
             {expanded && (
               <span className="text-[10px] text-mist hidden sm:inline">
-                {tab === "search" ? "AI assistant" : "Owner messages"}
+                {tab === "search" ? "AI assistant" : "Property assistant"} · {provider}
               </span>
             )}
             <button
@@ -204,6 +250,11 @@ export function ChatBar() {
             {messages.map((msg) => (
               <ChatMessage key={msg.id} msg={msg} />
             ))}
+            {error ? (
+              <div className="rounded-xl border border-sand/30 bg-sand/10 px-3 py-2 text-xs text-ink">
+                {error}
+              </div>
+            ) : null}
             <div ref={messagesEndRef} />
           </div>
         )}
@@ -224,17 +275,23 @@ export function ChatBar() {
                     : "Message property owner..."
                 }
                 className="w-full rounded-xl border border-line bg-paper pl-4 pr-10 py-2 text-sm text-ink placeholder:text-mist/40 focus:outline-none focus:border-sea/40 focus:ring-1 focus:ring-sea/20"
+                disabled={loading}
               />
               <button
                 type="button"
-                onClick={handleSend}
-                disabled={!input.trim()}
+                onClick={() => void handleSend()}
+                disabled={!input.trim() || loading}
+                aria-label="Send chat message"
                 className="absolute right-1.5 top-1/2 -translate-y-1/2 flex h-7 w-7 items-center justify-center rounded-lg bg-sea text-white disabled:opacity-30 hover:bg-sea-bright transition-colors"
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="22" y1="2" x2="11" y2="13" />
-                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
-                </svg>
+                {loading ? (
+                  <span className="h-3 w-3 animate-spin rounded-full border-2 border-white/40 border-t-white" />
+                ) : (
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13" />
+                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                  </svg>
+                )}
               </button>
             </div>
           </div>

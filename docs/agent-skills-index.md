@@ -54,5 +54,10 @@ Canonical skill files live under `agent-skills/<skill-name>/SKILL.md`.
 | `vercel-nextjs-deploy` | Vercel deployment for Next.js frontend applications |
 | `railway-deploy` | Railway deployment for Python backend with PostgreSQL and workers |
 | `ci-cd-pipeline` | CI/CD pipeline design with lint, typecheck, test, and deploy stages |
+| `agent-architecture-governance` | Multi-agent ownership, prompt-to-slice conversion, verifier loops, and dependency control |
+| `ops-release-management` | Safe git staging, secret scans, commits, pushes, release notes, and rollback handoffs |
+| `infra-db-migration` | PostgreSQL/PostGIS backup, restore, transfer, and count verification for server migration |
+| `market-intelligence` | Market/rival analysis, source prioritization, pricing/supply signals, and product implications |
+| `user-analytics-instrumentation` | Privacy-safe event taxonomy, funnels, UX telemetry, and analytics dashboards |
 
 Every agent should state the skills used in its closeout.

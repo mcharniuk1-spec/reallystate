@@ -1,6 +1,6 @@
 # Agent Coordination Protocol
 
-This project uses **6 specialist agents** plus a lead agent. Each agent finds work in one place, logs progress in one place, and gets verified by another agent.
+This project uses a core execution team plus support agents. Each agent finds work in one place, logs progress in one place, and gets verified by another agent.
 
 ## Single source of truth
 
@@ -8,6 +8,12 @@ This project uses **6 specialist agents** plus a lead agent. Each agent finds wo
 |------|-------|
 | **What to do next** (per agent) | `docs/agents/TASKS.md` |
 | **Execution log** (append-only) | `docs/agents/<agent>/JOURNEY.md` |
+| **Self-development architecture** | `docs/agents/SELF_DEVELOPMENT_ARCHITECTURE.md` |
+| **Agent cadence and Plan B** | `docs/agents/AGENT_LOOP_AND_CADENCE.md` |
+| **Role-specific instructions** | `docs/agents/roles/<agent>.md` |
+| **Human operating manual** | `docs/operator/agent-team-operating-manual.md` |
+| **Server/DB migration runbook** | `docs/runbooks/server-db-migration.md` |
+| **MCP and skills setup** | `docs/integrations/mcp-and-skills-setup.md` |
 | **Global guardrails** | `AGENTS.md` (repo root) |
 | **Phase gates** | `PLAN.md` §9 + `AGENTS.md` §Phase Gates |
 | **Bugbot review priorities** | `.cursor/BUGBOT.md` |
@@ -30,10 +36,11 @@ Read **`docs/agents/TASKS.md`** § *Current Gemma/OpenClaw execution order* for 
 Use one command per activation:
 
 - `GO backend_developer`
+- `GO data_analyst`
 - `GO scraper_1`
-- `GO scraper_t3`
-- `GO scraper_sm`
+- `GO scraper_sm` (S&M: tier-3 + tier-4 intelligence)
 - `GO ux_ui_designer`
+- `GO planner`
 - `GO debugger`
 - `GO all`
 
@@ -58,40 +65,62 @@ Non-stop execution rule:
 
 | Agent | Role | Primary area |
 |-------|------|--------------|
-| `backend_developer` | Data engineer / backend structure | DB, APIs, persistence, orchestration |
+| `planner` | Plan/control-plane owner | Task queue reset, sequencing, dependencies, OpenClaw handoff clarity |
+| `ops_release_manager` | Release and git owner | Safe staging, secret scan, commit/push, CI/deploy gates, rollback notes |
+| `infra_db_operator` | Runtime and DB owner | Server bootstrap, PostgreSQL/PostGIS, backups/restores, count verification |
+| `knowledge_context_agent` | Memory/docs owner | Wiki capture, insights, docs index, skill inventory |
+| `backend_developer` | Backend engineer | DB, APIs, persistence, orchestration |
+| `data_analyst` | Data quality analyst | Scraped corpus QA, inconsistency detection, source/bucket metrics, dashboard truth |
+| `market_intelligence_analyst` | Market/rival analyst | Competitor/source behavior, pricing/supply signals, strategic recommendations |
+| `user_analytics_agent` | Product telemetry analyst | Website event taxonomy, funnels, UX analytics dashboards |
 | `scraper_1` | Marketplace website connectors | Tier-1/2 portal/classifieds/agency parsers |
-| `scraper_t3` | Vendor/partner/official connectors | Tier-3 partner feeds, licensed data, official registers |
-| `scraper_sm` | Social/messenger overlays | Tier-4 Telegram/FB/IG/X; consent-gated |
+| `scraper_sm` | **S&M scraper/monitor** | Tier-3 vendor/partner/official routes + tier-4 social/messenger overlays; consent/legal gated |
+| `vision_media_agent` | Media evidence analyst | Gallery completeness, room/style/condition/equipment reports, image uncertainty |
+| `entity_resolution_agent` | Property graph analyst | Duplicate candidates, source-publication to property matching, confidence thresholds |
 | `ux_ui_designer` | Frontend, operator-first | `/admin`, `/listings`, `/map`, `/chat`, `/settings` |
 | `debugger` | Cross-agent verification | Golden path, fixture regression, integration smoke |
+
+`scraper_t3` is retained only as a historical log folder. New tier-3 work is assigned to `scraper_sm` under the **S&M** mission so there is one intelligence-overlay owner.
+
+Before acting, every agent reads its own role file in `docs/agents/roles/`.
 
 ## Dependency graph (who feeds whom)
 
 ```
+planner ────────────► debugger (verifies task/control consistency)
+       │
+       ▼
 backend_developer ──► debugger (verifies DB + API contracts)
        │
        ▼
-scraper_1 ──────────► debugger (verifies fixtures + legal gates)
+data_analyst ───────► debugger (verifies corpus metrics + QA claims)
        │
        ▼
-scraper_t3 ─────────► debugger (verifies partner/vendor contracts + legal gates)
+scraper_1 ──────────► debugger (verifies tier-1/2 fixtures + legal gates)
        │
        ▼
-scraper_sm ─────────► debugger (verifies consent gates + redaction)
+scraper_sm ─────────► debugger (verifies tier-3 contracts + tier-4 consent gates)
        │
        ▼
 ux_ui_designer ─────► debugger (verifies UI against API contracts)
+       │
+       ▼
+ops_release_manager ─► debugger (verifies release hygiene when requested)
 ```
 
 Concrete dependency chains:
 
-1. **backend_developer** delivers DB migrations + API routes → **debugger** runs `make golden-path` + API smoke tests → passes or blocks.
-2. **scraper_1** delivers connector + fixtures → **debugger** runs `make test` + checks legal gate enforcement → passes or blocks.
-3. **scraper_t3** delivers vendor/partner integration + fixtures → **debugger** verifies legal gates + contract enforcement → passes or blocks.
-4. **scraper_sm** delivers social ingestion contract + fixtures → **debugger** verifies consent checklist + fixture redaction → passes or blocks.
-5. **ux_ui_designer** delivers UI spec or component → **debugger** verifies API contract alignment + Playwright snapshot (when available) → passes or blocks.
-6. **backend_developer** unblocks **scraper_1** and **scraper_t3** (needs DB + ingest path ready before connectors persist).
-7. **scraper_1** + **backend_developer** unblock **ux_ui_designer** (needs API data before UI pages).
+1. **planner** delivers task/dependency order → **debugger** checks ownership and verifier clarity.
+2. **backend_developer** delivers DB migrations + API routes → **debugger** runs `make golden-path` + API smoke tests → passes or blocks.
+3. **data_analyst** delivers corpus QA and metric contracts → **debugger** verifies reproducibility and dashboard truth.
+4. **scraper_1** delivers tier-1/2 connector + fixtures → **debugger** runs `make test` + checks legal gate enforcement → passes or blocks.
+5. **scraper_sm / S&M** delivers tier-3/tier-4 intelligence contracts + fixtures → **debugger** verifies contract/legal/consent gates + redaction → passes or blocks.
+6. **ux_ui_designer** delivers UI spec or component → **debugger** verifies API contract alignment + Playwright snapshot (when available) → passes or blocks.
+7. **backend_developer** unblocks **scraper_1** and **S&M** where persistence is required.
+8. **scraper_1** + **backend_developer** + **data_analyst** unblock **ux_ui_designer** data-truth surfaces.
+9. **infra_db_operator** unblocks remote DB-backed imports, count verification, and server runtime.
+10. **market_intelligence_analyst** and **user_analytics_agent** feed product/UX decisions through planner, not directly into code.
+11. **vision_media_agent** and **entity_resolution_agent** run after accepted source-publication/media evidence exists.
 
 ## Lifecycle of a task slice
 
@@ -198,20 +227,24 @@ For **verification entries** (debugger or other verifier):
      - `image_description_coverage`: described/analyzed images out of saved local images
    - do not replace source-total coverage with temporary thresholds such as `100` in operator dashboards unless the view is explicitly a threshold-only control panel
 
-### scraper_t3 (tier-3)
+### data_analyst (scraped corpus QA)
 
-- Owns all tier-3 sources (partner feeds, licensed data, official routes, and BCPEA where allowed).
-- Must not implement unauthorized scraping for Airbnb/Booking/Vrbo.
-- Uses contract-required adapters, licensed-data imports, and official/manual routes.
+- Owns source/bucket metrics truth, accepted-vs-bad classification, file-vs-DB reconciliation, and dashboard denominator correctness.
+- Must separate accepted properties from `LOST`, grouped/development, inactive/removed, media-gap, description-gap, and parser-gap rows.
+- Does not silently delete rows; uses quality-gate fields, exports, and rescrape queues.
 
-### scraper_sm (tier-4 social overlays)
+### scraper_sm / S&M (tier-3 + tier-4 intelligence)
 
-- Owns Telegram/X/Facebook/Instagram/Threads/Viber/WhatsApp overlays.
-- Must present reliable collection options before expansion:
-  - official API where available,
-  - consent/manual path for private or login-gated surfaces,
-  - redaction and legal checks before persistence.
-- Tracks lead-intelligence signals separately from canonical listing ingestion.
+- Owns tier-3 partner/vendor/official routes and tier-4 Telegram/X/Facebook/Instagram/Threads/Viber/WhatsApp overlays.
+- Must not implement unauthorized scraping for Airbnb/Booking/Vrbo or private social/messenger surfaces.
+- Uses contract-required adapters, licensed-data imports, official/manual routes, public/consent-gated APIs, redaction, and legal checks before persistence.
+- Tracks lead-intelligence signals separately from canonical marketplace listing ingestion.
+- May monitor Action1/OpenClaw state but must not widen A1 marketplace scope.
+
+### scraper_t3 (historical)
+
+- Historical JOURNEY only after the 2026-05-05 reset.
+- New tier-3 work belongs to S&M.
 
 ## Dashboard refresh rule
 
@@ -240,11 +273,23 @@ When Claude is the planner path, use Opus-level planning when available, then di
 
 ## Quick reference for each agent
 
+### planner
+- **Find tasks**: `docs/agents/TASKS.md` → section "PLANNER"
+- **Log work**: `docs/agents/planner/JOURNEY.md`
+- **Verified by**: debugger (task consistency + dependency clarity)
+- **Skills**: `software-architecture`, `subagent-driven-development`, `multi-agent-patterns`, `context-engineering`, `prompt-engineering`
+
 ### backend_developer
 - **Find tasks**: `docs/agents/TASKS.md` → section "Backend_developer"
 - **Log work**: `docs/agents/backend_developer/JOURNEY.md`
 - **Verified by**: debugger (golden path + API smoke), scraper_1 (API contracts)
 - **Skills**: `postgres-postgis-schema`, `backend-data-engineering`, `workflow-runtime`, `db-sync-and-seeding`, `railway-deploy`, `ci-cd-pipeline`, `test-generator`, `context-engineering`
+
+### data_analyst
+- **Find tasks**: `docs/agents/TASKS.md` → section "DATA_ANALYST"
+- **Log work**: `docs/agents/data_analyst/JOURNEY.md`
+- **Verified by**: debugger (metric reproducibility + QA claims), ux_ui_designer (dashboard interpretation)
+- **Skills**: `postgres-analysis`, `dashboard-visual-ops`, `parser-fixture-qa`, `test-generator`, `context-engineering`
 
 ### scraper_1
 - **Find tasks**: `docs/agents/TASKS.md` → section "Scraper_1"
@@ -252,17 +297,16 @@ When Claude is the planner path, use Opus-level planning when available, then di
 - **Verified by**: debugger (fixtures + legal gates), backend_developer (DB persistence)
 - **Skills**: `scraper-connector-builder`, `parser-fixture-qa`, `real-estate-source-registry`, `runtime-compliance-evaluator`, `test-generator`, `context-engineering`
 
-### scraper_t3
-- **Find tasks**: `docs/agents/TASKS.md` → section "Scraper_T3"
-- **Log work**: `docs/agents/scraper_t3/JOURNEY.md`
-- **Verified by**: debugger (partner/vendor contract enforcement + legal gates)
-- **Skills**: `scraper-connector-builder`, `parser-fixture-qa`, `real-estate-source-registry`, `runtime-compliance-evaluator`, `deep-research-workflow`, `context-engineering`
-
-### scraper_sm
-- **Find tasks**: `docs/agents/TASKS.md` → section "Scraper_SM"
+### scraper_sm / S&M
+- **Find tasks**: `docs/agents/TASKS.md` → section "SCRAPER_SM / S&M"
 - **Log work**: `docs/agents/scraper_sm/JOURNEY.md`
-- **Verified by**: debugger (consent checklist + redaction + fixture format)
+- **Verified by**: debugger (tier-3 contract gates, consent checklist, redaction, fixture format)
 - **Skills**: `scraper-connector-builder`, `parser-fixture-qa`, `real-estate-source-registry`, `runtime-compliance-evaluator`, `deep-research-workflow`, `prompt-engineering`, `context-engineering`
+
+### scraper_t3
+- **Find tasks**: historical only
+- **Log work**: `docs/agents/scraper_t3/JOURNEY.md`
+- **Verified by**: no new assignments; migrate follow-ups to S&M
 
 ### ux_ui_designer
 - **Find tasks**: `docs/agents/TASKS.md` → section "UX_UI_designer"

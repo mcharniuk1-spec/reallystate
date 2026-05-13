@@ -185,6 +185,7 @@ create table if not exists canonical_listing (
     act16_present boolean,
     price numeric,
     currency text,
+    title text,
     fees numeric,
     price_per_sqm numeric,
     broker_name text,
@@ -211,12 +212,16 @@ create table if not exists property_entity (
     entity_type text not null default 'unknown',
     canonical_title text,
     canonical_description text,
+    canonical_url text,
     canonical_address_id text,
     building_id text,
     project_id text,
     canonical_address text,
     canonical_city text,
     canonical_building_name text,
+    source_links jsonb not null default '[]'::jsonb,
+    merged_image_urls jsonb not null default '[]'::jsonb,
+    description_summary text,
     latitude double precision,
     longitude double precision,
     geom geometry(Point, 4326),
@@ -532,9 +537,24 @@ create table if not exists saved_property (
     user_id text not null references app_user(user_id),
     property_id text not null references property_entity(property_id),
     listing_reference_id text references canonical_listing(reference_id),
+    status text not null default 'liked',
     notes text,
     created_at timestamptz not null default now(),
+    updated_at timestamptz not null default now(),
     unique(user_id, property_id)
+);
+
+create table if not exists saved_property_status_event (
+    event_id text primary key,
+    saved_id text not null references saved_property(saved_id),
+    user_id text not null references app_user(user_id),
+    property_id text not null references property_entity(property_id),
+    actor_user_id text references app_user(user_id),
+    action text not null,
+    from_status text,
+    to_status text not null,
+    details_jsonb jsonb not null default '{}'::jsonb,
+    created_at timestamptz not null default now()
 );
 
 create table if not exists organization_account (
@@ -644,6 +664,19 @@ create table if not exists lead_thread_property_link (
     source_listing_id text references source_listing(source_listing_id),
     offer_id text references property_offer(offer_id),
     relationship_type text not null
+);
+
+create table if not exists user_property_chat (
+    chat_id text primary key,
+    user_id text not null references app_user(user_id),
+    property_id text not null references property_entity(property_id),
+    thread_id text not null references lead_thread(thread_id),
+    status text not null default 'open',
+    created_at timestamptz not null default now(),
+    updated_at timestamptz not null default now(),
+    last_message_at timestamptz,
+    metadata_jsonb jsonb not null default '{}'::jsonb,
+    unique(user_id, property_id)
 );
 
 create table if not exists lead_message (
@@ -762,8 +795,11 @@ create index if not exists idx_property_entity_geom on property_entity using gis
 create index if not exists idx_building_entity_footprint on building_entity using gist(footprint);
 create index if not exists idx_address_geom on address using gist(geom);
 create index if not exists idx_city_area_geom on city_area using gist(geom);
+create index if not exists idx_saved_property_user_status on saved_property(user_id, status, created_at desc);
+create index if not exists idx_saved_property_status_event_saved on saved_property_status_event(saved_id, created_at desc);
 create index if not exists idx_lead_thread_account_status on lead_thread(account_id, status, last_message_at desc);
 create index if not exists idx_lead_message_thread_time on lead_message(thread_id, received_at desc);
+create index if not exists idx_user_property_chat_user_status on user_property_chat(user_id, status, updated_at desc);
 create index if not exists idx_publish_job_channel on publish_job(channel, requested_at desc);
 create index if not exists idx_contact_method_normalized_trgm on contact_method using gin(normalized_value gin_trgm_ops);
 

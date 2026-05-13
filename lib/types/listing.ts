@@ -65,6 +65,15 @@ export type Listing = {
   description_chars?: number | null;
   description_quality?: "missing" | "thin" | "ok" | "rich" | null;
   scrape_quality_score?: number | null;
+  scrape_status?: "SCRAPED_OK" | "LOST" | "GROUPED_PUBLICATION" | string | null;
+  scrape_acceptance_status?:
+    | "accepted_single_entity_candidate"
+    | "not_scraped_rescrape_required"
+    | "not_single_entity"
+    | string
+    | null;
+  source_publication_type?: "single_unit_candidate" | "multi_unit_or_development" | string | null;
+  single_entity_candidate?: boolean | null;
   image_report_status?: "missing" | "partial" | "complete" | null;
   image_report_md?: string | null;
   image_report_json?: string | null;

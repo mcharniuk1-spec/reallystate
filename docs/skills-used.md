@@ -1,6 +1,6 @@
 # Skills Used In This Project
 
-Updated: 2026-04-08
+Updated: 2026-05-13
 
 This document records the skills and agent guidance that are part of the project or were used while shaping the current repository.
 
@@ -23,6 +23,11 @@ These skills are stored directly in the repository under `agent-skills/`.
 - `daily-orchestration`
 - `db-sync-and-seeding`
 - `runtime-compliance-evaluator`
+- `agent-architecture-governance`
+- `ops-release-management`
+- `infra-db-migration`
+- `market-intelligence`
+- `user-analytics-instrumentation`
 
 ## Session Skills Used By Codex
 
@@ -34,6 +39,10 @@ These were used from the Codex environment while working on the repository:
   - used when keeping Word-compatible documentation exports aligned
 - `pdf`
   - used when creating the architecture and execution PDF artifact
+- `codebase-orientation`
+  - used for the 2026-05-13 repository and agent-system orientation pass
+- `cc-refactoring-guidance`
+  - used to keep the 2026-05-13 architecture/doc changes scoped and behavior-preserving
 
 ## Agent Workflow Files
 
@@ -49,6 +58,11 @@ These project files act as reusable agent behavior and should be kept in sync wi
 - `.cursor/rules/linear.mdc`
 - `docs/cursor-agent-automation.md`
 - `docs/linear-integration.md`
+- `docs/agents/SELF_DEVELOPMENT_ARCHITECTURE.md`
+- `docs/agents/AGENT_LOOP_AND_CADENCE.md`
+- `docs/operator/agent-team-operating-manual.md`
+- `docs/runbooks/server-db-migration.md`
+- `docs/integrations/mcp-and-skills-setup.md`
 
 ## Notes
 

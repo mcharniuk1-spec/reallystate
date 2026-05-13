@@ -140,6 +140,10 @@ def _build_item_row(source_name: str, listing_path: Path) -> dict[str, Any] | No
         "photo_download_status": payload.get("photo_download_status") or (
             "full" if full_gallery and remote_count else "none" if local_count == 0 else "partial"
         ),
+        "scrape_status": payload.get("scrape_status") or "UNKNOWN",
+        "scrape_acceptance_status": payload.get("scrape_acceptance_status") or "unknown",
+        "source_publication_type": payload.get("source_publication_type") or "unknown",
+        "needs_rescrape": bool(payload.get("needs_rescrape")),
         "local_image_files": local_files,
         "parsed_fields": parsed_fields,
         "missing_core_fields": missing_core,
@@ -189,6 +193,9 @@ def build_payload() -> dict[str, Any]:
                 "full_gallery_items": 0,
                 "remote_photos": 0,
                 "local_photos": 0,
+                "lost_items": 0,
+                "grouped_publications": 0,
+                "accepted_single_entity_candidates": 0,
                 "field_counts": Counter(),
             }
         )
@@ -204,6 +211,11 @@ def build_payload() -> dict[str, Any]:
             combo["full_gallery_items"] += 1 if item["full_gallery_downloaded"] else 0
             combo["remote_photos"] += item["photo_count_remote"]
             combo["local_photos"] += item["photo_count_local"]
+            combo["lost_items"] += 1 if item["scrape_status"] == "LOST" or item["needs_rescrape"] else 0
+            combo["grouped_publications"] += 1 if item["source_publication_type"] == "multi_unit_or_development" else 0
+            combo["accepted_single_entity_candidates"] += (
+                1 if item["scrape_acceptance_status"] == "accepted_single_entity_candidate" else 0
+            )
             for field in item["parsed_fields"]:
                 combo["field_counts"][field] += 1
 
@@ -220,6 +232,9 @@ def build_payload() -> dict[str, Any]:
                     "full_gallery_items": combo["full_gallery_items"],
                     "remote_photos": combo["remote_photos"],
                     "local_photos": combo["local_photos"],
+                    "lost_items": combo["lost_items"],
+                    "grouped_publications": combo["grouped_publications"],
+                    "accepted_single_entity_candidates": combo["accepted_single_entity_candidates"],
                     "field_counts": dict(combo["field_counts"]),
                 }
             )
@@ -236,6 +251,13 @@ def build_payload() -> dict[str, Any]:
                 "items_with_description": sum(1 for item in items if item["description_chars"] > 0),
                 "total_remote_photos": sum(item["photo_count_remote"] for item in items),
                 "total_local_photos": sum(item["photo_count_local"] for item in items),
+                "lost_items": sum(1 for item in items if item["scrape_status"] == "LOST" or item["needs_rescrape"]),
+                "grouped_publications": sum(
+                    1 for item in items if item["source_publication_type"] == "multi_unit_or_development"
+                ),
+                "accepted_single_entity_candidates": sum(
+                    1 for item in items if item["scrape_acceptance_status"] == "accepted_single_entity_candidate"
+                ),
                 "service_counts": dict(service_counts),
                 "category_counts": dict(category_counts),
                 "field_counts": dict(field_counts),

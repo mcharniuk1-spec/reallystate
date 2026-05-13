@@ -215,13 +215,22 @@ class GenericHtmlListingParser:
         text_blob = " ".join(filter(None, [_clean_text(html), title, address, city, region]))
 
         external_id = str(seed.get("external_id") or flat_ld.get("sku") or flat_ld.get("@id") or sha1(url.encode("utf-8")).hexdigest()[:12])
+        inferred_category = _infer_property_category(seed, text_blob)
+        if source.source_name == "Domaza":
+            low = text_blob.lower()
+            looks_like_development = (
+                ("project" in low or "проект" in low or "complex" in low or "комплекс" in low)
+                and ("prices from" in low or "цени от" in low or "apartments from" in low or "апартаменти от" in low)
+            )
+            if looks_like_development:
+                inferred_category = PropertyCategory.PROJECT
         return ParsedListing(
             source_name=source.source_name,
             url=url,
             external_id=external_id,
             title=title,
             listing_intent=_infer_listing_intent(seed, text_blob),
-            property_category=_infer_property_category(seed, text_blob),
+            property_category=inferred_category,
             city=city,
             district=seed.get("district"),
             resort=seed.get("resort"),
@@ -308,6 +317,7 @@ class ListingNormalizer:
             removed_at=None,
             parser_version=parser_version,
             crawl_provenance={"source_name": source.source_name, "captured_at": captured_at.isoformat()},
+            title=parsed.title,
         )
 
 

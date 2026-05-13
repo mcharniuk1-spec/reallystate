@@ -356,6 +356,7 @@ class CanonicalListingRepository:
                     "rooms": listing.rooms,
                     "price": listing.price,
                     "currency": listing.currency,
+                    "title": listing.title,
                     "description": listing.description,
                     "image_urls": listing.image_urls,
                     "last_seen": listing.last_seen,

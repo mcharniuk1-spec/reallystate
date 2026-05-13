@@ -23,6 +23,7 @@ class TestFastAPIApp(unittest.TestCase):
             "OPENAI_API_KEY": os.environ.pop("OPENAI_API_KEY", None),
             "API_KEYS_JSON": os.environ.pop("API_KEYS_JSON", None),
         }
+        os.environ["CHAT_PROVIDER"] = "stub"
         os.environ["API_KEYS_JSON"] = (
             '{"read-key":["listings:read","crm:read","crawl:read"],'
             '"admin-key":["listings:read","crm:read","crm:write","crawl:read","admin:read"]}'

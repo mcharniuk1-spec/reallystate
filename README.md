@@ -9,6 +9,7 @@ It includes:
 - a standard ingestion flow for apartment/building pages
 - a dedupe scorer and basic building matcher
 - a publication control plane with eligibility checks and payload mapping
+- a protected user account/chat foundation for liked properties and property-linked conversations
 - SQL schema definitions for the core entities
 - tests and generated source/legal matrix artifacts
 
@@ -23,6 +24,10 @@ It includes:
 - `docs/project-status-roadmap.md`: current stage, what works, what is missing, and 30+ point execution checklist
 - `docs/linear-integration.md`: Linear workflow, issue structure, branch/PR conventions, and import guidance
 - `docs/project-architecture-execution-guide.md`: full architecture, setup, continuous scraping model, and stage explanation
+- `docs/agents/SELF_DEVELOPMENT_ARCHITECTURE.md`: persistent agent team architecture and review loop
+- `docs/operator/agent-team-operating-manual.md`: short operator guide for activating agents and reading outputs
+- `docs/runbooks/server-db-migration.md`: next-step server and PostgreSQL/PostGIS migration runbook
+- `docs/integrations/mcp-and-skills-setup.md`: safe MCP and role-to-skill setup
 - `docs/skills-used.md`: repo-local skills, agent guidance files, and session-level skills used
 - `docs/exports/linear-import-roadmap.csv`: import-ready CSV for creating the initial Linear backlog
 - `docs/exports/project-architecture-execution-guide.pdf`: PDF handoff document for architecture and execution
@@ -100,6 +105,20 @@ Generate/update the progress dashboard artifacts:
 make dashboard-doc
 ```
 
+Run the local API/chat stack for UI checks:
+
+```bash
+make run-api
+npm run dev
+```
+
+The chat adapter keeps provider access on the backend. For local model checks it defaults to Ollama:
+
+```bash
+OLLAMA_BASE_URL=http://127.0.0.1:11434
+OLLAMA_CHAT_MODEL=gemma4:26b
+```
+
 ## Local public view (LAN / demo phone)
 
 1. Start Postgres stack if the UI will hit the API with a real DB: `make dev-up` + `export DATABASE_URL=...` + `make db-init`.
@@ -133,12 +152,17 @@ The current codebase is designed to be the execution backbone for the roadmap:
 - `ChannelPayloadMapper` prepares outbound payloads for Booking, Airbnb, Bulgarian portals, and agency syndication.
 - Cursor/Codex/Claude agent automation files define safe phase-by-phase implementation rules.
 - The SQL blueprint now includes source, crawl, property, media, geospatial, user, CRM, and publishing tables.
+- User-property state now keeps liked/unliked transitions as auditable events and can open a property-linked chat thread.
+- `/settings` is the account cabinet surface for profile mode, liked properties, saved searches, and property chat entry points.
+- `/chat` is prepared for global search chat plus selected-property chat via the backend proxy.
 - The source-link workbook and detailed debug report are generated under `docs/exports/`.
 
 ## What Comes Next
 
 - Add per-source crawler connectors for tier-1 sources.
 - Add persistent storage and queue workers.
+- Verify the liked-property and property-chat migration against PostgreSQL.
+- Implement fixture-first messenger publication candidates for public Telegram channels and manual/consent-gated WhatsApp/Viber exports.
 - Add HTML/XHR fixtures from real source pages.
 - Add geocoding and cadastral connectors.
 - Add partner-specific publishing adapters.

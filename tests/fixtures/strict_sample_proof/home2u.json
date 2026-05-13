@@ -1,0 +1,13 @@
+{
+  "source_key": "home2u",
+  "source_name": "Home2U",
+  "listing_path": "data/scraped/home2u/listings/Home2U_cd2ccf24edff.json",
+  "raw_path": "data/scraped/home2u/raw/Home2U_cd2ccf24edff.html",
+  "expected_reference_id": "Home2U:cd2ccf24edff",
+  "expected_city": "Варна",
+  "expected_category": "land",
+  "min_remote_photos": 6,
+  "min_structured_fields": 2,
+  "description_required": false,
+  "allowed_description_status": "absent_on_detail_page"
+}

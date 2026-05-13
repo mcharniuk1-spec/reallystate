@@ -1,6 +1,6 @@
 # Parallel execution timeline
 
-_Generated: 2026-04-29T08:18:13.809361+00:00_
+_Generated: 2026-05-13T08:46:20.852001+00:00_
 
 Aligned with `PLAN.md` §9.1 (waves) and `docs/agents/TASKS.md` priority phases.
 

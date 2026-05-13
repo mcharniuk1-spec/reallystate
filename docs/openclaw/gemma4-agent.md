@@ -26,6 +26,7 @@ Best-fit tasks in this repo:
 
 These mirror `AGENTS.md` and project safety gates:
 
+- **OpenClaw workspace**: any agent that must read repo files (especially Telegram-bound `main`) must use workspace `/Users/getapple/Documents/Real Estate Bulg`. If `main` stays on `~/.openclaw/workspace-codex`, it cannot see `AGENTS.md` or `docs/exports/taskforgema.md` — see `docs/openclaw/ACTION1_AGENT_BOOTSTRAP.md`.
 - Treat `data/source_registry.json` as the authoritative source/legal matrix.
 - Do not propose or automate scraping of private messaging/social sources without explicit consent and a consent-gated design.
 - Do not add live-network dependencies to tests.
@@ -87,6 +88,13 @@ This is the active OpenClaw/Gemma4 execution contract.
 - **Do**: after Action1 QA, repeat the scrape/backfill and image-report process for additional legal tier-1/2 sources.
 - **Forbidden in Action2**: no `legal_review_required`, `licensing_required`, private/social/messenger-only, or blocked `access_mode` sources without separate operator/legal approval.
 
+#### Code buckets A1 / A12 (FACT — do not confuse with Action names)
+
+- **A1** in `src/bgrealestate/scraping/source_class.py` is **identical** to **Action1’s seven sources** (same keys).
+- **A12** = Patterned in `tier12-pattern-status.json` **excluding** those seven — usual **Action2** candidates (alo.bg, Bazar.bg, Domaza, Home2U, OLX.bg, Yavlena with current export).
+- OpenClaw must **not** expand Action1 to A12 sources without operator **`Action2 now`** (or explicit scope change). Canonical doc: `docs/openclaw/scrape-taxonomy-a1-a12.md`.
+- **Scrape metrics on disk:** `data/runs/scrape_metrics.jsonl` records `source_bucket` and `detail_concurrency_used` per source run — use for narration, not freestyle totals.
+
 Debugger verifies the handoff with `DBG-08` after each action that changes outputs.
 
 ### 3.2) Required report fields per property
@@ -129,13 +137,38 @@ openclaw --profile codex gateway probe
 
 For this project, the operator chat id used for progress updates is `181488201`.
 
-Send a manual ping:
+#### Action1 RUNNING reports (mandatory format)
+
+Do **not** freestyle scrape totals or per-source metrics in Telegram. Either:
+
+1. **Preferred:** On the host repo, run and paste **verbatim** (or attach stdout):
+
+   ```bash
+   cd /Users/getapple/Documents/Real\ Estate\ Bulg
+   python3 scripts/action1_full_telegram_report.py --running-line
+   ```
+
+   After each wave, optionally refresh deltas for the next ping:
+
+   ```bash
+   python3 scripts/action1_full_telegram_report.py --running-line --write-snapshot
+   ```
+
+2. **Or** reproduce the **exact** section order and bullets defined in `docs/openclaw/action1-running-report-template.md` (same headings: checkpoint line, snapshot deltas, deal type, segment keys, property_category, words, images, **By source** blocks with `primary_url` from `data/source_registry.json`).
+
+Codex can notify OpenClaw/Telegram in one shot via:
+
+```bash
+make action1-openclaw-continue
+```
+
+**Manual ping** (connectivity check):
 
 ```bash
 openclaw --profile codex message send --channel telegram --target 181488201 --message "ping" --json
 ```
 
-When you instruct Gemma4 to run Action0/1/2, require periodic updates to that chat id with counts and blockers.
+When you instruct Gemma4 to run Action0/1/2, require periodic updates to that chat id with counts and blockers — for **Action1**, those updates must follow the template above.
 
 ### 5) Prompt template (copy/paste)
 
@@ -149,7 +182,8 @@ CONSTRAINTS:
 - Follow AGENTS.md, docs/agents/TASKS.md, docs/exports/taskforgema.md, and data/source_registry.json.
 - Do not reorder Action0, Action1, and Action2 unless the operator explicitly says so.
 - Action0 uses only already-downloaded local images from docs/exports/s1-21-gemma-action0-eligible.json.
-- Action1 is only the seven-source all-Bulgaria scrape/backfill across four buckets.
+- Action1 is only the seven-source all-Bulgaria scrape/backfill across four buckets (code bucket **A1**; not A12 Patterned extras without `Action2 now`).
+- Action1 Telegram progress: never freestyle counts — only paste verbatim output of `python3 scripts/action1_full_telegram_report.py --running-line` or mirror docs/openclaw/action1-running-report-template.md exactly.
 - Action2 is only remaining legal tier-1/2 expansion after Action1 QA.
 - Run or replicate property-quality checks before marking a listing/report complete.
 INPUTS:

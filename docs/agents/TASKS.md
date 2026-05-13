@@ -30,10 +30,15 @@ This digest captures the full operator intent and execution context from the lat
 ### B) Agent governance and runtime behavior
 
 - Parallel lanes are required; dependencies are enforced at slice level.
-- Tier ownership is strict:
-  - `scraper_1`: tier-1/2
-  - `scraper_t3`: tier-3
-  - `scraper_sm`: tier-4
+- Tier ownership is strict after the 2026-05-05 reset:
+  - `planner`: cross-agent task sequencing, dependency control, OpenClaw handoff clarity
+  - `backend_developer`: database, API, persistence, orchestration/runtime
+  - `data_analyst`: scraped-corpus QA, inconsistency detection, source/bucket metrics, dashboard truth
+  - `scraper_1`: tier-1/2 marketplace website connectors and patterns
+  - `scraper_sm` (**S&M**): tier-3 vendor/partner/official intelligence routes plus tier-4 social/messenger overlays
+  - `ux_ui_designer`: frontend/operator UI only
+  - `debugger`: acceptance gates, safety, regression verification
+- `scraper_t3` is now a historical log lane. Do not assign new work there; migrate any unverified tier-3 follow-up into `scraper_sm` / S&M.
 - No slice is complete before verifier promotion to `VERIFIED`.
 - Non-stop continuation is mandatory for every agent:
   - continue to next unblocked slice after each completion
@@ -64,7 +69,7 @@ This digest captures the full operator intent and execution context from the lat
    - **`DBG-06`**: batch-verify all `DONE_AWAITING_VERIFY` slices **after** `S1-18` is `VERIFIED` and **`BD-11` ingest is proven** on live rows (or operator explicitly waives DB counts — document in JOURNEY).
    - **`DBG-05`**: stage-1 quality gate (fixtures + product types per `docs/exports/stage1-product-type-coverage.md`) **after** live volume evidence exists or is explicitly deferred.
 
-4. **Parked (do not expand until `S1-18` VERIFIED):** new `scraper_t3` / `scraper_sm` live work, LUN-style UX expansion (`UX-04`–`UX-12`), and deployment slices — unless they fix a blocker for tier-1/2 ingest.
+4. **Parked (do not expand until `S1-18` VERIFIED):** new S&M live tier-3/tier-4 work, LUN-style UX expansion (`UX-04`–`UX-12`), and deployment slices — unless they fix a blocker for tier-1/2 ingest.
 
 5. **Recurring:** `CONST-01` / `CONST-02`, `LEAD-05` dashboard refresh after any TASKS/JOURNEY change.
 
@@ -79,6 +84,141 @@ The next OpenClaw/Gemma4 run must use the action split below. **Load Action0 + A
 3. **Action2 / `S1-22C`**: after Action1 QA, expand the same process to remaining legal tier-1/2 sources from `data/source_registry.json` — run only after operator **`Action2 now`**.
 
 Gemma/OpenClaw must not reorder these actions unless the operator explicitly says to skip or start a specific action.
+
+## Agent reset and active operating model (2026-05-05)
+
+**FACT — current OpenClaw/A1 state:** Action1/A1 is the seven-source marketplace scrape group: `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, `SUPRIMMO`. OpenClaw is not the scraper implementation; it is the scraper **operator/monitor** that reads repo instructions, starts approved Make targets, watches logs, reports Telegram status, and asks Qwen/DeepSeek for bounded fixes.
+
+**INTERPRETATION — efficiency issue:** prior coordination split tier-3 and social into separate live lanes while Action1 still had QA/media/inconsistency debt. New work must reduce context drift: one planner, one data analyst, one backend owner, one front-end owner, one tier-1/2 scraper owner, one S&M intelligence owner, and one debugger.
+
+**Required active agents:**
+
+| Agent | Active responsibility | Stop condition |
+|-------|------------------------|----------------|
+| `planner` | Keep this task queue, dependencies, OpenClaw order, and handoffs consistent. | All active slices have one clear owner and verifier. |
+| `backend_developer` | DB/API/import/runtime support for scraped source publications and canonical listings. | DB/import path and APIs match scraper QA contracts. |
+| `data_analyst` | File-backed and DB-backed corpus QA: good/bad/grouped/LOST, image/description/price/location consistency, source/bucket metrics. | A1 quality report and dashboard counts are reproducible from artifacts. |
+| `scraper_1` | Tier-1/2 code patterns and live scraping routes. Finish Action1 before Action0/Action2 unless operator overrides. | A1 source/bucket scraper gaps are fixed or explicitly blocked. |
+| `scraper_sm` / **S&M** | Tier-3 official/vendor/partner routes and tier-4 social/messenger overlays; monitor-only unless legal/consent gates pass. | S&M outputs are fixture-first, consent-safe, and never mixed into A1 marketplace completeness. |
+| `ux_ui_designer` | Frontend/dashboard truth surfaces only; no data claims not backed by analyst/debugger artifacts. | UI shows accepted/LOST/grouped/media states correctly. |
+| `debugger` | Verify every agent output; run parser/QA/import smoke gates; block unsafe imports/exports. | Slice is `VERIFIED` or has a concrete blocker. |
+
+**Action1 continuation rule:** OpenClaw/S&M/scraper runs must resume from persisted files and logs, not chat memory. For A1 full backfill use `SCRAPER_PAGE_ORDER=oldest_first` and the uncapped Action1 target so the runner scans the older pages in the currently visible window before newer pages, then repeats wider waves. The runner must record `before_count`, `after_count`, `added_count`, `max_pages`, and parser/media warnings per wave. Do not claim "finished Action1" until debugger verifies all seven A1 sources across all four buckets with accepted/good, grouped, LOST, inactive, media, and description counts.
+
+**Sequence lock:** Finish Action1/A1 QA first. Then run Action0 local image-description reporting only after `Action0 now`. Then run Action2 remaining legal tier-1/2 sources only after `Action2 now` and Action1 QA.
+
+---
+
+## 2026-05-13 architecture rebuild and server-migration preparation
+
+**FACT**: `plan 13.05.md` requires safe git hygiene, stronger agent architecture, role-specific MDs, skills/MCP setup guidance, and preparation for the next server/DB migration step.
+
+**INTERPRETATION**: The existing agent system should be extended, not replaced. Existing lanes remain active; new support lanes cover release, infrastructure, market intelligence, user analytics, media vision, entity resolution, and knowledge capture.
+
+**GAP**: Remote server/SSH credentials and live DB counts are not available yet, so migration is prepared as a runbook and Make targets, not executed.
+
+### PLAN-03: Self-development architecture rebuild
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13)
+- **Priority**: **CRITICAL**
+- **Read first**: `plan 13.05.md`, `docs/agents/SELF_DEVELOPMENT_ARCHITECTURE.md`, `docs/agents/AGENT_LOOP_AND_CADENCE.md`, `docs/agents/roles/*.md`
+- **Do**:
+  1. Keep existing core lanes: `planner`, `backend_developer`, `data_analyst`, `scraper_1`, `scraper_sm`, `ux_ui_designer`, `debugger`.
+  2. Add support lanes: `ops_release_manager`, `infra_db_operator`, `market_intelligence_analyst`, `user_analytics_agent`, `vision_media_agent`, `entity_resolution_agent`, `knowledge_context_agent`.
+  3. Define constant vs triggered cadence and review loop.
+  4. Keep Action1 -> Action0 -> Action2 gate unchanged.
+- **Acceptance gate**: docs define owner, verifier, cadence, skills, and next responsibilities without widening unsafe scraping or touching live DB data.
+- **Output**: architecture docs, role docs, skill files, planner journey entry.
+- **Verifier**: debugger
+- **Depends on**: PLAN-01
+
+### OPS-01: Safe git push gate for Plan 13.05
+- **Status**: `IN_PROGRESS` (2026-05-13)
+- **Priority**: **CRITICAL**
+- **Read first**: `.gitignore`, `plan 13.05.md`, `agent-skills/ops-release-management/SKILL.md`
+- **Do**:
+  1. Unstage unsafe existing index entries without modifying working files.
+  2. Stage only safe code/docs/config/skills/runbooks.
+  3. Exclude secrets, raw capture dirs, DB dumps, runtime logs, OpenClaw state, and unreviewed large scraped corpus.
+  4. Run staged secret scan.
+  5. Commit and push `reallystate` if checks pass and remote accepts.
+- **Acceptance gate**: no unsafe paths or secrets in staged diff; push succeeds or blocker is recorded.
+- **Output**: release report in `docs/agents/ops_release_manager/JOURNEY.md`.
+- **Verifier**: debugger
+- **Depends on**: PLAN-03
+
+### INFRA-01: Server and DB migration readiness
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/runbooks/server-db-migration.md`, `agent-skills/infra-db-migration/SKILL.md`, `Makefile`, `docs/docker-and-database.md`
+- **Do**:
+  1. Prepare backup/restore/count verification commands.
+  2. Document server prerequisites and provider recommendation.
+  3. Define transfer/restore/rollback steps.
+  4. Block live scraping resume until count verification passes.
+- **Acceptance gate**: migration can be executed next once server SSH and DB URLs exist; no DB dump is committed.
+- **Output**: migration runbook, Make targets `backup-db`, `restore-db`, `verify-db-counts`, infra journey entry.
+- **Verifier**: debugger + backend_developer
+- **Depends on**: PLAN-03
+
+### MI-01: Weekly market and rival intelligence baseline
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `docs/agents/roles/market_intelligence_analyst.md`, `deep-research-report.md`, `data/source_registry.json`, latest data analyst reports
+- **Do**: produce market/rival intelligence for portals, agencies, STR vendors, price/supply signals, and source-priority implications.
+- **Acceptance gate**: report separates FACT / INTERPRETATION / HYPOTHESIS / GAP and maps recommendations to planner tasks.
+- **Output**: `docs/exports/market-intelligence-YYYY-MM-DD.md`, market intelligence journey entry.
+- **Verifier**: debugger + planner
+- **Depends on**: PLAN-03
+
+### UA-01: Website analytics event taxonomy
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `docs/agents/roles/user_analytics_agent.md`, `agent-skills/user-analytics-instrumentation/SKILL.md`, `app/`, `components/`, `docs/business/product-ux-structure.md`
+- **Do**: define privacy-safe events and funnels for browse, search, map, detail, saved properties, chat, source clicks, account mode, and admin review.
+- **Acceptance gate**: no PII-bearing payloads; frontend/backend tasks are explicit.
+- **Output**: `docs/analytics/user-event-taxonomy.md`, user analytics journey entry.
+- **Verifier**: debugger + ux_ui_designer
+- **Depends on**: PLAN-03
+
+### VM-01: Vision media agent readiness
+- **Status**: `TODO`
+- **Priority**: MEDIUM
+- **Read first**: `docs/agents/roles/vision_media_agent.md`, `docs/exports/source-item-photo-coverage.json`, `docs/exports/s1-21-gemma-action0-eligible.json`
+- **Do**: define image report execution queue, output schema, local model choice, and uncertainty rules for Action0.
+- **Acceptance gate**: reports remain evidence, not final property facts; execution waits for operator `Action0 now`.
+- **Output**: `docs/exports/vision-media-action0-readiness-YYYY-MM-DD.md`, vision journey entry.
+- **Verifier**: debugger + data_analyst
+- **Depends on**: Action1 QA / operator `Action0 now`
+
+### ER-01: Conservative entity-resolution queue plan
+- **Status**: `TODO`
+- **Priority**: MEDIUM
+- **Read first**: `docs/agents/roles/entity_resolution_agent.md`, `src/bgrealestate/services/unification.py`, `docs/exports/action1-multi-unit-publications.json`
+- **Do**: define duplicate candidate queue inputs, evidence fields, confidence thresholds, and no-auto-merge review policy.
+- **Acceptance gate**: grouped/development publications cannot be auto-merged as single units.
+- **Output**: `docs/exports/entity-resolution-queue-plan-YYYY-MM-DD.md`, entity resolution journey entry.
+- **Verifier**: debugger + data_analyst
+- **Depends on**: accepted source-publication import evidence
+
+### DA-03: Dashboard source/photo coverage generator performance repair
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `scripts/generate_source_item_photo_coverage.py`, `scripts/generate_progress_dashboard.py`, `docs/exports/source-item-photo-coverage.json`, latest `data/scraped/**/listings/*.json` corpus size
+- **Do**: make `make dashboard-doc` reliable on the current large workspace by adding bounded/changed-file mode, progress output, or cached corpus scan behavior.
+- **Acceptance gate**: `make dashboard-doc` completes without manual kill, or a documented fast dashboard target exists for task/JOURNEY-only changes.
+- **Output**: script update or documented fallback, data analyst journey entry.
+- **Verifier**: debugger
+- **Depends on**: PLAN-03
+
+### DBG-13: Verify Plan 13.05 architecture reset and release gate
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `docs/agents/SELF_DEVELOPMENT_ARCHITECTURE.md`, `docs/agents/roles/*.md`, `.gitignore`, `docs/runbooks/server-db-migration.md`, staged diff once OPS-01 reaches handoff
+- **Do**: verify architecture docs, role boundaries, Action1 gate consistency, migration readiness, and staged release hygiene.
+- **Acceptance gate**: unsafe files are absent from staged diff; role docs and task board have clear owners/verifiers; dashboard refresh blocker is recorded as DA-03 if unresolved.
+- **Output**: debugger journey entry and task status updates.
+- **Verifier**: debugger
+- **Depends on**: OPS-01
 
 ---
 
@@ -126,10 +266,72 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 ---
 
 ## ═══════════════════════════════════════════════════════
+## PLANNER (coordination + OpenClaw control-plane)
+## ═══════════════════════════════════════════════════════
+
+**Mission**: Keep the multi-agent system coherent. Maintain task order, dependencies, OpenClaw bootstrap consistency, and handoffs. Planner does not scrape, import, or change production data directly.
+
+### PLAN-01: Agent reset and OpenClaw Action1 control reset
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-05)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/agents/TASKS.md`, `docs/agents/README.md`, `docs/openclaw/ACTION1_AGENT_BOOTSTRAP.md`, `docs/openclaw/scrape-taxonomy-a1-a12.md`, `agent-skills/openclaw-ollama-gemma4/SKILL.md`, `agent-skills/reporter/SKILL.md`
+- **Do**:
+  1. Keep exactly these active lanes: planner, backend_developer, data_analyst, scraper_1, scraper_sm/S&M, ux_ui_designer, debugger.
+  2. Keep `scraper_t3` historical only; move new tier-3 work into S&M.
+  3. Ensure OpenClaw reads Action0 + Action1 + Action2 but executes only the operator-approved next action.
+  4. Ensure Action1/A1 remains exactly seven sources until Action1 QA is complete or operator changes scope.
+  5. Preserve the oldest-first backfill instruction and +100/5-minute reporting instructions in OpenClaw files.
+- **Acceptance gate**: task queue and OpenClaw docs agree on agents, source scope, model roles, reporting, Action1 -> Action0 -> Action2 sequence, and debugger handoff.
+- **Output**: updated task queue, OpenClaw docs/skills, planner JOURNEY.
+- **Verifier**: debugger
+- **Depends on**: —
+
+### PLAN-02: Weekly dependency and blocker pruning
+- **Status**: `TODO`
+- **Priority**: MEDIUM
+- **Read first**: all `docs/agents/*/JOURNEY.md`, `docs/exports/*quality*`, `docs/exports/*dashboard*`
+- **Do**: collapse stale blockers, map every `DONE_AWAITING_VERIFY` item to a debugger gate, and prevent old Varna-only/T3/T4 notes from hijacking Action1 priority.
+- **Acceptance gate**: no active slice has unclear owner, unclear verifier, or outdated source scope.
+- **Output**: updated `TASKS.md`, planner JOURNEY, optional decision doc.
+- **Verifier**: debugger
+- **Depends on**: PLAN-01
+
+## ═══════════════════════════════════════════════════════
+## DATA_ANALYST (scraped corpus QA + metrics truth)
+## ═══════════════════════════════════════════════════════
+
+**Mission**: Be the truth layer for scraped data. Reconcile file-backed and DB-backed counts, detect wrong properties/text/images/coordinates/prices, classify accepted vs `LOST` vs grouped/development, and make dashboards honest.
+
+### DA-01: Action1 A1 corpus consistency audit
+- **Status**: `TODO`
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/exports/a1-pattern-depth-reliability-review-2026-05-04.md`, `docs/exports/action1-dataset-quality-gate-dryrun.json`, `docs/exports/action1-dataset-quality-gate.json`, `docs/exports/source-item-photo-coverage.json`, `docs/exports/scrape-status-dashboard.json`, `data/runs/scrape_metrics.jsonl`, `data/runs/action1_scrape_uncapped_*.log`, A1 `data/scraped/<source>/listings/*.json`
+- **Do**:
+  1. For each A1 source and each bucket, compute accepted/good, `LOST`, grouped/development, inactive, missing-description, missing-price, suspicious-area, outside-Bulgaria/outside-source-scope, one-photo, remote-vs-local gallery mismatch, and image-readability gaps.
+  2. Compare scraper file counts with importer dry-run counts and DB counts when `DATABASE_URL` is available.
+  3. Produce source-level issue reasons and exact rescrape queues for scraper_1.
+  4. Mark rows as bad only through the existing quality-gate fields; do not silently delete rows.
+  5. Refresh dashboard inputs only from reproducible scripts, never from chat summaries.
+- **Acceptance gate**: report includes seven A1 sources × four buckets with counts and reasons; every bad class has a clear next action: rescrape, grouped/development review, inactive skip, parser fix, legal/runtime blocker, or human review.
+- **Output**: `docs/exports/action1-a1-corpus-consistency-audit-YYYY-MM-DD.md`, refreshed quality JSON/CSV as needed, data_analyst JOURNEY.
+- **Verifier**: debugger
+- **Depends on**: S1-22B active corpus evidence
+
+### DA-02: Dashboard metric contract repair
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `scripts/generate_scrape_status_dashboard.py`, `scripts/generate_source_item_photo_coverage.py`, `docs/dashboard/scrape-status.html`, DA-01 report
+- **Do**: ensure dashboard cells show website/source total, accepted count, fully parsed count, description count, local-gallery count, image-description count, and rescrape/LOST/grouped counts separately.
+- **Acceptance gate**: dashboard no longer uses threshold denominators such as `100` as source-total denominators and clearly separates accepted properties from grouped source publications.
+- **Output**: dashboard script/code updates, refreshed dashboard exports, data_analyst JOURNEY.
+- **Verifier**: debugger + ux_ui_designer
+- **Depends on**: DA-01
+
+## ═══════════════════════════════════════════════════════
 ## BACKEND_DEVELOPER (data engineer + infrastructure)
 ## ═══════════════════════════════════════════════════════
 
-**Mission**: Make Postgres + FastAPI the **reliable system of record**: migrations, typed repositories, **BD-11 ingest** so scrapers are auditable in `canonical_listing`, CORS-safe local/LAN hosting, and API contracts that stay aligned with `lib/types/listing.ts` and Next `/api/backend/*` proxies.
+**Mission**: Make Postgres + FastAPI the **reliable system of record**: migrations, typed repositories, **BD-11 ingest** so scrapers are auditable in `canonical_listing`, CORS-safe local/LAN hosting, and API contracts that stay aligned with `lib/types/listing.ts` and Next `/api/backend/*` proxies. Data-quality interpretation belongs to `data_analyst`; backend owns persistence and API correctness.
 
 **Detective index (2026-04-30)**: `docs/exports/detective-product-orchestration-2026-04-30.md` (API↔UI alignment, hosting).
 
@@ -341,6 +543,21 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 - **Verifier**: debugger
 - **Depends on**: BD-15, BD-12
 
+### BD-17: User-property state ledger + property chat bridge
+- **Status**: `DONE_AWAITING_VERIFY` (2026-04-29: liked status ledger, user-property chat join, and Ollama chat adapter implemented)
+- **Priority**: HIGH — needed for account UX, liked properties, and property-aware chat
+- **Read first**: `sql/schema.sql`, `src/bgrealestate/api/routers/users.py`, `src/bgrealestate/services/chat_service.py`, UX-14
+- **Do**:
+  1. Persist user-property likes as durable state, not only a row that disappears on unlike.
+  2. Record every like/unlike status transition in a separate event table.
+  3. Create an explicit `user -> property -> chat -> lead_thread` connection.
+  4. Persist property-chat user/assistant messages in `lead_message`.
+  5. Route chat replies through a backend provider adapter; default local test provider is Ollama `gemma4:26b`, with API keys kept on the backend process only.
+- **Acceptance gate**: focused backend tests pass; `/users/me/liked` and `/users/me/property-chats` require Bearer auth; chat service can call Ollama adapter under mocked HTTP and falls back to stub when local Ollama is unavailable; frontend typecheck passes.
+- **Output**: `migrations/versions/20260429_0004_user_property_state_chat.py`, updated schema/models, updated users/chat API, `tests/test_chat_service.py`, expanded auth/API tests.
+- **Verifier**: debugger + ux_ui_designer
+- **Depends on**: BD-13, BD-11
+
 ---
 
 ## ═══════════════════════════════════════════════════════
@@ -395,7 +612,7 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 - **Depends on**: BD-01, S1-01
 
 ### S1-12: Tier-2 connector stubs (fixture-only)
-- **Status**: `DONE_AWAITING_VERIFY` (2026-04-08; Bazar.bg/Domaza/Yavlena/Home2U stubs + fixtures + tests)
+- **Status**: `VERIFIED` (2026-04-30; added Domaza development-page classification fixture; refreshed tier-2 stub fixture suite)
 - **Read first**: `data/source_registry.json` (tier-2 sources), `src/bgrealestate/connectors/scaffold.py`
 - **Do**: stub connectors + 1 fixture each for Bazar.bg, Domaza, Yavlena, Home2U (highest-value tier-2)
 - **Acceptance gate**: `make test` passes; legal gates enforced for `licensing_required` sources
@@ -513,6 +730,12 @@ Bulk live harvesting was started outside the formal S1-15 acceptance gate; do **
      - intent/category splits
      - progress percentages
      - method and automation recommendations
+  6. Use `docs/exports/all-tier-source-pattern-audit-2026-04-30.md` and `docs/exports/all-tier-source-pattern-audit-2026-04-30.xlsx` as the current cross-tier audit for unpatterned sources and for the non-Action1 patterned-source universality check.
+  7. Use `data/scrape_patterns/pattern_candidates/all-tier-unpatterned-source-patterns.json` and `docs/exports/all-tier-unpatterned-source-patterns-2026-04-30.md` as the durable proposed-pattern registry for still-unpatterned tier-1/2 sources.
+  8. Current non-Action1 patterned universality verdict:
+     - `OLX.bg`: broad schema coverage, not yet universally proven
+     - `Bazar.bg`: not universally proven across rent/commercial templates
+     - `Yavlena`: not universally proven across all property/service templates
 - **Acceptance gate**: report shows ≥5 sources × ≥100 listings in `canonical_listing`; `make test` still passes (fixture-only); rate limits and legal gates respected
 - **Output**: `docs/exports/tier12-live-volume-report.md`, crawl/job logs as needed, JOURNEY entries per run batch
 - **Verifier**: debugger
@@ -521,11 +744,15 @@ Bulk live harvesting was started outside the formal S1-15 acceptance gate; do **
 ### S1-21: Codex tier-1/2 scrape quality audit + pattern repair prep
 - **Status**: `DONE_AWAITING_VERIFY` (2026-04-29; exports refreshed; bucket_key backfilled on saved JSON for per-bucket reporting)
 - **Priority**: **CRITICAL** — next operator-requested tier-1/2 run before Gemma resumes
+- **2026-04-30 strict sample-proof update**: `alo.bg`, `Domaza`, and `Home2U` now have saved legal detail samples bound to `tests/fixtures/strict_sample_proof/*.json`, raw HTML under `data/scraped/<source>/raw/`, listing JSON under `data/scraped/<source>/listings/`, and full local galleries under `data/media/<reference_id>/`. `Home2U` selected sample has no description text in the source detail block, so the parser persists `source_attributes.description_status = absent_on_detail_page` and dashboards keep that caveat visible.
+- **2026-04-30 debugger repair update**: Action1 seven-source parser defects were repaired and saved raw HTML was reparsed offline. Fixed: Address.bg full-gallery URL extraction, BulgarianProperties full-description extraction, Homes.bg sqm decimal parsing, property-family unit-area preference, and conservative Bulgaria coordinate rejection. Current remaining media backfill dry-run gaps: Address.bg 31078, BulgarianProperties 5027, Homes.bg 396, imot.bg 2115, LUXIMMO 2, property.bg 0, SUPRIMMO 0. DB geospatial QA is blocked until PostgreSQL/Docker are available.
+- **2026-05-01 debugger quarantine update**: `scripts/action1_dataset_quality_gate.py` marks wrongly scraped rows as `LOST` and development/multi-unit pages as `GROUPED_PUBLICATION`. Default frontend export and DB import now exclude `LOST` plus grouped publications unless explicitly overridden. Current Action1 file-backed QA: Address.bg 5203 LOST, BulgarianProperties 1612 LOST / 279 grouped, Homes.bg 67 LOST / 10 grouped, imot.bg 383 LOST / 603 grouped, LUXIMMO 430 LOST / 105 grouped, property.bg 0 LOST, SUPRIMMO 39 LOST / 42 grouped. Main remaining work is source-specific media backfill, active-URL rechecks, and development-page splitting only when unit-level evidence exists.
+- **2026-05-04 debugger hardening update**: A1 pattern-depth review added route/bucket context hardening, immediate source-publication status, QA-eligible pattern proof, inactive-row import/export blocking, and `--limit-per-source` smoke QA for OpenClaw. See `docs/exports/a1-pattern-depth-reliability-review-2026-05-04.md`.
 - **Read first**: `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`, `docs/exports/source-item-photo-coverage.json`, `docs/exports/tier12-pattern-status.md`, `docs/dashboard/scrape-status.html`, `scripts/live_scraper.py`, `data/scraped/*/listings/*.json`
 - **Do**:
   1. Audit every tier-1/2 source with saved rows for: item count, `photo_count_remote`, `photo_count_local`, `full_gallery_downloaded`, local file existence/decodability, description length, price, area, city, property type, rooms/floor/phones.
   2. Produce per-source and per-property failure tables: missing images, partial galleries, thin descriptions, missing price/area/city/type, suspicious one-photo galleries, and missing image-description reports.
-  3. Improve source-specific parsing patterns in code, not only generated JSON. Current priority repairs: `imot_bg` price/area extraction, `homes_bg` sqm decimal parsing, `yavlena` zero-price/on-request handling, `address_bg` city extraction, multi-unit/development flags for `bulgarianproperties`, `imot_bg`, `yavlena`, `homes_bg`, `olx_bg`, and media backfill patterns for `bulgarianproperties`, `property_bg`, `suprimmo`, `homes_bg`.
+  3. Improve source-specific parsing patterns in code, not only generated JSON. Current priority repairs after the 2026-04-30 debugger pass: `imot_bg` remaining price/area edge cases, `yavlena` zero-price/on-request handling, broader multi-unit/development flags for `imot_bg`, `yavlena`, `homes_bg`, `olx_bg`, and operator-approved media backfill for repaired `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, and `LUXIMMO` galleries.
   4. Regenerate all affected listing JSON, photo coverage exports, pattern-status exports, `docs/dashboard/scrape-status.html`, and frontend scraped-listing seed data.
   5. Keep legal gates intact and keep tests fixture-only.
   6. Treat `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO` as the current priority four-bucket tier-1/2 pattern set. Each must keep explicit `buy_personal`, `buy_commercial`, `rent_personal`, and `rent_commercial` bucket instructions; where the website exposes a mixed route, accept rows only after card/detail category classification.
@@ -578,11 +805,14 @@ Notes:
 - **Buckets**: `buy_personal`, `buy_commercial`, `rent_personal`, `rent_commercial`
 - **Do**:
   1. Run all-Bulgaria scrape/backfill only for the seven scoped sources and only through legal/source-registry gates.
-  2. For every source and bucket, use the saved route/pattern if present; if a portal exposes a mixed route, classify each row from card/detail text before saving it to a bucket.
-  3. Save source URL, title, full description, combined text, structured attributes, price/currency or explicit price status, area, rooms, floor, type, service type, residential/commercial class, city/district/address, coordinates/geocoding evidence, all remote image URLs, all downloaded local image files, parse warnings, and local file validity.
-  4. Preserve source-publication identity. Group duplicates/same-property publications conservatively by useful address plus city/district; city-only or district-only placeholders must not create aggregate groups.
-  5. Refresh source/item photo coverage, pattern-status exports, `docs/dashboard/scrape-status.html`, and website seed data after the run.
-- **Acceptance gate**: all seven sources are attempted in all four buckets; each source/bucket has saved/skipped/error/parser-warning counts; every accepted row has photo counts, description coverage, source-link evidence, bucket evidence, and media status.
+  2. Resume from persisted file/log state, not chat. Use `data/runs/action1_scrape_uncapped_*`, `data/runs/scrape_metrics.jsonl`, and source listing JSON counts to determine the last useful progress point.
+  3. For backlog completion, run with `SCRAPER_PAGE_ORDER=oldest_first` and the Action1 uncapped runner so the scraper scans older pages in the current window before newer pages, then widens by wave. This is the current reliable approximation of "oldest to newest" on portals that expose newest-first pagination; exact chronological cursors are source-specific follow-up work.
+  4. For every source and bucket, use the saved route/pattern if present; if a portal exposes a mixed route, classify each row from card/detail text before saving it to a bucket.
+  5. Save source URL, title, full description, combined text, structured attributes, price/currency or explicit price status, area, rooms, floor, type, service type, residential/commercial class, city/district/address, coordinates/geocoding evidence, all remote image URLs, all downloaded local image files, parse warnings, and local file validity.
+  6. Preserve source-publication identity. Group duplicates/same-property publications conservatively by useful address plus city/district; city-only or district-only placeholders must not create aggregate groups.
+  7. After each batch, run or queue the quality gate: `python3 scripts/action1_dataset_quality_gate.py --limit-per-source 20 --output docs/exports/action1-dataset-quality-gate-dryrun.json` for smoke, full run when practical. Rows marked `LOST`, grouped/development, or inactive do not count as accepted properties.
+  8. Refresh source/item photo coverage, pattern-status exports, `docs/dashboard/scrape-status.html`, and website seed data after the run.
+- **Acceptance gate**: all seven sources are attempted in all four buckets; each source/bucket has saved/skipped/error/parser-warning counts; every accepted row has photo counts, description coverage, source-link evidence, bucket evidence, and media status; `data_analyst` DA-01 and `debugger` DBG-08 have either verified or blocked the Action1 completion claim.
 - **Output**: refreshed `data/scraped/`, `data/media/`, `docs/exports/source-item-photo-coverage.json`, `docs/dashboard/scrape-status.html`, source/bucket logs, updated `docs/agents/scraper_1/JOURNEY.md`
 - **Verifier**: debugger
 - **Depends on**: operator **`Action1 ACCEPT`** posted to Telegram (or echoed in the OpenClaw operator message). `S1-22A` is **not** a hard prerequisite anymore; Action0 is sequenced by operator `Action0 now` after Action1 unless waived in `JOURNEY.md`.
@@ -696,10 +926,10 @@ make dashboard-doc
 ---
 
 ## ═══════════════════════════════════════════════════════
-## SCRAPER_T3 (tier-3: vendor/partner/official routes)
+## SCRAPER_T3 (historical tier-3 lane — no new assignments)
 ## ═══════════════════════════════════════════════════════
 
-**Mission**: Get data from licensed vendors (AirDNA/Airbtics for STR analytics), official registers (KAIS/Property Register), and partner feeds (Airbnb/Booking when contracts exist). All tier-3 sources are gated by contracts/licenses — implement the importers so they work the moment a contract is signed.
+**Mission status after 2026-05-05 reset**: retained for historical JOURNEY evidence only. New tier-3 work is owned by `scraper_sm` under the **S&M** mission. Do not add new `scraper_t3` slices; migrate open follow-ups to S&M.
 
 **2026-04-09:** Do **not** expand **live** tier-3 work until **`S1-18`** is `VERIFIED` (or operator explicitly reprioritizes). Fixture slices awaiting **`DBG-06`** stay in queue behind the tier-1/2 volume wave.
 
@@ -783,12 +1013,26 @@ make dashboard-doc
 ---
 
 ## ═══════════════════════════════════════════════════════
-## SCRAPER_SM (tier-4: social media overlays)
+## SCRAPER_SM / S&M (tier-3 + tier-4 intelligence overlays)
 ## ═══════════════════════════════════════════════════════
 
-**Mission**: Extract real estate leads from social media channels (Telegram, X, Facebook groups) as intelligence overlays. All data feeds into CRM as leads, not as primary listings. Consent-gated, redaction-enforced.
+**Mission**: Operate as **S&M**: scraper + monitor for intelligence overlays. Own tier-3 vendor/partner/official routes and tier-4 social/messenger overlays. All outputs are source publications, CRM leads, analytics overlays, or review candidates first — not primary marketplace listings unless legal gates, consent gates, and single-property evidence pass.
 
-**2026-04-09:** Pause **new** live social expansion until **`S1-18`** is `VERIFIED` unless it unblocks tier-1/2 ingest or the operator overrides.
+**2026-05-05 reset:** S&M does not execute Action1 A1 marketplace scraping. S&M may monitor OpenClaw/reporting state and prepare tier-3/tier-4 fixture-first work, but live tier-3/tier-4 expansion remains blocked unless operator/legal approval exists and Action1 priority is not impacted.
+
+### SM-00: S&M mission consolidation and OpenClaw monitor handoff
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-05)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/agents/TASKS.md`, `docs/agents/scraper_t3/JOURNEY.md`, `docs/agents/scraper_sm/JOURNEY.md`, `docs/openclaw/ACTION1_AGENT_BOOTSTRAP.md`, `docs/openclaw/OPENCLAW_S_AND_M_AGENT.md`
+- **Do**:
+  1. Treat tier-3 partner/vendor/official and tier-4 social/messenger work as one S&M intelligence lane.
+  2. Keep all private/social/messenger scraping consent-gated; no private groups, DMs, unofficial sessions, or KYC/CAPTCHA bypass.
+  3. While Action1 runs, S&M may monitor reports and prepare QA/rescrape prompts, but must not widen Action1 source scope.
+  4. After Action1 QA, S&M supports Action0 media-quality reports and Action2 legal tier-1/2 expansion only as monitor/analyst support, not by overriding `scraper_1`.
+- **Acceptance gate**: S&M instructions are explicit, tier-3 historical work is not lost, and OpenClaw can distinguish A1 marketplace scraping from S&M intelligence overlays.
+- **Output**: updated TASKS, S&M JOURNEY, OpenClaw S&M instruction doc.
+- **Verifier**: debugger
+- **Depends on**: PLAN-01
 
 ### SM-01: Social ingestion contract (policy + fixtures)
 - **Status**: `VERIFIED` (2026-04-08; debugger consent + fixture review)
@@ -861,6 +1105,31 @@ make dashboard-doc
 - **Output**: decision doc `docs/agents/scraper_sm/facebook-public-groups-decision.md` (manual/consent path, autonomous scrape deferred)
 - **Verifier**: debugger (legal gate)
 - **Depends on**: SM-05
+
+### SM-08: Messenger publication candidates for Telegram, WhatsApp, and Viber
+- **Status**: `TODO`
+- **Priority**: HIGH — requested source deepening, but must stay consent/API/manual only
+- **Read first**: `docs/agents/scraper_sm/messenger-publication-entity-plan-2026-04-29.md`, `src/bgrealestate/connectors/social_parser.py`, `src/bgrealestate/connectors/telegram_public.py`, `data/source_registry.json`
+- **Do**:
+  1. Implement fixture-first candidate mapper for Telegram public-channel messages, WhatsApp manual/Cloud API webhook payloads, and Viber manual/bot webhook payloads.
+  2. Redact phone/email/name/private profile fields before persistence.
+  3. Classify each message as `lead_only`, `candidate_single_unit`, `suspected_multi_unit`, or `noise`.
+  4. Preserve `consent_status`, `redaction_applied`, channel/message IDs, media traceability, and promotion blockers.
+  5. Do not run live WhatsApp/Viber/private-channel scraping; no private groups, no user DMs, no unofficial session scraping.
+- **Acceptance gate**: fixture-backed tests prove candidate extraction, redaction, and promotion blocking; no live network dependency in tests; debugger verifies legal gates.
+- **Output**: candidate schema/mapper, Telegram/WhatsApp/Viber fixtures, tests, refreshed tier-4 exports.
+- **Verifier**: debugger + backend_developer
+- **Depends on**: SM-01, SM-02, SM-05
+
+### SM-09: Approved messenger candidate persistence into source-publication pipeline
+- **Status**: `TODO`
+- **Priority**: MEDIUM — start only after SM-08 review schema is verified
+- **Read first**: SM-08 outputs, `src/bgrealestate/connectors/ingest.py`, `src/bgrealestate/services/unification.py`, BD-17
+- **Do**: persist approved messenger candidates as source publications first; promote to `property_entity` only when single-unit evidence gate passes; otherwise keep CRM lead/thread evidence.
+- **Acceptance gate**: approved fixture candidate creates source publication + review status; unapproved/noise/private messages do not create property entities; `make test` passes.
+- **Output**: persistence adapter, tests, admin review notes.
+- **Verifier**: debugger
+- **Depends on**: SM-08, BD-11, BD-17
 
 ---
 
@@ -1093,6 +1362,20 @@ make dashboard-doc
 - **Verifier**: debugger
 - **Depends on**: UX-02
 
+### UX-14: Account cabinet, liked properties, and property chat UX
+- **Status**: `DONE_AWAITING_VERIFY` (2026-04-29: `/settings`, `/chat`, and global chat bar now align to BD-17 contracts)
+- **Priority**: HIGH — user account and liked-property workflows are core marketplace behavior
+- **Read first**: BD-17, `app/(main)/settings/page.tsx`, `app/(main)/chat/page.tsx`, `components/chat/ChatBar.tsx`
+- **Do**:
+  1. Reframe `/settings` as a profile/account cabinet with buyer/renter/seller mode, liked properties, saved searches, and chat entry points.
+  2. Reframe `/chat` around search threads and property threads.
+  3. Connect chat surfaces through the Next backend proxy so model keys stay masked on the backend.
+  4. Keep demo/local state until auth cookies and live user session wiring are complete.
+- **Acceptance gate**: frontend typecheck passes; chat requests post to `/api/backend/api/v1/chat`; account surface shows liked-property and mode workflows without blocking Action1.
+- **Output**: `components/account/AccountCabinet.tsx`, `components/chat/ChatWorkspace.tsx`, updated `/settings`, `/chat`, and `ChatBar`.
+- **Verifier**: debugger + backend_developer
+- **Depends on**: BD-17
+
 ---
 
 ## ═══════════════════════════════════════════════════════
@@ -1231,6 +1514,16 @@ make dashboard-doc
   3. Keep a short pass/fail queue so no agent run ends without a debugger follow-up.
 - **Acceptance gate**: every new non-debugger JOURNEY entry has a corresponding debugger verification note or an explicit deferral reason
 - **Output**: rolling handoff log in `docs/agents/debugger/JOURNEY.md`, status updates here when verification completes
+- **Verifier**: lead agent
+- **Depends on**: —
+
+### DBG-10: Fixture-only test hardening for live scraper/media side effects
+- **Status**: `TODO`
+- **Priority**: HIGH — guardrail enforcement
+- **Read first**: `tests/test_scrape_stage1.py`, `tests/test_live_scraper_source_parsers.py`, `tests/test_media_pipeline.py`, `scripts/live_scraper.py`, `src/bgrealestate/services/media.py`
+- **Do**: identify why `make test` can emit live HTTP/image-download log lines and modify `data/scraper.log`; convert the path to fixture/mocked clients or isolate log output to a temp file during tests.
+- **Acceptance gate**: `make test` leaves `data/scraper.log` unchanged and no test performs external HTTP unless explicitly enabled by an opt-in env var.
+- **Output**: tests/mocks/logging isolation patch plus verifier note.
 - **Verifier**: lead agent
 - **Depends on**: —
 

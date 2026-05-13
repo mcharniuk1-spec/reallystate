@@ -311,13 +311,14 @@
   </div>
 
     <script id="dashboard-data" type="application/json">{
-  "generated_at": "2026-04-29T08:18:13.809361+00:00",
+  "generated_at": "2026-05-13T08:46:20.852001+00:00",
   "roadmap": {
     "done": 46,
     "total": 128,
     "remaining": 82
   },
   "skills": [
+    "agent-architecture-governance",
     "backend-data-engineering",
     "browser-scrape-ops",
     "ci-cd-pipeline",
@@ -337,10 +338,13 @@
     "google-slides-handoff",
     "hybrid-scrape-stack",
     "image-media-pipeline",
+    "infra-db-migration",
     "investor-pitch-yc",
     "managed-scrape-platforms",
+    "market-intelligence",
     "multi-agent-patterns",
     "openclaw-ollama-gemma4",
+    "ops-release-management",
     "parser-fixture-qa",
     "postgres-analysis",
     "postgres-ops-psql",
@@ -353,6 +357,7 @@
     "qa-review-release",
     "railway-deploy",
     "real-estate-source-registry",
+    "reporter",
     "runtime-compliance-evaluator",
     "scraper-connector-builder",
     "security-audit",
@@ -362,6 +367,7 @@
     "subagent-driven-development",
     "test-generator",
     "universal-agent-scrape-setup",
+    "user-analytics-instrumentation",
     "ux-dashboard-design",
     "vercel-nextjs-deploy",
     "visual-3d-map",
@@ -548,13 +554,67 @@
           "review": "verify `docs/exports/gemma4-openclaw-run-analysis-2026-04-27.md`; verify the next Codex run produces per-source/per-property gaps; verify parser fixes are code-backed and fixture-tested; verify Gemma receives only Codex-confirmed apartment rows with complete local galleries."
         },
         {
-          "title": "2026-04-29 — debugger follow-up queued: S1-21 audit + same-location grouping + Gemma sequence",
+          "title": "2026-04-29 — debugger follow-up queued: BD-17 / UX-14 / SM-08 setup",
           "summary": "",
           "action": "",
           "changed_files": "",
-          "commands": "deferred formal verification until the updated S1-21 artifacts, frontend grouping behavior, and dashboard refresh are reviewed together.",
-          "status": "DEFERRED",
-          "review": "verify `docs/exports/s1-21-tier12-quality-audit-2026-04-29.md`, `docs/exports/s1-21-gemma-action0-eligible.json`, same-location aggregate behavior in the website, and the updated Action0/Action1/Action2 Gemma task sequence."
+          "commands": "python3 -m py_compile ..., npm run typecheck, PYTHONPATH=src python3 -m unittest tests.test_chat_service tests.test_user_auth tests.test_api_fastapi -v",
+          "status": "DEFERRED pending full debugger sweep; focused gates passed locally.",
+          "review": "Verify Alembic migration, Verify, Verify"
+        },
+        {
+          "title": "2026-04-29 — debugger follow-up queued: fixture-only test hardening",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "make test, rg -n \"static4\\\\.superimoti|download_photos|download_image|live_scraper|scrape_all_full\" tests scripts/live_scraper.py",
+          "status": "DEFERRED; `make test` passes but has side effects.",
+          "review": "queued `DBG-10` to isolate live-scraper/media logging and external HTTP from the default test suite."
+        },
+        {
+          "title": "2026-04-29 — docs/dashboard reconciliation after account-chat work",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "rg -n \"BD-17|UX-14|SM-08|DBG-10|Ollama|gemma4|property chat|liked|saved_property_status_event|user_property_chat\" README.md docs app components src tests, make dashboard-doc",
+          "status": "PASS for documentation reconciliation; runtime verification still follows `DBG-10` and BD-17/UX-14 acceptance gates.",
+          "review": "Updated README, development setup, reporting index, and status roadmap so account/chat and messenger planning are no longer only present in code/task logs., Dashboard refresh is derived from current repo state; raw Action1 scrape outputs were not edited by this reconciliation pass."
+        },
+        {
+          "title": "2026-04-30 — VERIFY: tier-pattern audit artifacts + alo.bg rent/land + Domaza development-page classification (agent: codex/run evidence)",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "python3 -m py_compile scripts/generate_all_tier_pattern_audit.py, python3 scripts/generate_all_tier_pattern_audit.py, make lint, make typecheck, make test, make validate, make dashboard-doc",
+          "status": "PASS",
+          "review": "Confirmed the tier-pattern audit generator is runnable and the export suite regenerates cleanly., Added fixture-backed proof for, Added a Domaza development/building aggregate fixture and a minimal classifier heuristic so these pages are treated as"
+        },
+        {
+          "title": "2026-04-30 — DEBUGGER: Action1 seven-source scrape quality detective repair",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "python3 -m py_compile scripts/live_scraper.py scripts/reparse_action1_from_raw.py scripts/generate_s1_21_quality_audit.py tests/test_action1_parser_regressions.py, python3 -m unittest tests.test_action1_parser_regressions -v, python3 scripts/reparse_action1_from_raw.py --dry-run --limit 10 --output docs/exports/action1-offline-reparse-summary-dryrun.json, python3 scripts/reparse_action1_from_raw.py --output docs/exports/action1-offline-reparse-summary.json, python3 scripts/generate_s1_21_quality",
+          "status": "PASS for parser-pattern repair and offline file-backed corpus reparse; DB geospatial gate BLOCKED by unavailable PostgreSQL/Docker runtime.",
+          "review": ""
+        },
+        {
+          "title": "2026-05-01 — DEBUGGER: Action1 dataset quarantine and source-identity hardening",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "python3 scripts/action1_dataset_quality_gate.py --apply --check-urls --url-check-limit 210 --url-check-per-source 30 --url-timeout 8 --output docs/exports/action1-dataset-quality-gate.json, python3 -m py_compile scripts/action1_dataset_quality_gate.py scripts/live_scraper.py scripts/generate_frontend_scraped_listings.py scripts/import_scraped_listings.py scripts/generate_s1_21_quality_audit.py scripts/generate_source_item_photo_coverage.py scripts/generate_scrape_status_dashboard.py, python3 scr",
+          "status": "PASS for file-backed quarantine, import/frontend protection, and dashboard/report regeneration; DB live verification remains blocked until PostgreSQL is available.",
+          "review": ""
+        },
+        {
+          "title": "2026-05-04 — DEBUGGER: A1 pattern-depth and OpenClaw continuation hardening",
+          "summary": "",
+          "action": "Planner queued debugger verification for the 2026-05-05 agent reset, OpenClaw Action1 continuation rules, reporter wording, and S&M tier-3/tier-4 boundaries.",
+          "changed_files": "docs/agents/TASKS.md, docs/agents/README.md, docs/openclaw/ACTION1_AGENT_BOOTSTRAP.md, docs/openclaw/OPENCLAW_S_AND_M_AGENT.md, agent-skills/openclaw-ollama-gemma4/SKILL.md, agent-skills/reporter/SKILL.md, docs/openclaw/reporter-agent-instructions.md, docs/openclaw/action1-multi-agent.md",
+          "commands": "none yet.",
+          "status": "TODO verifier follow-up.",
+          "review": "Verify no task file still assigns new tier-3 work to `scraper_t3`, no OpenClaw doc widens Action1 beyond A1, and completion requires data_analyst/debugger QA."
         }
       ],
       "tasks": {
@@ -621,6 +681,12 @@
             "title": "End-of-run verification sweep",
             "status": "TODO",
             "details": "TODO"
+          },
+          {
+            "id": "DBG-10",
+            "title": "Fixture-only test hardening for live scraper/media side effects",
+            "status": "TODO",
+            "details": "TODO"
           }
         ],
         "blocked": []
@@ -628,11 +694,11 @@
       "counts": {
         "verified": 4,
         "in_progress": 0,
-        "todo": 6,
+        "todo": 7,
         "blocked": 0,
-        "total": 10,
-        "journal_entries": 19,
-        "efficiency_pct": 40
+        "total": 11,
+        "journal_entries": 25,
+        "efficiency_pct": 36
       }
     },
     {
@@ -803,6 +869,15 @@
           "commands": "",
           "status": "",
           "review": ""
+        },
+        {
+          "title": "2026-04-29 — BD-17: user-property state ledger + property chat bridge",
+          "summary": "",
+          "action": "Added durable liked-property status, status-change events, explicit user-property chat joins, and a backend chat provider adapter with local Ollama `gemma4:26b` default and stub fallback.",
+          "changed_files": "`sql/schema.sql`, `migrations/versions/20260429_0004_user_property_state_chat.py`, `src/bgrealestate/db/models.py`, `src/bgrealestate/api/routers/users.py`, `src/bgrealestate/api/routers/chat.py`, `src/bgrealestate/services/chat_service.py`, `tests/test_chat_service.py`, `tests/test_user_auth.py`, `tests/test_api_fastapi.py`, `docs/agents/TASKS.md`",
+          "commands": "`python3 -m py_compile ...`, `npm run typecheck`, `PYTHONPATH=src python3 -m unittest tests.test_chat_service tests.test_user_auth tests.test_api_fastapi -v`, `make test`, `make run-api`, `curl /api/v1/chat`, `curl /api/backend/api/v1/chat`",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": "Property chat persistence uses existing `lead_thread`/`lead_message` tables plus the new `user_property_chat` join. Like/unlike now preserves state history instead of deleting the relationship."
         }
       ],
       "tasks": {
@@ -862,6 +937,12 @@
             "title": "User profile + auth system (buyer/renter/seller modes)",
             "status": "DONE_AWAITING_VERIFY",
             "details": "DONE_AWAITING_VERIFY` (2026-04-08: registration, login, profile, saved properties, dashboard implemented)"
+          },
+          {
+            "id": "BD-17",
+            "title": "User-property state ledger + property chat bridge",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-29: liked status ledger, user-property chat join, and Ollama chat adapter implemented)"
           }
         ],
         "todo": [
@@ -912,11 +993,11 @@
       },
       "counts": {
         "verified": 3,
-        "in_progress": 6,
+        "in_progress": 7,
         "todo": 7,
         "blocked": 0,
-        "total": 16,
-        "journal_entries": 17,
+        "total": 17,
+        "journal_entries": 18,
         "efficiency_pct": 38
       }
     },
@@ -1088,6 +1169,33 @@
           "commands": "",
           "status": "",
           "review": ""
+        },
+        {
+          "title": "2026-04-29 — Homepage map block reliability and 70/30 split",
+          "summary": "",
+          "action": "Reworked the homepage map/list row so the map is 2D by default, 3D is opt-in, map pins stay visible through a fallback projection, the layout uses a 70/30 map-to-property split, and the right property panel scrolls internally.",
+          "changed_files": "components/map/MapCanvas.tsx, components/listings/MainExplorer.tsx, docs/agents/TASKS.md",
+          "commands": "npm run typecheck, make dashboard-doc, curl --max-time 20 -I -sS http://127.0.0.1:3000/, TypeScript check: pass., Dashboard regeneration: pass., Dev server HTTP check: pass.",
+          "status": "`DONE_AWAITING_VERIFY`",
+          "review": "FACT: the map and property blocks now share one viewport-bounded row, 70% map and 30% properties on desktop., FACT: property cards are reduced in image height, padding, and type scale so more fit inside the right panel., FACT: visible pins fall back to normalized Bulgaria coordinates if remote tiles or MapLibre projection are unavailable., FACT: the property list uses an explicit internal scrollbar., GAP: Playwright screenshot verification could not run because local Playwright browser binaries "
+        },
+        {
+          "title": "2026-04-29 — Viewport grouping and scroll-panel repair",
+          "summary": "",
+          "action": "Reworked homepage map grouping to be viewport-driven and repaired the responsive map/list stack.",
+          "changed_files": "components/map/MapCanvas.tsx, components/listings/MainExplorer.tsx, docs/agents/TASKS.md",
+          "commands": "",
+          "status": "`DONE_AWAITING_VERIFY`",
+          "review": "FACT: desktop shows max 20 current-view markers; 21-39 visible properties merge nearest points, and 40+ use a 20-cell viewport grid., FACT: selecting a group filters the right panel to that group only., FACT: selecting a single property pins it first inside the scrollable list, not in a separate fixed card., FACT: narrow viewports stack map above property panel."
+        },
+        {
+          "title": "2026-04-29 — UX-14: account cabinet + property chat surfaces",
+          "summary": "",
+          "action": "Reframed `/settings` as an account cabinet and `/chat` as a search/property-thread workspace. Wired global and full-page chat to the backend proxy so the frontend is ready for the Ollama/API chat bridge without exposing provider keys.",
+          "changed_files": "components/account/AccountCabinet.tsx, components/chat/ChatWorkspace.tsx, components/chat/ChatBar.tsx, app/(main)/settings/page.tsx, app/(main)/chat/page.tsx, docs/agents/TASKS.md",
+          "commands": "npm run typecheck, curl --max-time 20 -I -sS http://127.0.0.1:3000/chat, curl --max-time 20 -I -sS http://127.0.0.1:3000/settings, curl --max-time 75 -sS -X POST http://127.0.0.1:3000/api/backend/api/v1/chat ..., TypeScript check: pass., /chat, Next backend proxy to FastAPI/Ollama: pass.",
+          "status": "DONE_AWAITING_VERIFY",
+          "review": "FACT: account UI now shows mode switching, liked properties, saved searches, and property chat entry points., FACT: chat posts to, GAP: no Playwright screenshot verification was run in this pass."
         }
       ],
       "tasks": {
@@ -1117,6 +1225,12 @@
             "title": "Product UX structure spec (LUN-style buyer marketplace)",
             "status": "DONE_AWAITING_VERIFY",
             "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+          },
+          {
+            "id": "UX-14",
+            "title": "Account cabinet, liked properties, and property chat UX",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-04-29: `/settings`, `/chat`, and global chat bar now align to BD-17 contracts)"
           }
         ],
         "todo": [
@@ -1179,12 +1293,12 @@
       },
       "counts": {
         "verified": 1,
-        "in_progress": 3,
+        "in_progress": 4,
         "todo": 9,
         "blocked": 0,
-        "total": 13,
-        "journal_entries": 17,
-        "efficiency_pct": 19
+        "total": 14,
+        "journal_entries": 20,
+        "efficiency_pct": 21
       }
     },
     {
@@ -1598,13 +1712,103 @@
           "review": "FACT: all seven priority sources now expose four non-empty bucket definitions in the curated section catalog., INTERPRETATION: sources with mixed public routes must classify residential/commercial from card/detail text before accepting a listing into the bucket., GAP: live reachability was not tested in this local pass; the next live scrape must record route/runtime failures by source and bucket."
         },
         {
-          "title": "2026-04-29 — S1-21 file-backed quality audit + Gemma action sequencing",
+          "title": "2026-04-29 — Property identity anomaly audit and scraper pattern hardening",
           "summary": "",
-          "action": "Ran the S1-21 offline audit for the seven Gemma priority sources, generated the Action0 eligible set, codified same-location grouping, and updated Gemma/OpenClaw task sequencing.",
-          "changed_files": "scripts/generate_s1_21_quality_audit.py, docs/exports/s1-21-tier12-quality-audit-2026-04-29.json, docs/exports/s1-21-tier12-quality-audit-2026-04-29.md, docs/exports/s1-21-gemma-action0-eligible.json, docs/exports/taskforgema.md, docs/openclaw/gemma4-agent.md, docs/exports/reporting-and-instruction-index.md, docs/exports/tier12-four-bucket-pattern-handoff-2026-04-28.md, docs/agents/TASKS.md, docs/agents/README.md, lib/listing-source-links.ts, components/listings/MainExplorer.tsx",
-          "commands": "python3 scripts/generate_s1_21_quality_audit.py, S1-21 audit generation: pass after report-format patch.",
+          "action": "Added multi-unit/development publication checks, zero-price normalization rules, and suspicious area parsing checks to S1-21 audit and live scraper post-processing.",
+          "changed_files": "scripts/generate_s1_21_quality_audit.py, scripts/live_scraper.py, docs/exports/property-identity-anomaly-audit-2026-04-29.md, AGENTS.md, docs/agents/TASKS.md, docs/openclaw/gemma4-agent.md, docs/exports/taskforgema.md",
+          "commands": "",
           "status": "`DONE_AWAITING_VERIFY`",
-          "review": "FACT: Action0 has 397 eligible rows with complete local-gallery evidence across the seven priority sources., FACT: same-location grouping now uses useful address text plus city/district and excludes city-only or district-only placeholder grouping., INTERPRETATION: Gemma should enrich existing complete galleries before the next live/backfill scrape wave so image-description gaps start shrinking immediately., GAP: Action1 live scrape/backfill remains operator/runtime gated and was not executed by "
+          "review": "FACT: website seed has 1,549 rows; highest multi-unit suspects are BulgarianProperties 55, OLX.bg 18, Yavlena 14, Homes.bg 7., FACT: Homes.bg has 60 area values below 2 sqm, matching decimal/locale parse failure., FACT: Yavlena has 13 numeric zero prices; numeric zero is now instructionally invalid as a real price., GAP: live pages were not refetched in this pass; flags are based on saved website seed and parser rules."
+        },
+        {
+          "title": "2026-04-29 — Gemma/OpenClaw Action0-Action2 task split",
+          "summary": "",
+          "action": "Split the Gemma/OpenClaw handoff into explicit Action0, Action1, and Action2 tasks so the running OpenClaw agent can execute the next operator command without guessing scope.",
+          "changed_files": "AGENTS.md, docs/agents/TASKS.md, docs/agents/README.md, docs/openclaw/README.md, docs/openclaw/gemma4-agent.md, docs/exports/taskforgema.md, docs/exports/reporting-and-instruction-index.md",
+          "commands": "",
+          "status": "`DONE_AWAITING_VERIFY`",
+          "review": "FACT:, FACT:, FACT:, GAP: no Gemma/OpenClaw action output was executed in this pass; this pass updated the execution contract."
+        },
+        {
+          "title": "2026-04-29 — Action1 status capture + bucket backfill for per-category reporting",
+          "summary": "",
+          "action": "Backfilled `bucket_key`/`segment_key` for already-saved listing JSON rows so per-bucket reporting works consistently across older corpuses, and captured the latest per-source per-bucket scrape metrics (items, full-gallery %, avg description chars, avg remote/local photo counts)., address_bg, bulgarianproperties, homes_bg, imot_bg, luximmo, property_bg, suprimmo",
+          "changed_files": "",
+          "commands": "",
+          "status": "`IN_PROGRESS`",
+          "review": ""
+        },
+        {
+          "title": "2026-04-30 — Detective orchestration + operator Action1 gate",
+          "summary": "",
+          "action": "Cross-repo “detective” pass documented in `docs/exports/detective-product-orchestration-2026-04-30.md`; widened agent missions in `docs/agents/TASKS.md`; OpenClaw/Gemma4 gate (`Action1 ACCEPT`, Action0/2 deferred until explicit `Action0 now` / `Action2 now`) in `docs/exports/taskforgema.md`, `AGENTS.md`, `docs/agents/README.md`, `docs/openclaw/gemma4-agent.md`, `agent-skills/openclaw-ollama-gemma4/SKILL.md`; added `scripts/action1_scrape_matrix_snapshot.py` + `make action1-matrix-snapshot`; LAN hosting via `make run-api-public` / `make run-frontend-public`; UI liquid underlay + `framer-motion` / `tailwindcss-animate`.",
+          "changed_files": "",
+          "commands": "",
+          "status": "`DONE_AWAITING_VERIFY`",
+          "review": ""
+        },
+        {
+          "title": "2026-04-30 — All-tier unpatterned-source audit + universality review",
+          "summary": "",
+          "action": "Audited current repo state across all source tiers while excluding the seven Action1 sources from repair scope; generated `docs/exports/all-tier-source-pattern-audit-2026-04-30.{md,json,xlsx}` plus the durable proposed-pattern registry `data/scrape_patterns/pattern_candidates/all-tier-unpatterned-source-patterns.json` and `docs/exports/all-tier-unpatterned-source-patterns-2026-04-30.md`., Strongest public repair candidates remain, Legal/authorization gates still block, Non-Action1 patterned-sour",
+          "changed_files": "",
+          "commands": "",
+          "status": "`DONE_AWAITING_VERIFY`",
+          "review": ""
+        },
+        {
+          "title": "2026-04-29 — Action1 Telegram matrix + Ollama triad + checkpoint tooling",
+          "summary": "",
+          "action": "Shipped `scripts/action1_full_telegram_report.py` (`--compact` for TG-sized 7×4 + quality), `scripts/action1_checkpoint_notify.py` (+100 net JSON → optional `openclaw message send`), `make action1-telegram-report` / `make action1-checkpoint-notify`, `docs/openclaw/action1-multi-agent.md`, and `scripts/action1_openclaw_triad.sh` (sequential `action1_gemma` / `action1_qwen` / `action1_deepseek` → Telegram `181488201`). Initialized `data/runs/action1_listing_json_total.txt` for +100 cadence; scrape logs under `data/runs/action1_scrape_*.log`.",
+          "changed_files": "",
+          "commands": "",
+          "status": "`IN_PROGRESS`",
+          "review": ""
+        },
+        {
+          "title": "2026-04-29 — OpenClaw `main` workspace + Action1 bootstrap (Telegram “missing URLs” fix)",
+          "summary": "",
+          "action": "Fix: `~/.openclaw-codex/openclaw.json` — set `main.workspace` to `/Users/getapple/Documents/Real Estate Bulg`; added `docs/openclaw/ACTION1_AGENT_BOOTSTRAP.md` (seven `primary_url`s from `data/source_registry.json`, four buckets, read order); `~/.openclaw-codex/agents/main/agent/SOUL.md`; `scripts/action1_openclaw_main_resume.sh` + `make action1-openclaw-main-resume`; triad prompts prepend bootstrap; Telegram notice message id **195** (host session).",
+          "changed_files": "",
+          "commands": "",
+          "status": "`IN_PROGRESS`",
+          "review": ""
+        },
+        {
+          "title": "2026-04-30 — Strict sample-proof for alo.bg, Domaza, and Home2U",
+          "summary": "",
+          "action": "Promoted the three strongest non-Action1 repair candidates from route evidence to saved sample proof: `alo.bg` sale apartment, `Domaza` single-unit apartment samples, and `Home2U` Varna land detail., alo.bg, Domaza, Home2U",
+          "changed_files": "",
+          "commands": "",
+          "status": "`DONE_AWAITING_VERIFY`",
+          "review": ""
+        },
+        {
+          "title": "2026-04-23 — live_scraper bounded detail concurrency (A1 / A12) + `scrape_metrics` hook",
+          "summary": "",
+          "action": "Per-source detail phase now uses `ThreadPoolExecutor` with `SCRAPER_CONCURRENCY_A1` / `A12` / `OTHER` (from `src/bgrealestate/scraping/source_class.py`); one `httpx` client (and photo client) per worker thread. After each `scrape_source` run, append JSON to `data/runs/scrape_metrics.jsonl` and update `data/runs/scrape_metrics_latest.json`. Ops: `scripts/action1_scrape_full_uncapped.sh` exports defaults and uses `--parallel-sources 7`; `make action1-telegram-watch` + `scripts/action1_telegram_watch.sh` for 5-minute OpenClaw running-line reports; `scripts/action1_openclaw_continue.sh` handoff updated.",
+          "changed_files": "",
+          "commands": "",
+          "status": "`DONE`",
+          "review": ""
+        },
+        {
+          "title": "2026-04-23 — OpenClaw instructions: Action1 vs A1 vs A12 + DB alignment",
+          "summary": "",
+          "action": "Consistency audit: 13 Patterned tier12 sources = 7 A1 (Action1) + 6 A12. Added `docs/openclaw/scrape-taxonomy-a1-a12.md`; updated `ACTION1_AGENT_BOOTSTRAP.md`, `taskforgema.md`, `gemma4-agent.md`, `openclaw/README.md`, `agent-skills/openclaw-ollama-gemma4/SKILL.md`, `source_class.py` docstring, `action1_openclaw_continue.sh`. BulgarianProperties registry `.bg` vs scraper `.com` documented.",
+          "changed_files": "",
+          "commands": "",
+          "status": "`DONE`",
+          "review": ""
+        },
+        {
+          "title": "2026-04-30 — Action1 parser-pattern repair + offline corpus reparse",
+          "summary": "",
+          "action": "Repaired Action1 parser patterns for incorrect galleries/descriptions/areas and reparsed saved local raw HTML for all seven Action1 sources without launching a live crawl., Address.bg, BulgarianProperties, Homes.bg, LUXIMMO, Geospatial parser now rejects/suppresses coordinates outside a conservative Bulgaria polygon and corrects swapped coordinate order when possible., address_bg, bulgarianproperties, homes_bg, imot_bg, luximmo, property_bg, suprimmo, Outside-Bulgaria coordinates in file-backed ",
+          "changed_files": "",
+          "commands": "",
+          "status": "`DONE_AWAITING_VERIFY`",
+          "review": ""
         }
       ],
       "tasks": {
@@ -1626,6 +1830,12 @@
             "title": "imoti.net stub (legal-gated)",
             "status": "VERIFIED",
             "details": "VERIFIED"
+          },
+          {
+            "id": "S1-12",
+            "title": "Tier-2 connector stubs (fixture-only)",
+            "status": "VERIFIED",
+            "details": "VERIFIED` (2026-04-30; added Domaza development-page classification fixture; refreshed tier-2 stub fixture suite)"
           }
         ],
         "in_progress": [
@@ -1634,12 +1844,6 @@
             "title": "Live-safe ingestion runner (small)",
             "status": "DONE_AWAITING_VERIFY",
             "details": "DONE_AWAITING_VERIFY` (2026-04-08; CLI + tests added, golden-path command executed in skip-mode without DATABASE_URL)"
-          },
-          {
-            "id": "S1-12",
-            "title": "Tier-2 connector stubs (fixture-only)",
-            "status": "DONE_AWAITING_VERIFY",
-            "details": "DONE_AWAITING_VERIFY` (2026-04-08; Bazar.bg/Domaza/Yavlena/Home2U stubs + fixtures + tests)"
           },
           {
             "id": "S1-13",
@@ -1663,7 +1867,13 @@
             "id": "S1-21",
             "title": "Codex tier-1/2 scrape quality audit + pattern repair prep",
             "status": "DONE_AWAITING_VERIFY",
-            "details": "DONE_AWAITING_VERIFY` (2026-04-29; file-backed S1-21 audit, Action0 eligible set, same-location grouping contract, and frontend same-location aggregate filter prepared; live Action1 scrape/backfill remains operator/runtime gated)"
+            "details": "DONE_AWAITING_VERIFY` (2026-04-29; exports refreshed; bucket_key backfilled on saved JSON for per-bucket reporting)"
+          },
+          {
+            "id": "S1-22B",
+            "title": "Gemma/OpenClaw Action1 — seven-source all-Bulgaria scrape/backfill",
+            "status": "IN_PROGRESS",
+            "details": "IN_PROGRESS` (detached run; monitor `data/runs/action1_20260429_171309.log`)"
           },
           {
             "id": "S1-20",
@@ -1680,8 +1890,14 @@
             "details": "TODO"
           },
           {
-            "id": "S1-22",
-            "title": "Gemma/OpenClaw Action0/Action1/Action2 property image-report + scrape handoff",
+            "id": "S1-22A",
+            "title": "Gemma/OpenClaw Action0 — local-gallery property image reports",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "S1-22C",
+            "title": "Gemma/OpenClaw Action2 — remaining legal tier-1/2 expansion",
             "status": "TODO",
             "details": "TODO"
           },
@@ -1701,13 +1917,13 @@
         "blocked": []
       },
       "counts": {
-        "verified": 3,
+        "verified": 4,
         "in_progress": 7,
-        "todo": 4,
+        "todo": 5,
         "blocked": 0,
-        "total": 14,
-        "journal_entries": 45,
-        "efficiency_pct": 46
+        "total": 16,
+        "journal_entries": 55,
+        "efficiency_pct": 47
       }
     },
     {
@@ -1959,6 +2175,15 @@
           "commands": "",
           "status": "",
           "review": ""
+        },
+        {
+          "title": "2026-04-29 — SM-08 setup: messenger publication entity plan",
+          "summary": "",
+          "action": "Consolidated tier-3 and tier-4 intelligence work under scraper_sm / S&M. S&M now owns vendor/partner/official routes plus social/messenger overlays, while Action1 A1 marketplace scraping remains scraper_1-owned and OpenClaw-monitored.",
+          "changed_files": "`docs/agents/TASKS.md`, `docs/agents/README.md`, `docs/openclaw/OPENCLAW_S_AND_M_AGENT.md`.",
+          "commands": "documentation inspection only.",
+          "status": "DONE_AWAITING_VERIFY.",
+          "review": "Debugger should verify that S&M cannot widen Action1 or run private/social scraping without legal/consent gates."
         }
       ],
       "tasks": {
@@ -1971,6 +2196,12 @@
           }
         ],
         "in_progress": [
+          {
+            "id": "SM-00",
+            "title": "S&M mission consolidation and OpenClaw monitor handoff",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-05-05)"
+          },
           {
             "id": "SM-02",
             "title": "Telegram public channel connector (fixture-first)",
@@ -2008,18 +2239,30 @@
             "title": "Telegram live connector (Telegram Bot API or MTProto)",
             "status": "TODO",
             "details": "TODO"
+          },
+          {
+            "id": "SM-08",
+            "title": "Messenger publication candidates for Telegram, WhatsApp, and Viber",
+            "status": "TODO",
+            "details": "TODO"
+          },
+          {
+            "id": "SM-09",
+            "title": "Approved messenger candidate persistence into source-publication pipeline",
+            "status": "TODO",
+            "details": "TODO"
           }
         ],
         "blocked": []
       },
       "counts": {
         "verified": 1,
-        "in_progress": 4,
-        "todo": 2,
+        "in_progress": 5,
+        "todo": 4,
         "blocked": 0,
-        "total": 7,
-        "journal_entries": 9,
-        "efficiency_pct": 43
+        "total": 10,
+        "journal_entries": 10,
+        "efficiency_pct": 35
       }
     },
     {
@@ -2106,9 +2349,9 @@
     {
       "key": "backend_developer",
       "label": "Backend/API/Data",
-      "total": 16,
+      "total": 17,
       "done_count": 3,
-      "current_count": 6,
+      "current_count": 7,
       "next_count": 7,
       "blocked_count": 0,
       "progress_percent": 38,
@@ -2168,6 +2411,12 @@
           "title": "User profile + auth system (buyer/renter/seller modes)",
           "status": "DONE_AWAITING_VERIFY",
           "details": "DONE_AWAITING_VERIFY` (2026-04-08: registration, login, profile, saved properties, dashboard implemented)"
+        },
+        {
+          "id": "BD-17",
+          "title": "User-property state ledger + property chat bridge",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-29: liked status ledger, user-property chat join, and Ollama chat adapter implemented)"
         }
       ],
       "next_tasks": [
@@ -2215,17 +2464,17 @@
         }
       ],
       "blocked_tasks": [],
-      "comment": "3 done, 6 current, 7 next"
+      "comment": "3 done, 7 current, 7 next"
     },
     {
       "key": "scraper_1",
       "label": "Tier-1/2 Scraping",
-      "total": 14,
-      "done_count": 3,
+      "total": 16,
+      "done_count": 4,
       "current_count": 7,
-      "next_count": 4,
+      "next_count": 5,
       "blocked_count": 0,
-      "progress_percent": 46,
+      "progress_percent": 47,
       "done_tasks": [
         {
           "id": "S1-01",
@@ -2244,6 +2493,12 @@
           "title": "imoti.net stub (legal-gated)",
           "status": "VERIFIED",
           "details": "VERIFIED"
+        },
+        {
+          "id": "S1-12",
+          "title": "Tier-2 connector stubs (fixture-only)",
+          "status": "VERIFIED",
+          "details": "VERIFIED` (2026-04-30; added Domaza development-page classification fixture; refreshed tier-2 stub fixture suite)"
         }
       ],
       "current_tasks": [
@@ -2252,12 +2507,6 @@
           "title": "Live-safe ingestion runner (small)",
           "status": "DONE_AWAITING_VERIFY",
           "details": "DONE_AWAITING_VERIFY` (2026-04-08; CLI + tests added, golden-path command executed in skip-mode without DATABASE_URL)"
-        },
-        {
-          "id": "S1-12",
-          "title": "Tier-2 connector stubs (fixture-only)",
-          "status": "DONE_AWAITING_VERIFY",
-          "details": "DONE_AWAITING_VERIFY` (2026-04-08; Bazar.bg/Domaza/Yavlena/Home2U stubs + fixtures + tests)"
         },
         {
           "id": "S1-13",
@@ -2281,7 +2530,13 @@
           "id": "S1-21",
           "title": "Codex tier-1/2 scrape quality audit + pattern repair prep",
           "status": "DONE_AWAITING_VERIFY",
-          "details": "DONE_AWAITING_VERIFY` (2026-04-29; file-backed S1-21 audit, Action0 eligible set, same-location grouping contract, and frontend same-location aggregate filter prepared; live Action1 scrape/backfill remains operator/runtime gated)"
+          "details": "DONE_AWAITING_VERIFY` (2026-04-29; exports refreshed; bucket_key backfilled on saved JSON for per-bucket reporting)"
+        },
+        {
+          "id": "S1-22B",
+          "title": "Gemma/OpenClaw Action1 — seven-source all-Bulgaria scrape/backfill",
+          "status": "IN_PROGRESS",
+          "details": "IN_PROGRESS` (detached run; monitor `data/runs/action1_20260429_171309.log`)"
         },
         {
           "id": "S1-20",
@@ -2298,8 +2553,14 @@
           "details": "TODO"
         },
         {
-          "id": "S1-22",
-          "title": "Gemma/OpenClaw Action0/Action1/Action2 property image-report + scrape handoff",
+          "id": "S1-22A",
+          "title": "Gemma/OpenClaw Action0 — local-gallery property image reports",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "S1-22C",
+          "title": "Gemma/OpenClaw Action2 — remaining legal tier-1/2 expansion",
           "status": "TODO",
           "details": "TODO"
         },
@@ -2317,7 +2578,7 @@
         }
       ],
       "blocked_tasks": [],
-      "comment": "3 done, 7 current, 4 next"
+      "comment": "4 done, 7 current, 5 next"
     },
     {
       "key": "scraper_t3",
@@ -2388,12 +2649,12 @@
     {
       "key": "scraper_sm",
       "label": "Tier-4 Social Overlays",
-      "total": 7,
+      "total": 10,
       "done_count": 1,
-      "current_count": 4,
-      "next_count": 2,
+      "current_count": 5,
+      "next_count": 4,
       "blocked_count": 0,
-      "progress_percent": 43,
+      "progress_percent": 35,
       "done_tasks": [
         {
           "id": "SM-01",
@@ -2403,6 +2664,12 @@
         }
       ],
       "current_tasks": [
+        {
+          "id": "SM-00",
+          "title": "S&M mission consolidation and OpenClaw monitor handoff",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-05-05)"
+        },
         {
           "id": "SM-02",
           "title": "Telegram public channel connector (fixture-first)",
@@ -2440,20 +2707,32 @@
           "title": "Telegram live connector (Telegram Bot API or MTProto)",
           "status": "TODO",
           "details": "TODO"
+        },
+        {
+          "id": "SM-08",
+          "title": "Messenger publication candidates for Telegram, WhatsApp, and Viber",
+          "status": "TODO",
+          "details": "TODO"
+        },
+        {
+          "id": "SM-09",
+          "title": "Approved messenger candidate persistence into source-publication pipeline",
+          "status": "TODO",
+          "details": "TODO"
         }
       ],
       "blocked_tasks": [],
-      "comment": "1 done, 4 current, 2 next"
+      "comment": "1 done, 5 current, 4 next"
     },
     {
       "key": "ux_ui_designer",
       "label": "Frontend/Product UX",
-      "total": 13,
+      "total": 14,
       "done_count": 1,
-      "current_count": 3,
+      "current_count": 4,
       "next_count": 9,
       "blocked_count": 0,
-      "progress_percent": 19,
+      "progress_percent": 21,
       "done_tasks": [
         {
           "id": "UX-01",
@@ -2480,6 +2759,12 @@
           "title": "Product UX structure spec (LUN-style buyer marketplace)",
           "status": "DONE_AWAITING_VERIFY",
           "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+        },
+        {
+          "id": "UX-14",
+          "title": "Account cabinet, liked properties, and property chat UX",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-04-29: `/settings`, `/chat`, and global chat bar now align to BD-17 contracts)"
         }
       ],
       "next_tasks": [
@@ -2539,17 +2824,17 @@
         }
       ],
       "blocked_tasks": [],
-      "comment": "1 done, 3 current, 9 next"
+      "comment": "1 done, 4 current, 9 next"
     },
     {
       "key": "debugger",
       "label": "Verification/Safety",
-      "total": 10,
+      "total": 11,
       "done_count": 4,
       "current_count": 0,
-      "next_count": 6,
+      "next_count": 7,
       "blocked_count": 0,
-      "progress_percent": 40,
+      "progress_percent": 36,
       "done_tasks": [
         {
           "id": "DBG-01",
@@ -2613,10 +2898,16 @@
           "title": "End-of-run verification sweep",
           "status": "TODO",
           "details": "TODO"
+        },
+        {
+          "id": "DBG-10",
+          "title": "Fixture-only test hardening for live scraper/media side effects",
+          "status": "TODO",
+          "details": "TODO"
         }
       ],
       "blocked_tasks": [],
-      "comment": "4 done, 0 current, 6 next"
+      "comment": "4 done, 0 current, 7 next"
     },
     {
       "key": "lead_agent",
@@ -2689,6 +2980,14 @@
       "details": "IN_PROGRESS` (2026-04-21; strict pattern repairs promoted `Address.bg`, `BulgarianProperties`, `LUXIMMO`, `OLX.bg`, `property.bg`, `SUPRIMMO`, `Bazar.bg`, and `Yavlena` to `Patterned` from saved item evidence; DB proof is still blocked because no PostgreSQL server is running locally and Docker daemon/compose are unavailable in this environment; `alo.bg`/`Domaza`/`Home2U` still remain low-yield or zero-sample)"
     },
     {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-22B",
+      "title": "Gemma/OpenClaw Action1 — seven-source all-Bulgaria scrape/backfill",
+      "status": "IN_PROGRESS",
+      "details": "IN_PROGRESS` (detached run; monitor `data/runs/action1_20260429_171309.log`)"
+    },
+    {
       "owner_key": "backend_developer",
       "owner": "Backend Developer",
       "id": "BD-04",
@@ -2737,6 +3036,14 @@
       "details": "DONE_AWAITING_VERIFY` (2026-04-08: registration, login, profile, saved properties, dashboard implemented)"
     },
     {
+      "owner_key": "backend_developer",
+      "owner": "Backend Developer",
+      "id": "BD-17",
+      "title": "User-property state ledger + property chat bridge",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-29: liked status ledger, user-property chat join, and Ollama chat adapter implemented)"
+    },
+    {
       "owner_key": "lead_agent",
       "owner": "Lead Agent",
       "id": "LEAD-07",
@@ -2751,14 +3058,6 @@
       "title": "Live-safe ingestion runner (small)",
       "status": "DONE_AWAITING_VERIFY",
       "details": "DONE_AWAITING_VERIFY` (2026-04-08; CLI + tests added, golden-path command executed in skip-mode without DATABASE_URL)"
-    },
-    {
-      "owner_key": "scraper_1",
-      "owner": "Scraper 1",
-      "id": "S1-12",
-      "title": "Tier-2 connector stubs (fixture-only)",
-      "status": "DONE_AWAITING_VERIFY",
-      "details": "DONE_AWAITING_VERIFY` (2026-04-08; Bazar.bg/Domaza/Yavlena/Home2U stubs + fixtures + tests)"
     },
     {
       "owner_key": "scraper_1",
@@ -2790,7 +3089,15 @@
       "id": "S1-21",
       "title": "Codex tier-1/2 scrape quality audit + pattern repair prep",
       "status": "DONE_AWAITING_VERIFY",
-      "details": "DONE_AWAITING_VERIFY` (2026-04-29; file-backed S1-21 audit, Action0 eligible set, same-location grouping contract, and frontend same-location aggregate filter prepared; live Action1 scrape/backfill remains operator/runtime gated)"
+      "details": "DONE_AWAITING_VERIFY` (2026-04-29; exports refreshed; bucket_key backfilled on saved JSON for per-bucket reporting)"
+    },
+    {
+      "owner_key": "scraper_sm",
+      "owner": "Scraper SM",
+      "id": "SM-00",
+      "title": "S&M mission consolidation and OpenClaw monitor handoff",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-05-05)"
     },
     {
       "owner_key": "scraper_sm",
@@ -2887,6 +3194,14 @@
       "title": "Product UX structure spec (LUN-style buyer marketplace)",
       "status": "DONE_AWAITING_VERIFY",
       "details": "DONE_AWAITING_VERIFY` (2026-04-08)"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-14",
+      "title": "Account cabinet, liked properties, and property chat UX",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-04-29: `/settings`, `/chat`, and global chat bar now align to BD-17 contracts)"
     },
     {
       "owner_key": "backend_developer",
@@ -2993,6 +3308,14 @@
       "details": "TODO"
     },
     {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-10",
+      "title": "Fixture-only test hardening for live scraper/media side effects",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
       "owner_key": "lead_agent",
       "owner": "Lead Agent",
       "id": "LEAD-05",
@@ -3035,8 +3358,16 @@
     {
       "owner_key": "scraper_1",
       "owner": "Scraper 1",
-      "id": "S1-22",
-      "title": "Gemma/OpenClaw Action0/Action1/Action2 property image-report + scrape handoff",
+      "id": "S1-22A",
+      "title": "Gemma/OpenClaw Action0 — local-gallery property image reports",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-22C",
+      "title": "Gemma/OpenClaw Action2 — remaining legal tier-1/2 expansion",
       "status": "TODO",
       "details": "TODO"
     },
@@ -3053,6 +3384,22 @@
       "owner": "Scraper SM",
       "id": "SM-06",
       "title": "Telegram live connector (Telegram Bot API or MTProto)",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "scraper_sm",
+      "owner": "Scraper SM",
+      "id": "SM-08",
+      "title": "Messenger publication candidates for Telegram, WhatsApp, and Viber",
+      "status": "TODO",
+      "details": "TODO"
+    },
+    {
+      "owner_key": "scraper_sm",
+      "owner": "Scraper SM",
+      "id": "SM-09",
+      "title": "Approved messenger candidate persistence into source-publication pipeline",
       "status": "TODO",
       "details": "TODO"
     },
@@ -3249,6 +3596,14 @@
       "details": "VERIFIED"
     },
     {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-12",
+      "title": "Tier-2 connector stubs (fixture-only)",
+      "status": "VERIFIED",
+      "details": "VERIFIED` (2026-04-30; added Domaza development-page classification fixture; refreshed tier-2 stub fixture suite)"
+    },
+    {
       "owner_key": "scraper_sm",
       "owner": "Scraper SM",
       "id": "SM-01",
@@ -3351,7 +3706,7 @@
         "legal_mode": "public_crawl_with_review",
         "risk_mode": "medium",
         "publish_capable": true,
-        "fixture_cases": 3,
+        "fixture_cases": 5,
         "listing_types": [
           "sale",
           "long_term_rent",
@@ -3360,20 +3715,21 @@
           "new_build"
         ],
         "scrape": {
-          "items": 3,
-          "fixture_dirs": 3,
+          "items": 5,
+          "fixture_dirs": 5,
           "quality": {
-            "price_pct": 33,
-            "photos_pct": 33,
+            "price_pct": 60,
+            "photos_pct": 60,
             "avg_photos": 1.0,
-            "geo_pct": 33,
-            "phone_pct": 33,
-            "area_pct": 33,
+            "geo_pct": 60,
+            "phone_pct": 60,
+            "area_pct": 60,
             "rooms_pct": 0,
-            "address_pct": 33,
+            "address_pct": 60,
             "description_pct": 0,
-            "category_pct": 33,
+            "category_pct": 60,
             "listing_types": [
+              "long_term_rent",
               "mixed",
               "sale"
             ]
@@ -3721,7 +4077,7 @@
         "legal_mode": "public_crawl_with_review",
         "risk_mode": "medium",
         "publish_capable": true,
-        "fixture_cases": 2,
+        "fixture_cases": 3,
         "listing_types": [
           "sale",
           "long_term_rent",
@@ -3730,17 +4086,17 @@
           "new_build"
         ],
         "scrape": {
-          "items": 2,
-          "fixture_dirs": 2,
+          "items": 3,
+          "fixture_dirs": 3,
           "quality": {
-            "price_pct": 100,
+            "price_pct": 67,
             "photos_pct": 100,
             "avg_photos": 1.0,
-            "geo_pct": 100,
-            "phone_pct": 100,
-            "area_pct": 100,
+            "geo_pct": 67,
+            "phone_pct": 67,
+            "area_pct": 67,
             "rooms_pct": 0,
-            "address_pct": 100,
+            "address_pct": 67,
             "description_pct": 0,
             "category_pct": 100,
             "listing_types": [

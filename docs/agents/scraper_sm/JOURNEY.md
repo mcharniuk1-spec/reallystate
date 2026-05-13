@@ -172,3 +172,26 @@ New files:
   tests/fixtures/telegram_public/noise_message/{raw.json, expected.json}
 ```
 
+### 2026-04-29 — SM-08 setup: messenger publication entity plan
+
+- **Action**: Added the safe messenger ingestion plan for Telegram, WhatsApp, and Viber publication candidates. The plan keeps all messenger data consent/API/manual-only and requires review before any property entity promotion.
+- **Changed files**:
+  - `docs/agents/scraper_sm/messenger-publication-entity-plan-2026-04-29.md`
+  - `docs/exports/strategic-code-manager-review-2026-04-29.md`
+  - `docs/agents/TASKS.md`
+- **Commands run**: none
+- **Tests run**: none; planning/doc slice only.
+- **Status**: TODO queued for SM-08 implementation
+- **Review comments**:
+  - FACT: Telegram public channels are the only automated messenger path currently suited for MVP.
+  - FACT: WhatsApp and Viber remain manual/consent or official business/bot webhook routes.
+  - INTERPRETATION: messenger messages should enter as publication candidates or CRM lead evidence first, not as canonical properties by default.
+
+## 2026-05-05 — SM-00 S&M consolidation
+
+- **Action**: Consolidated tier-3 and tier-4 intelligence work under scraper_sm / S&M. S&M now owns vendor/partner/official routes plus social/messenger overlays, while Action1 A1 marketplace scraping remains scraper_1-owned and OpenClaw-monitored.
+- **Changed files**: `docs/agents/TASKS.md`, `docs/agents/README.md`, `docs/openclaw/OPENCLAW_S_AND_M_AGENT.md`.
+- **Commands run**: documentation inspection only.
+- **Tests run**: none.
+- **Status**: DONE_AWAITING_VERIFY.
+- **Review comments**: Debugger should verify that S&M cannot widen Action1 or run private/social scraping without legal/consent gates.

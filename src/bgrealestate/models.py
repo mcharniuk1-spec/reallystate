@@ -137,6 +137,7 @@ class CanonicalListing:
     removed_at: Optional[datetime]
     parser_version: str
     crawl_provenance: Dict[str, Any] = field(default_factory=dict)
+    title: Optional[str] = None
 
 
 @dataclass

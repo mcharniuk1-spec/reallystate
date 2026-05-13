@@ -22,7 +22,7 @@ def _stub_reply(messages: list[dict[str, Any]]) -> str:
     if not text:
         return (
             "Stub assistant: send a message to continue. "
-            "Set CHAT_PROVIDER=openai and OPENAI_API_KEY for live LLM replies."
+            "Set CHAT_PROVIDER=ollama for local LLM replies."
         )
     return f"Stub assistant (local/dev): I received: {text[:2000]}"
 
@@ -54,6 +54,34 @@ def _openai_chat_completion(
     return content
 
 
+def _ollama_chat_completion(
+    messages: list[dict[str, Any]],
+    *,
+    model: str,
+    base_url: str,
+    timeout_s: float,
+) -> str:
+    url = f"{base_url.rstrip('/')}/api/chat"
+    payload = {
+        "model": model,
+        "messages": messages,
+        "stream": False,
+        "options": {"temperature": 0.2},
+    }
+    with httpx.Client(timeout=timeout_s) as client:
+        res = client.post(url, content=json.dumps(payload), headers={"Content-Type": "application/json"})
+        res.raise_for_status()
+        data = res.json()
+    message = data.get("message") or {}
+    content = message.get("content")
+    if isinstance(content, str) and content.strip():
+        return content
+    response = data.get("response")
+    if isinstance(response, str) and response.strip():
+        return response
+    raise RuntimeError("ollama_response_missing_content")
+
+
 def run_chat_completion(
     messages: list[dict[str, Any]],
     *,
@@ -61,9 +89,19 @@ def run_chat_completion(
     timeout_s: float = 60.0,
 ) -> tuple[str, str]:
     """Return (assistant_text, provider_used)."""
-    provider = os.getenv("CHAT_PROVIDER", "stub").strip().lower()
+    provider = os.getenv("CHAT_PROVIDER", "ollama").strip().lower()
     key = os.getenv("OPENAI_API_KEY", "").strip()
     mdl: str = (model or os.getenv("OPENAI_CHAT_MODEL") or "gpt-4o-mini").strip()
+
+    if provider == "ollama":
+        ollama_model = (model or os.getenv("OLLAMA_CHAT_MODEL") or "gemma4:26b").strip()
+        base_url = os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434").strip()
+        try:
+            text = _ollama_chat_completion(messages, model=ollama_model, base_url=base_url, timeout_s=timeout_s)
+            return text, "ollama"
+        except Exception as exc:  # noqa: BLE001 — local model may be unavailable in CI/dev
+            log.warning("ollama_chat_failed", error=str(exc), model=ollama_model, base_url=base_url)
+            return _stub_reply(messages) + f"\n\n(Ollama unavailable; fell back to stub: {exc})", "stub"
 
     if provider == "openai" and key:
         try:

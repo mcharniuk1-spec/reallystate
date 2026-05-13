@@ -6,18 +6,25 @@ import type { Map as MapLibreMap, StyleSpecification } from "maplibre-gl";
 
 const BULGARIA_CENTER: [number, number] = [25.4, 42.7];
 const DEFAULT_ZOOM = 7;
-const MAP_3D_PITCH = 14;
-const MAP_3D_BEARING = -8;
+const MAP_3D_PITCH = 45;
+const MAP_3D_BEARING = -12;
+const MAX_VIEW_MARKERS = 20;
 const CLUSTER_GRAVITY_RADIUS_FACTOR = 0.2;
 const CLUSTER_GRAVITY_MIN_VISIBLE_PROPERTIES = 21;
 const VARNA_CENTER: [number, number] = [27.91, 43.21];
 const VECTOR_SOURCE_ID = "openfreemap-vector";
 const BUILDING_LAYER_ID = "bge-3d-buildings";
+const BULGARIA_BOUNDS = {
+  minLng: 22.25,
+  maxLng: 28.85,
+  minLat: 41.15,
+  maxLat: 44.25,
+};
 
 type Props = {
   listings: MapListing[];
   highlightId?: string | null;
-  onSelect?: (id: string) => void;
+  onSelect?: (id: string, markerItems?: string[]) => void;
 };
 
 export type MapListing = Listing & {
@@ -34,7 +41,25 @@ type ScreenMarker = {
   text: string;
   x: number;
   y: number;
+  lat: number;
+  lng: number;
   isCluster: boolean;
+};
+
+type ProjectedListing = {
+  item: MapListing;
+  x: number;
+  y: number;
+  lat: number;
+  lng: number;
+};
+
+type MarkerGroup = {
+  points: ProjectedListing[];
+  x: number;
+  y: number;
+  lat: number;
+  lng: number;
 };
 
 export function MapCanvas({ listings, highlightId, onSelect }: Props) {
@@ -44,7 +69,7 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
   const isAutoCenteringRef = useRef(false);
   const [ready, setReady] = useState(false);
   const [mapIssue, setMapIssue] = useState<string | null>(null);
-  const [is3D, setIs3D] = useState(true);
+  const [is3D, setIs3D] = useState(false);
   const [screenMarkers, setScreenMarkers] = useState<ScreenMarker[]>([]);
   const fitKey = useMemo(
     () =>
@@ -75,8 +100,8 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
           style: buildMapStyle(),
           center: BULGARIA_CENTER,
           zoom: DEFAULT_ZOOM,
-          pitch: MAP_3D_PITCH,
-          bearing: MAP_3D_BEARING,
+          pitch: 0,
+          bearing: 0,
           maxBounds: [
             [20.0, 40.5],
             [30.5, 45.0],
@@ -116,7 +141,7 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
               return;
             }
             addBuildingLayer(map);
-            setBuildingVisibility(map, "visible");
+            setBuildingVisibility(map, "none");
             map.resize();
           } finally {
             if (initialized) setReady(true);
@@ -131,7 +156,7 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
             try {
               if (map.isStyleLoaded()) {
                 addBuildingLayer(map);
-                setBuildingVisibility(map, "visible");
+                setBuildingVisibility(map, "none");
                 map.resize();
               }
             } finally {
@@ -141,7 +166,8 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
           }
         }, 1800);
       } catch {
-        /* MapLibre load may fail in SSR; silently degrade */
+        setMapIssue("Map engine unavailable; fallback property points are shown.");
+        setReady(true);
       }
     })();
 
@@ -253,11 +279,13 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
     map.flyTo({ center: VARNA_CENTER, zoom: 15, pitch: is3D ? MAP_3D_PITCH : 0, bearing: is3D ? MAP_3D_BEARING : 0, duration: 1400 });
   }, [is3D]);
 
+  const visibleMarkers = screenMarkers.length ? screenMarkers : fallbackScreenMarkers(listings, containerRef);
+
   return (
     <div className="relative isolate h-full w-full overflow-hidden bg-paper" data-map-testid="property-map">
       <div className="bge-map-fallback absolute inset-0" aria-hidden />
       <div ref={containerRef} className="relative h-full w-full" />
-      {screenMarkers.map((marker) => {
+      {visibleMarkers.map((marker) => {
         const selected = Boolean(highlightId && (marker.id === highlightId || marker.items.includes(highlightId)));
         return (
           <button
@@ -266,24 +294,24 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
             onPointerDown={(event) => {
               event.preventDefault();
               event.stopPropagation();
-              onSelect?.(marker.id);
+              onSelect?.(marker.id, marker.items);
             }}
             onMouseDown={(event) => {
               event.preventDefault();
               event.stopPropagation();
-              onSelect?.(marker.id);
+              onSelect?.(marker.id, marker.items);
             }}
             onClickCapture={(event) => {
               event.preventDefault();
               event.stopPropagation();
-              onSelect?.(marker.id);
+              onSelect?.(marker.id, marker.items);
             }}
-            onClick={() => onSelect?.(marker.id)}
+            onClick={() => onSelect?.(marker.id, marker.items)}
             onKeyDown={(event) => {
               if (event.key === "Enter" || event.key === " ") {
                 event.preventDefault();
                 event.stopPropagation();
-                onSelect?.(marker.id);
+                onSelect?.(marker.id, marker.items);
               }
             }}
             className={`bge-price-pin ${marker.isCluster ? "bge-cluster-pin" : ""} ${selected ? "is-selected" : ""}`}
@@ -293,12 +321,13 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
               position: "absolute",
               pointerEvents: "auto",
               transform: "translate(-50%, -50%)",
-                zIndex: selected ? 1100 : 1000,
+              zIndex: selected ? 1100 : 1000,
             }}
             title={marker.title}
             aria-label={marker.isCluster ? `Map group ${marker.title}` : `Map property ${marker.title}`}
           >
-            {marker.text}
+            <span className="bge-pin-main">{marker.text}</span>
+            {marker.isCluster ? <span className="bge-pin-sub">items</span> : null}
           </button>
         );
       })}
@@ -312,6 +341,8 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
         }
         .bge-map-fallback {
           background:
+            linear-gradient(28deg, transparent 0 42%, rgba(34, 126, 104, 0.16) 42.2% 43%, transparent 43.2% 100%),
+            linear-gradient(153deg, transparent 0 37%, rgba(34, 126, 104, 0.13) 37.2% 38%, transparent 38.2% 100%),
             linear-gradient(90deg, rgba(8, 95, 86, 0.12) 1px, transparent 1px),
             linear-gradient(rgba(8, 95, 86, 0.12) 1px, transparent 1px),
             radial-gradient(circle at 76% 40%, rgba(73, 167, 184, 0.24), transparent 24%),
@@ -320,17 +351,20 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
           background-size: 96px 96px, 96px 96px, auto, auto, auto;
         }
         .bge-price-pin {
-          min-width: 36px;
-          height: 24px;
+          min-width: 44px;
+          min-height: 30px;
           border-radius: 999px;
           border: 2px solid rgba(255, 255, 255, 0.92);
           background: rgba(9, 63, 66, 0.9);
           color: white;
           cursor: pointer;
-          display: grid;
-          place-items: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 1px;
           font: 800 11px/1 Arial, system-ui, sans-serif;
-          padding: 0 8px;
+          padding: 4px 9px;
           box-shadow: 0 8px 18px rgba(3, 18, 20, 0.34);
           transition: transform 150ms ease, background 150ms ease, box-shadow 150ms ease;
           user-select: none;
@@ -339,14 +373,14 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
         .bge-price-pin.is-selected {
           background: #087763;
           box-shadow: 0 10px 24px rgba(8, 119, 99, 0.38);
-          transform: scale(1.18);
+          transform: translate(-50%, -50%) scale(1.18) !important;
         }
         .bge-cluster-pin {
-          min-width: 42px;
-          height: 30px;
+          min-width: 50px;
+          min-height: 38px;
           border-color: rgba(209, 243, 238, 0.96);
           background: rgba(5, 84, 89, 0.92);
-          font-size: 12px;
+          font-size: 13px;
         }
         .bge-cluster-pin::after {
           content: "";
@@ -354,6 +388,13 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
           inset: -7px;
           border-radius: 999px;
           border: 2px solid rgba(134, 216, 206, 0.42);
+        }
+        .bge-pin-sub {
+          font-size: 8px;
+          font-weight: 800;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+          opacity: 0.78;
         }
       `}</style>
 
@@ -409,7 +450,7 @@ export function MapCanvas({ listings, highlightId, onSelect }: Props) {
             Reset map
           </button>
           <div className="rounded-xl border border-line/50 bg-white/90 px-3 py-2 text-[10px] font-semibold text-mist shadow-lg backdrop-blur-sm">
-            {mapIssue ?? "OSM + OpenFreeMap vector buildings"}
+            {mapIssue ?? (is3D ? "3D OSM building layer at building zoom" : "2D viewport groups")}
           </div>
         </div>
       )}
@@ -423,25 +464,142 @@ function projectScreenMarkers(map: MapLibreMap, listings: MapListing[]): ScreenM
   const height = canvas.clientHeight;
   if (!width || !height) return [];
 
-  return listings
+  const points = listings
     .filter((item) => item.latitude != null && item.longitude != null)
     .map((item) => {
-      const isCluster = (item.map_cluster_count ?? 1) > 1 || item.map_marker_kind === "cluster";
       const point = map.project([item.longitude as number, item.latitude as number]);
-      const title = isCluster
-        ? `${item.map_cluster_label ?? "Area"}: ${item.map_cluster_count ?? 1} properties`
-        : item.title ?? item.reference_id;
       return {
-        id: item.reference_id,
-        items: item.map_cluster_items ?? [item.reference_id],
-        title,
-        text: isCluster ? `${item.map_cluster_count ?? 1}` : item.price ? `${Math.round(item.price / 1000)}k` : "•",
+        item,
         x: point.x,
         y: point.y,
-        isCluster,
+        lat: item.latitude as number,
+        lng: item.longitude as number,
       };
     })
-    .filter((marker) => marker.x >= -80 && marker.x <= width + 80 && marker.y >= -80 && marker.y <= height + 80);
+    .filter((point) => point.x >= -80 && point.x <= width + 80 && point.y >= -80 && point.y <= height + 80);
+
+  return groupProjectedListings(points, width, height);
+}
+
+function fallbackScreenMarkers(listings: MapListing[], containerRef: MutableRefObject<HTMLDivElement | null>): ScreenMarker[] {
+  const width = containerRef.current?.clientWidth || 720;
+  const height = containerRef.current?.clientHeight || 960;
+  const padX = Math.max(48, Math.min(width * 0.08, 96));
+  const padY = Math.max(64, Math.min(height * 0.08, 112));
+
+  const points = listings
+    .filter((item) => item.latitude != null && item.longitude != null)
+    .map((item) => {
+      const lngRatio = ((item.longitude as number) - BULGARIA_BOUNDS.minLng) / (BULGARIA_BOUNDS.maxLng - BULGARIA_BOUNDS.minLng);
+      const latRatio = (BULGARIA_BOUNDS.maxLat - (item.latitude as number)) / (BULGARIA_BOUNDS.maxLat - BULGARIA_BOUNDS.minLat);
+      const x = padX + clamp(lngRatio, 0, 1) * Math.max(1, width - padX * 2);
+      const y = padY + clamp(latRatio, 0, 1) * Math.max(1, height - padY * 2);
+      return {
+        item,
+        x,
+        y,
+        lat: item.latitude as number,
+        lng: item.longitude as number,
+      };
+    });
+
+  return groupProjectedListings(points, width, height);
+}
+
+function clamp(value: number, min: number, max: number) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function groupProjectedListings(points: ProjectedListing[], width: number, height: number): ScreenMarker[] {
+  if (points.length <= MAX_VIEW_MARKERS) {
+    return points.map((point) => groupToMarker({ points: [point], x: point.x, y: point.y, lat: point.lat, lng: point.lng }));
+  }
+
+  const groups =
+    points.length < 40
+      ? mergeClosestPoints(points)
+      : gridGroupPoints(points, width, height);
+
+  return groups
+    .sort((a, b) => b.points.length - a.points.length || a.x - b.x)
+    .slice(0, MAX_VIEW_MARKERS)
+    .map(groupToMarker);
+}
+
+function mergeClosestPoints(points: ProjectedListing[]): MarkerGroup[] {
+  const groups = points.map((point) => ({ points: [point], x: point.x, y: point.y, lat: point.lat, lng: point.lng }));
+
+  while (groups.length > MAX_VIEW_MARKERS) {
+    let bestA = 0;
+    let bestB = 1;
+    let bestDistance = Number.POSITIVE_INFINITY;
+    for (let a = 0; a < groups.length; a += 1) {
+      for (let b = a + 1; b < groups.length; b += 1) {
+        const distance = Math.hypot(groups[a].x - groups[b].x, groups[a].y - groups[b].y);
+        if (distance < bestDistance) {
+          bestA = a;
+          bestB = b;
+          bestDistance = distance;
+        }
+      }
+    }
+    groups[bestA] = mergeGroups(groups[bestA], groups[bestB]);
+    groups.splice(bestB, 1);
+  }
+
+  return groups;
+}
+
+function gridGroupPoints(points: ProjectedListing[], width: number, height: number): MarkerGroup[] {
+  const landscape = width >= height;
+  const cols = landscape ? 5 : 4;
+  const rows = landscape ? 4 : 5;
+  const groups = new Map<string, MarkerGroup>();
+
+  for (const point of points) {
+    const col = clamp(Math.floor((clamp(point.x, 0, width) / Math.max(width, 1)) * cols), 0, cols - 1);
+    const row = clamp(Math.floor((clamp(point.y, 0, height) / Math.max(height, 1)) * rows), 0, rows - 1);
+    const key = `${col}:${row}`;
+    const existing = groups.get(key);
+    const nextPoint = { points: [point], x: point.x, y: point.y, lat: point.lat, lng: point.lng };
+    groups.set(key, existing ? mergeGroups(existing, nextPoint) : nextPoint);
+  }
+
+  return [...groups.values()];
+}
+
+function mergeGroups(a: MarkerGroup, b: MarkerGroup): MarkerGroup {
+  const points = [...a.points, ...b.points];
+  const count = points.length;
+  return {
+    points,
+    x: points.reduce((sum, point) => sum + point.x, 0) / count,
+    y: points.reduce((sum, point) => sum + point.y, 0) / count,
+    lat: points.reduce((sum, point) => sum + point.lat, 0) / count,
+    lng: points.reduce((sum, point) => sum + point.lng, 0) / count,
+  };
+}
+
+function groupToMarker(group: MarkerGroup): ScreenMarker {
+  const representative = [...group.points].sort((a, b) => {
+    const scoreDelta = (b.item.scrape_quality_score ?? 0) - (a.item.scrape_quality_score ?? 0);
+    if (scoreDelta) return scoreDelta;
+    return (b.item.photo_count_local ?? b.item.local_image_files?.length ?? 0) - (a.item.photo_count_local ?? a.item.local_image_files?.length ?? 0);
+  })[0].item;
+  const isCluster = group.points.length > 1;
+  const cityLabel = [representative.district ?? representative.resort, representative.city ?? representative.region].filter(Boolean).join(", ") || "Bulgaria";
+
+  return {
+    id: representative.reference_id,
+    items: group.points.map((point) => point.item.reference_id),
+    title: isCluster ? `${cityLabel}: ${group.points.length} properties` : representative.title ?? representative.reference_id,
+    text: isCluster ? `${group.points.length}` : representative.price ? `${Math.round(representative.price / 1000)}k` : "•",
+    x: group.x,
+    y: group.y,
+    lat: group.lat,
+    lng: group.lng,
+    isCluster,
+  };
 }
 
 function buildMapStyle(): StyleSpecification {
@@ -545,28 +703,28 @@ function pinLargestNearbyAggregation(
 
   const center = { x: width / 2, y: height / 2 };
   const nearbyRadius = Math.sqrt(width * height) * CLUSTER_GRAVITY_RADIUS_FACTOR;
-  const visible = listings
+  const rawVisibleCount = listings
     .filter((item) => item.latitude != null && item.longitude != null)
-    .map((item) => {
+    .filter((item) => {
       const point = map.project([item.longitude as number, item.latitude as number]);
-      const count = item.map_cluster_count ?? 1;
-      const distanceFromCenter = Math.hypot(point.x - center.x, point.y - center.y);
-      return { item, point, count, distanceFromCenter };
-    })
-    .filter(({ point }) => point.x >= 0 && point.x <= width && point.y >= 0 && point.y <= height);
+      return point.x >= 0 && point.x <= width && point.y >= 0 && point.y <= height;
+    }).length;
 
-  const visibleProperties = visible.reduce((sum, entry) => sum + entry.count, 0);
-  if (visibleProperties < CLUSTER_GRAVITY_MIN_VISIBLE_PROPERTIES) return;
+  if (rawVisibleCount < CLUSTER_GRAVITY_MIN_VISIBLE_PROPERTIES) return;
 
-  const target = visible
+  const target = projectScreenMarkers(map, listings)
+    .map((marker) => ({
+      marker,
+      distanceFromCenter: Math.hypot(marker.x - center.x, marker.y - center.y),
+    }))
     .filter((entry) => entry.distanceFromCenter <= nearbyRadius)
-    .sort((a, b) => b.count - a.count || a.distanceFromCenter - b.distanceFromCenter)[0];
+    .sort((a, b) => b.marker.items.length - a.marker.items.length || a.distanceFromCenter - b.distanceFromCenter)[0];
 
-  if (!target || target.count <= 1 || target.distanceFromCenter < 12) return;
+  if (!target || target.marker.items.length <= 1 || target.distanceFromCenter < 12) return;
 
   autoCenteringRef.current = true;
   map.easeTo({
-    center: [target.item.longitude as number, target.item.latitude as number],
+    center: [target.marker.lng, target.marker.lat],
     pitch: is3D ? MAP_3D_PITCH : 0,
     bearing: is3D ? MAP_3D_BEARING : 0,
     duration: 700,

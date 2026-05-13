@@ -1,0 +1,12 @@
+{
+  "source_key": "alo_bg",
+  "source_name": "alo.bg",
+  "listing_path": "data/scraped/alo_bg/listings/alo.bg_10977264.json",
+  "raw_path": "data/scraped/alo_bg/raw/alo.bg_10977264.html",
+  "expected_reference_id": "alo.bg:10977264",
+  "expected_city": "Варна",
+  "expected_category": "apartment",
+  "min_remote_photos": 10,
+  "min_structured_fields": 3,
+  "description_required": true
+}

@@ -65,18 +65,18 @@ PROPERTY_LABELS = {
 }
 
 NEXT_STEP_OVERRIDES = {
-    "alo.bg": "Run the stalled category-targeted continuation and confirm apartment sale/rent detail capture from `alo.bg/obiavi/...` pages.",
-    "Domaza": "Map the language-canonical search entrypoints and recover the first working detail URL family before broad pagination.",
-    "Home2U": "Repair the city landing pages into stable listing archives, then fetch detail pages product by product.",
+    "alo.bg": "Strict sample proof exists for Varna sale apartment; next widen the refreshed Varna buy/rent category buckets and validate rent/land routes.",
+    "Domaza": "Strict single-unit samples exist; next add controlled bucket-specific filters so development pages are skipped before broad pagination.",
+    "Home2U": "Strict property-detail gallery proof exists; next locate a Home2U detail item with non-empty source description or keep description absence flagged per item.",
     "Yavlena": "Recover detail-page descriptions for the already large on-disk corpus and keep sale buckets fresh.",
     "imot.bg": "Improve item classification and image download completeness; the volume is present but category precision is weak.",
     "Homes.bg": "Expand beyond the current apartment-heavy subset by widening the API scopes and continuing city pagination.",
 }
 
 STATE_OVERRIDES = {
-    "alo.bg": "Configured, zero landed corpus",
-    "Domaza": "Configured, zero landed corpus",
-    "Home2U": "Configured, zero landed corpus",
+    "alo.bg": "Strict sample-proof corpus on disk",
+    "Domaza": "Strict sample-proof corpus on disk",
+    "Home2U": "Strict sample-proof corpus on disk; source description absent on selected item",
     "Imoti.info": "Licensing required",
     "Imoteka.bg": "Legal review required",
     "imoti.net": "Legal review required",
@@ -125,10 +125,13 @@ def build_source_stats() -> dict[str, dict]:
             "with_description": 0,
             "with_photo_urls": 0,
             "with_readable_local_photos": 0,
+            "lost_items": 0,
+            "grouped_publications": 0,
+            "accepted_single_entity_candidates": 0,
             "fields": Counter(),
             "service_counts": Counter(),
             "category_counts": Counter(),
-            "combo_rows": defaultdict(lambda: {"count": 0, "description": 0, "photo_urls": 0, "readable_photos": 0, "fields": Counter()}),
+            "combo_rows": defaultdict(lambda: {"count": 0, "description": 0, "photo_urls": 0, "readable_photos": 0, "lost_items": 0, "grouped_publications": 0, "accepted_single_entity_candidates": 0, "fields": Counter()}),
         }
     )
 
@@ -146,6 +149,15 @@ def build_source_stats() -> dict[str, dict]:
         category = payload.get("property_category") or "unknown"
         combo = entry["combo_rows"][(intent, category)]
         combo["count"] += 1
+        if payload.get("scrape_status") == "LOST" or payload.get("needs_rescrape") is True:
+            entry["lost_items"] += 1
+            combo["lost_items"] += 1
+        if payload.get("source_publication_type") == "multi_unit_or_development":
+            entry["grouped_publications"] += 1
+            combo["grouped_publications"] += 1
+        if payload.get("scrape_acceptance_status") == "accepted_single_entity_candidate":
+            entry["accepted_single_entity_candidates"] += 1
+            combo["accepted_single_entity_candidates"] += 1
 
         if payload.get("description"):
             entry["with_description"] += 1
@@ -268,6 +280,9 @@ def build_rows() -> tuple[list[dict], dict]:
         "with_readable_local_photos": 0,
         "with_website_totals": 0,
         "patterned_sources": 0,
+        "lost_items": 0,
+        "grouped_publications": 0,
+        "accepted_single_entity_candidates": 0,
     }
 
     for row in sorted(registry_rows, key=lambda item: (item["tier"], item["source_name"].lower())):
@@ -303,6 +318,12 @@ def build_rows() -> tuple[list[dict], dict]:
         with_description = coverage_row.get("items_with_description", stats.get("with_description", 0))
         with_photo_urls = coverage_row.get("items_with_remote_photos", stats.get("with_photo_urls", 0))
         with_readable_local_photos = coverage_row.get("items_with_local_media", stats.get("with_readable_local_photos", 0))
+        lost_items = coverage_row.get("lost_items", stats.get("lost_items", 0))
+        grouped_publications = coverage_row.get("grouped_publications", stats.get("grouped_publications", 0))
+        accepted_single_entity_candidates = coverage_row.get(
+            "accepted_single_entity_candidates",
+            stats.get("accepted_single_entity_candidates", 0),
+        )
 
         source_entry = {
             "tier": row["tier"],
@@ -319,6 +340,9 @@ def build_rows() -> tuple[list[dict], dict]:
             "with_description": with_description,
             "with_photo_urls": with_photo_urls,
             "with_readable_local_photos": with_readable_local_photos,
+            "lost_items": lost_items,
+            "grouped_publications": grouped_publications,
+            "accepted_single_entity_candidates": accepted_single_entity_candidates,
             "service_counts": dict(coverage_row.get("service_counts") or stats.get("service_counts") or {}),
             "category_counts": dict(coverage_row.get("category_counts") or stats.get("category_counts") or {}),
             "field_counts": dict(coverage_row.get("field_counts") or stats.get("fields") or {}),
@@ -360,6 +384,9 @@ def build_rows() -> tuple[list[dict], dict]:
         totals["with_description"] += source_entry["with_description"]
         totals["with_photo_urls"] += source_entry["with_photo_urls"]
         totals["with_readable_local_photos"] += source_entry["with_readable_local_photos"]
+        totals["lost_items"] += source_entry["lost_items"]
+        totals["grouped_publications"] += source_entry["grouped_publications"]
+        totals["accepted_single_entity_candidates"] += source_entry["accepted_single_entity_candidates"]
         if source_entry["pattern_status"] == "Patterned":
             totals["patterned_sources"] += 1
 
@@ -434,6 +461,9 @@ def combo_table(rows: list[dict]) -> str:
             f"<td>{esc(SERVICE_LABELS.get(row['intent'], row['intent']))}</td>"
             f"<td>{esc(PROPERTY_LABELS.get(row['category'], row['category']))}</td>"
             f"<td>{row['count']}</td>"
+            f"<td>{row.get('accepted_single_entity_candidates', 0)}</td>"
+            f"<td>{row.get('lost_items', 0)}</td>"
+            f"<td>{row.get('grouped_publications', 0)}</td>"
             f"<td>{row['description']}</td>"
             f"<td>{row.get('photo_urls', row.get('photo_url_items', 0))}</td>"
             f"<td>{row.get('readable_photos', row.get('local_photo_items', 0))}</td>"
@@ -456,7 +486,7 @@ def combo_table(rows: list[dict]) -> str:
     return (
         '<div class="table-wrap"><table>'
         "<thead><tr>"
-        "<th>Service</th><th>Property</th><th>Listings</th><th>Description</th><th>Photo URLs</th><th>Readable photos</th>"
+        "<th>Service</th><th>Property</th><th>Listings</th><th>Accepted single</th><th>LOST</th><th>Grouped</th><th>Description</th><th>Photo URLs</th><th>Readable photos</th>"
         "<th>Full gallery</th><th>Remote photos</th><th>Local photos</th><th>Price</th><th>Size</th><th>Rooms</th><th>Floor</th><th>City</th><th>District</th><th>Address</th><th>Geo</th><th>Phones</th><th>Amenities</th><th>Attributes captured</th>"
         "</tr></thead><tbody>"
         + "".join(body)
@@ -482,6 +512,8 @@ def item_table(items: list[dict]) -> str:
             f"<td>{esc(PROPERTY_LABELS.get(item.get('property_category'), item.get('property_category')))}</td>"
             f"<td>{title_html}</td>"
             f"<td>{esc(item.get('reference_id', ''))}</td>"
+            f"<td>{esc(item.get('scrape_status', ''))}</td>"
+            f"<td>{esc(item.get('source_publication_type', ''))}</td>"
             f"<td>{esc(item.get('source_section_id', ''))}</td>"
             f"<td>{item.get('description_chars', 0)}</td>"
             f"<td>{'' if item.get('price') is None else esc(item.get('price'))}</td>"
@@ -504,7 +536,7 @@ def item_table(items: list[dict]) -> str:
     return (
         '<div class="table-wrap"><table>'
         "<thead><tr>"
-        "<th>Service</th><th>Property</th><th>Listing</th><th>Reference</th><th>Section</th><th>Description chars</th>"
+        "<th>Service</th><th>Property</th><th>Listing</th><th>Reference</th><th>Status</th><th>Publication type</th><th>Section</th><th>Description chars</th>"
         "<th>Price</th><th>Size</th><th>Rooms</th><th>Floor</th><th>City</th><th>District</th><th>Address</th><th>Phones</th>"
         "<th>Remote photos</th><th>Local photos</th><th>Full gallery</th><th>Photo status</th><th>Parsed fields</th><th>Missing core fields</th><th>Media dir</th>"
         "</tr></thead><tbody>"
@@ -529,6 +561,9 @@ def summary_table(rows: list[dict]) -> str:
             f"<td>{esc(row['recent_status'])}</td>"
             f"<td>{esc(row['varna_status'])}</td>"
             f"<td>{row['saved_listings']}</td>"
+            f"<td>{row['accepted_single_entity_candidates']}</td>"
+            f"<td>{row['lost_items']}</td>"
+            f"<td>{row['grouped_publications']}</td>"
             f"<td>{row['with_description']}</td>"
             f"<td>{row['with_photo_urls']}</td>"
             f"<td>{row['with_readable_local_photos']}</td>"
@@ -547,7 +582,7 @@ def summary_table(rows: list[dict]) -> str:
     return (
         '<div class="table-wrap"><table>'
         "<thead><tr>"
-        "<th>Tier</th><th>Source</th><th>Primary link</th><th>State</th><th>Pattern</th><th>Count</th><th>Recent</th><th>Varna</th><th>Saved listings</th><th>Descriptions</th><th>Photo URLs</th><th>Readable photos</th><th>Full-gallery items</th><th>Total local photos</th><th>Website total</th><th>&lt;2m</th><th>Varna city+region</th><th>Coverage vs website</th><th>Declared scope</th><th>Access</th><th>Legal</th><th>Further steps</th>"
+        "<th>Tier</th><th>Source</th><th>Primary link</th><th>State</th><th>Pattern</th><th>Count</th><th>Recent</th><th>Varna</th><th>Saved listings</th><th>Accepted single</th><th>LOST</th><th>Grouped</th><th>Descriptions</th><th>Photo URLs</th><th>Readable photos</th><th>Full-gallery items</th><th>Total local photos</th><th>Website total</th><th>&lt;2m</th><th>Varna city+region</th><th>Coverage vs website</th><th>Declared scope</th><th>Access</th><th>Legal</th><th>Further steps</th>"
         "</tr></thead><tbody>"
         + "".join(body)
         + "</tbody></table></div>"
@@ -582,6 +617,9 @@ def source_cards(rows: list[dict]) -> str:
             f'<div class="badge">{esc(row["access_mode"])}</div></div>'
             '<div class="stats-grid">'
             f'<div class="stat"><span>Saved listings</span><strong>{row["saved_listings"]}</strong></div>'
+            f'<div class="stat"><span>Accepted single candidates</span><strong>{row["accepted_single_entity_candidates"]}</strong></div>'
+            f'<div class="stat"><span>LOST / rescrape queue</span><strong>{row["lost_items"]}</strong></div>'
+            f'<div class="stat"><span>Grouped publications</span><strong>{row["grouped_publications"]}</strong></div>'
             f'<div class="stat"><span>Website total</span><strong>{esc(website_total_text(row))}</strong></div>'
             f'<div class="stat"><span>Pattern status</span><strong>{esc(row["pattern_status"])}</strong></div>'
             f'<div class="stat"><span>Live count status</span><strong>{esc(row["count_status"])}</strong></div>'
@@ -617,6 +655,7 @@ def source_cards(rows: list[dict]) -> str:
             f"<p><strong>Property categories scraped:</strong> {esc(category_counts)}</p>"
             f"<p><strong>Other captured variables:</strong> {esc(field_summary)}</p>"
             f"<p><strong>Photo totals:</strong> remote={row['total_remote_photos']}, local={row['total_local_photos']}, full_gallery_items={row['full_gallery_items']}/{row['saved_listings']}</p>"
+            f"<p><strong>QA status:</strong> accepted_single={row['accepted_single_entity_candidates']}, LOST={row['lost_items']}, grouped/development={row['grouped_publications']}</p>"
             f"<p><strong>Next step:</strong> {esc(row['next_step'])}</p>"
             '<h3>Website Inventory Evidence</h3>'
             + inventory_table(row["website_inventory_rows"])
@@ -764,6 +803,9 @@ def render_html(rows: list[dict], totals: dict) -> str:
       <div class="kpi"><span>Sources with website totals</span><strong>{totals["with_website_totals"]}</strong></div>
       <div class="kpi"><span>Patterned sources</span><strong>{totals["patterned_sources"]}</strong></div>
       <div class="kpi"><span>Saved listings on disk</span><strong>{totals["saved_listings"]}</strong></div>
+      <div class="kpi"><span>Accepted single candidates</span><strong>{totals["accepted_single_entity_candidates"]}</strong></div>
+      <div class="kpi"><span>LOST / rescrape queue</span><strong>{totals["lost_items"]}</strong></div>
+      <div class="kpi"><span>Grouped publications</span><strong>{totals["grouped_publications"]}</strong></div>
       <div class="kpi"><span>Description coverage</span><strong>{esc(desc_rate)}</strong></div>
       <div class="kpi"><span>Photo URL coverage</span><strong>{esc(photo_rate)}</strong></div>
       <div class="kpi"><span>Readable photo rate</span><strong>{esc(readable_rate)}</strong></div>
@@ -796,6 +838,9 @@ def write_outputs(rows: list[dict], totals: dict) -> None:
             "with_website_totals": totals["with_website_totals"],
             "patterned_sources": totals["patterned_sources"],
             "saved_listings": totals["saved_listings"],
+            "lost_items": totals["lost_items"],
+            "grouped_publications": totals["grouped_publications"],
+            "accepted_single_entity_candidates": totals["accepted_single_entity_candidates"],
             "with_description": totals["with_description"],
             "with_photo_urls": totals["with_photo_urls"],
             "with_readable_local_photos": totals["with_readable_local_photos"],
