@@ -132,7 +132,7 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 - **Depends on**: PLAN-01
 
 ### OPS-01: Safe git push gate for Plan 13.05
-- **Status**: `IN_PROGRESS` (2026-05-13)
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13; pushed to `origin reallystate`)
 - **Priority**: **CRITICAL**
 - **Read first**: `.gitignore`, `plan 13.05.md`, `agent-skills/ops-release-management/SKILL.md`
 - **Do**:
