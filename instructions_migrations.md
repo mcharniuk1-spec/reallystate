@@ -37,15 +37,20 @@
 - [TASKS](</Users/getapple/Documents/Real Estate Bulg/docs/agents/TASKS.md>)
 - [Runbook](</Users/getapple/Documents/Real Estate Bulg/docs/runbooks/server-db-migration.md>)
 - [Role: infra_db_operator](</Users/getapple/Documents/Real Estate Bulg/docs/agents/roles/infra_db_operator.md>)
+- [Planner task queue](</Users/getapple/Documents/Real Estate Bulg/docs/agents/TASKS.md>)
+- [INFRA-02 ticket in tasks](</Users/getapple/Documents/Real Estate Bulg/docs/agents/TASKS.md#infra-02-db-count-verification-execution-gate>)
 - [Makefile](</Users/getapple/Documents/Real Estate Bulg/Makefile>)
 - [BD-18 spec](</Users/getapple/Documents/Real Estate Bulg/docs/exports/bd18-database-review-and-correction-spec-2026-05-13.md>)
 - [Journey](</Users/getapple/Documents/Real Estate Bulg/docs/agents/infra_db_operator/JOURNEY.md>)
+- [Debugger acceptance handoff](</Users/getapple/Documents/Real Estate Bulg/docs/agents/infra_db_operator/JOURNEY.md>)
+- [Hands-off checklist (release/ops)](</Users/getapple/Documents/Real Estate Bulg/docs/exports/debugger-da02-bd18-handoff-verification-2026-05-13.md>)
 
 ## Required command snippet
 ```bash
 export DATABASE_URL='postgresql://...'
 export REMOTE_DATABASE_URL='postgresql://...'
 export DB_DUMP='/srv/bgrealestate/backups/bgrealestate_full_<timestamp>.dump'
+export SSH_TARGET='user@server'
 
 make -n backup-db restore-db verify-db-counts
 # then execute in this order:
@@ -55,3 +60,12 @@ make restore-db
 # counts
 make verify-db-counts
 ```
+
+## Immediate handoff steps for Planner + Debugger
+
+- Planner:
+  - Keep `INFRA-02` blocked in `docs/agents/TASKS.md` until credentials, `BD-18`, and `BD-19` proof artifacts are present.
+  - Verify that `infra_db_operator/JOURNEY.md` contains the same blocker and next action sequence before allowing execution.
+- Debugger:
+  - Verify this file, the runbook, and `Makefile` are dry-run only until live URLs are supplied.
+  - Re-check that no DB dump, secret file, `data/scraper.log`, or raw `data/scraped/**/raw/` diff is staged.
