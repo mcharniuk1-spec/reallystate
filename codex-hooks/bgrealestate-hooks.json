@@ -1,0 +1,40 @@
+{
+  "name": "bgrealestate-codex-hooks",
+  "project": "real-estate-bulgaria",
+  "runner": "python3 scripts/codex_project_hooks.py",
+  "preflight": "make codex-hooks",
+  "pre_command": "python3 scripts/codex_project_hooks.py --command \"$CODEX_COMMAND\"",
+  "notes": [
+    "Repo-local hook pack. It does not modify ~/.codex/config.toml.",
+    "Use pre_command form from an external Codex wrapper if command-level blocking is desired.",
+    "Operator override env vars are intentionally explicit and narrow."
+  ],
+  "hooks": [
+    {"id": "planner.dependency_integrity", "owner": "planner", "blocks": ["dependency drift", "Action0/Action1/Action2 reorder"]},
+    {"id": "backend.accepted_only_import", "owner": "backend_developer", "blocks": ["bad saving", "unsafe import", "lost/grouped/pending promotion"]},
+    {"id": "data.denominator_truth", "owner": "data_analyst", "blocks": ["bad denominator claims", "dashboard ambiguity"]},
+    {"id": "data.property_deep_analytics", "owner": "data_analyst", "blocks": ["missing regional/source/image/text analytics", "unlabeled property decision metrics"]},
+    {"id": "scraper_1.scope_identity", "owner": "scraper_1", "blocks": ["bad scraping", "unsafe source expansion", "single-unit identity loss"]},
+    {"id": "scraper_sm.consent_routes", "owner": "scraper_sm", "blocks": ["private social scraping", "messenger consent violations"]},
+    {"id": "ux.accepted_only_public_export", "owner": "ux_ui_designer", "blocks": ["public display of LOST/grouped/pending rows"]},
+    {"id": "debugger.verifier_queue", "owner": "debugger", "blocks": ["unverified handoff completion"]},
+    {"id": "ops.release_hygiene", "owner": "ops_release_manager", "blocks": ["secrets", "raw dumps", "unsafe release staging"]},
+    {"id": "infra.db_safety", "owner": "infra_db_operator", "blocks": ["DB dumps in git", "unverified DB migration/count claims"]},
+    {"id": "market.claim_gate", "owner": "market_intelligence_analyst", "blocks": ["unsupported market coverage claims"]},
+    {"id": "analytics.privacy", "owner": "user_analytics_agent", "blocks": ["PII/raw text analytics payloads"]},
+    {"id": "vision.action0_gate", "owner": "vision_media_agent", "blocks": ["ungated image-report execution", "remote image fetch during Action0"]},
+    {"id": "entity.no_auto_merge", "owner": "entity_resolution_agent", "blocks": ["auto-merge of grouped/development/uncertain rows"]},
+    {"id": "knowledge.wiki_closeout", "owner": "knowledge_context_agent", "blocks": ["chat-only conclusions", "missing run/log closeout"]},
+    {"id": "codex.inventory", "owner": "knowledge_context_agent", "blocks": ["missing hook manifest/docs"]}
+  ],
+  "command_overrides": {
+    "CODEX_ALLOW_LIVE_SCRAPE": "allows live scrape commands after operator approval",
+    "CODEX_ALLOW_MEDIA_BACKFILL": "allows large media backfill after operator approval",
+    "CODEX_ALLOW_ACTION0": "allows Action0 image-report execution after operator Action0 now",
+    "CODEX_ALLOW_ACTION2": "allows Action2 source expansion after operator Action2 now",
+    "CODEX_ALLOW_UNSAFE_IMPORT": "allows explicit import include flags after backend/debugger approval",
+    "CODEX_ALLOW_BROAD_GIT_ADD": "allows broad git add only for ops-reviewed release work",
+    "CODEX_ALLOW_SENSITIVE_STAGE": "allows sensitive-path staging only for explicit operator/debugger review",
+    "CODEX_ALLOW_DB_ARTIFACT_STAGE": "allows DB artifact staging only for exceptional, explicit approval"
+  }
+}
