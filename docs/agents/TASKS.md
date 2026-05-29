@@ -180,6 +180,166 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 13. `knowledge_context_agent`: record run/log/insight closeouts after each verified planning or dashboard change; do not write raw scrape facts into memory.
 14. `planner`: maintain this dependency chain, dashboard contract, and verifier queues; do not touch scraped DB/corpus directly.
 
+## 2026-05-14 planner reconciliation after product prompt pack section 1
+
+**FACT**: `PLAN-08` and the full product/website prompt pack are verified for planning safety only. `DBG-25` still blocks public website readiness on claim-neutral copy, Codex hook/export predicate drift, frontend typecheck completion, and missing DB-backed proof. `DA-07` produced a bad-scrape review pack and tightened the public export to 1,606 accepted single-unit rows, but `S1-23` / `S1-24` remain the next unexecuted repair work.
+
+**INTERPRETATION**: The next productive task is a working `scraper_1` repair wave over the existing Action1/A1 sources, not more product expansion. Entity-resolution and DB/operator work should consume the repaired accepted-only evidence after scraper fixes reduce bad, grouped, pending, media-gap, and parser-error states.
+
+**HYPOTHESIS**: Once `S1-23` produces fixture-backed parser/media/contact fixes and a bounded `S1-24` repair wave, `ER-03` / `ER-04` and `BD-18` / `INFRA-02` can advance with fewer false-merge and import-blocker cases.
+
+**GAP**: PostgreSQL count proof remains blocked by missing `DATABASE_URL`; public website readiness remains blocked by `UX-24`, `DBG-27`, `DBG-28`, and DB-backed accepted-only read-model verification.
+
+**Immediate next sequence**:
+
+1. `scraper_1`: execute `S1-23`, then `S1-24` if unblocked. Scope is Action1/A1 only: `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, `SUPRIMMO`. Fix badly scraped rows before any Action2 widening.
+2. `entity_resolution_agent`: after scraper repair evidence is refreshed, run `ER-03` scoring matrix and then `ER-04` review policy. Do not generate candidates or promote canonical property entities until accepted-only DB/read-model proof exists.
+3. `infra_db_operator` + `backend_developer`: resume `BD-18` / `INFRA-02` DB proof only when a libpq-compatible `DATABASE_URL` is available; keep import source-publication-first and accepted-only.
+4. `debugger`: batch-verify `S1-23`/`S1-24`, `DA-07`/`DBG-27`, `BD-22`/`DBG-28`, and any DB proof. Do not mark public readiness or Action1 completion before these gates pass.
+
+**Dashboard rule**: planner/doc-only closeouts use `make operational-dashboard-doc`. Full `make dashboard-doc` remains DA-03/full-corpus work unless the run explicitly targets source/photo coverage repair.
+
+## 2026-05-15 operator correction wave
+
+**FACT**: The operator reported broken/weak website operability, including profile/chat/settings interactions, property detail opening, unclear scraped names, area/square-meter fields not prominent enough, weak filters under the map, unsupported 3D-map expectations, bad map placement such as Burgas points in the sea, and confusing aggregation over non-identical properties.
+
+**FACT**: Current safe public website data remains the DA-07 accepted-only file-backed export with 1,606 rows. The broader scraped corpus is dirty and cannot be treated as public inventory or canonical property truth without DA/BD/debugger gates.
+
+**INTERPRETATION**: Run two agents at a time. Wave 1 handles visible UI operability and operator-facing XLS evidence. Wave 2 repairs scraper/parser/entity-resolution contracts from that evidence. Wave 3 wires backend/read-model/profile publishing surfaces after evidence contracts are stable. Debugger verifies each wave before promotion.
+
+**GAP**: True satellite/relief/3D map provider, exact building footprints, semantic image descriptions, DB-backed counts, and geocode correction at national scale are not yet proven.
+
+**Communication board**: `docs/agents/COMMUNICATION.md` and `docs/agents/communication/2026-05-15-wave1.md`.
+
+**Execution waves**:
+
+1. Wave 1A/B in parallel:
+   - `UX-25`: website operability and area/filter/detail cleanup.
+   - `DA-08`: operator XLS dataset review with transformation, geocode, aggregation, image/source evidence.
+2. Wave 2A/B after Wave 1 handoff:
+   - `S1-25`: scraper parser repair for clean title, area, source-derived categories, and location evidence on Action1 sources.
+   - `ER-06`: accepted-only aggregation rule matrix: same street/city, same or close price, comparable area, similar description, source diversity, and no grouped/development rows.
+3. Wave 3A/B after Wave 2 handoff:
+   - `BD-23`: profile/publishing/read-model contract for owner/customer profiles and all incoming listing variables.
+   - `VM-07`: media-description-to-property-metric contract, still blocked from semantic generation until `Action0 now`.
+4. Verification:
+   - `DBG-29`: browser/typecheck/XLS/safety verification for Wave 1.
+   - Later debugger follow-ups verify Wave 2 and Wave 3.
+
+## 2026-05-15 full-dataset active-audit correction
+
+**FACT**: The operator rejected the prior audit/scraper/entity-resolution result as incomplete. Local artifacts confirm the concern: `S1-26` only generated a queue and stopped on low disk; `ER-07` used only `1,606` public-safe rows and had no completed active-link truth.
+
+**INTERPRETATION**: The next run must audit the whole saved corpus first, property by property and URL by URL, before cleanup, broad patterned rescrape, or final entity resolution.
+
+**GAP**: The system does not yet know which of the roughly 30k saved source publications are still active on source websites. The 1.6k public export is not a full-corpus answer.
+
+**Active correction prompt pack**: `docs/exports/triagent-full-dataset-active-audit-clean-rescrape-prompts-2026-05-15.md`.
+
+**Execution**:
+
+1. `S1-27`: full saved-corpus active-link audit, reversible cleanup manifest, then patterned background rescrape after debugger PASS.
+2. `ER-08`: entity resolution waits for active-link truth; ER-07 is preliminary/superseded for merge use.
+3. `DBG-32`: concurrent guard/verifier with `gpt-5.5`, `xhigh`.
+
+## 2026-05-29 property-link comparable search layer
+
+**FACT**: The repo now has a bounded one-link intake and comparable-search path: `scripts/property_link_comparable_search.py`, pure scoring in `src/bgrealestate/matching/comparable.py`, docs in `docs/architecture/property-link-comparable-search.md`, and a project skill at `agent-skills/property-link-comparable-search/SKILL.md`.
+
+**INTERPRETATION**: This is the operator workflow for “I give you one property URL; scrape/analyze that page; search all other tier 1/2/3 evidence for the same or comparable property.” It must remain separate from broad crawl activation and from automatic property-entity promotion.
+
+**GAP**: The current implementation is file-backed by saved `data/scraped/**/listings/*.json` evidence. DB-backed endpoint, reviewed candidate persistence, and frontend operator review still need agent work after accepted-only DB proof.
+
+**Immediate next sequence**:
+
+1. `S1-28`: expand source-specific one-page parser proof for tier 1/2 sources that are missing reliable property fingerprints.
+2. `DA-09`: build a known-good/known-bad evaluation set and threshold report for same-property and comparable-property matches.
+3. `ER-09`: turn score output into reviewable `entity_resolution_candidate` rows after DB proof; do not auto-merge.
+4. `BD-24`: add a DB/API contract for link-intake comparable search after `BD-18`/`BD-19` are verified.
+5. `SM-17`: map tier 3 official/vendor/partner comparable evidence under contract/manual gates.
+6. `UX-26`: design the operator candidate-review surface with score components and conflicts.
+7. `DBG-33`: verify fixture-only tests, no live-network tests, no grouped promotion, no tier 3 legal bypass, and no stale public claims.
+
+### PLAN-13: Property-link comparable search orchestration
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-29; file-backed implementation and cross-agent task pack added)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/architecture/property-link-comparable-search.md`, `agent-skills/property-link-comparable-search/SKILL.md`, `docs/agents/TASKS.md`
+- **Do**: keep the one-link intake workflow separate from broad crawling and property promotion; route follow-up work to scraper, analyst, entity-resolution, backend, S&M, UX, and debugger lanes.
+- **Acceptance gate**: `pytest tests/test_property_comparable_search.py` passes and follow-up slices exist for all impacted agents.
+- **Output**: comparable-search script/module/docs/skill, task updates, planner journey entry.
+- **Verifier**: debugger
+- **Depends on**: PLAN-12
+
+### S1-28: One-link parser fingerprint proof for comparable search
+- **Status**: `TODO`
+- **Priority**: **CRITICAL**
+- **Read first**: `agent-skills/property-link-comparable-search/SKILL.md`, `scripts/property_link_comparable_search.py`, `scripts/live_scraper.py`, `data/source_registry.json`
+- **Do**: add fixture-backed one-page parser proof for priority tier 1/2 sources; keep grouped/development pages source-publication-only; ensure fingerprints contain URL, ID, intent, category, location, price/status, area, description, and media evidence where available.
+- **Acceptance gate**: parser fixtures pass without live network and comparable-search CLI parses each fixture.
+- **Output**: fixtures, parser repairs, and source-specific blocker notes.
+- **Verifier**: debugger
+- **Depends on**: PLAN-13
+
+### DA-09: Comparable-search evaluation set and threshold report
+- **Status**: `TODO`
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/architecture/property-link-comparable-search.md`, `docs/exports/data-quality-deep-review-2026-05-13.md`, `src/bgrealestate/matching/comparable.py`
+- **Do**: build known same-property, comparable-not-same, and bad-pair fixtures from accepted rows; report false-positive risk by source family, city, category, media, and location gaps.
+- **Acceptance gate**: reproducible JSON/MD report with no live network and no raw private contact values.
+- **Output**: `docs/exports/comparable-search-evaluation-*.json` and `.md`.
+- **Verifier**: debugger
+- **Depends on**: PLAN-13
+
+### ER-09: Comparable-search candidate persistence policy
+- **Status**: `TODO`
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/architecture/property-link-comparable-search.md`, `src/bgrealestate/matching/comparable.py`, `docs/exports/entity-resolution-accepted-only-candidate-layer-2026-05-13.md`
+- **Do**: map `same_property_candidate`, `comparable_property`, and `weak_candidate` into reviewable candidate types; define what can become `entity_resolution_candidate` and what remains non-merge market comparable.
+- **Acceptance gate**: policy distinguishes exact-identity evidence from market-comparable evidence and lists conflict blockers.
+- **Output**: ER policy doc and follow-up implementation tasks.
+- **Verifier**: debugger
+- **Depends on**: PLAN-13, DA-09, BD-18
+
+### BD-24: Link-intake comparable search API/read-model contract
+- **Status**: `TODO`
+- **Priority**: **HIGH**
+- **Read first**: `docs/architecture/property-link-comparable-search.md`, `src/bgrealestate/matching/comparable.py`, `scripts/property_link_comparable_search.py`, `BD-18`, `BD-19`
+- **Do**: define DB-backed endpoint contract after accepted-only import/read-model proof; preserve source-publication-first semantics; persist candidates only as reviewable evidence with score components and conflicts.
+- **Acceptance gate**: API tests cover unavailable DB, grouped query page, accepted-only filtering, same-source exclusion, and no live-network test behavior.
+- **Output**: endpoint/schema contract or implementation patch depending on `BD-18`/`BD-19` status.
+- **Verifier**: debugger
+- **Depends on**: BD-18, BD-19, DA-09, ER-09
+
+### SM-17: Tier-3 comparable evidence mapping
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `docs/architecture/property-link-comparable-search.md`, `data/source_registry.json`, `docs/agents/scraper_sm/tier3-tier4-intelligence-paths-2026-05-13.md`
+- **Do**: identify tier 3 official/vendor/partner sources that can contribute saved comparable evidence through public, official, contract, licensed, or manual routes; keep blocked routes explicit.
+- **Acceptance gate**: tier 3 matrix separates searchable saved evidence from blocked live intake and includes legal reasons.
+- **Output**: tier 3 comparable-evidence matrix and fixture follow-ups.
+- **Verifier**: debugger
+- **Depends on**: PLAN-13
+
+### UX-26: Operator comparable-search review surface
+- **Status**: `TODO`
+- **Priority**: HIGH
+- **Read first**: `docs/architecture/property-link-comparable-search.md`, `scripts/property_link_comparable_search.py`, `UX-25`, `BD-24`
+- **Do**: design an operator view for one input URL, parsed facts, page blockers, same-property candidates, comparable properties, score components, conflicts, and source links.
+- **Acceptance gate**: UI contract uses explicit evidence labels and does not create public search claims or grouped-property promotion.
+- **Output**: UX spec or implementation after `BD-24`.
+- **Verifier**: debugger
+- **Depends on**: PLAN-13, BD-24
+
+### DBG-33: Verify property-link comparable search layer
+- **Status**: `TODO`
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/architecture/property-link-comparable-search.md`, `agent-skills/property-link-comparable-search/SKILL.md`, `tests/test_property_comparable_search.py`, `scripts/property_link_comparable_search.py`
+- **Do**: run fixture-only tests; verify CLI requires fixture or explicit live fetch; verify grouped pages are source-publication-only; verify tier 3 legal gates, same-source exclusion, and accepted-only default behavior.
+- **Acceptance gate**: no live network in tests, no public promotion, no auto-merge, no source registry bypass.
+- **Output**: debugger report and TASKS status update.
+- **Verifier**: debugger
+- **Depends on**: PLAN-13
+
 ### PLAN-03: Self-development architecture rebuild
 - **Status**: `DONE_AWAITING_VERIFY` (2026-05-13)
 - **Priority**: **CRITICAL**
@@ -258,6 +418,20 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 - **Verifier**: debugger + backend_developer + data_analyst
 - **Depends on**: INFRA-01, BD-18
 
+### INFRA-03: Product website environment readiness matrix
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-14; matrix prepared, DB/runtime proof still blocked by missing credentials)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/exports/product-website-agent-prompts-2026-05-14.md` section 9, `docs/exports/product-website-ux-rebuild-plan-2026-05-14.md`, `docs/runbooks/server-db-migration.md`, `.env.example`, `Makefile`, `docs/docker-and-database.md`
+- **Do**:
+  1. List required env vars for auth/JWT, DB, chat provider, CORS, frontend backend proxy, and map provider across local/staging/production.
+  2. Keep all API keys, DB URLs, JWT secrets, and provider keys out of committed docs/code.
+  3. Define smoke command order once `DATABASE_URL` is available.
+  4. Do not execute migrations without credentials and operator approval.
+- **Acceptance gate**: readiness runbook exists, `.env.example` names current code-read variables without real secrets, DB proof remains explicitly blocked when credentials are missing, and verifier can rerun smoke commands after credentials are supplied.
+- **Output**: `docs/runbooks/product-website-env-readiness-2026-05-14.md`, `.env.example`, infra JOURNEY entry, wiki run/log closeout.
+- **Verifier**: debugger + backend_developer
+- **Depends on**: PLAN-08, UX-23, DA-06, ER-05, UA-04
+
 ### MI-01: Weekly market and rival intelligence baseline
 - **Status**: `DONE_AWAITING_VERIFY` (2026-05-13; file-backed only, no browsing/scraping)
 - **Priority**: HIGH
@@ -271,11 +445,12 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 ### MI-02: Next weekly market review scorecard
 - **Status**: `TODO`
 - **Priority**: HIGH
-- **Read first**: `docs/exports/market-intelligence-2026-05-13.md`, `docs/exports/data-quality-deep-review-2026-05-13.md`, `DA-02` output, `BD-19` output, `docs/exports/website-inventory-analysis.md`, `data/source_registry.json`
+- **Read first**: `docs/exports/market-intelligence-2026-05-13.md`, `docs/exports/data-quality-deep-review-2026-05-13.md`, `docs/exports/properties-deep-analytics-agent-handoff-2026-05-13.md`, `DA-02`, `DA-05`, `BD-19` output, `docs/exports/website-inventory-analysis.md`, `data/source_registry.json`
 - **Do**:
   1. Build a weekly source scorecard from accepted-only evidence: source family, legal/access mode, website-total basis, landed rows, accepted rows, grouped rows, LOST rows, media/description coverage, city/district coverage, price-status coverage, and product role.
-  2. Identify strategic supply gaps by geography, intent, property type, and source family without using raw scraped volume as a market fact.
-  3. Separate marketable claims from internal hypotheses and blocked data needs.
+  2. Identify strategic supply gaps by geography, intent, property type, source family, price band, price-per-sqm band, media strength, and textual tendencies without using raw scraped volume as a market fact.
+  3. Separate sale and rent medians; never mix them into one public price claim.
+  4. Separate marketable claims from internal hypotheses and blocked data needs.
 - **Acceptance gate**: every source-strength or supply-gap claim cites a reproducible artifact; no private/unauthorized source route is proposed; public positioning language is blocked unless accepted-only DB counts support it.
 - **Output**: `docs/exports/market-review-scorecard-YYYY-MM-DD.md`, market intelligence journey entry, planner-ready source priority list.
 - **Verifier**: debugger + planner + data_analyst
@@ -615,6 +790,419 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 - **Verifier**: debugger + planner
 - **Depends on**: DA-02, BD-18, PLAN-06
 
+### PLAN-08: Product website UX/backend rebuild prompt pack
+- **Status**: `VERIFIED` (2026-05-14 by DBG-25 for planning/prompt-pack safety; public-readiness and implementation gates remain blocked)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/exports/product-website-ux-rebuild-plan-2026-05-14.md`, `docs/exports/product-website-agent-prompts-2026-05-14.md`, `docs/business/product-ux-structure.md`, `docs/agents/ux_ui_designer/product-ux-structure-refined.md`, `docs/analytics/user-event-taxonomy.md`
+- **Do**:
+  1. Re-analyze the product/website structure around map-first search, listing feed, filters, AI chat, customer accounts, owner accounts, owner property editing, and reliable login.
+  2. Keep the plan as planning-only; do not implement UI/backend code in this slice.
+  3. Use current public rival evidence for UX implications without unauthorized scraping or private account access.
+  4. Save copy/paste prompts for every relevant product/website agent.
+  5. Preserve accepted-only DB/read-model, source-publication-first, privacy, and owner-permission gates.
+- **Acceptance gate**: plan and prompt files exist; every proposed agent has inputs, actions, outputs, acceptance gates, and blockers; no buyer-facing raw-scrape or 3D-building precision claim is introduced.
+- **Output**: product website plan, product website agent prompt pack, planner JOURNEY entry, wiki run/log/insight closeout.
+- **Verifier**: debugger + ux_ui_designer + backend_developer
+- **Depends on**: PLAN-07, UX-15, UX-22, MI-01, UA-01, ER-01, BD-18 prep
+
+### PLAN-09: Prompt-pack section 1 reconciliation and next-task lock
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-14; planner-only reconciliation, no live scrape/import)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/exports/product-website-agent-prompts-2026-05-14.md` section 1, `docs/exports/product-website-plan-verification-2026-05-14.md`, `docs/exports/badly-scraped-review-2026-05-14.json`, `docs/agents/TASKS.md`, all `docs/agents/*/JOURNEY.md`, project wiki memory/insights.
+- **Do**:
+  1. Reconcile product-plan outputs, DA-07 bad-scrape outputs, dashboards, TASKS/JOURNEY, and wiki state.
+  2. Lock the next execution to `scraper_1` repair first: `S1-23` then `S1-24`, Action1/A1 only.
+  3. Keep entity-resolution next as contract/review work only; no candidate generation or property promotion before accepted-only DB/read-model proof.
+  4. Keep DB/operator proof blocked on credentials and `BD-18` smoke/count verification.
+  5. Queue debugger verification after the scraper/ER/DB outputs rather than claiming readiness from planner chat.
+- **Acceptance gate**: TASKS names the scraper-first sequence, every next lane has owner/verifier/dependency, dashboards are refreshed through the fast target, and wiki run/log/decision/memory/insight closeout is recorded under strict filters.
+- **Output**: `docs/exports/planner-reconciliation-2026-05-14.md`, TASKS/JOURNEY updates, refreshed operational dashboards, wiki run/log/decision/memory/insight updates.
+- **Verifier**: debugger + data_analyst + scraper_1
+- **Depends on**: PLAN-08, DA-07, DBG-25
+
+### PLAN-10: Operator correction wave orchestration
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-15; Wave 1 dispatched, outputs integrated, debugger verification queued)
+- **Priority**: **CRITICAL**
+- **Read first**: project wiki `index.md`/`memory.md`/`insights.md`, `docs/agents/TASKS.md`, all `docs/agents/*/JOURNEY.md`, `docs/agents/README.md`, latest operator prompt.
+- **Do**:
+  1. Translate the operator's UI, scraping, dataset, map, profile, and aggregation concerns into executable agent slices.
+  2. Create a shared MD communication board for parallel work.
+  3. Dispatch two non-overlapping Wave 1 agents: UX frontend operability and data/XLS evidence.
+  4. Queue Wave 2 parser/entity-resolution repair and Wave 3 backend/media contracts.
+  5. Preserve accepted-only, source-publication-first, no-unsafe-scraping, DB-blocked, and semantic-image-blocked gates.
+- **Acceptance gate**: TASKS has owners/verifiers/dependencies for all wave slices; communication board exists; Wave 1 outputs are either produced or have exact blockers; operational dashboards are refreshed; wiki run/log/insight closeout is recorded under strict filters.
+- **Output**: `docs/exports/operator-correction-execution-plan-2026-05-15.md`, communication board files, TASKS/JOURNEY updates, Wave 1 handoff.
+- **Verifier**: debugger + data_analyst + ux_ui_designer
+- **Depends on**: PLAN-09, DA-07, UX-23, BD-22
+
+### PLAN-11: Final all-agent two-branch execution prompt pack
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-15; prompt pack and branch communication contract created)
+- **Priority**: **CRITICAL**
+- **Read first**: project wiki `index.md`/`memory.md`/`insights.md`, `docs/agents/TASKS.md`, all `docs/agents/*/JOURNEY.md`, `docs/exports/operator-correction-execution-plan-2026-05-15.md`, `docs/exports/competitor-account-ux-audit-2026-05-14.md`, latest public market sources.
+- **Do**:
+  1. Review the last project steps, current strategic direction, market/rival evidence, and active blockers.
+  2. Convert the result into an all-agent execution sequence with strategic agents first, two parallel implementation branches, and a final merge prompt.
+  3. Assign `reallystate` to data/backend/evidence cleanup and `reallystate1` to product/frontend/UX polish.
+  4. Preserve accepted-only, source-publication-first, no-unsafe-scraping, DB-blocked, Action0-blocked, Action2-blocked, and claim-neutral gates.
+  5. Write copy/paste prompts for strategic kickoff, branch A, branch B, and final merge.
+- **Acceptance gate**: prompt pack separates FACT / INTERPRETATION / HYPOTHESIS / GAP, cites current market sources, names all active agents, defines branch ownership and merge gates, and does not instruct agents to promote dirty corpus rows or unsupported public claims.
+- **Output**: `docs/exports/final-all-agent-branch-execution-plan-2026-05-15.md`, `docs/agents/communication/2026-05-15-final-branch-sync.md`, planner JOURNEY entry, wiki run/log/decision/memory/insight closeout.
+- **Verifier**: debugger + ops_release_manager + knowledge_context_agent
+- **Depends on**: PLAN-10, DA-08, UX-25, MI-03, BD-22
+
+### PLAN-12: Strategic kickoff handoff confirmation
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-15; handoff written, no scraped corpus or DB mutation)
+- **Priority**: **CRITICAL**
+- **Read first**: `AGENTS.md`, project wiki `index.md`/`memory.md`/`insights.md`, `docs/agents/TASKS.md`, all `docs/agents/*/JOURNEY.md` tails, `docs/exports/final-all-agent-branch-execution-plan-2026-05-15.md`, `docs/exports/competitor-account-ux-audit-2026-05-14.md`, `docs/exports/product-website-ux-rebuild-plan-2026-05-14.md`, `docs/exports/operator-dataset-review-2026-05-15.md`.
+- **Do**:
+  1. Confirm `reallystate` owns data/backend/evidence and `reallystate1` owns frontend/product/UX.
+  2. Confirm map/list cockpit, saved searches, favorites, alerts, owner workspace, property chat, and provenance/trust labels as current product implications.
+  3. Confirm blocked public claims: complete market, `95% coverage`, verified owner inventory, exact 3D/building precision, valuation/yield/below-market labels, and semantic image facts.
+  4. Confirm success metrics: active accepted properties, detail opens, saved searches/alerts, favorites, property chats/viewing requests, owner drafts, QA throughput, parser repair reduction, and unsafe public rows = 0.
+  5. Write a short communication artifact before implementation starts.
+  6. Queue debugger verification.
+- **Acceptance gate**: handoff separates FACT / INTERPRETATION / HYPOTHESIS / GAP; names branch ownership, blocked claims, metrics, and verifier queue; does not instruct corpus or DB mutation.
+- **Output**: `docs/exports/strategic-handoff-2026-05-15.md`, `docs/agents/communication/2026-05-15-strategic-handoff.md`, TASKS/JOURNEY/wiki closeout.
+- **Verifier**: debugger + ops_release_manager + knowledge_context_agent
+- **Depends on**: PLAN-11, MI-03, DA-08, UX-25
+
+### MI-03: Current competitor account and UX audit
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-14; public-source UX/account audit, no private account access)
+- **Priority**: HIGH
+- **Read first**: `docs/exports/product-website-ux-rebuild-plan-2026-05-14.md`, `docs/exports/market-intelligence-2026-05-13.md`, `data/source_registry.json`
+- **Do**: Audit public UX/account patterns for Bulgarian and global real-estate rivals: search/map filters, saved searches, owner posting, direct-owner positioning, account dashboards, alerts, chat/contact, trust labels, and new-build/project surfaces. Use only public/legal browsing and cite URLs.
+- **Acceptance gate**: report separates FACT / INTERPRETATION / HYPOTHESIS / GAP, cites public sources, and recommends product implications without unsafe scraping or unsupported market claims.
+- **Output**: `docs/exports/competitor-account-ux-audit-YYYY-MM-DD.md`, market intelligence JOURNEY entry.
+- **Verifier**: debugger + planner
+- **Depends on**: PLAN-08
+- **2026-05-14 handoff**: Output saved as `docs/exports/competitor-account-ux-audit-2026-05-14.md`. Feed findings into `UX-23` and `BD-22`: account-gated saved searches/favorites/alerts, owner workspace lifecycle states, property-specific chat/viewing requests, evidence-backed trust labels, and grouped/development project surfaces. Keep public coverage, valuation, owner-verified, and exact-building claims blocked until accepted-only DB/read-model proof.
+
+### UX-23: Product website IA and first-page redesign spec
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-14; spec created, no UI/backend implementation)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/exports/product-website-ux-rebuild-plan-2026-05-14.md`, `docs/exports/product-website-agent-prompts-2026-05-14.md`, `docs/exports/competitor-account-ux-audit-2026-05-14.md`, `components/listings/MainExplorer.tsx`, `components/map/MapCanvas.tsx`, `components/chat/ChatWorkspace.tsx`, `components/account/AccountCabinet.tsx`, `app/globals.css`
+- **Do**: Produce a high-minimal, map-first UX/UI spec for homepage filters, map/list split, property cards, customer vs owner account flows, owner workspace, property detail, chat UI actions, visual tokens, motion, and logo direction.
+- **Acceptance gate**: spec covers desktop/mobile, loading/empty/error/permission states, accessibility, reduced motion, and blocks all public claims requiring accepted-only DB proof.
+- **Output**: `docs/agents/ux_ui_designer/product-website-rebuild-spec-YYYY-MM-DD.md`, ux_ui_designer JOURNEY entry.
+- **Verifier**: debugger + planner + backend_developer
+- **Depends on**: PLAN-08; implementation remains blocked by DA-02, BD-18, BD-19 for public data surfaces.
+- **2026-05-14 handoff**: Output saved as `docs/agents/ux_ui_designer/product-website-rebuild-spec-2026-05-14.md`. Feed into `BD-22`, `DA-06`, `ER-05`, `UA-04`, `VM-06`, and `DBG-25`. Public inventory/trust labels, exact 3D building precision, owner-verified claims, valuations, and market coverage copy remain blocked until accepted-only DB/read-model proof and debugger verification.
+
+### UX-24: Public website claim-neutral copy scrub
+- **Status**: `TODO` (2026-05-14; queued by DBG-25)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/exports/product-website-plan-verification-2026-05-14.md`, `docs/agents/ux_ui_designer/product-website-rebuild-spec-2026-05-14.md`, `docs/exports/public-search-facet-dictionary-2026-05-14.md`, `app/layout.tsx`, `app/(main)/page.tsx`, `components/shell/AppShell.tsx`
+- **Do**:
+  1. Replace public runtime copy that implies complete inventory, market coverage, or exact 3D/building proof.
+  2. Keep brand/product copy claim-neutral until accepted-only DB/read-model, facet, geometry, and debugger gates pass.
+  3. Preserve internal/operator labels where they are explicitly labeled as demo, file-backed, or blocked.
+- **Acceptance gate**: public app metadata/footer/homepage copy no longer contains unsupported `Every property`, complete-market, 95% coverage, owner-verified, valuation/yield, or exact-building/3D precision claims; `npm run typecheck` passes or a frontend-typecheck blocker is recorded with process/output details.
+- **Output**: UX JOURNEY entry and scoped frontend copy patch.
+- **Verifier**: debugger
+- **Depends on**: UX-23, DA-06, DBG-25
+
+### UX-25: Wave 1 website operability and area-first property UX
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-15; frontend patch integrated, typecheck passed)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/agents/communication/2026-05-15-wave1.md`, `docs/agents/ux_ui_designer/product-website-rebuild-spec-2026-05-14.md`, `docs/exports/public-search-facet-dictionary-2026-05-14.md`, `public/data/scraped-listings.json`, `components/listings/MainExplorer.tsx`, `components/map/MapCanvas.tsx`, `components/chat/ChatWorkspace.tsx`, `components/account/AccountCabinet.tsx`, `app/(main)/properties/[id]/detail-client.tsx`, `app/(main)/settings/page.tsx`
+- **Do**:
+  1. Make property cards, map/list selections, and chat actions open or highlight the property detail route reliably.
+  2. Make profile/settings/chat buttons either perform visible state changes or navigate to existing routes; remove dead clickable affordances.
+  3. Use clean buyer-facing property titles and move source IDs/numbering such as `objava`/listing numbers into provenance/comment/detail metadata.
+  4. Make `area_sqm` prominent on cards, detail insights, and filter controls; add area bands under or near the map.
+  5. Increase readable text/button sizing and deepen the background without adding unsupported market/3D claims.
+  6. Keep true satellite/relief/building-level 3D labeled as blocked/planned unless an implemented provider and geometry proof exists.
+- **Acceptance gate**: property detail navigation works from list/map/chat; area filters apply to the shared result set; profile/chat/settings visible controls are operable; `npm run typecheck` passes or a concrete typecheck blocker is recorded; no public copy claims complete inventory, exact building precision, semantic image facts, or DB-backed truth.
+- **Output**: scoped frontend patch, UX JOURNEY entry, `docs/agents/communication/2026-05-15-wave1-ux.md`.
+- **Verifier**: debugger + data_analyst
+- **Depends on**: UX-23, UX-24, DA-06, DA-07
+- **2026-05-15 Branch B closeout**: `reallystate1` final product/frontend pass completed. `/listings` now renders the cockpit; detail/settings/chat/admin/map controls are operable with accepted file-backed data or explicit blocked states. Typecheck, browser route/click checks, accepted-only export predicate, public-claim scan, analytics/no-raw-field scan, and diff check passed. Full frontend export regeneration script hung in this environment; generator is patched and current public/mock exports were normalized deterministically for `price_status`.
+
+### BD-22: Customer/owner account, chat-search, and owner-edit API contract
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-14; fixture-safe schema/API/contracts/tests implemented, DB runtime proof still blocked by missing `DATABASE_URL`)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/exports/product-website-ux-rebuild-plan-2026-05-14.md`, `docs/exports/competitor-account-ux-audit-2026-05-14.md`, `src/bgrealestate/api/routers/user_auth.py`, `src/bgrealestate/api/routers/users.py`, `src/bgrealestate/api/routers/chat.py`, `src/bgrealestate/api/routers/properties.py`, `sql/schema.sql`, `BD-18` output
+- **Do**: Define and then implement only dependency-safe API/schema pieces for branch-aware accounts, owner property claims/edits, accepted-only map/list search, chat UI actions, saved searches/areas, owner/customer chat permissions, alert cadence, viewing requests, and owner listing lifecycle states.
+- **Acceptance gate**: fixture-safe tests cover auth/RBAC, owner edit permissions, structured chat action schema, accepted-only search labels, and no invented property facts. DB runtime proof remains blocked when `DATABASE_URL` is absent.
+- **Output**: backend contract doc or code/tests depending on DB blocker state, backend JOURNEY entry.
+- **Verifier**: debugger + ux_ui_designer
+- **Depends on**: PLAN-08, BD-18, BD-19 for DB-backed public read models
+- **2026-05-14 handoff**: Output saved as `docs/exports/bd22-backend-contract-2026-05-14.md`. Implemented branch/capability auth response fields, customer saved search/area/viewing-request APIs, owner claim/permission/revision/audit APIs, accepted-only `/properties/search` + `/properties/facets`, accepted-only `/map/viewport` + `/map/clusters`, and structured chat UI actions. Tests pass under Python 3.12.9. Do not promote DB-backed public readiness until `DATABASE_URL`, migrations, accepted-only counts, and debugger verification are complete.
+
+### BD-23: Profile publishing and source-variable read-model contract
+- **Status**: `TODO` (Wave 3; wait for Wave 1/2 evidence)
+- **Priority**: **HIGH**
+- **Read first**: `BD-22`, `DA-08` output, `S1-25` output, `ER-06` output, `docs/exports/public-search-facet-dictionary-2026-05-14.md`, `src/bgrealestate/api/routers/owner.py`, `src/bgrealestate/api/routers/properties.py`, `sql/schema.sql`
+- **Do**:
+  1. Define profile/account types for customer, owner, representative/agency participant, and operator.
+  2. Define owner publishing/edit draft inputs for source-derived variables, area, media evidence, location evidence, price status, availability, and provenance.
+  3. Preserve source-publication facts separately from owner assertions and operator-reviewed revisions.
+  4. Expose read-model fields needed by public cards/detail/profile without promoting unreviewed or grouped/development rows.
+- **Acceptance gate**: no owner/profile action can bypass accepted-only, grouped/development, price-status, media, location-confidence, and review gates; API/schema docs or tests identify DB-backed blockers explicitly.
+- **Output**: backend contract doc or code/test patch, backend JOURNEY entry.
+- **Verifier**: debugger + ux_ui_designer + data_analyst
+- **Depends on**: BD-22, DA-08, S1-25, ER-06, BD-18/BD-19 for DB-backed proof
+
+### DA-06: Public search facet dictionary
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-14; public contract only, runtime public use still blocked until DB/read-model proof)
+- **Priority**: HIGH
+- **Read first**: `docs/exports/product-website-ux-rebuild-plan-2026-05-14.md`, `docs/exports/data-quality-deep-review-2026-05-13.md`, `docs/exports/properties-deep-analytics-agent-handoff-2026-05-13.md`, `docs/agents/ux_ui_designer/verified-field-consumption-2026-05-13.md`
+- **Do**: Define public-safe filter facets, values, labels, blockers, and evidence sources for homepage/listing/map search. Separate public accepted-only fields from operator-only file-backed fields.
+- **Acceptance gate**: every facet names DB/file-backed status, accepted-only requirement, denominator, and whether it is public, owner-only, or operator-only.
+- **Output**: `docs/exports/public-search-facet-dictionary-YYYY-MM-DD.md`, data_analyst JOURNEY entry.
+- **Verifier**: debugger + ux_ui_designer + backend_developer
+- **Depends on**: PLAN-08, DA-02, BD-18
+- **2026-05-14 handoff**: Output saved as `docs/exports/public-search-facet-dictionary-2026-05-14.md`. It uses only the 1,606 persisted importer-safe source-publication candidates for current baseline evidence, separates sale/rent price semantics, blocks raw/unreviewed/grouped/LOST rows from public facets, and keeps actual public search counts blocked until accepted-only DB/read-model verification.
+
+### DA-07: Badly scraped review pack and website exclusion gate
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-14; file-backed review artifacts created, website export tightened to 1,606 safe rows)
+- **Priority**: **HIGH**
+- **Read first**: `docs/exports/action1-dataset-quality-gate.json`, `docs/exports/scrape-database-quality-audit-2026-05-13.json`, `scripts/generate_frontend_scraped_listings.py`, `scripts/generate_operational_dashboards.py`
+- **Do**:
+  1. Create XLSX/PDF review artifacts for the whole saved listing corpus grouped by issue pattern, with photo paths/samples, source URLs, reasons, actions, and expected rescrape changes.
+  2. Ensure wrongly/badly scraped, grouped/development, pending/missing QA, inactive, suspected multi-unit, and zero-price rows are excluded from website property exports.
+  3. Surface the bad-scrape review totals and artifact links in the Properties Database dashboard.
+- **Acceptance gate**: `public/data/scraped-listings.json` contains only `SCRAPED_OK` + `accepted_single_entity_candidate` + `single_unit_candidate` rows with no suspected multi-unit flags and no numeric zero price; XLSX opens with whole-corpus and issue sheets; PDF renders with issue and photo sample pages; operational dashboards link the artifacts.
+- **Output**: `docs/exports/badly-scraped-review-2026-05-14.xlsx`, `output/pdf/badly-scraped-review-2026-05-14.pdf`, `docs/exports/badly-scraped-review-2026-05-14.json`, refreshed website export and dashboards, data_analyst JOURNEY entry.
+- **Verifier**: debugger + ux_ui_designer + backend_developer
+- **Depends on**: DA-02, DA-06
+
+### DA-08: Wave 1 operator dataset XLS and transformation audit
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-15; XLS/JSON/MD generated and structurally validated)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/agents/communication/2026-05-15-wave1.md`, `docs/exports/badly-scraped-review-2026-05-14.json`, `docs/exports/data-quality-deep-review-2026-05-13.json`, `docs/exports/action1-dataset-quality-gate.json`, `docs/exports/scrape-database-quality-audit-2026-05-13.json`, `public/data/scraped-listings.json`, `scripts/generate_bad_scrape_review_artifacts.py`, `scripts/generate_frontend_scraped_listings.py`
+- **Do**:
+  1. Produce an operator-facing XLSX that explains the transformation from raw scraped rows to website-eligible rows.
+  2. Include issue buckets, source counts, field coverage, geocode/location risks, sea/wrong-coordinate detection where possible, aggregation limitations, and duplicate/merge rules.
+  3. Include row-level review tabs with source URLs, image links/local paths when available, source title, clean title, area sqm, price/status, city/district, coordinates, QA state, grouped/LOST/pending reason, and reviewer comments.
+  4. Use Excel hyperlinks, filters, formulas, frozen panes, and check columns instead of unsafe macros/buttons.
+  5. Export companion JSON/MD summary with FACT / INTERPRETATION / HYPOTHESIS / GAP.
+- **Acceptance gate**: XLSX opens and validates structurally; formulas/check cells have no obvious errors; summary counts reconcile the 30k-ish corpus, DA-07 website-eligible count, grouped/development, bad/lost, and pending/missing QA denominators; no raw private/contact data or unsupported DB-backed claims are introduced.
+- **Output**: `docs/exports/operator-dataset-review-2026-05-15.xlsx`, companion JSON/MD, data_analyst JOURNEY entry, `docs/agents/communication/2026-05-15-wave1-data.md`.
+- **Verifier**: debugger + ux_ui_designer
+- **Depends on**: DA-07, DA-06
+
+### ER-05: Owner claim and edit safety contract
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-14; safety contract only, no schema/API/code implementation)
+- **Priority**: HIGH
+- **Read first**: `docs/exports/product-website-ux-rebuild-plan-2026-05-14.md`, `docs/exports/entity-resolution-queue-plan-2026-05-13.md`, `docs/exports/entity-resolution-accepted-only-candidate-layer-2026-05-13.md`, `sql/schema.sql`, `src/bgrealestate/services/unification.py`
+- **Do**: Define how owner claims, owner edits, source-publication provenance, duplicate candidates, grouped/development pages, and canonical property entities interact without unsafe auto-promotion.
+- **Acceptance gate**: no owner claim or edit can auto-promote unaccepted, grouped/development, LOST, inactive, unknown, or conflicting source rows; all edits have draft/review/audit semantics.
+- **Output**: `docs/exports/owner-claim-entity-resolution-contract-YYYY-MM-DD.md`, entity_resolution_agent JOURNEY entry.
+- **Verifier**: debugger + backend_developer + data_analyst
+- **Depends on**: PLAN-08, ER-02, BD-18, BD-19
+- **2026-05-14 handoff**: Output saved as `docs/exports/owner-claim-entity-resolution-contract-2026-05-14.md`. Feed into `BD-22` and `DBG-25`; implementation remains blocked until DB/read-model proof or fixture-safe migration prep. Owner claim/edit flows must preserve source facts, use draft/review/audit revisions, and route grouped/development pages to project/unit-split review instead of single-unit promotion.
+
+### ER-06: Wave 2 accepted-only aggregation rule matrix
+- **Status**: `TODO` (Wave 2; wait for Wave 1 evidence)
+- **Priority**: **CRITICAL**
+- **Read first**: `DA-08` output, `S1-25` output if available, `ER-02`, `ER-03`, `docs/exports/action1-multi-unit-publications.json`, `docs/exports/scrape-database-quality-audit-2026-05-13.md`, `src/bgrealestate/services/unification.py`
+- **Do**:
+  1. Define aggregation only for candidate same-property source publications, not for nearby different properties.
+  2. Require accepted single-unit state, compatible city/district/street/address evidence, same or close price with price-status awareness, comparable area, similar normalized description/title tokens, and no grouped/development flags.
+  3. Treat same city/street alone as insufficient; same complex/development pages route to project/unit-split review.
+  4. Produce negative examples: same building different floor/area/price, same street different unit, same agency template text, same development multiple units, Burgas sea/wrong-coordinate cases.
+- **Acceptance gate**: rule matrix blocks false merges and names review actions for duplicate, possible duplicate, same development/project, location-conflict, and distinct-property cases; no canonical merge or DB mutation is performed.
+- **Output**: `docs/exports/entity-resolution-aggregation-rule-matrix-2026-05-15.md`, entity_resolution_agent JOURNEY entry.
+- **Verifier**: debugger + data_analyst + scraper_1
+- **Depends on**: ER-02, DA-08, S1-25 where parser evidence is needed
+
+### ER-07: Parallel cross-source entity candidates from active-link audit
+- **Status**: `DONE_AWAITING_VERIFY` but **SUPERSEDED FOR MERGE DECISIONS** (2026-05-15; used only `1,606` website-eligible rows and lacked completed active-link truth; see `ER-08`)
+- **Priority**: **CRITICAL**
+- **Model**: `5.3-codex-spark`
+- **Read first**: `docs/exports/scraper-active-link-review-codex-spark-prompt-2026-05-15.md`, `docs/agents/communication/2026-05-15-triagent-active-link-er-debugger.md`, `ER-02`, `ER-03`, `ER-06`, `DA-08` output, `public/data/scraped-listings.json`, `docs/exports/action1-multi-unit-publications.json`, `src/bgrealestate/services/unification.py`, `tests/test_unification.py`.
+- **Do**:
+  1. Build reviewable same-property candidate clusters from accepted/single-unit Action1 source publications while `scraper_1` audits active links.
+  2. Require at least two different sources for cross-source same-property candidates; same-source exact URL/source-ID duplicates are `source_duplicate` cleanup candidates only.
+  3. Score compatible address/city/district, price/price-status, area, rooms, floor, title/description tokens, contact markers, and existing media evidence such as image URL/hash overlap or existing semantic reports.
+  4. Block grouped/development, inactive, `LOST`, pending/missing QA, unknown, and conflicting rows from merge-ready status.
+  5. Describe image/media evidence as metadata only unless operator sends `Action0 now`; do not generate semantic image reports.
+  6. Do not merge, delete, mutate DB/corpus state, or promote canonical entities.
+- **Acceptance gate**: candidate matrix includes `definite_same_property_candidate`, `probable_same_property_candidate`, `possible_duplicate`, `same_development_or_project`, `source_duplicate`, `distinct_property`, and `conflicting_evidence`; every candidate cites evidence and blockers; no automatic merge or DB/corpus mutation occurs; `tests.test_unification` passes if code changes; `git diff --check` passes for changed docs/scripts.
+- **Output**: `docs/exports/er-07-cross-source-entity-candidates-2026-05-15.md`, `.json`, rules CSV, entity_resolution_agent JOURNEY entry, communication-board update.
+- **Verifier**: debugger + data_analyst + scraper_1
+- **Depends on**: DA-08, ER-02, ER-03
+
+### ER-08: Full-dataset entity resolution after active-link truth
+- **Status**: `BLOCKED_ACTIVE_LINK_TRUTH` (2026-05-15; blocked/preliminary rules artifacts written; final candidates wait for `S1-27` active-link audit and `DBG-32` PASS)
+- **Priority**: **CRITICAL**
+- **Model**: `5.3-codex-spark`
+- **Read first**: `docs/exports/triagent-full-dataset-active-audit-clean-rescrape-prompts-2026-05-15.md`, `docs/agents/communication/2026-05-15-full-dataset-audit-clean-rescrape.md`, `ER-07` outputs, `ER-02`, `ER-03`, `ER-06`, `DA-08` output, `docs/exports/operator-dataset-review-2026-05-15.json`, `docs/exports/action1-multi-unit-publications.json`, `src/bgrealestate/services/unification.py`, `tests/test_unification.py`.
+- **Do**:
+  1. Mark `ER-07` as preliminary/superseded for merge decisions because it only used website-eligible rows and active-link truth was incomplete.
+  2. Prepare normalization/scoring rules while `scraper_1` audits the whole saved corpus.
+  3. Produce final same-property/source-duplicate candidates only after `S1-27` active-link status exists for the full saved corpus.
+  4. Use only active, accepted, single-unit source publications for same-property candidates; keep inactive, wrong-property, grouped/development, unknown, `LOST`, pending/missing QA, and conflicting rows as negative/cleanup evidence.
+  5. Require at least two different active sources for cross-source same-property candidates; same-source exact URL/source-ID duplicates route to cleanup only.
+  6. Score compatible offer kind, price/price-status, area, rooms, floor, address/project/unit evidence, title/description tokens, contact/agency markers, and existing media URL/hash/description evidence.
+  7. Do not merge, delete, mutate DB/corpus state, or generate Action0 image descriptions.
+- **Acceptance gate**: ER-07 is explicitly superseded for merge use; no final ER candidate depends on stale/inactive/unknown/grouped/pending rows; every cross-source candidate cites active-link evidence and blocker state; same-development/different-unit and sale/rent mismatch examples are rejected or review-only; `tests.test_unification` passes if code changes; `git diff --check` passes for changed docs/scripts.
+- **Output**: `docs/exports/er-08-full-dataset-entity-resolution-2026-05-15.md`, `.json`, rules CSV, ER-07 supersession note, entity_resolution_agent JOURNEY entry, communication-board update.
+- **Verifier**: debugger + data_analyst + scraper_1
+- **Depends on**: DA-08, ER-02, ER-03, `S1-27` full active-link audit for final candidates.
+
+### UA-04: Customer/owner website event taxonomy addendum
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-14; taxonomy addendum only, no instrumentation implementation)
+- **Priority**: MEDIUM
+- **Read first**: `docs/analytics/user-event-taxonomy.md`, `docs/exports/product-website-ux-rebuild-plan-2026-05-14.md`
+- **Do**: Add privacy-safe events for customer/owner branch selection, saved areas, saved searches, owner property claim/edit, chat UI action applied, map/list synchronization, and owner inbox actions.
+- **Acceptance gate**: payloads remain allowlisted and exclude raw chat/search text, contacts, URLs, IPs, user agents, private notes, and secrets.
+- **Output**: analytics taxonomy update/addendum, user_analytics_agent JOURNEY entry.
+- **Verifier**: debugger
+- **Depends on**: PLAN-08, UA-01
+- **2026-05-14 handoff**: Added `Customer/Owner Branch Addendum` to `docs/analytics/user-event-taxonomy.md` with branch/capability, saved search/area, chat UI action, map/list sync, owner claim/edit, and owner inbox events. Debugger should verify rejection cases for raw text/contact/URL/IP/user-agent/private-note/secret fields and keep implementation blocked until `BD-20`/`BD-22`/`UX-20` intake hooks exist.
+
+### VM-06: Premium logo and visual identity directions
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-14; visual direction and local SVG concepts created)
+- **Priority**: MEDIUM
+- **Read first**: `docs/exports/product-website-ux-rebuild-plan-2026-05-14.md`, UX-23 output when available, `app/globals.css`
+- **Do**: Produce premium minimalist logo directions for BGEstate / Real Estate BG with SVG concepts, dark/light variants, favicon/app-icon crop, and usage rules.
+- **Acceptance gate**: logo works at 32px, header size, monochrome, dark/light backgrounds; no cartoon house, skyline cliche, or decorative gradient blob.
+- **Output**: `docs/agents/vision_media_agent/logo-visual-direction-YYYY-MM-DD.md`, optional `public/brand/*` assets, vision_media_agent JOURNEY entry.
+- **Verifier**: ux_ui_designer + debugger
+- **Depends on**: PLAN-08, UX-23
+- **2026-05-14 handoff**: Output saved as `docs/agents/vision_media_agent/logo-visual-direction-2026-05-14.md` with six local SVG assets under `public/brand/`. Recommended direction is the cadastral `BG` monogram. Verifiers should check 32 px readability, header use, monochrome rendering, dark/light backgrounds, and that no public data-readiness claim is implied.
+
+### VM-07: Wave 3 media-description-to-property-metric contract
+- **Status**: `TODO` (Wave 3; semantic generation still blocked until operator `Action0 now`)
+- **Priority**: HIGH
+- **Read first**: `VM-01`, `VM-05`, `DA-08` output, `S1-25` output, `docs/exports/s1-21-gemma-action0-eligible.json`, `docs/exports/public-search-facet-dictionary-2026-05-14.md`, `agent-skills/image-media-pipeline/SKILL.md`
+- **Do**:
+  1. Define how semantic image descriptions can add auditable metrics such as room type, visible condition, equipment, style, uncertainty, and media confidence.
+  2. Keep area/square meters, price, location, rooms, and source category as scraper/source-text facts first; image descriptions may corroborate or flag uncertainty but must not overwrite source facts.
+  3. Define which image-derived fields can later feed detail-page insight buttons and which stay operator-only.
+  4. Keep execution blocked until `Action0 now`; no remote image fetch or model analysis in this slice.
+- **Acceptance gate**: contract distinguishes source facts from image observations, includes uncertainty and contradiction handling, and blocks buyer-facing semantic claims until VM/debugger/data_analyst verification.
+- **Output**: media metric contract doc, vision_media_agent JOURNEY entry.
+- **Verifier**: debugger + data_analyst + ux_ui_designer
+- **Depends on**: VM-01, VM-05, DA-08, S1-25; execution depends on operator `Action0 now`
+
+### DBG-25: Verify product website plan and prompts
+- **Status**: `VERIFIED` (2026-05-14; report produced; result `FAIL_WITH_BLOCKERS` for public copy, hook drift, DB proof, and typecheck completion)
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/exports/product-website-ux-rebuild-plan-2026-05-14.md`, `docs/exports/product-website-agent-prompts-2026-05-14.md`, `docs/agents/ux_ui_designer/product-website-rebuild-spec-2026-05-14.md`, `docs/agents/TASKS.md`, `AGENTS.md`
+- **Do**: Verify PLAN-08 and follow-up slices for source-publication-first safety, accepted-only public data gates, auth/RBAC, owner permissions, privacy, no unsafe scraping, map precision honesty, and executable acceptance gates.
+- **Acceptance gate**: PASS/FAIL report exists; blockers are routed to specific agent slices; TASKS statuses are updated only for verified work.
+- **Output**: `docs/exports/product-website-plan-verification-YYYY-MM-DD.md`, debugger JOURNEY entry.
+- **Verifier**: debugger
+- **Depends on**: PLAN-08
+
+### DBG-26: Verify DA-06 public search facet dictionary
+- **Status**: `TODO`
+- **Priority**: **HIGH**
+- **Read first**: `docs/exports/public-search-facet-dictionary-2026-05-14.md`, `docs/exports/product-website-agent-prompts-2026-05-14.md` section 5, `docs/agents/ux_ui_designer/product-website-rebuild-spec-2026-05-14.md`, `docs/exports/data-quality-deep-review-2026-05-13.md`, `scripts/import_scraped_listings.py`, `docs/agents/TASKS.md`
+- **Do**:
+  1. Verify DA-06 uses only properly scraped importer-safe source-publication candidates for current evidence.
+  2. Verify no public facet uses raw, unreviewed, `LOST`, grouped/development, inactive, or unknown rows as public truth.
+  3. Verify every facet names UI label, scope, DB/file-backed status, field source, allowed values/buckets, accepted-only requirement, denominator, and blocker/rule.
+  4. Verify sale/rent metrics are separate and canonical city/region alias needs are explicit.
+  5. Verify owner, value/yield, exact building, and semantic image facets remain blocked until their evidence gates pass.
+- **Acceptance gate**: verifier report or JOURNEY entry confirms PASS/FAIL and routes any missing facet evidence to `DA-06`, `BD-22`, or `UX-23` follow-up without changing public-readiness claims.
+- **Output**: debugger JOURNEY entry, optional `docs/exports/public-search-facet-dictionary-verification-YYYY-MM-DD.md`.
+- **Verifier**: debugger + ux_ui_designer + backend_developer
+- **Depends on**: DA-06
+
+### DBG-27: Verify DA-07 bad-scrape review and website exclusion gate
+- **Status**: `TODO`
+- **Priority**: **HIGH**
+- **Read first**: `docs/exports/badly-scraped-review-2026-05-14.xlsx`, `output/pdf/badly-scraped-review-2026-05-14.pdf`, `docs/exports/badly-scraped-review-2026-05-14.json`, `scripts/generate_bad_scrape_review_artifacts.py`, `scripts/generate_frontend_scraped_listings.py`, `docs/dashboard/properties-database.html`, `public/data/scraped-listings.json`
+- **Do**:
+  1. Verify the workbook has whole-corpus, issue-pattern, bad/grouped, website-eligible, and photo-sample review sheets.
+  2. Verify the PDF renders readable issue and photo-sample pages.
+  3. Verify the public website export contains only accepted single-unit candidates and excludes `LOST`, grouped/development, suspected multi-unit, pending/missing QA, inactive, unknown, and numeric zero-price rows.
+  4. Verify the Properties Database dashboard exposes the bad-scrape artifact links and file-backed denominator labels without claiming DB parity.
+  5. Reconcile `ux.accepted_only_public_export` in `scripts/codex_project_hooks.py` with the DA-07 export predicate so hook safety and export safety use the same accepted-only terms.
+- **Acceptance gate**: verifier records PASS/FAIL and routes any mismatch to `DA-07`, `UX-18`, or `BD-19`; no public-readiness or DB-backed claim is promoted.
+- **Output**: debugger JOURNEY entry, optional `docs/exports/bad-scrape-review-verification-YYYY-MM-DD.md`.
+- **Verifier**: debugger + data_analyst
+- **Depends on**: DA-07
+
+### DBG-28: Verify BD-22 backend account/search/map/chat contracts
+- **Status**: `TODO`
+- **Priority**: **CRITICAL**
+- **Read first**: `docs/exports/bd22-backend-contract-2026-05-14.md`, `docs/exports/product-website-agent-prompts-2026-05-14.md` section 4, `docs/exports/public-search-facet-dictionary-2026-05-14.md`, `docs/exports/owner-claim-entity-resolution-contract-2026-05-14.md`, `src/bgrealestate/services/account_contracts.py`, `src/bgrealestate/api/routers/user_auth.py`, `src/bgrealestate/api/routers/users.py`, `src/bgrealestate/api/routers/owner.py`, `src/bgrealestate/api/routers/properties.py`, `src/bgrealestate/api/routers/map.py`, `src/bgrealestate/api/routers/chat.py`, `src/bgrealestate/db/models.py`, `sql/schema.sql`, `migrations/versions/20260514_0007_bd22_owner_search_contracts.py`, `tests/test_bd22_contracts.py`
+- **Do**:
+  1. Verify branch-aware auth separates customer, owner, and operator capabilities and blocks public self-registration as operator.
+  2. Verify owner claim/edit APIs preserve source facts, require active owner permissions, write revisions/audit/status records, and block customer edits.
+  3. Verify accepted-only search/map predicates reject raw/pending/`LOST`/inactive/grouped/development/missing-source/numeric-zero and missing-price-status rows.
+  4. Verify chat UI actions are allowlisted and cannot invent property IDs or property facts.
+  5. Run focused py_compile and unit/API smoke tests; record DB proof blocked if `DATABASE_URL` remains absent.
+- **Acceptance gate**: verifier report or JOURNEY entry confirms PASS/FAIL, lists commands, and keeps DB-backed public readiness blocked until migrations/read-model counts run with `DATABASE_URL`.
+- **Output**: debugger JOURNEY entry, optional `docs/exports/bd22-backend-contract-verification-YYYY-MM-DD.md`.
+- **Verifier**: debugger + ux_ui_designer + backend_developer
+- **Depends on**: BD-22
+
+### DBG-29: Verify Wave 1 website operability and operator XLS
+- **Status**: `TODO`
+- **Priority**: **CRITICAL**
+- **Read first**: `UX-25`, `DA-08`, `docs/agents/communication/2026-05-15-wave1.md`, `docs/agents/communication/2026-05-15-wave1-ux.md`, `docs/agents/communication/2026-05-15-wave1-data.md`, `docs/exports/operator-dataset-review-2026-05-15.xlsx`, `public/data/scraped-listings.json`, frontend changed files.
+- **Do**:
+  1. Verify property detail route opens from listing cards, map/list actions, and chat actions using file-backed accepted-only data.
+  2. Verify profile/chat/settings buttons either navigate or change visible state; no dead primary controls remain.
+  3. Verify area filters and prominent area metrics work without exposing unaccepted rows.
+  4. Verify workbook sheets, formulas/checks, hyperlinks, row counts, and issue explanations are structurally valid and do not claim DB-backed truth.
+  5. Run `npm run typecheck` or record the exact blocker; run workbook validation; run focused export predicate checks.
+- **Acceptance gate**: PASS/FAIL report names any UI, typecheck, XLS, data-gate, or public-claim blocker; no task is marked verified without reproducible evidence.
+- **Output**: debugger JOURNEY entry, optional `docs/exports/wave1-operator-correction-verification-2026-05-15.md`, TASKS status updates.
+- **Verifier**: debugger + planner
+- **Depends on**: UX-25, DA-08
+- **2026-05-15 Branch B note**: frontend-specific gates were run and logged in debugger JOURNEY. `DBG-29` remains `TODO` because the operator XLS/workbook verification portion was not re-run in this Branch B pass.
+
+### DBG-30: Verify strategic kickoff handoff and branch gates
+- **Status**: `TODO`
+- **Priority**: **CRITICAL**
+- **Read first**: `PLAN-12`, `docs/exports/strategic-handoff-2026-05-15.md`, `docs/agents/communication/2026-05-15-strategic-handoff.md`, `docs/exports/final-all-agent-branch-execution-plan-2026-05-15.md`, `docs/agents/TASKS.md`, project wiki `memory.md`/`insights.md`.
+- **Do**:
+  1. Verify the two-branch boundary is explicit and does not assign scraped corpus or DB mutation to the strategic kickoff.
+  2. Verify market/competitor implications are framed as product priorities, not public coverage proof.
+  3. Verify blocked claims remain blocked.
+  4. Verify success metrics are measurable without raw text/contact/URL/IP/user-agent/private-note leakage.
+  5. Verify communication artifacts exist and point implementation agents to the accepted-only contract.
+- **Acceptance gate**: PASS/FAIL verifier note names any branch-boundary, blocked-claim, privacy, release-hygiene, or source-publication-first drift. Implementation branches should not claim readiness before this gate passes unless the operator records a waiver.
+- **Output**: debugger JOURNEY entry, optional `docs/exports/debugger-strategic-handoff-verification-2026-05-15.md`, TASKS status update.
+- **Verifier**: debugger
+- **Depends on**: PLAN-12
+
+### DBG-31: Concurrent verifier for scraper active-link audit and ER candidates
+- **Status**: `TODO` but **SUPERSEDED BY `DBG-32`** for the full-dataset cleanup/rescrape goal
+- **Priority**: **CRITICAL**
+- **Model**: `gpt-5.5`
+- **Reasoning**: `xhigh`
+- **Read first**: `docs/exports/scraper-active-link-review-codex-spark-prompt-2026-05-15.md`, `docs/agents/communication/2026-05-15-triagent-active-link-er-debugger.md`, `S1-26`, `ER-07`, `docs/agents/roles/debugger.md`, `.cursor/BUGBOT.md`, `data/source_registry.json`, `tests/test_action1_parser_regressions.py`, `tests/test_unification.py`.
+- **Do**:
+  1. Start immediately as a guard/monitor while scraper and entity-resolution agents run.
+  2. Verify disjoint write sets, Action1-only source scope, disk preflight, source legal/access gates, and no deletion/DB mutation/Action2/Action0/media-download/broad-crawl permission.
+  3. After producer outputs exist, verify scraper active/inactive/unknown/changed/duplicate evidence and same-detail-URL rescrape staging.
+  4. Verify ER candidates require different sources for same-property clusters and block grouped/development, inactive, LOST, pending/missing QA, unknown, and conflicting rows from merge-ready status.
+  5. Run focused parser/unification tests if code changes, plus `git diff --check` on changed docs/scripts.
+  6. Produce PASS/FAIL with exact blockers and owner follow-ups; update TASKS only if verification is conclusive.
+- **Acceptance gate**: no unsafe scrape/delete/import/merge/public-claim drift; FACT / INTERPRETATION / HYPOTHESIS / GAP separated; file-backed, live-link, and DB-backed evidence labels remain distinct.
+- **Output**: `docs/exports/dbg-31-triagent-active-link-er-verification-2026-05-15.md`, debugger JOURNEY entry, communication-board update, TASKS verification updates when justified.
+- **Verifier**: debugger
+- **Depends on**: S1-26, ER-07 for final pass; concurrent guard pass starts immediately.
+
+### DBG-32: Concurrent verifier for full-dataset active audit, cleanup, rescrape, and ER
+- **Status**: `VERIFIED` as executed with `BLOCKED_NO_PASS` (2026-05-15; `S1-27` stopped on low disk before live checks and `ER-08` was not produced)
+- **Priority**: **CRITICAL**
+- **Model**: `gpt-5.5`
+- **Reasoning**: `xhigh`
+- **Read first**: `docs/exports/triagent-full-dataset-active-audit-clean-rescrape-prompts-2026-05-15.md`, `docs/agents/communication/2026-05-15-full-dataset-audit-clean-rescrape.md`, `S1-27`, `ER-08`, `S1-26` outputs, `ER-07` outputs, `docs/agents/roles/debugger.md`, `.cursor/BUGBOT.md`, `data/source_registry.json`, `tests/test_action1_parser_regressions.py`, `tests/test_unification.py`.
+- **Do**:
+  1. Start immediately as guard/monitor while scraper and entity-resolution agents run.
+  2. Verify `S1-26` is treated as incomplete queue-only evidence and `ER-07` as preliminary/superseded for merge decisions.
+  3. Verify `scraper_1` audits every saved row under `data/scraped/*/listings/*.json`, not only `public/data/scraped-listings.json`.
+  4. Verify no broad category/search-page patterned rescrape starts before full active-link audit coverage and cleanup manifest PASS.
+  5. Verify disk preflight, background PID/log/checkpoint/resume behavior, source-registry legal/access gates, and unsafe-source exclusions.
+  6. Verify cleanup is reversible and reason-coded before any row is removed from active/public corpus or archived.
+  7. Verify ER final candidates require active verified links and different sources, while grouped/development, inactive, wrong-property, unknown, `LOST`, pending/missing QA, conflicting, and offer-kind-mismatched rows are blocked from merge-ready status.
+  8. Run focused parser/unification tests if code changes plus `git diff --check` on changed docs/scripts.
+- **Acceptance gate**: PASS only if the whole saved corpus is accounted for, the 30k-vs-1.6k gap is explained by evidence, cleanup is verified before deletion/archive/public-corpus removal, patterned rescrape is post-audit and legal-gated, and ER remains review-only. FAIL with exact owner follow-ups on partial-audit, premature-rescrape, unsafe-delete, or auto-merge drift.
+- **Output**: `docs/exports/dbg-32-full-dataset-audit-clean-rescrape-verification-2026-05-15.md`, debugger JOURNEY entry, communication-board update, TASKS verification updates when justified.
+- **Verifier**: debugger
+- **Depends on**: S1-27, ER-08 for final pass; concurrent guard pass starts immediately.
+- **2026-05-15 verifier note**: `docs/exports/dbg-32-full-dataset-audit-clean-rescrape-verification-2026-05-15.md` blocks PASS. Safety gates held, but full active-link truth, cleanup manifest, patterned rescrape, and active-link-based ER remain incomplete.
+
 ## ═══════════════════════════════════════════════════════
 ## DATA_ANALYST (scraped corpus QA + metrics truth)
 ## ═══════════════════════════════════════════════════════
@@ -659,6 +1247,21 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 - **Output**: certified denominator note or JSON overlay, refreshed operational dashboards, data_analyst JOURNEY.
 - **Verifier**: debugger + ux_ui_designer + backend_developer
 - **Depends on**: DA-02, DA-03, PLAN-06
+
+### DA-05: Deep property analytics dashboard layer
+- **Status**: `DONE_AWAITING_VERIFY` (2026-05-13; file-backed source/regional/image/text analytics added, DB proof still blocked)
+- **Priority**: **HIGH**
+- **Read first**: `scripts/generate_data_quality_deep_review.py`, `scripts/generate_operational_dashboards.py`, `docs/exports/data-quality-deep-review-2026-05-13.md`, `docs/exports/properties-deep-analytics-agent-handoff-2026-05-13.md`, `docs/dashboard/properties-database.html`, `docs/dashboard/data-quality-dashboard.html`
+- **Do**:
+  1. Add source-level statistical metrics for rows, accepted candidates, blocked rows, median price, median area, median price-per-sqm, description coverage, median description words, full-gallery rate, median remote/local photos, text tendencies, and top bad rules.
+  2. Add regional/city property report with candidate rate, sale median, rent median, area, price-per-sqm, source mix, description coverage, gallery completeness, and decision notes.
+  3. Add image and description analytics by source, including partial galleries, one-photo suspects, duplicate image URLs, thin/missing/duplicated descriptions, and semantic-description blockers.
+  4. Add textual tendency groups for scraper, DB, market, UX, vision, and entity-resolution use, while labeling them as hypotheses, not property facts.
+  5. Update Codex hooks so missing deep property analytics is caught before future dashboard/market handoffs.
+- **Acceptance gate**: `make operational-dashboard-doc`, JSON validation, `make codex-hooks`, and debugger review pass; every metric is labeled file-backed/un-deduped and no public market coverage claim is made.
+- **Output**: refreshed `docs/dashboard/properties-database.html`, `docs/dashboard/data-quality-dashboard.html`, `docs/exports/data-quality-deep-review-2026-05-13.md/json`, `docs/exports/properties-deep-analytics-agent-handoff-2026-05-13.md`, hook updates.
+- **Verifier**: debugger + market_intelligence_analyst + scraper_1 + backend_developer + ux_ui_designer
+- **Depends on**: DA-02, PLAN-06
 
 ## ═══════════════════════════════════════════════════════
 ## BACKEND_DEVELOPER (data engineer + infrastructure)
@@ -924,11 +1527,12 @@ Gemma/OpenClaw must not reorder these actions unless the operator explicitly say
 ### BD-19: QA evidence read model for dashboard/API truth
 - **Status**: `TODO`
 - **Priority**: HIGH
-- **Read first**: `BD-18`, `DA-02`, `docs/exports/action1-dataset-quality-gate.json`, `src/bgrealestate/api/routers/admin.py`, `src/bgrealestate/db/repositories.py`, `lib/types/listing.ts`
+- **Read first**: `BD-18`, `DA-02`, `DA-05`, `docs/exports/action1-dataset-quality-gate.json`, `docs/exports/properties-deep-analytics-agent-handoff-2026-05-13.md`, `src/bgrealestate/api/routers/admin.py`, `src/bgrealestate/db/repositories.py`, `lib/types/listing.ts`
 - **Do**:
   1. After `BD-18` proves DB-backed import, expose accepted, LOST, grouped/development, inactive, missing-description, missing-price, media-gap, and image-report-status counts through an admin/API read model.
   2. Keep file-backed analyst artifacts as source-of-truth until DB counts are verified by `INFRA-02`.
   3. Return source/bucket-scoped counts; do not collapse bad/lost and grouped dimensions into one denominator.
+  4. Add DB-backed equivalents for DA-05 metrics: source and regional candidate counts, sale/rent medians, area and price-per-sqm summaries, image/gallery metrics, description depth, and textual tendency flags. Keep sale/rent and file-backed/DB-backed labels explicit.
 - **Acceptance gate**: seeded/fixture DB tests prove read-model counts match analyst fixture artifacts; API returns 503 cleanly without DB; no live-network dependency.
 - **Output**: API/repository updates, tests, backend_developer JOURNEY.
 - **Verifier**: debugger + data_analyst + ux_ui_designer
@@ -1259,7 +1863,8 @@ openclaw --profile codex agent --agent main \
 ### S1-23: Scraper repair from DA-01 scrape database audit
 - **Status**: `TODO` (2026-05-13 scraper-side source context prepared; no live scrape started)
 - **Priority**: **CRITICAL**
-- **Read first**: `docs/exports/scrape-database-quality-audit-2026-05-13.md`, `docs/exports/scrape-database-quality-audit-2026-05-13.json`, `docs/exports/data-quality-deep-review-2026-05-13.md`, `docs/dashboard/data-quality-dashboard.html`, `scripts/action1_dataset_quality_gate.py`, `scripts/live_scraper.py`, `data/source_registry.json`, A1 listing JSON for the seven sources.
+- **Read first**: `docs/exports/scrape-database-quality-audit-2026-05-13.md`, `docs/exports/scrape-database-quality-audit-2026-05-13.json`, `docs/exports/data-quality-deep-review-2026-05-13.md`, `docs/exports/properties-deep-analytics-agent-handoff-2026-05-13.md`, `docs/dashboard/data-quality-dashboard.html`, `docs/dashboard/properties-database.html`, `scripts/action1_dataset_quality_gate.py`, `scripts/live_scraper.py`, `data/source_registry.json`, A1 listing JSON for the seven sources.
+- **2026-05-14 planner lock**: this is the next execution slice after prompt-pack reconciliation. Start here before entity-resolution execution, DB/operator proof, Action0, or Action2.
 - **Do**:
   1. Treat DA-01 findings as the current scraper issue list. Do not widen Action2 until Action1 QA repair is complete or explicitly waived.
   2. Re-run/apply quality gate after every continuation so accepted rows are not left as `PENDING_QA`.
@@ -1278,6 +1883,7 @@ openclaw --profile codex agent --agent main \
       - `LUXIMMO` / `property.bg` / `SUPRIMMO`: parser gap = missing/oversized unit area and thin/low-price warnings; media gap = gallery size-variant de-duplication before local-vs-remote counts; grouped = development/project pages stay source publications; provenance = labeled unit fields + source-family route evidence; price-state = low or absent price requires status/review.
       - Non-A1 tier-1/2 (`alo.bg`, `Bazar.bg`, `Domaza`, `Home2U`, `OLX.bg`, `Yavlena`, and other legal public sources) remains Action2/A12 context only until Action1 QA and operator `Action2 now`; blocked/legal sources (`imoti.net`, `Imoteka.bg`, `Imoti.info`) stay excluded.
   11. Use `docs/exports/data-quality-deep-review-2026-05-13.md` source drilldowns for per-source bad-scrape examples and fixture selection; do not treat raw saved row counts as accepted property counts.
+  12. Use DA-05 deep source analytics to prioritize source repairs: weak candidate rate, bad price-per-sqm/area sanity, thin/duplicated descriptions, one-photo/partial gallery rows, duplicate image URLs, and grouped/development textual signals.
 - **Acceptance gate**: `python3 scripts/audit_scrape_database_quality.py` and `python3 scripts/action1_dataset_quality_gate.py --limit-per-source 20 --output docs/exports/action1-dataset-quality-gate-dryrun.json` run cleanly; the seven-source bucket matrix shows no unreviewed accepted imports; grouped/development counts use one documented definition; source-specific parser regressions cover each fixed pattern, including Address.bg city/address/contact/gallery, BulgarianProperties local-gallery/unit-area/development separation, Homes.bg duplicate URL/active-status/full-gallery handling, imot.bg area/category/mojibake/grouped handling, LUXIMMO/property.bg/SUPRIMMO gallery variant de-duplication and unit-area selection, zero-price-to-status handling, and source-specific contact extraction that rejects dates, IDs, counters, and JavaScript fragments.
 - **Output**: parser/media/contact fixes, refreshed quality/dashboard exports, scraper_1 JOURNEY.
 - **Verifier**: data_analyst + debugger
@@ -1287,6 +1893,7 @@ openclaw --profile codex agent --agent main \
 - **Status**: `TODO`
 - **Priority**: **CRITICAL**
 - **Read first**: `S1-23`, latest `DA-02` / `DA-03` outputs, `docs/exports/action1-lost-rescrape-queue.json`, `docs/exports/action1-multi-unit-publications.json`, `scripts/live_scraper.py`, `tests/test_action1_parser_regressions.py`
+- **2026-05-14 planner lock**: run only after `S1-23` repairs/tests identify bounded waves. Do not widen source scope or start Action2.
 - **Do**:
   1. Execute bounded parser/media/contact repairs from data_analyst queues only; do not widen source scope to Action2.
   2. For each source/bucket wave, record before/after accepted, LOST, grouped, inactive, description, price, area, local-gallery, and phone-noise counts.
@@ -1296,6 +1903,60 @@ openclaw --profile codex agent --agent main \
 - **Output**: parser/media/contact fixes, refreshed quality exports, `docs/exports/action1-repair-wave-YYYY-MM-DD.md`, scraper_1 JOURNEY.
 - **Verifier**: data_analyst + debugger
 - **Depends on**: S1-23, DA-02
+
+### S1-25: Wave 2 parser repair for clean titles, area, categories, and location evidence
+- **Status**: `TODO` (Wave 2; wait for Wave 1 evidence)
+- **Priority**: **CRITICAL**
+- **Read first**: `DA-08` output, `UX-25` output, `S1-23`, `S1-24`, `scripts/live_scraper.py`, `tests/test_action1_parser_regressions.py`, `data/source_registry.json`, sample Action1 listing JSON for the seven sources.
+- **Do**:
+  1. Add or repair extraction for clean buyer-facing title, source listing ID, source title, area sqm, rooms, floor, source category, city, district, address, geocode text, and source-derived filter categories.
+  2. Preserve source IDs and source labels in provenance fields, not public title fields.
+  3. Add parser tests for `objava`/ID-noise title cleanup, decimal/comma area parsing, oversized/sub-2-sqm area rejection, grouped/development page detection, and city/district/address evidence.
+  4. Do not widen beyond Action1 sources unless operator explicitly starts Action2.
+  5. Keep price `0` as null plus price-status provenance.
+- **Acceptance gate**: focused parser regression tests pass; quality-gate sample shows clean title and area evidence for repaired patterns; grouped/development rows stay non-public; no live-network dependency is added to tests.
+- **Output**: parser/test patch, refreshed dry-run quality sample or repair report, scraper_1 JOURNEY entry.
+- **Verifier**: data_analyst + debugger + ux_ui_designer
+- **Depends on**: DA-08, UX-25, S1-23
+
+### S1-26: Codex Spark active source-link freshness audit and bounded rescrape staging
+- **Status**: `BLOCKED_LOW_DISK` and **SUPERSEDED BY `S1-27`** for the full-dataset cleanup/rescrape goal (2026-05-15; queue-only output, no live URL checks)
+- **Priority**: **CRITICAL**
+- **Model**: `5.3-codex-spark`
+- **Read first**: `docs/exports/scraper-active-link-review-codex-spark-prompt-2026-05-15.md`, `docs/agents/communication/2026-05-15-triagent-active-link-er-debugger.md`, `DA-08` output, `UX-25` output, `S1-23`, `S1-25`, `docs/agents/roles/scraper_1.md`, `data/source_registry.json`, `scripts/live_scraper.py`, `tests/test_action1_parser_regressions.py`, sample Action1 listing JSON for the seven sources.
+- **Do**:
+  1. Build a resumable audit queue from existing saved Action1/A1 source-publication rows only: `Address.bg`, `BulgarianProperties`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, and `SUPRIMMO`.
+  2. Check only existing source/detail URLs on the original website to classify `active`, `inactive`, `unknown_blocked`, `active_changed`, and exact `duplicate_candidate` rows.
+  3. Compare live page evidence against saved variables where available: source ID, URL, title, price/price-status, area, rooms, floor, category, city, district, address/geocode text, description, contact presence, remote image count, and grouped/development signals.
+  4. For rows classified `active_changed` or visibly wrong, re-fetch only the same original detail URL into a staging export; do not overwrite corpus files or DB rows.
+  5. Report image/media evidence as metadata: remote image count, existing local image count, local availability/readability if already present, duplicate URL/hash if already present, and missing image-description flag. Do not run semantic image reports unless operator sends `Action0 now`.
+  6. Do not delete, merge, canonicalize, mutate DB rows, download media, crawl category pages, start Action0, start Action2, or add non-A1 sources.
+  7. Stop before live checks if Mac free disk is `<= 50GB`; otherwise keep disk use minimal and write reports only.
+- **Acceptance gate**: queue counts are reproducible; disk preflight is recorded; legal/access gates are enforced from `data/source_registry.json`; report separates FACT / INTERPRETATION / HYPOTHESIS / GAP; inactive and duplicate rows are candidate actions only; bounded rescrape staging is same-detail-URL only; no corpus deletion or DB mutation occurs; focused parser tests pass if code changes; `git diff --check` passes for changed docs/scripts.
+- **Output**: `docs/exports/s1-26-active-link-audit-2026-05-15.md`, `.json`, queue CSV, `docs/exports/s1-26-rescrape-staging-2026-05-15.json`, scraper_1 JOURNEY entry, communication note, and debugger/data-analyst verifier handoff.
+- **Verifier**: data_analyst + debugger
+- **Depends on**: DA-08, UX-25
+
+### S1-27: Full-dataset active-link audit, verified cleanup, and patterned background rescrape
+- **Status**: `BLOCKED_LOW_DISK` (2026-05-15; preflight found 22GB free, below required `>50GB`; no live checks/rescrape started)
+- **Priority**: **CRITICAL**
+- **Model**: `5.3-codex-spark`
+- **Read first**: `docs/exports/triagent-full-dataset-active-audit-clean-rescrape-prompts-2026-05-15.md`, `docs/agents/communication/2026-05-15-full-dataset-audit-clean-rescrape.md`, `S1-26` outputs, `DA-08` output, `UX-25` output, `S1-23`, `S1-25`, `docs/agents/roles/scraper_1.md`, `data/source_registry.json`, `scripts/live_scraper.py`, `tests/test_action1_parser_regressions.py`, saved listing JSON under `data/scraped/*/listings/`.
+- **Do**:
+  1. Treat `S1-26` as incomplete queue-only evidence: it did not live-check links because disk free space was below `50GB`.
+  2. Build a full saved-corpus audit queue from every `data/scraped/*/listings/*.json` row, not only the public export.
+  3. For each saved source-publication detail URL, check the original website and classify: `active_same_publication`, `active_changed`, `inactive_removed`, `wrong_property_reused_url`, `redirect_not_listing`, `grouped_development_not_unit`, `source_duplicate`, or `unknown_blocked`.
+  4. Explain the gap between roughly 30k saved rows and roughly 1.6k public rows with row-level/source-level status counts.
+  5. Produce a reversible cleanup manifest for inactive, wrong-property, non-property, grouped/development, and duplicate rows; do not physically delete or mutate DB/corpus before debugger PASS.
+  6. Stage same-detail-URL rescrape output for active changed rows without overwriting corpus files or DB rows.
+  7. After full audit coverage, cleanup manifest, debugger PASS, and free disk `>50GB`, run long-running background patterned rescrape with logs/PID/checkpoints/resume.
+  8. Patterned legal rescrape source set: `Address.bg`, `alo.bg`, `Bazar.bg`, `BulgarianProperties`, `Domaza`, `Home2U`, `Homes.bg`, `imot.bg`, `LUXIMMO`, `property.bg`, `SUPRIMMO`, `Yavlena`; `OLX.bg` only through official API/approved route.
+  9. Rescrape each source by category: buy residential, buy commercial, rent residential, rent commercial; save source-publication rows first; preserve price-status, grouped/development flags, media counts, and provenance.
+  10. Do not start Action0 image descriptions, unsafe private/social sources, CAPTCHA bypass, mass account creation, KYC bypass, or live-network tests.
+- **Acceptance gate**: whole saved corpus is accounted for; disk and source legal gates are recorded; no broad rescrape begins before audit/cleanup PASS; cleanup is reversible and reason-coded; inactive/wrong/duplicate rows are removed only from active/public candidate corpus after verification; patterned rescrape outputs per-source/per-category counts and blockers; parser tests pass if code changes; `git diff --check` passes for changed docs/scripts.
+- **Output**: `docs/exports/s1-27-full-dataset-active-link-audit-2026-05-15.md`, `.json`, queue CSV, cleanup candidates JSON, same-detail rescrape staging JSON, patterned rescrape plan/status artifacts, scraper_1 JOURNEY entry, communication note, and debugger/data-analyst verifier handoff.
+- **Verifier**: data_analyst + debugger
+- **Depends on**: DA-08, UX-25, S1-26 queue artifacts for failure context; final rescrape depends on `DBG-32` audit/cleanup PASS and disk `>50GB`.
 
 ### S1-22C: Gemma/OpenClaw Action2 — remaining legal tier-1/2 expansion
 - **Status**: `TODO`
@@ -2024,7 +2685,7 @@ make dashboard-doc
 ### UX-22: Verified dashboard/read-model field consumption contract
 - **Status**: `DONE_AWAITING_VERIFY` (2026-05-13; contract only, no buyer-facing implementation)
 - **Priority**: **HIGH**
-- **Read first**: `docs/agents/ux_ui_designer/verified-field-consumption-2026-05-13.md`, `DA-02`, `BD-18`, `BD-19`, `UX-16`, `UX-18`, `UX-21`, `docs/dashboard/data-quality-dashboard.html`
+- **Read first**: `docs/agents/ux_ui_designer/verified-field-consumption-2026-05-13.md`, `docs/exports/properties-deep-analytics-agent-handoff-2026-05-13.md`, `DA-02`, `DA-05`, `BD-18`, `BD-19`, `UX-16`, `UX-18`, `UX-21`, `docs/dashboard/data-quality-dashboard.html`, `docs/dashboard/properties-database.html`
 - **Do**:
   1. Consume only verified file-backed dashboard fields or DB-backed read-model fields.
   2. Label file-backed audit, quality-gate estimate, importer candidate, media-capture, and DB-blocked states explicitly in admin/operator surfaces.

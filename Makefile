@@ -1,4 +1,4 @@
-.PHONY: doctor install install-scrape-agents dev-up dev-down dev-ready dev-logs db-shell db-init migrate backup-db restore-db verify-db-counts bd18-db-smoke-import test test-docker golden-path lint typecheck validate codex-hooks codex-hooks-json docs-refresh run-api run-api-public run-worker run-scheduler run-frontend run-frontend-public run-frontend-build run-frontend-prod frontend-typecheck frontend-lint run-frontend-static export-docs source-report status-report linear-export architecture-doc dashboard-doc operational-dashboard-doc connector-fixtures list-sources list-skills ingest-fixture ingest-fixture-dry sync-registry sync-social-registry export-tier4-data seed-social-fixtures export-source-stats tier4-plan scraping-inventory tier12-metrics download-images import-scraped scrape-bcpea scrape-validate-manifest scrape-sync-sections scrape-sync-sections-dry scrape-threshold-summary scrape-queue-status scrape-control-worker-once scrape-runner-once scrape-runner-pause scrape-runner-unpause scrape-generate-varna-manifest scrape-varna-full scrape-all-full action1-matrix-snapshot action1-telegram-report action1-checkpoint-notify action1-running-report action1-openclaw-continue action1-openclaw-main-resume action1-scrape-full-uncapped action1-scrape-full-uncapped-detached action1-telegram-watch action1-telegram-watch-detached action1-telegram-ops-rehydrate action1-openclaw-report-monitor openclaw-preflight action1-reporter-status action1-reporter-on action1-reporter-off action1-reporter-stop
+.PHONY: doctor install install-scrape-agents dev-up dev-down dev-ready dev-logs db-shell db-init migrate backup-db restore-db verify-db-counts bd18-db-smoke-import test test-docker golden-path lint typecheck validate codex-hooks codex-hooks-json docs-refresh run-api run-api-public run-worker run-scheduler run-frontend run-frontend-public run-frontend-build run-frontend-prod frontend-typecheck frontend-lint run-frontend-static export-docs source-report status-report linear-export architecture-doc dashboard-doc operational-dashboard-doc connector-fixtures list-sources list-skills ingest-fixture ingest-fixture-dry sync-registry sync-social-registry export-tier4-data seed-social-fixtures export-source-stats tier4-plan scraping-inventory tier12-metrics property-link-search property-link-search-fixture download-images import-scraped scrape-bcpea scrape-validate-manifest scrape-sync-sections scrape-sync-sections-dry scrape-threshold-summary scrape-queue-status scrape-control-worker-once scrape-runner-once scrape-runner-pause scrape-runner-unpause scrape-generate-varna-manifest scrape-varna-full scrape-all-full action1-matrix-snapshot action1-telegram-report action1-checkpoint-notify action1-running-report action1-openclaw-continue action1-openclaw-main-resume action1-scrape-full-uncapped action1-scrape-full-uncapped-detached action1-telegram-watch action1-telegram-watch-detached action1-telegram-ops-rehydrate action1-openclaw-report-monitor openclaw-preflight action1-reporter-status action1-reporter-on action1-reporter-off action1-reporter-stop
 
 # Prefer 3.13/3.12 when unset so install/lint match pyproject.toml requires-python >=3.12
 PYENV_PYTHON := $(shell ls "$$HOME"/.pyenv/versions/3.13*/bin/python3.13 "$$HOME"/.pyenv/versions/3.12*/bin/python3.12 2>/dev/null | sed -n '1p')
@@ -72,7 +72,7 @@ restore-db:
 
 verify-db-counts:
 	@if [ -z "$$DATABASE_URL" ]; then echo "DATABASE_URL is required"; exit 1; fi
-	@for table in source_registry source_endpoint crawl_run crawl_item canonical_listing source_publication_qa_review status_history entity_resolution_candidate entity_resolution_review_event property_entity property_offer media_asset listing_media media_description availability_calendar availability_slot availability_observation viewing_inquiry_request external_chat_ref app_user lead_thread lead_message; do \
+	@for table in source_registry source_endpoint crawl_run crawl_item canonical_listing source_publication_qa_review status_history entity_resolution_candidate entity_resolution_review_event property_entity property_offer media_asset listing_media media_description availability_calendar availability_slot availability_observation viewing_inquiry_request external_chat_ref app_user saved_property saved_search saved_area owner_property_claim owner_property_permission property_edit_revision lead_thread lead_message; do \
 		printf "%-28s " "$$table"; \
 		psql "$$DATABASE_URL" -Atc "select count(*) from $$table;" 2>/dev/null || echo "missing_or_unavailable"; \
 	done
@@ -232,6 +232,14 @@ download-images:
 
 import-scraped:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) scripts/import_scraped_listings.py $(EXTRA_ARGS)
+
+property-link-search:
+	@if [ -z "$(URL)" ]; then echo "URL is required. Usage: make property-link-search URL='https://...'"; exit 1; fi
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) scripts/property_link_comparable_search.py --url "$(URL)" --fetch-live $(EXTRA_ARGS)
+
+property-link-search-fixture:
+	@if [ -z "$(URL)" ] || [ -z "$(HTML_FILE)" ]; then echo "URL and HTML_FILE are required. Usage: make property-link-search-fixture URL='https://...' HTML_FILE=path/to/raw.html SOURCE='Address.bg'"; exit 1; fi
+	PYTHONPATH=$(PYTHONPATH) $(PYTHON) scripts/property_link_comparable_search.py --url "$(URL)" --html-file "$(HTML_FILE)" $(if $(SOURCE),--source "$(SOURCE)",) $(EXTRA_ARGS)
 
 scrape-generate-varna-manifest:
 	PYTHONPATH=$(PYTHONPATH) $(PYTHON) -m bgrealestate scrape-generate-varna-manifest

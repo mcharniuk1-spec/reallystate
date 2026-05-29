@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-13T13:45:42.041804+00:00",
+  "generated_at": "2026-05-29T13:44:56.570431+00:00",
   "roadmap": {
     "done": 46,
     "total": 128,
@@ -41,6 +41,7 @@
     "presentation-powerpoint-pptx",
     "project-progress-dashboard-web",
     "prompt-engineering",
+    "property-link-comparable-search",
     "publishing-compliance",
     "qa-review-release",
     "railway-deploy",
@@ -72,6 +73,7 @@
       "skills": [
         "debugger-golden-path",
         "qa-review-release",
+        "property-link-comparable-search",
         "security-audit",
         "test-generator",
         "ci-cd-pipeline",
@@ -145,7 +147,7 @@
         {
           "title": "2026-04-08 (follow-up) — Cross-agent safety audit (DBG-03)",
           "summary": "",
-          "action": "legal gate enforcement across connector fetch paths, live-network usage in tests, fixture secrets/PII redaction baseline, media binary storage policy (Postgres vs object storage), make test, rg \"assert_live_http_allowed|LegalGateError|legal_mode|source_legal_rule\" src, rg \"def fetch_listing_detail\\\\(|assert_live_http_allowed\\\\(\" src/bgrealestate/connectors, rg \"httpx|requests|urllib|socket|aiohttp|playwright\" tests, rg \"(AKIA[0-9A-Z]{16}|BEGIN PRIVATE KEY|api[_-]?key|token|password|secret|Bearer",
+          "action": "legal gate enforcement across connector fetch paths, live-network usage in tests, fixture secrets/PII redaction baseline, media binary storage policy (Postgres vs object storage), make test, rg \"assert_live_http_allowed|LegalGateError|legal_mode|source_legal_rule\" src, rg \"def fetch_listing_detail\\\\(|assert_live_http_allowed\\\\(\" src/bgrealestate/connectors, rg \"httpx|requests|urllib|socket|aiohttp|playwright\" tests, rg \"(AKIA[0-9A-Z]{16}|BEGIN private-key marker|api[_-]?key|token|password|secret|Bearer",
           "changed_files": "",
           "commands": "",
           "status": "",
@@ -339,6 +341,51 @@
           "commands": "",
           "status": "TODO verifier queue.",
           "review": ""
+        },
+        {
+          "title": "2026-05-13 — VERIFY: DA-02 / BD-18 deep handoff",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "python3 -m py_compile scripts/bd18_db_smoke_import.py scripts/import_scraped_listings.py src/bgrealestate/db/import_contract.py src/bgrealestate/db/models.py src/bgrealestate/db/repositories.py src/bgrealestate/connectors/ingest.py tests/test_backend_import_contract.py migrations/versions/20260513_0006_bd18_source_publication_evidence.py, PYTHONPATH=src python3 -m unittest tests.test_backend_import_contract -v, PYTHONPATH=src /Users/getapple/.pyenv/versions/3.12.9/bin/python3.12 -m unittest test",
+          "status": "PASS for DA-02 file-backed handoff and BD-18 code-contract readiness; DB-backed migration/import/count proof remains blocked.",
+          "review": ""
+        },
+        {
+          "title": "2026-05-14 — VERIFY: DBG-25 product website plan and prompts",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "ls, sed, python3 -m py_compile src/bgrealestate/services/account_contracts.py src/bgrealestate/api/routers/user_auth.py src/bgrealestate/api/routers/users.py src/bgrealestate/api/routers/owner.py src/bgrealestate/api/routers/properties.py src/bgrealestate/api/routers/map.py src/bgrealestate/api/routers/chat.py src/bgrealestate/db/models.py migrations/versions/20260514_0007_bd22_owner_search_contracts.py tests/test_bd22_contracts.py tests/test_user_auth.py tests/test_api_fastapi.py, PYTHONPATH=sr",
+          "status": "FAIL_WITH_BLOCKERS for product website readiness. PASS for PLAN-08 / prompt-pack planning safety.",
+          "review": "Do not claim public website readiness until `UX-24`, `DBG-27`, `DBG-28`, DB proof (`BD-18`/`BD-19`/`INFRA-02`), and frontend typecheck are resolved."
+        },
+        {
+          "title": "2026-05-15 — VERIFY QUEUE: PLAN-12 strategic kickoff handoff",
+          "summary": "",
+          "action": "Queued debugger verification for the strategic pre-implementation handoff and branch gates.",
+          "changed_files": "",
+          "commands": "",
+          "status": "TODO verifier queue.",
+          "review": ""
+        },
+        {
+          "title": "2026-05-15 — VERIFY: Branch B product/frontend UX pass",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "npm run typecheck, Browser route/click checks on, Accepted-only export predicate over, Public copy scan for complete-market, exact-3D/satellite/relief, owner-verified, valuation/yield/below-market, semantic-image claims — PASS., Analytics/raw-field scan — PASS for no SDK/instrumentation; matches are local variable names only., git diff --check -- app components lib scripts public/data/scraped-listings.json, python3 -m py_compile scripts/generate_frontend_scraped_listings.py",
+          "status": "DONE_AWAITING_VERIFY for merge-level review.",
+          "review": ""
+        },
+        {
+          "title": "2026-05-15 — VERIFY: DBG-32 full-dataset active audit, cleanup, rescrape, and ER",
+          "summary": "",
+          "action": "",
+          "changed_files": "",
+          "commands": "df -h /System/Volumes/Data /Users/getapple/Documents/Real\\ Estate\\ Bulg, find data/scraped -path '*/listings/*.json' -maxdepth 4 | wc -l, wc -l docs/exports/s1-27-full-dataset-active-link-audit-queue-2026-05-15.csv docs/exports/s1-26-active-link-audit-queue-2026-05-15.csv, find docs/exports -maxdepth 1 -name 'er-08-*' -print, git diff --check -- docs scripts, python3 -m unittest tests.test_action1_parser_regressions -v, /Users/getapple/.pyenv/versions/3.12.9/bin/python3.12 -m unittest tests.test",
+          "status": "BLOCKED_NO_PASS.",
+          "review": "No deletion, DB mutation, Action0 image descriptions, broad rescrape, or automatic merge was verified., Resume requires disk, Output:"
         }
       ],
       "tasks": {
@@ -378,6 +425,12 @@
             "title": "Verify data-analyst-centered planner handoff",
             "status": "VERIFIED",
             "details": "VERIFIED` (2026-05-13; protocol pass, DB/dashboard verification deferred to BD-18/INFRA-02/DA-03)"
+          },
+          {
+            "id": "DBG-24",
+            "title": "Verify DA-02/BD-18 deep handoff",
+            "status": "VERIFIED",
+            "details": "VERIFIED` (2026-05-13; file-backed handoff and code-contract checks passed, DB proof blocked by missing `DATABASE_URL`)"
           }
         ],
         "in_progress": [],
@@ -476,13 +529,13 @@
         "blocked": []
       },
       "counts": {
-        "verified": 6,
+        "verified": 7,
         "in_progress": 0,
         "todo": 15,
         "blocked": 0,
-        "total": 21,
-        "journal_entries": 29,
-        "efficiency_pct": 29
+        "total": 22,
+        "journal_entries": 34,
+        "efficiency_pct": 32
       }
     },
     {
@@ -494,6 +547,7 @@
         "backend-data-engineering",
         "workflow-runtime",
         "db-sync-and-seeding",
+        "property-link-comparable-search",
         "railway-deploy",
         "ci-cd-pipeline",
         "test-generator",
@@ -675,11 +729,11 @@
         {
           "title": "2026-05-13 — BD-18 prep: accepted-only import and provenance contract",
           "summary": "",
-          "action": "Narrow safety update from data-analyst run: importer now converts numeric price `0` to `None` plus `price_status=undefined` provenance, and scraped-corpus imports no longer run property/entity unification by default. Added tests for zero-price conversion and unsafe QA blocking.",
-          "changed_files": "`scripts/import_scraped_listings.py`, `tests/test_backend_import_contract.py`, `docs/exports/bd18-database-review-and-correction-spec-2026-05-13.md`, `docs/agents/TASKS.md`.",
-          "commands": "`python3 scripts/import_scraped_listings.py --dry-run`; `make verify-db-counts`.",
-          "status": "BD-18 remains `IN_PROGRESS`; DB-backed migration/import/count proof is still blocked.",
-          "review": "First-class DB structures for QA reviews, status history, dedupe clusters, media descriptions, availability, inquiry requests, and external chat refs remain backend work. `DATABASE_URL` is still required for `make verify-db-counts`."
+          "action": "Implemented prompt-pack section 4 fixture-safe backend contracts for branch-aware accounts, customer saved objects, owner claim/edit/revision/audit APIs, accepted-only search/map APIs, and structured chat UI actions.",
+          "changed_files": "`Makefile`, `sql/schema.sql`, `migrations/versions/20260514_0007_bd22_owner_search_contracts.py`, `src/bgrealestate/services/account_contracts.py`, `src/bgrealestate/services/user_auth.py`, `src/bgrealestate/api/main.py`, `src/bgrealestate/api/routers/user_auth.py`, `src/bgrealestate/api/routers/users.py`, `src/bgrealestate/api/routers/owner.py`, `src/bgrealestate/api/routers/properties.py`, `src/bgrealestate/api/routers/map.py`, `src/bgrealestate/api/routers/chat.py`, `src/bgrealestate/db/models.py`, `tests/test_bd22_contracts.py`, `tests/test_user_auth.py`, `tests/test_api_fastapi.py`, `docs/exports/bd22-backend-contract-2026-05-14.md`, `docs/agents/TASKS.md`, `docs/agents/backend_developer/JOURNEY.md`, dashboard/data-quality artifacts refreshed by `make operational-dashboard-doc`.",
+          "commands": "focused py_compile; system-Python unit tests; Python 3.12.9 FastAPI/API smoke unit tests; `make operational-dashboard-doc`., PYTHONPATH=src python3 -m unittest tests.test_bd22_contracts -v, PYTHONPATH=src python3 -m unittest tests.test_user_auth tests.test_api_fastapi -v, PYTHONPATH=src /Users/getapple/.pyenv/versions/3.12.9/bin/python3.12 -m unittest tests.test_bd22_contracts tests.test_user_auth tests.test_api_fastapi -v",
+          "status": "DONE_AWAITING_VERIFY; `DBG-28` queued.",
+          "review": "`DATABASE_URL` is still required before applying migration `20260514_0007`, proving accepted-only public counts, or marking owner workflow runtime ready., Makefile, sql/schema.sql, migrations/versions/20260514_0007_bd22_owner_search_contracts.py, src/bgrealestate/services/account_contracts.py, src/bgrealestate/services/user_auth.py, src/bgrealestate/api/main.py, src/bgrealestate/api/routers/user_auth.py, src/bgrealestate/api/routers/users.py, src/bgrealestate/api/routers/owner.py, src/bgrealesta"
         }
       ],
       "tasks": {
@@ -750,7 +804,7 @@
             "id": "BD-18",
             "title": "Canonical import/schema alignment for scraped QA evidence",
             "status": "IN_PROGRESS",
-            "details": "IN_PROGRESS` (2026-05-13 backend prep + analyst safety patch: accepted-only boundary reviewed; ORM/import/media idempotency patch added; zero-price-to-null/status and no-default-property-promotion patched; DB-backed migration/import proof still pending)"
+            "details": "IN_PROGRESS` (2026-05-13 backend prep + analyst safety patch + DB table/smoke script implementation; live DB migration/import proof still blocked by missing `DATABASE_URL`)"
           }
         ],
         "todo": [
@@ -834,6 +888,7 @@
       "skills": [
         "web-frontend-nextjs",
         "frontend-pages",
+        "property-link-comparable-search",
         "dashboard-visual-ops",
         "ux-dashboard-design",
         "web-performance-accessibility",
@@ -1031,6 +1086,51 @@
           "commands": "sed -n '1,260p' docs/agents/TASKS.md, sed -n '1,240p' docs/agents/roles/ux_ui_designer.md, sed -n '1,240p' docs/agents/roles/data_analyst.md, sed -n '1,220p' docs/exports/scrape-database-quality-audit-2026-05-13.md",
           "status": "`DONE_AWAITING_VERIFY`",
           "review": "FACT: admin/operator requirements now cover accepted vs pending QA, grouped/development publications, media gaps, confidence, duplicate candidates, and source provenance., FACT: buyer-facing work is explicitly blocked until accepted-only export/import evidence,, INTERPRETATION: confidence and grouped/development signals are operator-review evidence, not buyer-facing truth claims., GAP: DB-backed API contracts for QA/media/provenance are still pending."
+        },
+        {
+          "title": "2026-05-13 — UX-22 verified field consumption contract",
+          "summary": "",
+          "action": "Defined which DA-02/BD-18 dashboard/read-model fields UX can consume now, and which buyer-facing fields remain blocked.",
+          "changed_files": "",
+          "commands": "",
+          "status": "DONE_AWAITING_VERIFY.",
+          "review": "UX-16/UX-21 may use labeled operator fields; UX-18 remains blocked for public surfaces."
+        },
+        {
+          "title": "2026-05-14 — UX-23 product website rebuild spec",
+          "summary": "",
+          "action": "Produced the high-minimal product UX spec for the map-first homepage, sticky filters, map/list split, account branch split, owner workspace, property detail, chat-driven map/list actions, visual system, motion/accessibility states, and logo brief. No UI/backend code was implemented.",
+          "changed_files": "docs/agents/ux_ui_designer/product-website-rebuild-spec-2026-05-14.md, docs/agents/TASKS.md, docs/agents/ux_ui_designer/JOURNEY.md, scripts/generate_operational_dashboards.py, refreshed operational dashboard and data-quality export artifacts, wiki run/decision/log/memory/insight closeout files",
+          "commands": "sed, python3 -m py_compile scripts/generate_operational_dashboards.py, make operational-dashboard-doc, git diff --check -- docs/agents/TASKS.md docs/agents/ux_ui_designer/JOURNEY.md docs/agents/ux_ui_designer/product-website-rebuild-spec-2026-05-14.md scripts/generate_operational_dashboards.py",
+          "status": "DONE_AWAITING_VERIFY.",
+          "review": "FACT: The spec keeps public inventory/trust labels, exact 3D building precision, owner-verified claims, valuations, and market-coverage copy blocked until accepted-only DB/read-model proof and debugger verification., FACT: Current, FACT: Operational dashboard refresh initially failed because, INTERPRETATION: The shared search-state contract is the key frontend/backend boundary for homepage, listings, map, and chat., GAP: DA-06, BD-22, ER-05, UA-04, VM-06, and DBG-25 remain follow-up gates., docs"
+        },
+        {
+          "title": "2026-05-15 — UX-25 website operability and area-first property UX",
+          "summary": "",
+          "action": "Completed the partial Wave 1 frontend patch after the worker stalled. Made property detail fallback local when the API is unavailable/non-OK, encoded property/chat routes, added display-layer clean titles, promoted area sqm on cards/detail/account, added homepage area filters, made profile/chat/detail buttons operable, and downgraded map copy to tilt preview instead of real 3D claims.",
+          "changed_files": "app/layout.tsx, app/(main)/page.tsx, app/(main)/properties/[id]/page.tsx, app/(main)/properties/[id]/detail-client.tsx, app/(main)/chat/page.tsx, app/(main)/settings/page.tsx, components/listings/MainExplorer.tsx, components/listings/ListingCard.tsx, components/map/MapCanvas.tsx, components/map/FullScreenMap.tsx, components/chat/ChatWorkspace.tsx, components/chat/ChatBar.tsx, components/account/AccountCabinet.tsx, components/shell/AppShell.tsx, components/shell/SiteHeader.tsx, lib/listing-displa",
+          "commands": "npm run typecheck, python3 -m py_compile scripts/generate_frontend_scraped_listings.py scripts/generate_operator_dataset_review_xlsx.py, public export predicate scan over, workbook structural/formula scan with, git diff --check, make operational-dashboard-doc, TypeScript check passed., Python compile passed., Public export scan passed: 1,606 rows, 0 bad status, 0 bad acceptance state, 0 bad publication type, 0 numeric zero prices, 2 explicit missing-price rows., Operator workbook scan passed: 10",
+          "status": "DONE_AWAITING_VERIFY.",
+          "review": "UI changes remain file-backed and accepted-only. True satellite/relief/exact-building 3D, DB-backed counts, semantic image descriptions, and parser-level clean titles/area/geocode fixes remain blocked by `DBG-29`, `BD-18`/`BD-19`, `VM-07`, and `S1-25`."
+        },
+        {
+          "title": "2026-05-15 — UX-25 browser verification addendum",
+          "summary": "",
+          "action": "Verified Wave 1 UI operability in the local browser after restarting the dev server.",
+          "changed_files": "",
+          "commands": "curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:3000/, curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:3000/properties/property.bg%3Aead1d84c8b5e, curl -s -o /dev/null -w \"%{http_code}\" \"http://127.0.0.1:3000/chat?property=property.bg%3Aead1d84c8b5e\", curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:3000/settings, Playwright browser navigation, snapshot, and click checks., Homepage rendered accepted-only export copy, area filters, listing cards, and map preview., Property ",
+          "status": "DONE_AWAITING_VERIFY.",
+          "review": "Browser verification covers Wave 1 frontend operability only. It does not certify DB-backed search, true 3D/satellite terrain, semantic image extraction, or national geocode repair."
+        },
+        {
+          "title": "2026-05-15 — Branch B final frontend/product pass",
+          "summary": "",
+          "action": "Completed `reallystate1` product/frontend/UX pass for the public/account pages. `/listings` is a real map/list cockpit; map/list cards expose area, media, source badges, save/chat/open actions; detail pages show source provenance and explicit evidence blockers; settings has buyer/renter/owner modes plus a local owner draft flow; chat exposes structured local actions and branch blockers; admin is file-backed and claim-neutral.",
+          "changed_files": "",
+          "commands": "`npm run typecheck`; Browser route/click checks; accepted-only export predicate; public claim scan; analytics/no-raw-field scan; `git diff --check`; `python3 -m py_compile scripts/generate_frontend_scraped_listings.py`.",
+          "status": "DONE_AWAITING_VERIFY.",
+          "review": ""
         }
       ],
       "tasks": {
@@ -1072,6 +1172,12 @@
             "title": "Data-quality UX requirements from DA findings",
             "status": "DONE_AWAITING_VERIFY",
             "details": "DONE_AWAITING_VERIFY` (2026-05-13; requirements only, no public UI expansion)"
+          },
+          {
+            "id": "UX-22",
+            "title": "Verified dashboard/read-model field consumption contract",
+            "status": "DONE_AWAITING_VERIFY",
+            "details": "DONE_AWAITING_VERIFY` (2026-05-13; contract only, no buyer-facing implementation)"
           }
         ],
         "todo": [
@@ -1170,12 +1276,12 @@
       },
       "counts": {
         "verified": 1,
-        "in_progress": 5,
+        "in_progress": 6,
         "todo": 15,
         "blocked": 0,
-        "total": 21,
-        "journal_entries": 21,
-        "efficiency_pct": 17
+        "total": 22,
+        "journal_entries": 26,
+        "efficiency_pct": 18
       }
     },
     {
@@ -1185,6 +1291,7 @@
       "skills": [
         "scraper-connector-builder",
         "parser-fixture-qa",
+        "property-link-comparable-search",
         "real-estate-source-registry",
         "runtime-compliance-evaluator",
         "test-generator",
@@ -1713,6 +1820,33 @@
           "commands": "analyst ran audit, quality gate, importer dry-run, and dashboard generation; scraper_1 ran no live commands.",
           "status": "S1-23 remains TODO but is now execution-ready from the deep review packet.",
           "review": "Start with Action1 sources only. Keep missing-QA, LOST, grouped/development, inactive/stale, zero-price, missing location/area, media-gap, and contact-overcapture rows blocked until source-specific fixtures pass and QA state is written."
+        },
+        {
+          "title": "2026-05-13 — S1-23 DA-05 analytics repair prioritization",
+          "summary": "",
+          "action": "Data analyst expanded source drilldowns with price/area/price-per-sqm sanity, image/description coverage, duplicate image/description indicators, and textual tendencies by source.",
+          "changed_files": "",
+          "commands": "",
+          "status": "S1-23 remains TODO.",
+          "review": "Use DA-05 metrics to choose fixtures and repair order. Do not treat high raw volume, source text tendencies, or regional counts as accepted inventory; keep Action2 blocked."
+        },
+        {
+          "title": "2026-05-15 — S1-26 live activity audit blocked by disk",
+          "summary": "",
+          "action": "Built resumable queue and live-audit scaffold artifacts from saved Action1/A1 listing JSON snapshots only (7 sources), including QA/public state, activity hints, location/media fields, and grouped/development signals. Live URL checks were not executed because disk preflight was `<= 50GB`., docs/exports/s1-26-active-link-audit-2026-05-15.md, docs/exports/s1-26-active-link-audit-2026-05-15.json, docs/exports/s1-26-active-link-audit-queue-2026-05-15.csv, docs/exports/s1-26-rescrape-staging-2026-05-",
+          "changed_files": "",
+          "commands": "`df -h /System/Volumes/Data`, `python3 /tmp/generate_s1_26_audit.py`, `python3 -m unittest tests.test_action1_parser_regressions -v`.",
+          "status": "`BLOCKED_LOW_DISK` (`resume` required).",
+          "review": ""
+        },
+        {
+          "title": "2026-05-15 — S1-27 full-dataset active-link audit blocked by disk",
+          "summary": "",
+          "action": "Ran mandatory project/wiki context load, read the S1-27 tri-agent prompt, scraper role, communication board, S1-26 queue header, operator dataset review, source registry shape, live scraper, parser regression test, task queue, and coordination protocol. Ran disk preflight before any live work.",
+          "changed_files": "docs/exports/s1-27-full-dataset-active-link-audit-2026-05-15.md, docs/exports/s1-27-full-dataset-active-link-audit-2026-05-15.json, docs/exports/s1-27-full-dataset-active-link-audit-queue-2026-05-15.csv, docs/exports/s1-27-cleanup-candidates-2026-05-15.json, docs/exports/s1-27-same-detail-rescrape-staging-2026-05-15.json, docs/exports/s1-27-patterned-rescrape-plan-2026-05-15.md, docs/exports/s1-27-patterned-rescrape-status-2026-05-15.json, docs/agents/TASKS.md, docs/agents/communication/2026-05-",
+          "commands": "`df -g .`, context reads with `sed`/`rg`/`jq`/`wc`/`tail`, no live fetch commands.",
+          "status": "`BLOCKED_LOW_DISK`.",
+          "review": "Resume only when disk is `>50GB`; then rebuild the queue from `data/scraped/*/listings/*.json` and use detached log/PID/checkpoint/cursor."
         }
       ],
       "tasks": {
@@ -1812,6 +1946,12 @@
             "details": "TODO"
           },
           {
+            "id": "S1-25",
+            "title": "Wave 2 parser repair for clean titles, area, categories, and location evidence",
+            "status": "TODO",
+            "details": "TODO` (Wave 2; wait for Wave 1 evidence)"
+          },
+          {
             "id": "S1-22C",
             "title": "Gemma/OpenClaw Action2 — remaining legal tier-1/2 expansion",
             "status": "TODO",
@@ -1830,16 +1970,29 @@
             "details": "TODO"
           }
         ],
-        "blocked": []
+        "blocked": [
+          {
+            "id": "S1-26",
+            "title": "Codex Spark active source-link freshness audit and bounded rescrape staging",
+            "status": "BLOCKED",
+            "details": "BLOCKED_LOW_DISK` and **SUPERSEDED BY `S1-27`** for the full-dataset cleanup/rescrape goal (2026-05-15; queue-only output, no live URL checks)"
+          },
+          {
+            "id": "S1-27",
+            "title": "Full-dataset active-link audit, verified cleanup, and patterned background rescrape",
+            "status": "BLOCKED",
+            "details": "BLOCKED_LOW_DISK` (2026-05-15; preflight found 22GB free, below required `>50GB`; no live checks/rescrape started)"
+          }
+        ]
       },
       "counts": {
         "verified": 4,
         "in_progress": 7,
-        "todo": 7,
-        "blocked": 0,
-        "total": 18,
-        "journal_entries": 58,
-        "efficiency_pct": 42
+        "todo": 8,
+        "blocked": 2,
+        "total": 21,
+        "journal_entries": 61,
+        "efficiency_pct": 36
       }
     },
     {
@@ -1849,6 +2002,7 @@
       "skills": [
         "scraper-connector-builder",
         "parser-fixture-qa",
+        "property-link-comparable-search",
         "real-estate-source-registry",
         "runtime-compliance-evaluator",
         "deep-research-workflow",
@@ -2003,6 +2157,7 @@
       "skills": [
         "scraper-connector-builder",
         "parser-fixture-qa",
+        "property-link-comparable-search",
         "real-estate-source-registry",
         "runtime-compliance-evaluator",
         "deep-research-workflow",
@@ -2100,6 +2255,15 @@
           "commands": "sed, web research of public candidate pages/search results and official platform access docs",
           "status": "DONE_AWAITING_VERIFY.",
           "review": "Added `SM-14`, `SM-15`, and `SM-16` to convert the discovery list into fixture-first implementation work while keeping S&M evidence separate from canonical listings., data/social_media_intelligence_candidates.json, docs/agents/scraper_sm/social-media-source-discovery-2026-05-13.md, docs/agents/scraper_sm/social-overlay-evidence-queue-2026-05-13.md, docs/agents/TASKS.md, docs/agents/scraper_sm/JOURNEY.md, rg, publishing-compliance, runtime-compliance-evaluator, deep-research-workflow, web-scrapin"
+        },
+        {
+          "title": "2026-05-15 — Branch B S&M constraint check",
+          "summary": "",
+          "action": "Checked owner/acquisition/social/vendor implications for the frontend branch.",
+          "changed_files": "",
+          "commands": "",
+          "status": "DONE_NO_CODE.",
+          "review": ""
         }
       ],
       "tasks": {
@@ -2219,7 +2383,7 @@
         "todo": 9,
         "blocked": 0,
         "total": 17,
-        "journal_entries": 10,
+        "journal_entries": 11,
         "efficiency_pct": 26
       }
     },
@@ -2231,6 +2395,7 @@
         "claude-opus-planner",
         "software-architecture",
         "subagent-driven-development",
+        "property-link-comparable-search",
         "multi-agent-patterns",
         "daily-orchestration",
         "investor-pitch-yc",
@@ -2380,7 +2545,7 @@
           "id": "BD-18",
           "title": "Canonical import/schema alignment for scraped QA evidence",
           "status": "IN_PROGRESS",
-          "details": "IN_PROGRESS` (2026-05-13 backend prep + analyst safety patch: accepted-only boundary reviewed; ORM/import/media idempotency patch added; zero-price-to-null/status and no-default-property-promotion patched; DB-backed migration/import proof still pending)"
+          "details": "IN_PROGRESS` (2026-05-13 backend prep + analyst safety patch + DB table/smoke script implementation; live DB migration/import proof still blocked by missing `DATABASE_URL`)"
         }
       ],
       "next_tasks": [
@@ -2451,12 +2616,12 @@
     {
       "key": "scraper_1",
       "label": "Tier-1/2 Scraping",
-      "total": 18,
+      "total": 21,
       "done_count": 4,
       "current_count": 7,
-      "next_count": 7,
-      "blocked_count": 0,
-      "progress_percent": 42,
+      "next_count": 8,
+      "blocked_count": 2,
+      "progress_percent": 36,
       "done_tasks": [
         {
           "id": "S1-01",
@@ -2553,6 +2718,12 @@
           "details": "TODO"
         },
         {
+          "id": "S1-25",
+          "title": "Wave 2 parser repair for clean titles, area, categories, and location evidence",
+          "status": "TODO",
+          "details": "TODO` (Wave 2; wait for Wave 1 evidence)"
+        },
+        {
           "id": "S1-22C",
           "title": "Gemma/OpenClaw Action2 — remaining legal tier-1/2 expansion",
           "status": "TODO",
@@ -2571,8 +2742,21 @@
           "details": "TODO"
         }
       ],
-      "blocked_tasks": [],
-      "comment": "4 done, 7 current, 7 next"
+      "blocked_tasks": [
+        {
+          "id": "S1-26",
+          "title": "Codex Spark active source-link freshness audit and bounded rescrape staging",
+          "status": "BLOCKED",
+          "details": "BLOCKED_LOW_DISK` and **SUPERSEDED BY `S1-27`** for the full-dataset cleanup/rescrape goal (2026-05-15; queue-only output, no live URL checks)"
+        },
+        {
+          "id": "S1-27",
+          "title": "Full-dataset active-link audit, verified cleanup, and patterned background rescrape",
+          "status": "BLOCKED",
+          "details": "BLOCKED_LOW_DISK` (2026-05-15; preflight found 22GB free, below required `>50GB`; no live checks/rescrape started)"
+        }
+      ],
+      "comment": "4 done, 7 current, 8 next, 2 blocked"
     },
     {
       "key": "scraper_t3",
@@ -2763,12 +2947,12 @@
     {
       "key": "ux_ui_designer",
       "label": "Frontend/Product UX",
-      "total": 21,
+      "total": 22,
       "done_count": 1,
-      "current_count": 5,
+      "current_count": 6,
       "next_count": 15,
       "blocked_count": 0,
-      "progress_percent": 17,
+      "progress_percent": 18,
       "done_tasks": [
         {
           "id": "UX-01",
@@ -2807,6 +2991,12 @@
           "title": "Data-quality UX requirements from DA findings",
           "status": "DONE_AWAITING_VERIFY",
           "details": "DONE_AWAITING_VERIFY` (2026-05-13; requirements only, no public UI expansion)"
+        },
+        {
+          "id": "UX-22",
+          "title": "Verified dashboard/read-model field consumption contract",
+          "status": "DONE_AWAITING_VERIFY",
+          "details": "DONE_AWAITING_VERIFY` (2026-05-13; contract only, no buyer-facing implementation)"
         }
       ],
       "next_tasks": [
@@ -2872,17 +3062,17 @@
         }
       ],
       "blocked_tasks": [],
-      "comment": "1 done, 5 current, 15 next"
+      "comment": "1 done, 6 current, 15 next"
     },
     {
       "key": "debugger",
       "label": "Verification/Safety",
-      "total": 21,
-      "done_count": 6,
+      "total": 22,
+      "done_count": 7,
       "current_count": 0,
       "next_count": 15,
       "blocked_count": 0,
-      "progress_percent": 29,
+      "progress_percent": 32,
       "done_tasks": [
         {
           "id": "DBG-01",
@@ -2919,6 +3109,12 @@
           "title": "Verify data-analyst-centered planner handoff",
           "status": "VERIFIED",
           "details": "VERIFIED` (2026-05-13; protocol pass, DB/dashboard verification deferred to BD-18/INFRA-02/DA-03)"
+        },
+        {
+          "id": "DBG-24",
+          "title": "Verify DA-02/BD-18 deep handoff",
+          "status": "VERIFIED",
+          "details": "VERIFIED` (2026-05-13; file-backed handoff and code-contract checks passed, DB proof blocked by missing `DATABASE_URL`)"
         }
       ],
       "current_tasks": [],
@@ -2985,7 +3181,7 @@
         }
       ],
       "blocked_tasks": [],
-      "comment": "6 done, 0 current, 15 next"
+      "comment": "7 done, 0 current, 15 next"
     },
     {
       "key": "lead_agent",
@@ -3055,7 +3251,7 @@
       "id": "BD-18",
       "title": "Canonical import/schema alignment for scraped QA evidence",
       "status": "IN_PROGRESS",
-      "details": "IN_PROGRESS` (2026-05-13 backend prep + analyst safety patch: accepted-only boundary reviewed; ORM/import/media idempotency patch added; zero-price-to-null/status and no-default-property-promotion patched; DB-backed migration/import proof still pending)"
+      "details": "IN_PROGRESS` (2026-05-13 backend prep + analyst safety patch + DB table/smoke script implementation; live DB migration/import proof still blocked by missing `DATABASE_URL`)"
     },
     {
       "owner_key": "scraper_1",
@@ -3312,6 +3508,14 @@
       "title": "Data-quality UX requirements from DA findings",
       "status": "DONE_AWAITING_VERIFY",
       "details": "DONE_AWAITING_VERIFY` (2026-05-13; requirements only, no public UI expansion)"
+    },
+    {
+      "owner_key": "ux_ui_designer",
+      "owner": "UX/UI Designer",
+      "id": "UX-22",
+      "title": "Verified dashboard/read-model field consumption contract",
+      "status": "DONE_AWAITING_VERIFY",
+      "details": "DONE_AWAITING_VERIFY` (2026-05-13; contract only, no buyer-facing implementation)"
     },
     {
       "owner_key": "backend_developer",
@@ -3586,6 +3790,14 @@
       "details": "TODO"
     },
     {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-25",
+      "title": "Wave 2 parser repair for clean titles, area, categories, and location evidence",
+      "status": "TODO",
+      "details": "TODO` (Wave 2; wait for Wave 1 evidence)"
+    },
+    {
       "owner_key": "scraper_sm",
       "owner": "Scraper SM",
       "id": "SM-04",
@@ -3786,6 +3998,22 @@
       "details": "TODO"
     },
     {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-26",
+      "title": "Codex Spark active source-link freshness audit and bounded rescrape staging",
+      "status": "BLOCKED",
+      "details": "BLOCKED_LOW_DISK` and **SUPERSEDED BY `S1-27`** for the full-dataset cleanup/rescrape goal (2026-05-15; queue-only output, no live URL checks)"
+    },
+    {
+      "owner_key": "scraper_1",
+      "owner": "Scraper 1",
+      "id": "S1-27",
+      "title": "Full-dataset active-link audit, verified cleanup, and patterned background rescrape",
+      "status": "BLOCKED",
+      "details": "BLOCKED_LOW_DISK` (2026-05-15; preflight found 22GB free, below required `>50GB`; no live checks/rescrape started)"
+    },
+    {
       "owner_key": "backend_developer",
       "owner": "Backend Developer",
       "id": "BD-01",
@@ -3856,6 +4084,14 @@
       "title": "Verify data-analyst-centered planner handoff",
       "status": "VERIFIED",
       "details": "VERIFIED` (2026-05-13; protocol pass, DB/dashboard verification deferred to BD-18/INFRA-02/DA-03)"
+    },
+    {
+      "owner_key": "debugger",
+      "owner": "Debugger",
+      "id": "DBG-24",
+      "title": "Verify DA-02/BD-18 deep handoff",
+      "status": "VERIFIED",
+      "details": "VERIFIED` (2026-05-13; file-backed handoff and code-contract checks passed, DB proof blocked by missing `DATABASE_URL`)"
     },
     {
       "owner_key": "lead_agent",

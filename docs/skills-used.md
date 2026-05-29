@@ -1,6 +1,6 @@
 # Skills Used In This Project
 
-Updated: 2026-05-13
+Updated: 2026-05-29
 
 This document records the skills and agent guidance that are part of the project or were used while shaping the current repository.
 
@@ -28,6 +28,7 @@ These skills are stored directly in the repository under `agent-skills/`.
 - `infra-db-migration`
 - `market-intelligence`
 - `user-analytics-instrumentation`
+- `property-link-comparable-search`
 
 ## Session Skills Used By Codex
 
@@ -43,6 +44,14 @@ These were used from the Codex environment while working on the repository:
   - used for the 2026-05-13 repository and agent-system orientation pass
 - `cc-refactoring-guidance`
   - used to keep the 2026-05-13 architecture/doc changes scoped and behavior-preserving
+- `scraping-data-collection`
+  - used for the 2026-05-29 one-link scrape/comparable-search workflow and safety gates
+- `strategic-product-planning`
+  - used for the 2026-05-29 agent sequencing and product workflow split
+- `backend-api-architecture`
+  - used for the 2026-05-29 DB/API follow-up boundaries
+- `graphify`
+  - used for the 2026-05-29 structure navigation before broad code reads
 
 ## Agent Workflow Files
 

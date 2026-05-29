@@ -60,6 +60,7 @@ Canonical skill files live under `agent-skills/<skill-name>/SKILL.md`.
 | `infra-db-migration` | PostgreSQL/PostGIS backup, restore, transfer, and count verification for server migration |
 | `market-intelligence` | Market/rival analysis, source prioritization, pricing/supply signals, and product implications |
 | `user-analytics-instrumentation` | Privacy-safe event taxonomy, funnels, UX telemetry, and analytics dashboards |
+| `property-link-comparable-search` | One-link property intake, single-unit classification, and comparable/same-property search across tier 1/2/3 evidence |
 
 Every agent should state the skills used in its closeout.
 
@@ -70,14 +71,14 @@ Every agent should state the skills used in its closeout.
 | `planner` | `agent-architecture-governance`, `software-architecture`, `subagent-driven-development`, `context-engineering`, `prompt-engineering` |
 | `ops_release_manager` | `ops-release-management`, `qa-review-release`, `security-audit`, `ci-cd-pipeline` |
 | `infra_db_operator` | `infra-db-migration`, `postgres-ops-psql`, `postgres-postgis-schema`, `railway-deploy` |
-| `backend_developer` | `backend-data-engineering`, `postgres-postgis-schema`, `workflow-runtime`, `fullstack-coding` |
-| `data_analyst` | `postgres-analysis`, `dashboard-visual-ops`, `test-generator` |
+| `backend_developer` | `backend-data-engineering`, `postgres-postgis-schema`, `workflow-runtime`, `fullstack-coding`, `property-link-comparable-search` |
+| `data_analyst` | `postgres-analysis`, `dashboard-visual-ops`, `test-generator`, `property-link-comparable-search` |
 | `market_intelligence_analyst` | `market-intelligence`, `deep-research-workflow` |
 | `user_analytics_agent` | `user-analytics-instrumentation`, `dashboard-visual-ops`, `web-performance-accessibility` |
-| `scraper_1` | `scraper-connector-builder`, `browser-scrape-ops`, `hybrid-scrape-stack`, `parser-fixture-qa`, `runtime-compliance-evaluator` |
-| `scraper_sm` | `publishing-compliance`, `runtime-compliance-evaluator`, `deep-research-workflow`, `scraper-connector-builder` |
+| `scraper_1` | `scraper-connector-builder`, `browser-scrape-ops`, `hybrid-scrape-stack`, `parser-fixture-qa`, `runtime-compliance-evaluator`, `property-link-comparable-search` |
+| `scraper_sm` | `publishing-compliance`, `runtime-compliance-evaluator`, `deep-research-workflow`, `scraper-connector-builder`, `property-link-comparable-search` |
 | `vision_media_agent` | `image-media-pipeline`, `managed-scrape-platforms` |
-| `entity_resolution_agent` | `dedupe-entity-resolution`, `postgres-analysis` |
-| `ux_ui_designer` | `web-frontend-nextjs`, `frontend-pages`, `geo-map-3d`, `visual-3d-map`, `web-performance-accessibility` |
+| `entity_resolution_agent` | `dedupe-entity-resolution`, `postgres-analysis`, `property-link-comparable-search` |
+| `ux_ui_designer` | `web-frontend-nextjs`, `frontend-pages`, `geo-map-3d`, `visual-3d-map`, `web-performance-accessibility`, `property-link-comparable-search` |
 | `debugger` | `debugger-golden-path`, `qa-review-release`, `security-audit`, `test-generator` |
 | `knowledge_context_agent` | `context-engineering`, `docs-export`, `skill-discovery` |
